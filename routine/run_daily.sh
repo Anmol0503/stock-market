@@ -64,4 +64,19 @@ else
   echo "no .env — skipping email"
 fi
 
+# ---- publish to GitHub Pages (best-effort — never abort the run) ----
+if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then
+  git add -A >/dev/null 2>&1
+  if git diff --cached --quiet; then
+    echo "nothing new to publish"
+  else
+    git commit -m "daily: $TODAY" >/dev/null \
+      && git push origin main \
+      && echo "published to GitHub Pages" \
+      || echo "WARN: git publish failed (self-retries on the next daily run)"
+  fi
+else
+  echo "no git remote — skipping publish"
+fi
+
 echo "=== daily run finished $(date '+%F %T') ==="

@@ -50,8 +50,13 @@ Full schema: [analyze/brief_prompt.md](analyze/brief_prompt.md).
 Write **two** strict-JSON briefs each run:
 - **World** → `output/world-<YYYY-MM-DD>.json` + copy to `output/world-latest.json` (schema: [analyze/world_prompt.md](analyze/world_prompt.md)).
 - **Markets** → `output/brief-<YYYY-MM-DD>.json` + copy to `output/brief-latest.json` (schema: [analyze/brief_prompt.md](analyze/brief_prompt.md)).
-The email sender and dashboard read this JSON — if it doesn't match the schema, they break, so follow
-it exactly.
+The email sender, dashboard, AND the mobile reels deck (`build_dashboard.build_reels()` compiles
+`dashboard/reels.json` from these) all read this JSON — if it doesn't match the schema, they break,
+so follow it exactly. For continuity, read the two most recent `dashboard/archive/world-*.json` and
+add `thread` objects to stories that continue previous coverage (see the world schema).
+
+**The `dashboard/` folder is published to a PUBLIC GitHub Pages site** (the daily run pushes it).
+Never write secrets, keys, email addresses, or personal data anywhere under `dashboard/`.
 
 ## Data you have (all free)
 - `output/world-raw-latest.json` — broad global headlines across all categories, pulled by `fetch_world.py`.

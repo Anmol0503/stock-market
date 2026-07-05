@@ -8,6 +8,12 @@ with two pillars:
 - **📈 Markets** — US + India + crypto/commodities, with an in-house technical-analysis engine and a
   deep panel per stock where **every metric is explained in plain English** (tap the ⓘ to learn it).
 
+Plus **📱 Reels** (`dashboard/reels/`) — the whole day as a full-screen, swipeable mobile deck.
+Every card is built around **one bold takeaway** ("the moot"), with the full decoded depth one tap
+away, glossary chips inline, a concept-of-the-day, and a flashback quiz that tests yesterday's
+lesson. On your phone: open the site → Share → **Add to Home Screen** → it launches like an app and
+the last-loaded deck stays readable offline.
+
 Built **free / near-free**, with the AI brain running on your **Claude Max subscription** (not the
 paid API). Designed for someone new to markets: it decodes and explains, it doesn't just summarize.
 
@@ -60,8 +66,17 @@ analyze_stock.py ─► dashboard/stocks/*.json  ────┘                
    python build_dashboard.py  # publishes dashboard/brief.json
    ```
 
-5. **Dashboard on GitHub Pages** — create a GitHub repo, push this folder, then in the repo:
-   Settings → Pages → deploy from `main` → `/dashboard`. Your site: `https://USER.github.io/REPO/`.
+5. **Dashboard on GitHub Pages** — one-time:
+   ```bash
+   gh auth login --web && gh auth setup-git
+   gh repo create stock-market --public --source . --push
+   gh api -X POST repos/{owner}/{repo}/pages -f 'source[branch]=main' -f 'source[path]=/'
+   ```
+   Pages serves the repo root (a root `index.html` redirects into `dashboard/`). Your site:
+   `https://USER.github.io/stock-market/dashboard/` (+ `/dashboard/reels/` for the mobile deck).
+   The daily run then auto-commits and pushes, so the public site updates itself each morning.
+   ⚠️ The repo is **public** (free Pages requires it): briefs, archives, and your watchlist are
+   visible; `.env`, `output/`, and `logs/` are gitignored — never commit secrets.
 
 6. **Automation (already set up on this Mac)** — a LaunchAgent
    (`~/Library/LaunchAgents/com.dailyintel.daily.plist`) runs [routine/run_daily.sh](routine/run_daily.sh)
@@ -83,7 +98,8 @@ analyze_stock.py ─► dashboard/stocks/*.json  ────┘                
 | `send.py` | Renders + emails the **short two-pillar** digest via Gmail SMTP |
 | `build_dashboard.py` | Publishes both briefs (`world.json` + `brief.json`) to the dashboard |
 | `server.py` | Local server (threaded): serves the dashboard + `/api/analyze` (live any-ticker analysis), `/api/refresh` (recompute all), `/api/refresh_news` (re-pull headlines) |
-| `dashboard/index.html` | Two-pillar dashboard: 🌍 World (decoded stories + latest headlines) and 📈 Markets (feed + live deep panel), with 🎓 lessons, 📚 concept chips, and freshness timestamps everywhere |
+| `dashboard/index.html` | Two-pillar dashboard: 🌍 World (decoded stories + latest headlines) and 📈 Markets (feed + live deep panel), with 🎓 lessons, 📚 concept chips, 📈 developing-story threads, board sparklines, and freshness timestamps everywhere |
+| `dashboard/reels/` | 📱 The mobile deck (PWA): swipe-per-card, one takeaway per card, decode sheet, learn cards; `build_dashboard.build_reels()` compiles `dashboard/reels.json` daily |
 | `dashboard/glossary.js` | The **education layer** — plain-English "what is it / how to read it / why it matters" for every metric AND macro/world concept |
 | `routine/run_daily.sh` + `routine/claude_routine.md` | The automated morning pipeline (LaunchAgent fires it at first laptop-open each day) |
 | `routine/daily_routine.md` | How the automation works + manage/disable commands |
