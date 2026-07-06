@@ -2,31 +2,31 @@
   "ticker": "INFY.NS",
   "name": "Infosys",
   "currency": "\u20b9",
-  "as_of": "2026-07-06T00:05:29+05:30",
-  "price": 1047.2,
-  "change_pct": 0.61,
+  "as_of": "2026-07-06T17:54:00+05:30",
+  "price": 1042.2,
+  "change_pct": -0.48,
   "verdict": {
     "rating": "Strong Sell",
-    "score": -0.5,
-    "summary": "Infosys is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 42). MACD is bearish. Trend strength is moderate; it sits at the 9th percentile of its 52-week range."
+    "score": -0.625,
+    "summary": "Infosys is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 41). MACD is bearish. Trend strength is moderate; it sits at the 8th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Infosys is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day (\u20b91137) and 200-day (\u20b91391) averages \u2014 a textbook downtrend. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 42 (neutral). It's trading in the 9th percentile of its 52-week range, and day-to-day volatility is normal (~3.2% a day).",
+    "the_read": "Infosys is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day (\u20b91135) and 200-day (\u20b91388) averages \u2014 a textbook downtrend. Trend strength is moderate (ADX 24) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 41 (neutral). It's trading in the 8th percentile of its 52-week range, and day-to-day volatility is normal (~3.1% a day).",
     "bull_case": [],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "8 of 10 moving averages are bearish (price is below them).",
+      "9 of 10 moving averages are bearish (price is below them).",
       "MACD momentum is negative \u2014 momentum is fading.",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~\u20b91137) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91063. First support that needs to hold: \u20b91037.",
-    "fundamentals_read": "Infosys is a mega-cap company in Technology, worth about \u20b94.24T. It trades at a P/E of 14 (low, which can signal value or a troubled business); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 7% a year, and it keeps roughly 16\u00a2 of every sales dollar as profit. With a beta of 0.13, it's steadier than the market. It pays a dividend yielding 4.8%."
+    "what_would_flip": "A daily close back above the 50-day average (~\u20b91135) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91052. First support that needs to hold: \u20b91032.",
+    "fundamentals_read": "Infosys is a mega-cap company in Technology, worth about \u20b94.22T. It trades at a P/E of 14 (low, which can signal value or a troubled business); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 7% a year, and it keeps roughly 16\u00a2 of every sales dollar as profit. With a beta of 0.13, it's steadier than the market. It pays a dividend yielding 4.8%."
   },
   "signals": {
     "moving_averages": {
       "rating": "Strong Sell",
-      "buy": 2,
-      "sell": 8
+      "buy": 1,
+      "sell": 9
     },
     "oscillators": {
       "rating": "Sell",
@@ -37,7 +37,7 @@
   "trend": {
     "direction": "Downtrend",
     "strength": "Moderate",
-    "adx": 24.68,
+    "adx": 24.4,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -45,70 +45,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 1034.42,
+        "value": 1032.1,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 1085.17,
+        "value": 1077.9,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 1120.5,
+        "value": 1116.29,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 1137.35,
+        "value": 1134.79,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 1223.0,
+        "value": 1218.45,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 1390.72,
+        "value": 1388.39,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 1044.18,
+        "value": 1043.82,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 1075.87,
+        "value": 1072.66,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 1141.19,
+        "value": 1137.31,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 1340.76,
+        "value": 1338.02,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -117,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 41.96,
+        "value": 41.25,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "42 \u2014 neutral momentum, no extreme"
+        "note": "41 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -40.324,
+        "value": -38.033,
         "metric": "macd",
         "signal": "Sell",
         "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 35.98,
+        "value": 33.2,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": -35.01,
+        "value": -37.01,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -64.02,
+        "value": -66.8,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -4.2,
+        "value": -23.2,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -160,45 +160,39 @@
     ]
   },
   "levels": {
-    "pivot": 1052.63,
+    "pivot": 1042.73,
     "resistance": [
-      1063.27,
-      1079.33
+      1052.47,
+      1062.73
     ],
     "support": [
-      1036.57,
-      1025.93
+      1032.47,
+      1022.73
     ]
   },
   "range_52w": {
     "low": 985.3,
     "high": 1689.8,
-    "position_pct": 8.8
+    "position_pct": 8.1
   },
   "volatility": {
-    "atr": 33.71,
-    "atr_pct": 3.22,
+    "atr": 32.73,
+    "atr_pct": 3.14,
     "bollinger_pctb": 0.34,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Information Technology Services",
-    "marketCap": 4239632367616,
-    "trailingPE": 13.868874,
-    "forwardPE": 12.786489,
+    "marketCap": 4219792523264,
+    "trailingPE": 13.803973,
+    "forwardPE": 12.726653,
     "profitMargins": 0.16434999,
     "revenueGrowth": 0.066,
     "dividendYield": 4.77,
     "beta": 0.131
   },
   "history": [
-    {
-      "d": "2025-10-14",
-      "c": 1489.9,
-      "m50": 1479.44,
-      "m200": 1616.17
-    },
     {
       "d": "2025-10-15",
       "c": 1474.4,
@@ -1272,6 +1266,12 @@
       "c": 1047.2,
       "m50": 1137.35,
       "m200": 1390.72
+    },
+    {
+      "d": "2026-07-06",
+      "c": 1042.2,
+      "m50": 1134.79,
+      "m200": 1388.39
     }
   ],
   "whats_new": "",

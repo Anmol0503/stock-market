@@ -2,44 +2,46 @@
   "ticker": "HDFCBANK.NS",
   "name": "HDFC Bank",
   "currency": "\u20b9",
-  "as_of": "2026-07-06T00:05:28+05:30",
-  "price": 801.05,
-  "change_pct": 0.65,
+  "as_of": "2026-07-06T17:53:59+05:30",
+  "price": 829.85,
+  "change_pct": 3.6,
   "verdict": {
     "rating": "Buy",
     "score": 0.25,
-    "summary": "HDFC Bank is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 61). MACD is bullish. Trend strength is moderate; it sits at the 25th percentile of its 52-week range."
+    "summary": "HDFC Bank is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is overbought (RSI 71). MACD is bullish. Trend strength is moderate; it sits at the 35th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "HDFC Bank is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day (\u20b9772) and 200-day (\u20b9890) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 22) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 61 (neutral). It's trading in the 25th percentile of its 52-week range, and day-to-day volatility is normal (~1.8% a day).",
+    "the_read": "HDFC Bank is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day (\u20b9773) and 200-day (\u20b9890) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 24) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 71 (overbought). It's trading in the 35th percentile of its 52-week range, and day-to-day volatility is normal (~1.8% a day).",
     "bull_case": [
-      "7 of 10 moving averages are bullish (price is above them).",
+      "8 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
       "Caught between its 50- and 200-day averages \u2014 no clear trend yet.",
+      "RSI is overbought (71) \u2014 the run looks stretched and can pause or pull back.",
       "Stochastic %K is overbought \u2014 a short-term caution signal.",
+      "CCI is overbought \u2014 a short-term caution signal.",
       "Williams %R is overbought \u2014 a short-term caution signal."
     ],
-    "what_would_flip": "A daily close below the 50-day average (~\u20b9772) would warn the uptrend is stalling. First resistance to clear overhead: \u20b9806. First support that needs to hold: \u20b9797.",
-    "fundamentals_read": "HDFC Bank is a mega-cap company in Financial Services, worth about \u20b912.34T. It trades at a P/E of 18 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is shrinking about 2% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 0.42, it's steadier than the market. It pays a dividend yielding 1.6%."
+    "what_would_flip": "A daily close below the 50-day average (~\u20b9773) would warn the uptrend is stalling. First resistance to clear overhead: \u20b9839. First support that needs to hold: \u20b9813.",
+    "fundamentals_read": "HDFC Bank is a mega-cap company in Financial Services, worth about \u20b912.78T. It trades at a P/E of 19 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is shrinking about 2% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 0.42, it's steadier than the market. It pays a dividend yielding 1.6%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Buy",
-      "buy": 7,
-      "sell": 3
+      "rating": "Strong Buy",
+      "buy": 8,
+      "sell": 2
     },
     "oscillators": {
-      "rating": "Neutral",
+      "rating": "Sell",
       "buy": 2,
-      "sell": 2
+      "sell": 4
     }
   },
   "trend": {
     "direction": "Sideways",
     "strength": "Moderate",
-    "adx": 22.02,
+    "adx": 23.88,
     "vs_50dma": "above",
     "vs_200dma": "below"
   },
@@ -47,70 +49,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 793.68,
+        "value": 798.03,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 780.29,
+        "value": 784.85,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 772.64,
+        "value": 774.08,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 772.33,
+        "value": 773.13,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 805.49,
+        "value": 804.42,
         "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 890.35,
+        "value": 889.66,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 793.22,
+        "value": 799.88,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 785.18,
+        "value": 789.43,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 784.26,
+        "value": 786.05,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 855.74,
+        "value": 855.03,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -119,42 +121,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 61.01,
+        "value": 70.82,
         "metric": "rsi",
-        "signal": "Neutral",
-        "note": "61 \u2014 neutral momentum, no extreme"
+        "signal": "Sell",
+        "note": "71 \u2014 overbought; risen fast, may pause or pull back"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 8.859,
+        "value": 11.275,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 82.73,
+        "value": 97.2,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 64.29,
+        "value": 107.09,
         "metric": "cci",
-        "signal": "Neutral",
-        "note": "close to its recent average \u2014 no extreme"
+        "signal": "Sell",
+        "note": "well above its average \u2014 overbought (or a strong up-thrust)"
       },
       {
         "name": "Williams %R (14)",
-        "value": -17.27,
+        "value": -2.8,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 21.25,
+        "value": 43.45,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -162,45 +164,39 @@
     ]
   },
   "levels": {
-    "pivot": 802.2,
+    "pivot": 822.12,
     "resistance": [
-      805.85,
-      810.65
+      839.23,
+      848.62
     ],
     "support": [
-      797.4,
-      793.75
+      812.73,
+      795.62
     ]
   },
   "range_52w": {
     "low": 731.55,
     "high": 1012.9,
-    "position_pct": 24.7
+    "position_pct": 34.9
   },
   "volatility": {
-    "atr": 14.06,
-    "atr_pct": 1.76,
-    "bollinger_pctb": 0.74,
+    "atr": 15.23,
+    "atr_pct": 1.84,
+    "bollinger_pctb": 1.02,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Financial Services",
     "industry": "Banks - Regional",
-    "marketCap": 12344077844480,
-    "trailingPE": 17.898617,
-    "forwardPE": 12.743718,
+    "marketCap": 12780701745152,
+    "trailingPE": 18.53171,
+    "forwardPE": 13.194479,
     "profitMargins": 0.26834,
     "revenueGrowth": -0.018,
     "dividendYield": 1.62,
     "beta": 0.422
   },
   "history": [
-    {
-      "d": "2025-10-14",
-      "c": 977.15,
-      "m50": 973.35,
-      "m200": 933.15
-    },
     {
       "d": "2025-10-15",
       "c": 978.25,
@@ -1274,6 +1270,12 @@
       "c": 801.05,
       "m50": 772.33,
       "m200": 890.35
+    },
+    {
+      "d": "2026-07-06",
+      "c": 829.85,
+      "m50": 773.13,
+      "m200": 889.66
     }
   ],
   "whats_new": "",

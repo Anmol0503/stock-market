@@ -2,32 +2,32 @@
   "ticker": "GC=F",
   "name": "Gold",
   "currency": "$",
-  "as_of": "2026-07-06T00:05:31+05:30",
-  "price": 4187.3,
-  "change_pct": 1.81,
+  "as_of": "2026-07-06T17:54:03+05:30",
+  "price": 4167.2,
+  "change_pct": 1.33,
   "verdict": {
     "rating": "Sell",
-    "score": -0.25,
-    "summary": "Gold is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 47). MACD is bullish. Trend strength is strong; it sits at the 44th percentile of its 52-week range."
+    "score": -0.375,
+    "summary": "Gold is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 45). MACD is bullish. Trend strength is strong; it sits at the 43th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Gold is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day ($4419) and 200-day ($4459) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 37) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 47 (neutral). It's trading in the 44th percentile of its 52-week range, and day-to-day volatility is normal (~2.2% a day).",
+    "the_read": "Gold is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day ($4418) and 200-day ($4459) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 37) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 45 (neutral). It's trading in the 43th percentile of its 52-week range, and day-to-day volatility is normal (~2.2% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "7 of 10 moving averages are bearish (price is below them).",
+      "8 of 10 moving averages are bearish (price is below them).",
       "Trend strength is strong (ADX 37) and pointing down \u2014 down-moves tend to persist."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$4419) would be the first sign the downtrend is turning up. First resistance to clear overhead: $4219. First support that needs to hold: $4145.",
+    "what_would_flip": "A daily close back above the 50-day average (~$4418) would be the first sign the downtrend is turning up. First resistance to clear overhead: $4211. First support that needs to hold: $4129.",
     "fundamentals_read": ""
   },
   "signals": {
     "moving_averages": {
-      "rating": "Sell",
-      "buy": 3,
-      "sell": 7
+      "rating": "Strong Sell",
+      "buy": 2,
+      "sell": 8
     },
     "oscillators": {
       "rating": "Neutral",
@@ -38,7 +38,7 @@
   "trend": {
     "direction": "Downtrend",
     "strength": "Strong",
-    "adx": 37.19,
+    "adx": 37.11,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -46,70 +46,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 4082.48,
+        "value": 4080.47,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 4170.66,
+        "value": 4169.66,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 4278.62,
+        "value": 4277.95,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 4418.76,
+        "value": 4418.36,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 4649.78,
+        "value": 4649.58,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 4458.77,
+        "value": 4458.67,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 4119.89,
+        "value": 4116.24,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 4188.23,
+        "value": 4186.32,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 4366.11,
+        "value": 4365.32,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 4329.9,
+        "value": 4329.48,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -118,42 +118,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 46.61,
+        "value": 45.25,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "47 \u2014 neutral momentum, no extreme"
+        "note": "45 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -99.943,
+        "value": -101.546,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 54.23,
+        "value": 49.38,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 1.08,
+        "value": -0.39,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -45.77,
+        "value": -50.62,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -36.8,
+        "value": -56.9,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -161,25 +161,25 @@
     ]
   },
   "levels": {
-    "pivot": 4176.47,
+    "pivot": 4172.17,
     "resistance": [
-      4219.13,
-      4250.97
+      4210.53,
+      4253.87
     ],
     "support": [
-      4144.63,
-      4101.97
+      4128.83,
+      4090.47
     ]
   },
   "range_52w": {
     "low": 3293.2,
     "high": 5318.4,
-    "position_pct": 44.1
+    "position_pct": 43.2
   },
   "volatility": {
-    "atr": 93.36,
-    "atr_pct": 2.23,
-    "bollinger_pctb": 0.53,
+    "atr": 93.88,
+    "atr_pct": 2.25,
+    "bollinger_pctb": 0.49,
     "label": "Normal"
   },
   "fundamentals": {},
@@ -1259,10 +1259,10 @@
       "m200": 4456.28
     },
     {
-      "d": "2026-07-03",
-      "c": 4187.3,
-      "m50": 4418.76,
-      "m200": 4458.77
+      "d": "2026-07-06",
+      "c": 4167.2,
+      "m50": 4418.36,
+      "m200": 4458.67
     }
   ],
   "whats_new": "",
