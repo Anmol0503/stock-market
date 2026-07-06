@@ -157,15 +157,20 @@
     border-radius:13px;padding:13px 15px;margin:6px 0 16px}
   .sheetmoot .lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:6px}
   .sheetmoot .txt{font-family:var(--round);font-size:16px;font-weight:700;line-height:1.5}
-  /* the main narrative — an editorial serif at a comfortable size for real reading */
-  .lead{font-family:var(--serif);font-size:19px;line-height:1.72;color:#eef2f8;margin:4px 0 20px;letter-spacing:.1px}
-  .sec{margin:18px 0;padding-top:16px;border-top:1px solid var(--line)}
-  .sec .k{font-family:var(--round);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:7px}
-  .sec .v{font-family:var(--serif);font-size:17px;line-height:1.68;color:#dbe3ee}
-  .kt{border-left:3px solid var(--line);padding:5px 11px;margin:9px 0;font-size:15px;line-height:1.55}
-  .lead mark,.sec .v mark{font-family:var(--sans);font-size:.9em}   /* numbers read cleaner in sans */
+  /* ---- the bulleted briefing: icon-led sections, one fact per line ---- */
+  .bsec{padding:16px 0;border-top:1px solid var(--line)}
+  .bsec:first-of-type{border-top:none;padding-top:6px}
+  .bh{display:flex;align-items:center;gap:9px;font-family:var(--round);font-size:12px;font-weight:800;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:11px}
+  .bi{display:inline-flex;width:26px;height:26px;flex:0 0 26px;align-items:center;justify-content:center;font-size:14px;
+    border-radius:8px;background:color-mix(in srgb, var(--cat,var(--accent)) 16%, transparent)}
+  .bsec ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .bsec li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.5;color:#dbe3ee}
+  .bsec li::before{content:"◆";position:absolute;left:0;top:1px;font-size:10px;color:var(--cat,var(--accent))}
+  .bsec li mark{font-size:.94em}
+  .kt{border-left:3px solid var(--cat,var(--accent));padding:5px 11px;margin:9px 0;font-size:14.5px;line-height:1.5}
   .kt b{color:var(--txt)}
-  .src{font-size:13px;margin:4px 0}
+  .src{font-size:14px;line-height:1.5;margin:8px 0}
   .one{color:var(--dim);font-size:14px;margin-bottom:8px}
   .scale{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--dim);background:var(--panel2);
     border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:10px;overflow-x:auto;white-space:nowrap}
@@ -380,48 +385,92 @@ function closeSheet(){
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
 
-const DEPTH_LBL = {
-  background:"Background", why_it_matters:"Why it matters", ripple_effects:"Ripple effects",
-  why_now:"Why now", watch_next:"Watch next", market_link:"Market link", watch:"Watch next",
-  news:"Recent news", fundamentals:"Fundamentals", technicals:"Technicals",
-  catalysts:"Catalysts", risks:"Risks", catalysts_today:"Today's catalysts"
-};
-function sec(k,v){ return v?`<div class="sec"><div class="k">${DEPTH_LBL[k]||k}</div><div class="v">${esc(v)}</div></div>`:''; }
+// Break prose into short sentence-bullets. Protect abbreviations so we never split "U.S." / "e.g.";
+// require a SPACE after the period so decimals ("3.5 million") stay intact.
+const ABBR = /\b(U\.S|U\.K|U\.N|E\.U|e\.g|i\.e|Mr|Mrs|Ms|Dr|Prof|Sen|Rep|Gov|Gen|Lt|Sgt|St|Jr|Sr|vs|etc|Inc|Ltd|Co|Corp|approx|No|Fig|a\.m|p\.m|Ph\.D)\./g;
+function toBullets(text){
+  if(!text) return [];
+  try{
+    const SENT = String.fromCharCode(1);                    // sentinel for abbreviation dots
+    const masked = String(text).replace(ABBR, m=>m.split('.').join(SENT));
+    return masked.split(/(?<=[.!?])\s+(?=[A-Z0-9"'“])/)
+      .map(s=>s.split(SENT).join('.').trim()).filter(Boolean);
+  }catch(e){ return [String(text).trim()]; }   // regex-lookbehind fallback (very old engines)
+}
+// one bulleted section: icon-led header + list; each bullet keeps number highlighting. Skips if empty.
+function bulletSec(icon, label, items){
+  const arr = (Array.isArray(items) ? items : toBullets(items)).filter(Boolean);
+  if(!arr.length) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">${icon}</span>${esc(label)}</div>`
+    + `<ul>${arr.map(t=>`<li>${hl(t)}</li>`).join('')}</ul></div>`;
+}
+function keyTermsSec(terms){
+  if(!(terms||[]).length) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">📚</span>Key terms</div>`
+    + terms.map(t=>`<div class="kt"><b>${esc(t.term)}</b> — ${esc(t.definition)}</div>`).join('') + `</div>`;
+}
+function sourcesSec(sources){
+  if(!(sources||[]).length) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">🔗</span>Sources</div>`
+    + sources.map(s=>`<div class="src"><a href="${esc(s.url)}" target="_blank">${esc(s.name)}</a></div>`).join('') + `</div>`;
+}
+function pinnedMoot(txt){ return txt?`<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(txt)}</div></div>`:''; }
 
 // primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type
 const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_story:'story'};
 function openDecode(id){
   const c = DECK.cards.find(x=>x.id===id); if(!c) return;
   const d = c.depth||{}; let h = '';
-  // pin the one takeaway at the very top, then the full readable narrative (numbers highlighted)
-  if(c.moot && (c.type==='story'||c.type==='watch'))
-    h += `<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(c.moot)}</div></div>`;
-  const lead = c[LEAD[c.type]];
-  if(lead) h += `<div class="lead">${hl(lead)}</div>`;
-  if(c.type==='watch' && c.what_it_means)
-    h += `<div class="sec"><div class="k">What it means for you</div><div class="v">${hl(c.what_it_means)}</div></div>`;
-  if(c.thread) h += sec('previously', c.thread.previously) + (c.thread.changed?`<div class="sec"><div class="k">What changed today</div><div class="v">${esc(c.thread.changed)}</div></div>`:'');
-  if(c.type==='story') h += ['background','why_it_matters','ripple_effects','why_now','watch_next','market_link'].map(k=>sec(k,d[k])).join('');
-  if(c.type==='watch') h += ['why_it_matters','watch'].map(k=>sec(k,d[k])).join('');
+  // pin the takeaway, then the essentials as bullets (AI key_points if present, else auto-split the lead)
+  if(c.type==='story'||c.type==='watch') h += pinnedMoot(c.moot);
+  const keyItems = (c.key_points && c.key_points.length) ? c.key_points : toBullets(c[LEAD[c.type]]);
+  const keyLabel = {story:'Key points', watch:'Key points', favorite:'What changed', market_story:'Key points'}[c.type] || 'Key points';
+  h += bulletSec('✦', keyLabel, keyItems);
+
+  if(c.thread){
+    h += bulletSec('🧵', 'Previously', c.thread.previously);
+    h += bulletSec('🔄', 'What changed today', c.thread.changed);
+  }
+  if(c.type==='story'){
+    h += bulletSec('❓', 'Why it matters', d.why_it_matters);
+    h += bulletSec('🌊', 'Ripple effects', d.ripple_effects);
+    h += bulletSec('⏱️', 'Why now', d.why_now);
+    h += bulletSec('👀', 'Watch next', d.watch_next);
+    h += bulletSec('📖', 'The backstory', d.background);
+    h += bulletSec('📊', 'Market link', d.market_link);
+  }
+  if(c.type==='watch'){
+    h += bulletSec('🎯', 'What it means for you', c.what_it_means);
+    h += bulletSec('❓', 'Why it matters', d.why_it_matters);
+    h += bulletSec('👀', 'Watch', d.watch);
+  }
   if(c.type==='favorite'){
-    if(Array.isArray(d.news)&&d.news.length) h += `<div class="sec"><div class="k">Recent news</div>${d.news.map(n=>`<div class="src">• ${n.url?`<a href="${esc(n.url)}" target="_blank">${esc(n.headline)}</a>`:esc(n.headline)}${n.source?` — ${esc(n.source)}`:''}</div>`).join('')}</div>`;
-    h += ['fundamentals','technicals','catalysts','risks'].map(k=>sec(k,typeof d[k]==='string'?d[k]:null)).join('');
+    if(Array.isArray(d.news)&&d.news.length)
+      h += `<div class="bsec"><div class="bh"><span class="bi">📰</span>Recent news</div>`
+         + d.news.map(n=>`<div class="src">${n.url?`<a href="${esc(n.url)}" target="_blank">${esc(n.headline)}</a>`:esc(n.headline)}${n.source?` <span style="color:var(--dim)">— ${esc(n.source)}</span>`:''}</div>`).join('') + `</div>`;
+    h += bulletSec('📊', 'Fundamentals', typeof d.fundamentals==='string'?d.fundamentals:null);
+    h += bulletSec('📈', 'Technicals', typeof d.technicals==='string'?d.technicals:null);
+    h += bulletSec('🚀', 'Catalysts', typeof d.catalysts==='string'?d.catalysts:null);
+    h += bulletSec('⚠️', 'Risks', typeof d.risks==='string'?d.risks:null);
   }
   if(c.type==='market_story'){
     const g = d.global_summary||{};
-    h += sec('US', g.us)+sec('India', g.india)+sec('Crypto', g.crypto)+sec('Macro', g.macro);
-    if((d.catalysts_today||[]).length) h += `<div class="sec"><div class="k">Today's catalysts</div>${d.catalysts_today.map(x=>`<div class="src">• ${esc(x)}</div>`).join('')}</div>`;
-    if((d.risks||[]).length) h += `<div class="sec"><div class="k">Risks</div>${d.risks.map(x=>`<div class="src">• ${esc(typeof x==='string'?x:JSON.stringify(x))}</div>`).join('')}</div>`;
+    h += bulletSec('🇺🇸', 'United States', g.us);
+    h += bulletSec('🇮🇳', 'India', g.india);
+    h += bulletSec('₿', 'Crypto', g.crypto);
+    h += bulletSec('🌍', 'Macro', g.macro);
+    h += bulletSec('🗓️', "Today's catalysts", d.catalysts_today);
+    h += bulletSec('⚠️', 'Risks', (d.risks||[]).map(x=>typeof x==='string'?x:JSON.stringify(x)));
   }
-  if((d.key_terms||[]).length) h += `<div class="sec"><div class="k">Key terms</div>${d.key_terms.map(t=>`<div class="kt"><b>${esc(t.term)}</b> — ${esc(t.definition)}</div>`).join('')}</div>`;
-  if((d.sources||[]).length) h += `<div class="sec"><div class="k">Sources</div>${d.sources.map(s=>`<div class="src">🔗 <a href="${esc(s.url)}" target="_blank">${esc(s.name)}</a></div>`).join('')}</div>`;
+  h += keyTermsSec(d.key_terms);
+  h += sourcesSec(d.sources);
   openSheet(c.title||c.name||'Decoded', h, c.category);
 }
 
 function openCover(){
   const c = DECK.cards.find(x=>x.type==='cover'); if(!c) return;
-  let h = `<div class="lead">${hl(c.big_picture)}</div>`;
-  if(c.market_headline) h += `<div class="sec"><div class="k">📈 Markets today</div><div class="v">${esc(c.market_headline)}</div></div>`;
+  let h = bulletSec('✦', 'The big picture', c.big_picture);
+  if(c.market_headline) h += bulletSec('📈', 'Markets today', c.market_headline);
   openSheet(c.headline, h, 'markets');
 }
 
@@ -429,8 +478,8 @@ function openBoardRead(i){
   const c = DECK.cards.find(x=>x.type==='board'); if(!c) return;
   const b = c.items[i]; if(!b) return;
   openSheet(`${b.name} — ${b.currency||''}${b.value} (${sgn(b.change_pct)})`,
-    `<div class="sec"><div class="k">What this number is telling you</div><div class="v">${esc(b.read)}</div></div>`
-    + (b.spark?`<div class="sec"><div class="k">Last ${b.spark.length} briefs</div><div class="v">${b.spark.map(v=>v.toLocaleString()).join(' → ')}</div></div>`:''),
+    bulletSec('💡', 'What this number is telling you', b.read)
+    + (b.spark?`<div class="bsec"><div class="bh"><span class="bi">📉</span>Last ${b.spark.length} briefs</div><div class="src">${b.spark.map(v=>v.toLocaleString()).join(' → ')}</div></div>`:''),
     'markets');
 }
 
@@ -438,9 +487,9 @@ function openGloss(key){
   const g = (typeof GLOSSARY!=='undefined')&&GLOSSARY[key]; if(!g) return;
   openSheet(g.term,
     `<div class="one">${esc(g.one)}</div>`
-    + `<div class="sec"><div class="k">What it measures</div><div class="v">${esc(g.what)}</div></div>`
-    + `<div class="sec"><div class="k">How to read it</div><div class="v">${esc(g.read)}</div></div>`
-    + `<div class="sec"><div class="k">Why it matters to you</div><div class="v">${esc(g.why)}</div></div>`
+    + bulletSec('📊', 'What it measures', g.what)
+    + bulletSec('🔍', 'How to read it', g.read)
+    + bulletSec('💡', 'Why it matters to you', g.why)
     + (g.scale?`<div class="scale">${esc(g.scale)}</div>`:''), 'learn');
 }
 

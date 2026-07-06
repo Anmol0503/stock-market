@@ -20,6 +20,7 @@ confirm facts, get the latest, and fill gaps. Pick the 8–12 stories that genui
 including AT LEAST 3–4 substantial India stories, ranked high (the reader lives in India). FULLY
 DECODE each per `analyze/world_prompt.md`: background, what_happened, why_it_matters, ripple_effects,
 why_now, watch_next, key_terms, **the_lesson** (required), **concepts** (only allowed keys),
+**key_points** (3–4 short scannable bullets — the essence, each ≤ ~14 words),
 market_link, importance, sources (≥1 per story, real URLs from the raw feed or your searches — never
 invent). Write the connective `the_big_picture`. Save STRICT JSON to `output/world-<today>.json` AND
 `output/world-latest.json`. Set `date` to today (YYYY-MM-DD) and `generated_at` to now (ISO, IST).
@@ -30,7 +31,7 @@ THESE numbers, never invent any). Use WebSearch for the day's market news (US, I
 commodities). Write the Markets brief per `analyze/brief_prompt.md`: headline, market_story (decoded
 narrative), board (real numbers from index.json, each with a plain-English `read`), themes,
 what_to_watch (3–5, each fully decoded: gist, why_it_matters, what_it_means, watch, key_terms,
-**the_lesson**, **concepts**), global_summary, catalysts_today, favorites (what CHANGED since
+**the_lesson**, **concepts**, **key_points** [3–4 short scannable bullets]), global_summary, catalysts_today, favorites (what CHANGED since
 yesterday — read the previous brief in `dashboard/archive/` for the delta; explain technicals in
 plain English), risks, disclaimer. Save STRICT JSON to `output/brief-<today>.json` AND
 `output/brief-latest.json`. Set `date` to today and `generated_at` to now (ISO, IST).

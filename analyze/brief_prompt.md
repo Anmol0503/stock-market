@@ -41,6 +41,7 @@ missing, especially India news), then write the brief as **strict JSON** matchin
     {
       "rank": 1,
       "title": "Short title",
+      "key_points": ["3–4 short scannable bullets — the essence in 5 seconds. Each ≤ ~14 words, punchy, numbers included (e.g. 'Bitcoin slips 0.7% to ~$62.7k', 'Support at $62.4k is the level to hold'). The fast read before the detail."],
       "gist": "2–3 sentences: what's actually happening, with the key numbers EXPLAINED in plain words (not just stated). This is the always-visible summary.",
       "why_it_matters": "2–3 sentences: why this moves prices / changes the picture / is a risk. Teach the mechanism.",
       "what_it_means": "1–2 sentences: the plain-English takeaway for the reader — what it means for them / their stocks.",

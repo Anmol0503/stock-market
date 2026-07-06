@@ -50,6 +50,7 @@ read three extra sentences that make them *understand* than a clipped summary th
       "category": "geopolitics",          // geopolitics | economy | technology | science | health | climate | india
       "regions": ["Middle East", "US"],
       "title": "Short, clear title — no clickbait.",
+      "key_points": ["3–4 short scannable bullets — the essence a reader grasps in 5 seconds. Each ≤ ~14 words, punchy, no need for full sentences. The fast read before the detail (e.g. 'Iran holds the biggest day of the funeral', 'The likely successor stays out of public view')."],
       "background": "2–3 sentences: the backstory a newcomer needs. How we got here, the longer arc, who the key players are. This is what turns a headline into something the reader actually understands.",
       "what_happened": "2–4 plain sentences: the facts. What occurred, who's involved, when, the key numbers.",
       "why_it_matters": "2–3 sentences: why this is significant. What changes because of it. What's genuinely at stake.",
