@@ -32,40 +32,37 @@
     font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   a{color:var(--accent);text-decoration:none}
 
-  /* ---- the deck: a smooth, fully scrollable reading feed (no snap traps) ---- */
-  #deck{position:fixed;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
-    overscroll-behavior-y:contain;scrollbar-width:none}
+  /* ---- the deck: full-screen vertical REEL — one card per screen, crisp snap ---- */
+  /* faces are short (body text is hidden behind the expand button), so every card fits one
+     screen and mandatory snap never clips anything. */
+  #deck{position:fixed;inset:0;overflow-y:auto;scroll-snap-type:y mandatory;
+    overscroll-behavior-y:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   #deck::-webkit-scrollbar{display:none}
-  .feed{max-width:640px;margin:0 auto;
-    padding:var(--deck-top) 14px calc(76px + env(safe-area-inset-bottom))}
+  .card{min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:calc(var(--deck-top) + 6px) 22px calc(30px + env(safe-area-inset-bottom));gap:16px}
+  .card > *{width:100%;max-width:540px;margin-left:auto;margin-right:auto}
+  /* soft category glow from the top — gives each card its own mood */
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:42vh;pointer-events:none;
+    background:linear-gradient(180deg, color-mix(in srgb, var(--cat,var(--accent)) 15%, transparent), transparent)}
 
-  /* reading-progress bar fills with scroll position; slim top bar sits above it */
-  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:31;background:var(--accent);
-    border-radius:0 2px 2px 0;transition:width .08s linear}
-  #hdr{position:fixed;top:0;left:0;right:0;z-index:30;height:var(--deck-top);
-    display:flex;justify-content:space-between;align-items:center;gap:10px;
-    padding:calc(env(safe-area-inset-top) + 7px) 14px 7px;font-size:11.5px;color:var(--dim);
-    background:linear-gradient(180deg, var(--bg) 62%, transparent)}
+  /* Stories-style progress segments + slim header */
+  #progress{position:fixed;top:calc(env(safe-area-inset-top) + 6px);left:10px;right:10px;z-index:31;display:flex;gap:3px}
+  #progress i{flex:1;height:3px;border-radius:2px;background:#2a3546;transition:background .2s}
+  #progress i.done{background:var(--dim)} #progress i.on{background:var(--accent)}
+  #hdr{position:fixed;top:calc(env(safe-area-inset-top) + 14px);left:12px;right:12px;z-index:30;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11.5px;color:var(--dim)}
   #hdr .stale{color:var(--amber)}
-  #hdr a{color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:4px 11px;background:var(--panel2)}
+  #hdr a{color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:4px 11px;background:rgba(11,15,23,.55)}
 
-  /* ---- a card is an elevated panel; full content, nothing clipped ---- */
-  .card{position:relative;background:linear-gradient(180deg, var(--panel), var(--panel2));
-    border:1px solid var(--line);border-left:4px solid var(--cat,var(--accent));
-    border-radius:16px;padding:17px 17px 19px;margin-bottom:15px;
-    display:flex;flex-direction:column;gap:13px;box-shadow:0 6px 22px rgba(0,0,0,.22)}
-
-  /* cover = hero */
-  .cover{text-align:center;display:flex;flex-direction:column;gap:15px;padding:6px 6px 24px;margin-bottom:6px}
-  .cover .chips,.cover .meta,.cover .counts{justify-content:center}
+  /* cover / divider centered */
+  .cover,.divider{text-align:center}
+  .cover .chips,.cover .meta,.cover .counts,.divider .chips{justify-content:center}
   .scrollcue{font-size:12.5px;font-weight:600;color:var(--dim);animation:bob 1.7s ease-in-out infinite}
-  @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(4px);opacity:1}}
-
-  /* divider = section chapter header */
-  .divider{text-align:center;margin:26px 2px 14px}
-  .divider .t{font-family:var(--round);font-weight:800;font-size:18px;letter-spacing:.01em}
-  .divider .sub{font-size:13px;color:var(--dim);margin-top:4px;line-height:1.45}
-  .divider .rule{height:1px;background:var(--line);margin-top:13px}
+  @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(5px);opacity:1}}
+  .divider .t{font-family:var(--round);font-weight:800;font-size:26px;letter-spacing:.01em}
+  .divider .sub{font-size:14px;color:var(--dim);margin-top:8px;line-height:1.5}
+  .bigemoji{font-size:56px;line-height:1}
 
   /* ---- shared content ---- */
   .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--dim)}
@@ -90,14 +87,18 @@
   .cchip{font-size:12.5px;font-weight:600;padding:8px 13px;min-height:38px;display:inline-flex;align-items:center;
     border-radius:99px;border:1px solid var(--line);background:var(--panel2);color:var(--dim);cursor:pointer}
   .cchip:active{background:var(--panel)}
-  .decode{align-self:flex-start;font-size:13.5px;font-weight:700;color:var(--cat,var(--accent));cursor:pointer;min-height:42px;
-    display:inline-flex;align-items:center;gap:2px;border:1px solid color-mix(in srgb,var(--cat,var(--accent)) 36%,var(--line));
-    background:color-mix(in srgb,var(--cat,var(--accent)) 8%,transparent);border-radius:99px;padding:0 18px}
-  .decode:active{background:color-mix(in srgb,var(--cat,var(--accent)) 16%,transparent)}
+  /* the ATTRACTIVE expand button — reveals the full readable story in the sheet */
+  .expand{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:52px;
+    font-size:15px;font-weight:800;font-family:var(--round);letter-spacing:.2px;color:#fff;cursor:pointer;
+    border:none;border-radius:15px;padding:0 20px;
+    background:linear-gradient(135deg, var(--cat,var(--accent)), color-mix(in srgb, var(--cat,var(--accent)) 62%, #000));
+    box-shadow:0 8px 22px color-mix(in srgb, var(--cat,var(--accent)) 34%, transparent)}
+  .expand:active{transform:translateY(1px);filter:brightness(1.08)}
+  .expand .ar{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+    border-radius:99px;background:rgba(255,255,255,.22);font-size:13px}
   .daylbl{font-size:13px;font-weight:700;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
   .counts{display:flex;gap:22px;justify-content:center;font-size:12.5px;color:var(--dim)}
   .counts b{color:var(--txt);font-size:19px;font-family:var(--round);display:block}
-  .bigemoji{font-size:40px;line-height:1}
 
   /* board */
   .brow{display:flex;align-items:center;gap:10px;padding:11px 2px;min-height:44px;
@@ -139,14 +140,23 @@
     max-height:82vh;max-height:82dvh;transform:translateY(105%);transition:transform .3s cubic-bezier(.3,.9,.3,1);
     display:flex;flex-direction:column}
   #sheet.open{transform:translateY(0)}
-  #sheet .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 8px}
-  #sheet .bar h3{margin:0;font-size:16px}
-  #sheet .x{font-size:22px;color:var(--dim);cursor:pointer;padding:2px 8px;line-height:1}
-  #sbody{overflow-y:auto;padding:4px 18px calc(22px + env(safe-area-inset-bottom));overscroll-behavior:contain}
-  .sec{margin:12px 0}
-  .sec .k{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:4px}
-  .sec .v{font-size:14.5px;color:#c9d4e2}
-  .kt{border-left:3px solid var(--line);padding:4px 10px;margin:7px 0;font-size:13.5px}
+  #sheet .bar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 18px 6px}
+  #sheet .bar h3{margin:0;font-family:var(--round);font-size:18px;line-height:1.28;font-weight:800}
+  #sheet .x{font-size:20px;color:var(--dim);cursor:pointer;padding:4px 8px;line-height:1;flex:0 0 auto;
+    border:1px solid var(--line);border-radius:99px}
+  #sbody{overflow-y:auto;padding:6px 18px calc(26px + env(safe-area-inset-bottom));overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  /* pinned takeaway at the top of the sheet */
+  .sheetmoot{background:linear-gradient(135deg, color-mix(in srgb, var(--cat,var(--accent)) 15%, var(--panel2)), var(--panel2));
+    border:1px solid color-mix(in srgb, var(--cat,var(--accent)) 30%, var(--line));border-left:5px solid var(--cat,var(--accent));
+    border-radius:13px;padding:13px 15px;margin:6px 0 16px}
+  .sheetmoot .lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:6px}
+  .sheetmoot .txt{font-family:var(--round);font-size:16px;font-weight:700;line-height:1.5}
+  /* the main narrative — big, comfortable reading */
+  .lead{font-size:17px;line-height:1.66;color:#e7edf5;margin:2px 0 18px}
+  .sec{margin:16px 0}
+  .sec .k{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:5px}
+  .sec .v{font-size:15.5px;line-height:1.6;color:#d3dbe6}
+  .kt{border-left:3px solid var(--line);padding:4px 10px;margin:7px 0;font-size:14px;line-height:1.5}
   .kt b{color:var(--txt)}
   .src{font-size:13px;margin:4px 0}
   .one{color:var(--dim);font-size:14px;margin-bottom:8px}
@@ -225,32 +235,33 @@ function sparkSVG(pts){
     <polyline points="${xy}" fill="none" stroke="${up?'var(--up)':'var(--down)'}" stroke-width="1.6"/></svg>`;
 }
 
-// Renderers return the INNER content of a card; render() wraps each in its <section> with category theming.
+// The attractive expand button — the ONLY way the body text is revealed (keeps each reel face clean).
+const expandBtn = (onclick, label) => `<button class="expand" onclick='${onclick}'>${label} <span class="ar">↓</span></button>`;
+
+// Reel faces: category + hook + THE TAKEAWAY (hero) + expand. Body stays hidden until the button is tapped.
 const R = {
   cover: c => `
     <div class="daylbl">${esc(DECK.day_label||DECK.date)}</div>
     <h1 class="big">${esc(c.headline)}</h1>
-    ${c.big_picture?`<div class="body" style="text-align:left">${esc(c.big_picture)}</div>`:''}
-    ${c.market_headline?`<div class="meta">📈 ${esc(c.market_headline)}</div>`:''}
     <div class="counts"><span><b>${c.counts.stories}</b>world</span><span><b>${c.counts.markets}</b>markets</span><span><b>${c.counts.learn}</b>learn</span></div>
-    <div class="scrollcue">scroll to read ↓</div>`,
+    ${c.big_picture?expandBtn('openCover()', 'The big picture'):''}
+    <div class="scrollcue">swipe up to begin ↑</div>`,
 
   story: c => `
     <div class="meta">${catChip(c.category)}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     <h1>${esc(c.title)}</h1>
-    <div class="body">${hl(c.what_happened)}</div>
     ${mootBlock(c.moot)}
     ${chips(c.concepts)}
-    <span class="decode" onclick='openDecode(${JSON.stringify(c.id)})'>Full decode: background, ripples & sources →</span>`,
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the full story')}`,
 
-  divider: c => `<div class="t">${esc(c.emoji)} ${esc(c.title)}</div>
-    ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}<div class="rule"></div>`,
+  divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
+    ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
+    <div class="scrollcue">swipe up ↑</div>`,
 
   market_story: c => `
     <div class="meta">${catChip('markets')} <span>the market story</span></div>
-    <div class="body">${hl(c.story)}</div>
-    ${mootBlock(c.moot)}
-    <span class="decode" onclick='openDecode(${JSON.stringify(c.id)})'>US · India · crypto · catalysts →</span>`,
+    ${mootBlock(c.moot, "Today's markets in one line")}
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the full breakdown')}`,
 
   board: c => `
     <div class="meta">${catChip('markets')} <span>today's board — tap a row to learn it</span></div>
@@ -264,18 +275,15 @@ const R = {
   watch: c => `
     <div class="meta">${catChip('markets')}<span>watch #${esc(c.rank)}</span>${(c.tickers||[]).slice(0,3).map(t=>`<span class="stance">${esc(t)}</span>`).join('')}</div>
     <h1>${esc(c.title)}</h1>
-    <div class="body">${hl(c.gist)}</div>
-    ${c.what_it_means?`<div class="body" style="color:var(--txt)"><b>What it means for you:</b> ${hl(c.what_it_means)}</div>`:''}
     ${mootBlock(c.moot)}
     ${chips(c.concepts)}
-    <span class="decode" onclick='openDecode(${JSON.stringify(c.id)})'>Why it matters & what to watch →</span>`,
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Why it matters')}`,
 
   favorite: c => `
     <div class="meta">${catChip('markets')}<span>your stock</span>${c.moot?`<span class="stance">${esc(c.moot)}</span>`:''}</div>
     <h1>${esc(c.name||c.ticker)} <span style="color:var(--dim);font-size:16px">${esc(c.ticker)}</span></h1>
     <div class="price">${esc(c.currency||'')}${c.price!=null?Number(c.price).toLocaleString():'—'}<span class="pct ${cls(c.change_pct)}">${sgn(c.change_pct)}</span></div>
-    ${c.whats_new?`<div class="body">${hl(c.whats_new)}</div>`:''}
-    <span class="decode" onclick='openDecode(${JSON.stringify(c.id)})'>Fundamentals, technicals & risks →</span>`,
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'What changed & why')}`,
 
   concept: c => {
     const g = (typeof GLOSSARY!=='undefined')&&GLOSSARY[c.key];
@@ -283,15 +291,14 @@ const R = {
     return `
       <div class="meta">${catChip('learn')}<span>concept of the day</span>${c.why_today?`<span style="color:var(--amber)">★ live today</span>`:''}</div>
       <h1>${esc(g.term)}</h1>
-      <div class="body">${esc(g.one)}</div>
-      ${mootBlock(g.why,'Why it matters to you')}
-      <span class="decode" onclick='openGloss(${JSON.stringify(c.key)})'>Learn how to read it →</span>`;
+      ${mootBlock(g.one, 'In one line')}
+      ${expandBtn(`openGloss(${JSON.stringify(c.key)})`, 'Learn how to read it')}`;
   },
 
   quiz: c => `
     <div class="meta">${catChip('learn')}<span>flashback · ${esc(c.context_date)}</span></div>
     <h1 style="font-size:20px">${esc(c.context_title)}</h1>
-    <div class="body">${esc(c.question)}</div>
+    <div class="body" style="text-align:center;color:var(--dim)">${esc(c.question)}</div>
     <div class="moot veil" onclick="this.classList.add('open')">
       <div class="lbl">💡 The lesson (tap to reveal)</div>
       <div class="txt">${esc(c.answer)}</div>
@@ -300,28 +307,31 @@ const R = {
 
   outro: c => `
     <div class="meta">${catChip('markets')}<span>quick hits — also notable today</span></div>
-    ${(c.also_notable||[]).slice(0,5).map(n=>`<div class="note"><b>${esc(n.title)}</b><div class="w">${esc(n.why)}</div></div>`).join('')||'<div class="body">Nothing else cleared the bar today.</div>'}
-    <a class="decode" href="${esc(c.dashboard_url||'../')}">Open the full dashboard →</a>
+    ${(c.also_notable||[]).slice(0,4).map(n=>`<div class="note"><b>${esc(n.title)}</b><div class="w">${esc(n.why)}</div></div>`).join('')||'<div class="body">Nothing else cleared the bar today.</div>'}
+    <a class="expand" style="text-decoration:none" href="${esc(c.dashboard_url||'../')}">Open the full dashboard <span class="ar">→</span></a>
     <div class="disc">${esc(c.disclaimer)}${IS_LOCAL?' · Live refresh & any-ticker analysis available on the local dashboard.':''}</div>`
 };
 
-/* ---------- feed assembly + reading progress ---------- */
-const SECTION = {cover:'cover', divider:'divider'};   // these render outside the panel style
+/* ---------- reel assembly + Stories-style progress ---------- */
+const EXTRA = {cover:'cover', divider:'divider'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
 function render(){
   const deck = document.getElementById('deck');
-  deck.innerHTML = `<div class="feed">` + DECK.cards.map((c,i)=>
-    `<section class="${SECTION[c.type]||'card'}" data-i="${i}" style="${catStyle(cardCat(c))}">${(R[c.type]||(()=>''))(c)}</section>`
-  ).join('') + `</div>`;
+  deck.innerHTML = DECK.cards.map((c,i)=>
+    `<section class="card ${EXTRA[c.type]||''}" data-i="${i}" style="${catStyle(cardCat(c))}">${(R[c.type]||(()=>''))(c)}</section>`
+  ).join('');
 
-  // reading-progress bar tracks scroll position
-  const bar = document.getElementById('progress');
-  const onScroll = () => {
-    const max = deck.scrollHeight - deck.clientHeight;
-    bar.style.width = (max > 0 ? Math.min(100, deck.scrollTop / max * 100) : 0) + '%';
-  };
-  deck.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+  const prog = document.getElementById('progress');
+  prog.innerHTML = DECK.cards.map((_,i)=>`<i data-i="${i}"></i>`).join('');
+  const segs = [...prog.children];
+  // "on" = the card crossing the vertical middle → the progress segment tracks which reel you're on
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      const i = +e.target.dataset.i;
+      segs.forEach((s,j)=>{ s.className = j<i?'done':(j===i?'on':''); });
+    }});
+  },{rootMargin:'-45% 0px -45% 0px', threshold:0});
+  [...deck.children].forEach(el=>io.observe(el));
 
   const stale = DECK.date < todayLocal();
   document.getElementById('stamp').innerHTML =
@@ -352,9 +362,18 @@ const DEPTH_LBL = {
 };
 function sec(k,v){ return v?`<div class="sec"><div class="k">${DEPTH_LBL[k]||k}</div><div class="v">${esc(v)}</div></div>`:''; }
 
+// primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type
+const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_story:'story'};
 function openDecode(id){
-  const c = DECK.cards.find(x=>x.id===id); if(!c||!c.depth) return;
-  const d = c.depth; let h = '';
+  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+  const d = c.depth||{}; let h = '';
+  // pin the one takeaway at the very top, then the full readable narrative (numbers highlighted)
+  if(c.moot && (c.type==='story'||c.type==='watch'))
+    h += `<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(c.moot)}</div></div>`;
+  const lead = c[LEAD[c.type]];
+  if(lead) h += `<div class="lead">${hl(lead)}</div>`;
+  if(c.type==='watch' && c.what_it_means)
+    h += `<div class="sec"><div class="k">What it means for you</div><div class="v">${hl(c.what_it_means)}</div></div>`;
   if(c.thread) h += sec('previously', c.thread.previously) + (c.thread.changed?`<div class="sec"><div class="k">What changed today</div><div class="v">${esc(c.thread.changed)}</div></div>`:'');
   if(c.type==='story') h += ['background','why_it_matters','ripple_effects','why_now','watch_next','market_link'].map(k=>sec(k,d[k])).join('');
   if(c.type==='watch') h += ['why_it_matters','watch'].map(k=>sec(k,d[k])).join('');
@@ -375,8 +394,8 @@ function openDecode(id){
 
 function openCover(){
   const c = DECK.cards.find(x=>x.type==='cover'); if(!c) return;
-  let h = `<div class="sec"><div class="k">The big picture</div><div class="v">${esc(c.big_picture)}</div></div>`;
-  if(c.market_headline) h += `<div class="sec"><div class="k">Markets today</div><div class="v">${esc(c.market_headline)}</div></div>`;
+  let h = `<div class="lead">${hl(c.big_picture)}</div>`;
+  if(c.market_headline) h += `<div class="sec"><div class="k">📈 Markets today</div><div class="v">${esc(c.market_headline)}</div></div>`;
   openSheet(c.headline, h, 'markets');
 }
 
