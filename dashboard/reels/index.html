@@ -21,11 +21,12 @@
     --up:#3fb950; --down:#f4685f;
     --geopolitics:#f4685f; --economy:#3fb950; --technology:#a970ff; --science:#2dd4bf;
     --health:#f472b6; --climate:#5cc98a; --india:#ff9933; --markets:#5b9dff; --learn:#f5b942;
-    /* clean & friendly: native rounded headings, neutral sans body (no downloads) */
+    /* native fonts (no downloads): rounded headings, neutral sans UI, editorial serif for reading */
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --round:ui-rounded,"SF Pro Rounded",-apple-system,"Segoe UI",Roboto,sans-serif;
-    /* clears the fixed progress bar (6px) + header (15px) + notch, with breathing room */
-    --deck-top:calc(env(safe-area-inset-top) + 44px);
+    --serif:ui-serif,"New York",Georgia,Cambria,"Times New Roman",serif;
+    /* clears the progress segments + header (with the World/Markets toggle) + notch */
+    --deck-top:calc(env(safe-area-inset-top) + 58px);
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
   html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--txt);
@@ -53,7 +54,12 @@
   #hdr{position:fixed;top:calc(env(safe-area-inset-top) + 14px);left:12px;right:12px;z-index:30;
     display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11.5px;color:var(--dim)}
   #hdr .stale{color:var(--amber)}
-  #hdr a{color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:4px 11px;background:rgba(11,15,23,.55)}
+  #hdr a.dash{color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:6px 11px;background:rgba(11,15,23,.55);font-weight:600}
+  /* World / Markets segmented toggle — the two pillars, cleanly separated */
+  #tabs{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:3px;gap:2px}
+  #tabs button{font-family:var(--round);font-size:13px;font-weight:700;color:var(--dim);cursor:pointer;
+    border:none;background:none;border-radius:99px;padding:7px 14px;min-height:34px;display:inline-flex;align-items:center;gap:5px}
+  #tabs button.on{color:#fff;background:linear-gradient(135deg, var(--tabcat,var(--accent)), color-mix(in srgb, var(--tabcat,var(--accent)) 62%, #000))}
 
   /* cover / divider centered */
   .cover,.divider{text-align:center}
@@ -151,12 +157,13 @@
     border-radius:13px;padding:13px 15px;margin:6px 0 16px}
   .sheetmoot .lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:6px}
   .sheetmoot .txt{font-family:var(--round);font-size:16px;font-weight:700;line-height:1.5}
-  /* the main narrative — big, comfortable reading */
-  .lead{font-size:17px;line-height:1.66;color:#e7edf5;margin:2px 0 18px}
-  .sec{margin:16px 0}
-  .sec .k{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:5px}
-  .sec .v{font-size:15.5px;line-height:1.6;color:#d3dbe6}
-  .kt{border-left:3px solid var(--line);padding:4px 10px;margin:7px 0;font-size:14px;line-height:1.5}
+  /* the main narrative — an editorial serif at a comfortable size for real reading */
+  .lead{font-family:var(--serif);font-size:19px;line-height:1.72;color:#eef2f8;margin:4px 0 20px;letter-spacing:.1px}
+  .sec{margin:18px 0;padding-top:16px;border-top:1px solid var(--line)}
+  .sec .k{font-family:var(--round);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cat,var(--accent));margin-bottom:7px}
+  .sec .v{font-family:var(--serif);font-size:17px;line-height:1.68;color:#dbe3ee}
+  .kt{border-left:3px solid var(--line);padding:5px 11px;margin:9px 0;font-size:15px;line-height:1.55}
+  .lead mark,.sec .v mark{font-family:var(--sans);font-size:.9em}   /* numbers read cleaner in sans */
   .kt b{color:var(--txt)}
   .src{font-size:13px;margin:4px 0}
   .one{color:var(--dim);font-size:14px;margin-bottom:8px}
@@ -169,7 +176,13 @@
 <body>
 
 <div id="progress"></div>
-<div id="hdr"><span id="stamp"></span><a href="../">Dashboard →</a></div>
+<div id="hdr">
+  <div id="tabs">
+    <button data-p="world" onclick="setPillar('world')">🌍 World</button>
+    <button data-p="markets" onclick="setPillar('markets')">📈 Markets</button>
+  </div>
+  <a class="dash" href="../">Dashboard →</a>
+</div>
 <div id="deck"></div>
 <div id="empty"><div><div style="font-size:40px">📭</div>No deck yet for today.<br>Run the daily pipeline, then reload.</div></div>
 
@@ -242,6 +255,8 @@ const expandBtn = (onclick, label) => `<button class="expand" onclick='${onclick
 const R = {
   cover: c => `
     <div class="daylbl">${esc(DECK.day_label||DECK.date)}</div>
+    <div style="font-size:12px;color:${DECK.date<todayLocal()?'var(--amber)':'var(--dim)'};margin-top:-8px">
+      ${DECK.date<todayLocal()?'⏳ yesterday\'s deck · ':''}updated ${esc(relTime(DECK.generated_at))}</div>
     <h1 class="big">${esc(c.headline)}</h1>
     <div class="counts"><span><b>${c.counts.stories}</b>world</span><span><b>${c.counts.markets}</b>markets</span><span><b>${c.counts.learn}</b>learn</span></div>
     ${c.big_picture?expandBtn('openCover()', 'The big picture'):''}
@@ -315,14 +330,29 @@ const R = {
 /* ---------- reel assembly + Stories-style progress ---------- */
 const EXTRA = {cover:'cover', divider:'divider'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
+// which pillar each card belongs to — the two decks are shown separately via the top toggle
+const PILLAR = {cover:'world', story:'world', quiz:'world', outro:'world',
+  divider:'markets', market_story:'markets', board:'markets', watch:'markets', favorite:'markets', concept:'markets'};
+let PILLARSEL = 'world';
+
+function setPillar(p){
+  if(!DECK) return;
+  PILLARSEL = p;
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on', b.dataset.p===p));
+  document.getElementById('tabs').style.setProperty('--tabcat', `var(--${p==='world'?'geopolitics':'markets'})`);
+  render();
+  document.getElementById('deck').scrollTo(0,0);
+}
+
 function render(){
   const deck = document.getElementById('deck');
-  deck.innerHTML = DECK.cards.map((c,i)=>
+  const cards = DECK.cards.filter(c => PILLAR[c.type]===PILLARSEL);
+  deck.innerHTML = cards.map((c,i)=>
     `<section class="card ${EXTRA[c.type]||''}" data-i="${i}" style="${catStyle(cardCat(c))}">${(R[c.type]||(()=>''))(c)}</section>`
   ).join('');
 
   const prog = document.getElementById('progress');
-  prog.innerHTML = DECK.cards.map((_,i)=>`<i data-i="${i}"></i>`).join('');
+  prog.innerHTML = cards.map((_,i)=>`<i data-i="${i}"></i>`).join('');
   const segs = [...prog.children];
   // "on" = the card crossing the vertical middle → the progress segment tracks which reel you're on
   const io = new IntersectionObserver(es=>{
@@ -332,10 +362,6 @@ function render(){
     }});
   },{rootMargin:'-45% 0px -45% 0px', threshold:0});
   [...deck.children].forEach(el=>io.observe(el));
-
-  const stale = DECK.date < todayLocal();
-  document.getElementById('stamp').innerHTML =
-    `<span class="${stale?'stale':''}">${esc(DECK.day_label||DECK.date)}${stale?' · ⏳ yesterday\'s deck':''} · ${relTime(DECK.generated_at)}</span>`;
 }
 
 /* ---------- bottom sheet ---------- */
@@ -421,7 +447,7 @@ function openGloss(key){
 /* ---------- boot ---------- */
 fetch('../reels.json')
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
-  .then(d=>{ DECK=d; render(); })
+  .then(d=>{ DECK=d; setPillar('world'); })   // default to the World deck
   .catch(()=>{ document.getElementById('empty').style.display='flex'; });
 
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
