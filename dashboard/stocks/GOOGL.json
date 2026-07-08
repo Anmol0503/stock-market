@@ -2,45 +2,42 @@
   "ticker": "GOOGL",
   "name": "Alphabet",
   "currency": "$",
-  "as_of": "2026-07-08T11:28:58+05:30",
-  "price": 367.03,
-  "change_pct": 0.16,
+  "as_of": "2026-07-09T00:16:48+05:30",
+  "price": 358.8,
+  "change_pct": -2.24,
   "verdict": {
-    "rating": "Strong Buy",
-    "score": 0.5,
-    "summary": "Alphabet is rated **Strong Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 54). MACD is bullish. Trend strength is weak; it sits at the 84th percentile of its 52-week range."
+    "rating": "Neutral",
+    "score": 0.125,
+    "summary": "Alphabet is rated **Neutral** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 48). MACD is bullish. Trend strength is weak; it sits at the 81th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Alphabet is moving sideways, and the full indicator suite reads Strong Buy. Price is caught between its 50-day ($372) and 200-day ($317) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 15) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 54 (neutral). It's trading in the 84th percentile of its 52-week range, and day-to-day volatility is normal (~3.0% a day).",
+    "the_read": "Alphabet is moving sideways, and the full indicator suite reads Neutral. Price is caught between its 50-day ($372) and 200-day ($318) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 15) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 48 (neutral). It's trading in the 81th percentile of its 52-week range, and day-to-day volatility is normal (~3.1% a day).",
     "bull_case": [
-      "9 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact.",
       "Trading near its 52-week high \u2014 strong relative strength."
     ],
     "bear_case": [
-      "Caught between its 50- and 200-day averages \u2014 no clear trend yet.",
-      "Stochastic %K is overbought \u2014 a short-term caution signal.",
-      "Williams %R is overbought \u2014 a short-term caution signal."
+      "Caught between its 50- and 200-day averages \u2014 no clear trend yet."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$372) would be the first sign the downtrend is turning up. First resistance to clear overhead: $372. First support that needs to hold: $364.",
-    "fundamentals_read": "Alphabet is a mega-cap company in Communication Services, worth about $4.48T. It trades at a P/E of 28 (on the rich side); the lower forward P/E of 25 suggests profits are expected to grow. Revenue is growing about 22% a year, and it keeps roughly 38\u00a2 of every sales dollar as profit. With a beta of 1.25, it's more volatile than the market. It pays a dividend yielding 0.2%."
+    "what_would_flip": "A daily close back above the 50-day average (~$372) would be the first sign the downtrend is turning up. First resistance to clear overhead: $365. First support that needs to hold: $355.",
+    "fundamentals_read": "Alphabet is a mega-cap company in Communication Services, worth about $4.38T. It trades at a P/E of 27 (on the rich side); the lower forward P/E of 25 suggests profits are expected to grow. Revenue is growing about 22% a year, and it keeps roughly 38\u00a2 of every sales dollar as profit. With a beta of 1.25, it's more volatile than the market. It pays a dividend yielding 0.2%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Strong Buy",
-      "buy": 9,
-      "sell": 1
+      "rating": "Neutral",
+      "buy": 5,
+      "sell": 5
     },
     "oscillators": {
-      "rating": "Neutral",
+      "rating": "Buy",
       "buy": 2,
-      "sell": 2
+      "sell": 0
     }
   },
   "trend": {
     "direction": "Sideways",
     "strength": "Weak",
-    "adx": 15.44,
+    "adx": 14.72,
     "vs_50dma": "below",
     "vs_200dma": "above"
   },
@@ -48,70 +45,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 353.81,
+        "value": 355.08,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 358.18,
+        "value": 357.96,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 364.42,
+        "value": 363.62,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 372.08,
+        "value": 372.36,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 340.48,
+        "value": 340.96,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 317.32,
+        "value": 317.85,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 359.31,
+        "value": 359.22,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 360.46,
+        "value": 360.31,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 359.39,
+        "value": 359.36,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 315.45,
+        "value": 315.88,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
@@ -120,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 54.0,
+        "value": 48.26,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "54 \u2014 neutral momentum, no extreme"
+        "note": "48 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -2.217,
+        "value": -2.083,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 80.41,
+        "value": 66.57,
         "metric": "stochastic",
-        "signal": "Sell",
-        "note": "closing near its recent highs \u2014 overbought"
+        "signal": "Neutral",
+        "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 55.8,
+        "value": 21.47,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -19.59,
+        "value": -33.43,
         "metric": "williams_r",
-        "signal": "Sell",
-        "note": "near its recent highs \u2014 overbought"
+        "signal": "Neutral",
+        "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 17.35,
+        "value": 12.67,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -163,45 +160,39 @@
     ]
   },
   "levels": {
-    "pivot": 368.56,
+    "pivot": 361.55,
     "resistance": [
-      371.63,
-      376.22
+      365.07,
+      371.35
     ],
     "support": [
-      363.97,
-      360.9
+      355.27,
+      351.75
     ]
   },
   "range_52w": {
     "low": 174.36,
     "high": 402.62,
-    "position_pct": 84.4
+    "position_pct": 80.8
   },
   "volatility": {
-    "atr": 11.18,
-    "atr_pct": 3.05,
-    "bollinger_pctb": 0.73,
+    "atr": 11.08,
+    "atr_pct": 3.09,
+    "bollinger_pctb": 0.52,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Communication Services",
     "industry": "Internet Content & Information",
-    "marketCap": 4478710317056,
-    "trailingPE": 27.932266,
-    "forwardPE": 25.21207,
+    "marketCap": 4378405109760,
+    "trailingPE": 27.390076,
+    "forwardPE": 24.647064,
     "profitMargins": 0.37919,
     "revenueGrowth": 0.218,
     "dividendYield": 0.24,
     "beta": 1.247
   },
   "history": [
-    {
-      "d": "2025-10-16",
-      "c": 251.46,
-      "m50": 230.18,
-      "m200": 188.82
-    },
     {
       "d": "2025-10-17",
       "c": 253.3,
@@ -1275,6 +1266,12 @@
       "c": 367.03,
       "m50": 372.08,
       "m200": 317.32
+    },
+    {
+      "d": "2026-07-08",
+      "c": 358.8,
+      "m50": 372.36,
+      "m200": 317.85
     }
   ],
   "whats_new": "",

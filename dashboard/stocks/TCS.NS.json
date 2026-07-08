@@ -2,195 +2,121 @@
   "ticker": "TCS.NS",
   "name": "TCS",
   "currency": "\u20b9",
-  "as_of": "2026-07-08T11:31:45+05:30",
-  "price": 2097.0,
-  "change_pct": 0.04,
+  "as_of": "2026-07-09T00:16:53+05:30",
+  "price": NaN,
+  "change_pct": NaN,
   "verdict": {
-    "rating": "Sell",
-    "score": -0.375,
-    "summary": "TCS is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 45). MACD is bullish. Trend strength is moderate; it sits at the 8th percentile of its 52-week range."
+    "rating": "Buy",
+    "score": 0.167,
+    "summary": "TCS is rated **Buy** on the technical suite. Momentum is neutral (RSI 45). MACD is bullish. Trend strength is moderate; it sits at the nanth percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "TCS is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day (\u20b92232) and 200-day (\u20b92748) averages \u2014 a textbook downtrend. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 45 (neutral). It's trading in the 8th percentile of its 52-week range, and day-to-day volatility is normal (~2.8% a day).",
+    "the_read": "TCS is in an unclear trend, and the full indicator suite reads Buy. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 45 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
-    "bear_case": [
-      "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "8 of 10 moving averages are bearish (price is below them).",
-      "Trading near its 52-week low \u2014 weak, though it may be oversold value."
-    ],
-    "what_would_flip": "A daily close back above the 50-day average (~\u20b92232) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b92113. First support that needs to hold: \u20b92077.",
-    "fundamentals_read": "TCS is a mega-cap company in Technology, worth about \u20b97.59T. It trades at a P/E of 15 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 10% a year, and it keeps roughly 18\u00a2 of every sales dollar as profit. With a beta of 0.24, it's steadier than the market. It pays a dividend yielding 6.0%."
+    "bear_case": [],
+    "what_would_flip": "First resistance to clear overhead: \u20b9nan. First support that needs to hold: \u20b9nan.",
+    "fundamentals_read": "TCS is a mega-cap company in Technology, worth about \u20b97.44T. It trades at a P/E of 15 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 10% a year, and it keeps roughly 18\u00a2 of every sales dollar as profit. With a beta of 0.24, it's steadier than the market. It pays a dividend yielding 5.9%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Strong Sell",
-      "buy": 2,
-      "sell": 8
+      "rating": "Neutral",
+      "buy": 0,
+      "sell": 0
     },
     "oscillators": {
-      "rating": "Neutral",
+      "rating": "Strong Buy",
       "buy": 1,
-      "sell": 1
+      "sell": 0
     }
   },
   "trend": {
-    "direction": "Downtrend",
+    "direction": "Unclear",
     "strength": "Moderate",
     "adx": 24.71,
-    "vs_50dma": "below",
-    "vs_200dma": "below"
+    "vs_50dma": null,
+    "vs_200dma": null
   },
   "indicators": {
     "moving_averages": [
       {
-        "name": "SMA 10",
-        "value": 2071.37,
-        "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
-      },
-      {
-        "name": "SMA 20",
-        "value": 2110.97,
-        "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
-      },
-      {
-        "name": "SMA 30",
-        "value": 2154.82,
-        "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
-      },
-      {
-        "name": "SMA 50",
-        "value": 2232.18,
-        "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
-      },
-      {
-        "name": "SMA 100",
-        "value": 2380.37,
-        "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
-      },
-      {
-        "name": "SMA 200",
-        "value": 2747.7,
-        "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
-      },
-      {
         "name": "EMA 10",
-        "value": 2084.63,
+        "value": 2081.89,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Neutral",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 2115.51,
+        "value": 2117.45,
         "metric": "ema",
-        "signal": "Bearish",
+        "signal": "Neutral",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 2226.71,
+        "value": 2232.0,
         "metric": "ema",
-        "signal": "Bearish",
+        "signal": "Neutral",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 2673.69,
+        "value": 2679.48,
         "metric": "ema",
-        "signal": "Bearish",
+        "signal": "Neutral",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       }
     ],
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 44.99,
+        "value": 44.88,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "45 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -48.068,
+        "value": -52.687,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
-      },
-      {
-        "name": "Stochastic %K (14,3)",
-        "value": 66.7,
-        "metric": "stochastic",
-        "signal": "Neutral",
-        "note": "closing in the middle of its recent range"
-      },
-      {
-        "name": "CCI (20)",
-        "value": -15.41,
-        "metric": "cci",
-        "signal": "Neutral",
-        "note": "close to its recent average \u2014 no extreme"
-      },
-      {
-        "name": "Williams %R (14)",
-        "value": -33.3,
-        "metric": "williams_r",
-        "signal": "Neutral",
-        "note": "mid-range \u2014 no extreme"
-      },
-      {
-        "name": "Momentum (10)",
-        "value": -12.0,
-        "metric": "momentum",
-        "signal": "Sell",
-        "note": "price is lower than 10 days ago \u2014 downward momentum"
       }
     ]
   },
   "levels": {
-    "pivot": 2093.57,
+    "pivot": NaN,
     "resistance": [
-      2113.13,
-      2129.27
+      NaN,
+      NaN
     ],
     "support": [
-      2077.43,
-      2057.87
+      NaN,
+      NaN
     ]
   },
   "range_52w": {
     "low": 1982.6,
     "high": 3419.8,
-    "position_pct": 8.0
+    "position_pct": NaN
   },
   "volatility": {
-    "atr": 58.15,
-    "atr_pct": 2.77,
-    "bollinger_pctb": 0.44,
+    "atr": 59.95,
+    "atr_pct": NaN,
+    "bollinger_pctb": null,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Information Technology Services",
-    "marketCap": 7587129458688,
-    "trailingPE": 15.13533,
-    "forwardPE": 12.801104,
+    "marketCap": 7444214841344,
+    "trailingPE": 15.1242285,
+    "forwardPE": 12.559977,
     "profitMargins": 0.18429,
     "revenueGrowth": 0.096,
-    "dividendYield": 6.03,
+    "dividendYield": 5.92,
     "beta": 0.241
   },
   "history": [
@@ -1270,9 +1196,9 @@
     },
     {
       "d": "2026-07-08",
-      "c": 2097.0,
-      "m50": 2232.18,
-      "m200": 2747.7
+      "c": NaN,
+      "m50": null,
+      "m200": null
     }
   ],
   "whats_new": "",

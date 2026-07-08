@@ -2,33 +2,33 @@
   "ticker": "BTC-USD",
   "name": "Bitcoin",
   "currency": "$",
-  "as_of": "2026-07-08T11:31:47+05:30",
-  "price": 62537.72,
-  "change_pct": -2.28,
+  "as_of": "2026-07-09T00:16:55+05:30",
+  "price": 62096.03,
+  "change_pct": -1.9,
   "verdict": {
-    "rating": "Neutral",
-    "score": 0.0,
-    "summary": "Bitcoin is rated **Neutral** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 48). MACD is bullish. Trend strength is strong; it sits at the 8th percentile of its 52-week range."
+    "rating": "Sell",
+    "score": -0.25,
+    "summary": "Bitcoin is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 46). MACD is bullish. Trend strength is strong; it sits at the 7th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Bitcoin is in a downtrend, and the full indicator suite reads Neutral. Price is below both its 50-day ($66196) and 200-day ($74478) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 28) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 48 (neutral). It's trading in the 8th percentile of its 52-week range, and day-to-day volatility is normal (~3.4% a day).",
+    "the_read": "Bitcoin is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day ($65919) and 200-day ($74351) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 28) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 46 (neutral). It's trading in the 7th percentile of its 52-week range, and day-to-day volatility is normal (~3.5% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "6 of 10 moving averages are bearish (price is below them).",
+      "8 of 10 moving averages are bearish (price is below them).",
       "Trend strength is strong (ADX 28) and pointing down \u2014 down-moves tend to persist.",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$66196) would be the first sign the downtrend is turning up. First resistance to clear overhead: $63289. First support that needs to hold: $62167.",
-    "fundamentals_read": "Bitcoin is a mega-cap company, worth about $1.26T."
+    "what_would_flip": "A daily close back above the 50-day average (~$65919) would be the first sign the downtrend is turning up. First resistance to clear overhead: $63341. First support that needs to hold: $61180.",
+    "fundamentals_read": "Bitcoin is a mega-cap company, worth about $1.24T."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Sell",
-      "buy": 4,
-      "sell": 6
+      "rating": "Strong Sell",
+      "buy": 2,
+      "sell": 8
     },
     "oscillators": {
       "rating": "Buy",
@@ -39,7 +39,7 @@
   "trend": {
     "direction": "Downtrend",
     "strength": "Strong",
-    "adx": 28.38,
+    "adx": 27.96,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -47,70 +47,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 61543.18,
+        "value": 61875.51,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 61831.99,
+        "value": 61829.95,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 62545.6,
+        "value": 62537.77,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 66196.43,
+        "value": 65918.53,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 70916.2,
+        "value": 70877.84,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 74478.39,
+        "value": 74350.95,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 62265.93,
+        "value": 62348.05,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 62505.88,
+        "value": 62532.31,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 65598.2,
+        "value": 65489.49,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 75398.43,
+        "value": 75273.55,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -119,42 +119,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 47.5,
+        "value": 45.68,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "48 \u2014 neutral momentum, no extreme"
+        "note": "46 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -852.366,
+        "value": -751.137,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 69.93,
+        "value": 63.48,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 42.3,
+        "value": 25.16,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -30.07,
+        "value": -36.52,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 2597.62,
+        "value": 2563.69,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -162,37 +162,31 @@
     ]
   },
   "levels": {
-    "pivot": 62918.43,
+    "pivot": 62425.03,
     "resistance": [
-      63289.14,
-      64040.56
+      63340.85,
+      64585.67
     ],
     "support": [
-      62167.01,
-      61796.3
+      61180.21,
+      60264.4
     ]
   },
   "range_52w": {
     "low": 58558.86,
     "high": 110639.62,
-    "position_pct": 7.6
+    "position_pct": 6.8
   },
   "volatility": {
-    "atr": 2148.43,
-    "atr_pct": 3.44,
-    "bollinger_pctb": 0.6,
+    "atr": 2161.67,
+    "atr_pct": 3.48,
+    "bollinger_pctb": 0.54,
     "label": "Normal"
   },
   "fundamentals": {
-    "marketCap": 1255132758016
+    "marketCap": 1244170551296
   },
   "history": [
-    {
-      "d": "2026-01-09",
-      "c": 90513.1,
-      "m50": 89280.01,
-      "m200": 106421.58
-    },
     {
       "d": "2026-01-10",
       "c": 90386.65,
@@ -1262,18 +1256,24 @@
       "m200": 74606.22
     },
     {
+      "d": "2026-07-07",
+      "c": 63297.39,
+      "m50": 66211.62,
+      "m200": 74482.19
+    },
+    {
       "d": "2026-07-08",
-      "c": 62537.72,
-      "m50": 66196.43,
-      "m200": 74478.39
+      "c": 62096.03,
+      "m50": 65918.53,
+      "m200": 74350.95
     }
   ],
-  "whats_new": "Lost the $63k support it had reclaimed, falling \u22122.28% to ~$62,538 near a one-year low as ETF outflows and a risk-off tape (Hormuz oil spike, US chip selloff) weighed. The bigger downtrend is unchanged.",
+  "whats_new": "Fell another -1.9% to ~$62,096, sliding toward fresh one-year lows as the war-driven risk-off tape, steady ETF outflows and a no-cut Fed all weighed. Its technical rating slipped to Sell (from Neutral), confirming the downtrend rather than a dip to buy.",
   "news": [
     {
-      "headline": "Bitcoin falls below $63,000 as ETF outflows persist",
-      "url": "https://www.ccn.com/news/crypto/bitcoin-price-falls-below-63000-why-head-lower/",
-      "source": "CCN"
+      "headline": "Bitcoin under pressure as US-Iran escalation lifts oil",
+      "url": "https://www.coindesk.com/markets/2026/07/08/bitcoin-under-pressure-as-u-s-iran-escalation-lifts-oil",
+      "source": "CoinDesk"
     }
   ],
   "disclaimer": "Technical signals are rules-based and informational only \u2014 not financial advice."
