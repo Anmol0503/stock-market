@@ -2,25 +2,24 @@
   "ticker": "^GSPC",
   "name": "S&P 500",
   "currency": "$",
-  "as_of": "2026-07-06T17:53:47+05:30",
-  "price": 7483.24,
-  "change_pct": 0.0,
+  "as_of": "2026-07-08T11:28:53+05:30",
+  "price": 7503.85,
+  "change_pct": -0.45,
   "verdict": {
     "rating": "Strong Buy",
-    "score": 0.625,
-    "summary": "S&P 500 is rated **Strong Buy** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 55). MACD is bearish. Trend strength is weak; it sits at the 91th percentile of its 52-week range."
+    "score": 0.75,
+    "summary": "S&P 500 is rated **Strong Buy** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 55). MACD is bullish. Trend strength is weak; it sits at the 92th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "S&P 500 is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($7395) and 200-day ($6943) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is weak (ADX 19) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 55 (neutral). It's trading in the 91th percentile of its 52-week range, and day-to-day volatility is normal (~1.3% a day).",
+    "the_read": "S&P 500 is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($7411) and 200-day ($6952) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is weak (ADX 18) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 55 (neutral). It's trading in the 92th percentile of its 52-week range, and day-to-day volatility is normal (~1.2% a day).",
     "bull_case": [
       "Trades above both its 50- and 200-day averages \u2014 a confirmed uptrend.",
       "10 of 10 moving averages are bullish (price is above them).",
+      "MACD momentum is positive \u2014 the bullish crossover is intact.",
       "Trading near its 52-week high \u2014 strong relative strength."
     ],
-    "bear_case": [
-      "MACD momentum is negative \u2014 momentum is fading."
-    ],
-    "what_would_flip": "A daily close below the 50-day average (~$7395) would warn the uptrend is stalling. First resistance to clear overhead: $7540. First support that needs to hold: $7427.",
+    "bear_case": [],
+    "what_would_flip": "A daily close below the 50-day average (~$7411) would warn the uptrend is stalling. First resistance to clear overhead: $7534. First support that needs to hold: $7476.",
     "fundamentals_read": ""
   },
   "signals": {
@@ -30,15 +29,15 @@
       "sell": 0
     },
     "oscillators": {
-      "rating": "Neutral",
-      "buy": 1,
-      "sell": 1
+      "rating": "Buy",
+      "buy": 2,
+      "sell": 0
     }
   },
   "trend": {
     "direction": "Uptrend",
     "strength": "Weak",
-    "adx": 19.08,
+    "adx": 17.59,
     "vs_50dma": "above",
     "vs_200dma": "above"
   },
@@ -46,70 +45,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 7431.48,
+        "value": 7438.27,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 7432.69,
+        "value": 7436.35,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 7465.08,
+        "value": 7470.5,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 7394.74,
+        "value": 7410.64,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 7086.37,
+        "value": 7097.72,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 6942.91,
+        "value": 6952.08,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 7446.28,
+        "value": 7470.31,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 7438.57,
+        "value": 7453.31,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 7343.06,
+        "value": 7356.69,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 6935.23,
+        "value": 6947.06,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
@@ -118,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 54.74,
+        "value": 55.4,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "55 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 17.557,
+        "value": 25.492,
         "metric": "macd",
-        "signal": "Sell",
-        "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
+        "signal": "Buy",
+        "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 66.63,
+        "value": 77.43,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 46.39,
+        "value": 64.79,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -33.37,
+        "value": -22.57,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 63.14,
+        "value": 31.06,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -161,41 +160,29 @@
     ]
   },
   "levels": {
-    "pivot": 7483.85,
+    "pivot": 7506.18,
     "resistance": [
-      7540.14,
-      7597.05
+      7533.73,
+      7563.61
     ],
     "support": [
-      7426.94,
-      7370.65
+      7476.3,
+      7448.75
     ]
   },
   "range_52w": {
     "low": 6225.52,
     "high": 7609.78,
-    "position_pct": 90.9
+    "position_pct": 92.3
   },
   "volatility": {
-    "atr": 95.58,
-    "atr_pct": 1.28,
-    "bollinger_pctb": 0.66,
+    "atr": 91.13,
+    "atr_pct": 1.21,
+    "bollinger_pctb": 0.73,
     "label": "Normal"
   },
   "fundamentals": {},
   "history": [
-    {
-      "d": "2025-10-14",
-      "c": 6644.31,
-      "m50": 6544.44,
-      "m200": 6055.93
-    },
-    {
-      "d": "2025-10-15",
-      "c": 6671.06,
-      "m50": 6551.88,
-      "m200": 6059.1
-    },
     {
       "d": "2025-10-16",
       "c": 6629.07,
@@ -1263,6 +1250,18 @@
       "c": 7483.24,
       "m50": 7394.74,
       "m200": 6942.91
+    },
+    {
+      "d": "2026-07-06",
+      "c": 7537.43,
+      "m50": 7402.74,
+      "m200": 6947.56
+    },
+    {
+      "d": "2026-07-07",
+      "c": 7503.85,
+      "m50": 7410.64,
+      "m200": 6952.08
     }
   ],
   "whats_new": "",

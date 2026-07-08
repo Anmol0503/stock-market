@@ -2,42 +2,44 @@
   "ticker": "AMZN",
   "name": "Amazon",
   "currency": "$",
-  "as_of": "2026-07-06T17:53:55+05:30",
-  "price": 242.67,
-  "change_pct": 0.4,
+  "as_of": "2026-07-08T11:28:59+05:30",
+  "price": 245.98,
+  "change_pct": 0.75,
   "verdict": {
     "rating": "Buy",
     "score": 0.375,
-    "summary": "Amazon is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 49). MACD is bullish. Trend strength is strong; it sits at the 58th percentile of its 52-week range."
+    "summary": "Amazon is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 52). MACD is bullish. Trend strength is moderate; it sits at the 62th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Amazon is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day ($255) and 200-day ($233) averages, so the trend is transitional and could break either way. Trend strength is strong (ADX 27) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 49 (neutral). It's trading in the 58th percentile of its 52-week range, and day-to-day volatility is normal (~3.4% a day).",
+    "the_read": "Amazon is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day ($255) and 200-day ($233) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 52 (neutral). It's trading in the 62th percentile of its 52-week range, and day-to-day volatility is normal (~3.2% a day).",
     "bull_case": [
-      "7 of 10 moving averages are bullish (price is above them).",
+      "8 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
-      "Caught between its 50- and 200-day averages \u2014 no clear trend yet."
+      "Caught between its 50- and 200-day averages \u2014 no clear trend yet.",
+      "Stochastic %K is overbought \u2014 a short-term caution signal.",
+      "Williams %R is overbought \u2014 a short-term caution signal."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$255) would be the first sign the downtrend is turning up. First resistance to clear overhead: $246. First support that needs to hold: $240.",
-    "fundamentals_read": "Amazon is a mega-cap company in Consumer Cyclical, worth about $2.61T. It trades at a P/E of 32 (on the rich side); the lower forward P/E of 25 suggests profits are expected to grow. Revenue is growing about 17% a year, and it keeps roughly 12\u00a2 of every sales dollar as profit. With a beta of 1.46, it's more volatile than the market."
+    "what_would_flip": "A daily close back above the 50-day average (~$255) would be the first sign the downtrend is turning up. First resistance to clear overhead: $249. First support that needs to hold: $243.",
+    "fundamentals_read": "Amazon is a mega-cap company in Consumer Cyclical, worth about $2.65T. It trades at a P/E of 32 (on the rich side); the lower forward P/E of 25 suggests profits are expected to grow. Revenue is growing about 17% a year, and it keeps roughly 12\u00a2 of every sales dollar as profit. With a beta of 1.46, it's more volatile than the market."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Buy",
-      "buy": 7,
-      "sell": 3
+      "rating": "Strong Buy",
+      "buy": 8,
+      "sell": 2
     },
     "oscillators": {
-      "rating": "Buy",
+      "rating": "Neutral",
       "buy": 2,
-      "sell": 0
+      "sell": 2
     }
   },
   "trend": {
     "direction": "Sideways",
-    "strength": "Strong",
-    "adx": 26.95,
+    "strength": "Moderate",
+    "adx": 24.66,
     "vs_50dma": "below",
     "vs_200dma": "above"
   },
@@ -45,70 +47,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 236.81,
+        "value": 238.11,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 240.25,
+        "value": 239.76,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 248.48,
+        "value": 247.03,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 255.42,
+        "value": 255.01,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 235.48,
+        "value": 236.23,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 232.98,
+        "value": 233.1,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 239.07,
+        "value": 241.09,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 242.14,
+        "value": 242.68,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 245.56,
+        "value": 245.52,
         "metric": "ema",
-        "signal": "Bearish",
-        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 234.37,
+        "value": 234.59,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
@@ -117,42 +119,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 48.7,
+        "value": 51.72,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "49 \u2014 neutral momentum, no extreme"
+        "note": "52 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -4.386,
+        "value": -2.955,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 70.86,
+        "value": 84.56,
         "metric": "stochastic",
-        "signal": "Neutral",
-        "note": "closing in the middle of its recent range"
+        "signal": "Sell",
+        "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 14.06,
+        "value": 32.66,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -29.14,
+        "value": -15.44,
         "metric": "williams_r",
-        "signal": "Neutral",
-        "note": "mid-range \u2014 no extreme"
+        "signal": "Sell",
+        "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 5.17,
+        "value": 13.19,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -160,50 +162,38 @@
     ]
   },
   "levels": {
-    "pivot": 243.49,
+    "pivot": 245.87,
     "resistance": [
-      245.9,
-      249.13
+      249.04,
+      252.1
     ],
     "support": [
-      240.26,
-      237.85
+      242.81,
+      239.64
     ]
   },
   "range_52w": {
     "low": 198.79,
     "high": 274.99,
-    "position_pct": 57.6
+    "position_pct": 61.9
   },
   "volatility": {
-    "atr": 8.21,
-    "atr_pct": 3.38,
-    "bollinger_pctb": 0.6,
+    "atr": 7.87,
+    "atr_pct": 3.2,
+    "bollinger_pctb": 0.79,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Consumer Cyclical",
     "industry": "Internet Retail",
-    "marketCap": 2610427854848,
-    "trailingPE": 31.638851,
-    "forwardPE": 24.505909,
+    "marketCap": 2646033825792,
+    "trailingPE": 31.657658,
+    "forwardPE": 24.840168,
     "profitMargins": 0.12224,
     "revenueGrowth": 0.166,
     "beta": 1.461
   },
   "history": [
-    {
-      "d": "2025-10-14",
-      "c": 216.39,
-      "m50": 225.85,
-      "m200": 214.39
-    },
-    {
-      "d": "2025-10-15",
-      "c": 215.57,
-      "m50": 225.89,
-      "m200": 214.33
-    },
     {
       "d": "2025-10-16",
       "c": 214.47,
@@ -1271,6 +1261,18 @@
       "c": 242.67,
       "m50": 255.42,
       "m200": 232.98
+    },
+    {
+      "d": "2026-07-06",
+      "c": 244.16,
+      "m50": 255.19,
+      "m200": 233.03
+    },
+    {
+      "d": "2026-07-07",
+      "c": 245.98,
+      "m50": 255.01,
+      "m200": 233.1
     }
   ],
   "whats_new": "",

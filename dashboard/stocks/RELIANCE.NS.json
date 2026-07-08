@@ -2,42 +2,44 @@
   "ticker": "RELIANCE.NS",
   "name": "Reliance Industries",
   "currency": "\u20b9",
-  "as_of": "2026-07-06T17:53:58+05:30",
-  "price": 1321.3,
-  "change_pct": 1.33,
+  "as_of": "2026-07-08T11:31:45+05:30",
+  "price": 1292.2,
+  "change_pct": -1.24,
   "verdict": {
-    "rating": "Neutral",
-    "score": 0.0,
-    "summary": "Reliance Industries is rated **Neutral** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 52). MACD is bullish. Trend strength is weak; it sits at the 19th percentile of its 52-week range."
+    "rating": "Strong Sell",
+    "score": -0.562,
+    "summary": "Reliance Industries is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 43). MACD is bullish. Trend strength is weak; it sits at the 10th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Reliance Industries is in a downtrend, and the full indicator suite reads Neutral. Price is below both its 50-day (\u20b91342) and 200-day (\u20b91418) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 52 (neutral). It's trading in the 19th percentile of its 52-week range, and day-to-day volatility is normal (~1.7% a day).",
+    "the_read": "Reliance Industries is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day (\u20b91338) and 200-day (\u20b91417) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 15) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 43 (neutral). It's trading in the 10th percentile of its 52-week range, and day-to-day volatility is normal (~1.8% a day).",
     "bull_case": [
-      "MACD momentum is positive \u2014 the bullish crossover is intact."
+      "MACD momentum is positive \u2014 the bullish crossover is intact.",
+      "CCI is oversold \u2014 a short-term bounce signal."
     ],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
+      "10 of 10 moving averages are bearish (price is below them).",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~\u20b91342) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91331. First support that needs to hold: \u20b91305.",
-    "fundamentals_read": "Reliance Industries is a mega-cap company in Energy, worth about \u20b917.88T. It trades at a P/E of 22 (moderate); the lower forward P/E of 18 suggests profits are expected to grow. Revenue is growing about 12% a year, and it keeps roughly 8\u00a2 of every sales dollar as profit. With a beta of 0.18, it's steadier than the market. It pays a dividend yielding 0.5%."
+    "what_would_flip": "A daily close back above the 50-day average (~\u20b91338) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91304. First support that needs to hold: \u20b91279.",
+    "fundamentals_read": "Reliance Industries is a mega-cap company in Energy, worth about \u20b917.49T. It trades at a P/E of 22 (moderate); the lower forward P/E of 18 suggests profits are expected to grow. Revenue is growing about 12% a year, and it keeps roughly 8\u00a2 of every sales dollar as profit. With a beta of 0.18, it's steadier than the market. It pays a dividend yielding 0.5%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Neutral",
-      "buy": 5,
-      "sell": 5
+      "rating": "Strong Sell",
+      "buy": 0,
+      "sell": 10
     },
     "oscillators": {
-      "rating": "Neutral",
-      "buy": 1,
+      "rating": "Buy",
+      "buy": 2,
       "sell": 1
     }
   },
   "trend": {
     "direction": "Downtrend",
     "strength": "Weak",
-    "adx": 15.51,
+    "adx": 14.98,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -45,70 +47,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 1309.1,
+        "value": 1306.85,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 1305.38,
+        "value": 1309.01,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 1309.73,
+        "value": 1306.19,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 1342.05,
+        "value": 1337.77,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 1363.42,
+        "value": 1360.16,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 1418.45,
+        "value": 1417.36,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 1309.56,
+        "value": 1306.23,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 1311.88,
+        "value": 1309.71,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 1330.99,
+        "value": 1328.62,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 1386.84,
+        "value": 1385.13,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -117,42 +119,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 51.98,
+        "value": 42.8,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "52 \u2014 neutral momentum, no extreme"
+        "note": "43 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -5.476,
+        "value": -6.16,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 57.01,
+        "value": 21.93,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 38.23,
+        "value": -106.88,
         "metric": "cci",
-        "signal": "Neutral",
-        "note": "close to its recent average \u2014 no extreme"
+        "signal": "Buy",
+        "note": "well below its average \u2014 oversold (or start of a down-move)"
       },
       {
         "name": "Williams %R (14)",
-        "value": -42.99,
+        "value": -78.07,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -5.2,
+        "value": -21.4,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -160,51 +162,39 @@
     ]
   },
   "levels": {
-    "pivot": 1315.43,
+    "pivot": 1290.63,
     "resistance": [
-      1331.47,
-      1341.63
+      1303.87,
+      1315.53
     ],
     "support": [
-      1305.27,
-      1289.23
+      1278.97,
+      1265.73
     ]
   },
   "range_52w": {
     "low": 1258.8,
     "high": 1592.3,
-    "position_pct": 18.7
+    "position_pct": 10.0
   },
   "volatility": {
-    "atr": 21.96,
-    "atr_pct": 1.66,
-    "bollinger_pctb": 0.69,
+    "atr": 22.74,
+    "atr_pct": 1.76,
+    "bollinger_pctb": 0.24,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Energy",
     "industry": "Oil & Gas Refining & Marketing",
-    "marketCap": 17880456364032,
-    "trailingPE": 22.124916,
-    "forwardPE": 18.40301,
+    "marketCap": 17492073250816,
+    "trailingPE": 21.856611,
+    "forwardPE": 18.01053,
     "profitMargins": 0.0764,
     "revenueGrowth": 0.125,
-    "dividendYield": 0.46,
+    "dividendYield": 0.45,
     "beta": 0.184
   },
   "history": [
-    {
-      "d": "2025-10-15",
-      "c": 1374.3,
-      "m50": 1384.76,
-      "m200": 1348.37
-    },
-    {
-      "d": "2025-10-16",
-      "c": 1398.3,
-      "m50": 1384.49,
-      "m200": 1349.26
-    },
     {
       "d": "2025-10-17",
       "c": 1416.8,
@@ -1272,19 +1262,26 @@
       "c": 1321.3,
       "m50": 1342.05,
       "m200": 1418.45
-    }
-  ],
-  "whats_new": "Reliance closed up 1.33% at \u20b91,321 \u2014 a solid bounce on the day's supportive backdrop: sinking oil (cheaper feedstock for its refining and petrochemicals), the lifted India gas emergency, and a broad, bank-led India rally (4th straight up-day). The move pushed it back above its short-term 10- and 20-day averages (~\u20b91,309/\u20b91,305), a sign of near-term strength \u2014 but it's still below the 50-day (~\u20b91,342) and 200-day (~\u20b91,418), so the longer downtrend isn't broken yet. Q1 FY27 earnings season is the real catalyst ahead.",
-  "news": [
-    {
-      "headline": "Markets surge to fourth day, led by bank stocks, lower oil prices",
-      "url": "https://www.thehindu.com/business/markets/markets-surge-to-fourth-day-led-by-bank-stocks-lower-oil-prices/article71189102.ece",
-      "source": "The Hindu"
     },
     {
-      "headline": "What the lifting of gas curbs means | Explained",
-      "url": "https://www.thehindu.com/business/Economy/what-the-lifting-of-gas-curbs-means-explained/article71188120.ece",
-      "source": "The Hindu"
+      "d": "2026-07-07",
+      "c": 1308.4,
+      "m50": 1340.44,
+      "m200": 1417.96
+    },
+    {
+      "d": "2026-07-08",
+      "c": 1292.2,
+      "m50": 1337.77,
+      "m200": 1417.36
+    }
+  ],
+  "whats_new": "Fell \u22121.24% (from \u20b91,314.9) to a fresh 52-week-low zone as the broad market gapped down on 8 July; ironically the Hormuz oil spike is a mixed blessing for a refiner, since higher crude can squeeze refining margins. It stays in a textbook downtrend, rated Strong Sell.",
+  "news": [
+    {
+      "headline": "Indian markets snap five-day rally, gap down as crude spikes",
+      "url": "https://upstox.com/news/market-news/stocks/nifty-50-sensex-today-wall-street-cues-fii-activity-key-things-to-know-before-markets-open-on-july-8/article-196530/",
+      "source": "Upstox"
     }
   ],
   "disclaimer": "Technical signals are rules-based and informational only \u2014 not financial advice."
