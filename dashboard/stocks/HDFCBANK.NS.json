@@ -2,24 +2,22 @@
   "ticker": "HDFCBANK.NS",
   "name": "HDFC Bank",
   "currency": "\u20b9",
-  "as_of": "2026-07-09T00:16:53+05:30",
+  "as_of": "2026-07-10T03:03:18+05:30",
   "price": NaN,
   "change_pct": NaN,
   "verdict": {
-    "rating": "Neutral",
-    "score": 0.0,
-    "summary": "HDFC Bank is rated **Neutral** on the technical suite. Momentum is overbought (RSI 70). MACD is bullish. Trend strength is strong; it sits at the nanth percentile of its 52-week range."
+    "rating": "Buy",
+    "score": 0.167,
+    "summary": "HDFC Bank is rated **Buy** on the technical suite. Momentum is neutral (RSI 59). MACD is bullish. Trend strength is strong; it sits at the nanth percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "HDFC Bank is in an unclear trend, and the full indicator suite reads Neutral. Trend strength is strong (ADX 26) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 70 (overbought). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
+    "the_read": "HDFC Bank is in an unclear trend, and the full indicator suite reads Buy. Trend strength is strong (ADX 26) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 59 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
-    "bear_case": [
-      "RSI is overbought (70) \u2014 the run looks stretched and can pause or pull back."
-    ],
+    "bear_case": [],
     "what_would_flip": "First resistance to clear overhead: \u20b9nan. First support that needs to hold: \u20b9nan.",
-    "fundamentals_read": "HDFC Bank is a mega-cap company in Financial Services, worth about \u20b912.48T. It trades at a P/E of 18 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is shrinking about 2% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 0.42, it's steadier than the market. It pays a dividend yielding 1.6%."
+    "fundamentals_read": "HDFC Bank is a mega-cap company in Financial Services, worth about \u20b912.59T. It trades at a P/E of 18 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is shrinking about 2% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 0.42, it's steadier than the market. It pays a dividend yielding 1.6%."
   },
   "signals": {
     "moving_averages": {
@@ -28,15 +26,15 @@
       "sell": 0
     },
     "oscillators": {
-      "rating": "Neutral",
+      "rating": "Strong Buy",
       "buy": 1,
-      "sell": 1
+      "sell": 0
     }
   },
   "trend": {
     "direction": "Unclear",
     "strength": "Strong",
-    "adx": 26.19,
+    "adx": 26.35,
     "vs_50dma": null,
     "vs_200dma": null
   },
@@ -44,28 +42,28 @@
     "moving_averages": [
       {
         "name": "EMA 10",
-        "value": 805.23,
+        "value": 806.15,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 793.23,
+        "value": 794.85,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 787.75,
+        "value": 788.63,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 854.77,
+        "value": 854.33,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -74,14 +72,14 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 70.46,
+        "value": 59.13,
         "metric": "rsi",
-        "signal": "Sell",
-        "note": "70 \u2014 overbought; risen fast, may pause or pull back"
+        "signal": "Neutral",
+        "note": "59 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 12.995,
+        "value": 12.679,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
@@ -105,7 +103,7 @@
     "position_pct": NaN
   },
   "volatility": {
-    "atr": 16.21,
+    "atr": 15.95,
     "atr_pct": NaN,
     "bollinger_pctb": null,
     "label": "Normal"
@@ -113,21 +111,15 @@
   "fundamentals": {
     "sector": "Financial Services",
     "industry": "Banks - Regional",
-    "marketCap": 12479608389632,
-    "trailingPE": 18.095133,
-    "forwardPE": 12.873145,
+    "marketCap": 12591256567808,
+    "trailingPE": 18.24481,
+    "forwardPE": 12.988325,
     "profitMargins": 0.26834,
     "revenueGrowth": -0.018,
-    "dividendYield": 1.57,
+    "dividendYield": 1.6,
     "beta": 0.422
   },
   "history": [
-    {
-      "d": "2025-10-17",
-      "c": 1002.55,
-      "m50": 973.03,
-      "m200": 934.61
-    },
     {
       "d": "2025-10-20",
       "c": 1002.95,
@@ -1198,6 +1190,12 @@
     },
     {
       "d": "2026-07-08",
+      "c": 810.3,
+      "m50": 774.69,
+      "m200": 888.19
+    },
+    {
+      "d": "2026-07-09",
       "c": NaN,
       "m50": null,
       "m200": null

@@ -2,7 +2,7 @@
   "ticker": "INFY.NS",
   "name": "Infosys",
   "currency": "\u20b9",
-  "as_of": "2026-07-09T00:16:54+05:30",
+  "as_of": "2026-07-10T03:03:19+05:30",
   "price": NaN,
   "change_pct": NaN,
   "verdict": {
@@ -11,13 +11,13 @@
     "summary": "Infosys is rated **Buy** on the technical suite. Momentum is neutral (RSI 47). MACD is bullish. Trend strength is moderate; it sits at the nanth percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Infosys is in an unclear trend, and the full indicator suite reads Buy. Trend strength is moderate (ADX 22) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 47 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
+    "the_read": "Infosys is in an unclear trend, and the full indicator suite reads Buy. Trend strength is moderate (ADX 21) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 47 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [],
     "what_would_flip": "First resistance to clear overhead: \u20b9nan. First support that needs to hold: \u20b9nan.",
-    "fundamentals_read": "Infosys is a mega-cap company in Technology, worth about \u20b94.33T. It trades at a P/E of 14 (low, which can signal value or a troubled business); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 7% a year, and it keeps roughly 16\u00a2 of every sales dollar as profit. With a beta of 0.13, it's steadier than the market. It pays a dividend yielding 4.7%."
+    "fundamentals_read": "Infosys is a mega-cap company in Technology, worth about \u20b94.25T. It trades at a P/E of 14 (low, which can signal value or a troubled business); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 7% a year, and it keeps roughly 16\u00a2 of every sales dollar as profit. With a beta of 0.13, it's steadier than the market. It pays a dividend yielding 4.7%."
   },
   "signals": {
     "moving_averages": {
@@ -34,7 +34,7 @@
   "trend": {
     "direction": "Unclear",
     "strength": "Moderate",
-    "adx": 21.87,
+    "adx": 21.34,
     "vs_50dma": null,
     "vs_200dma": null
   },
@@ -42,28 +42,28 @@
     "moving_averages": [
       {
         "name": "EMA 10",
-        "value": 1048.91,
+        "value": 1052.62,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 1072.58,
+        "value": 1072.27,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 1134.74,
+        "value": 1132.17,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 1335.37,
+        "value": 1332.69,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -72,14 +72,14 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 47.0,
+        "value": 46.59,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "47 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -33.444,
+        "value": -29.666,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
@@ -103,7 +103,7 @@
     "position_pct": NaN
   },
   "volatility": {
-    "atr": 32.42,
+    "atr": 32.17,
     "atr_pct": NaN,
     "bollinger_pctb": null,
     "label": "Normal"
@@ -111,21 +111,15 @@
   "fundamentals": {
     "sector": "Technology",
     "industry": "Information Technology Services",
-    "marketCap": 4329518923776,
-    "trailingPE": 14.1723,
-    "forwardPE": 13.1202545,
+    "marketCap": 4254613635072,
+    "trailingPE": 13.919725,
+    "forwardPE": 12.893261,
     "profitMargins": 0.16434999,
     "revenueGrowth": 0.066,
-    "dividendYield": 4.67,
+    "dividendYield": 4.68,
     "beta": 0.131
   },
   "history": [
-    {
-      "d": "2025-10-17",
-      "c": 1441.1,
-      "m50": 1478.97,
-      "m200": 1609.45
-    },
     {
       "d": "2025-10-20",
       "c": 1460.9,
@@ -1196,6 +1190,12 @@
     },
     {
       "d": "2026-07-08",
+      "c": 1069.3,
+      "m50": 1131.22,
+      "m200": 1383.93
+    },
+    {
+      "d": "2026-07-09",
       "c": NaN,
       "m50": null,
       "m200": null

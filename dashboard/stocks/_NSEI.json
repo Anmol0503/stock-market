@@ -2,16 +2,16 @@
   "ticker": "^NSEI",
   "name": "Nifty 50",
   "currency": "$",
-  "as_of": "2026-07-09T00:16:50+05:30",
+  "as_of": "2026-07-10T03:03:14+05:30",
   "price": NaN,
   "change_pct": NaN,
   "verdict": {
     "rating": "Buy",
     "score": 0.167,
-    "summary": "Nifty 50 is rated **Buy** on the technical suite. Momentum is neutral (RSI 63). MACD is bullish. Trend strength is weak; it sits at the nanth percentile of its 52-week range."
+    "summary": "Nifty 50 is rated **Buy** on the technical suite. Momentum is neutral (RSI 49). MACD is bullish. Trend strength is weak; it sits at the nanth percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Nifty 50 is in an unclear trend, and the full indicator suite reads Buy. Trend strength is weak (ADX 13) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 63 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
+    "the_read": "Nifty 50 is in an unclear trend, and the full indicator suite reads Buy. Trend strength is weak (ADX 13) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 49 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
@@ -34,7 +34,7 @@
   "trend": {
     "direction": "Unclear",
     "strength": "Weak",
-    "adx": 12.92,
+    "adx": 12.66,
     "vs_50dma": null,
     "vs_200dma": null
   },
@@ -42,28 +42,28 @@
     "moving_averages": [
       {
         "name": "EMA 10",
-        "value": 24154.46,
+        "value": 24104.93,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 24003.85,
+        "value": 23992.25,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 23924.03,
+        "value": 23922.39,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 24440.92,
+        "value": 24436.17,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -72,14 +72,14 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 63.02,
+        "value": 48.51,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "63 \u2014 neutral momentum, no extreme"
+        "note": "49 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 160.905,
+        "value": 130.345,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
@@ -103,19 +103,13 @@
     "position_pct": NaN
   },
   "volatility": {
-    "atr": 264.84,
+    "atr": 263.97,
     "atr_pct": NaN,
     "bollinger_pctb": null,
     "label": "Normal"
   },
   "fundamentals": {},
   "history": [
-    {
-      "d": "2025-10-13",
-      "c": 25227.35,
-      "m50": 24868.57,
-      "m200": 24196.18
-    },
     {
       "d": "2025-10-14",
       "c": 25145.5,
@@ -1186,6 +1180,12 @@
     },
     {
       "d": "2026-07-08",
+      "c": 23882.05,
+      "m50": 23828.03,
+      "m200": 24858.11
+    },
+    {
+      "d": "2026-07-09",
       "c": NaN,
       "m50": null,
       "m200": null

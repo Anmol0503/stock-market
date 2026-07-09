@@ -2,22 +2,22 @@
   "ticker": "TCS.NS",
   "name": "TCS",
   "currency": "\u20b9",
-  "as_of": "2026-07-09T00:16:53+05:30",
+  "as_of": "2026-07-10T03:03:16+05:30",
   "price": NaN,
   "change_pct": NaN,
   "verdict": {
     "rating": "Buy",
     "score": 0.167,
-    "summary": "TCS is rated **Buy** on the technical suite. Momentum is neutral (RSI 45). MACD is bullish. Trend strength is moderate; it sits at the nanth percentile of its 52-week range."
+    "summary": "TCS is rated **Buy** on the technical suite. Momentum is neutral (RSI 42). MACD is bullish. Trend strength is moderate; it sits at the nanth percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "TCS is in an unclear trend, and the full indicator suite reads Buy. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 45 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
+    "the_read": "TCS is in an unclear trend, and the full indicator suite reads Buy. Trend strength is moderate (ADX 25) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 42 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [],
     "what_would_flip": "First resistance to clear overhead: \u20b9nan. First support that needs to hold: \u20b9nan.",
-    "fundamentals_read": "TCS is a mega-cap company in Technology, worth about \u20b97.44T. It trades at a P/E of 15 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 10% a year, and it keeps roughly 18\u00a2 of every sales dollar as profit. With a beta of 0.24, it's steadier than the market. It pays a dividend yielding 5.9%."
+    "fundamentals_read": "TCS is a mega-cap company in Technology, worth about \u20b97.42T. It trades at a P/E of 15 (moderate); the lower forward P/E of 13 suggests profits are expected to grow. Revenue is growing about 10% a year, and it keeps roughly 18\u00a2 of every sales dollar as profit. With a beta of 0.24, it's steadier than the market. It pays a dividend yielding 6.0%."
   },
   "signals": {
     "moving_averages": {
@@ -34,7 +34,7 @@
   "trend": {
     "direction": "Unclear",
     "strength": "Moderate",
-    "adx": 24.71,
+    "adx": 24.88,
     "vs_50dma": null,
     "vs_200dma": null
   },
@@ -42,28 +42,28 @@
     "moving_averages": [
       {
         "name": "EMA 10",
-        "value": 2081.89,
+        "value": 2077.45,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 2117.45,
+        "value": 2111.74,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 2232.0,
+        "value": 2225.16,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 2679.48,
+        "value": 2673.24,
         "metric": "ema",
         "signal": "Neutral",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -72,14 +72,14 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 44.88,
+        "value": 41.5,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "45 \u2014 neutral momentum, no extreme"
+        "note": "42 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -52.687,
+        "value": -51.219,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
@@ -99,11 +99,11 @@
   },
   "range_52w": {
     "low": 1982.6,
-    "high": 3419.8,
+    "high": 3411.7,
     "position_pct": NaN
   },
   "volatility": {
-    "atr": 59.95,
+    "atr": 59.17,
     "atr_pct": NaN,
     "bollinger_pctb": null,
     "label": "Normal"
@@ -111,21 +111,15 @@
   "fundamentals": {
     "sector": "Technology",
     "industry": "Information Technology Services",
-    "marketCap": 7444214841344,
-    "trailingPE": 15.1242285,
-    "forwardPE": 12.559977,
+    "marketCap": 7415269949440,
+    "trailingPE": 15.069853,
+    "forwardPE": 12.511141,
     "profitMargins": 0.18429,
     "revenueGrowth": 0.096,
-    "dividendYield": 5.92,
+    "dividendYield": 6.03,
     "beta": 0.241
   },
   "history": [
-    {
-      "d": "2025-10-17",
-      "c": 2962.2,
-      "m50": 3045.31,
-      "m200": 3451.5
-    },
     {
       "d": "2025-10-20",
       "c": 3015.2,
@@ -1196,6 +1190,12 @@
     },
     {
       "d": "2026-07-08",
+      "c": 2057.5,
+      "m50": 2231.39,
+      "m200": 2747.5
+    },
+    {
+      "d": "2026-07-09",
       "c": NaN,
       "m50": null,
       "m200": null
