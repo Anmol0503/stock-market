@@ -2,42 +2,43 @@
   "ticker": "RELIANCE.NS",
   "name": "Reliance Industries",
   "currency": "\u20b9",
-  "as_of": "2026-07-10T11:13:31+05:30",
-  "price": 1301.0,
-  "change_pct": 1.66,
+  "as_of": "2026-07-11T05:45:46+05:30",
+  "price": 1307.8,
+  "change_pct": 2.19,
   "verdict": {
-    "rating": "Strong Sell",
-    "score": -0.5,
-    "summary": "Reliance Industries is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 47). MACD is bearish. Trend strength is weak; it sits at the 13th percentile of its 52-week range."
+    "rating": "Neutral",
+    "score": -0.125,
+    "summary": "Reliance Industries is rated **Neutral** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 49). MACD is bullish. Trend strength is weak; it sits at the 15th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Reliance Industries is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day (\u20b91332) and 200-day (\u20b91416) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 47 (neutral). It's trading in the 13th percentile of its 52-week range, and day-to-day volatility is normal (~1.8% a day).",
-    "bull_case": [],
+    "the_read": "Reliance Industries is in a downtrend, and the full indicator suite reads Neutral. Price is below both its 50-day (\u20b91332) and 200-day (\u20b91416) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 15) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 49 (neutral). It's trading in the 15th percentile of its 52-week range, and day-to-day volatility is normal (~1.8% a day).",
+    "bull_case": [
+      "MACD momentum is positive \u2014 the bullish crossover is intact."
+    ],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "8 of 10 moving averages are bearish (price is below them).",
-      "MACD momentum is negative \u2014 momentum is fading.",
+      "6 of 10 moving averages are bearish (price is below them).",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~\u20b91332) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91308. First support that needs to hold: \u20b91291.",
-    "fundamentals_read": "Reliance Industries is a mega-cap company in Energy, worth about \u20b917.61T. It trades at a P/E of 22 (moderate); the lower forward P/E of 18 suggests profits are expected to grow. Revenue is growing about 12% a year, and it keeps roughly 8\u00a2 of every sales dollar as profit. With a beta of 0.18, it's steadier than the market. It pays a dividend yielding 0.5%."
+    "what_would_flip": "A daily close back above the 50-day average (~\u20b91332) would be the first sign the downtrend is turning up. First resistance to clear overhead: \u20b91317. First support that needs to hold: \u20b91293.",
+    "fundamentals_read": "Reliance Industries is a mega-cap company in Energy, worth about \u20b917.70T. It trades at a P/E of 22 (moderate); the lower forward P/E of 18 suggests profits are expected to grow. Revenue is growing about 12% a year, and it keeps roughly 8\u00a2 of every sales dollar as profit. With a beta of 0.18, it's steadier than the market. It pays a dividend yielding 0.5%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Strong Sell",
-      "buy": 2,
-      "sell": 8
+      "rating": "Sell",
+      "buy": 4,
+      "sell": 6
     },
     "oscillators": {
-      "rating": "Sell",
-      "buy": 0,
-      "sell": 2
+      "rating": "Neutral",
+      "buy": 1,
+      "sell": 1
     }
   },
   "trend": {
     "direction": "Downtrend",
     "strength": "Weak",
-    "adx": 15.9,
+    "adx": 15.49,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -45,70 +46,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 1299.68,
+        "value": 1300.36,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 1309.44,
+        "value": 1309.78,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 1302.62,
+        "value": 1302.84,
         "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 1331.83,
+        "value": 1331.97,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 1357.12,
+        "value": 1357.19,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 1416.07,
+        "value": 1416.1,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 1299.36,
+        "value": 1300.6,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 1305.03,
+        "value": 1305.68,
         "metric": "ema",
-        "signal": "Bearish",
-        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 1325.11,
+        "value": 1325.38,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 1382.98,
+        "value": 1383.05,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -117,42 +118,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 47.44,
+        "value": 49.39,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "47 \u2014 neutral momentum, no extreme"
+        "note": "49 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -8.165,
+        "value": -7.623,
         "metric": "macd",
-        "signal": "Sell",
-        "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
+        "signal": "Buy",
+        "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 47.88,
+        "value": 58.96,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": -92.41,
+        "value": -62.91,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -52.12,
+        "value": -41.04,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -17.1,
+        "value": -10.3,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -160,33 +161,33 @@
     ]
   },
   "levels": {
-    "pivot": 1297.7,
+    "pivot": 1302.23,
     "resistance": [
-      1307.6,
-      1314.2
+      1316.67,
+      1325.53
     ],
     "support": [
-      1291.1,
-      1281.2
+      1293.37,
+      1278.93
     ]
   },
   "range_52w": {
     "low": 1258.8,
     "high": 1592.3,
-    "position_pct": 12.7
+    "position_pct": 14.7
   },
   "volatility": {
-    "atr": 23.19,
-    "atr_pct": 1.78,
-    "bollinger_pctb": 0.36,
+    "atr": 23.68,
+    "atr_pct": 1.81,
+    "bollinger_pctb": 0.47,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Energy",
     "industry": "Oil & Gas Refining & Marketing",
-    "marketCap": 17611158978560,
-    "trailingPE": 21.72984,
-    "forwardPE": 18.133148,
+    "marketCap": 17697767161856,
+    "trailingPE": 21.928238,
+    "forwardPE": 18.218935,
     "profitMargins": 0.0764,
     "revenueGrowth": 0.125,
     "dividendYield": 0.47,
@@ -1269,14 +1270,12 @@
     },
     {
       "d": "2026-07-10",
-      "c": 1301.0,
-      "m50": 1331.83,
-      "m200": 1416.07
+      "c": 1307.8,
+      "m50": 1331.97,
+      "m200": 1416.1
     }
   ],
-  "whats_new": "Bounced 1.66% to \u20b91,301 with the broad India rally (Sensex +~700 pts on the TCS beat and steadier oil), but stays technically weak \u2014 still below all its major averages, near the bottom of its 52-week range (13th percentile) with negative momentum. As an energy/refining major it's cross-exposed to the very oil swings driving the market.",
-  "news": [
-    {"headline": "Sensex jumps ~700 points as IT leads a broad rebound; oil steadies", "url": "https://www.thehindu.com/business/markets/markets-surge-in-early-trade-on-buying-in-it-stocks-sensex-jumps-nearly-700-points/article71205307.ece", "source": "The Hindu Business"}
-  ],
+  "whats_new": "",
+  "news": [],
   "disclaimer": "Technical signals are rules-based and informational only \u2014 not financial advice."
 }

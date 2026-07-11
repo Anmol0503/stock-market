@@ -2,19 +2,19 @@
   "ticker": "INR=X",
   "name": "USD/INR",
   "currency": "$",
-  "as_of": "2026-07-10T11:13:37+05:30",
-  "price": 95.34,
-  "change_pct": -0.55,
+  "as_of": "2026-07-11T05:45:52+05:30",
+  "price": 95.37,
+  "change_pct": -0.51,
   "verdict": {
     "rating": "Strong Buy",
-    "score": 0.625,
+    "score": 0.75,
     "summary": "USD/INR is rated **Strong Buy** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 52). MACD is bullish. Trend strength is strong; it sits at the 88th percentile of its 52-week range."
   },
   "analysis": {
     "the_read": "USD/INR is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($95) and 200-day ($92) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is strong (ADX 32) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 52 (neutral). It's trading in the 88th percentile of its 52-week range, and day-to-day volatility is low (~0.9% a day).",
     "bull_case": [
       "Trades above both its 50- and 200-day averages \u2014 a confirmed uptrend.",
-      "9 of 10 moving averages are bullish (price is above them).",
+      "10 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact.",
       "Trend strength is strong (ADX 32) and pointing up \u2014 up-moves tend to persist.",
       "Trading near its 52-week high \u2014 strong relative strength."
@@ -26,8 +26,8 @@
   "signals": {
     "moving_averages": {
       "rating": "Strong Buy",
-      "buy": 9,
-      "sell": 1
+      "buy": 10,
+      "sell": 0
     },
     "oscillators": {
       "rating": "Buy",
@@ -46,7 +46,7 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 95.26,
+        "value": 95.27,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
@@ -90,8 +90,8 @@
         "name": "EMA 10",
         "value": 95.34,
         "metric": "ema",
-        "signal": "Bearish",
-        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
@@ -118,42 +118,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 51.81,
+        "value": 52.18,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "52 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 0.104,
+        "value": 0.107,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 73.07,
+        "value": 74.74,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 52.19,
+        "value": 54.9,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -26.93,
+        "value": -25.26,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 0.94,
+        "value": 0.97,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -161,25 +161,25 @@
     ]
   },
   "levels": {
-    "pivot": 95.31,
+    "pivot": 95.33,
     "resistance": [
-      95.41,
-      95.48
+      95.46,
+      95.54
     ],
     "support": [
-      95.24,
-      95.14
+      95.25,
+      95.12
     ]
   },
   "range_52w": {
     "low": 86.2,
     "high": 96.57,
-    "position_pct": 88.1
+    "position_pct": 88.4
   },
   "volatility": {
     "atr": 0.82,
     "atr_pct": 0.86,
-    "bollinger_pctb": 0.69,
+    "bollinger_pctb": 0.7,
     "label": "Low"
   },
   "fundamentals": {},
@@ -1260,7 +1260,7 @@
     },
     {
       "d": "2026-07-10",
-      "c": 95.34,
+      "c": 95.37,
       "m50": 95.33,
       "m200": 91.9
     }

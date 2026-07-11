@@ -2,16 +2,16 @@
   "ticker": "BTC-USD",
   "name": "Bitcoin",
   "currency": "$",
-  "as_of": "2026-07-10T11:13:34+05:30",
-  "price": 64115.58,
-  "change_pct": 2.98,
+  "as_of": "2026-07-11T05:45:48+05:30",
+  "price": 64016.68,
+  "change_pct": 1.3,
   "verdict": {
     "rating": "Neutral",
     "score": 0.0,
-    "summary": "Bitcoin is rated **Neutral** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 54). MACD is bullish. Trend strength is strong; it sits at the 11th percentile of its 52-week range."
+    "summary": "Bitcoin is rated **Neutral** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 53). MACD is bullish. Trend strength is strong; it sits at the 10th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Bitcoin is in a downtrend, and the full indicator suite reads Neutral. Price is below both its 50-day ($65655) and 200-day ($74229) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 27) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 54 (neutral). It's trading in the 11th percentile of its 52-week range, and day-to-day volatility is normal (~3.3% a day).",
+    "the_read": "Bitcoin is in a downtrend, and the full indicator suite reads Neutral. Price is below both its 50-day ($65366) and 200-day ($74102) averages \u2014 a textbook downtrend. Trend strength is strong (ADX 27) \u2014 moves here tend to persist. Momentum is improving on MACD, and RSI sits at 53 (neutral). It's trading in the 10th percentile of its 52-week range, and day-to-day volatility is normal (~3.2% a day).",
     "bull_case": [
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
@@ -22,7 +22,7 @@
       "Williams %R is overbought \u2014 a short-term caution signal.",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$65655) would be the first sign the downtrend is turning up. First resistance to clear overhead: $64502. First support that needs to hold: $63321.",
+    "what_would_flip": "A daily close back above the 50-day average (~$65366) would be the first sign the downtrend is turning up. First resistance to clear overhead: $64079. First support that needs to hold: $64001.",
     "fundamentals_read": "Bitcoin is a mega-cap company, worth about $1.28T."
   },
   "signals": {
@@ -40,7 +40,7 @@
   "trend": {
     "direction": "Downtrend",
     "strength": "Strong",
-    "adx": 27.28,
+    "adx": 26.66,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -48,70 +48,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 62289.39,
+        "value": 62742.93,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 61866.76,
+        "value": 61809.49,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 62625.55,
+        "value": 62680.38,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 65654.91,
+        "value": 65366.01,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 70838.28,
+        "value": 70788.44,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 74229.23,
+        "value": 74102.25,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 62693.45,
+        "value": 62796.81,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 62697.02,
+        "value": 62743.22,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 65441.69,
+        "value": 65351.06,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 75164.81,
+        "value": 75044.53,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -120,42 +120,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 53.52,
+        "value": 53.4,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "54 \u2014 neutral momentum, no extreme"
+        "note": "53 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -539.692,
+        "value": -442.679,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 92.96,
+        "value": 91.52,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 71.88,
+        "value": 84.04,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -7.04,
+        "value": -8.48,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 3977.2,
+        "value": 5457.82,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -163,37 +163,31 @@
     ]
   },
   "levels": {
-    "pivot": 63707.43,
+    "pivot": 64063.34,
     "resistance": [
-      64501.55,
-      64887.52
+      64079.25,
+      64141.81
     ],
     "support": [
-      63321.46,
-      62527.34
+      64000.77,
+      63984.86
     ]
   },
   "range_52w": {
     "low": 58558.86,
     "high": 110639.62,
-    "position_pct": 10.7
+    "position_pct": 10.5
   },
   "volatility": {
-    "atr": 2141.95,
-    "atr_pct": 3.34,
+    "atr": 2051.69,
+    "atr_pct": 3.2,
     "bollinger_pctb": 0.81,
     "label": "Normal"
   },
   "fundamentals": {
-    "marketCap": 1284435214336
+    "marketCap": 1284446879744
   },
   "history": [
-    {
-      "d": "2026-01-11",
-      "c": 90827.46,
-      "m50": 89509.52,
-      "m200": 106260.62
-    },
     {
       "d": "2026-01-12",
       "c": 91192.99,
@@ -1263,15 +1257,19 @@
       "m200": 74351.76
     },
     {
-      "d": "2026-07-10",
-      "c": 64115.58,
-      "m50": 65654.91,
-      "m200": 74229.23
+      "d": "2026-07-09",
+      "c": 63193.15,
+      "m50": 65636.46,
+      "m200": 74224.62
+    },
+    {
+      "d": "2026-07-11",
+      "c": 64016.68,
+      "m50": 65366.01,
+      "m200": 74102.25
     }
   ],
-  "whats_new": "Bounced ~3% back above $64,000 as risk appetite returned with the VIX crashing \u2014 but it's still below both its 50-day (~$65,700) and 200-day (~$74,200) averages, so this is a bounce inside a downtrend, not a trend change. Needs a close above ~$65,700 to signal a real turn; first support ~$63,300.",
-  "news": [
-    {"headline": "Risk-on returns as the war premium fades and the VIX drops ~6%", "url": "https://www.bbc.co.uk/news/articles/c4gym70r0y4o", "source": "BBC World"}
-  ],
+  "whats_new": "",
+  "news": [],
   "disclaimer": "Technical signals are rules-based and informational only \u2014 not financial advice."
 }
