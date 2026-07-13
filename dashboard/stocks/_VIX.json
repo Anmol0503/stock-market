@@ -2,47 +2,43 @@
   "ticker": "^VIX",
   "name": "VIX (volatility)",
   "currency": "$",
-  "as_of": "2026-07-12T11:38:36+05:30",
-  "price": 15.03,
-  "change_pct": -5.11,
+  "as_of": "2026-07-13T18:18:22+05:30",
+  "price": 16.5,
+  "change_pct": 9.78,
   "verdict": {
     "rating": "Strong Sell",
-    "score": -0.562,
-    "summary": "VIX (volatility) is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 42). MACD is bearish. Trend strength is weak; it sits at the 9th percentile of its 52-week range."
+    "score": -0.5,
+    "summary": "VIX (volatility) is rated **Strong Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 48). MACD is bearish. Trend strength is weak; it sits at the 17th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "VIX (volatility) is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day ($17) and 200-day ($19) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 19) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 42 (neutral). It's trading in the 9th percentile of its 52-week range, and day-to-day volatility is high (~12.4% a day).",
-    "bull_case": [
-      "Stochastic %K is oversold \u2014 a short-term bounce signal.",
-      "CCI is oversold \u2014 a short-term bounce signal.",
-      "Williams %R is oversold \u2014 a short-term bounce signal."
-    ],
+    "the_read": "VIX (volatility) is in a downtrend, and the full indicator suite reads Strong Sell. Price is below both its 50-day ($17) and 200-day ($19) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 18) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 48 (neutral). It's trading in the 17th percentile of its 52-week range, and day-to-day volatility is high (~11.2% a day).",
+    "bull_case": [],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
-      "10 of 10 moving averages are bearish (price is below them).",
+      "8 of 10 moving averages are bearish (price is below them).",
       "MACD momentum is negative \u2014 momentum is fading.",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value.",
       "Volatility is high \u2014 expect larger swings both ways, so size positions carefully."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$17) would be the first sign the downtrend is turning up. First resistance to clear overhead: $16. First support that needs to hold: $15.",
+    "what_would_flip": "A daily close back above the 50-day average (~$17) would be the first sign the downtrend is turning up. First resistance to clear overhead: $17. First support that needs to hold: $16.",
     "fundamentals_read": ""
   },
   "signals": {
     "moving_averages": {
       "rating": "Strong Sell",
-      "buy": 0,
-      "sell": 10
+      "buy": 2,
+      "sell": 8
     },
     "oscillators": {
-      "rating": "Buy",
-      "buy": 3,
+      "rating": "Sell",
+      "buy": 0,
       "sell": 2
     }
   },
   "trend": {
     "direction": "Downtrend",
     "strength": "Weak",
-    "adx": 19.02,
+    "adx": 18.27,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -50,21 +46,21 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 16.47,
+        "value": 16.28,
         "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 17.18,
+        "value": 17.03,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 17.35,
+        "value": 17.37,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
@@ -92,21 +88,21 @@
       },
       {
         "name": "EMA 10",
-        "value": 16.38,
+        "value": 16.4,
         "metric": "ema",
-        "signal": "Bearish",
-        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 16.91,
+        "value": 16.88,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 17.73,
+        "value": 17.71,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
@@ -122,42 +118,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 41.69,
+        "value": 47.73,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "42 \u2014 neutral momentum, no extreme"
+        "note": "48 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -0.575,
+        "value": -0.544,
         "metric": "macd",
         "signal": "Sell",
         "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 1.22,
+        "value": 26.74,
         "metric": "stochastic",
-        "signal": "Buy",
-        "note": "closing near its recent lows \u2014 oversold"
+        "signal": "Neutral",
+        "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": -106.5,
+        "value": -47.62,
         "metric": "cci",
-        "signal": "Buy",
-        "note": "well below its average \u2014 oversold (or start of a down-move)"
+        "signal": "Neutral",
+        "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -98.78,
+        "value": -73.26,
         "metric": "williams_r",
-        "signal": "Buy",
-        "note": "near its recent lows \u2014 oversold"
+        "signal": "Neutral",
+        "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -3.86,
+        "value": -1.91,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -165,25 +161,25 @@
     ]
   },
   "levels": {
-    "pivot": 15.38,
+    "pivot": 16.38,
     "resistance": [
-      15.81,
-      16.58
+      16.65,
+      16.79
     ],
     "support": [
-      14.61,
-      14.18
+      16.24,
+      15.97
     ]
   },
   "range_52w": {
     "low": 13.47,
     "high": 31.05,
-    "position_pct": 8.9
+    "position_pct": 17.2
   },
   "volatility": {
-    "atr": 1.86,
-    "atr_pct": 12.38,
-    "bollinger_pctb": 0.09,
+    "atr": 1.84,
+    "atr_pct": 11.15,
+    "bollinger_pctb": 0.39,
     "label": "High"
   },
   "fundamentals": {},
@@ -1071,200 +1067,200 @@
       "m200": 18.36
     },
     {
-      "d": "2026-05-25",
-      "c": 16.59,
+      "d": "2026-05-26",
+      "c": 17.01,
       "m50": 20.57,
       "m200": 18.36
     },
     {
-      "d": "2026-05-26",
-      "c": 17.01,
-      "m50": 20.44,
-      "m200": 18.37
-    },
-    {
       "d": "2026-05-27",
       "c": 16.29,
-      "m50": 20.31,
+      "m50": 20.43,
       "m200": 18.37
     },
     {
       "d": "2026-05-28",
       "c": 15.74,
-      "m50": 20.13,
-      "m200": 18.38
+      "m50": 20.3,
+      "m200": 18.37
     },
     {
       "d": "2026-05-29",
       "c": 15.32,
-      "m50": 19.95,
-      "m200": 18.38
+      "m50": 20.1,
+      "m200": 18.37
     },
     {
       "d": "2026-06-01",
       "c": 16.05,
-      "m50": 19.74,
-      "m200": 18.39
+      "m50": 19.94,
+      "m200": 18.38
     },
     {
       "d": "2026-06-02",
       "c": 15.77,
-      "m50": 19.53,
-      "m200": 18.39
+      "m50": 19.72,
+      "m200": 18.38
     },
     {
       "d": "2026-06-03",
       "c": 16.06,
-      "m50": 19.31,
-      "m200": 18.4
+      "m50": 19.52,
+      "m200": 18.39
     },
     {
       "d": "2026-06-04",
       "c": 15.4,
-      "m50": 19.11,
+      "m50": 19.29,
       "m200": 18.39
     },
     {
       "d": "2026-06-05",
       "c": 21.51,
-      "m50": 18.99,
+      "m50": 19.21,
       "m200": 18.42
     },
     {
       "d": "2026-06-08",
       "c": 18.92,
-      "m50": 18.75,
+      "m50": 19.04,
       "m200": 18.44
     },
     {
       "d": "2026-06-09",
       "c": 19.87,
-      "m50": 18.54,
-      "m200": 18.46
+      "m50": 18.82,
+      "m200": 18.45
     },
     {
       "d": "2026-06-10",
       "c": 22.22,
-      "m50": 18.48,
-      "m200": 18.5
+      "m50": 18.65,
+      "m200": 18.49
     },
     {
       "d": "2026-06-11",
       "c": 19.44,
-      "m50": 18.37,
+      "m50": 18.53,
       "m200": 18.52
     },
     {
       "d": "2026-06-12",
       "c": 17.68,
-      "m50": 18.25,
-      "m200": 18.54
+      "m50": 18.4,
+      "m200": 18.53
     },
     {
       "d": "2026-06-15",
       "c": 16.2,
-      "m50": 18.09,
-      "m200": 18.55
+      "m50": 18.24,
+      "m200": 18.54
     },
     {
       "d": "2026-06-16",
       "c": 16.41,
-      "m50": 17.9,
+      "m50": 18.09,
       "m200": 18.55
     },
     {
       "d": "2026-06-17",
       "c": 18.44,
-      "m50": 17.85,
+      "m50": 17.94,
       "m200": 18.56
     },
     {
       "d": "2026-06-18",
       "c": 16.4,
-      "m50": 17.79,
+      "m50": 17.85,
       "m200": 18.56
     },
     {
       "d": "2026-06-22",
       "c": 17.28,
-      "m50": 17.75,
-      "m200": 18.57
+      "m50": 17.8,
+      "m200": 18.56
     },
     {
       "d": "2026-06-23",
       "c": 19.49,
-      "m50": 17.76,
-      "m200": 18.59
+      "m50": 17.81,
+      "m200": 18.58
     },
     {
       "d": "2026-06-24",
       "c": 18.63,
-      "m50": 17.76,
-      "m200": 18.61
+      "m50": 17.8,
+      "m200": 18.6
     },
     {
       "d": "2026-06-25",
       "c": 18.89,
-      "m50": 17.78,
-      "m200": 18.63
+      "m50": 17.81,
+      "m200": 18.62
     },
     {
       "d": "2026-06-26",
       "c": 18.41,
-      "m50": 17.79,
+      "m50": 17.81,
       "m200": 18.64
     },
     {
       "d": "2026-06-29",
       "c": 17.65,
-      "m50": 17.79,
-      "m200": 18.66
+      "m50": 17.81,
+      "m200": 18.65
     },
     {
       "d": "2026-06-30",
       "c": 16.45,
-      "m50": 17.74,
-      "m200": 18.67
+      "m50": 17.79,
+      "m200": 18.66
     },
     {
       "d": "2026-07-01",
       "c": 16.59,
-      "m50": 17.68,
+      "m50": 17.74,
       "m200": 18.67
     },
     {
       "d": "2026-07-02",
       "c": 16.15,
-      "m50": 17.63,
+      "m50": 17.68,
       "m200": 18.67
     },
     {
       "d": "2026-07-06",
       "c": 15.57,
-      "m50": 17.55,
-      "m200": 18.67
+      "m50": 17.61,
+      "m200": 18.66
     },
     {
       "d": "2026-07-07",
       "c": 16.13,
-      "m50": 17.5,
+      "m50": 17.55,
       "m200": 18.67
     },
     {
       "d": "2026-07-08",
       "c": 16.9,
-      "m50": 17.48,
-      "m200": 18.68
+      "m50": 17.51,
+      "m200": 18.67
     },
     {
       "d": "2026-07-09",
       "c": 15.84,
-      "m50": 17.44,
-      "m200": 18.68
+      "m50": 17.47,
+      "m200": 18.67
     },
     {
       "d": "2026-07-10",
       "c": 15.03,
+      "m50": 17.41,
+      "m200": 18.67
+    },
+    {
+      "d": "2026-07-13",
+      "c": 16.5,
       "m50": 17.36,
       "m200": 18.67
     }
