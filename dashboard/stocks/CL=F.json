@@ -2,18 +2,18 @@
   "ticker": "CL=F",
   "name": "Crude Oil (WTI)",
   "currency": "$",
-  "as_of": "2026-07-14T21:11:53+05:30",
-  "price": 78.96,
-  "change_pct": 1.05,
+  "as_of": "2026-07-14T23:20:31+05:30",
+  "price": 78.81,
+  "change_pct": 0.86,
   "verdict": {
-    "rating": "Buy",
-    "score": 0.25,
-    "summary": "Crude Oil (WTI) is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 53). MACD is bullish. Trend strength is moderate; it sits at the 41th percentile of its 52-week range."
+    "rating": "Neutral",
+    "score": 0.125,
+    "summary": "Crude Oil (WTI) is rated **Neutral** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 52). MACD is bullish. Trend strength is moderate; it sits at the 41th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Crude Oil (WTI) is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day ($87) and 200-day ($74) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 24) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 53 (neutral). It's trading in the 41th percentile of its 52-week range, and day-to-day volatility is high (~5.2% a day).",
+    "the_read": "Crude Oil (WTI) is moving sideways, and the full indicator suite reads Neutral. Price is caught between its 50-day ($87) and 200-day ($74) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 24) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 52 (neutral). It's trading in the 41th percentile of its 52-week range, and day-to-day volatility is high (~5.2% a day).",
     "bull_case": [
-      "7 of 10 moving averages are bullish (price is above them).",
+      "6 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
@@ -28,8 +28,8 @@
   "signals": {
     "moving_averages": {
       "rating": "Buy",
-      "buy": 7,
-      "sell": 3
+      "buy": 6,
+      "sell": 4
     },
     "oscillators": {
       "rating": "Neutral",
@@ -48,14 +48,14 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 71.99,
+        "value": 71.97,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 73.02,
+        "value": 73.01,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
@@ -64,8 +64,8 @@
         "name": "SMA 30",
         "value": 78.93,
         "metric": "sma",
-        "signal": "Bullish",
-        "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
@@ -90,14 +90,14 @@
       },
       {
         "name": "EMA 10",
-        "value": 73.97,
+        "value": 73.94,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 75.6,
+        "value": 75.59,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
@@ -120,42 +120,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 52.6,
+        "value": 52.36,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "53 \u2014 neutral momentum, no extreme"
+        "note": "52 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -3.255,
+        "value": -3.267,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 83.77,
+        "value": 82.71,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 42.1,
+        "value": 41.79,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -16.23,
+        "value": -17.29,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 8.21,
+        "value": 8.06,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -163,24 +163,24 @@
     ]
   },
   "levels": {
-    "pivot": 79.36,
+    "pivot": 79.31,
     "resistance": [
-      80.87,
-      82.79
+      80.77,
+      82.74
     ],
     "support": [
-      77.44,
-      75.93
+      77.34,
+      75.88
     ]
   },
   "range_52w": {
     "low": 55.27,
     "high": 112.95,
-    "position_pct": 41.1
+    "position_pct": 40.8
   },
   "volatility": {
     "atr": 4.1,
-    "atr_pct": 5.19,
+    "atr_pct": 5.2,
     "bollinger_pctb": 0.89,
     "label": "High"
   },
@@ -1262,7 +1262,7 @@
     },
     {
       "d": "2026-07-14",
-      "c": 78.96,
+      "c": 78.81,
       "m50": 86.76,
       "m200": 74.36
     }

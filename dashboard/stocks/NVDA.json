@@ -2,33 +2,33 @@
   "ticker": "NVDA",
   "name": "Nvidia",
   "currency": "$",
-  "as_of": "2026-07-14T21:11:44+05:30",
-  "price": 208.68,
-  "change_pct": 2.53,
+  "as_of": "2026-07-14T23:20:22+05:30",
+  "price": 211.19,
+  "change_pct": 3.76,
   "verdict": {
     "rating": "Strong Buy",
-    "score": 0.5,
-    "summary": "Nvidia is rated **Strong Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 54). MACD is bullish. Trend strength is weak; it sits at the 62th percentile of its 52-week range."
+    "score": 0.625,
+    "summary": "Nvidia is rated **Strong Buy** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 56). MACD is bullish. Trend strength is weak; it sits at the 66th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Nvidia is moving sideways, and the full indicator suite reads Strong Buy. Price is caught between its 50-day ($209) and 200-day ($192) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 54 (neutral). It's trading in the 62th percentile of its 52-week range, and day-to-day volatility is normal (~3.4% a day).",
+    "the_read": "Nvidia is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($209) and 200-day ($192) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 56 (neutral). It's trading in the 66th percentile of its 52-week range, and day-to-day volatility is normal (~3.5% a day).",
     "bull_case": [
-      "9 of 10 moving averages are bullish (price is above them).",
+      "Trades above both its 50- and 200-day averages \u2014 a confirmed uptrend.",
+      "10 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
-      "Caught between its 50- and 200-day averages \u2014 no clear trend yet.",
       "Stochastic %K is overbought \u2014 a short-term caution signal.",
       "Williams %R is overbought \u2014 a short-term caution signal."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$209) would be the first sign the downtrend is turning up. First resistance to clear overhead: $211. First support that needs to hold: $205.",
-    "fundamentals_read": "Nvidia is a mega-cap company in Technology, worth about $5.05T. It trades at a P/E of 33 (on the rich side); the lower forward P/E of 16 suggests profits are expected to grow. Revenue is growing about 85% a year, and it keeps roughly 63\u00a2 of every sales dollar as profit. With a beta of 2.21, it's more volatile than the market. It pays a dividend yielding 0.5%."
+    "what_would_flip": "A daily close below the 50-day average (~$209) would warn the uptrend is stalling. First resistance to clear overhead: $214. First support that needs to hold: $206.",
+    "fundamentals_read": "Nvidia is a mega-cap company in Technology, worth about $5.12T. It trades at a P/E of 32 (on the rich side); the lower forward P/E of 17 suggests profits are expected to grow. Revenue is growing about 85% a year, and it keeps roughly 63\u00a2 of every sales dollar as profit. With a beta of 2.21, it's more volatile than the market. It pays a dividend yielding 0.5%."
   },
   "signals": {
     "moving_averages": {
       "rating": "Strong Buy",
-      "buy": 9,
-      "sell": 1
+      "buy": 10,
+      "sell": 0
     },
     "oscillators": {
       "rating": "Neutral",
@@ -37,80 +37,80 @@
     }
   },
   "trend": {
-    "direction": "Sideways",
+    "direction": "Uptrend",
     "strength": "Weak",
-    "adx": 15.56,
-    "vs_50dma": "below",
+    "adx": 15.72,
+    "vs_50dma": "above",
     "vs_200dma": "above"
   },
   "indicators": {
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 201.51,
+        "value": 201.76,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 202.06,
+        "value": 202.18,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 205.14,
+        "value": 205.22,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 209.27,
+        "value": 209.32,
         "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 198.11,
+        "value": 198.13,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 191.95,
+        "value": 191.97,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 203.36,
+        "value": 203.82,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 203.4,
+        "value": 203.64,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 204.03,
+        "value": 204.13,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 190.22,
+        "value": 190.25,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
@@ -119,42 +119,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 54.15,
+        "value": 55.97,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "54 \u2014 neutral momentum, no extreme"
+        "note": "56 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -0.835,
+        "value": -0.635,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 89.08,
+        "value": 98.48,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 54.14,
+        "value": 68.6,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -10.92,
+        "value": -1.52,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 13.71,
+        "value": 16.22,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -162,33 +162,33 @@
     ]
   },
   "levels": {
-    "pivot": 207.22,
+    "pivot": 208.84,
     "resistance": [
-      210.64,
-      212.6
+      213.87,
+      216.56
     ],
     "support": [
-      205.26,
-      201.84
+      206.15,
+      201.12
     ]
   },
   "range_52w": {
     "low": 164.07,
     "high": 235.74,
-    "position_pct": 62.3
+    "position_pct": 65.7
   },
   "volatility": {
-    "atr": 7.11,
-    "atr_pct": 3.41,
-    "bollinger_pctb": 0.77,
+    "atr": 7.28,
+    "atr_pct": 3.45,
+    "bollinger_pctb": 0.85,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Semiconductors",
-    "marketCap": 5054559420416,
-    "trailingPE": 33.07211,
-    "forwardPE": 16.315458,
+    "marketCap": 5115233173504,
+    "trailingPE": 32.3415,
+    "forwardPE": 16.511305,
     "profitMargins": 0.62966,
     "revenueGrowth": 0.852,
     "dividendYield": 0.47,
@@ -1271,9 +1271,9 @@
     },
     {
       "d": "2026-07-14",
-      "c": 208.68,
-      "m50": 209.27,
-      "m200": 191.95
+      "c": 211.19,
+      "m50": 209.32,
+      "m200": 191.97
     }
   ],
   "whats_new": "",
