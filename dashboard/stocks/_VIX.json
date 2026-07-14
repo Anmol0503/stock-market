@@ -2,16 +2,16 @@
   "ticker": "^VIX",
   "name": "VIX (volatility)",
   "currency": "$",
-  "as_of": "2026-07-14T14:53:15+05:30",
-  "price": 17.36,
-  "change_pct": 1.17,
+  "as_of": "2026-07-14T17:10:18+05:30",
+  "price": 17.24,
+  "change_pct": 0.47,
   "verdict": {
     "rating": "Sell",
     "score": -0.25,
-    "summary": "VIX (volatility) is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 51). MACD is bearish. Trend strength is weak; it sits at the 22th percentile of its 52-week range."
+    "summary": "VIX (volatility) is rated **Sell** on the technical suite. Price is below both its 50- and 200-day averages (a downtrend). Momentum is neutral (RSI 50). MACD is bearish. Trend strength is weak; it sits at the 21th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "VIX (volatility) is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day ($17) and 200-day ($19) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 19) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 51 (neutral). It's trading in the 22th percentile of its 52-week range, and day-to-day volatility is high (~10.2% a day).",
+    "the_read": "VIX (volatility) is in a downtrend, and the full indicator suite reads Sell. Price is below both its 50-day ($17) and 200-day ($19) averages \u2014 a textbook downtrend. Trend strength is weak (ADX 19) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 50 (neutral). It's trading in the 21th percentile of its 52-week range, and day-to-day volatility is high (~10.4% a day).",
     "bull_case": [],
     "bear_case": [
       "Trades below both its 50- and 200-day averages \u2014 a confirmed downtrend.",
@@ -37,7 +37,7 @@
   "trend": {
     "direction": "Downtrend",
     "strength": "Weak",
-    "adx": 19.27,
+    "adx": 19.32,
     "vs_50dma": "below",
     "vs_200dma": "below"
   },
@@ -45,14 +45,14 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 16.32,
+        "value": 16.31,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 17.05,
+        "value": 17.04,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
@@ -87,21 +87,21 @@
       },
       {
         "name": "EMA 10",
-        "value": 16.67,
+        "value": 16.65,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 16.98,
+        "value": 16.97,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 17.7,
+        "value": 17.69,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
@@ -117,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 50.81,
+        "value": 50.39,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "51 \u2014 neutral momentum, no extreme"
+        "note": "50 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -0.388,
+        "value": -0.397,
         "metric": "macd",
         "signal": "Sell",
         "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 41.67,
+        "value": 39.58,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 7.72,
+        "value": 6.79,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -58.33,
+        "value": -60.42,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -0.29,
+        "value": -0.41,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -160,25 +160,25 @@
     ]
   },
   "levels": {
-    "pivot": 17.34,
+    "pivot": 17.32,
     "resistance": [
       17.47,
-      17.59
+      17.7
     ],
     "support": [
-      17.22,
-      17.09
+      17.09,
+      16.94
     ]
   },
   "range_52w": {
     "low": 13.47,
     "high": 31.05,
-    "position_pct": 22.1
+    "position_pct": 21.4
   },
   "volatility": {
-    "atr": 1.78,
-    "atr_pct": 10.25,
-    "bollinger_pctb": 0.56,
+    "atr": 1.79,
+    "atr_pct": 10.38,
+    "bollinger_pctb": 0.54,
     "label": "High"
   },
   "fundamentals": {},
@@ -1259,7 +1259,7 @@
     },
     {
       "d": "2026-07-14",
-      "c": 17.36,
+      "c": 17.24,
       "m50": 17.38,
       "m200": 18.68
     }
