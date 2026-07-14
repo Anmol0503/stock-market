@@ -2,31 +2,31 @@
   "ticker": "NVDA",
   "name": "Nvidia",
   "currency": "$",
-  "as_of": "2026-07-14T01:05:22+05:30",
-  "price": 204.03,
-  "change_pct": -3.28,
+  "as_of": "2026-07-14T12:19:49+05:30",
+  "price": 203.53,
+  "change_pct": -3.52,
   "verdict": {
-    "rating": "Strong Buy",
-    "score": 0.5,
-    "summary": "Nvidia is rated **Strong Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 50). MACD is bullish. Trend strength is weak; it sits at the 56th percentile of its 52-week range."
+    "rating": "Buy",
+    "score": 0.375,
+    "summary": "Nvidia is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 50). MACD is bullish. Trend strength is weak; it sits at the 55th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Nvidia is moving sideways, and the full indicator suite reads Strong Buy. Price is caught between its 50-day ($209) and 200-day ($192) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 50 (neutral). It's trading in the 56th percentile of its 52-week range, and day-to-day volatility is normal (~3.5% a day).",
+    "the_read": "Nvidia is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day ($209) and 200-day ($192) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 50 (neutral). It's trading in the 55th percentile of its 52-week range, and day-to-day volatility is normal (~3.5% a day).",
     "bull_case": [
-      "8 of 10 moving averages are bullish (price is above them).",
+      "7 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
       "Caught between its 50- and 200-day averages \u2014 no clear trend yet."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$209) would be the first sign the downtrend is turning up. First resistance to clear overhead: $209. First support that needs to hold: $201.",
-    "fundamentals_read": "Nvidia is a mega-cap company in Technology, worth about $4.94T. It trades at a P/E of 31 (on the rich side); the lower forward P/E of 16 suggests profits are expected to grow. Revenue is growing about 85% a year, and it keeps roughly 63\u00a2 of every sales dollar as profit. With a beta of 2.21, it's more volatile than the market. It pays a dividend yielding 0.5%."
+    "what_would_flip": "A daily close back above the 50-day average (~$209) would be the first sign the downtrend is turning up. First resistance to clear overhead: $208. First support that needs to hold: $201.",
+    "fundamentals_read": "Nvidia is a mega-cap company in Technology, worth about $4.93T. It trades at a P/E of 31 (on the rich side); the lower forward P/E of 16 suggests profits are expected to grow. Revenue is growing about 85% a year, and it keeps roughly 63\u00a2 of every sales dollar as profit. With a beta of 2.21, it's more volatile than the market. It pays a dividend yielding 0.5%."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Strong Buy",
-      "buy": 8,
-      "sell": 2
+      "rating": "Buy",
+      "buy": 7,
+      "sell": 3
     },
     "oscillators": {
       "rating": "Buy",
@@ -45,28 +45,28 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 200.18,
+        "value": 200.13,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 201.91,
+        "value": 201.88,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 205.24,
+        "value": 205.22,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 209.09,
+        "value": 209.08,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
@@ -87,24 +87,24 @@
       },
       {
         "name": "EMA 10",
-        "value": 202.27,
+        "value": 202.18,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 202.89,
+        "value": 202.84,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 203.86,
+        "value": 203.84,
         "metric": "ema",
-        "signal": "Bullish",
-        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
+        "signal": "Bearish",
+        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
@@ -117,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 50.31,
+        "value": 49.89,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "50 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -1.431,
+        "value": -1.47,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 67.12,
+        "value": 64.76,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 41.23,
+        "value": 38.72,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -32.88,
+        "value": -35.24,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 11.5,
+        "value": 11.0,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -160,33 +160,33 @@
     ]
   },
   "levels": {
-    "pivot": 205.98,
+    "pivot": 205.7,
     "resistance": [
-      208.62,
-      213.2
+      208.4,
+      213.27
     ],
     "support": [
-      201.4,
-      198.76
+      200.83,
+      198.13
     ]
   },
   "range_52w": {
     "low": 164.07,
     "high": 235.74,
-    "position_pct": 55.8
+    "position_pct": 55.1
   },
   "volatility": {
-    "atr": 7.2,
-    "atr_pct": 3.53,
-    "bollinger_pctb": 0.59,
+    "atr": 7.22,
+    "atr_pct": 3.55,
+    "bollinger_pctb": 0.57,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Semiconductors",
-    "marketCap": 4941810761728,
-    "trailingPE": 31.197248,
-    "forwardPE": 15.95152,
+    "marketCap": 4929700233216,
+    "trailingPE": 31.120794,
+    "forwardPE": 15.912429,
     "profitMargins": 0.62966,
     "revenueGrowth": 0.852,
     "dividendYield": 0.47,
@@ -1269,17 +1269,17 @@
     },
     {
       "d": "2026-07-13",
-      "c": 204.03,
-      "m50": 209.09,
+      "c": 203.53,
+      "m50": 209.08,
       "m200": 191.8
     }
   ],
-  "whats_new": "Gave back Friday's breakout \u2014 down 3.3% to ~$204, slipping back below its 50-day average (~$209) and into a sideways range as the war risk-off (Trump's Hormuz blockade) and 'AI fatigue' hit chips hardest (SK Hynix \u22128%). The longer-term uptrend isn't broken, but the momentum stall is real.",
+  "whats_new": "Slid another ~3.5% to ~$204, back below its 50-day average, on the war risk-off plus an FT report that it has halved its approved Asia AI-chip customer list \u2014 a company-specific worry stacked on the macro one. It never reclaimed Friday's breakout.",
   "news": [
     {
-      "headline": "US stocks fall, chip stocks lead the drop as Trump's Hormuz blockade jolts sentiment",
-      "url": "https://www.livemint.com/market/stock-market-news/us-stocks-today-s-p-500-nasdaq-decline-as-iran-tensions-jolt-sentiment-chip-stocks-fall",
-      "source": "Livemint"
+      "headline": "Nvidia halves Asia AI chip customer list, FT reports",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQ042c2NBTzI2SnhBeFZzMC03WndWMmFTRG1KbXI4V2hacnh2SWZUZ29nbkRvcUNVRi1NVEhWd19hSmNNNzh0QzNLVjhZcjFLWXhGdjFhLXIxcDRnUEQ0X0RRaXRVckJRd2Q1bmNpTklSbW5NUnNJUTdNejllLTVpTzF2QkI5V1YwUHVCWVgyREVXZG1QVS1fYWNGRVFweUlVQlpJSVhWNDF6WDd2TGc?oc=5",
+      "source": "Reuters / FT"
     }
   ],
   "disclaimer": "Technical signals are rules-based and informational only \u2014 not financial advice."

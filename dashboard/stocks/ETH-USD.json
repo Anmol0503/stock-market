@@ -2,32 +2,32 @@
   "ticker": "ETH-USD",
   "name": "Ethereum",
   "currency": "$",
-  "as_of": "2026-07-14T01:05:29+05:30",
-  "price": 1769.91,
-  "change_pct": -1.99,
+  "as_of": "2026-07-14T12:19:56+05:30",
+  "price": 1781.51,
+  "change_pct": 0.45,
   "verdict": {
-    "rating": "Neutral",
-    "score": 0.125,
-    "summary": "Ethereum is rated **Neutral** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 53). MACD is bullish. Trend strength is moderate; it sits at the 10th percentile of its 52-week range."
+    "rating": "Buy",
+    "score": 0.25,
+    "summary": "Ethereum is rated **Buy** on the technical suite. Price is between its 50- and 200-day averages (mixed / transitional). Momentum is neutral (RSI 55). MACD is bullish. Trend strength is moderate; it sits at the 11th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Ethereum is moving sideways, and the full indicator suite reads Neutral. Price is caught between its 50-day ($1755) and 200-day ($2216) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 23) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 53 (neutral). It's trading in the 10th percentile of its 52-week range, and day-to-day volatility is high (~4.0% a day).",
+    "the_read": "Ethereum is moving sideways, and the full indicator suite reads Buy. Price is caught between its 50-day ($1748) and 200-day ($2210) averages, so the trend is transitional and could break either way. Trend strength is moderate (ADX 22) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 55 (neutral). It's trading in the 11th percentile of its 52-week range, and day-to-day volatility is normal (~3.8% a day).",
     "bull_case": [
+      "6 of 10 moving averages are bullish (price is above them).",
       "MACD momentum is positive \u2014 the bullish crossover is intact."
     ],
     "bear_case": [
       "Caught between its 50- and 200-day averages \u2014 no clear trend yet.",
-      "Trading near its 52-week low \u2014 weak, though it may be oversold value.",
-      "Volatility is high \u2014 expect larger swings both ways, so size positions carefully."
+      "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close below the 50-day average (~$1755) would warn the uptrend is stalling. First resistance to clear overhead: $1822. First support that needs to hold: $1734.",
-    "fundamentals_read": "Ethereum is a mega-cap company, worth about $213.3B."
+    "what_would_flip": "A daily close below the 50-day average (~$1748) would warn the uptrend is stalling. First resistance to clear overhead: $1790. First support that needs to hold: $1773.",
+    "fundamentals_read": "Ethereum is a mega-cap company, worth about $215.1B."
   },
   "signals": {
     "moving_averages": {
-      "rating": "Neutral",
-      "buy": 5,
-      "sell": 5
+      "rating": "Buy",
+      "buy": 6,
+      "sell": 4
     },
     "oscillators": {
       "rating": "Buy",
@@ -38,7 +38,7 @@
   "trend": {
     "direction": "Sideways",
     "strength": "Moderate",
-    "adx": 23.1,
+    "adx": 22.39,
     "vs_50dma": "above",
     "vs_200dma": "below"
   },
@@ -46,70 +46,70 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 1777.48,
+        "value": 1778.08,
         "metric": "sma",
-        "signal": "Bearish",
-        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 1696.08,
+        "value": 1704.33,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 1707.86,
+        "value": 1709.87,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 1754.55,
+        "value": 1748.02,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 2009.28,
+        "value": 2006.05,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "SMA 200",
-        "value": 2215.88,
+        "value": 2210.18,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
       },
       {
         "name": "EMA 10",
-        "value": 1762.22,
+        "value": 1766.26,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 1739.82,
+        "value": 1744.1,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 1797.84,
+        "value": 1797.34,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 2223.24,
+        "value": 2218.92,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -118,42 +118,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 53.49,
+        "value": 54.88,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "53 \u2014 neutral momentum, no extreme"
+        "note": "55 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 13.834,
+        "value": 15.127,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 76.29,
+        "value": 79.08,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": 68.83,
+        "value": 58.89,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -23.71,
+        "value": -20.92,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": 13.39,
+        "value": 2.48,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -161,37 +161,31 @@
     ]
   },
   "levels": {
-    "pivot": 1786.33,
+    "pivot": 1781.79,
     "resistance": [
-      1822.07,
-      1874.22
+      1790.31,
+      1799.11
     ],
     "support": [
-      1734.17,
-      1698.44
+      1772.99,
+      1764.47
     ]
   },
   "range_52w": {
     "low": 1564.82,
     "high": 3582.62,
-    "position_pct": 10.2
+    "position_pct": 10.7
   },
   "volatility": {
-    "atr": 71.65,
-    "atr_pct": 4.05,
-    "bollinger_pctb": 0.69,
-    "label": "High"
+    "atr": 68.12,
+    "atr_pct": 3.82,
+    "bollinger_pctb": 0.7,
+    "label": "Normal"
   },
   "fundamentals": {
-    "marketCap": 213282635776
+    "marketCap": 215063511040
   },
   "history": [
-    {
-      "d": "2026-01-15",
-      "c": 3317.1,
-      "m50": 3063.28,
-      "m200": 3646.0
-    },
     {
       "d": "2026-01-16",
       "c": 3295.48,
@@ -1262,9 +1256,15 @@
     },
     {
       "d": "2026-07-13",
-      "c": 1769.91,
-      "m50": 1754.55,
-      "m200": 2215.88
+      "c": 1773.5,
+      "m50": 1754.62,
+      "m200": 2215.9
+    },
+    {
+      "d": "2026-07-14",
+      "c": 1781.51,
+      "m50": 1748.02,
+      "m200": 2210.18
     }
   ],
   "whats_new": "",

@@ -2,16 +2,16 @@
   "ticker": "AAPL",
   "name": "Apple",
   "currency": "$",
-  "as_of": "2026-07-14T01:05:21+05:30",
-  "price": 316.36,
-  "change_pct": 0.33,
+  "as_of": "2026-07-14T12:19:48+05:30",
+  "price": 317.31,
+  "change_pct": 0.63,
   "verdict": {
     "rating": "Strong Buy",
     "score": 0.562,
     "summary": "Apple is rated **Strong Buy** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 64). MACD is bullish. Trend strength is moderate; it sits at the 100th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Apple is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($299) and 200-day ($273) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is moderate (ADX 23) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 64 (neutral). It's trading in the 100th percentile of its 52-week range, and day-to-day volatility is normal (~2.6% a day).",
+    "the_read": "Apple is in an uptrend, and the full indicator suite reads Strong Buy. Price sits above both its 50-day ($299) and 200-day ($273) averages, with the faster average above the slower one \u2014 the classic shape of a healthy uptrend. Trend strength is moderate (ADX 23) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is improving on MACD, and RSI sits at 64 (neutral). It's trading in the 100th percentile of its 52-week range, and day-to-day volatility is normal (~2.5% a day).",
     "bull_case": [
       "Trades above both its 50- and 200-day averages \u2014 a confirmed uptrend.",
       "10 of 10 moving averages are bullish (price is above them).",
@@ -23,8 +23,8 @@
       "CCI is overbought \u2014 a short-term caution signal.",
       "Williams %R is overbought \u2014 a short-term caution signal."
     ],
-    "what_would_flip": "A daily close below the 50-day average (~$299) would warn the uptrend is stalling. First resistance to clear overhead: $321. First support that needs to hold: $314.",
-    "fundamentals_read": "Apple is a mega-cap company in Technology, worth about $4.65T. It trades at a P/E of 38 (expensive \u2014 investors are paying up for strong expected growth); the lower forward P/E of 33 suggests profits are expected to grow. Revenue is growing about 17% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 1.10, it's about as volatile as the market. It pays a dividend yielding 0.3%."
+    "what_would_flip": "A daily close below the 50-day average (~$299) would warn the uptrend is stalling. First resistance to clear overhead: $322. First support that needs to hold: $314.",
+    "fundamentals_read": "Apple is a mega-cap company in Technology, worth about $4.66T. It trades at a P/E of 38 (expensive \u2014 investors are paying up for strong expected growth); the lower forward P/E of 33 suggests profits are expected to grow. Revenue is growing about 17% a year, and it keeps roughly 27\u00a2 of every sales dollar as profit. With a beta of 1.10, it's about as volatile as the market. It pays a dividend yielding 0.3%."
   },
   "signals": {
     "moving_averages": {
@@ -49,35 +49,35 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 305.87,
+        "value": 305.97,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 299.14,
+        "value": 299.19,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 300.82,
+        "value": 300.85,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 298.69,
+        "value": 298.71,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 279.69,
+        "value": 279.7,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
@@ -91,28 +91,28 @@
       },
       {
         "name": "EMA 10",
-        "value": 308.35,
+        "value": 308.52,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 303.44,
+        "value": 303.53,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 295.63,
+        "value": 295.67,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 271.9,
+        "value": 271.91,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
@@ -121,42 +121,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 63.58,
+        "value": 64.16,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "64 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 5.164,
+        "value": 5.24,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 85.74,
+        "value": 87.65,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 111.05,
+        "value": 112.62,
         "metric": "cci",
         "signal": "Sell",
         "note": "well above its average \u2014 overbought (or a strong up-thrust)"
       },
       {
         "name": "Williams %R (14)",
-        "value": -14.26,
+        "value": -12.35,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 32.58,
+        "value": 33.53,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -164,33 +164,33 @@
     ]
   },
   "levels": {
-    "pivot": 318.53,
+    "pivot": 318.85,
     "resistance": [
-      321.28,
-      326.2
+      321.91,
+      326.52
     ],
     "support": [
-      313.61,
-      310.86
+      314.24,
+      311.18
     ]
   },
   "range_52w": {
     "low": 202.38,
-    "high": 316.36,
+    "high": 317.31,
     "position_pct": 100.0
   },
   "volatility": {
     "atr": 8.09,
-    "atr_pct": 2.56,
-    "bollinger_pctb": 0.85,
+    "atr_pct": 2.55,
+    "bollinger_pctb": 0.87,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Consumer Electronics",
-    "marketCap": 4646565314560,
-    "trailingPE": 38.300846,
-    "forwardPE": 32.91101,
+    "marketCap": 4660444790784,
+    "trailingPE": 38.184113,
+    "forwardPE": 33.00932,
     "profitMargins": 0.27152002,
     "revenueGrowth": 0.166,
     "dividendYield": 0.34,
@@ -1273,16 +1273,16 @@
     },
     {
       "d": "2026-07-13",
-      "c": 316.36,
-      "m50": 298.69,
+      "c": 317.31,
+      "m50": 298.71,
       "m200": 272.76
     }
   ],
-  "whats_new": "The quiet winner \u2014 up 0.3% to a fresh 52-week high (~$316) even as the market fell, as investors hid in steadier, less oil-exposed mega-caps during the Hormuz-blockade risk-off. Momentum is strong but stretched: it sits in the 100th percentile of its one-year range with several oscillators overbought, the profile that can pull back first if the risk-off deepens.",
+  "whats_new": "The quiet winner of the risk-off: Apple rose ~0.6% to a fresh 52-week high (~$317) as money hid in steady mega-caps while chips and high-beta tech fell. It extended this morning's small gain even as the Nasdaq dropped.",
   "news": [
     {
-      "headline": "Investors rotate to defensive mega-caps as Trump's Hormuz blockade drives a risk-off",
-      "url": "https://www.bbc.co.uk/news/articles/c8d2vn38dy1o",
+      "headline": "Apple sues OpenAI, alleging an ex-engineer stole trade secrets tied to OpenAI's hardware push",
+      "url": "https://www.bbc.co.uk/news/articles/cy8w379e091o",
       "source": "BBC"
     }
   ],

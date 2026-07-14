@@ -2,120 +2,187 @@
   "ticker": "^NSEBANK",
   "name": "Bank Nifty",
   "currency": "$",
-  "as_of": "2026-07-14T01:05:26+05:30",
-  "price": NaN,
-  "change_pct": NaN,
+  "as_of": "2026-07-14T12:19:52+05:30",
+  "price": 57472.75,
+  "change_pct": -1.13,
   "verdict": {
-    "rating": "Sell",
-    "score": -0.167,
-    "summary": "Bank Nifty is rated **Sell** on the technical suite. Momentum is neutral (RSI 58). MACD is bearish. Trend strength is weak; it sits at the nanth percentile of its 52-week range."
+    "rating": "Neutral",
+    "score": 0.125,
+    "summary": "Bank Nifty is rated **Neutral** on the technical suite. Price is above both its 50- and 200-day averages (a healthy uptrend). Momentum is neutral (RSI 53). MACD is bearish. Trend strength is weak; it sits at the 64th percentile of its 52-week range."
   },
   "analysis": {
-    "the_read": "Bank Nifty is in an unclear trend, and the full indicator suite reads Sell. Trend strength is weak (ADX 17) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 58 (neutral). It's trading in the nanth percentile of its 52-week range, and day-to-day volatility is normal (~nan% a day).",
-    "bull_case": [],
+    "the_read": "Bank Nifty is moving sideways, and the full indicator suite reads Neutral. Price is caught between its 50-day ($55856) and 200-day ($57299) averages, so the trend is transitional and could break either way. Trend strength is weak (ADX 16) \u2014 the trend is weak, so expect choppier, range-bound action. Momentum is deteriorating on MACD, and RSI sits at 53 (neutral). It's trading in the 64th percentile of its 52-week range, and day-to-day volatility is normal (~1.4% a day).",
+    "bull_case": [
+      "Trades above both its 50- and 200-day averages \u2014 a confirmed uptrend.",
+      "7 of 10 moving averages are bullish (price is above them)."
+    ],
     "bear_case": [
       "MACD momentum is negative \u2014 momentum is fading."
     ],
-    "what_would_flip": "First resistance to clear overhead: $nan. First support that needs to hold: $nan.",
+    "what_would_flip": "A daily close below the 50-day average (~$55856) would warn the uptrend is stalling. First resistance to clear overhead: $57749. First support that needs to hold: $57287.",
     "fundamentals_read": ""
   },
   "signals": {
     "moving_averages": {
-      "rating": "Neutral",
-      "buy": 0,
-      "sell": 0
+      "rating": "Buy",
+      "buy": 7,
+      "sell": 3
     },
     "oscillators": {
-      "rating": "Strong Sell",
+      "rating": "Sell",
       "buy": 0,
-      "sell": 1
+      "sell": 2
     }
   },
   "trend": {
-    "direction": "Unclear",
+    "direction": "Sideways",
     "strength": "Weak",
-    "adx": 17.28,
-    "vs_50dma": null,
-    "vs_200dma": null
+    "adx": 16.16,
+    "vs_50dma": "above",
+    "vs_200dma": "above"
   },
   "indicators": {
     "moving_averages": [
       {
+        "name": "SMA 10",
+        "value": 57814.05,
+        "metric": "sma",
+        "signal": "Bearish",
+        "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
+      },
+      {
+        "name": "SMA 20",
+        "value": 57769.47,
+        "metric": "sma",
+        "signal": "Bearish",
+        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
+      },
+      {
+        "name": "SMA 30",
+        "value": 56854.76,
+        "metric": "sma",
+        "signal": "Bullish",
+        "note": "price is above its 30-day average \u2014 bullish for the medium-term trend"
+      },
+      {
+        "name": "SMA 50",
+        "value": 55856.48,
+        "metric": "sma",
+        "signal": "Bullish",
+        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
+      },
+      {
+        "name": "SMA 100",
+        "value": 56131.86,
+        "metric": "sma",
+        "signal": "Bullish",
+        "note": "price is above its 100-day average \u2014 bullish for the long-term trend"
+      },
+      {
+        "name": "SMA 200",
+        "value": 57298.84,
+        "metric": "sma",
+        "signal": "Bullish",
+        "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
+      },
+      {
         "name": "EMA 10",
-        "value": 57674.81,
+        "value": 57706.0,
         "metric": "ema",
-        "signal": "Neutral",
+        "signal": "Bearish",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 57305.5,
+        "value": 57392.6,
         "metric": "ema",
-        "signal": "Neutral",
-        "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 56491.49,
+        "value": 56591.76,
         "metric": "ema",
-        "signal": "Neutral",
-        "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 50-day average \u2014 bullish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 56416.18,
+        "value": 56443.59,
         "metric": "ema",
-        "signal": "Neutral",
-        "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
+        "signal": "Bullish",
+        "note": "price is above its 200-day average \u2014 bullish for the long-term trend"
       }
     ],
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 58.38,
+        "value": 52.92,
         "metric": "rsi",
         "signal": "Neutral",
-        "note": "58 \u2014 neutral momentum, no extreme"
+        "note": "53 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": 569.272,
+        "value": 507.097,
         "metric": "macd",
         "signal": "Sell",
         "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
+      },
+      {
+        "name": "Stochastic %K (14,3)",
+        "value": 42.81,
+        "metric": "stochastic",
+        "signal": "Neutral",
+        "note": "closing in the middle of its recent range"
+      },
+      {
+        "name": "CCI (20)",
+        "value": -10.06,
+        "metric": "cci",
+        "signal": "Neutral",
+        "note": "close to its recent average \u2014 no extreme"
+      },
+      {
+        "name": "Williams %R (14)",
+        "value": -57.19,
+        "metric": "williams_r",
+        "signal": "Neutral",
+        "note": "mid-range \u2014 no extreme"
+      },
+      {
+        "name": "Momentum (10)",
+        "value": -70.15,
+        "metric": "momentum",
+        "signal": "Sell",
+        "note": "price is lower than 10 days ago \u2014 downward momentum"
       }
     ]
   },
   "levels": {
-    "pivot": NaN,
+    "pivot": 57563.52,
     "resistance": [
-      NaN,
-      NaN
+      57749.28,
+      58025.82
     ],
     "support": [
-      NaN,
-      NaN
+      57286.98,
+      57101.22
     ]
   },
   "range_52w": {
     "low": 50275.35,
     "high": 61550.8,
-    "position_pct": NaN
+    "position_pct": 63.8
   },
   "volatility": {
-    "atr": 778.05,
-    "atr_pct": NaN,
-    "bollinger_pctb": null,
+    "atr": 776.31,
+    "atr_pct": 1.35,
+    "bollinger_pctb": 0.32,
     "label": "Normal"
   },
   "fundamentals": {},
   "history": [
-    {
-      "d": "2025-10-16",
-      "c": 57422.55,
-      "m50": 55210.44,
-      "m200": 53447.02
-    },
     {
       "d": "2025-10-17",
       "c": 57713.35,
@@ -1186,9 +1253,15 @@
     },
     {
       "d": "2026-07-13",
-      "c": NaN,
-      "m50": null,
-      "m200": null
+      "c": 58131.45,
+      "m50": 55804.29,
+      "m200": 57288.95
+    },
+    {
+      "d": "2026-07-14",
+      "c": 57472.75,
+      "m50": 55856.48,
+      "m200": 57298.84
     }
   ],
   "whats_new": "",
