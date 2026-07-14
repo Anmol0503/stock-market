@@ -47,35 +47,22 @@ for i in $(seq 1 24); do
   sleep 5
 done
 
+# progress() — one-liner that updates logs/progress.json for the Update Center live tracker
+progress () { "$PY" routine/progress.py "$@" >/dev/null 2>&1 || true; }
+
 # ---- deterministic data steps ----
+progress fetching "Gathering news & data" 0 0 "world + market feeds"
 "$PY" fetch_world.py          || echo "WARN: fetch_world failed"
 "$PY" fetch.py                || echo "WARN: fetch failed"
+progress analyzing "Computing stock signals" 0 0 ""
 "$PY" analyze_stock.py --all  || echo "WARN: analyze failed"
 
-# ---- the analyst (headless Claude on the Max subscription) writes the briefs ----
-# SPLIT into small calls so no single response is large enough to drop mid-stream ("Connection
-# closed mid-response"): World Global (~20), World India (~20), Markets — then merge the two World
-# halves. Each call is independent, so one failure never loses the others.
-CLAUDE_BIN="$CLAUDE"; [ -x "$CLAUDE_BIN" ] || CLAUDE_BIN="claude"
-run_claude () {   # $1 = prompt file — retried once on a mid-stream drop
-  local pf="$1" attempt
-  for attempt in 1 2; do
-    "$CLAUDE_BIN" -p "$(cat "$pf")" \
-      --permission-mode acceptEdits \
-      --allowedTools "Read" "Write" "Edit" "Glob" "Grep" "WebSearch" "WebFetch" \
-      --disallowedTools "Bash" \
-      --output-format text && return 0
-    echo "  retry $pf (attempt $attempt failed)"
-  done
-  return 1
-}
-
+# ---- the analyst (headless Claude) writes the briefs, DECODED IN SMALL BATCHES ----
+# routine/decode_world.py: select ~20+20 headlines, decode ~5 per call (so no response is big enough
+# to drop mid-stream), write the markets brief, then merge — updating the live tracker at every step.
+export CLAUDE_BIN="$CLAUDE"; [ -x "$CLAUDE_BIN" ] || export CLAUDE_BIN="claude"
 if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
-  rm -f output/world-global.json output/world-india.json   # never merge stale halves from a prior run
-  run_claude routine/world_global_prompt.md || echo "WARN: global world decode failed"
-  run_claude routine/world_india_prompt.md  || echo "WARN: india world decode failed"
-  run_claude routine/markets_prompt.md      || echo "WARN: markets decode failed"
-  "$PY" routine/merge_world.py              || echo "WARN: world merge failed (kept last good brief)"
+  "$PY" routine/decode_world.py || echo "WARN: decode failed (kept last good brief)"
 else
   echo "WARN: claude CLI not found — briefs not regenerated"
 fi
@@ -86,6 +73,7 @@ if ! grep -q "\"date\": \"$TODAY\"" output/brief-latest.json 2>/dev/null; then
 fi
 
 # ---- publish + archive (world.json / brief.json / reels.json + dated archive) ----
+progress publishing "Publishing to your phone" 0 0 ""
 "$PY" build_dashboard.py      || echo "WARN: publish failed"
 
 # ---- email once per day (the pipeline now runs every ~2h; don't spam the inbox) ----
@@ -117,4 +105,5 @@ else
   echo "no git remote — skipping publish"
 fi
 
+progress done "Up to date" 0 0 "last run finished $(date '+%H:%M')" false
 echo "=== daily run finished $(date '+%F %T') ==="

@@ -2,9 +2,9 @@
   "ticker": "TSLA",
   "name": "Tesla",
   "currency": "$",
-  "as_of": "2026-07-14T23:37:00+05:30",
-  "price": 396.74,
-  "change_pct": 0.5,
+  "as_of": "2026-07-14T23:52:52+05:30",
+  "price": 396.36,
+  "change_pct": 0.4,
   "verdict": {
     "rating": "Strong Sell",
     "score": -0.75,
@@ -19,8 +19,8 @@
       "MACD momentum is negative \u2014 momentum is fading.",
       "Volatility is high \u2014 expect larger swings both ways, so size positions carefully."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$410) would be the first sign the downtrend is turning up. First resistance to clear overhead: $401. First support that needs to hold: $394.",
-    "fundamentals_read": "Tesla is a mega-cap company in Consumer Cyclical, worth about $1.49T. It trades at a P/E of 371 (expensive \u2014 investors are paying up for strong expected growth); the lower forward P/E of 154 suggests profits are expected to grow. Revenue is growing about 16% a year, and it keeps roughly 4\u00a2 of every sales dollar as profit. With a beta of 1.80, it's more volatile than the market."
+    "what_would_flip": "A daily close back above the 50-day average (~$410) would be the first sign the downtrend is turning up. First resistance to clear overhead: $401. First support that needs to hold: $393.",
+    "fundamentals_read": "Tesla is a mega-cap company in Consumer Cyclical, worth about $1.49T. It trades at a P/E of 370 (expensive \u2014 investors are paying up for strong expected growth); the lower forward P/E of 154 suggests profits are expected to grow. Revenue is growing about 16% a year, and it keeps roughly 4\u00a2 of every sales dollar as profit. With a beta of 1.80, it's more volatile than the market."
   },
   "signals": {
     "moving_averages": {
@@ -45,35 +45,35 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 406.19,
+        "value": 406.15,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 400.17,
+        "value": 400.15,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 402.3,
+        "value": 402.29,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 409.94,
+        "value": 409.93,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 397.04,
+        "value": 397.03,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
@@ -87,28 +87,28 @@
       },
       {
         "name": "EMA 10",
-        "value": 401.41,
+        "value": 401.34,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 10-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 402.33,
+        "value": 402.29,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 20-day average \u2014 bearish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 403.18,
+        "value": 403.16,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 397.64,
+        "value": 397.63,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -117,42 +117,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 47.89,
+        "value": 47.76,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "48 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -1.251,
+        "value": -1.281,
         "metric": "macd",
         "signal": "Sell",
         "note": "MACD line is below its signal line \u2014 momentum is deteriorating (bearish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 43.79,
+        "value": 43.19,
         "metric": "stochastic",
         "signal": "Neutral",
         "note": "closing in the middle of its recent range"
       },
       {
         "name": "CCI (20)",
-        "value": -10.83,
+        "value": -11.46,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -56.21,
+        "value": -56.81,
         "metric": "williams_r",
         "signal": "Neutral",
         "note": "mid-range \u2014 no extreme"
       },
       {
         "name": "Momentum (10)",
-        "value": -15.1,
+        "value": -15.48,
         "metric": "momentum",
         "signal": "Sell",
         "note": "price is lower than 10 days ago \u2014 downward momentum"
@@ -160,33 +160,33 @@
     ]
   },
   "levels": {
-    "pivot": 397.91,
+    "pivot": 397.78,
     "resistance": [
-      401.05,
-      405.37
+      400.8,
+      405.24
     ],
     "support": [
-      393.59,
-      390.45
+      393.34,
+      390.32
     ]
   },
   "range_52w": {
     "low": 302.63,
     "high": 489.88,
-    "position_pct": 50.3
+    "position_pct": 50.1
   },
   "volatility": {
     "atr": 17.8,
     "atr_pct": 4.49,
-    "bollinger_pctb": 0.44,
+    "bollinger_pctb": 0.43,
     "label": "High"
   },
   "fundamentals": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers",
-    "marketCap": 1490083381248,
-    "trailingPE": 370.79437,
-    "forwardPE": 153.78801,
+    "marketCap": 1488599908352,
+    "trailingPE": 370.42523,
+    "forwardPE": 153.6349,
     "profitMargins": 0.03946,
     "revenueGrowth": 0.158,
     "beta": 1.802
@@ -1268,8 +1268,8 @@
     },
     {
       "d": "2026-07-14",
-      "c": 396.74,
-      "m50": 409.94,
+      "c": 396.36,
+      "m50": 409.93,
       "m200": 417.75
     }
   ],

@@ -2,9 +2,9 @@
   "ticker": "MSFT",
   "name": "Microsoft",
   "currency": "$",
-  "as_of": "2026-07-14T23:36:57+05:30",
-  "price": 387.43,
-  "change_pct": -0.91,
+  "as_of": "2026-07-14T23:52:50+05:30",
+  "price": 386.89,
+  "change_pct": -1.05,
   "verdict": {
     "rating": "Neutral",
     "score": -0.125,
@@ -22,8 +22,8 @@
       "Williams %R is overbought \u2014 a short-term caution signal.",
       "Trading near its 52-week low \u2014 weak, though it may be oversold value."
     ],
-    "what_would_flip": "A daily close back above the 50-day average (~$403) would be the first sign the downtrend is turning up. First resistance to clear overhead: $391. First support that needs to hold: $381.",
-    "fundamentals_read": "Microsoft is a mega-cap company in Technology, worth about $2.88T. It trades at a P/E of 23 (moderate); the lower forward P/E of 20 suggests profits are expected to grow. Revenue is growing about 18% a year, and it keeps roughly 39\u00a2 of every sales dollar as profit. With a beta of 1.13, it's about as volatile as the market. It pays a dividend yielding 0.9%."
+    "what_would_flip": "A daily close back above the 50-day average (~$403) would be the first sign the downtrend is turning up. First resistance to clear overhead: $390. First support that needs to hold: $381.",
+    "fundamentals_read": "Microsoft is a mega-cap company in Technology, worth about $2.87T. It trades at a P/E of 23 (moderate); the lower forward P/E of 20 suggests profits are expected to grow. Revenue is growing about 18% a year, and it keeps roughly 39\u00a2 of every sales dollar as profit. With a beta of 1.13, it's about as volatile as the market. It pays a dividend yielding 0.9%."
   },
   "signals": {
     "moving_averages": {
@@ -48,35 +48,35 @@
     "moving_averages": [
       {
         "name": "SMA 10",
-        "value": 385.46,
+        "value": 385.4,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 20",
-        "value": 380.38,
+        "value": 380.35,
         "metric": "sma",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "SMA 30",
-        "value": 392.5,
+        "value": 392.48,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 30-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 50",
-        "value": 402.54,
+        "value": 402.53,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "SMA 100",
-        "value": 399.17,
+        "value": 399.16,
         "metric": "sma",
         "signal": "Bearish",
         "note": "price is below its 100-day average \u2014 bearish for the long-term trend"
@@ -90,28 +90,28 @@
       },
       {
         "name": "EMA 10",
-        "value": 385.09,
+        "value": 385.0,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 10-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 20",
-        "value": 386.71,
+        "value": 386.66,
         "metric": "ema",
         "signal": "Bullish",
         "note": "price is above its 20-day average \u2014 bullish for the short-term trend"
       },
       {
         "name": "EMA 50",
-        "value": 395.74,
+        "value": 395.72,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 50-day average \u2014 bearish for the medium-term trend"
       },
       {
         "name": "EMA 200",
-        "value": 425.41,
+        "value": 425.4,
         "metric": "ema",
         "signal": "Bearish",
         "note": "price is below its 200-day average \u2014 bearish for the long-term trend"
@@ -120,42 +120,42 @@
     "oscillators": [
       {
         "name": "RSI (14)",
-        "value": 48.88,
+        "value": 48.58,
         "metric": "rsi",
         "signal": "Neutral",
         "note": "49 \u2014 neutral momentum, no extreme"
       },
       {
         "name": "MACD (12,26,9)",
-        "value": -3.954,
+        "value": -3.997,
         "metric": "macd",
         "signal": "Buy",
         "note": "MACD line is above its signal line \u2014 momentum is improving (bullish)"
       },
       {
         "name": "Stochastic %K (14,3)",
-        "value": 82.45,
+        "value": 81.28,
         "metric": "stochastic",
         "signal": "Sell",
         "note": "closing near its recent highs \u2014 overbought"
       },
       {
         "name": "CCI (20)",
-        "value": 15.31,
+        "value": 14.73,
         "metric": "cci",
         "signal": "Neutral",
         "note": "close to its recent average \u2014 no extreme"
       },
       {
         "name": "Williams %R (14)",
-        "value": -17.55,
+        "value": -18.72,
         "metric": "williams_r",
         "signal": "Sell",
         "note": "near its recent highs \u2014 overbought"
       },
       {
         "name": "Momentum (10)",
-        "value": 18.86,
+        "value": 18.32,
         "metric": "momentum",
         "signal": "Buy",
         "note": "price is higher than 10 days ago \u2014 upward momentum"
@@ -163,33 +163,33 @@
     ]
   },
   "levels": {
-    "pivot": 384.76,
+    "pivot": 384.58,
     "resistance": [
-      390.86,
-      394.3
+      390.5,
+      394.12
     ],
     "support": [
-      381.32,
-      375.22
+      380.96,
+      375.04
     ]
   },
   "range_52w": {
     "low": 352.83,
     "high": 542.07,
-    "position_pct": 18.3
+    "position_pct": 18.0
   },
   "volatility": {
     "atr": 11.84,
     "atr_pct": 3.06,
-    "bollinger_pctb": 0.66,
+    "bollinger_pctb": 0.64,
     "label": "Normal"
   },
   "fundamentals": {
     "sector": "Technology",
     "industry": "Software - Infrastructure",
-    "marketCap": 2877998497792,
-    "trailingPE": 23.102564,
-    "forwardPE": 20.011932,
+    "marketCap": 2873987432448,
+    "trailingPE": 23.070364,
+    "forwardPE": 19.984041,
     "profitMargins": 0.39341998,
     "revenueGrowth": 0.183,
     "dividendYield": 0.95,
@@ -1272,8 +1272,8 @@
     },
     {
       "d": "2026-07-14",
-      "c": 387.43,
-      "m50": 402.54,
+      "c": 386.89,
+      "m50": 402.53,
       "m200": 441.07
     }
   ],

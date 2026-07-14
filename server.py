@@ -150,6 +150,17 @@ def _live_status(local_reels: pathlib.Path) -> dict:
     return out
 
 
+def _progress() -> dict | None:
+    """The live per-step tracker written by routine/progress.py during a run."""
+    p = LOGS / "progress.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except (ValueError, OSError):
+        return None
+
+
 def _next_run_est() -> str:
     """~110 min after the last brief was written (only fires while the laptop is awake)."""
     brief = ROOT / "output" / "brief-latest.json"
@@ -178,6 +189,7 @@ def build_status() -> dict:
         "now": dt.datetime.now().isoformat(timespec="seconds"),
         "briefs": {"world": world, "markets": markets, "overall": overall},
         "run": _run_from_log(),
+        "progress": _progress(),
         "publish": _publish_status(),
         "live": _live_status(DASH / "reels.json"),
         "next_run_est": _next_run_est(),
