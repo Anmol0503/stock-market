@@ -261,6 +261,7 @@
   </div>
   <select id="daySel" class="daysel" title="View a past day's brief" onchange="loadDay(this.value)" style="display:none"></select>
   <a class="refreshbtn" href="./reels/" title="The day as a swipeable mobile deck — one takeaway per card" style="text-decoration:none">📱 Reels</a>
+  <a id="statusLink" class="refreshbtn" href="/status" title="Update Center — freshness, last run, publish status, and force an update" style="text-decoration:none;display:none">⚙️ Update Center</a>
   <button id="refreshBtn" class="refreshbtn" title="Reload the latest data" onclick="refreshNow(this)">⟳ Refresh</button>
   <button id="viewBtn" class="refreshbtn" title="Toggle between full explanations and a compact view" onclick="toggleView()"></button>
   <span class="updated"><span id="briefStamp" title=""></span><span id="updatedAt" title="When the on-screen data was last loaded"></span></span>
@@ -890,6 +891,9 @@ document.getElementById('searchForm').addEventListener('submit',e=>{
   const hit=INDEX.find(r=>r.ticker.toUpperCase()===q.toUpperCase()) || INDEX.find(r=>(r.name||'').toLowerCase().includes(q.toLowerCase()));
   openStock(hit?hit.ticker:q);
 });
+
+/* the Update Center is a local-only control panel (served by server.py) — show its link only locally */
+if(IS_LOCAL){ const sl=document.getElementById('statusLink'); if(sl) sl.style.display=''; }
 
 /* initial load — archive index, today's briefs, the stock verdicts, and the view toggle */
 updateViewBtn();

@@ -54,15 +54,21 @@
   #hdr{position:fixed;top:calc(env(safe-area-inset-top) + 13px);left:12px;right:12px;z-index:30;
     display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}
   #hdr .stale{color:var(--amber)}
-  .hdr-actions{display:flex;gap:6px;flex:0 0 auto}
+  .hdr-actions{display:flex;gap:5px;flex:0 0 auto;align-items:center}
   #hdr .dash,#refresh{color:var(--dim);border:1px solid var(--line);border-radius:99px;background:rgba(11,15,23,.55);
-    font-weight:700;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer}
+    font-weight:700;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer}
   #refresh.spin{animation:spin .7s linear infinite;color:var(--accent)}
   @keyframes spin{to{transform:rotate(360deg)}}
+  /* always-visible freshness pill — green ≤3h, amber ≤12h, red = stale. Tap = refresh. */
+  #fresh{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 8px;border-radius:99px;cursor:pointer;
+    border:1px solid var(--line);background:rgba(11,15,23,.55);font-size:11.5px;font-weight:800;color:var(--dim);white-space:nowrap}
+  #fresh .fdot{width:7px;height:7px;border-radius:99px;background:currentColor;flex:0 0 auto;
+    box-shadow:0 0 0 3px color-mix(in srgb,currentColor 22%,transparent)}
+  #fresh.ok{color:var(--up)} #fresh.aging{color:var(--amber)} #fresh.stale{color:var(--down)}
   /* Global / India / Markets segmented toggle */
   #tabs{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:3px;gap:2px;min-width:0}
-  #tabs button{font-family:var(--round);font-size:12.5px;font-weight:700;color:var(--dim);cursor:pointer;
-    border:none;background:none;border-radius:99px;padding:7px 11px;min-height:34px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+  #tabs button{font-family:var(--round);font-size:12px;font-weight:700;color:var(--dim);cursor:pointer;
+    border:none;background:none;border-radius:99px;padding:6px 9px;min-height:32px;display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
   #tabs button.on{color:#fff;background:linear-gradient(135deg, var(--tabcat,var(--accent)), color-mix(in srgb, var(--tabcat,var(--accent)) 62%, #000))}
 
   /* cover / divider centered */
@@ -202,12 +208,13 @@
 <div id="progress"></div>
 <div id="hdr">
   <div id="tabs">
-    <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
-    <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
-    <button data-p="markets" onclick="setPillar('markets')">📈 Markets</button>
+    <button data-p="global" onclick="setPillar('global')">Global</button>
+    <button data-p="india" onclick="setPillar('india')">India</button>
+    <button data-p="markets" onclick="setPillar('markets')">Markets</button>
   </div>
   <div class="hdr-actions">
-    <button id="refresh" title="Get the latest news" onclick="refreshNow(this)">↻</button>
+    <button id="fresh" title="How fresh this is — tap to refresh" onclick="refreshNow(document.getElementById('refresh'))"><span class="fdot"></span><span id="freshAge">—</span></button>
+    <button id="refresh" title="Get the latest" onclick="refreshNow(this)">↻</button>
     <a class="dash" href="../" title="Full dashboard">⧉</a>
   </div>
 </div>
@@ -242,6 +249,25 @@ function relTime(iso){
   const d = Math.round(h/24); return d===1?'yesterday':d+'d ago';
 }
 const todayLocal = () => new Date().toLocaleDateString('en-CA');
+// compact age like "40m" / "3h" / "2d" for the freshness pill
+function ageShort(iso){
+  if(!iso) return null;
+  const t=new Date(iso); if(isNaN(t)) return null;
+  return Math.max(0, Math.round((Date.now()-t)/60000));
+}
+// paint the header freshness pill from the deck's generated_at (green ≤3h, amber ≤12h, red = stale)
+function paintFresh(){
+  const el=document.getElementById('fresh'), lbl=document.getElementById('freshAge');
+  if(!el||!lbl) return;
+  const m = DECK ? ageShort(DECK.generated_at) : null;
+  let state='stale', txt='stale';
+  if(m!=null){ state = m<=180?'ok' : m<=720?'aging' : 'stale';
+    txt = m<2?'now' : m<60?m+'m' : m<1440?Math.round(m/60)+'h' : Math.round(m/1440)+'d'; }
+  el.className = state;
+  lbl.textContent = txt;
+  el.title = m==null ? 'No deck loaded — tap to refresh'
+    : (state==='stale' ? `Stale — last updated ${txt} ago. Tap to refresh.` : `Updated ${txt} ago. Tap to refresh.`);
+}
 // highlight standalone money/percent figures — runs AFTER esc(), so it's injection-safe
 const hl = s => esc(s).replace(/([₹$€£]\s?\d[\d,]*\.?\d*|\b\d+(?:\.\d+)?%)/g, '<mark>$1</mark>');
 
@@ -416,6 +442,7 @@ function render(){
     }});
   },{rootMargin:'-45% 0px -45% 0px', threshold:0});
   [...deck.children].forEach(el=>io.observe(el));
+  paintFresh();
 }
 
 // re-pull the latest deck (regenerates ~every 2h on the laptop; SW is network-first so the phone gets it)

@@ -22,6 +22,19 @@ if [ "${1:-}" != "--force" ] && [ -f "output/brief-latest.json" ] \
   exit 0
 fi
 
+# ---- single-run lock: NEVER let two pipelines overlap (overlap corrupts the output files and
+#      stacks duplicate commits — the "concurrent process" bug). Atomic mkdir = the lock. ----
+LOCK="logs/run.lock"
+if ! mkdir "$LOCK" 2>/dev/null; then
+  if [ -n "$(find "$LOCK" -maxdepth 0 -mmin -180 2>/dev/null)" ]; then
+    echo "another run is active ($LOCK) — exiting"
+    exit 0
+  fi
+  echo "stale lock (>3h) — reclaiming"
+  rmdir "$LOCK" 2>/dev/null; mkdir "$LOCK" 2>/dev/null || { echo "could not acquire lock — exiting"; exit 0; }
+fi
+trap 'rmdir "'"$LOCK"'" 2>/dev/null' EXIT   # release the lock however we exit
+
 echo "=== daily run started $(date '+%F %T') ==="
 
 # ---- wait for network (fresh wake: Wi-Fi can lag) ----
