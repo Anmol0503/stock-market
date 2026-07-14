@@ -141,24 +141,22 @@ def build_reels() -> int:
     history = _load_json(DASH / "board-history.json") or {}
     sparks = history.get("series", {})
 
+    # The reels are a PURE, TIMESTAMPED NEWS FEED now: no cover, no markets/learn cards — just the
+    # ~20 global + ~20 india decoded stories in two tabs. Flip these to bring those sections back.
+    REELS_INCLUDE_MARKETS = False
+    REELS_INCLUDE_LEARN = False
+
     cards: list[dict] = []
     stories = (world or {}).get("stories", []) or []
     watch = (brief or {}).get("what_to_watch", []) or []
 
-    # -- cover: the 30-second version if you swipe nothing else
-    cards.append({
-        "type": "cover", "id": "cover",
-        "headline": (world or {}).get("headline") or (brief or {}).get("headline") or "",
-        "big_picture": (world or {}).get("the_big_picture") or "",
-        "market_headline": (brief or {}).get("headline") or "",
-        "counts": {"stories": len(stories), "markets": len(watch), "learn": 2},
-    })
-
-    # -- world stories, already ranked/curated by the analyst
+    # -- world stories, already ranked/curated by the analyst (no cover — first swipe IS the top story)
     for s in stories:
+        src = (s.get("sources") or [{}])[0].get("name")
         cards.append({
             "type": "story", "id": f"story-{s.get('rank')}",
             "rank": s.get("rank"), "category": s.get("category"),
+            "published_iso": s.get("published_iso"), "source": src,
             "importance": s.get("importance"), "regions": s.get("regions") or [],
             "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
             "key_points": s.get("key_points") or [],
@@ -170,8 +168,8 @@ def build_reels() -> int:
                 "watch_next", "market_link", "key_terms", "sources")},
         })
 
-    # -- markets section
-    if brief:
+    # -- markets section (skipped for now — set REELS_INCLUDE_MARKETS = True to restore)
+    if brief and REELS_INCLUDE_MARKETS:
         cards.append({"type": "divider", "id": "mkt", "title": "Markets", "emoji": "📈",
                       "subtitle": brief.get("headline") or ""})
         if brief.get("market_story"):
@@ -226,7 +224,7 @@ def build_reels() -> int:
             })
 
     # -- learn cards: concept of the day (deterministic rotation) + flashback quiz
-    keys = _glossary_keys()
+    keys = _glossary_keys() if REELS_INCLUDE_LEARN else []
     if keys:
         key = keys[(day - GLOSSARY_EPOCH).days % len(keys)]
         live = set()
@@ -236,7 +234,7 @@ def build_reels() -> int:
             live.update(w.get("concepts") or [])
         cards.append({"type": "concept", "id": "learn-concept", "key": key,
                       **({"why_today": "This one is live in today's brief."} if key in live else {})})
-    yworld = _yesterday_world(date)
+    yworld = _yesterday_world(date) if REELS_INCLUDE_LEARN else None
     if yworld:
         pool = [s for s in (yworld.get("stories") or [])[:5] if s.get("the_lesson")]
         if pool:

@@ -9,18 +9,33 @@ Read `output/world-raw-latest.json` for the raw feed, then run **WebSearch** to 
 latest, and fill gaps. Write **strict JSON** matching the schema below to
 `output/world-<YYYY-MM-DD>.json` and copy it to `output/world-latest.json`.
 
-## Selection discipline
-- Pick the **8–12 stories that genuinely matter today** — the ones you "shouldn't miss."
-  Rank #1 first by real-world importance (scale of impact × how many people/systems it touches ×
-  how much it changes from yesterday).
-- Cover the spread: don't return 8 politics stories. Range across geopolitics, economy, technology,
-  science, health, climate/energy — whatever is actually important today.
-- **INDIA IS HOME — never bury it.** The reader lives in India. Include **at least 3–4 substantial
-  India stories** among the ranked stories (national news, economy/policy, markets, India's place in
-  the world), decoded to the same depth as everything else — not as "also notable" filler. Use the
-  India feeds in `world-raw-latest.json` plus WebSearch. If a global story has a specific India angle
-  (oil prices, trade, rupee, diaspora), spell that angle out.
-- A story earns its place only if you can explain why it matters. If you can't, drop it.
+## Selection discipline — TWO regional feeds, ~20 each
+The reels are now a **pure, timestamped news feed split into two tabs: GLOBAL and INDIA.** Produce:
+- **~20 GLOBAL stories** (category is anything EXCEPT `india`), and
+- **~20 INDIA stories** (category `india`).
+Target 20 each; **quality and verification come first — never pad to hit 20 with junk or unverified
+items.** If only 15 global stories genuinely matter and check out today, return 15. Within each region,
+order by importance × freshness (put the biggest, newest first — story `rank` is a single global 1..N
+counter across both regions, most important first).
+- Cover the spread inside GLOBAL: geopolitics, economy, technology, science, health, climate/energy —
+  whatever is actually important. Don't return 20 politics stories.
+- **INDIA IS HOME.** The reader lives in India — the India tab is a first-class feed of ~20 national
+  news / economy / policy / markets / India-in-the-world stories, decoded to the same depth as global.
+- **Exact timestamps are required.** Every story carries `published_iso` = the real time the news
+  broke, taken from the `published_iso` of the raw-feed item you based it on (or the earliest credible
+  report time you confirm via WebSearch). **Never invent a time.** If genuinely unknown, set it to null.
+- A story earns its place only if you can explain why it matters AND you have verified it (below).
+
+## Vetting discipline — the raw feed includes SOCIAL; verify before you publish
+`world-raw-latest.json` now casts a very wide net: reputable wires and RSS, **plus Google News,
+Reddit (`r/worldnews`, `r/india`, …) and Twitter/X (via nitter)**. Treat **Reddit and X items as LEADS,
+not facts.** Before including anything sourced from social:
+- **Confirm it with a credible outlet via WebSearch.** If you cannot corroborate it, DROP it.
+- Never present a rumor, unconfirmed claim, or single-tweet assertion as established fact. If a claim is
+  contested or still developing, say who claims what and that it's unconfirmed.
+- Prefer the **primary/original reporting** as the cited source (not the reddit/tweet link). Every
+  story still needs ≥1 credible `sources` entry with a real URL.
+- De-duplicate: the same event will appear many times across feeds — decode it once, as one story.
 
 ## Decoding discipline (the whole point — go DEEP)
 For **every** story, fully decode it. Write in plain language, short sentences, no unexplained jargon
@@ -42,12 +57,15 @@ read three extra sentences that make them *understand* than a clipped summary th
 {
   "date": "2026-07-02",
   "generated_at": "2026-07-02T07:05:00+05:30",
-  "headline": "One sentence capturing the single most important thing in the world today.",
-  "the_big_picture": "3–4 sentences connecting today's top stories — the throughline a smart friend would give you over coffee. What's the mood of the world today and why.",
+  "headline": "One sentence capturing the single most important thing in the world today. (Shown on the dashboard, NOT as a reels cover — the reels open straight into the news feed.)",
+  "the_big_picture": "3–4 sentences connecting today's top stories — the throughline a smart friend would give you over coffee. (Dashboard only.)",
   "stories": [
     {
       "rank": 1,
       "category": "geopolitics",          // geopolitics | economy | technology | science | health | climate | india
+                                          // category === "india" → shows in the INDIA tab; anything else → GLOBAL tab
+      "published_iso": "2026-07-14T15:33:38+00:00",  // REQUIRED — exact time the news broke, copied from the raw
+                                          // feed item / earliest credible report. NEVER invent. null only if truly unknown.
       "regions": ["Middle East", "US"],
       "title": "Short, clear title — no clickbait.",
       "key_points": ["3–4 short scannable bullets — the essence a reader grasps in 5 seconds. Each ≤ ~14 words, punchy, no need for full sentences. The fast read before the detail (e.g. 'Iran holds the biggest day of the funeral', 'The likely successor stays out of public view')."],
@@ -100,4 +118,7 @@ The reader wants to LEARN from the news, not just follow it. So every story carr
 - Explain, don't just report. The test: could a curious 16-year-old read a story and fully understand
   what happened AND why it matters? If not, add the missing context.
 - `market_link` is the bridge to the Markets pillar — fill it whenever a world event moves assets.
-- Keep each field tight and scannable, but complete. Depth over volume.
+- Keep each field tight and scannable, but complete. **You are now writing ~40 stories (≈20 global +
+  ≈20 india), each fully decoded** — so be efficient and don't pad, but NEVER drop a required field
+  (`background`, `what_happened`, `why_it_matters`, `ripple_effects`, `why_now`, `watch_next`,
+  `the_lesson`, `published_iso`, `sources`). Full decode on every one; depth AND breadth.

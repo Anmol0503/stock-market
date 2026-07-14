@@ -15,15 +15,25 @@ FIRST read the two most recent `dashboard/archive/world-*.json` files — you ne
 continuity: when a story today continues one we already covered, include the `thread` object per
 `analyze/world_prompt.md` (`previously` must reflect what those archived briefs ACTUALLY said; `changed`
 is what's genuinely new). Never force a thread onto a brand-new story.
-Then read `output/world-raw-latest.json` (raw headlines by category, with timestamps). Use WebSearch to
-confirm facts, get the latest, and fill gaps. Pick the 8–12 stories that genuinely matter today —
-including AT LEAST 3–4 substantial India stories, ranked high (the reader lives in India). FULLY
-DECODE each per `analyze/world_prompt.md`: background, what_happened, why_it_matters, ripple_effects,
-why_now, watch_next, key_terms, **the_lesson** (required), **concepts** (only allowed keys),
-**key_points** (3–4 short scannable bullets — the essence, each ≤ ~14 words),
-market_link, importance, sources (≥1 per story, real URLs from the raw feed or your searches — never
-invent). Write the connective `the_big_picture`. Save STRICT JSON to `output/world-<today>.json` AND
-`output/world-latest.json`. Set `date` to today (YYYY-MM-DD) and `generated_at` to now (ISO, IST).
+Then read `output/world-raw-latest.json` (a WIDE raw net — reputable RSS + Google News + **Reddit +
+Twitter/X via nitter**, each item tagged `region` global/india, most with a real `published_iso`). Use
+WebSearch to confirm facts, get the latest, and fill gaps. Produce a **timestamped two-region feed:
+~20 GLOBAL stories + ~20 INDIA stories** (category `india` = India tab; anything else = Global tab),
+ordered most-important-and-newest first. **Target 20 each but verification beats volume — never pad
+with junk; if only 15 truly merit inclusion, return 15.**
+
+**VET before you publish:** treat Reddit/X items as LEADS ONLY — corroborate each with a credible
+outlet via WebSearch before including; drop anything you can't confirm; never present a rumor/single
+tweet as fact; de-dupe the same event into ONE story; cite the primary outlet (not the reddit/tweet).
+
+For EVERY story FULLY DECODE per `analyze/world_prompt.md`: **`published_iso`** (REQUIRED — the exact
+time the news broke, copied from the raw item / earliest credible report; NEVER invent; null only if
+truly unknown), background, what_happened, why_it_matters, ripple_effects, why_now, watch_next,
+key_terms, **the_lesson** (required), **concepts** (only allowed keys), **key_points** (3–4 bullets,
+each ≤ ~14 words), market_link, importance, sources (≥1 per story, real URLs — never invent). Also write
+`headline` + `the_big_picture` (dashboard only — the reels open straight into the feed, no cover). Save
+STRICT JSON to `output/world-<today>.json` AND `output/world-latest.json`. Set `date` to today
+(YYYY-MM-DD) and `generated_at` to now (ISO, IST).
 
 ## 2. Markets brief
 Read `output/raw-latest.json` and `dashboard/stocks/index.json` (fresh computed prices/verdicts — use

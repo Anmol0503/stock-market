@@ -107,6 +107,11 @@
   h1{margin:0;font-family:var(--round);font-size:22px;line-height:1.27;font-weight:700;letter-spacing:-.2px}
   h1.big{font-size:28px;line-height:1.2;font-weight:800;letter-spacing:-.4px}
   .body{font-size:16px;line-height:1.62;color:#d3dbe6}
+  /* exact-timestamp + source line on a news story */
+  .when{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--dim);margin-top:-6px}
+  .when .wdot{width:6px;height:6px;border-radius:99px;background:var(--up);flex:0 0 auto;
+    box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 22%,transparent)}
+  .when .wsrc{color:var(--cat,var(--accent))}
   mark{background:color-mix(in srgb,var(--amber) 20%,transparent);color:var(--txt);border-radius:4px;padding:0 3px;font-weight:600}
   /* THE moot — the one takeaway, unmistakably the hero */
   .moot{background:linear-gradient(135deg, color-mix(in srgb, var(--cat,var(--accent)) 14%, var(--panel)), var(--panel2));
@@ -208,9 +213,8 @@
 <div id="progress"></div>
 <div id="hdr">
   <div id="tabs">
-    <button data-p="global" onclick="setPillar('global')">Global</button>
-    <button data-p="india" onclick="setPillar('india')">India</button>
-    <button data-p="markets" onclick="setPillar('markets')">Markets</button>
+    <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
+    <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
   </div>
   <div class="hdr-actions">
     <button id="fresh" title="How fresh this is — tap to refresh" onclick="refreshNow(document.getElementById('refresh'))"><span class="fdot"></span><span id="freshAge">—</span></button>
@@ -293,6 +297,14 @@ function chips(keys){
 function mootBlock(txt, lbl){
   return txt?`<div class="moot"><div class="lbl">💡 ${lbl||'The takeaway'}</div><div class="txt">${esc(txt)}</div></div>`:'';
 }
+// exact-timestamp + source line for a news story (the whole point of the feed)
+function whenLine(c){
+  const rel = relTime(c.published_iso);
+  const abs = c.published_iso ? new Date(c.published_iso).toLocaleString() : '';
+  const src = c.source ? `<span class="wsrc">${esc(c.source)}</span>` : '';
+  if(!rel && !src) return '';
+  return `<div class="when" title="${esc(abs)}">${rel?`<span class="wdot"></span>${esc(rel)}`:''}${rel&&src?' · ':''}${src}</div>`;
+}
 function sparkSVG(pts){
   if(!pts||pts.length<3) return '';
   const min=Math.min(...pts), max=Math.max(...pts), r=(max-min)||1;
@@ -327,6 +339,7 @@ const R = {
 
   story: c => `
     <div class="meta">${catChip(c.category)}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
+    ${whenLine(c)}
     <h1>${esc(c.title)}</h1>
     ${mootBlock(c.moot)}
     ${chips(c.concepts)}
@@ -394,12 +407,11 @@ const R = {
 const EXTRA = {cover:'cover', divider:'divider'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets'};
-// which of the three tabs a card belongs to — India stories split out by category
+// two tabs now: a story goes to India if its category is india, else Global. Outro (and anything
+// unexpected) lives on Global. Markets is skipped from the reels for now.
 function pillarOf(c){
   if(c.type==='story') return c.category==='india' ? 'india' : 'global';
-  return ({cover:'global', quiz:'global', outro:'global',
-    divider:'markets', market_story:'markets', board:'markets', watch:'markets',
-    favorite:'markets', concept:'markets'})[c.type] || 'global';
+  return 'global';
 }
 let PILLARSEL = 'global';
 
@@ -414,15 +426,10 @@ function setPillar(p){
 
 function render(){
   const deck = document.getElementById('deck');
+  // pure news feed: just the region's decoded stories (+ the outro), newest/most-important first.
   let cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
-  // India tab has no cover (that's the global intro) — synthesise a light intro
-  if(PILLARSEL==='india'){
-    const n = cards.filter(x=>x.card.type==='story').length;
-    cards.unshift({intro:`<div class="daylbl">${esc(DECK.day_label||DECK.date)}</div>
-      <div class="bigemoji">🇮🇳</div><h1 class="big">India</h1>
-      <div class="body" style="color:var(--dim)">${n} decoded ${n===1?'story':'stories'} from home today.</div>
-      <div class="scrollcue">swipe up ↑</div>`, extra:'cover', cat:'india'});
-  }
+  if(!cards.length){ deck.innerHTML = `<section class="card" style="${catStyle(PILLARSEL==='india'?'india':'geopolitics')}"><div class="meta">${catChip(PILLARSEL==='india'?'india':'geopolitics')}</div><h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Tap ↻ to check.</div></section>`;
+    document.getElementById('progress').innerHTML=''; paintFresh(); return; }
 
   deck.innerHTML = cards.map((x,i)=>{
     const cat = x.card ? cardCat(x.card) : x.cat;

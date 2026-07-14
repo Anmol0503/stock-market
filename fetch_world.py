@@ -33,6 +33,10 @@ OUT = ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
 HTTP_TIMEOUT = 20
+# A full browser UA — required by Reddit (generic "Mozilla/5.0" → 403) and accepted by the
+# official feeds (PIB/RBI) that reject feedparser's default agent. One UA that works everywhere.
+BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/122.0 Safari/537.36")
 
 # Broad, reputable, free RSS across everything you "shouldn't miss".
 # (category, source, url). Edit freely — breadth is the point.
@@ -85,6 +89,46 @@ WORLD_FEEDS = [
      "https://news.google.com/rss/search?q=site:reuters.com+india&hl=en-IN&gl=IN&ceid=IN:en"),
     ("india", "Livemint Economy", "https://www.livemint.com/rss/economy"),
     ("india", "ET Markets", "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"),
+
+    # === HIGH-VOLUME AGGREGATORS: Google News top + topic feeds (fresh, timestamped) ===
+    # World / global
+    ("geopolitics", "Google News — World", "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"),
+    ("geopolitics", "Google News — World topic",
+     "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en"),
+    ("economy", "Google News — Business",
+     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en"),
+    ("technology", "Google News — Technology",
+     "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en"),
+    ("science", "Google News — Science",
+     "https://news.google.com/rss/headlines/section/topic/SCIENCE?hl=en-US&gl=US&ceid=US:en"),
+    ("health", "Google News — Health",
+     "https://news.google.com/rss/headlines/section/topic/HEALTH?hl=en-US&gl=US&ceid=US:en"),
+    # India
+    ("india", "Google News — India top", "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en"),
+    ("india", "Google News — India nation",
+     "https://news.google.com/rss/headlines/section/topic/NATION?hl=en-IN&gl=IN&ceid=IN:en"),
+    ("india", "Google News — India business",
+     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en"),
+
+    # === REDDIT (per-subreddit .rss — the JSON API is 403-blocked, but RSS still serves) ===
+    # These are LEADS to verify, not sources of record — the analyst confirms via WebSearch.
+    ("geopolitics", "Reddit r/worldnews", "https://www.reddit.com/r/worldnews/hot/.rss"),
+    ("geopolitics", "Reddit r/news", "https://www.reddit.com/r/news/hot/.rss"),
+    ("geopolitics", "Reddit r/geopolitics", "https://www.reddit.com/r/geopolitics/hot/.rss"),
+    ("economy", "Reddit r/Economics", "https://www.reddit.com/r/Economics/hot/.rss"),
+    ("technology", "Reddit r/technology", "https://www.reddit.com/r/technology/hot/.rss"),
+    ("india", "Reddit r/india", "https://www.reddit.com/r/india/hot/.rss"),
+    ("india", "Reddit r/IndiaNews", "https://www.reddit.com/r/IndiaNews/hot/.rss"),
+    ("india", "Reddit r/unitedstatesofindia", "https://www.reddit.com/r/unitedstatesofindia/hot/.rss"),
+
+    # === TWITTER/X via nitter (BEST-EFFORT — nitter instances are flaky and may 403/die;
+    #     wrapped per-feed so a dead instance never breaks the run. Breaking-news accounts only) ===
+    ("geopolitics", "X · BBC Breaking", "https://nitter.net/BBCBreaking/rss"),
+    ("geopolitics", "X · Reuters", "https://nitter.net/Reuters/rss"),
+    ("geopolitics", "X · AP", "https://nitter.net/AP/rss"),
+    ("india", "X · ANI", "https://nitter.net/ANI/rss"),
+    ("india", "X · PTI", "https://nitter.net/PTI_News/rss"),
+    ("india", "X · NDTV", "https://nitter.net/ndtv/rss"),
 ]
 
 # GDELT: a global pulse of what the world's press is covering most right now.
@@ -96,22 +140,29 @@ GDELT_QUERY = (
 )
 
 
-def rss_world(per_feed: int = 8) -> list[dict]:
+def rss_world(per_feed: int = 12) -> list[dict]:
     if feedparser is None:
         print("  ! feedparser not installed; skipping RSS", file=sys.stderr)
         return []
+    import socket
+    socket.setdefaulttimeout(HTTP_TIMEOUT)   # bound a slow/hanging feed (esp. flaky nitter)
     items = []
     for category, source, url in WORLD_FEEDS:
+        region = "india" if category == "india" else "global"
         try:
-            # A browser-ish agent matters: some official feeds (PIB, RBI) reject the default one.
-            feed = feedparser.parse(url, agent="Mozilla/5.0")
+            # A real browser UA matters: Reddit 403s a generic one, and PIB/RBI reject feedparser's default.
+            feed = feedparser.parse(url, agent=BROWSER_UA)
             for entry in feed.entries[:per_feed]:
                 summary = entry.get("summary", "") or entry.get("description", "")
                 published = entry.get("published", entry.get("updated", ""))
+                title = entry.get("title")
+                if not title:
+                    continue
                 items.append({
                     "category": category,
+                    "region": region,
                     "source": source,
-                    "headline": entry.get("title"),
+                    "headline": title,
                     "url": entry.get("link"),
                     "summary": _clean(summary)[:400],
                     "published": published,
