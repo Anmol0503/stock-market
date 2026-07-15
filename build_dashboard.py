@@ -106,6 +106,74 @@ def _first_sentence(text: str) -> str:
     return m.group(1) if m else (text or "")
 
 
+# --- India money notation: make "₹ lakh/crore" legible for a beginner --------------------------
+# DETERMINISTIC — only REFORMATS figures already present in the text; never invents a number.
+# A currency prefix (₹/Rs/INR) is REQUIRED so we never mistake counts of people ("5 crore users")
+# for money. lakh=1e5, crore=1e7, "lakh crore"=1e12.
+_MONEY_RE = re.compile(
+    r"(?:₹|Rs\.?|INR)\s?(?P<num>\d[\d,]*(?:\.\d+)?)\s*(?P<unit>lakh[\s-]+crore|crore|lakh)\b",
+    re.IGNORECASE)
+_INR_MULT = {"lakh": 1e5, "crore": 1e7, "lakh crore": 1e12}
+
+
+def _trim(x: float) -> str:
+    return f"{x:.2f}".rstrip("0").rstrip(".")
+
+
+def _intl_words(rupees: float) -> str:
+    """A ₹ figure re-expressed in internationally-legible magnitude words."""
+    if rupees >= 1e12:
+        return f"₹{_trim(rupees / 1e12)} trillion"
+    if rupees >= 1e9:
+        return f"₹{_trim(rupees / 1e9)} billion"
+    if rupees >= 1e7:
+        return f"₹{_trim(rupees / 1e7)} crore"
+    return f"₹{int(round(rupees)):,}"
+
+
+def _usd_words(usd: float) -> str:
+    if usd >= 1e10:
+        return f"${int(round(usd / 1e9))}bn"          # ≥$10bn: whole billions
+    if usd >= 1e9:
+        return f"${_trim(round(usd / 1e9, 1))}bn"      # $1–10bn: one decimal
+    if usd >= 1e6:
+        return f"${int(round(usd / 1e6))}mn"
+    return f"${int(round(usd)):,}"
+
+
+def _inr_rate(history: dict | None) -> float | None:
+    """Latest USD→INR from board-history.json (series 'INR=X'); None if implausible/absent."""
+    try:
+        v = (history or {}).get("series", {}).get("INR=X", [])[-1]["v"]
+        return float(v) if 50 < float(v) < 150 else None
+    except (KeyError, IndexError, TypeError, ValueError):
+        return None
+
+
+def _decode_figures(text: str, rate: float | None = None) -> list[dict]:
+    """Return [{raw, words, usd_approx?}] for each ₹ lakh/crore figure in `text` (deduped, max 4)."""
+    out: list[dict] = []
+    seen: set[str] = set()
+    for m in _MONEY_RE.finditer(text or ""):
+        norm = re.sub(r"\s+", " ", m.group(0).strip().lower())
+        if norm in seen:
+            continue
+        seen.add(norm)
+        try:
+            num = float(m.group("num").replace(",", ""))
+        except ValueError:
+            continue
+        unit = re.sub(r"[\s-]+", " ", m.group("unit").lower())
+        rupees = num * _INR_MULT[unit]
+        fig = {"raw": m.group(0).strip(), "words": _intl_words(rupees)}
+        if rate and rupees >= 1e7:
+            fig["usd_approx"] = "≈ " + _usd_words(rupees / rate)
+        out.append(fig)
+        if len(out) >= 4:
+            break
+    return out
+
+
 def _load_json(path: pathlib.Path) -> dict | None:
     try:
         return json.loads(path.read_text())
@@ -140,6 +208,7 @@ def build_reels() -> int:
         day = dt.date.today()
     history = _load_json(DASH / "board-history.json") or {}
     sparks = history.get("series", {})
+    inr_rate = _inr_rate(history)   # for the "by the numbers" ₹→$ approximation
 
     # The reels are a PURE, TIMESTAMPED NEWS FEED now: no cover, no markets/learn cards — just the
     # ~20 global + ~20 india decoded stories in two tabs. Flip these to bring those sections back.
@@ -163,6 +232,8 @@ def build_reels() -> int:
             "moot": s.get("the_lesson") or _first_sentence(s.get("why_it_matters", "")),
             **({"thread": s["thread"]} if s.get("thread") else {}),
             "concepts": s.get("concepts") or [],
+            "figures": _decode_figures(
+                (s.get("what_happened") or "") + " " + " ".join(s.get("key_points") or []), inr_rate),
             "depth": {k: s.get(k) for k in (
                 "background", "why_it_matters", "ripple_effects", "why_now",
                 "watch_next", "market_link", "key_terms", "sources")},
@@ -268,6 +339,97 @@ def build_reels() -> int:
     return len(cards)
 
 
+# ---------------------------------------------------------------------------
+# Entity pages — turn the `regions` on every story into a followable knowledge graph.
+# ---------------------------------------------------------------------------
+
+# Canonicalise region names so aliases collapse into ONE entity (else "US" / "United States" split).
+_ENTITY_ALIASES = {
+    "us": "United States", "u.s.": "United States", "usa": "United States",
+    "united states": "United States", "america": "United States",
+    "uk": "United Kingdom", "u.k.": "United Kingdom", "britain": "United Kingdom",
+    "united kingdom": "United Kingdom",
+    "eu": "Europe", "european union": "Europe", "europe": "Europe",
+    "middle east": "Middle East", "mideast": "Middle East", "gulf": "Middle East",
+    "uae": "UAE", "u.a.e.": "UAE",
+    "russia": "Russia", "china": "China", "india": "India", "iran": "Iran",
+    "israel": "Israel", "pakistan": "Pakistan", "ukraine": "Ukraine",
+}
+# Too generic to be a useful "entity" page.
+_ENTITY_STOP = {"global", "world", "international", "", "asia", "worldwide"}
+ENTITY_MIN_STORIES = 3           # ignore one-off mentions
+ENTITY_MAX_STORIES = 40          # cap a timeline's length
+
+
+def _entity_slug(region: str) -> tuple[str, str] | None:
+    """(slug, display_name) for a region string, applying the alias map; None if stop-listed."""
+    raw = (region or "").strip()
+    key = raw.lower()
+    if key in _ENTITY_STOP:
+        return None
+    name = _ENTITY_ALIASES.get(key, raw)
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    if not slug or name.lower() in _ENTITY_STOP:
+        return None
+    return slug, name
+
+
+def build_entities(days: int = 20) -> int:
+    """Compile dashboard/entities.json — per-entity standing primer + reverse-chron story timeline.
+
+    Pure Python over the archived world briefs (no AI cost). Buckets every story by its `regions`,
+    dedupes repeated headlines, and uses each entity's most notable `background` as a free primer.
+    Public-safe: only titles/dates/urls/categories already in the public world.json.
+    """
+    ent: dict[str, dict] = {}
+    seen: dict[str, set] = {}
+    for p in sorted(ARCHIVE.glob("world-*.json"))[-days:]:
+        data = _load_json(p) or {}
+        for s in data.get("stories", []) or []:
+            date = data.get("date") or p.stem[len("world-"):]
+            title = (s.get("title") or "").strip()
+            if not title:
+                continue
+            moot = s.get("the_lesson") or _first_sentence(s.get("why_it_matters", ""))
+            url = ((s.get("sources") or [{}])[0] or {}).get("url", "")
+            imp = {"critical": 0, "high": 1, "notable": 2}.get(s.get("importance"), 3)
+            for region in (s.get("regions") or []):
+                sl = _entity_slug(region)
+                if not sl:
+                    continue
+                slug, name = sl
+                e = ent.setdefault(slug, {"slug": slug, "name": name, "primer": "",
+                                          "_bg": None, "_bg_imp": 9, "_bg_date": "", "stories": []})
+                seen.setdefault(slug, set())
+                nt = re.sub(r"\s+", " ", title.lower())
+                if nt in seen[slug]:
+                    continue                                   # dedupe a headline that recurs across days
+                seen[slug].add(nt)
+                e["stories"].append({"date": date, "title": title, "category": s.get("category"),
+                                     "url": url, "rank": s.get("rank"), "moot": moot})
+                # standing primer = the background from the most-important, then most-recent, story
+                bg = (s.get("background") or "").strip()
+                if bg and (imp < e["_bg_imp"] or (imp == e["_bg_imp"] and date > e["_bg_date"])):
+                    e["_bg"], e["_bg_imp"], e["_bg_date"] = bg, imp, date
+
+    out = {}
+    for slug, e in ent.items():
+        if len(e["stories"]) < ENTITY_MIN_STORIES:
+            continue
+        e["stories"].sort(key=lambda x: (x["date"], -(x["rank"] or 999)), reverse=True)
+        e["stories"] = e["stories"][:ENTITY_MAX_STORIES]
+        e["primer"] = e.pop("_bg") or ""
+        e.pop("_bg_imp", None)
+        e.pop("_bg_date", None)
+        out[slug] = e
+
+    payload = {"generated_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
+               "count": len(out), "entities": out}
+    (DASH / "entities.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    print(f"Published dashboard/entities.json ({len(out)} entities).")
+    return len(out)
+
+
 def main() -> None:
     ARCHIVE.mkdir(parents=True, exist_ok=True)
 
@@ -298,6 +460,10 @@ def main() -> None:
         build_reels()
     except Exception as exc:  # noqa: BLE001
         print(f"  ! reels build failed: {exc}", file=sys.stderr)
+    try:
+        build_entities()
+    except Exception as exc:  # noqa: BLE001
+        print(f"  ! entities build failed: {exc}", file=sys.stderr)
 
     days = rebuild_index()
     print(f"Archive index rebuilt: {len(days)} day(s) available"

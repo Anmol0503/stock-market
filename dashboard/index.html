@@ -66,6 +66,8 @@
   .story .rank{font-weight:900;font-size:15px;color:var(--dim);min-width:18px}
   .cat-badge{font-weight:800;text-transform:uppercase;letter-spacing:.5px;border-radius:6px;padding:2px 8px;font-size:10.5px}
   .regions{color:var(--dim)}
+  .regions a.regl{color:var(--accent);text-decoration:none;font-weight:600}
+  .regions a.regl:hover{text-decoration:underline}
   .imp{margin-left:auto;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;border-radius:5px;padding:2px 8px}
   .imp.critical{background:rgba(229,72,77,.18);color:var(--ssell)}
   .imp.high{background:rgba(245,185,66,.16);color:var(--amber)}
@@ -421,6 +423,36 @@ function conceptChips(keys){
   return chips.length?`<div class="cchips">${chips.join('')}</div>`:'';
 }
 
+// shared concept-mastery counter (same localStorage key the reels use — accrues across both surfaces)
+function mBump(key){ try{ const m=JSON.parse(localStorage.getItem('di_mastery'))||{};
+  const e=m[key]||{taps:0,seen:0}; e.taps=(e.taps||0)+1; e.ts=Date.now(); m[key]=e;
+  localStorage.setItem('di_mastery',JSON.stringify(m)); }catch(e){} }
+
+// entity graph — tappable regions → entity.html (mirror of build_dashboard.py slugify + reels)
+const ENTITY_ALIASES={us:'United States','u.s.':'United States',usa:'United States','united states':'United States',
+  america:'United States',uk:'United Kingdom','u.k.':'United Kingdom',britain:'United Kingdom','united kingdom':'United Kingdom',
+  eu:'Europe','european union':'Europe',europe:'Europe','middle east':'Middle East',mideast:'Middle East',gulf:'Middle East',
+  uae:'UAE','u.a.e.':'UAE',russia:'Russia',china:'China',india:'India',iran:'Iran',israel:'Israel',pakistan:'Pakistan',ukraine:'Ukraine'};
+const ENTITY_STOP=new Set(['global','world','international','','asia','worldwide']);
+let ENTITY_SLUGS=new Set();
+function entitySlug(region){
+  const raw=(region||'').trim(), key=raw.toLowerCase();
+  if(ENTITY_STOP.has(key)) return null;
+  const name=ENTITY_ALIASES[key]||raw;
+  const slug=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  if(!slug||ENTITY_STOP.has(name.toLowerCase())) return null;
+  return {slug,name};
+}
+function regionsHTML(regs){
+  const seen=new Set(), items=[];
+  for(const r of (regs||[]).map(entitySlug)){ if(!r||seen.has(r.slug)) continue; seen.add(r.slug);
+    items.push(ENTITY_SLUGS.has(r.slug)?`<a class="regl" href="./entity.html?e=${r.slug}">${esc(r.name)}</a>`:esc(r.name)); }
+  return items.join(' · ');
+}
+fetch('./entities.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+  .then(d=>{ if(d&&d.entities){ ENTITY_SLUGS=new Set(Object.keys(d.entities));
+    if(typeof STORIES!=='undefined' && STORIES.length) renderStories(); } });
+
 // --- board helpers: group, caption the number, and phrase the move in plain words ---
 function boardGroup(t){
   t=(t||'').toUpperCase();
@@ -466,6 +498,7 @@ function showPillar(which){
 function showGloss(key){
   const g = (typeof GLOSSARY!=='undefined') && GLOSSARY[key];
   if(!g) return;
+  mBump(key);                              // count the tap toward on-device concept mastery
   document.getElementById('gbody').innerHTML = `
     <h3>${esc(g.term)}</h3>
     <div class="one">${esc(g.one)}</div>
@@ -589,14 +622,14 @@ function renderStories(){
   document.getElementById('stories').innerHTML = list.map((s,i)=>{
     const meta = CAT[s.category]||{lbl:s.category||'News',emoji:'•'};
     const accent = `var(--${s.category||'gdelt'})`;
-    const regions = (s.regions||[]).join(' · ');
+    const regions = regionsHTML(s.regions);
     const srcs = (s.sources||[]).map(x=>x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name||'source')}</a>`:esc(x.name)).join(' · ');
     const gid = 'x'+i;
     return `<div class="story" style="border-left-color:${accent}">
       <div class="story-top">
         <span class="rank">${esc(s.rank||i+1)}</span>
         <span class="cat-badge" style="background:${accent}22;color:${accent}">${meta.emoji} ${esc(meta.lbl)}</span>
-        ${regions?`<span class="regions">${esc(regions)}</span>`:''}
+        ${regions?`<span class="regions">${regions}</span>`:''}
         <span class="imp ${esc(s.importance||'notable')}">${esc(s.importance||'notable')}</span>
         ${threadRibbon(s.thread)}
       </div>

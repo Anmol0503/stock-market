@@ -108,10 +108,23 @@ The reader wants to LEARN from the news, not just follow it. So every story carr
 - **`the_lesson`** (required): the transferable insight — the mechanism or principle this story
   illustrates. Not a summary of the story; a lesson the reader keeps after the news is stale.
 - **`concepts`** (optional, max 4): keys into the dashboard glossary, rendered as tap-to-learn chips.
-  **Use ONLY keys from this exact list — never invent keys; omit the field if none apply:**
-  `inflation, interest_rates, central_bank, bond_market, tariffs, sanctions, gdp,
-  fiscal_vs_monetary, supply_chain, fii_flows, crude_geopolitics, currency_strength,
-  risk_on_off, vix, yields, bull_bear_market, usdinr, gold_asset, crude_asset, bitcoin_asset, index`
+  **Use ONLY keys from this exact list — never invent keys; omit the field if none apply.**
+  Prefer the most specific key(s) that a reader would actually want defined; India stories should tag the
+  India-civics keys (rbi/sebi/gst/lok_sabha…) and geopolitics/science stories the world keys (ceasefire_vs_truce/
+  opec/nato/mrna…) whenever a newcomer would hit that term.
+  - core macro/markets: `inflation, interest_rates, central_bank, bond_market, tariffs, sanctions, gdp,
+    fiscal_vs_monetary, supply_chain, fii_flows, crude_geopolitics, currency_strength, risk_on_off, vix,
+    yields, bull_bear_market, usdinr, gold_asset, crude_asset, bitcoin_asset, index`
+  - India civics & institutions: `rbi, sebi, union_cabinet, lok_sabha, rajya_sabha, parliament_india,
+    supreme_court_india, high_courts, gst, union_budget, psu, disinvestment, fiscal_deficit, cpi_wpi,
+    forex_reserves, repo_rate, monetary_policy_committee, current_account_deficit, eci, ordinance,
+    state_vs_centre, coalition_government, crore_lakh, msp, pli_scheme, cag, judiciary_collegium,
+    president_of_india, governor_state, enforcement_directorate, cbi`
+  - world / geopolitics / science / health / climate: `ceasefire_vs_truce, sovereign_debt, coup, referendum,
+    un_security_council, veto_power, nato, brics, g20, imf_world_bank, proxy_war, annexation,
+    nuclear_deterrence, strait_chokepoint, refugee_asylum, extradition, mrna, vaccine_platform, gene_editing,
+    crispr, el_nino, opec, carbon_credits, cop_climate_summit, quantitative_easing, yield_curve, gdp_vs_gnp,
+    soft_power, sovereign_wealth_fund, insurgency_militancy, martial_law, impeachment`
 
 ## Notes
 - `the_big_picture` is the reader's favorite part — make it genuinely illuminating, the connective tissue.

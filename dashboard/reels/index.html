@@ -220,6 +220,25 @@
   .bsec li mark{font-size:.94em}
   .kt{border-left:3px solid var(--cat,var(--accent));padding:5px 11px;margin:9px 0;font-size:14.5px;line-height:1.5}
   .kt b{color:var(--txt)}
+  .fig{padding:6px 11px;margin:8px 0;font-size:15px;line-height:1.5;background:var(--panel2);border-radius:9px}
+  .fig b{color:var(--txt);font-variant-numeric:tabular-nums}
+  .figusd{color:var(--up);font-weight:700;font-size:13.5px;white-space:nowrap}
+  /* concept mastery */
+  #learned{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 9px;border-radius:99px;cursor:pointer;
+    border:1px solid var(--line);background:rgba(11,15,23,.55);font-size:12.5px;font-weight:800;color:var(--dim);white-space:nowrap}
+  .cchip.nudge{position:relative;border-color:color-mix(in srgb,var(--amber) 55%,var(--line));color:var(--amber)}
+  .cchip.nudge::after{content:"NEW";position:absolute;top:-7px;right:-6px;font-size:8.5px;font-weight:800;letter-spacing:.04em;
+    background:var(--amber);color:#0b0f17;border-radius:6px;padding:1px 4px}
+  .mtiers{display:flex;gap:8px;margin:2px 0 14px}
+  .mtier{flex:1;text-align:center;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 6px}
+  .mtier b{display:block;font-family:var(--round);font-size:22px;font-weight:800;color:var(--txt);line-height:1}
+  .mtier span{display:block;margin-top:4px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .mnone{color:var(--dim);font-size:13.5px;padding:2px 0 6px}
+  .mnote{color:var(--dim);font-size:12px;margin-top:14px;line-height:1.5}
+  .entrow{display:flex;gap:8px;flex-wrap:wrap}
+  .entlink,.entplain{font-size:13.5px;font-weight:700;padding:7px 12px;border-radius:99px;border:1px solid var(--line)}
+  .entlink{color:var(--cat,var(--accent));text-decoration:none;background:color-mix(in srgb,var(--cat,var(--accent)) 10%,transparent)}
+  .entlink:active{background:var(--panel)} .entplain{color:var(--dim)}
   .src{font-size:14px;line-height:1.5;margin:8px 0}
   .one{color:var(--dim);font-size:14px;margin-bottom:8px}
   .scale{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--dim);background:var(--panel2);
@@ -237,6 +256,7 @@
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
   </div>
   <div class="hdr-actions">
+    <button id="learned" title="Concepts you've learned" onclick="openMastery()">📚 <span id="learnedN">0</span></button>
     <button id="fresh" title="Update status — tap for details" onclick="openStatus()"><span class="fdot"></span><span id="freshAge">—</span></button>
     <button id="refresh" title="Get the latest" onclick="refreshNow(this)">↻</button>
     <a class="dash" href="../" title="Full dashboard">⧉</a>
@@ -357,11 +377,82 @@ function threadRibbon(t){
   const day = t.day?` — day ${esc(t.day)}`:'';
   return `<span class="ribbon">${THREAD[t.status]||'📈 '+esc(t.status)}${day}</span>`;
 }
+/* ---------- concept mastery — on-device only (localStorage), no accounts ---------- */
+let CONCEPT_FREQ = {};   // how often each concept appears in today's deck (drives the "new to you" nudge)
+function mLoad(){ try{ return JSON.parse(localStorage.getItem('di_mastery'))||{}; }catch(e){ return {}; } }
+function mSave(m){ try{ localStorage.setItem('di_mastery', JSON.stringify(m)); }catch(e){} }
+function masteryBump(key, kind){                 // kind: 'tap' (opened the glossary) | 'seen' (in a decode)
+  if(!key || (typeof GLOSSARY!=='undefined' && !GLOSSARY[key])) return;
+  const m=mLoad(), e=m[key]||{taps:0,seen:0};
+  if(kind==='tap') e.taps=(e.taps||0)+1; else e.seen=(e.seen||0)+1;
+  e.ts=Date.now(); m[key]=e; mSave(m); paintLearned();
+}
+function masteryNote(c){ ((c&&c.concepts)||[]).forEach(k=>masteryBump(k,'seen')); }
+function mTier(e){ const t=(e&&e.taps)||0; if(t>=7)return 'mastered'; if(t>=3)return 'familiar'; if(t>=1||(e&&e.seen))return 'seen'; return null; }
+function masteryCounts(){ const m=mLoad(), c={mastered:0,familiar:0,seen:0}; for(const k in m){ const t=mTier(m[k]); if(t&&GLOSSARY[k])c[t]++; } return c; }
+function paintLearned(){ const el=document.getElementById('learnedN'); if(!el)return;
+  const c=masteryCounts(); el.textContent = c.mastered+c.familiar+c.seen; }
+function buildConceptFreq(){ CONCEPT_FREQ={}; ((DECK&&DECK.cards)||[]).forEach(c=>(c.concepts||[]).forEach(k=>{ CONCEPT_FREQ[k]=(CONCEPT_FREQ[k]||0)+1; })); }
+
 function chips(keys){
   const ok = (keys||[]).filter(k=>typeof GLOSSARY!=='undefined'&&GLOSSARY[k]);
-  return ok.length?`<div class="chips">${ok.map(k=>{
+  if(!ok.length) return '';
+  const m = mLoad();
+  return `<div class="chips">${ok.map(k=>{
     const t = GLOSSARY[k].term.split(' — ')[0].split(' (')[0];
-    return `<span class="cchip" onclick="openGloss('${k}')">📚 ${esc(t)}</span>`;}).join('')}</div>`:'';
+    const nudge = ((CONCEPT_FREQ[k]||0)>=3 && !(m[k]&&m[k].taps)) ? ' nudge' : '';
+    return `<span class="cchip${nudge}" onclick="openGloss('${k}')">📚 ${esc(t)}</span>`;}).join('')}</div>`;
+}
+function openMastery(){
+  const m=mLoad(), c=masteryCounts();
+  const groups={mastered:[],familiar:[],seen:[]};
+  for(const k in m){ const t=mTier(m[k]); if(t&&GLOSSARY[k]) groups[t].push(k); }
+  const row=keys=>keys.length?`<div class="chips">${keys.sort().map(k=>{
+      const t=GLOSSARY[k].term.split(' — ')[0].split(' (')[0];
+      return `<span class="cchip" onclick="openGloss('${k}')">📚 ${esc(t)}</span>`;}).join('')}</div>`:`<div class="mnone">—</div>`;
+  const nudge=Object.keys(CONCEPT_FREQ).filter(k=>GLOSSARY[k]&&CONCEPT_FREQ[k]>=3&&!(m[k]&&m[k].taps))
+      .sort((a,b)=>CONCEPT_FREQ[b]-CONCEPT_FREQ[a]).slice(0,10);
+  let h=`<div class="mtiers">
+      <div class="mtier"><b>${c.mastered}</b><span>Mastered</span></div>
+      <div class="mtier"><b>${c.familiar}</b><span>Familiar</span></div>
+      <div class="mtier"><b>${c.seen}</b><span>Seen</span></div></div>`;
+  if(nudge.length) h+=`<div class="bsec"><div class="bh"><span class="bi">✨</span>In today's feed — tap to learn</div>${row(nudge)}</div>`;
+  h+=`<div class="bsec"><div class="bh"><span class="bi">🏆</span>Mastered — tapped 7+ times</div>${row(groups.mastered)}</div>`;
+  h+=`<div class="bsec"><div class="bh"><span class="bi">🟢</span>Familiar — tapped 3+</div>${row(groups.familiar)}</div>`;
+  h+=`<div class="bsec"><div class="bh"><span class="bi">👁️</span>Seen at least once</div>${row(groups.seen)}</div>`;
+  h+=`<div class="mnote">Tap a 📚 concept anywhere in the feed to learn it — the more you tap, the higher it climbs. Counts live on this device only.</div>`;
+  openSheet("Concepts you've learned", h, 'markets');
+}
+
+/* ---------- entity graph — tappable regions → entity.html (mirror of build_dashboard slugify) ---------- */
+let ENTITY_SLUGS = new Set();
+const ENTITY_ALIASES = {us:'United States','u.s.':'United States',usa:'United States','united states':'United States',
+  america:'United States',uk:'United Kingdom','u.k.':'United Kingdom',britain:'United Kingdom','united kingdom':'United Kingdom',
+  eu:'Europe','european union':'Europe',europe:'Europe','middle east':'Middle East',mideast:'Middle East',gulf:'Middle East',
+  uae:'UAE','u.a.e.':'UAE',russia:'Russia',china:'China',india:'India',iran:'Iran',israel:'Israel',pakistan:'Pakistan',ukraine:'Ukraine'};
+const ENTITY_STOP = new Set(['global','world','international','','asia','worldwide']);
+function entitySlug(region){
+  const raw=(region||'').trim(), key=raw.toLowerCase();
+  if(ENTITY_STOP.has(key)) return null;
+  const name=ENTITY_ALIASES[key]||raw;
+  const slug=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  if(!slug||ENTITY_STOP.has(name.toLowerCase())) return null;
+  return {slug,name};
+}
+function loadEntities(){
+  return fetch('../entities.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+    .then(d=>{ if(d&&d.entities) ENTITY_SLUGS=new Set(Object.keys(d.entities)); });
+}
+function regionRow(c){
+  const seen=new Set(), items=[];
+  for(const r of (c.regions||[]).map(entitySlug)){
+    if(!r||seen.has(r.slug)) continue; seen.add(r.slug);
+    items.push(ENTITY_SLUGS.has(r.slug)
+      ? `<a class="entlink" href="../entity.html?e=${r.slug}">${esc(r.name)} →</a>`
+      : `<span class="entplain">${esc(r.name)}</span>`);
+  }
+  if(!items.length) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">🌐</span>Follow the players</div><div class="entrow">${items.join('')}</div></div>`;
 }
 function mootBlock(txt, lbl){
   return txt?`<div class="moot"><div class="lbl">💡 ${lbl||'The takeaway'}</div><div class="txt">${esc(txt)}</div></div>`:'';
@@ -497,6 +588,7 @@ function setPillar(p){
 
 function render(){
   const deck = document.getElementById('deck');
+  buildConceptFreq(); paintLearned();      // refresh the "new to you" nudges + learned count
   // pure news feed: just the region's decoded stories (+ the outro), newest/most-important first.
   let cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
   if(!cards.length){ deck.innerHTML = `<section class="card" style="${catStyle(PILLARSEL==='india'?'india':'geopolitics')}"><div class="meta">${catChip(PILLARSEL==='india'?'india':'geopolitics')}</div><h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Tap ↻ to check.</div></section>`;
@@ -526,7 +618,7 @@ function render(){
 // re-pull the latest deck (regenerates ~every 2h on the laptop; SW is network-first so the phone gets it)
 function refreshNow(btn){
   if(btn) btn.classList.add('spin');
-  loadStatus();
+  loadStatus(); loadEntities();
   fetch('../reels.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     .then(d=>{ if(d) DECK=d; render();
       setTimeout(()=>btn&&btn.classList.remove('spin'), 500);
@@ -579,6 +671,14 @@ function sourcesSec(sources){
     + sources.map(s=>`<div class="src"><a href="${esc(s.url)}" target="_blank">${esc(s.name)}</a></div>`).join('') + `</div>`;
 }
 function pinnedMoot(txt){ return txt?`<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(txt)}</div></div>`:''; }
+// India-notation money made legible (built deterministically in build_dashboard.py — never invented)
+function figuresSec(figs){
+  if(!(figs||[]).length) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">🔢</span>By the numbers</div>`
+    + figs.map(f=>`<div class="fig"><b>${esc(f.raw)}</b> = ${esc(f.words)}`
+        + `${f.usd_approx?` <span class="figusd">${esc(f.usd_approx)}</span>`:''}</div>`).join('')
+    + `</div>`;
+}
 
 // primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type
 const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_story:'story'};
@@ -630,8 +730,13 @@ function openDecode(id){
     h += bulletSec('🗓️', "Today's catalysts", d.catalysts_today);
     h += bulletSec('⚠️', 'Risks', (d.risks||[]).map(x=>typeof x==='string'?x:JSON.stringify(x)));
   }
+  h += figuresSec(c.figures);
   h += keyTermsSec(d.key_terms);
+  if((c.concepts||[]).length)
+    h += `<div class="bsec"><div class="bh"><span class="bi">📚</span>Learn the concepts</div>${chips(c.concepts)}</div>`;
+  if(c.type==='story') h += regionRow(c);   // tappable players → entity timelines
   h += sourcesSec(d.sources);
+  masteryNote(c);                          // credit concepts seen when a decode is opened
   openSheet(c.title||c.name||'Decoded', h, c.category);
 }
 
@@ -653,6 +758,7 @@ function openBoardRead(i){
 
 function openGloss(key){
   const g = (typeof GLOSSARY!=='undefined')&&GLOSSARY[key]; if(!g) return;
+  masteryBump(key, 'tap');                  // a direct tap = active learning
   openSheet(g.term,
     `<div class="one">${esc(g.one)}</div>`
     + bulletSec('📊', 'What it measures', g.what)
@@ -663,7 +769,7 @@ function openGloss(key){
 
 /* ---------- boot ---------- */
 // the deck (reels.json) regenerates ~every 2h on the laptop; fetch the latest
-loadStatus();
+loadStatus(); loadEntities();
 fetch('../reels.json?_='+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
   .then(d=>{ DECK=d; setPillar('global'); })   // default to the Global deck
