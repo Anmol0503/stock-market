@@ -107,6 +107,11 @@
   h1{margin:0;font-family:var(--round);font-size:22px;line-height:1.27;font-weight:700;letter-spacing:-.2px}
   h1.big{font-size:28px;line-height:1.2;font-weight:800;letter-spacing:-.4px}
   .body{font-size:16px;line-height:1.62;color:#d3dbe6}
+  /* the news summary on the reel face — CLAMPED so a long story never pushes the button off-screen */
+  h1.clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .summary{font-size:15.5px;line-height:1.55;color:#cfd8e4;
+    display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+  .summary mark{background:color-mix(in srgb,var(--amber) 20%,transparent);color:var(--txt);border-radius:4px;padding:0 3px;font-weight:600}
   /* exact-timestamp + source line on a news story */
   .when{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--dim);margin-top:-6px}
   .when .wdot{width:6px;height:6px;border-radius:99px;background:var(--up);flex:0 0 auto;
@@ -301,7 +306,8 @@ function mootBlock(txt, lbl){
 function whenLine(c){
   const rel = relTime(c.published_iso);
   const abs = c.published_iso ? new Date(c.published_iso).toLocaleString() : '';
-  const src = c.source ? `<span class="wsrc">${esc(c.source)}</span>` : '';
+  const srcName = c.source ? String(c.source).split(' (')[0].trim() : '';   // strip any appended parenthetical
+  const src = srcName ? `<span class="wsrc">${esc(srcName)}</span>` : '';
   if(!rel && !src) return '';
   return `<div class="when" title="${esc(abs)}">${rel?`<span class="wdot"></span>${esc(rel)}`:''}${rel&&src?' · ':''}${src}</div>`;
 }
@@ -316,6 +322,8 @@ function sparkSVG(pts){
 
 // The attractive expand button — the ONLY way the body text is revealed (keeps each reel face clean).
 const expandBtn = (onclick, label) => `<button class="expand" onclick='${onclick}'>${label} <span class="ar">↓</span></button>`;
+// the news summary shown ON the reel face (the takeaway now lives inside the full story instead)
+const storySummary = c => c.what_happened || (c.key_points || []).join(' ') || c.moot || '';
 
 // Reel faces: category + hook + THE TAKEAWAY (hero) + expand. Body stays hidden until the button is tapped.
 const R = {
@@ -340,10 +348,9 @@ const R = {
   story: c => `
     <div class="meta">${catChip(c.category)}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
-    <h1>${esc(c.title)}</h1>
-    ${mootBlock(c.moot)}
-    ${chips(c.concepts)}
-    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the full story')}`,
+    <h1 class="clamp">${esc(c.title)}</h1>
+    <div class="summary">${hl(storySummary(c))}</div>
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the takeaway & full story')}`,
 
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
@@ -513,23 +520,27 @@ const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_
 function openDecode(id){
   const c = DECK.cards.find(x=>x.id===id); if(!c) return;
   const d = c.depth||{}; let h = '';
-  // pin the takeaway, then the essentials as bullets (AI key_points if present, else auto-split the lead)
+  // Lead with the takeaway (moved here off the reel face), then the essentials.
   if(c.type==='story'||c.type==='watch') h += pinnedMoot(c.moot);
-  const keyItems = (c.key_points && c.key_points.length) ? c.key_points : toBullets(c[LEAD[c.type]]);
-  const keyLabel = {story:'Key points', watch:'Key points', favorite:'What changed', market_story:'Key points'}[c.type] || 'Key points';
-  h += bulletSec('✦', keyLabel, keyItems);
 
   if(c.thread){
     h += bulletSec('🧵', 'Previously', c.thread.previously);
     h += bulletSec('🔄', 'What changed today', c.thread.changed);
   }
   if(c.type==='story'){
+    h += bulletSec('📰', 'What happened', c.what_happened);   // the full news summary
+    if(c.key_points && c.key_points.length) h += bulletSec('✦', 'In brief', c.key_points);
     h += bulletSec('❓', 'Why it matters', d.why_it_matters);
     h += bulletSec('🌊', 'Ripple effects', d.ripple_effects);
     h += bulletSec('⏱️', 'Why now', d.why_now);
     h += bulletSec('👀', 'Watch next', d.watch_next);
     h += bulletSec('📖', 'The backstory', d.background);
     h += bulletSec('📊', 'Market link', d.market_link);
+  } else {
+    // watch / favorite / market_story keep the key-points lead
+    const keyItems = (c.key_points && c.key_points.length) ? c.key_points : toBullets(c[LEAD[c.type]]);
+    const keyLabel = {watch:'Key points', favorite:'What changed', market_story:'Key points'}[c.type] || 'Key points';
+    h += bulletSec('✦', keyLabel, keyItems);
   }
   if(c.type==='watch'){
     h += bulletSec('🎯', 'What it means for you', c.what_it_means);
