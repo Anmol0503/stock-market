@@ -20,10 +20,12 @@ import pathlib
 import subprocess
 import sys
 
-import build_dashboard
-import progress as pg
-
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))        # so `build_dashboard` (repo root) imports when run as a script
+
+import build_dashboard                # noqa: E402
+import progress as pg                 # noqa: E402  (routine/ is already on sys.path)
+
 OUT = ROOT / "output"
 ROUTINE = ROOT / "routine"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
