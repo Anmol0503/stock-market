@@ -57,11 +57,13 @@ FFMPEG = shutil.which("ffmpeg")
 POST = (1080, 1350)
 REEL = (1080, 1920)
 SQUARE = (1080, 1080)
-# CSS overrides so one template renders at any height (heights are hard-coded to 1350 in post.html)
-REEL_CSS = ("html,body{height:1920px!important}"
-            ".slide{height:1920px!important;padding-top:132px;padding-bottom:132px}"
-            ".slide::before{height:780px!important}"
-            ".cover .kick{margin-top:96px}")
+# CSS overrides so one template renders at any height (heights are hard-coded to 1350 in post.html).
+# Reel: keep the card at its proven 4:5 proportions and LETTERBOX it in the 9:16 frame (bands top/bottom)
+# so it doesn't feel zoomed-in and the content stays clear of Instagram's UI overlays (safe zones).
+REEL_CSS = ("html,body{height:1920px!important;overflow:hidden}"
+            "body{display:flex;flex-direction:column;align-items:center;"
+            "justify-content:flex-start;padding-top:215px;background:var(--bg)}"
+            ".slide{flex:0 0 auto}")
 SQUARE_CSS = "html,body{height:1080px!important}.slide{height:1080px!important}"
 
 
