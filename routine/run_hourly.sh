@@ -1,9 +1,9 @@
 #!/bin/bash
-# Daily Intelligence — HOURLY top-up. Adds ONE trending new story per region (Global + India) to the
-# live feed, every hour the laptop is on. Light + fast (only 2 stories decoded), so it never hits the
-# oversized-generation drop. The heavy ~40-story decode stays on-demand (routine/run_daily.sh).
+# Daily Intelligence — top-up. Adds ONE trending new story per region (Global + India) to the
+# live feed, every 30 minutes the laptop is on. Light + fast (only 2 stories decoded), so it never hits
+# the oversized-generation drop. The heavy ~40-story decode stays on-demand (routine/run_daily.sh).
 #
-# Fired by ~/Library/LaunchAgents/com.dailyintel.hourly.plist (StartInterval 3600).
+# Fired by ~/Library/LaunchAgents/com.dailyintel.hourly.plist (StartInterval 1800 = 30 min).
 # Manual:  bash routine/run_hourly.sh
 set -u
 
@@ -47,6 +47,9 @@ if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
 else
   echo "WARN: claude CLI not found — no hourly story added"
 fi
+
+# ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
+"$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true
 
 # ---- publish (best-effort) ----
 if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then

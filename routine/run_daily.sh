@@ -75,6 +75,7 @@ fi
 # ---- publish + archive (world.json / brief.json / reels.json + dated archive) ----
 progress publishing "Publishing to your phone" 0 0 ""
 "$PY" build_dashboard.py      || echo "WARN: publish failed"
+"$PY" routine/publish_status.py full  || true    # stamp dashboard/status.json (full refresh)
 
 # ---- generate ready-to-post Instagram carousels (best-effort — never abort the run) ----
 "$PY" make_social.py          || echo "WARN: social generation failed"

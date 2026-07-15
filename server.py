@@ -178,6 +178,42 @@ def _next_run_est() -> str:
     return "≈ " + nxt.strftime("%H:%M") + " (if awake)"
 
 
+def _age_min(iso: str | None) -> int | None:
+    if not iso:
+        return None
+    try:
+        t = dt.datetime.fromisoformat(iso)
+    except ValueError:
+        return None
+    now = dt.datetime.now(t.tzinfo) if t.tzinfo else dt.datetime.now()
+    return max(0, int((now - t).total_seconds() // 60))
+
+
+def _topup_status() -> dict | None:
+    """The automatic top-up record (dashboard/status.json) + derived freshness for the Update Center."""
+    p = DASH / "status.json"
+    try:
+        s = json.loads(p.read_text())
+    except (ValueError, OSError):
+        return None
+    cad = s.get("cadence_min", 30)
+    chk_age = _age_min(s.get("last_check"))
+    upd_age = _age_min(s.get("last_update"))
+    # "active" = a check happened within ~1.5 cadence windows (else the laptop was asleep → paused)
+    active = chk_age is not None and chk_age <= cad * 1.5 + 5
+    nxt = s.get("next_update_est")
+    try:
+        nxt_clock = dt.datetime.fromisoformat(nxt).strftime("%H:%M") if nxt else None
+    except ValueError:
+        nxt_clock = None
+    return {
+        "cadence_min": cad, "active": active,
+        "last_update_age": upd_age, "last_check_age": chk_age,
+        "next_clock": nxt_clock, "counts": s.get("counts") or {},
+        "last_added": s.get("last_added") or [], "last_kind": s.get("last_kind"),
+    }
+
+
 def build_status() -> dict:
     world = _brief_status(ROOT / "output" / "world-latest.json")
     markets = _brief_status(ROOT / "output" / "brief-latest.json")
@@ -194,10 +230,12 @@ def build_status() -> dict:
         "progress": _progress(),
         "publish": _publish_status(),
         "live": _live_status(DASH / "reels.json"),
+        "topup": _topup_status(),
         "next_run_est": _next_run_est(),
         "cadence": {"guard_min": 110,
-                    "note": "The decoded briefs regenerate <b>about every 2 hours</b> while the laptop is awake. "
-                            "When it’s closed nothing updates — hit <b>Update now</b> to force a fresh pull."},
+                    "note": "A fresh, fully-decoded story is added <b>automatically every 30 minutes</b> "
+                            "(one per region) while the laptop is awake. The full ~40-story rebuild is "
+                            "<b>on-demand</b> — hit <b>Update now</b>. When the laptop’s closed, nothing updates."},
     }
 
 

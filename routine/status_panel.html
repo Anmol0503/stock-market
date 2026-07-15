@@ -82,6 +82,10 @@
   a{color:var(--accent);text-decoration:none}
   .spin{animation:spin 1s linear infinite;display:inline-block}
   @keyframes spin{to{transform:rotate(360deg)}}
+  .added{margin-top:8px}
+  .albl{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:6px 0 5px}
+  .arow{font-size:12.5px;line-height:1.4;color:var(--txt);padding:3px 0;border-top:1px solid var(--line)}
+  .arow:first-of-type{border-top:0}
 </style>
 </head>
 <body>
@@ -109,11 +113,20 @@
   <div class="hint" id="runHint">“Update now” runs the full pipeline (fetch → Claude decodes both briefs → publish). Takes a few minutes.</div>
 
   <div class="grid">
+    <div class="card" id="topupCard">
+      <div class="lbl">⏱️ Auto top-up <span class="v" id="topupState" style="float:right">—</span></div>
+      <div class="row"><span class="k">Last new story</span><span class="v" id="topupUpd">—</span></div>
+      <div class="row"><span class="k">Last checked</span><span class="v" id="topupChk">—</span></div>
+      <div class="row"><span class="k">Every</span><span class="v" id="topupCad">—</span></div>
+      <div class="row"><span class="k">Next</span><span class="v" id="topupNext">—</span></div>
+      <div class="row"><span class="k">In feed</span><span class="v" id="topupCounts">—</span></div>
+      <div class="added" id="topupAdded"></div>
+    </div>
     <div class="card">
       <div class="lbl">📰 Content freshness</div>
       <div class="row"><span class="k">World brief</span><span class="v" id="worldFresh">—</span></div>
       <div class="row"><span class="k">Markets brief</span><span class="v" id="marketFresh">—</span></div>
-      <div class="row"><span class="k">Next auto-run</span><span class="v" id="nextRun">—</span></div>
+      <div class="row"><span class="k">Full rebuild</span><span class="v" id="nextRun">—</span></div>
     </div>
     <div class="card">
       <div class="lbl">🔄 Last run</div>
@@ -192,6 +205,24 @@ function render(s){
       : worst.state==='aging' ? 'Getting old — an update is due'
       : 'Stale — this may be out of date';
   $('heroSmall').textContent = worst.label;
+
+  // ---- auto top-up card ----
+  const t = s.topup;
+  if(t){
+    $('topupState').innerHTML = t.active ? pill('ok','🟢 live') : pill('stale','paused — Mac off');
+    $('topupUpd').textContent  = fmtAge(t.last_update_age);
+    $('topupChk').textContent  = fmtAge(t.last_check_age);
+    $('topupCad').textContent  = '1 story / ' + (t.cadence_min||30) + ' min (per region)';
+    $('topupNext').textContent = t.active ? ('≈ ' + (t.next_clock||'—')) : 'once the Mac is on';
+    $('topupCounts').textContent = (t.counts.global??'—') + ' 🌍 · ' + (t.counts.india??'—') + ' 🇮🇳';
+    $('topupAdded').innerHTML = (t.last_added||[]).length
+      ? '<div class="albl">🆕 Just added</div>' + t.last_added.map(a=>
+          `<div class="arow"><span>${a.region==='india'?'🇮🇳':'🌍'}</span> ${(a.title||'').replace(/</g,'&lt;')}</div>`).join('')
+      : '';
+  } else {
+    $('topupState').innerHTML = pill('','—');
+    $('topupAdded').innerHTML = '<div class="albl" style="color:var(--dim)">No top-up record yet — runs every 30 min while the Mac is awake.</div>';
+  }
 
   $('worldFresh').innerHTML  = pill(s.briefs.world.state, fmtAge(s.briefs.world.age_min)) + ` <span style="color:var(--dim);font-weight:600">${s.briefs.world.date||''}</span>`;
   $('marketFresh').innerHTML = pill(s.briefs.markets.state, fmtAge(s.briefs.markets.age_min)) + ` <span style="color:var(--dim);font-weight:600">${s.briefs.markets.date||''}</span>`;

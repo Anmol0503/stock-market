@@ -65,6 +65,21 @@
   #fresh .fdot{width:7px;height:7px;border-radius:99px;background:currentColor;flex:0 0 auto;
     box-shadow:0 0 0 3px color-mix(in srgb,currentColor 22%,transparent)}
   #fresh.ok{color:var(--up)} #fresh.aging{color:var(--amber)} #fresh.stale{color:var(--down)}
+  /* Update status panel (opened from the freshness pill) */
+  .ustat{padding:2px 0 6px}
+  .ust-hero{font-family:var(--round);font-weight:800;font-size:20px;margin-bottom:14px}
+  .ust-hero.ok{color:var(--up)} .ust-hero.aging{color:var(--amber)} .ust-hero.stale{color:var(--down)}
+  .ust-rows{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel2)}
+  .ust-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;font-size:14px}
+  .ust-row+.ust-row{border-top:1px solid var(--line)}
+  .ust-row span{color:var(--dim)} .ust-row b{color:var(--txt);font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+  .ust-added{margin-top:16px} .ust-added .lbl{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+  .ua{display:flex;align-items:baseline;gap:9px;padding:9px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.35}
+  .ua:first-of-type{border-top:0} .ua .uReg{flex:0 0 auto} .ua .uT{flex:1 1 auto;color:var(--txt);font-weight:600}
+  .ua .uWhen{flex:0 0 auto;color:var(--dim);font-size:12px;font-weight:700}
+  .ust-note{margin-top:16px;font-size:12.5px;line-height:1.55;color:var(--dim)}
+  .ust-btn{margin-top:16px;width:100%;height:46px;border:none;border-radius:12px;cursor:pointer;
+    font-family:var(--round);font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--accent),#3a6fd0)}
   /* Global / India / Markets segmented toggle */
   #tabs{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:3px;gap:2px;min-width:0}
   #tabs button{font-family:var(--round);font-size:12px;font-weight:700;color:var(--dim);cursor:pointer;
@@ -222,7 +237,7 @@
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
   </div>
   <div class="hdr-actions">
-    <button id="fresh" title="How fresh this is — tap to refresh" onclick="refreshNow(document.getElementById('refresh'))"><span class="fdot"></span><span id="freshAge">—</span></button>
+    <button id="fresh" title="Update status — tap for details" onclick="openStatus()"><span class="fdot"></span><span id="freshAge">—</span></button>
     <button id="refresh" title="Get the latest" onclick="refreshNow(this)">↻</button>
     <a class="dash" href="../" title="Full dashboard">⧉</a>
   </div>
@@ -280,7 +295,56 @@ function paintFresh(){
 // highlight standalone money/percent figures — runs AFTER esc(), so it's injection-safe
 const hl = s => esc(s).replace(/([₹$€£]\s?\d[\d,]*\.?\d*|\b\d+(?:\.\d+)?%)/g, '<mark>$1</mark>');
 
-let DECK = null;
+// a wall-clock time like "4:19 PM" from an ISO string
+function fmtClock(iso){ if(!iso) return ''; const t=new Date(iso); if(isNaN(t)) return '';
+  return t.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}); }
+
+let DECK = null, STATUS = null;
+
+// pull the public update record (dashboard/status.json) — powers the "Update status" panel
+function loadStatus(){
+  return fetch('../status.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+    .then(s=>{ if(s) STATUS=s; return s; });
+}
+
+// the detailed, honest "when is this updated" panel (opened by tapping the freshness pill)
+// count story cards per region straight from the loaded deck (fallback when status.json is slow)
+function deckCounts(){
+  const c = {global:0, india:0};
+  if(DECK && DECK.cards) DECK.cards.forEach(x=>{ if(x.type==='story') c[pillarOf(x)==='india'?'india':'global']++; });
+  return c;
+}
+function openStatus(){
+  if(!STATUS) loadStatus();                 // (re)fetch so the next open is fully populated
+  const s = STATUS || {};
+  const m = DECK ? ageShort(DECK.generated_at) : null;
+  const state = m==null ? 'stale' : m<=180 ? 'ok' : m<=720 ? 'aging' : 'stale';
+  const dot = state==='ok' ? '🟢' : state==='aging' ? '🟡' : '🔴';
+  const heroTxt = state==='ok' ? 'Auto-updating' : state==='aging' ? 'Updating — a little behind' : 'Paused — your Mac was off';
+  const cad = s.cadence_min || 30;
+  const lastUpd = s.last_update ? relTime(s.last_update) : (DECK ? relTime(DECK.generated_at) : '—');
+  const lastChk = s.last_check ? relTime(s.last_check) : null;
+  const nextC = s.next_update_est ? fmtClock(s.next_update_est) : '';
+  const counts = (s.counts && (s.counts.global||s.counts.india)) ? s.counts : deckCounts();
+  const added = s.last_added || [];
+  const addedHtml = added.length ? `<div class="ust-added"><div class="lbl">🆕 Just added</div>${
+    added.map(a=>`<div class="ua"><span class="uReg">${a.region==='india'?'🇮🇳':'🌍'}</span>`
+      +`<span class="uT">${esc(a.title)}</span>${a.published_iso?`<span class="uWhen">${esc(relTime(a.published_iso))}</span>`:''}</div>`).join('')}</div>` : '';
+  const html = `<div class="ustat">
+    <div class="ust-hero ${state}">${dot} ${heroTxt}</div>
+    <div class="ust-rows">
+      <div class="ust-row"><span>Last new story</span><b>${esc(lastUpd)}</b></div>
+      ${lastChk?`<div class="ust-row"><span>Last checked for updates</span><b>${esc(lastChk)}</b></div>`:''}
+      <div class="ust-row"><span>How often</span><b>1 new story / ${cad} min</b></div>
+      ${nextC?`<div class="ust-row"><span>Next update</span><b>≈ ${esc(nextC)}${state==='stale'?' · once Mac is on':''}</b></div>`:''}
+      <div class="ust-row"><span>Stories in feed</span><b>${counts.global??'—'} 🌍 · ${counts.india??'—'} 🇮🇳</b></div>
+    </div>
+    ${addedHtml}
+    <div class="ust-note">The feed tops up <b>automatically every ${cad} minutes while your Mac is awake</b> — one fresh, fully-decoded story per region each time. When the laptop is closed, nothing updates until it wakes. The full ~40-story rebuild is on-demand.</div>
+    <button class="ust-btn" onclick="refreshNow(document.getElementById('refresh'));closeSheet();">↻ Check for updates now</button>
+  </div>`;
+  openSheet('Update status', html, PILLARSEL==='india'?'india':'markets');
+}
 
 /* ---------- renderers: each card type ---------- */
 function catStyle(cat){ return `--cat:var(--${CAT[cat]?cat:'markets'})`; }
@@ -462,6 +526,7 @@ function render(){
 // re-pull the latest deck (regenerates ~every 2h on the laptop; SW is network-first so the phone gets it)
 function refreshNow(btn){
   if(btn) btn.classList.add('spin');
+  loadStatus();
   fetch('../reels.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     .then(d=>{ if(d) DECK=d; render();
       setTimeout(()=>btn&&btn.classList.remove('spin'), 500);
@@ -598,6 +663,7 @@ function openGloss(key){
 
 /* ---------- boot ---------- */
 // the deck (reels.json) regenerates ~every 2h on the laptop; fetch the latest
+loadStatus();
 fetch('../reels.json?_='+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
   .then(d=>{ DECK=d; setPillar('global'); })   // default to the Global deck
