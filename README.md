@@ -134,14 +134,18 @@ pre-computed.
 ## 📸 Social (Instagram carousels)
 
 The decoded feed doubles as social content. `make_social.py` turns each day's **top 5 Global + top 5
-India** stories into **branded 1080×1350 carousel images** (cover → story slides with the takeaway as the
-hero → a call-to-action slide) plus an auto-written **caption** (hook + headlines + hashtags + disclaimer).
-It reuses the reels design and renders with headless Chrome.
+India** stories into, for each region: a **branded 1080×1350 carousel** (a story-teasing cover → story
+slides with the takeaway as the hero → a call-to-action slide), a **vertical Reel** (`reel.mp4`, 9:16 MP4
+of the same slides with crossfades, via ffmpeg — silent, add trending audio in-app), and an auto-written
+**caption** (hook + headlines + hashtags + disclaimer). It also renders a branded **profile picture**
+(`brand/profile.png`). Everything reuses the reels design and renders with headless Chrome.
 
 - **Generate:** `python make_social.py` (also runs automatically after each full pipeline run). Output →
-  `social/out/<date>/{global,india}/` — local only, **gitignored** (never published to the public site).
-- **Post (manual MVP):** open **`localhost:8000/posts`** → download the images, copy the caption, post to
-  Instagram. No API, so zero ban risk — the goal is to validate the content before automating.
+  `social/out/<date>/{global,india}/` (+ `brand/profile.png`) — local only, **gitignored** (never published).
+- **Post (manual MVP):** open **`localhost:8000/posts`** → download the images/reel, copy the caption, post
+  to Instagram. No API, so zero ban risk — the goal is to validate the content before automating.
+- **First time?** Follow **[INSTAGRAM_SETUP.md](INSTAGRAM_SETUP.md)** — a step-by-step guide to create the
+  account, set the handle/name/bio, upload the profile pic, seed the grid, and run the daily post loop.
 - **Config** (`.env`, all optional): `SOCIAL_HANDLE`, `SOCIAL_BIO_LINK`, and monetization hooks
   `SPONSOR_LINE` / `AFFILIATE_URL` (blank = off). Keep it **news/education framed** — "not financial
   advice" is baked into every carousel; attribute sources, don't reproduce article text.

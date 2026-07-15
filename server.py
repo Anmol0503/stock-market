@@ -234,6 +234,11 @@ def build_posts_page() -> str:
     a.dl{color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:700;margin-right:14px}
     .empty{color:var(--dim);text-align:center;padding:40px}
     .foot{color:var(--dim);font-size:12px;text-align:center;margin-top:12px}
+    .reel{flex:0 0 auto;width:150px;border:1px solid var(--accent);border-radius:10px;overflow:hidden}
+    .reel video{display:block;width:150px;height:187px;object-fit:cover;background:#05080d}
+    .reel .cap{font-size:10px;font-weight:800;color:var(--accent);text-align:center;padding:3px}
+    .brandcard{display:flex;align-items:center;gap:16px}
+    .brandcard img{width:96px;height:96px;border-radius:50%;border:1px solid var(--line)}
     """
     dates = sorted([d for d in SOCIAL_OUT.glob("*") if d.is_dir()], reverse=True) if SOCIAL_OUT.exists() else []
     head = (f"<style>{css}</style><div class='wrap'><h1>📸 Today's posts</h1>"
@@ -261,18 +266,34 @@ def build_posts_page() -> str:
         thumbs = "".join(
             f"<a href='/posts/file?f={date}/{region}/{p.name}' target='_blank'>"
             f"<img src='/posts/file?f={date}/{region}/{p.name}'></a>" for p in pngs)
+        reel = rdir / "reel.mp4"
+        reel_html = (
+            f"<div class='reel'><video src='/posts/file?f={date}/{region}/reel.mp4' "
+            f"muted loop autoplay playsinline></video><div class='cap'>🎬 REEL</div></div>"
+            if reel.exists() else "")
         dls = "".join(
             f"<a class='dl' href='/posts/file?f={date}/{region}/{p.name}' download='{region}-{p.name}'>⬇ {p.stem}</a>"
             for p in pngs)
+        if reel.exists():
+            dls += (f"<a class='dl' href='/posts/file?f={date}/{region}/reel.mp4' "
+                    f"download='{region}-reel.mp4'>🎬 reel.mp4</a>")
         cap_path = rdir / "caption.txt"
         cap = cap_path.read_text() if cap_path.exists() else ""
         cap = cap.replace("&", "&amp;").replace("<", "&lt;")   # safe inside <textarea>
         cid = f"cap-{region}"
         out.append(
-            f"<div class='car'><h2>{label} — {len(pngs)} slides</h2>"
-            f"<div class='strip'>{thumbs}</div><div style='margin-top:10px'>{dls}</div>"
+            f"<div class='car'><h2>{label} — {len(pngs)} slides + reel</h2>"
+            f"<div class='strip'>{reel_html}{thumbs}</div><div style='margin-top:10px'>{dls}</div>"
             f"<textarea id='{cid}' readonly>{cap}</textarea>"
             f"<button class='ghost' onclick=\"copyCap('{cid}',this)\">Copy caption</button></div>")
+    prof = dates[0] / "brand" / "profile.png"
+    if prof.exists():
+        out.append(
+            f"<div class='car brandcard'><img src='/posts/file?f={date}/brand/profile.png'>"
+            f"<div><h2 style='margin:0'>Brand kit</h2>"
+            f"<div class='sub' style='margin:2px 0 6px'>Your Instagram profile picture.</div>"
+            f"<a class='dl' href='/posts/file?f={date}/brand/profile.png' download='profile.png'>⬇ profile.png</a>"
+            f"<span class='sub'>Full walkthrough → <b>INSTAGRAM_SETUP.md</b> in the repo root.</span></div></div>")
     if not any_region:
         out.append("<div class='empty'>No carousels for the latest date yet.</div>")
     return "".join(out) + script
@@ -383,7 +404,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not str(target).startswith(str(SOCIAL_OUT.resolve())) or not target.is_file():
             self.send_error(404, "not found")
             return
-        ctype = "image/png" if target.suffix == ".png" else "text/plain; charset=utf-8"
+        ctype = {".png": "image/png", ".mp4": "video/mp4"}.get(
+            target.suffix, "text/plain; charset=utf-8")
         body = target.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", ctype)

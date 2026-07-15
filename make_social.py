@@ -51,17 +51,32 @@ CHROME = next((p for p in [
     "/Applications/Chromium.app/Contents/MacOS/Chromium",
     shutil.which("google-chrome"), shutil.which("chromium"), shutil.which("chrome"),
 ] if p and pathlib.Path(p).exists()), None)
+FFMPEG = shutil.which("ffmpeg")
+
+# rendering formats — post = 4:5 carousel, reel = 9:16 full-screen, avatar = 1:1 profile pic
+POST = (1080, 1350)
+REEL = (1080, 1920)
+SQUARE = (1080, 1080)
+# CSS overrides so one template renders at any height (heights are hard-coded to 1350 in post.html)
+REEL_CSS = ("html,body{height:1920px!important}"
+            ".slide{height:1920px!important;padding-top:132px;padding-bottom:132px}"
+            ".slide::before{height:780px!important}"
+            ".cover .kick{margin-top:96px}")
+SQUARE_CSS = "html,body{height:1080px!important}.slide{height:1080px!important}"
 
 
-def render_slide(slide: dict, out_png: pathlib.Path, workdir: pathlib.Path) -> bool:
+def render_slide(slide: dict, out_png: pathlib.Path, workdir: pathlib.Path,
+                 size=POST, extra_css: str = "") -> bool:
     html = TEMPLATE.replace("/*__SLIDE__*/",
                             "window.__SLIDE__ = " + json.dumps(slide, ensure_ascii=False) + ";")
-    tmp = workdir / "_slide.html"
+    if extra_css:
+        html = html.replace("</style>", extra_css + "</style>", 1)
+    tmp = workdir / f"_slide_{out_png.stem}.html"
     tmp.write_text(html)
     try:
         subprocess.run(
             [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-             "--force-device-scale-factor=1", "--window-size=1080,1350",
+             "--force-device-scale-factor=1", f"--window-size={size[0]},{size[1]}",
              "--virtual-time-budget=2500", f"--screenshot={out_png}", tmp.as_uri()],
             capture_output=True, timeout=90,
         )
@@ -71,6 +86,36 @@ def render_slide(slide: dict, out_png: pathlib.Path, workdir: pathlib.Path) -> b
     finally:
         tmp.unlink(missing_ok=True)
     return out_png.exists()
+
+
+def build_reel(frames: list[pathlib.Path], durs: list[float], out_mp4: pathlib.Path,
+               xfade: float = 0.5) -> bool:
+    """Stitch reel frames into a vertical MP4 with crossfades (ffmpeg, no moviepy)."""
+    if not FFMPEG or not frames:
+        return False
+    inputs: list[str] = []
+    for f, d in zip(frames, durs):
+        inputs += ["-loop", "1", "-t", f"{d:.3f}", "-i", str(f)]
+    parts = [f"[{i}:v]scale=1080:1920,setsar=1,fps=30,format=yuv420p[v{i}]"
+             for i in range(len(frames))]
+    prev, offset, chain = "v0", durs[0] - xfade, []
+    for i in range(1, len(frames)):
+        out = f"x{i}"
+        chain.append(f"[{prev}][v{i}]xfade=transition=fade:duration={xfade}:offset={offset:.3f}[{out}]")
+        prev, offset = out, offset + durs[i] - xfade
+    filt = ";".join(parts + chain)
+    cmd = [FFMPEG, "-y", *inputs, "-filter_complex", filt, "-map", f"[{prev}]",
+           "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+           "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out_mp4)]
+    try:
+        r = subprocess.run(cmd, capture_output=True, timeout=300)
+    except (subprocess.TimeoutExpired, OSError) as e:
+        print(f"  ! reel render failed: {e}", file=sys.stderr)
+        return False
+    if r.returncode != 0:
+        print(f"  ! ffmpeg error: {r.stderr.decode('utf-8','ignore')[-400:]}", file=sys.stderr)
+        return False
+    return out_mp4.exists()
 
 
 def _hashtags(region: str, stories: list[dict]) -> str:
@@ -110,18 +155,31 @@ def build_caption(region: str, stories: list[dict], day_label: str) -> str:
     return "\n".join(L).strip() + "\n"
 
 
-def build_carousel(region: str, stories: list[dict], deck: dict, out_dir: pathlib.Path) -> int:
+def _short_date(deck: dict) -> str:
+    raw = deck.get("date") or ""
+    try:
+        d = dt.date.fromisoformat(raw)
+        return d.strftime("%a %-d %b").upper()          # e.g. "WED 15 JUL"
+    except ValueError:
+        return (deck.get("day_label") or "").upper()
+
+
+def build_carousel(region: str, stories: list[dict], deck: dict, out_dir: pathlib.Path,
+                   make_reel: bool = True) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     cat = "india" if region == "india" else "markets"
     emoji = "🇮🇳" if region == "india" else "🌍"
-    total = len(stories) + 2  # cover + stories + cta
+    n = len(stories)
+    total = n + 2  # cover + stories + cta
 
-    slides = [{
+    cover = {
         "type": "cover", "category": cat, "emoji": emoji,
-        "region": "India" if region == "india" else "Global",
-        "day_label": deck.get("day_label") or deck.get("date") or "",
-        "lead": f"Today's top {len(stories)}, decoded",
-    }]
+        "kicker": f"{'India' if region == 'india' else 'Global'} briefing · {_short_date(deck)}",
+        "hook": f"Today's {n} biggest\nstories,",
+        "teasers": [(s.get("title") or "").strip() for s in stories[:3]],
+        "more": f"+{n - 3} more inside ↓" if n > 3 else "",
+    }
+    slides = [cover]
     for i, s in enumerate(stories, 1):
         slides.append({
             "type": "story", "category": s.get("category"),
@@ -138,12 +196,27 @@ def build_carousel(region: str, stories: list[dict], deck: dict, out_dir: pathli
         "sponsor": SPONSOR_LINE, "disclaimer": DISCLAIMER,
     })
 
-    names = ["cover"] + [f"story-{i}" for i in range(1, len(stories) + 1)] + ["cta"]
+    names = ["cover"] + [f"story-{i}" for i in range(1, n + 1)] + ["cta"]
     made = 0
     for slide, name in zip(slides, names):
         if render_slide(slide, out_dir / f"{name}.png", out_dir):
             made += 1
-    (out_dir / "caption.txt").write_text(build_caption(region, stories, slides[0]["day_label"]))
+    (out_dir / "caption.txt").write_text(build_caption(region, stories, deck.get("day_label") or ""))
+
+    # A postable vertical Reel (9:16 MP4) from the same slides — silent; add trending audio in-app.
+    if make_reel and FFMPEG:
+        fdir = out_dir / "reel_frames"
+        fdir.mkdir(exist_ok=True)
+        frames, durs = [], []
+        for slide, name in zip(slides, names):
+            fp = fdir / f"{name}.png"
+            if render_slide(slide, fp, fdir, size=REEL, extra_css=REEL_CSS):
+                frames.append(fp)
+                durs.append(2.8 if slide["type"] == "cover" else 3.2 if slide["type"] == "cta" else 4.0)
+        if build_reel(frames, durs, out_dir / "reel.mp4"):
+            made += 1
+            print(f"  ✓ reel.mp4 ({sum(durs):.0f}s, {len(frames)} frames)")
+        shutil.rmtree(fdir, ignore_errors=True)
     return made
 
 
@@ -170,7 +243,16 @@ def main() -> int:
         total += build_carousel("global", glob, deck, base / "global")
     if ind:
         total += build_carousel("india", ind, deck, base / "india")
-    print(f"Generated {total} slides → {base.relative_to(ROOT)}/  (global:{len(glob)} india:{len(ind)})")
+
+    # One-time brand asset: a square profile picture to upload to Instagram.
+    brand = base / "brand"
+    brand.mkdir(parents=True, exist_ok=True)
+    if render_slide({"type": "avatar"}, brand / "profile.png", brand,
+                    size=SQUARE, extra_css=SQUARE_CSS):
+        total += 1
+
+    print(f"Generated {total} assets → {base.relative_to(ROOT)}/  (global:{len(glob)} india:{len(ind)}"
+          f"{', +reels' if FFMPEG else ''}, +profile pic)")
     return 0
 
 
