@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT))        # so `build_dashboard` (repo root) imports 
 
 import build_dashboard                # noqa: E402
 import progress as pg                 # noqa: E402  (routine/ is already on sys.path)
+import publish_status                 # noqa: E402  (writes dashboard/status.json)
 
 OUT = ROOT / "output"
 ROUTINE = ROOT / "routine"
@@ -113,10 +114,12 @@ def main() -> int:
         st["category"] = "india" if region == "india" else (st.get("category") or "geopolitics")
         stories = _insert_top_of_region(stories, st, region)
         existing.add(_norm(st.get("title")))
-        added.append(st.get("title"))
+        added.append({"title": st.get("title"), "region": region,
+                      "published_iso": st.get("published_iso")})
 
     if not added:
-        print("  · nothing new trending this hour — feed unchanged", file=sys.stderr)
+        print("  · nothing new trending this run — feed unchanged", file=sys.stderr)
+        publish_status.write_status("hourly", added=None)   # still record the check time
         return 0
 
     stories = _cap_per_region(stories, CAP)
@@ -130,9 +133,11 @@ def main() -> int:
     latest.write_text(pretty)
     (OUT / f"world-{world['date']}.json").write_text(pretty)
 
-    pg.set_progress("publishing", "Publishing the fresh stories", len(added), 2, "; ".join(added)[:80])
+    titles = [a["title"] for a in added]
+    pg.set_progress("publishing", "Publishing the fresh stories", len(added), 2, "; ".join(titles)[:80])
     build_dashboard.main()
-    print(f"hourly: added {len(added)} — {' | '.join(added)}", flush=True)
+    publish_status.write_status("hourly", added=added)
+    print(f"hourly: added {len(added)} — {' | '.join(titles)}", flush=True)
     return 0
 
 
