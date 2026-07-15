@@ -22,6 +22,7 @@ import json
 import pathlib
 import re
 import subprocess
+import sys
 import threading
 import urllib.parse
 import urllib.request
@@ -31,6 +32,7 @@ import analyze_stock
 ROOT = pathlib.Path(__file__).resolve().parent
 DASH = ROOT / "dashboard"
 LOGS = ROOT / "logs"
+SOCIAL_OUT = ROOT / "social" / "out"
 PORT = 8000
 
 LIVE_REELS = "https://anmol-png.github.io/stock-market/dashboard/reels.json"
@@ -199,6 +201,83 @@ def build_status() -> dict:
     }
 
 
+def _slide_order(p: pathlib.Path):
+    stem = p.stem
+    if stem == "cover":
+        return (0, 0)
+    if stem == "cta":
+        return (2, 0)
+    try:
+        return (1, int(stem.split("-")[-1]))
+    except ValueError:
+        return (1, 99)
+
+
+def build_posts_page() -> str:
+    """HTML for /posts — the latest generated carousels, ready to download + post by hand."""
+    css = """
+    :root{--bg:#0b0f17;--panel:#131a26;--line:#222c3b;--txt:#e7edf5;--dim:#8ea0b5;--accent:#5b9dff;
+      --round:ui-rounded,'SF Pro Rounded',-apple-system,'Segoe UI',Roboto,sans-serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);padding:22px 16px 60px}
+    .wrap{max-width:1000px;margin:0 auto} h1{font-family:var(--round);font-size:24px;margin:0 0 4px}
+    .sub{color:var(--dim);font-size:13px;margin-bottom:18px} .sub b{color:var(--txt)}
+    .car{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;margin-bottom:20px}
+    .car h2{font-family:var(--round);font-size:19px;margin:0 0 12px}
+    .strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
+    .strip a{flex:0 0 auto;display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    .strip img{display:block;width:150px;height:187px;object-fit:cover}
+    textarea{width:100%;min-height:150px;background:#05080d;color:#c6d2e0;border:1px solid var(--line);
+      border-radius:10px;padding:12px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.5;margin-top:12px}
+    button{font-family:var(--round);font-weight:800;font-size:14px;cursor:pointer;border:none;border-radius:10px;
+      padding:10px 16px;color:#fff;background:linear-gradient(135deg,var(--accent),#3a6fd0);margin-top:10px}
+    button.ghost{background:var(--panel);border:1px solid var(--line);color:var(--txt)}
+    a.dl{color:var(--accent);text-decoration:none;font-size:12.5px;font-weight:700;margin-right:14px}
+    .empty{color:var(--dim);text-align:center;padding:40px}
+    .foot{color:var(--dim);font-size:12px;text-align:center;margin-top:12px}
+    """
+    dates = sorted([d for d in SOCIAL_OUT.glob("*") if d.is_dir()], reverse=True) if SOCIAL_OUT.exists() else []
+    head = (f"<style>{css}</style><div class='wrap'><h1>📸 Today's posts</h1>"
+            "<div class='sub'>Auto-generated carousels from the decoded feed. <b>Workflow:</b> download the "
+            "images (or drag to Finder), copy the caption, and post to Instagram. "
+            "<button onclick='regen(this)'>↻ Regenerate</button></div>")
+    script = """<div class='foot'><a class="dl" href="/status">← Update Center</a> · <a class="dl" href="/">Dashboard</a></div>
+    <script>
+    function copyCap(id,btn){const t=document.getElementById(id);t.select();document.execCommand('copy');btn.textContent='Copied ✓';setTimeout(()=>btn.textContent='Copy caption',1500);}
+    async function regen(btn){btn.disabled=true;btn.textContent='↻ Generating…';try{await fetch('/api/social/run',{method:'POST'});}catch(e){}
+      setTimeout(()=>location.reload(),9000);}
+    </script></div>"""
+    if not dates:
+        return head + "<div class='empty'>No posts generated yet.<br>Run <code>python make_social.py</code> or hit Regenerate.</div>" + script
+
+    date = dates[0].name
+    out = [head, f"<div class='sub' style='margin-top:-8px'>Latest: <b>{date}</b></div>"]
+    any_region = False
+    for region, label in (("global", "🌍 Global"), ("india", "🇮🇳 India")):
+        rdir = dates[0] / region
+        if not rdir.is_dir():
+            continue
+        any_region = True
+        pngs = sorted(rdir.glob("*.png"), key=_slide_order)
+        thumbs = "".join(
+            f"<a href='/posts/file?f={date}/{region}/{p.name}' target='_blank'>"
+            f"<img src='/posts/file?f={date}/{region}/{p.name}'></a>" for p in pngs)
+        dls = "".join(
+            f"<a class='dl' href='/posts/file?f={date}/{region}/{p.name}' download='{region}-{p.name}'>⬇ {p.stem}</a>"
+            for p in pngs)
+        cap_path = rdir / "caption.txt"
+        cap = cap_path.read_text() if cap_path.exists() else ""
+        cap = cap.replace("&", "&amp;").replace("<", "&lt;")   # safe inside <textarea>
+        cid = f"cap-{region}"
+        out.append(
+            f"<div class='car'><h2>{label} — {len(pngs)} slides</h2>"
+            f"<div class='strip'>{thumbs}</div><div style='margin-top:10px'>{dls}</div>"
+            f"<textarea id='{cid}' readonly>{cap}</textarea>"
+            f"<button class='ghost' onclick=\"copyCap('{cid}',this)\">Copy caption</button></div>")
+    if not any_region:
+        out.append("<div class='empty'>No carousels for the latest date yet.</div>")
+    return "".join(out) + script
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(DASH), **kwargs)
@@ -219,11 +298,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/refresh"):
             self.handle_refresh()
             return
+        if self.path.startswith("/posts/file"):
+            self.serve_social_file()
+            return
+        if self.path.startswith("/posts"):
+            self.serve_posts()
+            return
         super().do_GET()
 
     def do_POST(self):  # noqa: N802
         if self.path.startswith("/api/run"):
             self.handle_run()
+            return
+        if self.path.startswith("/api/social/run"):
+            self.handle_social_run()
             return
         self.send_error(404, "not found")
 
@@ -276,6 +364,41 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._send_json({"started": True})
         except Exception as exc:  # noqa: BLE001
             self._send_json({"started": False, "error": str(exc)})
+
+    def handle_social_run(self):
+        """Regenerate today's Instagram carousels (make_social.py) in the background."""
+        try:
+            logf = open(LOGS / "social.log", "a")  # noqa: SIM115
+            subprocess.Popen([sys.executable, str(ROOT / "make_social.py")], cwd=ROOT,
+                             stdout=logf, stderr=subprocess.STDOUT, start_new_session=True)
+            self._send_json({"started": True})
+        except Exception as exc:  # noqa: BLE001
+            self._send_json({"started": False, "error": str(exc)})
+
+    def serve_social_file(self):
+        """Serve a generated post asset (PNG / caption) from social/out — path-traversal guarded."""
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+        rel = (params.get("f") or [""])[0]
+        target = (SOCIAL_OUT / rel).resolve()
+        if not str(target).startswith(str(SOCIAL_OUT.resolve())) or not target.is_file():
+            self.send_error(404, "not found")
+            return
+        ctype = "image/png" if target.suffix == ".png" else "text/plain; charset=utf-8"
+        body = target.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def serve_posts(self):
+        """A local gallery of the latest generated carousels — preview, download, copy caption."""
+        body = build_posts_page().encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
 
     def handle_analyze(self):
         params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)

@@ -76,6 +76,9 @@ fi
 progress publishing "Publishing to your phone" 0 0 ""
 "$PY" build_dashboard.py      || echo "WARN: publish failed"
 
+# ---- generate ready-to-post Instagram carousels (best-effort — never abort the run) ----
+"$PY" make_social.py          || echo "WARN: social generation failed"
+
 # ---- email once per day (the pipeline now runs every ~2h; don't spam the inbox) ----
 if [ -f .env ]; then
   if [ -f "logs/emailed-$TODAY" ]; then

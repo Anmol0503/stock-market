@@ -106,6 +106,7 @@ analyze_stock.py ─► dashboard/stocks/*.json  ────┘                
 | `analyze_stock.py` | Technical-analysis engine — computes the industry indicator suite and turns it into a processed verdict + plain-English notes per stock (`python analyze_stock.py AAPL` or `--all`) |
 | `send.py` | Renders + emails the **short two-pillar** digest via Gmail SMTP |
 | `build_dashboard.py` | Publishes both briefs (`world.json` + `brief.json`) to the dashboard |
+| `make_social.py` + `social/post.html` | Auto-generates ready-to-post **Instagram carousels** (branded 1080×1350 slides + caption) from the decoded feed → `social/out/<date>/` (local, gitignored). Preview/download at `localhost:8000/posts` |
 | `server.py` | Local server (threaded): serves the dashboard + `/api/analyze` (live any-ticker analysis), `/api/refresh` (recompute all) |
 | `dashboard/index.html` | Two-pillar dashboard: 🌍 World (decoded stories) and 📈 Markets (feed + live deep panel), with 🎓 lessons, 📚 concept chips, 📈 developing-story threads, board sparklines, and freshness timestamps everywhere |
 | `dashboard/reels/` | 📱 The mobile deck (PWA): swipe-per-card, one takeaway per card, decode sheet, learn cards; `build_dashboard.build_reels()` compiles `dashboard/reels.json` daily |
@@ -129,6 +130,23 @@ volatility, a price chart, and every indicator as a signal. **Nothing is a bare 
 next to any metric (RSI, MACD, P/E, ADX, beta…) for a beginner-friendly explanation. A secondary search
 box looks up any ticker; run `python server.py` for live on-demand analysis of tickers you haven't
 pre-computed.
+
+## 📸 Social (Instagram carousels)
+
+The decoded feed doubles as social content. `make_social.py` turns each day's **top 5 Global + top 5
+India** stories into **branded 1080×1350 carousel images** (cover → story slides with the takeaway as the
+hero → a call-to-action slide) plus an auto-written **caption** (hook + headlines + hashtags + disclaimer).
+It reuses the reels design and renders with headless Chrome.
+
+- **Generate:** `python make_social.py` (also runs automatically after each full pipeline run). Output →
+  `social/out/<date>/{global,india}/` — local only, **gitignored** (never published to the public site).
+- **Post (manual MVP):** open **`localhost:8000/posts`** → download the images, copy the caption, post to
+  Instagram. No API, so zero ban risk — the goal is to validate the content before automating.
+- **Config** (`.env`, all optional): `SOCIAL_HANDLE`, `SOCIAL_BIO_LINK`, and monetization hooks
+  `SPONSOR_LINE` / `AFFILIATE_URL` (blank = off). Keep it **news/education framed** — "not financial
+  advice" is baked into every carousel; attribute sources, don't reproduce article text.
+- **Phase 2** (once it gets traction): auto-posting via the official Meta Graph **Content Publishing API**
+  (needs an IG Business/Creator account + a Facebook app + tokens in `.env`), short video Reels, a paid tier.
 
 ## Notes / limitations
 
