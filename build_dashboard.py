@@ -189,6 +189,45 @@ def _yesterday_world(today: str) -> dict | None:
     return _load_json(ARCHIVE / f"world-{prior[-1]}.json") if prior else None
 
 
+# ---- rolling news archive: the live feed shows the top-N per region; everything else collects here ----
+NEWS_ARCHIVE = DASH / "news-archive.json"
+LIVE_PER_REGION = 20      # the live reels feed shows at most this many stories per tab (Global / India)
+NEWS_ARCHIVE_CAP = 300    # rolling history depth (dedup by title, newest-first)
+
+
+def _norm_title(t: str | None) -> str:
+    return re.sub(r"\s+", " ", (t or "")).strip().lower()
+
+
+def _story_region(c: dict) -> str:
+    return "india" if c.get("category") == "india" else "global"
+
+
+def update_news_archive(story_cards: list[dict]) -> int:
+    """Merge the currently-live story cards into dashboard/news-archive.json (dedup by title, newest
+    first). So every story that rotates out of the live top-20 is preserved as history, never lost."""
+    data = _load_json(NEWS_ARCHIVE) or {}
+    old = data.get("stories") or []
+    have = {_norm_title(s.get("title")) for s in old}
+    fresh = [c for c in story_cards
+             if _norm_title(c.get("title")) and _norm_title(c.get("title")) not in have]
+    merged = fresh + old
+    merged.sort(key=lambda s: s.get("published_iso") or "", reverse=True)   # newest first, undated sink
+    seen: set[str] = set()
+    out: list[dict] = []
+    for s in merged:
+        k = _norm_title(s.get("title"))
+        if k and k not in seen:
+            seen.add(k)
+            out.append(s)
+        if len(out) >= NEWS_ARCHIVE_CAP:
+            break
+    NEWS_ARCHIVE.write_text(json.dumps(
+        {"generated_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
+         "count": len(out), "stories": out}, indent=2, ensure_ascii=False))
+    return len(out)
+
+
 def build_reels() -> int:
     """Compile dashboard/reels.json — the ordered mobile card deck.
 
@@ -221,9 +260,10 @@ def build_reels() -> int:
     watch = (brief or {}).get("what_to_watch", []) or []
 
     # -- world stories, already ranked/curated by the analyst (no cover — first swipe IS the top story)
+    story_cards: list[dict] = []
     for s in stories:
         src = (s.get("sources") or [{}])[0].get("name")
-        cards.append({
+        story_cards.append({
             "type": "story", "id": f"story-{s.get('rank')}",
             "rank": s.get("rank"), "category": s.get("category"),
             "published_iso": s.get("published_iso"), "source": src,
@@ -239,6 +279,23 @@ def build_reels() -> int:
                 "background", "why_it_matters", "ripple_effects", "why_now",
                 "watch_next", "market_link", "key_terms", "sources")},
         })
+
+    # Preserve EVERY story in the rolling archive first, then show only the top-N per region live.
+    update_news_archive(story_cards)
+    seen_live = {"global": 0, "india": 0}
+    for c in story_cards:
+        r = _story_region(c)
+        if seen_live[r] < LIVE_PER_REGION:
+            cards.append(c)
+            seen_live[r] += 1
+    live_titles = {_norm_title(c.get("title")) for c in cards if c.get("type") == "story"}
+    archive_data = _load_json(NEWS_ARCHIVE) or {}
+    for region, cat in (("global", "geopolitics"), ("india", "india")):
+        older = [s for s in (archive_data.get("stories") or [])
+                 if _story_region(s) == region and _norm_title(s.get("title")) not in live_titles]
+        if older:
+            cards.append({"type": "archive", "id": f"archive-{region}", "category": cat,
+                          "region": region, "older_count": len(older)})
 
     # -- 🎓 Learn tab: today's deep-dive session (cover + chunk cards + recap/check) --
     lesson = _load_json(DASH / "lesson.json")

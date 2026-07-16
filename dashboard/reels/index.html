@@ -139,6 +139,7 @@
   .jmain b{display:block;font-size:14.5px;font-weight:800;color:var(--txt)}
   .jmain span{display:block;font-size:12.5px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .jgo{flex:0 0 auto;color:var(--dim);font-size:20px;font-weight:700}
+  .arch-hint{font-size:12.5px;line-height:1.5;color:var(--dim);margin:2px 0 12px}
   /* bottom toast (mark-complete feedback) */
   #toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:60;
     max-width:88vw;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:13px;
@@ -555,6 +556,13 @@ const R = {
     <h1 class="headline">${esc(c.title)}</h1>
     ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
 
+  // 📜 end-of-feed archive gateway: the live feed is the top 20; older stories collect here
+  archive: c => `
+    <div class="meta">${catChip(c.category)}<span>the archive</span></div>
+    <h1>📜 Older ${c.region==='india'?'India':'Global'} stories</h1>
+    <div class="body" style="color:var(--dim)">The feed keeps the latest <b style="color:var(--txt)">20</b> up top. Every story that rotates out is saved — <b style="color:var(--txt)">${esc(c.older_count)}</b> in the archive so far.</div>
+    ${expandBtn(`openArchive(${JSON.stringify(c.region)})`, 'Browse older stories')}`,
+
   // 🎓 daily deep-dive lesson: cover → chunk cards → recap/check
   lesson_cover: c => `
     <div class="eyebrow"><span class="day">🎓 Today's lesson</span></div>
@@ -667,6 +675,7 @@ const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_jour
 function pillarOf(c){
   if(LESSON_TYPES.has(c.type)) return 'learn';
   if(c.type==='story') return c.category==='india' ? 'india' : 'global';
+  if(c.type==='archive') return c.region;
   return 'global';
 }
 let PILLARSEL = 'global';
@@ -832,6 +841,32 @@ function openJournal(i){
   openSheet(e.session_title || e.subject_title || 'Lesson', h, 'learn');
 }
 
+/* ---------- 📜 the rolling news archive (older stories that rotated out of the live top-20) ---------- */
+let ARCHIVE_CACHE=null, ARCHIVE_VIEW=[];
+const _tkey = t => (t||'').trim().toLowerCase();
+function openArchive(region){
+  const label = region==='india' ? 'India' : 'Global';
+  openSheet('📜 Older '+label+' stories', '<div class="one">Loading the archive…</div>',
+            region==='india'?'india':'markets');
+  const paint = all => {
+    const live = new Set((DECK.cards||[]).filter(x=>x.type==='story').map(x=>_tkey(x.title)));
+    ARCHIVE_VIEW = (all||[]).filter(s => (s.category==='india'?'india':'global')===region
+                                         && !live.has(_tkey(s.title)));
+    document.getElementById('sbody').innerHTML = ARCHIVE_VIEW.length
+      ? `<div class="arch-hint">Newest first — every story that's rotated out of the live feed. Tap one to read its full decode.</div>`
+        + `<div class="jlist" style="max-height:72vh">${ARCHIVE_VIEW.map((s,i)=>`
+            <div class="jrow" onclick='openArchiveStory(${i})'>
+              <div class="jmain"><b>${esc(s.title)}</b><span>${esc(relTime(s.published_iso))}${s.source?' · '+esc(String(s.source).split(' (')[0]):''}</span></div>
+              <div class="jgo">›</div></div>`).join('')}</div>`
+      : '<div class="one">Nothing older archived yet — as newer stories arrive, older ones collect here.</div>';
+    document.getElementById('sbody').scrollTop = 0;
+  };
+  if(ARCHIVE_CACHE){ paint(ARCHIVE_CACHE); return; }
+  fetch('../news-archive.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+    .then(d=>{ ARCHIVE_CACHE = (d&&d.stories)||[]; paint(ARCHIVE_CACHE); });
+}
+function openArchiveStory(i){ const c=ARCHIVE_VIEW[i]; if(c) openDecodeCard(c); }
+
 /* ---------- course pacing (on-device) + "mark complete" → the next part on the next 30-min run ---------- */
 function cLoad(){ try{ return JSON.parse(localStorage.getItem('di_course'))||{}; }catch(e){ return {}; } }
 function cSave(o){ try{ localStorage.setItem('di_course', JSON.stringify(o)); }catch(e){} }
@@ -862,8 +897,8 @@ function toast(msg){
 
 // primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type
 const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_story:'story'};
-function openDecode(id){
-  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+function openDecode(id){ const c = DECK.cards.find(x=>x.id===id); if(c) openDecodeCard(c); }
+function openDecodeCard(c){
   const d = c.depth||{}; let h = '';
   // Lead with the takeaway (moved here off the reel face), then the essentials.
   if(c.type==='story'||c.type==='watch') h += pinnedMoot(c.moot);

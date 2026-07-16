@@ -31,7 +31,8 @@ OUT = ROOT / "output"
 ROUTINE = ROOT / "routine"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
-CAP = 40   # keep at most this many stories per region (newest kept)
+CAP = 20   # keep at most this many stories per region live (newest kept); older ones live on in the
+           # rolling archive (dashboard/news-archive.json, written by build_dashboard on every build)
 ALLOWED = ["Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"]
 CLAUDE = os.environ.get("CLAUDE_BIN") or str(pathlib.Path.home() / ".local" / "bin" / "claude")
 if not pathlib.Path(CLAUDE).exists():
