@@ -193,6 +193,11 @@ def _yesterday_world(today: str) -> dict | None:
 NEWS_ARCHIVE = DASH / "news-archive.json"
 LIVE_PER_REGION = 20      # the live reels feed shows at most this many stories per tab (Global / India)
 NEWS_ARCHIVE_CAP = 300    # rolling history depth (dedup by title, newest-first)
+FRESH_HOURS = 30          # a story older than this drops OUT of the live feed (still kept in the archive)
+MIN_LIVE = 8              # ...but always keep at least this many newest per region, so it's never empty
+_STOP_WORDS = set("the a an of to in and for on as is it its at by with after from this that was were will "
+                  "has have had over into out up down amid new now says say said amid than then but or "
+                  "india indias indian first big back again live goes get gets".split())
 
 
 def _norm_title(t: str | None) -> str:
@@ -201,6 +206,35 @@ def _norm_title(t: str | None) -> str:
 
 def _story_region(c: dict) -> str:
     return "india" if c.get("category") == "india" else "global"
+
+
+def _story_ts(c: dict):
+    try:
+        return dt.datetime.fromisoformat(str(c.get("published_iso") or "").replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
+
+
+def _age_hours(c: dict, now: dt.datetime):
+    t = _story_ts(c)
+    if t is None:
+        return None
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=now.tzinfo)
+    return (now - t).total_seconds() / 3600
+
+
+def _sig_tokens(c: dict) -> set:
+    words = re.findall(r"[a-z0-9]+", (c.get("title") or "").lower())
+    return {w for w in words if w not in _STOP_WORDS and len(w) > 2}
+
+
+def _is_near_dup(toks: set, seen: list) -> bool:
+    """True if this title's significant words overlap an already-kept story enough to be the SAME event
+    (e.g. a developing story re-decoded with new wording). Jaccard >= 0.55 over 4+ tokens."""
+    if len(toks) < 4:
+        return False
+    return any((len(toks & s) / len(toks | s)) >= 0.55 for s in seen if s)
 
 
 def update_news_archive(story_cards: list[dict]) -> int:
@@ -280,14 +314,31 @@ def build_reels() -> int:
                 "watch_next", "market_link", "key_terms", "sources")},
         })
 
-    # Preserve EVERY story in the rolling archive first, then show only the top-N per region live.
+    # Archive EVERYTHING first (nothing is lost), then build a FRESH, de-duped live feed per region:
+    # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never
+    # empty), and skip near-duplicate events (a developing story re-decoded with different wording).
     update_news_archive(story_cards)
-    seen_live = {"global": 0, "india": 0}
+    now = dt.datetime.now(IST)
+    by_region: dict[str, list[dict]] = {"global": [], "india": []}
     for c in story_cards:
-        r = _story_region(c)
-        if seen_live[r] < LIVE_PER_REGION:
-            cards.append(c)
-            seen_live[r] += 1
+        by_region[_story_region(c)].append(c)
+    for region in ("global", "india"):
+        ranked = sorted(by_region[region], key=lambda c: c.get("published_iso") or "", reverse=True)
+        live: list[dict] = []
+        seen_toks: list[set] = []
+        for c in ranked:
+            if len(live) >= LIVE_PER_REGION:
+                break
+            toks = _sig_tokens(c)
+            if _is_near_dup(toks, seen_toks):
+                continue                       # same event, already shown → skip the rehash
+            age = _age_hours(c, now)
+            if len(live) >= MIN_LIVE and age is not None and age > FRESH_HOURS:
+                continue                       # past the floor and stale → keep it in the archive only
+            live.append(c)
+            if toks:
+                seen_toks.append(toks)
+        cards.extend(live)
     live_titles = {_norm_title(c.get("title")) for c in cards if c.get("type") == "story"}
     archive_data = _load_json(NEWS_ARCHIVE) or {}
     for region, cat in (("global", "geopolitics"), ("india", "india")):

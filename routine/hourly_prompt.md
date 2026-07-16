@@ -15,8 +15,14 @@ language, define jargon, the_lesson + concepts + key_points, published_iso, real
 3. Find what is **TRENDING RIGHT NOW**: the story being reported across the MOST sources/feeds and most
    recently. Volume across independent feeds + recency = trending. Use WebSearch to confirm it's real
    and current.
+   - **RECENCY IS A HARD REQUIREMENT.** Look at each item's `published_iso`. Pick from **TODAY's** items
+     (or, if truly nothing today, the last ~24 hours). **Never pick a story published before yesterday**,
+     and prefer the freshest. The raw feed has plenty of today's items — sort your attention to the newest.
 4. Pick exactly **one GLOBAL** (category geopolitics|economy|technology|science|health|climate) and
    **one INDIA** (category india) trending story that are genuinely new vs the current feed and matter.
+   - **No rehashes.** If the current feed already covers the event (even a developing one, e.g. a hunger
+     strike now on "Day 19" when "Day 18" is already there, or the same policy/incident reworded), it is
+     NOT new — skip it and pick a genuinely different story. Different day-count/update ≠ new story.
 5. **VET:** if the top candidate is only on Reddit/X and you can't corroborate it with a credible
    outlet, skip it and take the next trending one. Never publish a rumor as fact.
 6. FULLY DECODE each per `analyze/world_prompt.md`, including an exact `published_iso` (the real break

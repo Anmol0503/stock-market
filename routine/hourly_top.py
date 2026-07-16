@@ -103,18 +103,29 @@ def main() -> int:
     world = json.loads(latest.read_text())
     stories = world.get("stories") or []
     existing = {_norm(s.get("title")) for s in stories}
+    toks_by_region = {"global": [], "india": []}          # significant-token sets, to catch rehashes
+    for s in stories:
+        toks_by_region[_region(s)].append(build_dashboard._sig_tokens(s))
+    now = dt.datetime.now(IST)
 
     added = []
     for key, region in (("global", "global"), ("india", "india")):
         st = new.get(key)
         if not isinstance(st, dict) or not st.get("title"):
             continue
-        if _norm(st.get("title")) in existing:
-            print(f"  · {key}: already covered — skipped", file=sys.stderr)
+        nt = _norm(st.get("title"))
+        stoks = build_dashboard._sig_tokens(st)
+        if nt in existing or build_dashboard._is_near_dup(stoks, toks_by_region[region]):
+            print(f"  · {key}: already covered / rehash — skipped", file=sys.stderr)
+            continue
+        age = build_dashboard._age_hours(st, now)          # reject clearly-stale picks (keep the feed fresh)
+        if age is not None and age > 48:
+            print(f"  · {key}: too old ({age:.0f}h) — skipped", file=sys.stderr)
             continue
         st["category"] = "india" if region == "india" else (st.get("category") or "geopolitics")
         stories = _insert_top_of_region(stories, st, region)
-        existing.add(_norm(st.get("title")))
+        existing.add(nt)
+        toks_by_region[region].append(stoks)
         added.append({"title": st.get("title"), "region": region,
                       "published_iso": st.get("published_iso")})
 
