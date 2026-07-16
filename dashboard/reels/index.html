@@ -52,7 +52,7 @@
   #progress i{flex:1;height:3px;border-radius:2px;background:#2a3546;transition:background .2s}
   #progress i.done{background:var(--dim)} #progress i.on{background:var(--accent)}
   #hdr{position:fixed;top:calc(env(safe-area-inset-top) + 13px);left:12px;right:12px;z-index:30;
-    display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}
+    display:flex;justify-content:center;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}
   #hdr .stale{color:var(--amber)}
   .hdr-actions{display:flex;gap:5px;flex:0 0 auto;align-items:center}
   #hdr .dash,#refresh{color:var(--dim);border:1px solid var(--line);border-radius:99px;background:rgba(11,15,23,.55);
@@ -82,8 +82,8 @@
     font-family:var(--round);font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--accent),#3a6fd0)}
   /* Global / India / Markets segmented toggle */
   #tabs{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:3px;gap:2px;min-width:0}
-  #tabs button{font-family:var(--round);font-size:12px;font-weight:700;color:var(--dim);cursor:pointer;
-    border:none;background:none;border-radius:99px;padding:6px 9px;min-height:32px;display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+  #tabs button{font-family:var(--round);font-size:13px;font-weight:700;color:var(--dim);cursor:pointer;
+    border:none;background:none;border-radius:99px;padding:7px 15px;min-height:34px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
   #tabs button.on{color:#fff;background:linear-gradient(135deg, var(--tabcat,var(--accent)), color-mix(in srgb, var(--tabcat,var(--accent)) 62%, #000))}
 
   /* cover / divider centered */
@@ -96,13 +96,15 @@
   .bigemoji{font-size:56px;line-height:1}
 
   /* ---- 🎓 Learn tab: lesson cards ---- */
-  .lcov-subj{font-family:var(--round);font-weight:800;font-size:30px;line-height:1.12;margin-top:14px}
-  .lcov-part{font-size:14px;font-weight:700;color:var(--learn);margin-top:10px}
-  .partbar{display:flex;gap:4px;justify-content:center;margin:16px auto 0;max-width:220px}
+  .cover .bigemoji{font-size:46px}
+  .lcov-subj{font-family:var(--round);font-weight:800;font-size:26px;line-height:1.14;margin-top:12px}
+  .lcov-part{font-size:13.5px;font-weight:700;color:var(--learn);margin-top:9px;line-height:1.4}
+  .partbar{display:flex;gap:4px;justify-content:center;margin:14px auto 0;max-width:220px}
   .partbar i{flex:1;height:4px;border-radius:2px;background:#2a3546}
   .partbar i.done{background:var(--learn)} .partbar i.on{background:var(--learn);box-shadow:0 0 8px var(--learn)}
-  .lcov-recap{margin-top:22px;font-size:14.5px;line-height:1.6;color:#c3cedd;text-align:left;
-    background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--learn);border-radius:12px;padding:13px 15px}
+  .lcov-recap{margin-top:18px;font-size:14px;line-height:1.58;color:#c3cedd;text-align:left;
+    background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--learn);border-radius:12px;
+    padding:12px 14px;max-height:31vh;overflow:hidden}
   .lcov-lbl{display:block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--learn);margin-bottom:6px}
   .lrecap{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
   .lrecap li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:#dbe3ee}
@@ -111,6 +113,38 @@
   .lnext{margin-top:20px;font-size:14px;font-weight:700;color:var(--dim)}
   .prose{font-size:16px;line-height:1.68;color:#dbe3ee;margin:0 0 14px}
   .prose:last-child{margin-bottom:0}
+  /* a worked example, set apart from the teaching prose */
+  .example{background:color-mix(in srgb,var(--learn) 10%,var(--panel2));border:1px solid color-mix(in srgb,var(--learn) 26%,var(--line));
+    border-left:3px solid var(--learn);border-radius:12px;padding:12px 14px;font-size:15.5px;line-height:1.62;color:#e2e9f2}
+  /* the mark-complete CTA on the recap card */
+  .donebtn{margin-top:20px;width:100%;min-height:52px;border:none;border-radius:15px;cursor:pointer;
+    font-family:var(--round);font-weight:800;font-size:15px;letter-spacing:.2px;color:#0b0f17;
+    background:linear-gradient(135deg,var(--learn),#e0a52f);box-shadow:0 8px 22px color-mix(in srgb,var(--learn) 34%,transparent)}
+  .donebtn:active{transform:translateY(1px);filter:brightness(1.05)}
+  .donebtn.is-done{background:var(--panel2);color:var(--up);border:1px solid color-mix(in srgb,var(--up) 40%,var(--line));box-shadow:none;cursor:default}
+  /* the "sources & further reading" chip on the recap card */
+  .lchip{margin-top:16px;width:100%;min-height:46px;border-radius:13px;cursor:pointer;font-family:var(--round);
+    font-weight:700;font-size:14px;color:var(--learn);background:color-mix(in srgb,var(--learn) 10%,var(--panel2));
+    border:1px solid color-mix(in srgb,var(--learn) 30%,var(--line))}
+  .lchip:active{filter:brightness(1.08)}
+  /* the journal (history) list on the Learn tab */
+  .jlist{display:flex;flex-direction:column;gap:8px;max-height:62vh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    margin-top:4px;padding-right:2px}
+  .jlist::-webkit-scrollbar{display:none}
+  .jrow{display:flex;align-items:center;gap:12px;padding:12px 13px;border:1px solid var(--line);border-radius:13px;
+    background:var(--panel2);cursor:pointer}
+  .jrow:active{background:var(--panel)}
+  .jem{font-size:22px;flex:0 0 auto;line-height:1}
+  .jmain{flex:1 1 auto;min-width:0}
+  .jmain b{display:block;font-size:14.5px;font-weight:800;color:var(--txt)}
+  .jmain span{display:block;font-size:12.5px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .jgo{flex:0 0 auto;color:var(--dim);font-size:20px;font-weight:700}
+  /* bottom toast (mark-complete feedback) */
+  #toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:60;
+    max-width:88vw;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:13px;
+    padding:12px 18px;font-size:14px;font-weight:700;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* ---- cover header: eyebrow pill + freshness dot + stat pills ---- */
   .eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 auto;padding:6px 13px;border-radius:99px;
@@ -138,6 +172,9 @@
     background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
   h1{margin:0;font-family:var(--round);font-size:22px;line-height:1.27;font-weight:700;letter-spacing:-.2px}
   h1.big{font-size:28px;line-height:1.2;font-weight:800;letter-spacing:-.4px}
+  /* the news card face: the FULL headline, shown in full (no clamp) — nothing else competes for space */
+  h1.headline{font-size:clamp(21px,5.4vw,27px);line-height:1.34;font-weight:800;letter-spacing:-.3px;
+    overflow-wrap:break-word;word-break:normal}
   .body{font-size:16px;line-height:1.62;color:#d3dbe6}
   /* the news summary on the reel face — CLAMPED so a long story never pushes the button off-screen */
   h1.clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
@@ -272,12 +309,6 @@
     <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
     <button data-p="learn" onclick="setPillar('learn')">🎓 Learn</button>
-  </div>
-  <div class="hdr-actions">
-    <button id="learned" title="Concepts you've learned" onclick="openMastery()">📚 <span id="learnedN">0</span></button>
-    <button id="fresh" title="Update status — tap for details" onclick="openStatus()"><span class="fdot"></span><span id="freshAge">—</span></button>
-    <button id="refresh" title="Get the latest" onclick="refreshNow(this)">↻</button>
-    <a class="dash" href="../" title="Full dashboard">⧉</a>
   </div>
 </div>
 <div id="deck"></div>
@@ -521,9 +552,8 @@ const R = {
   story: c => `
     <div class="meta">${catChip(c.category)}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
-    <h1 class="clamp">${esc(c.title)}</h1>
-    <div class="summary">${hl(storySummary(c))}</div>
-    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the takeaway & full story')}`,
+    <h1 class="headline">${esc(c.title)}</h1>
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
 
   // 🎓 daily deep-dive lesson: cover → chunk cards → recap/check
   lesson_cover: c => `
@@ -542,15 +572,32 @@ const R = {
     ${expandBtn(`openLesson(${JSON.stringify(c.id)})`, 'Go deeper')}`,
 
   lesson_recap: c => `
-    <div class="meta">${catChip('learn')}<span>recap · part ${esc(c.part)}/${esc(c.total_parts)}</span></div>
-    <h1>Recap</h1>
+    <div class="meta">${catChip('learn')}<span>wrap-up · part ${esc(c.part)}/${esc(c.total_parts)}</span></div>
+    <h1>You finished Part ${esc(c.part)} 🎉</h1>
     <ul class="lrecap">${(c.recap||[]).map(r=>`<li>${hl(r)}</li>`).join('')}</ul>
     ${c.check&&c.check.question?`<div class="moot veil" onclick="this.classList.add('open')">
       <div class="lbl">🧠 Quick check</div>
       <div class="lq">${esc(c.check.question)}</div>
       <div class="txt">${esc(c.check.answer)}</div>
       <div class="tap">👆 tap to reveal the answer</div></div>`:''}
-    ${c.next_up?`<div class="lnext">⏭️ Next up — ${esc(c.next_up)}</div>`:''}`,
+    ${(c.sources&&c.sources.length)?`<button class="lchip" onclick='openLessonSources(${JSON.stringify(c.id)})'>📚 Sources & further reading (${esc(c.sources.length)})</button>`:''}
+    ${c.next_up?`<div class="lnext">⏭️ Next up — ${esc(c.next_up)}</div>`:''}
+    ${lessonDoneBtn(c)}`,
+
+  // 📖 the reader's growing history — every finished session, most recent first (tap a row for its recap)
+  learn_journal: c => {
+    const ents = c.entries||[];
+    if(!ents.length) return `<div class="meta">${catChip('learn')}<span>your journey</span></div>
+      <h1>📖 Your journey starts here</h1>
+      <div class="body" style="color:var(--dim)">Finish a lesson and it lands here — a growing record of everything you've learned, so you never read and forget.</div>`;
+    return `<div class="meta">${catChip('learn')}<span>your journey · ${esc(c.count)} lesson${c.count==1?'':'s'} done</span></div>
+      <h1>📖 What you've learned</h1>
+      <div class="jlist">${ents.map((e,i)=>`<div class="jrow" onclick='openJournal(${i})'>
+        <div class="jem">${esc(e.emoji||'🎓')}</div>
+        <div class="jmain"><b>${esc(e.subject_title)} · Part ${esc(e.part)}</b>
+          <span>${esc(e.one_line||e.session_title||'')}</span></div>
+        <div class="jgo">›</div></div>`).join('')}</div>`;
+  },
 
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
@@ -614,7 +661,7 @@ const R = {
 const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets', learn:'learn'};
-const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap']);
+const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
 // three tabs: a story goes to India if its category is india, else Global; the daily deep-dive lesson
 // cards live on Learn. Outro (and anything unexpected) lives on Global.
 function pillarOf(c){
@@ -629,6 +676,7 @@ function setPillar(p){
   PILLARSEL = p;
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on', b.dataset.p===p));
   document.getElementById('tabs').style.setProperty('--tabcat', `var(--${TAB_CAT[p]})`);
+  try{ if((location.hash||'').replace(/^#/,'')!==p) history.replaceState(null,'',location.pathname+location.search+'#'+p); }catch(e){}
   render();
   document.getElementById('deck').scrollTo(0,0);
 }
@@ -643,8 +691,8 @@ function render(){
     const cat = isLearn?'learn':(PILLARSEL==='india'?'india':'geopolitics');
     deck.innerHTML = `<section class="card" style="${catStyle(cat)}"><div class="meta">${catChip(cat)}</div>`
       + (isLearn
-         ? `<h1>🎓 Today's lesson is on its way</h1><div class="body" style="color:var(--dim)">Your daily deep-dive is prepared automatically each day — one part of a longer course. Tap ↻ to check, or come back after the next update.</div>`
-         : `<h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Tap ↻ to check.</div>`)
+         ? `<h1>🎓 Your first lesson is on its way</h1><div class="body" style="color:var(--dim)">A deep-dive from a longer course is prepared automatically — one part at a time. Reload after the next update to see it.</div>`
+         : `<h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Reload in a little while.</div>`)
       + `</section>`;
     document.getElementById('progress').innerHTML=''; paintFresh(); return; }
 
@@ -751,11 +799,65 @@ function openLesson(id){
   const c = DECK.cards.find(x=>x.id===id); if(!c) return;
   let h = pinnedMoot(c.key_takeaway);
   h += proseSec('📖','In depth', c.detail);
+  h += exampleSec(c.example);
+  h += bulletSec('✅','Worth remembering', c.points);
   h += keyTermsSec(c.key_terms);
   if((c.concepts||[]).length)
     h += `<div class="bsec"><div class="bh"><span class="bi">📚</span>Learn the concepts</div>${chips(c.concepts)}</div>`;
   masteryNote(c);
   openSheet(c.heading || 'Lesson', h, 'learn');
+}
+
+// a concrete worked example, set apart from the prose so it stands out
+function exampleSec(text){
+  if(!text) return '';
+  return `<div class="bsec"><div class="bh"><span class="bi">💡</span>For example</div>`
+    + `<div class="example">${hl(String(text))}</div></div>`;
+}
+
+// open a session's real references (books/articles/institutions) in the sheet
+function openLessonSources(id){
+  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+  openSheet('Sources & further reading',
+    sourcesSec(c.sources) || '<div class="one">No sources listed for this lesson.</div>', 'learn');
+}
+
+// open one journal entry (a finished session) — its recap + key takeaways
+function openJournal(i){
+  const c = DECK.cards.find(x=>x.type==='learn_journal'); if(!c) return;
+  const e = (c.entries||[])[i]; if(!e) return;
+  let h = `<div class="one">${esc(e.subject_title)} · Part ${esc(e.part)} of ${esc(e.total_parts)}${e.date?` · ${esc(e.date)}`:''}</div>`;
+  h += bulletSec('✓','What this taught you', e.recap);
+  h += bulletSec('💡','Key takeaways', e.key_takeaway);
+  openSheet(e.session_title || e.subject_title || 'Lesson', h, 'learn');
+}
+
+/* ---------- course pacing (on-device) + "mark complete" → the next part on the next 30-min run ---------- */
+function cLoad(){ try{ return JSON.parse(localStorage.getItem('di_course'))||{}; }catch(e){ return {}; } }
+function cSave(o){ try{ localStorage.setItem('di_course', JSON.stringify(o)); }catch(e){} }
+function courseDone(slug, part){ const o=cLoad(); return !!(o.done && o.done[(slug||'')+':'+part]); }
+function lessonDoneBtn(c){
+  const done = courseDone(c.subject_slug, c.part);
+  const label = done ? '✓ Completed — next part on the way' : '✓ Mark complete &amp; get the next part';
+  return `<button class="donebtn${done?' is-done':''}" onclick='markLessonDone(${JSON.stringify(c.subject_slug||"")},${+c.part||0},this)'>${label}</button>`;
+}
+function markLessonDone(slug, part, btn){
+  const o=cLoad(); o.done=o.done||{}; o.done[(slug||'')+':'+part]=Date.now(); cSave(o);
+  if(btn){ btn.classList.add('is-done'); btn.innerHTML='✓ Completed — next part on the way'; }
+  // tell the local pipeline to author the next part on its next 30-min run (harmless no-op on the public site)
+  fetch('/api/lesson/complete', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({subject_slug:slug, part:part})})
+    .then(r=>r.ok?r.json():null).catch(()=>null)
+    .then(res=>toast(res&&res.ok ? 'Nice work! Your next part arrives within ~30 minutes ⏭️'
+                                 : 'Marked complete on this device ✓'));
+}
+// tiny bottom toast
+let TOAST_T=null;
+function toast(msg){
+  let t=document.getElementById('toast');
+  if(!t){ t=document.createElement('div'); t.id='toast'; document.body.appendChild(t); }
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(TOAST_T); TOAST_T=setTimeout(()=>t.classList.remove('show'), 3200);
 }
 
 // primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type
@@ -850,8 +952,13 @@ function openGloss(key){
 loadStatus(); loadEntities();
 fetch('../reels.json?_='+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
-  .then(d=>{ DECK=d; setPillar('global'); })   // default to the Global deck
+  .then(d=>{ DECK=d;
+    const h=(location.hash||'').replace(/^#/,'');           // deep-link a tab, e.g. #learn
+    setPillar(['global','india','learn'].includes(h)?h:'global'); })
   .catch(()=>{ document.getElementById('empty').style.display='flex'; });
+// let the tabs be shareable/deep-linkable + reflect the current tab in the URL
+window.addEventListener('hashchange',()=>{ const h=(location.hash||'').replace(/^#/,'');
+  if(['global','india','learn'].includes(h) && h!==PILLARSEL) setPillar(h); });
 
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
   navigator.serviceWorker.register('./sw.js').catch(()=>{});

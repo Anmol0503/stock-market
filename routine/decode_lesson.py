@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Daily deep-dive lesson — advance a multi-day curriculum by ONE session per day.
+"""Deep-dive lesson — a multi-day curriculum the reader paces themselves.
 
 A Claude-curated syllabus (dashboard/curriculum.json) of broad subjects, each split into 4-6 sessions.
-A pointer (output/curriculum-state.json) advances one session per calendar day. Each run authors that
-session's 4-6 in-depth chunks -> output/lesson-latest.json -> (via build_dashboard COPIES) dashboard/
-lesson.json -> the reels '🎓 Learn' tab.
+A pointer (output/curriculum-state.json) walks the sessions. Each authored session -> output/
+lesson-latest.json -> (via build_dashboard COPIES) dashboard/lesson.json -> the reels '🎓 Learn' tab.
 
-Guarded to advance at most once per day, so it's safe to call from BOTH run_daily.sh and (every 30 min)
-run_hourly.sh — all but the first call of the day is a fast no-op. Use --force to author the next session
-now (testing / "learn the next part").
+READER-PACED: a run only advances to the next part when the reader has marked the current part complete
+(the reels '✓ Mark complete' button posts to server.py, which drops output/lesson-next.flag). The very
+first run bootstraps Part 1; every other hourly tick with no flag is a fast no-op. So the next part lands
+within ~30 minutes of the reader finishing — and never before. When a session is finished it's logged to
+dashboard/learn-journal.json (the reader's growing history). Use --force to advance right now (testing).
 
 Run:  python routine/decode_lesson.py [--force]
 """
@@ -36,6 +37,8 @@ STATE = OUT / "curriculum-state.json"
 CURRIC = DASH / "curriculum.json"          # public syllabus
 LESSON = OUT / "lesson-latest.json"        # today's session (copied to dashboard/lesson.json by build)
 CURRIC_TMP = OUT / "curriculum.json"        # where the plan prompt writes new subjects
+FLAG = OUT / "lesson-next.flag"            # written by server.py when the reader marks a part complete
+JOURNAL = DASH / "learn-journal.json"      # public, accumulating history of finished sessions
 
 MIN_SUBJECTS_AHEAD = 2                       # extend the syllabus when fewer than this remain unstarted
 BOOTSTRAP_COUNT = 15
@@ -130,17 +133,51 @@ def _recap_ctx(sessions: list[dict], ji: int) -> str:
                      for k, s in enumerate(sessions[:ji]))
 
 
+def _append_journal(prev: dict) -> None:
+    """Log the just-finished session into the public learning journal (dedup by subject+part)."""
+    if not prev or not prev.get("chunks"):
+        return
+    j = _load(JOURNAL) or {"entries": []}
+    entries = j.get("entries") or []
+    key = (prev.get("subject_slug"), prev.get("part"))
+    if any((e.get("subject_slug"), e.get("part")) == key for e in entries):
+        return
+    recap = prev.get("recap") or []
+    entries.append({
+        "date": prev.get("date"), "subject_slug": prev.get("subject_slug"),
+        "subject_title": prev.get("subject_title"), "emoji": prev.get("emoji", "🎓"),
+        "part": prev.get("part"), "total_parts": prev.get("total_parts"),
+        "session_title": prev.get("session_title", ""),
+        "one_line": (recap[0] if recap else prev.get("next_up", "")),
+        "recap": recap,
+        "key_takeaway": [c.get("key_takeaway") for c in prev["chunks"] if c.get("key_takeaway")],
+        "logged_at": _now(),
+    })
+    j["entries"] = entries
+    j["generated_at"] = _now()
+    JOURNAL.write_text(json.dumps(j, indent=2, ensure_ascii=False))
+
+
 def main(argv: list[str]) -> int:
     force = "--force" in argv
     state = _load(STATE) or {"subject_index": 0, "session_index": 0, "last_advanced": ""}
     today = _today()
 
-    if state.get("last_advanced") == today and not force:
-        print("lesson: already advanced today — skipping")
-        pg.set_progress("lessons", "Today's lesson is ready", 1, 1, "already done", active=False)
+    # The course is now PACED BY THE READER: advance only when they've marked the current part complete
+    # (server.py writes FLAG), or on the very first run (bootstrap Part 1), or with --force. Every other
+    # hourly tick is a fast no-op — so the reader controls when the next part appears.
+    first_time = not state.get("last_advanced")
+    flagged = FLAG.exists()
+    if not (force or flagged or first_time):
+        print("lesson: current part not marked complete yet — leaving it as is")
+        pg.set_progress("lessons", "Today's lesson is ready", 1, 1,
+                        "mark it complete to unlock the next part", active=False)
         return 0
 
-    pg.set_progress("lessons", "Preparing today's deep dive", 0, 0, "")
+    # capture the session the reader just finished BEFORE we overwrite it — so we can journal it
+    prev_live = None if first_time else _load(DASH / "lesson.json")
+
+    pg.set_progress("lessons", "Preparing your next deep dive", 0, 0, "")
 
     # 1. ensure a syllabus exists
     cur = _load(CURRIC)
@@ -205,6 +242,14 @@ def main(argv: list[str]) -> int:
         si, ji = si + 1, 0
     STATE.write_text(json.dumps({"subject_index": si, "session_index": ji,
                                  "last_advanced": today}, indent=2))
+
+    # 4b. record the session the reader just finished into the public journal, then consume the flag
+    if prev_live:
+        _append_journal(prev_live)
+    try:
+        FLAG.unlink()
+    except FileNotFoundError:
+        pass
 
     # 5. rebuild the dashboard so the Learn tab shows it now (build copies lesson-latest -> lesson.json)
     pg.set_progress("publishing", "Publishing your lesson", 1, 1, subject["title"])

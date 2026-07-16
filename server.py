@@ -372,7 +372,29 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/social/run"):
             self.handle_social_run()
             return
+        if self.path.startswith("/api/lesson/complete"):
+            self.handle_lesson_complete()
+            return
         self.send_error(404, "not found")
+
+    def handle_lesson_complete(self):
+        """Reader finished the current deep-dive part → drop a flag so the next hourly run authors the
+        next part (routine/decode_lesson.py is reader-paced and only advances when this flag exists)."""
+        try:
+            length = int(self.headers.get("Content-Length") or 0)
+            info = {}
+            if length:
+                try:
+                    info = json.loads(self.rfile.read(length).decode() or "{}")
+                except (ValueError, UnicodeDecodeError):
+                    info = {}
+            info["requested_at"] = dt.datetime.now().isoformat(timespec="seconds")
+            flag = ROOT / "output" / "lesson-next.flag"
+            flag.parent.mkdir(exist_ok=True)
+            flag.write_text(json.dumps(info))
+            self._send_json({"ok": True})
+        except Exception as exc:  # noqa: BLE001
+            self._send_json({"ok": False, "error": str(exc)})
 
     def _send_json(self, obj, status=200):
         body = json.dumps(obj).encode()

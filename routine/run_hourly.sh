@@ -48,7 +48,9 @@ else
   echo "WARN: claude CLI not found — no hourly story added"
 fi
 
-# ---- advance the daily deep-dive course by one part (self-guarded: no-op if already done today) ----
+# ---- advance the deep-dive course when the reader marked the current part complete (reader-paced) ----
+#      decode_lesson.py only authors the next part if output/lesson-next.flag exists (set by the reels
+#      "Mark complete" button via server.py) — otherwise it's a fast no-op. First run bootstraps Part 1.
 if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
   "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
 fi

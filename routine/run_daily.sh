@@ -72,7 +72,8 @@ if ! grep -q "\"date\": \"$TODAY\"" output/brief-latest.json 2>/dev/null; then
   echo "WARN: brief-latest.json is not dated $TODAY — publishing whatever exists"
 fi
 
-# ---- daily deep-dive lesson: advance the multi-day course by one part (guarded to once/day) ----
+# ---- deep-dive lesson: bootstrap Part 1, or advance if the reader marked the current part complete ----
+#      (reader-paced — decode_lesson.py no-ops unless output/lesson-next.flag exists or it's the first run)
 progress lessons "Composing today's deep dive" 0 0 ""
 if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
   "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
