@@ -32,7 +32,7 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 COPIES = [
     (ROOT / "output" / "world-latest.json", DASH / "world.json", "world", "World"),
     (ROOT / "output" / "brief-latest.json", DASH / "brief.json", "brief", "Markets"),
-    (ROOT / "output" / "lesson-latest.json", DASH / "lesson.json", "lesson", "Lesson"),
+    # (lessons live in dashboard/lessons.json, written directly by decode_lesson.py — not copied here)
 ]
 
 
@@ -297,47 +297,9 @@ def build_reels() -> int:
             cards.append({"type": "archive", "id": f"archive-{region}", "category": cat,
                           "region": region, "older_count": len(older)})
 
-    # -- 🎓 Learn tab: today's deep-dive session (cover + chunk cards + recap/check) --
-    lesson = _load_json(DASH / "lesson.json")
-    if lesson and lesson.get("chunks"):
-        cards.append({
-            "type": "lesson_cover", "id": "lesson-cover", "category": "learn",
-            "emoji": lesson.get("emoji", "🎓"), "subject_title": lesson.get("subject_title", ""),
-            "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
-            "session_title": lesson.get("session_title", ""),
-            "recap_so_far": lesson.get("recap_so_far", ""), "date": lesson.get("date"),
-        })
-        for ch in lesson["chunks"]:
-            cards.append({
-                "type": "lesson", "id": f"lesson-{ch.get('n')}", "category": "learn",
-                "n": ch.get("n"), "heading": ch.get("heading", ""), "idea": ch.get("idea", ""),
-                "detail": ch.get("detail", ""), "example": ch.get("example", ""),
-                "points": ch.get("points") or [], "key_takeaway": ch.get("key_takeaway", ""),
-                "concepts": ch.get("concepts") or [], "key_terms": ch.get("key_terms") or [],
-                "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
-                "subject_title": lesson.get("subject_title", ""),
-            })
-        cards.append({
-            "type": "lesson_recap", "id": "lesson-recap", "category": "learn",
-            "recap": lesson.get("recap") or [], "check": lesson.get("check") or {},
-            "next_up": lesson.get("next_up", ""), "subject_title": lesson.get("subject_title", ""),
-            "subject_slug": lesson.get("subject_slug", ""), "sources": lesson.get("sources") or [],
-            "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
-        })
-
-    # -- 📖 Your journey so far: an accumulating history of finished sessions (written by decode_lesson) --
-    journal = _load_json(DASH / "learn-journal.json")
-    entries = (journal or {}).get("entries") or []
-    if entries:
-        cards.append({
-            "type": "learn_journal", "id": "learn-journal", "category": "learn",
-            "count": len(entries),
-            "entries": [                       # most-recent first, capped (whole history stays in the file)
-                {k: e.get(k) for k in ("date", "subject_title", "emoji", "part", "total_parts",
-                                       "session_title", "one_line", "recap", "key_takeaway")}
-                for e in entries[-60:][::-1]
-            ],
-        })
+    # -- 🎓 Learn tab is built CLIENT-SIDE in the reels from dashboard/lessons.json (the catalog written
+    #    by routine/decode_lesson.py) so the reader can walk it at their own pace + browse the library.
+    #    Nothing lesson-related goes into reels.json anymore.
 
     # -- markets section (skipped for now — set REELS_INCLUDE_MARKETS = True to restore)
     if brief and REELS_INCLUDE_MARKETS:

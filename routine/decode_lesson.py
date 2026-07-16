@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-"""Deep-dive lesson — a multi-day curriculum the reader paces themselves.
+"""Deep-dive course — a growing catalog of lesson parts the reader walks at their own pace.
 
 A Claude-curated syllabus (dashboard/curriculum.json) of broad subjects, each split into 4-6 sessions.
-A pointer (output/curriculum-state.json) walks the sessions. Each authored session -> output/
-lesson-latest.json -> (via build_dashboard COPIES) dashboard/lesson.json -> the reels '🎓 Learn' tab.
+This authors those sessions IN ORDER into a public catalog (dashboard/lessons.json) — every part, kept
+forever, fully readable. The reels '🎓 Learn' tab reads that catalog and lets the reader move through it
+CLIENT-SIDE (so "next part" is instant and works even on the static public site — no server round-trip).
 
-READER-PACED: a run only advances to the next part when the reader has marked the current part complete
-(the reels '✓ Mark complete' button posts to server.py, which drops output/lesson-next.flag). The very
-first run bootstraps Part 1; every other hourly tick with no flag is a fast no-op. So the next part lands
-within ~30 minutes of the reader finishing — and never before. When a session is finished it's logged to
-dashboard/learn-journal.json (the reader's growing history). Use --force to advance right now (testing).
+Why a catalog + buffer instead of "author on demand when the reader taps complete": the tap can't reliably
+reach the pipeline (the reader may be on the static GitHub Pages site, or a stale local server). So instead
+we keep a BUFFER of parts authored AHEAD of the reader, plus a gentle daily drip, so the next part is
+always already published. The reader's position (best-effort, localhost only) comes from
+output/lesson-progress.json (server.py writes it) and just tunes how far ahead we stay.
 
-Run:  python routine/decode_lesson.py [--force]
+Run:  python routine/decode_lesson.py [--force]   (--force authors one more part right now)
 """
 from __future__ import annotations
 
@@ -33,16 +34,20 @@ DASH = ROOT / "dashboard"
 ROUTINE = ROOT / "routine"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
-STATE = OUT / "curriculum-state.json"
-CURRIC = DASH / "curriculum.json"          # public syllabus
-LESSON = OUT / "lesson-latest.json"        # today's session (copied to dashboard/lesson.json by build)
+STATE = OUT / "curriculum-state.json"       # pipeline pointer: which subject/session is next + authored_seq
+CURRIC = DASH / "curriculum.json"           # public syllabus
+CATALOG = DASH / "lessons.json"             # public catalog of ALL authored parts (the reader's library)
+LESSON_TMP = OUT / "lesson-latest.json"     # Claude writes ONE part here; we read + append to the catalog
 CURRIC_TMP = OUT / "curriculum.json"        # where the plan prompt writes new subjects
-FLAG = OUT / "lesson-next.flag"            # written by server.py when the reader marks a part complete
-JOURNAL = DASH / "learn-journal.json"      # public, accumulating history of finished sessions
+PROGRESS = OUT / "lesson-progress.json"     # best-effort {completed_seq} the reels post (localhost only)
 
 MIN_SUBJECTS_AHEAD = 2                       # extend the syllabus when fewer than this remain unstarted
 BOOTSTRAP_COUNT = 15
 EXTEND_COUNT = 10
+
+AHEAD = 4            # keep this many parts published beyond where the reader has read
+DRIP_CAP = 30       # ...and drip +1/day up to this many beyond the reader (bounds an inactive reader)
+MAX_PER_RUN = 2     # author at most this many parts in a single run (bounds wall-clock per tick)
 
 ALLOWED = ["Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"]
 CLAUDE = os.environ.get("CLAUDE_BIN") or str(pathlib.Path.home() / ".local" / "bin" / "claude")
@@ -117,14 +122,14 @@ def _lesson_prompt(subject: dict, session: dict, part: int, total: int, recap_ct
     recap_line = (f"Earlier parts of this course covered — {recap_ctx}" if recap_ctx
                   else "This is the FIRST part of the course — no recap needed (recap_so_far = \"\").")
     return base + (
-        "\n\n=== TODAY'S SESSION TO AUTHOR ===\n"
+        "\n\n=== SESSION TO AUTHOR ===\n"
         f"Subject: {subject.get('title')} — {subject.get('blurb', '')}\n"
         f"This is Part {part} of {total}: \"{session.get('title')}\"\n"
         f"Focus of this part: {session.get('focus', '')}\n"
         f"{recap_line}\n"
         f"Today's date: {today}\n\n"
         "Author this session now as STRICT JSON to output/lesson-latest.json following the schema above. "
-        "Go deep — 4-6 chunks, each with a 400-700 word `detail`. Nothing outside the file."
+        "Go deep — 4-6 chunks, each with the short-paragraph `detail` + `example` + `points`. Nothing outside the file."
     )
 
 
@@ -133,131 +138,129 @@ def _recap_ctx(sessions: list[dict], ji: int) -> str:
                      for k, s in enumerate(sessions[:ji]))
 
 
-def _append_journal(prev: dict) -> None:
-    """Log the just-finished session into the public learning journal (dedup by subject+part)."""
-    if not prev or not prev.get("chunks"):
-        return
-    j = _load(JOURNAL) or {"entries": []}
-    entries = j.get("entries") or []
-    key = (prev.get("subject_slug"), prev.get("part"))
-    if any((e.get("subject_slug"), e.get("part")) == key for e in entries):
-        return
-    recap = prev.get("recap") or []
-    entries.append({
-        "date": prev.get("date"), "subject_slug": prev.get("subject_slug"),
-        "subject_title": prev.get("subject_title"), "emoji": prev.get("emoji", "🎓"),
-        "part": prev.get("part"), "total_parts": prev.get("total_parts"),
-        "session_title": prev.get("session_title", ""),
-        "one_line": (recap[0] if recap else prev.get("next_up", "")),
-        "recap": recap,
-        "key_takeaway": [c.get("key_takeaway") for c in prev["chunks"] if c.get("key_takeaway")],
-        "logged_at": _now(),
-    })
-    j["entries"] = entries
-    j["generated_at"] = _now()
-    JOURNAL.write_text(json.dumps(j, indent=2, ensure_ascii=False))
-
-
-def main(argv: list[str]) -> int:
-    force = "--force" in argv
-    state = _load(STATE) or {"subject_index": 0, "session_index": 0, "last_advanced": ""}
-    today = _today()
-
-    # The course is now PACED BY THE READER: advance only when they've marked the current part complete
-    # (server.py writes FLAG), or on the very first run (bootstrap Part 1), or with --force. Every other
-    # hourly tick is a fast no-op — so the reader controls when the next part appears.
-    first_time = not state.get("last_advanced")
-    flagged = FLAG.exists()
-    if not (force or flagged or first_time):
-        print("lesson: current part not marked complete yet — leaving it as is")
-        pg.set_progress("lessons", "Today's lesson is ready", 1, 1,
-                        "mark it complete to unlock the next part", active=False)
-        return 0
-
-    # capture the session the reader just finished BEFORE we overwrite it — so we can journal it
-    prev_live = None if first_time else _load(DASH / "lesson.json")
-
-    pg.set_progress("lessons", "Preparing your next deep dive", 0, 0, "")
-
-    # 1. ensure a syllabus exists
+def _ensure_syllabus():
     cur = _load(CURRIC)
-    if not cur or not cur.get("subjects"):
-        pg.set_progress("lessons", "Designing your curriculum", 0, 0, "first run — this takes a minute")
-        subs = author_subjects([], BOOTSTRAP_COUNT)
-        if not subs:
-            print("WARN: curriculum authoring failed — no lesson today", file=sys.stderr)
-            pg.set_progress("failed", "Curriculum planning failed", 0, 0, "", active=False)
-            return 1
-        cur = merge_curriculum(subs)
+    if cur and cur.get("subjects"):
+        return cur
+    pg.set_progress("lessons", "Designing your curriculum", 0, 0, "first run — this takes a minute")
+    subs = author_subjects([], BOOTSTRAP_COUNT)
+    return merge_curriculum(subs) if subs else None
 
-    subjects = cur["subjects"]
-    si, ji = state["subject_index"], state["session_index"]
 
-    # roll forward if the pointer landed past a subject's sessions
+def _author_one(subjects: list[dict], si: int, ji: int, seq: int, today: str):
+    """Author ONE part at pointer (si, ji). Returns (part_dict, next_si, next_ji) or None on failure.
+    May extend/roll the syllabus. `subjects` may be mutated (extended)."""
+    # roll forward past a finished subject
     while si < len(subjects) and ji >= len(subjects[si].get("sessions") or []):
         si, ji = si + 1, 0
-
-    # 2. extend the syllabus if we're near the end
+    # extend the syllabus if we're near the end
     if si >= len(subjects) - MIN_SUBJECTS_AHEAD:
         extra = author_subjects([s["title"] for s in subjects], EXTEND_COUNT)
         if extra:
-            cur = merge_curriculum(extra)
-            subjects = cur["subjects"]
-
+            merge_curriculum(extra)
+            subjects[:] = (_load(CURRIC) or {}).get("subjects") or subjects
     if si >= len(subjects):
         print("WARN: curriculum exhausted and could not extend", file=sys.stderr)
-        return 1
+        return None
 
     subject = subjects[si]
     sessions = subject.get("sessions") or []
     session = sessions[ji]
     part, total = ji + 1, len(sessions)
 
-    # 3. author the session
-    pg.set_progress("lessons", f"Composing: {subject['title']} · Part {part}/{total}",
+    pg.set_progress("lessons", f"Writing: {subject['title']} · Part {part}/{total}",
                     0, 0, session.get("title", ""))
-    if LESSON.exists():
-        LESSON.unlink()
+    if LESSON_TMP.exists():
+        LESSON_TMP.unlink()
     claude(_lesson_prompt(subject, session, part, total, _recap_ctx(sessions, ji), today))
-    lesson = _load(LESSON)
+    lesson = _load(LESSON_TMP)
     if not lesson or not lesson.get("chunks"):
-        print("WARN: lesson authoring failed — keeping last good lesson", file=sys.stderr)
-        pg.set_progress("failed", "Lesson generation failed", 0, 0, "", active=False)
-        return 1
+        print(f"WARN: authoring failed at seq {seq} ({subject['title']} P{part}) — stopping run", file=sys.stderr)
+        return None
 
-    # trust the pipeline for metadata (not the model)
     lesson.update({
-        "date": today, "generated_at": _now(),
+        "seq": seq, "date": today, "generated_at": _now(),
         "subject_slug": subject.get("slug"), "subject_title": subject.get("title"),
         "emoji": subject.get("emoji", "🎓"), "part": part, "total_parts": total,
         "session_title": session.get("title", ""),
     })
-    txt = json.dumps(lesson, indent=2, ensure_ascii=False)
-    LESSON.write_text(txt)
-    (OUT / f"lesson-{today}.json").write_text(txt)
-
-    # 4. advance the pointer + stamp the day
     ji += 1
     if ji >= total:
         si, ji = si + 1, 0
-    STATE.write_text(json.dumps({"subject_index": si, "session_index": ji,
-                                 "last_advanced": today}, indent=2))
+    return lesson, si, ji
 
-    # 4b. record the session the reader just finished into the public journal, then consume the flag
-    if prev_live:
-        _append_journal(prev_live)
-    try:
-        FLAG.unlink()
-    except FileNotFoundError:
-        pass
 
-    # 5. rebuild the dashboard so the Learn tab shows it now (build copies lesson-latest -> lesson.json)
-    pg.set_progress("publishing", "Publishing your lesson", 1, 1, subject["title"])
+def _write_catalog(parts: list[dict]):
+    CATALOG.write_text(json.dumps(
+        {"generated_at": _now(), "count": len(parts), "parts": parts}, indent=2, ensure_ascii=False))
+
+
+def main(argv: list[str]) -> int:
+    force = "--force" in argv
+    today = _today()
+
+    state = _load(STATE) or {}
+    si = state.get("subject_index", 0)
+    ji = state.get("session_index", 0)
+    last_date = state.get("last_authored_date", "")
+
+    catalog = _load(CATALOG) or {"parts": []}
+    parts = catalog.get("parts") or []
+    authored_seq = state.get("authored_seq")
+    if authored_seq is None:                       # derive on first run / migration
+        authored_seq = len(parts)
+
+    completed = (_load(PROGRESS) or {}).get("completed_seq") or 0
+    completed = max(0, min(int(completed), authored_seq))   # clamp to a sane range
+
+    # How many parts SHOULD exist: keep AHEAD beyond what the reader finished, plus a +1/day drip
+    # (capped at DRIP_CAP beyond the reader so an inactive reader doesn't author the whole syllabus).
+    buffer_target = completed + AHEAD
+    drip_target = authored_seq + (1 if (last_date != today and authored_seq < completed + DRIP_CAP) else 0)
+    target = max(buffer_target, drip_target)
+    if force:
+        target = max(target, authored_seq + 1)
+    to_make = max(0, min(target - authored_seq, MAX_PER_RUN))
+
+    if to_make == 0:
+        print(f"lesson: catalog is stocked ({authored_seq} parts, reader at {completed}) — nothing to write")
+        pg.set_progress("lessons", "Your lessons are ready", 1, 1, "buffer full", active=False)
+        return 0
+
+    pg.set_progress("lessons", "Stocking your course", 0, to_make, f"{authored_seq} parts so far")
+    cur = _ensure_syllabus()
+    if not cur:
+        print("WARN: curriculum authoring failed — no lessons this run", file=sys.stderr)
+        pg.set_progress("failed", "Curriculum planning failed", 0, 0, "", active=False)
+        return 1
+    subjects = cur["subjects"]
+
+    made = 0
+    for _ in range(to_make):
+        res = _author_one(subjects, si, ji, authored_seq + 1, today)
+        if not res:
+            break
+        lesson, si, ji = res
+        parts.append(lesson)
+        authored_seq = lesson["seq"]
+        last_date = today
+        made += 1
+        # persist incrementally so a mid-run crash keeps what we made
+        _write_catalog(parts)
+        STATE.write_text(json.dumps({
+            "subject_index": si, "session_index": ji,
+            "authored_seq": authored_seq, "last_authored_date": last_date}, indent=2))
+
+    if made == 0:
+        pg.set_progress("failed", "Lesson generation failed", 0, 0, "", active=False)
+        return 1
+
+    pg.set_progress("publishing", "Publishing your lessons", 1, 1, f"{authored_seq} parts")
     try:
         build_dashboard.main()
     except SystemExit:
-        pass   # build exits non-zero only if NO briefs exist yet; lesson JSON is still written
-    print(f"lesson: {subject['title']} — Part {part}/{total} · {len(lesson['chunks'])} chunks", flush=True)
+        pass   # build exits non-zero only if NO briefs exist yet; the catalog is already written
+    print(f"lesson: authored {made} new part(s) → {authored_seq} total (reader at {completed})", flush=True)
     return 0
 
 

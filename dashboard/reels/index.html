@@ -140,6 +140,7 @@
   .jmain span{display:block;font-size:12.5px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .jgo{flex:0 0 auto;color:var(--dim);font-size:20px;font-weight:700}
   .arch-hint{font-size:12.5px;line-height:1.5;color:var(--dim);margin:2px 0 12px}
+  .jgo.lib-done{color:var(--up)} .jgo.lib-current{color:var(--learn)} .jgo.lib-ahead{color:var(--dim);opacity:.6}
   /* bottom toast (mark-complete feedback) */
   #toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:60;
     max-width:88vw;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:13px;
@@ -369,7 +370,7 @@ const hl = s => esc(s).replace(/([₹$€£]\s?\d[\d,]*\.?\d*|\b\d+(?:\.\d+)?%)/
 function fmtClock(iso){ if(!iso) return ''; const t=new Date(iso); if(isNaN(t)) return '';
   return t.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}); }
 
-let DECK = null, STATUS = null;
+let DECK = null, STATUS = null, LESSONS = null, LEARN_CARDS = [];
 
 // pull the public update record (dashboard/status.json) — powers the "Update status" panel
 function loadStatus(){
@@ -565,7 +566,7 @@ const R = {
 
   // 🎓 daily deep-dive lesson: cover → chunk cards → recap/check
   lesson_cover: c => `
-    <div class="eyebrow"><span class="day">🎓 Today's lesson</span></div>
+    <div class="eyebrow"><span class="day">🎓 ${esc(c.subject_title||'Your course')}</span></div>
     <div class="bigemoji">${esc(c.emoji||'🎓')}</div>
     <div class="lcov-subj">${esc(c.subject_title)}</div>
     <div class="lcov-part">Part ${esc(c.part)} of ${esc(c.total_parts)} · ${esc(c.session_title)}</div>
@@ -592,20 +593,23 @@ const R = {
     ${c.next_up?`<div class="lnext">⏭️ Next up — ${esc(c.next_up)}</div>`:''}
     ${lessonDoneBtn(c)}`,
 
-  // 📖 the reader's growing history — every finished session, most recent first (tap a row for its recap)
-  learn_journal: c => {
-    const ents = c.entries||[];
-    if(!ents.length) return `<div class="meta">${catChip('learn')}<span>your journey</span></div>
-      <h1>📖 Your journey starts here</h1>
-      <div class="body" style="color:var(--dim)">Finish a lesson and it lands here — a growing record of everything you've learned, so you never read and forget.</div>`;
-    return `<div class="meta">${catChip('learn')}<span>your journey · ${esc(c.count)} lesson${c.count==1?'':'s'} done</span></div>
-      <h1>📖 What you've learned</h1>
-      <div class="jlist">${ents.map((e,i)=>`<div class="jrow" onclick='openJournal(${i})'>
-        <div class="jem">${esc(e.emoji||'🎓')}</div>
-        <div class="jmain"><b>${esc(e.subject_title)} · Part ${esc(e.part)}</b>
-          <span>${esc(e.one_line||e.session_title||'')}</span></div>
-        <div class="jgo">›</div></div>`).join('')}</div>`;
+  // 📚 the library gateway — every part ever written, done + ahead; tap to read or revisit any of them
+  library: c => {
+    const parts = lessonParts(), done = (cLoad().done)||{};
+    const doneN = parts.filter(p=>done[p.seq]).length;
+    return `<div class="meta">${catChip('learn')}<span>your library · ${parts.length} part${parts.length==1?'':'s'}</span></div>
+      <h1>📚 Your library</h1>
+      <div class="body" style="color:var(--dim)">Everything you've read and everything queued up — <b style="color:var(--txt)">${doneN}</b> completed, <b style="color:var(--txt)">${parts.length}</b> in all. Jump back to revisit any part.</div>
+      ${expandBtn('openLibrary()', 'Browse all parts')}`;
   },
+
+  // shown when the reader reaches the end of what's been written
+  caught_up: c => `
+    <div class="meta">${catChip('learn')}<span>all caught up</span></div>
+    <div class="bigemoji">🎉</div>
+    <h1>You're all caught up!</h1>
+    <div class="body" style="color:var(--dim)">You've reached the newest part. A fresh part is written regularly — check back soon. In the meantime, revisit anything from your library.</div>
+    ${expandBtn('openLibrary()', 'Open your library')}`,
 
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
@@ -666,7 +670,7 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover'};   // extra class on top of .card
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets', learn:'learn'};
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
@@ -693,14 +697,20 @@ function setPillar(p){
 function render(){
   const deck = document.getElementById('deck');
   buildConceptFreq(); paintLearned();      // refresh the "new to you" nudges + learned count
-  // pure news feed: just the region's decoded stories (+ the outro), newest/most-important first.
-  let cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
+  // Learn tab = built client-side from the lessons catalog (the reader's own pace); other tabs = news feed.
+  let cards;
+  if(PILLARSEL==='learn'){
+    LEARN_CARDS = learnDeckCards();
+    cards = LEARN_CARDS.map(c=>({card:c}));
+  } else {
+    cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
+  }
   if(!cards.length){
     const isLearn = PILLARSEL==='learn';
     const cat = isLearn?'learn':(PILLARSEL==='india'?'india':'geopolitics');
     deck.innerHTML = `<section class="card" style="${catStyle(cat)}"><div class="meta">${catChip(cat)}</div>`
       + (isLearn
-         ? `<h1>🎓 Your first lesson is on its way</h1><div class="body" style="color:var(--dim)">A deep-dive from a longer course is prepared automatically — one part at a time. Reload after the next update to see it.</div>`
+         ? `<h1>🎓 Your first lesson is being written</h1><div class="body" style="color:var(--dim)">Your course is prepared automatically — the first parts land shortly. Check back in a little while.</div>`
          : `<h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Reload in a little while.</div>`)
       + `</section>`;
     document.getElementById('progress').innerHTML=''; paintFresh(); return; }
@@ -805,7 +815,7 @@ function proseSec(icon,label,text){
 }
 // open a lesson chunk's full depth in the sheet
 function openLesson(id){
-  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+  const c = findLearn(id); if(!c) return;
   let h = pinnedMoot(c.key_takeaway);
   h += proseSec('📖','In depth', c.detail);
   h += exampleSec(c.example);
@@ -824,21 +834,11 @@ function exampleSec(text){
     + `<div class="example">${hl(String(text))}</div></div>`;
 }
 
-// open a session's real references (books/articles/institutions) in the sheet
+// open a part's real references (books/articles/institutions) in the sheet
 function openLessonSources(id){
-  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+  const c = findLearn(id); if(!c) return;
   openSheet('Sources & further reading',
-    sourcesSec(c.sources) || '<div class="one">No sources listed for this lesson.</div>', 'learn');
-}
-
-// open one journal entry (a finished session) — its recap + key takeaways
-function openJournal(i){
-  const c = DECK.cards.find(x=>x.type==='learn_journal'); if(!c) return;
-  const e = (c.entries||[])[i]; if(!e) return;
-  let h = `<div class="one">${esc(e.subject_title)} · Part ${esc(e.part)} of ${esc(e.total_parts)}${e.date?` · ${esc(e.date)}`:''}</div>`;
-  h += bulletSec('✓','What this taught you', e.recap);
-  h += bulletSec('💡','Key takeaways', e.key_takeaway);
-  openSheet(e.session_title || e.subject_title || 'Lesson', h, 'learn');
+    sourcesSec(c.sources) || '<div class="one">No sources listed for this part.</div>', 'learn');
 }
 
 /* ---------- 📜 the rolling news archive (older stories that rotated out of the live top-20) ---------- */
@@ -867,25 +867,80 @@ function openArchive(region){
 }
 function openArchiveStory(i){ const c=ARCHIVE_VIEW[i]; if(c) openDecodeCard(c); }
 
-/* ---------- course pacing (on-device) + "mark complete" → the next part on the next 30-min run ---------- */
+/* ---------- 🎓 the course: a catalog (dashboard/lessons.json) the reader walks CLIENT-SIDE ---------- */
 function cLoad(){ try{ return JSON.parse(localStorage.getItem('di_course'))||{}; }catch(e){ return {}; } }
 function cSave(o){ try{ localStorage.setItem('di_course', JSON.stringify(o)); }catch(e){} }
-function courseDone(slug, part){ const o=cLoad(); return !!(o.done && o.done[(slug||'')+':'+part]); }
+function lessonParts(){ return (LESSONS && LESSONS.parts) || []; }
+function lessonBySeq(seq){ return lessonParts().find(p=>p.seq===seq); }
+// where the reader is now: their saved pos, else the first not-yet-completed part, else the last one
+function coursePos(){
+  const parts=lessonParts(); if(!parts.length) return 0;
+  const o=cLoad(), done=o.done||{};
+  const lo=parts[0].seq, hi=parts[parts.length-1].seq;
+  let pos=o.pos;
+  if(!pos){ const nxt=parts.find(p=>!done[p.seq]); pos = nxt?nxt.seq:(hi+1); }  // all done → past-the-end
+  return Math.min(Math.max(pos, lo), hi+1);   // hi+1 = "caught up" sentinel
+}
+function setPos(seq){ const o=cLoad(); o.pos=seq; cSave(o); }
+
+// build the Learn deck for the reader's current part: cover → chunk cards → recap, then the library card
+function learnDeckCards(){
+  const parts=lessonParts(); if(!parts.length) return [];
+  const seq=coursePos(), p=lessonBySeq(seq), out=[];
+  if(p){
+    out.push({type:'lesson_cover', id:'lcov-'+seq, seq, emoji:p.emoji, subject_title:p.subject_title,
+      part:p.part, total_parts:p.total_parts, session_title:p.session_title, recap_so_far:p.recap_so_far});
+    (p.chunks||[]).forEach(ch=>out.push({type:'lesson', id:'lchunk-'+seq+'-'+ch.n, seq,
+      n:ch.n, heading:ch.heading, idea:ch.idea, detail:ch.detail, example:ch.example, points:ch.points,
+      key_takeaway:ch.key_takeaway, key_terms:ch.key_terms, concepts:ch.concepts,
+      part:p.part, total_parts:p.total_parts, subject_title:p.subject_title}));
+    out.push({type:'lesson_recap', id:'lrecap-'+seq, seq, recap:p.recap, check:p.check, sources:p.sources,
+      next_up:p.next_up, part:p.part, total_parts:p.total_parts, subject_slug:p.subject_slug});
+  } else {
+    out.push({type:'caught_up', id:'caught'});
+  }
+  out.push({type:'library', id:'library'});
+  return out;
+}
+function findLearn(id){ return (LEARN_CARDS||[]).find(x=>x.id===id); }
+
+// mark-complete advances the reader through the ALREADY-published catalog — instant, works offline / on Pages
 function lessonDoneBtn(c){
-  const done = courseDone(c.subject_slug, c.part);
-  const label = done ? '✓ Completed — next part on the way' : '✓ Mark complete &amp; get the next part';
-  return `<button class="donebtn${done?' is-done':''}" onclick='markLessonDone(${JSON.stringify(c.subject_slug||"")},${+c.part||0},this)'>${label}</button>`;
+  const done=(cLoad().done||{})[c.seq];
+  const hasNext=!!lessonBySeq(c.seq+1);
+  if(done && !hasNext) return `<button class="donebtn is-done">✓ Completed — you're all caught up</button>`;
+  const label = done ? "✓ Done — continue to the next part →" : "✓ Mark complete & continue →";
+  return `<button class="donebtn${done?' is-done':''}" onclick='markLessonDone(${+c.seq||0})'>${label}</button>`;
 }
-function markLessonDone(slug, part, btn){
-  const o=cLoad(); o.done=o.done||{}; o.done[(slug||'')+':'+part]=Date.now(); cSave(o);
-  if(btn){ btn.classList.add('is-done'); btn.innerHTML='✓ Completed — next part on the way'; }
-  // tell the local pipeline to author the next part on its next 30-min run (harmless no-op on the public site)
-  fetch('/api/lesson/complete', {method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({subject_slug:slug, part:part})})
-    .then(r=>r.ok?r.json():null).catch(()=>null)
-    .then(res=>toast(res&&res.ok ? 'Nice work! Your next part arrives within ~30 minutes ⏭️'
-                                 : 'Marked complete on this device ✓'));
+function markLessonDone(seq){
+  const o=cLoad(); o.done=o.done||{}; o.done[seq]=Date.now();
+  const next=lessonBySeq(seq+1);
+  o.pos = next ? next.seq : (seq+1); cSave(o);   // no next → past-the-end (shows the "caught up" card)
+  render(); document.getElementById('deck').scrollTo(0,0);
+  toast(next ? ('Nice work! On to Part '+(next.part||'')+' →')
+             : "🎉 You're all caught up — new parts are added regularly.");
+  // best-effort: tell the LOCAL pipeline how far you've read so it keeps parts buffered ahead (no-op on Pages)
+  fetch('/api/lesson/progress', {method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({completed_seq:seq})}).catch(()=>{});
 }
+// 📚 the library: browse/re-read any part, see what's done / current / ahead
+function openLibrary(){
+  const parts=lessonParts(), done=(cLoad().done)||{}, pos=coursePos();
+  if(!parts.length){ openSheet('📚 Your library', '<div class="one">Your first parts are being written — check back shortly.</div>', 'learn'); return; }
+  const rows = parts.map(p=>{
+    const st = done[p.seq] ? 'done' : (p.seq===pos ? 'current' : 'ahead');
+    const badge = st==='done' ? '✓' : (st==='current' ? '▶' : '○');
+    return `<div class="jrow" onclick='gotoLesson(${p.seq})'>
+      <div class="jem">${esc(p.emoji||'🎓')}</div>
+      <div class="jmain"><b>${esc(p.subject_title)} · Part ${esc(p.part)}/${esc(p.total_parts)}</b>
+        <span>${esc(p.session_title||'')}</span></div>
+      <div class="jgo lib-${st}">${badge}</div></div>`;
+  }).join('');
+  openSheet('📚 Your library',
+    `<div class="arch-hint">${parts.length} part${parts.length==1?'':'s'} · ✓ done · ▶ current · ○ ahead — tap any to read or revisit</div>`
+    + `<div class="jlist" style="max-height:70vh">${rows}</div>`, 'learn');
+}
+function gotoLesson(seq){ setPos(seq); closeSheet(); render(); document.getElementById('deck').scrollTo(0,0); }
 // tiny bottom toast
 let TOAST_T=null;
 function toast(msg){
@@ -983,8 +1038,13 @@ function openGloss(key){
 }
 
 /* ---------- boot ---------- */
+// the Learn tab's catalog of parts (grows over time); re-render if we're already on Learn when it lands
+function loadLessons(){
+  return fetch('../lessons.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+    .then(d=>{ if(d) LESSONS=d; if(DECK && PILLARSEL==='learn') render(); });
+}
 // the deck (reels.json) regenerates ~every 2h on the laptop; fetch the latest
-loadStatus(); loadEntities();
+loadStatus(); loadEntities(); loadLessons();
 fetch('../reels.json?_='+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
   .then(d=>{ DECK=d;

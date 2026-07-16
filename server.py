@@ -382,14 +382,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/social/run"):
             self.handle_social_run()
             return
-        if self.path.startswith("/api/lesson/complete"):
-            self.handle_lesson_complete()
+        if self.path.startswith("/api/lesson/progress") or self.path.startswith("/api/lesson/complete"):
+            self.handle_lesson_progress()
             return
         self.send_error(404, "not found")
 
-    def handle_lesson_complete(self):
-        """Reader finished the current deep-dive part → drop a flag so the next hourly run authors the
-        next part (routine/decode_lesson.py is reader-paced and only advances when this flag exists)."""
+    def handle_lesson_progress(self):
+        """Best-effort: the reels post how far the reader has read (completed_seq) so decode_lesson.py
+        keeps the buffer of upcoming parts full. Purely a hint — reading itself is client-side, so this
+        failing (e.g. on the static public site) never blocks the reader; it just tunes how far we author
+        ahead. Also accepts the legacy {part} body from older cached clients (ignored)."""
         try:
             length = int(self.headers.get("Content-Length") or 0)
             info = {}
@@ -398,10 +400,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     info = json.loads(self.rfile.read(length).decode() or "{}")
                 except (ValueError, UnicodeDecodeError):
                     info = {}
-            info["requested_at"] = dt.datetime.now().isoformat(timespec="seconds")
-            flag = ROOT / "output" / "lesson-next.flag"
-            flag.parent.mkdir(exist_ok=True)
-            flag.write_text(json.dumps(info))
+            seq = info.get("completed_seq")
+            prog = ROOT / "output" / "lesson-progress.json"
+            prog.parent.mkdir(exist_ok=True)
+            if isinstance(seq, int) and seq >= 0:
+                prog.write_text(json.dumps(
+                    {"completed_seq": seq, "at": dt.datetime.now().isoformat(timespec="seconds")}))
             self._send_json({"ok": True})
         except Exception as exc:  # noqa: BLE001
             self._send_json({"ok": False, "error": str(exc)})
