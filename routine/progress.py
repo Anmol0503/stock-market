@@ -20,7 +20,7 @@ PF = ROOT / "logs" / "progress.json"
 
 # ordered phases → so the tracker can show a checklist and an overall %
 PHASES = ["starting", "fetching", "analyzing", "selecting", "decoding_global",
-          "decoding_india", "markets", "merging", "publishing", "done", "failed"]
+          "decoding_india", "markets", "merging", "lessons", "publishing", "done", "failed"]
 
 
 def set_progress(phase: str, label: str, done: int = 0, total: int = 0,

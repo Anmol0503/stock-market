@@ -72,6 +72,12 @@ if ! grep -q "\"date\": \"$TODAY\"" output/brief-latest.json 2>/dev/null; then
   echo "WARN: brief-latest.json is not dated $TODAY — publishing whatever exists"
 fi
 
+# ---- daily deep-dive lesson: advance the multi-day course by one part (guarded to once/day) ----
+progress lessons "Composing today's deep dive" 0 0 ""
+if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
+  "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
+fi
+
 # ---- publish + archive (world.json / brief.json / reels.json + dated archive) ----
 progress publishing "Publishing to your phone" 0 0 ""
 "$PY" build_dashboard.py      || echo "WARN: publish failed"

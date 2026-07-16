@@ -48,6 +48,11 @@ else
   echo "WARN: claude CLI not found — no hourly story added"
 fi
 
+# ---- advance the daily deep-dive course by one part (self-guarded: no-op if already done today) ----
+if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
+  "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
+fi
+
 # ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true
 

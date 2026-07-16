@@ -95,6 +95,23 @@
   .divider .sub{font-size:14px;color:var(--dim);margin-top:8px;line-height:1.5}
   .bigemoji{font-size:56px;line-height:1}
 
+  /* ---- 🎓 Learn tab: lesson cards ---- */
+  .lcov-subj{font-family:var(--round);font-weight:800;font-size:30px;line-height:1.12;margin-top:14px}
+  .lcov-part{font-size:14px;font-weight:700;color:var(--learn);margin-top:10px}
+  .partbar{display:flex;gap:4px;justify-content:center;margin:16px auto 0;max-width:220px}
+  .partbar i{flex:1;height:4px;border-radius:2px;background:#2a3546}
+  .partbar i.done{background:var(--learn)} .partbar i.on{background:var(--learn);box-shadow:0 0 8px var(--learn)}
+  .lcov-recap{margin-top:22px;font-size:14.5px;line-height:1.6;color:#c3cedd;text-align:left;
+    background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--learn);border-radius:12px;padding:13px 15px}
+  .lcov-lbl{display:block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--learn);margin-bottom:6px}
+  .lrecap{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .lrecap li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:#dbe3ee}
+  .lrecap li::before{content:"✓";position:absolute;left:0;top:0;color:var(--learn);font-weight:800}
+  .veil .lq{font-size:16px;line-height:1.5;font-weight:700;margin-bottom:10px}
+  .lnext{margin-top:20px;font-size:14px;font-weight:700;color:var(--dim)}
+  .prose{font-size:16px;line-height:1.68;color:#dbe3ee;margin:0 0 14px}
+  .prose:last-child{margin-bottom:0}
+
   /* ---- cover header: eyebrow pill + freshness dot + stat pills ---- */
   .eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 auto;padding:6px 13px;border-radius:99px;
     background:var(--panel2);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.02em}
@@ -254,6 +271,7 @@
   <div id="tabs">
     <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
+    <button data-p="learn" onclick="setPillar('learn')">🎓 Learn</button>
   </div>
   <div class="hdr-actions">
     <button id="learned" title="Concepts you've learned" onclick="openMastery()">📚 <span id="learnedN">0</span></button>
@@ -507,6 +525,33 @@ const R = {
     <div class="summary">${hl(storySummary(c))}</div>
     ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read the takeaway & full story')}`,
 
+  // 🎓 daily deep-dive lesson: cover → chunk cards → recap/check
+  lesson_cover: c => `
+    <div class="eyebrow"><span class="day">🎓 Today's lesson</span></div>
+    <div class="bigemoji">${esc(c.emoji||'🎓')}</div>
+    <div class="lcov-subj">${esc(c.subject_title)}</div>
+    <div class="lcov-part">Part ${esc(c.part)} of ${esc(c.total_parts)} · ${esc(c.session_title)}</div>
+    ${partBar(c.part,c.total_parts)}
+    ${c.recap_so_far?`<div class="lcov-recap"><span class="lcov-lbl">the story so far</span>${esc(c.recap_so_far)}</div>`:''}
+    <div class="scrollcue">swipe up to learn ↑</div>`,
+
+  lesson: c => `
+    <div class="meta">${catChip('learn')}<span>part ${esc(c.part)} · idea ${esc(c.n)}</span></div>
+    <h1 class="clamp">${esc(c.heading)}</h1>
+    <div class="summary">${hl(c.idea)}</div>
+    ${expandBtn(`openLesson(${JSON.stringify(c.id)})`, 'Go deeper')}`,
+
+  lesson_recap: c => `
+    <div class="meta">${catChip('learn')}<span>recap · part ${esc(c.part)}/${esc(c.total_parts)}</span></div>
+    <h1>Recap</h1>
+    <ul class="lrecap">${(c.recap||[]).map(r=>`<li>${hl(r)}</li>`).join('')}</ul>
+    ${c.check&&c.check.question?`<div class="moot veil" onclick="this.classList.add('open')">
+      <div class="lbl">🧠 Quick check</div>
+      <div class="lq">${esc(c.check.question)}</div>
+      <div class="txt">${esc(c.check.answer)}</div>
+      <div class="tap">👆 tap to reveal the answer</div></div>`:''}
+    ${c.next_up?`<div class="lnext">⏭️ Next up — ${esc(c.next_up)}</div>`:''}`,
+
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
     <div class="scrollcue">swipe up ↑</div>`,
@@ -566,12 +611,14 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider'};   // extra class on top of .card
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
-const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets'};
-// two tabs now: a story goes to India if its category is india, else Global. Outro (and anything
-// unexpected) lives on Global. Markets is skipped from the reels for now.
+const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets', learn:'learn'};
+const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap']);
+// three tabs: a story goes to India if its category is india, else Global; the daily deep-dive lesson
+// cards live on Learn. Outro (and anything unexpected) lives on Global.
 function pillarOf(c){
+  if(LESSON_TYPES.has(c.type)) return 'learn';
   if(c.type==='story') return c.category==='india' ? 'india' : 'global';
   return 'global';
 }
@@ -591,7 +638,14 @@ function render(){
   buildConceptFreq(); paintLearned();      // refresh the "new to you" nudges + learned count
   // pure news feed: just the region's decoded stories (+ the outro), newest/most-important first.
   let cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
-  if(!cards.length){ deck.innerHTML = `<section class="card" style="${catStyle(PILLARSEL==='india'?'india':'geopolitics')}"><div class="meta">${catChip(PILLARSEL==='india'?'india':'geopolitics')}</div><h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Tap ↻ to check.</div></section>`;
+  if(!cards.length){
+    const isLearn = PILLARSEL==='learn';
+    const cat = isLearn?'learn':(PILLARSEL==='india'?'india':'geopolitics');
+    deck.innerHTML = `<section class="card" style="${catStyle(cat)}"><div class="meta">${catChip(cat)}</div>`
+      + (isLearn
+         ? `<h1>🎓 Today's lesson is on its way</h1><div class="body" style="color:var(--dim)">Your daily deep-dive is prepared automatically each day — one part of a longer course. Tap ↻ to check, or come back after the next update.</div>`
+         : `<h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Tap ↻ to check.</div>`)
+      + `</section>`;
     document.getElementById('progress').innerHTML=''; paintFresh(); return; }
 
   deck.innerHTML = cards.map((x,i)=>{
@@ -678,6 +732,30 @@ function figuresSec(figs){
     + figs.map(f=>`<div class="fig"><b>${esc(f.raw)}</b> = ${esc(f.words)}`
         + `${f.usd_approx?` <span class="figusd">${esc(f.usd_approx)}</span>`:''}</div>`).join('')
     + `</div>`;
+}
+// a small course-progress bar (which part of the course you're on)
+function partBar(part,total){
+  total=+total||0; part=+part||0; if(total<2) return '';
+  let s=''; for(let i=1;i<=total;i++) s+=`<i class="${i<part?'done':(i===part?'on':'')}"></i>`;
+  return `<div class="partbar">${s}</div>`;
+}
+// flowing paragraphs (NOT sentence-bullets) — for the in-depth lesson prose
+function proseSec(icon,label,text){
+  if(!text) return '';
+  const paras = String(text).split(/\n\n+/).map(p=>p.trim()).filter(Boolean);
+  return `<div class="bsec"><div class="bh"><span class="bi">${icon}</span>${esc(label)}</div>`
+    + paras.map(p=>`<p class="prose">${hl(p)}</p>`).join('') + `</div>`;
+}
+// open a lesson chunk's full depth in the sheet
+function openLesson(id){
+  const c = DECK.cards.find(x=>x.id===id); if(!c) return;
+  let h = pinnedMoot(c.key_takeaway);
+  h += proseSec('📖','In depth', c.detail);
+  h += keyTermsSec(c.key_terms);
+  if((c.concepts||[]).length)
+    h += `<div class="bsec"><div class="bh"><span class="bi">📚</span>Learn the concepts</div>${chips(c.concepts)}</div>`;
+  masteryNote(c);
+  openSheet(c.heading || 'Lesson', h, 'learn');
 }
 
 // primary narrative that lives ONLY in the sheet (hidden on the reel face), by card type

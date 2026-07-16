@@ -32,6 +32,7 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 COPIES = [
     (ROOT / "output" / "world-latest.json", DASH / "world.json", "world", "World"),
     (ROOT / "output" / "brief-latest.json", DASH / "brief.json", "brief", "Markets"),
+    (ROOT / "output" / "lesson-latest.json", DASH / "lesson.json", "lesson", "Lesson"),
 ]
 
 
@@ -237,6 +238,32 @@ def build_reels() -> int:
             "depth": {k: s.get(k) for k in (
                 "background", "why_it_matters", "ripple_effects", "why_now",
                 "watch_next", "market_link", "key_terms", "sources")},
+        })
+
+    # -- 🎓 Learn tab: today's deep-dive session (cover + chunk cards + recap/check) --
+    lesson = _load_json(DASH / "lesson.json")
+    if lesson and lesson.get("chunks"):
+        cards.append({
+            "type": "lesson_cover", "id": "lesson-cover", "category": "learn",
+            "emoji": lesson.get("emoji", "🎓"), "subject_title": lesson.get("subject_title", ""),
+            "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
+            "session_title": lesson.get("session_title", ""),
+            "recap_so_far": lesson.get("recap_so_far", ""), "date": lesson.get("date"),
+        })
+        for ch in lesson["chunks"]:
+            cards.append({
+                "type": "lesson", "id": f"lesson-{ch.get('n')}", "category": "learn",
+                "n": ch.get("n"), "heading": ch.get("heading", ""), "idea": ch.get("idea", ""),
+                "detail": ch.get("detail", ""), "key_takeaway": ch.get("key_takeaway", ""),
+                "concepts": ch.get("concepts") or [], "key_terms": ch.get("key_terms") or [],
+                "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
+                "subject_title": lesson.get("subject_title", ""),
+            })
+        cards.append({
+            "type": "lesson_recap", "id": "lesson-recap", "category": "learn",
+            "recap": lesson.get("recap") or [], "check": lesson.get("check") or {},
+            "next_up": lesson.get("next_up", ""), "subject_title": lesson.get("subject_title", ""),
+            "part": lesson.get("part"), "total_parts": lesson.get("total_parts"),
         })
 
     # -- markets section (skipped for now — set REELS_INCLUDE_MARKETS = True to restore)
