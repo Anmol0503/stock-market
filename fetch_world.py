@@ -110,6 +110,24 @@ WORLD_FEEDS = [
     ("india", "Google News — India business",
      "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en"),
 
+    # === FORMULA 1 (its own tab — pull broadly, the analyst picks the single most-trending) ===
+    ("f1", "BBC Sport F1", "http://feeds.bbci.co.uk/sport/formula1/rss.xml"),
+    ("f1", "Autosport F1", "https://www.autosport.com/rss/f1/news/"),
+    ("f1", "Motorsport F1", "https://www.motorsport.com/rss/f1/news/"),
+    ("f1", "The Race F1", "https://www.the-race.com/formula-1/feed/"),
+    ("f1", "Google News — F1",
+     "https://news.google.com/rss/search?q=Formula+1+F1+when:3d&hl=en-US&gl=US&ceid=US:en"),
+    ("f1", "Reddit r/formula1", "https://www.reddit.com/r/formula1/hot/.rss"),
+
+    # === CRICKET (its own tab — global + India-heavy, the analyst picks the single most-trending) ===
+    ("cricket", "BBC Sport Cricket", "http://feeds.bbci.co.uk/sport/cricket/rss.xml"),
+    ("cricket", "ESPNcricinfo", "https://www.espncricinfo.com/rss/content/story/feeds/0.xml"),
+    ("cricket", "The Hindu Cricket", "https://www.thehindu.com/sport/cricket/feeder/default.rss"),
+    ("cricket", "TOI Cricket", "https://timesofindia.indiatimes.com/rssfeeds/54829575.cms"),
+    ("cricket", "Google News — Cricket",
+     "https://news.google.com/rss/search?q=cricket+when:3d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("cricket", "Reddit r/Cricket", "https://www.reddit.com/r/Cricket/hot/.rss"),
+
     # === REDDIT (per-subreddit .rss — the JSON API is 403-blocked, but RSS still serves) ===
     # These are LEADS to verify, not sources of record — the analyst confirms via WebSearch.
     ("geopolitics", "Reddit r/worldnews", "https://www.reddit.com/r/worldnews/hot/.rss"),
@@ -148,7 +166,7 @@ def rss_world(per_feed: int = 12) -> list[dict]:
     socket.setdefaulttimeout(HTTP_TIMEOUT)   # bound a slow/hanging feed (esp. flaky nitter)
     items = []
     for category, source, url in WORLD_FEEDS:
-        region = "india" if category == "india" else "global"
+        region = {"india": "india", "f1": "f1", "cricket": "cricket"}.get(category, "global")
         try:
             # A real browser UA matters: Reddit 403s a generic one, and PIB/RBI reject feedparser's default.
             feed = feedparser.parse(url, agent=BROWSER_UA)

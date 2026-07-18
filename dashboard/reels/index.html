@@ -21,6 +21,7 @@
     --up:#3fb950; --down:#f4685f;
     --geopolitics:#f4685f; --economy:#3fb950; --technology:#a970ff; --science:#2dd4bf;
     --health:#f472b6; --climate:#5cc98a; --india:#ff9933; --markets:#5b9dff; --learn:#f5b942;
+  --f1:#e10600; --cricket:#2fbf71;
     /* native fonts (no downloads): rounded headings, neutral sans UI, editorial serif for reading */
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --round:ui-rounded,"SF Pro Rounded",-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -167,6 +168,10 @@
   .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--dim)}
   .newbadge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:99px;font-weight:800;
     font-size:11.5px;color:#0b0f17;background:linear-gradient(90deg,#ffd76a,#ff8a3d);letter-spacing:.2px}
+  .devbadge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:99px;font-weight:800;
+    font-size:11.5px;color:#0b0f17;background:linear-gradient(90deg,#6fd3ff,#4b9dff);letter-spacing:.2px}
+  .prevref{margin-top:2px;font-size:12.5px;font-weight:700;color:var(--dim)}
+  .prevref b{color:var(--txt);font-weight:700}
   .catchip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:99px;
     font-size:12.5px;font-weight:700;background:color-mix(in srgb, var(--cat, var(--accent)) 18%, transparent);
     color:var(--cat, var(--accent))}
@@ -312,6 +317,8 @@
   <div id="tabs">
     <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
+    <button data-p="f1" onclick="setPillar('f1')">🏎️ F1</button>
+    <button data-p="cricket" onclick="setPillar('cricket')">🏏 Cricket</button>
     <button data-p="learn" onclick="setPillar('learn')">🎓 Learn</button>
   </div>
 </div>
@@ -330,6 +337,7 @@ const CAT = {
   geopolitics:{lbl:"Geopolitics",emoji:"🌍"}, economy:{lbl:"Economy",emoji:"💵"},
   technology:{lbl:"Technology",emoji:"⚙️"}, science:{lbl:"Science",emoji:"🔬"},
   health:{lbl:"Health",emoji:"🩺"}, climate:{lbl:"Climate",emoji:"🌱"}, india:{lbl:"India",emoji:"🇮🇳"},
+  f1:{lbl:"Formula 1",emoji:"🏎️"}, cricket:{lbl:"Cricket",emoji:"🏏"},
   markets:{lbl:"Markets",emoji:"📈"}, learn:{lbl:"Learn",emoji:"🎓"}
 };
 const THREAD = {developing:"📈 Developing", escalating:"🔺 Escalating", cooling:"🔻 Cooling", resolved:"✅ Resolved"};
@@ -383,8 +391,8 @@ function loadStatus(){
 // the detailed, honest "when is this updated" panel (opened by tapping the freshness pill)
 // count story cards per region straight from the loaded deck (fallback when status.json is slow)
 function deckCounts(){
-  const c = {global:0, india:0};
-  if(DECK && DECK.cards) DECK.cards.forEach(x=>{ if(x.type==='story') c[pillarOf(x)==='india'?'india':'global']++; });
+  const c = {global:0, india:0, f1:0, cricket:0};
+  if(DECK && DECK.cards) DECK.cards.forEach(x=>{ if(x.type==='story'){ const p=pillarOf(x); c[p]=(c[p]||0)+1; } });
   return c;
 }
 function openStatus(){
@@ -401,19 +409,19 @@ function openStatus(){
   const counts = (s.counts && (s.counts.global||s.counts.india)) ? s.counts : deckCounts();
   const added = s.last_added || [];
   const addedHtml = added.length ? `<div class="ust-added"><div class="lbl">🆕 Just added</div>${
-    added.map(a=>`<div class="ua"><span class="uReg">${a.region==='india'?'🇮🇳':'🌍'}</span>`
+    added.map(a=>`<div class="ua"><span class="uReg">${({india:'🇮🇳',f1:'🏎️',cricket:'🏏'})[a.region]||'🌍'}</span>`
       +`<span class="uT">${esc(a.title)}</span>${a.published_iso?`<span class="uWhen">${esc(relTime(a.published_iso))}</span>`:''}</div>`).join('')}</div>` : '';
   const html = `<div class="ustat">
     <div class="ust-hero ${state}">${dot} ${heroTxt}</div>
     <div class="ust-rows">
       <div class="ust-row"><span>Last new story</span><b>${esc(lastUpd)}</b></div>
       ${lastChk?`<div class="ust-row"><span>Last checked for updates</span><b>${esc(lastChk)}</b></div>`:''}
-      <div class="ust-row"><span>How often</span><b>1 new story / ${cad} min</b></div>
+      <div class="ust-row"><span>How often</span><b>2 Global + 2 India / ${cad} min · F1+Cricket ~2h</b></div>
       ${nextC?`<div class="ust-row"><span>Next update</span><b>≈ ${esc(nextC)}${state==='stale'?' · once Mac is on':''}</b></div>`:''}
-      <div class="ust-row"><span>Stories in feed</span><b>${counts.global??'—'} 🌍 · ${counts.india??'—'} 🇮🇳</b></div>
+      <div class="ust-row"><span>Stories in feed</span><b>${counts.global??'—'} 🌍 · ${counts.india??'—'} 🇮🇳 · ${counts.f1??'—'} 🏎️ · ${counts.cricket??'—'} 🏏</b></div>
     </div>
     ${addedHtml}
-    <div class="ust-note">The feed tops up <b>automatically every ${cad} minutes while your Mac is awake</b> — one fresh, fully-decoded story per region each time. When the laptop is closed, nothing updates until it wakes. The full ~40-story rebuild is on-demand.</div>
+    <div class="ust-note">The feed tops up <b>automatically every ${cad} minutes while your Mac is awake</b> — 2 fresh Global + 2 India stories each time, with F1 &amp; Cricket refreshed about every 2 hours. No story repeats within a day. When the laptop is closed, nothing updates until it wakes.</div>
     <button class="ust-btn" onclick="refreshNow(document.getElementById('refresh'));closeSheet();">↻ Check for updates now</button>
   </div>`;
   openSheet('Update status', html, PILLARSEL==='india'?'india':'markets');
@@ -554,7 +562,7 @@ const R = {
   },
 
   story: c => `
-    <div class="meta">${catChip(c.category)}${c.is_new?'<span class="newbadge">🆕 Just added</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
+    <div class="meta">${catChip(c.category)}${c.is_new?'<span class="newbadge">🆕 Just added</span>':''}${c.development?'<span class="devbadge">🔄 Development</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
     <h1 class="headline">${esc(c.title)}</h1>
     ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
@@ -674,13 +682,14 @@ const R = {
 /* ---------- reel assembly + Stories-style progress ---------- */
 const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn'})[c.type] || 'markets';
-const TAB_CAT = {global:'geopolitics', india:'india', markets:'markets', learn:'learn'};
+const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn'};
+const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
 // three tabs: a story goes to India if its category is india, else Global; the daily deep-dive lesson
 // cards live on Learn. Outro (and anything unexpected) lives on Global.
 function pillarOf(c){
   if(LESSON_TYPES.has(c.type)) return 'learn';
-  if(c.type==='story') return c.category==='india' ? 'india' : 'global';
+  if(c.type==='story') return STORY_REGIONS.has(c.category) ? c.category : 'global';
   if(c.type==='archive') return c.region;
   return 'global';
 }
@@ -709,10 +718,13 @@ function render(){
   }
   if(!cards.length){
     const isLearn = PILLARSEL==='learn';
-    const cat = isLearn?'learn':(PILLARSEL==='india'?'india':'geopolitics');
+    const cat = isLearn?'learn':(TAB_CAT[PILLARSEL]||'geopolitics');
+    const sport = PILLARSEL==='f1'?'Formula 1':(PILLARSEL==='cricket'?'Cricket':null);
     deck.innerHTML = `<section class="card" style="${catStyle(cat)}"><div class="meta">${catChip(cat)}</div>`
       + (isLearn
          ? `<h1>🎓 Your first lesson is being written</h1><div class="body" style="color:var(--dim)">Your course is prepared automatically — the first parts land shortly. Check back in a little while.</div>`
+         : sport
+         ? `<h1>${PILLARSEL==='f1'?'🏎️':'🏏'} ${sport} is warming up</h1><div class="body" style="color:var(--dim)">The top ${sport} story refreshes about every couple of hours. It'll appear here shortly.</div>`
          : `<h1>No stories yet</h1><div class="body" style="color:var(--dim)">The next update will fill this feed. Reload in a little while.</div>`)
       + `</section>`;
     document.getElementById('progress').innerHTML=''; paintFresh(); return; }
@@ -957,24 +969,30 @@ const LEAD = {story:'what_happened', watch:'gist', favorite:'whats_new', market_
 function openDecode(id){ const c = DECK.cards.find(x=>x.id===id); if(c) openDecodeCard(c); }
 function openDecodeCard(c){
   const d = c.depth||{}; let h = '';
-  // Lead with the takeaway (moved here off the reel face), then the essentials.
-  if(c.type==='story'||c.type==='watch') h += pinnedMoot(c.moot);
 
-  if(c.thread){
-    h += bulletSec('🧵', 'Previously', c.thread.previously);
-    h += bulletSec('🔄', 'What changed today', c.thread.changed);
-  }
+  // NEWS STORIES: keep it tight — what happened, the backstory, the key points in plain language,
+  // and the sources. Nothing else. (If it continues earlier coverage, lead with what's new.)
   if(c.type==='story'){
-    h += bulletSec('📰', 'What happened', c.what_happened);   // the full news summary
-    if(c.key_points && c.key_points.length) h += bulletSec('✦', 'In brief', c.key_points);
-    h += bulletSec('❓', 'Why it matters', d.why_it_matters);
-    h += bulletSec('🌊', 'Ripple effects', d.ripple_effects);
-    h += bulletSec('⏱️', 'Why now', d.why_now);
-    h += bulletSec('👀', 'Watch next', d.watch_next);
+    if(c.development && c.prev_ref && c.prev_ref.title){
+      const when = c.prev_ref.date ? ` <span style="color:var(--dim)">(${esc(c.prev_ref.date)})</span>` : '';
+      h += `<div class="prevref">🔄 Continues our earlier story: <b>${esc(c.prev_ref.title)}</b>${when}</div>`;
+    }
+    if(c.thread){
+      h += bulletSec('🧵', 'Previously', c.thread.previously);
+      h += bulletSec('🔄', "What's new today", c.thread.changed);
+    }
+    h += bulletSec('📰', 'What happened', c.what_happened);
     h += bulletSec('📖', 'The backstory', d.background);
-    h += bulletSec('📊', 'Market link', d.market_link);
-  } else {
-    // watch / favorite / market_story keep the key-points lead
+    h += bulletSec('✦', 'Most important points', (c.key_points && c.key_points.length) ? c.key_points : null);
+    h += sourcesSec(d.sources);
+    masteryNote(c);
+    openSheet(c.title || 'Decoded', h, c.category);
+    return;
+  }
+
+  // Everything below is for the non-news card types (watch / favorite / market_story).
+  if(c.type==='watch') h += pinnedMoot(c.moot);
+  {
     const keyItems = (c.key_points && c.key_points.length) ? c.key_points : toBullets(c[LEAD[c.type]]);
     const keyLabel = {watch:'Key points', favorite:'What changed', market_story:'Key points'}[c.type] || 'Key points';
     h += bulletSec('✦', keyLabel, keyItems);

@@ -51,6 +51,21 @@
   @keyframes slide{0%{margin-left:-35%}100%{margin-left:100%}}
   .livemsg{font-size:12.5px;color:var(--dim);margin-top:9px;font-variant-numeric:tabular-nums}
 
+  /* Claude usage meter */
+  .usage{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:15px 17px;margin-bottom:16px}
+  .usage .uhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:11px}
+  .usage .utitle{font-family:var(--round);font-size:16px;font-weight:800}
+  .usage .upct{font-family:var(--round);font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+  .ubar{height:12px;border-radius:99px;background:var(--panel2);overflow:hidden;border:1px solid var(--line)}
+  .ufill{height:100%;border-radius:99px;width:0;transition:width .5s ease;
+    background:linear-gradient(90deg,var(--ok),#7fd88a)}
+  .ufill.warn{background:linear-gradient(90deg,var(--warn),#ffcf6b)}
+  .ufill.bad{background:linear-gradient(90deg,var(--bad),#ff8a7a)}
+  .umeta{display:flex;flex-wrap:wrap;gap:5px 16px;margin-top:11px;font-size:12.5px;color:var(--dim);
+    font-variant-numeric:tabular-nums}
+  .umeta b{color:var(--txt);font-weight:800}
+  .unote{font-size:11.5px;color:var(--dim);margin-top:9px;line-height:1.5}
+
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px}
@@ -105,6 +120,14 @@
     <div class="livemsg" id="liveMsg"></div>
   </div>
 
+  <div class="usage" id="usage">
+    <div class="uhead"><span class="utitle">🤖 Claude usage <span style="font-size:12px;font-weight:700;color:var(--dim)">· last 5h</span></span>
+      <span class="upct" id="uPct">—</span></div>
+    <div class="ubar"><div class="ufill" id="uFill"></div></div>
+    <div class="umeta" id="uMeta"></div>
+    <div class="unote" id="uNote"></div>
+  </div>
+
   <div class="actions">
     <button id="runBtn" onclick="runNow()">↻ Update now</button>
     <button class="ghost" onclick="toggleLog()">📄 View log</button>
@@ -123,10 +146,10 @@
       <div class="added" id="topupAdded"></div>
     </div>
     <div class="card">
-      <div class="lbl">📰 Content freshness</div>
-      <div class="row"><span class="k">World brief</span><span class="v" id="worldFresh">—</span></div>
-      <div class="row"><span class="k">Markets brief</span><span class="v" id="marketFresh">—</span></div>
-      <div class="row"><span class="k">Full rebuild</span><span class="v" id="nextRun">—</span></div>
+      <div class="lbl">📰 Feed freshness</div>
+      <div class="row"><span class="k">Feed updated</span><span class="v" id="worldFresh">—</span></div>
+      <div class="row"><span class="k">🌍 Global · 🇮🇳 India</span><span class="v" id="cntNews">—</span></div>
+      <div class="row"><span class="k">🏎️ F1 · 🏏 Cricket</span><span class="v" id="cntSport">—</span></div>
     </div>
     <div class="card">
       <div class="lbl">🔄 Last run</div>
@@ -195,16 +218,34 @@ function renderLive(p){
   $('liveSpin').style.display = p.active?'':'none';
   return true;
 }
+function renderUsage(u){
+  if(!u){ $('usage').style.display='none'; return; }
+  $('usage').style.display='block';
+  const pct = u.pct||0;
+  $('uPct').textContent = pct + '%';
+  const fill = $('uFill');
+  fill.style.width = Math.min(100,pct) + '%';
+  fill.className = 'ufill' + (pct>=85?' bad':(pct>=60?' warn':''));
+  const tok = u.tokens>=1e6 ? (u.tokens/1e6).toFixed(1)+'M' : Math.round((u.tokens||0)/1e3)+'k';
+  $('uMeta').innerHTML = `<span><b>${u.calls||0}</b> calls</span>`
+    + `<span><b>≈ $${(u.cost_usd||0).toFixed(2)}</b> of $${(u.budget_usd||0).toFixed(0)} budget</span>`
+    + `<span><b>${tok}</b> tokens</span>`
+    + (u.resets_at?`<span>window clears <b>${new Date(u.resets_at).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</b></span>`:'');
+  $('uNote').textContent = 'Estimated share of your rolling 5-hour Max limit from the automated pipeline only '
+    + '(your own interactive Claude use isn’t counted). Tune the budget in config/usage.json so 100% lines up '
+    + 'with where you actually hit the limit.';
+}
 function render(s){
   $('cadence').innerHTML = s.cadence.note;
   const running = renderLive(s.progress);
-  // hero = worst of the two briefs
-  const worst = s.briefs.overall;                 // {state, age_min, label}
-  const hero = $('hero'); hero.className = 'hero ' + (PILL[worst.state]||'dim');
-  $('heroBig').textContent = worst.state==='fresh'||worst.state==='ok' ? 'Fresh — you’re up to date'
-      : worst.state==='aging' ? 'Getting old — an update is due'
-      : 'Stale — this may be out of date';
-  $('heroSmall').textContent = worst.label;
+  renderUsage(s.usage);
+  // hero = the 30-min feed's freshness (the auto top-up)
+  const w = s.briefs.world;                       // {state, age_min, date}
+  const hero = $('hero'); hero.className = 'hero ' + (PILL[w.state]||'dim');
+  $('heroBig').textContent = (w.state==='fresh'||w.state==='ok') ? 'Fresh — the feed is up to date'
+      : w.state==='aging' ? 'Getting old — an update is due'
+      : 'Stale — the feed may be behind';
+  $('heroSmall').textContent = w.age_min!=null ? ('Feed last updated ' + fmtAge(w.age_min)) : 'No feed yet';
 
   // ---- auto top-up card ----
   const t = s.topup;
@@ -220,12 +261,13 @@ function render(s){
     $('topupState').innerHTML = stHtml;
     $('topupUpd').textContent  = fmtAge(t.last_update_age);
     $('topupChk').textContent  = fmtAge(t.last_check_age);
-    $('topupCad').textContent  = '1 story / ' + (t.cadence_min||30) + ' min (per region)';
+    $('topupCad').textContent  = '2 Global + 2 India / ' + (t.cadence_min||30) + 'm · F1+Cricket ~2h';
     $('topupNext').textContent = nextTxt;
-    $('topupCounts').textContent = (t.counts.global??'—') + ' 🌍 · ' + (t.counts.india??'—') + ' 🇮🇳';
+    const c = t.counts||{};
+    $('topupCounts').textContent = (c.global??'—') + ' 🌍 · ' + (c.india??'—') + ' 🇮🇳 · ' + (c.f1??'—') + ' 🏎️ · ' + (c.cricket??'—') + ' 🏏';
     $('topupAdded').innerHTML = (t.last_added||[]).length
       ? '<div class="albl">🆕 Just added</div>' + t.last_added.map(a=>
-          `<div class="arow"><span>${a.region==='india'?'🇮🇳':'🌍'}</span> ${(a.title||'').replace(/</g,'&lt;')}</div>`).join('')
+          `<div class="arow"><span>${({india:'🇮🇳',f1:'🏎️',cricket:'🏏'})[a.region]||'🌍'}</span> ${(a.title||'').replace(/</g,'&lt;')}</div>`).join('')
       : '';
   } else {
     $('topupState').innerHTML = pill('','—');
@@ -233,8 +275,9 @@ function render(s){
   }
 
   $('worldFresh').innerHTML  = pill(s.briefs.world.state, fmtAge(s.briefs.world.age_min)) + ` <span style="color:var(--dim);font-weight:600">${s.briefs.world.date||''}</span>`;
-  $('marketFresh').innerHTML = pill(s.briefs.markets.state, fmtAge(s.briefs.markets.age_min)) + ` <span style="color:var(--dim);font-weight:600">${s.briefs.markets.date||''}</span>`;
-  $('nextRun').textContent = s.next_run_est || '—';
+  const fc = (s.topup && s.topup.counts) || {};
+  $('cntNews').textContent  = (fc.global??'—') + ' · ' + (fc.india??'—');
+  $('cntSport').textContent = (fc.f1??'—') + ' · ' + (fc.cricket??'—');
 
   const rs = s.run;
   $('runState').innerHTML = rs.active ? `<span class="pill warn"><span class="spin">↻</span> running…</span>`

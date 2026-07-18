@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))        # so `build_dashboard` (repo root) imports 
 
 import build_dashboard               # noqa: E402
 import progress as pg                # noqa: E402  (routine/ is already on sys.path)
+import usage                         # noqa: E402  (routine/usage.py — token/cost ledger)
 
 OUT = ROOT / "output"
 DASH = ROOT / "dashboard"
@@ -55,21 +56,10 @@ if not pathlib.Path(CLAUDE).exists():
     CLAUDE = "claude"
 
 
-def claude(prompt: str, retries: int = 2, timeout: int = 900) -> str | None:
-    """Run one headless Claude call; retry once on failure/timeout. Returns stdout or None."""
-    for attempt in range(1, retries + 1):
-        try:
-            r = subprocess.run(
-                [CLAUDE, "-p", prompt, "--permission-mode", "acceptEdits",
-                 "--allowedTools", *ALLOWED, "--disallowedTools", "Bash", "--output-format", "text"],
-                cwd=ROOT, capture_output=True, text=True, timeout=timeout,
-            )
-            if r.returncode == 0:
-                return r.stdout or ""
-            print(f"  claude rc={r.returncode} (attempt {attempt}): {(r.stderr or '')[:200]}", file=sys.stderr)
-        except subprocess.TimeoutExpired:
-            print(f"  claude timeout (attempt {attempt})", file=sys.stderr)
-    return None
+def claude(prompt: str, retries: int = 2, timeout: int = 900, label: str = "lesson") -> str | None:
+    """Run one headless Claude call (logging token/cost to the usage ledger); returns result text or None."""
+    return usage.run_claude(prompt, claude_bin=CLAUDE, allowed=ALLOWED, cwd=ROOT,
+                            label=label, retries=retries, timeout=timeout)
 
 
 def _load(p: pathlib.Path):

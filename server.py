@@ -30,6 +30,9 @@ import urllib.request
 import analyze_stock
 
 ROOT = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "routine"))   # so `usage` (the Claude-usage ledger) imports
+import usage                                  # noqa: E402
+
 DASH = ROOT / "dashboard"
 LOGS = ROOT / "logs"
 SOCIAL_OUT = ROOT / "social" / "out"
@@ -241,11 +244,13 @@ def build_status() -> dict:
         "publish": _publish_status(),
         "live": _live_status(DASH / "reels.json"),
         "topup": _topup_status(),
+        "usage": usage.window_summary(),
         "next_run_est": _next_run_est(),
         "cadence": {"guard_min": 110,
-                    "note": "A fresh, fully-decoded story is added <b>automatically every 30 minutes</b> "
-                            "(one per region) while the laptop is awake. The full ~40-story rebuild is "
-                            "<b>on-demand</b> — hit <b>Update now</b>. When the laptop’s closed, nothing updates."},
+                    "note": "Every <b>30 minutes</b> the laptop is awake, the auto top-up adds "
+                            "<b>2 fresh Global + 2 India</b> stories, and refreshes <b>F1 &amp; Cricket</b> "
+                            "(1 each) about <b>every 2 hours</b>. No story repeats within a day. "
+                            "When the laptop’s closed, nothing updates."},
     }
 
 

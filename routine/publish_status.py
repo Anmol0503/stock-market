@@ -27,17 +27,18 @@ CADENCE_MIN = 30
 
 
 def _region(s: dict) -> str:
-    return "india" if s.get("category") == "india" else "global"
+    cat = s.get("category")
+    return cat if cat in ("india", "f1", "cricket") else "global"
 
 
 def _counts() -> dict:
+    c = {"global": 0, "india": 0, "f1": 0, "cricket": 0}
     try:
         stories = (json.loads((OUT / "world-latest.json").read_text()).get("stories") or [])
     except (ValueError, OSError):
-        return {"global": 0, "india": 0}
-    c = {"global": 0, "india": 0}
+        return c
     for s in stories:
-        c[_region(s)] += 1
+        c[_region(s)] = c.get(_region(s), 0) + 1
     return c
 
 
@@ -56,7 +57,7 @@ def write_status(kind: str, added: list[dict] | None = None, cadence_min: int = 
     cur["cadence_min"] = cadence_min
     cur["next_update_est"] = (now + dt.timedelta(minutes=cadence_min)).isoformat(timespec="seconds")
     cur["counts"] = _counts()
-    cur["total"] = cur["counts"]["global"] + cur["counts"]["india"]
+    cur["total"] = sum(cur["counts"].values())
 
     added = [a for a in (added or []) if a and a.get("title")]
     if added:

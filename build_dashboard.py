@@ -207,8 +207,13 @@ def _norm_title(t: str | None) -> str:
     return re.sub(r"\s+", " ", (t or "")).strip().lower()
 
 
+REGIONS = ("global", "india", "f1", "cricket")     # the reels news/sport tabs (Learn is client-side)
+REGION_CAT = {"global": "geopolitics", "india": "india", "f1": "f1", "cricket": "cricket"}
+
+
 def _story_region(c: dict) -> str:
-    return "india" if c.get("category") == "india" else "global"
+    cat = c.get("category")
+    return cat if cat in ("india", "f1", "cricket") else "global"
 
 
 def _story_ts(c: dict):
@@ -319,6 +324,8 @@ def build_reels() -> int:
             "type": "story", "id": f"story-{s.get('rank')}",
             "rank": s.get("rank"), "category": s.get("category"),
             **({"is_new": True} if added_min is not None and added_min <= NEW_BADGE_MIN else {}),
+            **({"development": True} if s.get("development") else {}),   # 🔄 update to prior-day coverage
+            **({"prev_ref": s["prev_ref"]} if s.get("prev_ref") else {}),
             "published_iso": s.get("published_iso"), "source": src,
             "importance": s.get("importance"), "regions": s.get("regions") or [],
             "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
@@ -337,10 +344,10 @@ def build_reels() -> int:
     # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never
     # empty), and skip near-duplicate events (a developing story re-decoded with different wording).
     update_news_archive(story_cards)
-    by_region: dict[str, list[dict]] = {"global": [], "india": []}
+    by_region: dict[str, list[dict]] = {r: [] for r in REGIONS}
     for c in story_cards:
-        by_region[_story_region(c)].append(c)
-    for region in ("global", "india"):
+        by_region.setdefault(_story_region(c), []).append(c)
+    for region in REGIONS:
         ranked = sorted(by_region[region], key=lambda c: c.get("published_iso") or "", reverse=True)
         live: list[dict] = []
         seen_toks: list[set] = []
@@ -359,7 +366,8 @@ def build_reels() -> int:
         cards.extend(live)
     live_titles = {_norm_title(c.get("title")) for c in cards if c.get("type") == "story"}
     archive_data = _load_json(NEWS_ARCHIVE) or {}
-    for region, cat in (("global", "geopolitics"), ("india", "india")):
+    for region in REGIONS:
+        cat = REGION_CAT[region]
         older = [s for s in (archive_data.get("stories") or [])
                  if _story_region(s) == region and _norm_title(s.get("title")) not in live_titles]
         if older:

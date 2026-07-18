@@ -22,6 +22,7 @@ import sys
 
 import merge_world          # same directory (routine/ is sys.path[0] when run as a script)
 import progress as pg
+import usage                # routine/usage.py — logs token/cost to the rolling ledger
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "output"
@@ -34,21 +35,10 @@ if not pathlib.Path(CLAUDE).exists():
     CLAUDE = "claude"
 
 
-def claude(prompt: str, retries: int = 2, timeout: int = 900) -> str | None:
-    """Run one headless Claude call; retry once on failure/timeout. Returns stdout or None."""
-    for attempt in range(1, retries + 1):
-        try:
-            r = subprocess.run(
-                [CLAUDE, "-p", prompt, "--permission-mode", "acceptEdits",
-                 "--allowedTools", *ALLOWED, "--disallowedTools", "Bash", "--output-format", "text"],
-                cwd=ROOT, capture_output=True, text=True, timeout=timeout,
-            )
-            if r.returncode == 0:
-                return r.stdout or ""
-            print(f"  claude rc={r.returncode} (attempt {attempt}): {(r.stderr or '')[:200]}", file=sys.stderr)
-        except subprocess.TimeoutExpired:
-            print(f"  claude timeout (attempt {attempt})", file=sys.stderr)
-    return None
+def claude(prompt: str, retries: int = 2, timeout: int = 900, label: str = "daily-decode") -> str | None:
+    """Run one headless Claude call (logging token/cost to the usage ledger); returns result text or None."""
+    return usage.run_claude(prompt, claude_bin=CLAUDE, allowed=ALLOWED, cwd=ROOT,
+                            label=label, retries=retries, timeout=timeout)
 
 
 def _batch_prompt(region: str, items: list[dict]) -> str:
