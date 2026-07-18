@@ -269,6 +269,7 @@ def _slim_story(c: dict) -> dict:
         "title": c.get("title"),
         "category": c.get("category"),
         "published_iso": c.get("published_iso"),
+        "added_at": c.get("added_at"),
         "source": c.get("source"),
         "what_happened": c.get("what_happened"),
         "key_points": c.get("key_points") or [],
@@ -378,7 +379,7 @@ def build_reels() -> int:
             **({"is_new": True} if added_min is not None and added_min <= NEW_BADGE_MIN else {}),
             **({"development": True} if s.get("development") else {}),   # 🔄 update to prior-day coverage
             **({"prev_ref": s["prev_ref"]} if s.get("prev_ref") else {}),
-            "published_iso": s.get("published_iso"), "source": src,
+            "published_iso": s.get("published_iso"), "added_at": s.get("added_at"), "source": src,
             "importance": s.get("importance"), "regions": s.get("regions") or [],
             "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
             "key_points": s.get("key_points") or [],
@@ -400,7 +401,10 @@ def build_reels() -> int:
     for c in story_cards:
         by_region.setdefault(_story_region(c), []).append(c)
     for region in REGIONS:
-        ranked = sorted(by_region[region], key=lambda c: c.get("published_iso") or "", reverse=True)
+        # order by when WE added the story to the feed (newest-added on top), not when the news broke;
+        # fall back to publish time for any legacy story that predates added_at stamping.
+        ranked = sorted(by_region[region],
+                        key=lambda c: c.get("added_at") or c.get("published_iso") or "", reverse=True)
         live: list[dict] = []
         seen_toks: list[set] = []
         for c in ranked:

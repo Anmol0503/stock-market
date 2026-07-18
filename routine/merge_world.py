@@ -51,8 +51,10 @@ def main() -> int:
         s["category"] = "india"   # enforce, so the client routes it to the India tab
 
     stories = gstories + istories
+    now_iso = dt.datetime.now(IST).isoformat(timespec="seconds")
     for n, s in enumerate(stories, 1):
         s["rank"] = n
+        s.setdefault("added_at", now_iso)   # stamp when the story entered the feed (the hourly does its own)
 
     today = dt.date.today().isoformat()
     merged = {

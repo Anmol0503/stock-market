@@ -204,6 +204,8 @@
   .when .wdot{width:6px;height:6px;border-radius:99px;background:var(--up);flex:0 0 auto;
     box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 22%,transparent)}
   .when .wsrc{color:var(--cat,var(--accent))}
+  .occurred{margin-top:13px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+  .occurred b{color:var(--txt);font-weight:700} .occurred .oabs{color:var(--dim)}
   mark{background:color-mix(in srgb,var(--amber) 20%,transparent);color:var(--txt);border-radius:4px;padding:0 3px;font-weight:600}
   /* THE moot — the one takeaway, unmistakably the hero */
   .moot{background:linear-gradient(135deg, color-mix(in srgb, var(--cat,var(--accent)) 14%, var(--panel)), var(--panel2));
@@ -529,12 +531,19 @@ function mootBlock(txt, lbl){
 }
 // exact-timestamp + source line for a news story (the whole point of the feed)
 function whenLine(c){
-  const rel = relTime(c.published_iso);
-  const abs = c.published_iso ? new Date(c.published_iso).toLocaleString() : '';
+  const when = c.added_at || c.published_iso;                 // the tag shows when WE ADDED it to the feed
+  const rel = relTime(when);
+  const abs = when ? ('Added ' + new Date(when).toLocaleString()) : '';
   const srcName = c.source ? String(c.source).split(' (')[0].trim() : '';   // strip any appended parenthetical
   const src = srcName ? `<span class="wsrc">${esc(srcName)}</span>` : '';
   if(!rel && !src) return '';
   return `<div class="when" title="${esc(abs)}">${rel?`<span class="wdot"></span>${esc(rel)}`:''}${rel&&src?' · ':''}${src}</div>`;
+}
+// when the news actually happened (shown in the sheet, below the sources)
+function occurredSec(iso){
+  if(!iso) return '';
+  const rel = relTime(iso), abs = new Date(iso).toLocaleString();
+  return `<div class="occurred">🕒 <span>Story occurred:</span> <b>${esc(rel||abs)}</b>${rel?` <span class="oabs">· ${esc(abs)}</span>`:''}</div>`;
 }
 function sparkSVG(pts){
   if(!pts||pts.length<3) return '';
@@ -571,7 +580,7 @@ const R = {
   },
 
   story: c => `
-    <div class="meta">${catChip(c.category)}${c.development?'<span class="devbadge">🔄 Development</span>':(c.is_new?'<span class="newbadge">🆕 Just added</span>':'')}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
+    <div class="meta">${catChip(c.category)}${c.development?'<span class="devbadge">🔄 Development</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
     <h1 class="headline">${esc(c.title)}</h1>
     ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
@@ -1035,6 +1044,7 @@ function openDecodeCard(c){
     h += bulletSec('📖', 'The backstory', d.background);
     h += bulletSec('✦', 'Most important points', (c.key_points && c.key_points.length) ? c.key_points : null);
     h += sourcesSec(d.sources);
+    h += occurredSec(c.published_iso);       // when the news actually happened, below the sources
     masteryNote(c);
     openSheet(c.title || 'Decoded', h, c.category);
     return;
