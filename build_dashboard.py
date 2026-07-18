@@ -195,6 +195,9 @@ LIVE_PER_REGION = 20      # the live reels feed shows at most this many stories 
 NEWS_ARCHIVE_CAP = 300    # rolling history depth (dedup by title, newest-first)
 FRESH_HOURS = 30          # a story older than this drops OUT of the live feed (still kept in the archive)
 MIN_LIVE = 8              # ...but always keep at least this many newest per region, so it's never empty
+NEW_BADGE_MIN = 90        # a story added by the hourly within this many minutes gets a 🆕 badge in the feed
+                          # (the feed sorts by PUBLISH time, so a just-added story can land mid-feed — the
+                          # badge lets you spot it, matching the status panel's "Just added" list)
 _STOP_WORDS = set("the a an of to in and for on as is it its at by with after from this that was were will "
                   "has have had over into out up down amid new now says say said amid than then but or "
                   "india indias indian first big back again live goes get gets".split())
@@ -222,6 +225,19 @@ def _age_hours(c: dict, now: dt.datetime):
     if t.tzinfo is None:
         t = t.replace(tzinfo=now.tzinfo)
     return (now - t).total_seconds() / 3600
+
+
+def _minutes_since(iso: str | None, now: dt.datetime):
+    """Minutes since an added_at stamp (None if missing/unparseable) — used for the 🆕 badge."""
+    if not iso:
+        return None
+    try:
+        t = dt.datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=now.tzinfo)
+    return (now - t).total_seconds() / 60
 
 
 def _sig_tokens(c: dict) -> set:
@@ -294,12 +310,15 @@ def build_reels() -> int:
     watch = (brief or {}).get("what_to_watch", []) or []
 
     # -- world stories, already ranked/curated by the analyst (no cover — first swipe IS the top story)
+    now = dt.datetime.now(IST)
     story_cards: list[dict] = []
     for s in stories:
         src = (s.get("sources") or [{}])[0].get("name")
+        added_min = _minutes_since(s.get("added_at"), now)   # None unless the hourly just added it
         story_cards.append({
             "type": "story", "id": f"story-{s.get('rank')}",
             "rank": s.get("rank"), "category": s.get("category"),
+            **({"is_new": True} if added_min is not None and added_min <= NEW_BADGE_MIN else {}),
             "published_iso": s.get("published_iso"), "source": src,
             "importance": s.get("importance"), "regions": s.get("regions") or [],
             "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
@@ -318,7 +337,6 @@ def build_reels() -> int:
     # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never
     # empty), and skip near-duplicate events (a developing story re-decoded with different wording).
     update_news_archive(story_cards)
-    now = dt.datetime.now(IST)
     by_region: dict[str, list[dict]] = {"global": [], "india": []}
     for c in story_cards:
         by_region[_story_region(c)].append(c)

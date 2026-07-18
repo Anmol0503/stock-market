@@ -123,6 +123,8 @@ def main() -> int:
             print(f"  · {key}: too old ({age:.0f}h) — skipped", file=sys.stderr)
             continue
         st["category"] = "india" if region == "india" else (st.get("category") or "geopolitics")
+        st["added_at"] = now.isoformat(timespec="seconds")   # so the feed can badge it 🆕 (it's sorted by
+                                                             # publish time, so a just-added story may sit mid-feed)
         stories = _insert_top_of_region(stories, st, region)
         existing.add(nt)
         toks_by_region[region].append(stoks)
