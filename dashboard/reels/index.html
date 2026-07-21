@@ -343,7 +343,7 @@
 </div>
 
 <script>
-const esc = s => (s==null?'':String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])));
+const esc = s => (s==null?'':String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
 const CAT = {
   geopolitics:{lbl:"Geopolitics",emoji:"🌍"}, economy:{lbl:"Economy",emoji:"💵"},
   technology:{lbl:"Technology",emoji:"⚙️"}, science:{lbl:"Science",emoji:"🔬"},
@@ -1031,7 +1031,7 @@ function openDecodeCard(c){
   // and the sources. Nothing else. (If it continues earlier coverage, lead with what's new.)
   if(c.type==='story'){
     if(c.development && c.prev_ref && c.prev_ref.title){
-      h += `<button class="prevref" onclick='openPrevStory(${JSON.stringify(c.prev_ref.title)})'>`
+      h += `<button class="prevref" onclick='openPrevStory(${esc(JSON.stringify(c.prev_ref.title))})'>`
         + `<span class="pv-ic">🔄</span>`
         + `<span class="pv-t"><span class="pv-lbl">Continues earlier coverage — tap to read it</span>${esc(c.prev_ref.title)}</span>`
         + `<span class="pv-go">›</span></button>`;

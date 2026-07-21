@@ -39,11 +39,11 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 REGION_PLAN = {
     "global":  {"count": 2, "cap": 20, "sports": False},
     "india":   {"count": 2, "cap": 20, "sports": False},
-    "f1":      {"count": 1, "cap": 12, "sports": True},
-    "cricket": {"count": 1, "cap": 12, "sports": True},
+    "f1":      {"count": 2, "cap": 20, "sports": True},
+    "cricket": {"count": 2, "cap": 20, "sports": True},
 }
-SPORTS_EVERY_MIN = 110      # F1/cricket refresh at most this often (≈ every 2h given 30-min ticks)
-STALE_MAX_H = 48            # reject a "trending" pick older than this (keeps the feed genuinely fresh)
+SPORTS_EVERY_MIN = 55       # F1/cricket refresh at most this often (≈ hourly given 30-min ticks)
+STALE_MAX_H = 72            # reject a pick older than this (sport can lag a little; keeps the feed fresh-ish)
 
 ALLOWED = ["Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"]
 CLAUDE = os.environ.get("CLAUDE_BIN") or str(pathlib.Path.home() / ".local" / "bin" / "claude")
@@ -126,6 +126,33 @@ def _prior_stories(today: str) -> list[dict]:
     return out[:60]
 
 
+def _decode_region(region: str, count: int, already: set, prior: list[dict], today: str) -> list[dict]:
+    """One small, reliable Claude call for a SINGLE region. Returns its picked stories (may be empty).
+
+    Splitting the run into per-region calls (vs one big call for all 6 stories) keeps each call small
+    enough to finish inside the timeout — the all-in-one call kept timing out. A region that fails here
+    just returns [] and is retried on the next 30-min tick."""
+    CONTEXT.write_text(json.dumps({
+        "date": today,
+        "regions": [{"key": region, "count": count}],
+        "already_today": sorted(already),
+        "prior_stories": prior if region in ("global", "india") else [],   # dev-linking is for news
+    }, indent=2, ensure_ascii=False))
+    hf = OUT / "world-hourly.json"
+    if hf.exists():
+        hf.unlink()
+    usage.run_claude((ROUTINE / "hourly_prompt.md").read_text(), claude_bin=CLAUDE, allowed=ALLOWED,
+                     cwd=ROOT, label=f"hourly {region}", timeout=300, retries=1)
+    payload = _load(hf)
+    if not isinstance(payload, dict):
+        print(f"  ! {region}: no usable output this run (will retry next tick)", file=sys.stderr)
+        return []
+    picks = payload.get("stories")
+    if not isinstance(picks, list):        # tolerate a bare {region: story} / single-object shape
+        picks = [v for v in payload.values() if isinstance(v, dict) and v.get("title")]
+    return [p for p in picks if isinstance(p, dict) and p.get("title")]
+
+
 def main() -> int:
     latest = OUT / "world-latest.json"
     if not latest.exists():
@@ -138,14 +165,13 @@ def main() -> int:
     stories = world.get("stories") or []
     ledger = _load_ledger(today)
 
-    # -- decide which regions to fill this run (sports only ~every 2h) --
+    # -- decide which regions to fill this run (sports only ~hourly) --
     sports_due = _sports_due(stories, now)
     regions = []
     for key, plan in REGION_PLAN.items():
         if plan["sports"] and not sports_due:
             continue
         regions.append({"key": key, "count": plan["count"]})
-    region_keys = [r["key"] for r in regions]
 
     # -- everything already covered today (live feed + today's ledger) → never repeat --
     already = {_norm(s.get("title")) for s in stories}
@@ -154,66 +180,43 @@ def main() -> int:
     for s in stories:
         toks_by_region.setdefault(_region(s), []).append(build_dashboard._sig_tokens(s))
 
-    CONTEXT.write_text(json.dumps({
-        "date": today,
-        "regions": regions,
-        "already_today": sorted(already),
-        "prior_stories": _prior_stories(today),
-    }, indent=2, ensure_ascii=False))
-
+    prior = _prior_stories(today)
     pg.set_progress("decoding_global", "Finding the top trending stories", 0, len(regions),
                     " + ".join(f"{r['count']} {r['key']}" for r in regions))
-    hf = OUT / "world-hourly.json"
-    if hf.exists():
-        hf.unlink()
-    usage.run_claude((ROUTINE / "hourly_prompt.md").read_text(), claude_bin=CLAUDE, allowed=ALLOWED,
-                     cwd=ROOT, label=f"hourly ({'+'.join(region_keys)})")
-    payload = _load(hf)
-    if not isinstance(payload, dict):
-        print("  ! no usable world-hourly.json — nothing added this run", file=sys.stderr)
-        publish_status.write_status("hourly", added=None)
-        return 1
-    picks = payload.get("stories")
-    if not isinstance(picks, list):    # tolerate the old {region: story} shape too
-        picks = [v for v in payload.values() if isinstance(v, dict) and v.get("title")]
 
+    # Decode ONE region per Claude call (small + reliable). The all-in-one call for 6 stories kept
+    # timing out; each region here is 2 stories, finishes fast, and a failed region retries next tick.
     added = []
-    for st in picks:
-        if not isinstance(st, dict) or not st.get("title"):
-            continue
-        region = st.get("region") if st.get("region") in REGION_PLAN else _region(st)
-        if region not in region_keys:
-            continue
-        nt = _norm(st.get("title"))
-        stoks = build_dashboard._sig_tokens(st)
-        if nt in already or build_dashboard._is_near_dup(stoks, toks_by_region.get(region, [])):
-            print(f"  · {region}: '{(st.get('title') or '')[:50]}' already covered / rehash — skipped",
-                  file=sys.stderr)
-            continue
-        age = build_dashboard._age_hours(st, now)
-        if age is not None and age > STALE_MAX_H:
-            print(f"  · {region}: too old ({age:.0f}h) — skipped", file=sys.stderr)
-            continue
-        # normalize category so region routing is stable
-        cat_default = {"india": "india", "f1": "f1", "cricket": "cricket"}.get(region, "geopolitics")
-        st["category"] = st.get("category") or cat_default
-        if region in ("f1", "cricket"):
-            st["category"] = region
-        st["added_at"] = now.isoformat(timespec="seconds")
-        # development of a prior-day story? the analyst names it in `develops` + fills `thread`
-        dev = (st.get("develops") or "").strip()
-        if dev and st.get("thread"):
-            st["development"] = True
-            st.setdefault("prev_ref", {"title": dev, "date": st.get("develops_date")})
-        st.pop("develops", None)
-        stories = _insert_top_of_region(stories, st, region)
-        already.add(nt)
-        toks_by_region.setdefault(region, []).append(stoks)
-        ledger["added"].append({"title": st.get("title"), "category": st.get("category"),
-                                "published_iso": st.get("published_iso"), "added_at": st["added_at"]})
-        added.append({"title": st.get("title"), "region": region,
-                      "development": bool(st.get("development")),
-                      "published_iso": st.get("published_iso")})
+    for ri, r in enumerate(regions, 1):
+        region, count = r["key"], r["count"]
+        pg.set_progress("decoding_global", f"Finding trending {region} stories", ri, len(regions), region)
+        for st in _decode_region(region, count, already, prior, today):
+            nt = _norm(st.get("title"))
+            stoks = build_dashboard._sig_tokens(st)
+            if nt in already or build_dashboard._is_near_dup(stoks, toks_by_region.get(region, [])):
+                print(f"  · {region}: '{(st.get('title') or '')[:50]}' already covered / rehash — skipped",
+                      file=sys.stderr)
+                continue
+            age = build_dashboard._age_hours(st, now)
+            if age is not None and age > STALE_MAX_H:
+                print(f"  · {region}: too old ({age:.0f}h) — skipped", file=sys.stderr)
+                continue
+            st["category"] = region if region in ("india", "f1", "cricket") else (st.get("category") or "geopolitics")
+            st["added_at"] = now.isoformat(timespec="seconds")
+            # development of a prior-day story? the analyst names it in `develops` + fills `thread`
+            dev = (st.get("develops") or "").strip()
+            if dev and st.get("thread"):
+                st["development"] = True
+                st.setdefault("prev_ref", {"title": dev, "date": st.get("develops_date")})
+            st.pop("develops", None)
+            stories = _insert_top_of_region(stories, st, region)
+            already.add(nt)
+            toks_by_region.setdefault(region, []).append(stoks)
+            ledger["added"].append({"title": st.get("title"), "category": st.get("category"),
+                                    "published_iso": st.get("published_iso"), "added_at": st["added_at"]})
+            added.append({"title": st.get("title"), "region": region,
+                          "development": bool(st.get("development")),
+                          "published_iso": st.get("published_iso")})
 
     if not added:
         print("  · nothing new trending this run — feed unchanged", file=sys.stderr)

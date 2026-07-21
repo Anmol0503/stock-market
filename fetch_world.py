@@ -110,22 +110,32 @@ WORLD_FEEDS = [
     ("india", "Google News — India business",
      "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en"),
 
-    # === FORMULA 1 (its own tab — pull broadly, the analyst picks the single most-trending) ===
+    # === FORMULA 1 (its own tab — pull broadly, the analyst picks the most-trending) ===
     ("f1", "BBC Sport F1", "http://feeds.bbci.co.uk/sport/formula1/rss.xml"),
     ("f1", "Autosport F1", "https://www.autosport.com/rss/f1/news/"),
     ("f1", "Motorsport F1", "https://www.motorsport.com/rss/f1/news/"),
     ("f1", "The Race F1", "https://www.the-race.com/formula-1/feed/"),
+    ("f1", "PlanetF1", "https://www.planetf1.com/feed"),
+    ("f1", "RaceFans", "https://www.racefans.net/feed/"),
+    ("f1", "GPblog", "https://www.gpblog.com/en/rss"),
     ("f1", "Google News — F1",
      "https://news.google.com/rss/search?q=Formula+1+F1+when:3d&hl=en-US&gl=US&ceid=US:en"),
+    ("f1", "Google News — F1 driver market",
+     "https://news.google.com/rss/search?q=F1+(Verstappen+OR+standings+OR+Grand+Prix)+when:3d&hl=en-US&gl=US&ceid=US:en"),
     ("f1", "Reddit r/formula1", "https://www.reddit.com/r/formula1/hot/.rss"),
 
-    # === CRICKET (its own tab — global + India-heavy, the analyst picks the single most-trending) ===
+    # === CRICKET (its own tab — global + India-heavy, the analyst picks the most-trending) ===
     ("cricket", "BBC Sport Cricket", "http://feeds.bbci.co.uk/sport/cricket/rss.xml"),
     ("cricket", "ESPNcricinfo", "https://www.espncricinfo.com/rss/content/story/feeds/0.xml"),
     ("cricket", "The Hindu Cricket", "https://www.thehindu.com/sport/cricket/feeder/default.rss"),
     ("cricket", "TOI Cricket", "https://timesofindia.indiatimes.com/rssfeeds/54829575.cms"),
+    ("cricket", "NDTV Cricket", "https://feeds.feedburner.com/ndtvsports-cricket"),
+    ("cricket", "Cricbuzz (Google News)",
+     "https://news.google.com/rss/search?q=site:cricbuzz.com+when:3d&hl=en-IN&gl=IN&ceid=IN:en"),
     ("cricket", "Google News — Cricket",
      "https://news.google.com/rss/search?q=cricket+when:3d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("cricket", "Google News — Cricket intl",
+     "https://news.google.com/rss/search?q=cricket+(Test+OR+ODI+OR+T20+OR+series)+when:3d&hl=en-US&gl=US&ceid=US:en"),
     ("cricket", "Reddit r/Cricket", "https://www.reddit.com/r/Cricket/hot/.rss"),
 
     # === REDDIT (per-subreddit .rss — the JSON API is 403-blocked, but RSS still serves) ===

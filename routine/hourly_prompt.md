@@ -28,8 +28,10 @@ language, define jargon, the_lesson + concepts + key_points, published_iso, real
    recently. Volume across independent feeds + recency = trending. Confirm with WebSearch it's real & current.
    - **RECENCY IS A HARD REQUIREMENT.** Look at `published_iso`. Pick from **TODAY's** items (or, if truly
      nothing today, the last ~24h). **Never pick a story published before yesterday.** Prefer the freshest.
-   - For **f1 / cricket**: explore broadly (official sites, BBC Sport, ESPNcricinfo, Autosport, Reddit) and
-     take the single most-talked-about story right now — a result, a signing, an injury, a controversy.
+   - For **f1 / cricket**: explore broadly (official sites, BBC Sport, ESPNcricinfo, Autosport, PlanetF1,
+     RaceFans, Cricbuzz, Reddit) and take the most-talked-about stories right now — results, signings,
+     injuries, controversies, standings. When asked for 2, pick two genuinely DIFFERENT stories (e.g. a race
+     result AND a driver-market move; a match result AND a selection/injury) — not two angles on one event.
 2. Pick the requested COUNT of genuinely new stories per region (not in `already_today`, not near-duplicates
    of each other). If you truly can't find enough new ones, return fewer — never pad with rehashes or duds.
 3. **VET:** if a candidate is only on Reddit/X and you can't corroborate it with a credible outlet, skip it.
