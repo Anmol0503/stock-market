@@ -181,6 +181,27 @@ def main() -> int:
         toks_by_region.setdefault(_region(s), []).append(build_dashboard._sig_tokens(s))
 
     prior = _prior_stories(today)
+
+    # --merge-only: skip the local `claude` CLI entirely and merge picks a caller already wrote to
+    # output/world-hourly.json ({stories:[{...,region}]}). This is how the CLOUD routine runs — there the
+    # agent IS Claude, so it decodes the stories itself and hands them to this deterministic merge/cap/build.
+    merge_only = "--merge-only" in sys.argv
+    preloaded: dict[str, list[dict]] | None = None
+    if merge_only:
+        payload = _load(OUT / "world-hourly.json") or {}
+        raw = payload.get("stories") if isinstance(payload.get("stories"), list) else \
+            [v for v in payload.values() if isinstance(v, dict) and v.get("title")]
+        preloaded = {}
+        for st in (raw or []):
+            if isinstance(st, dict) and st.get("title"):
+                rk = st.get("region") if st.get("region") in REGION_PLAN else _region(st)
+                preloaded.setdefault(rk, []).append(st)
+        regions = [{"key": k, "count": len(v)} for k, v in preloaded.items()]
+        if not regions:
+            print("  ! --merge-only: world-hourly.json has no stories — nothing to merge", file=sys.stderr)
+            publish_status.write_status("hourly", added=None)
+            return 1
+
     pg.set_progress("decoding_global", "Finding the top trending stories", 0, len(regions),
                     " + ".join(f"{r['count']} {r['key']}" for r in regions))
 
@@ -190,7 +211,8 @@ def main() -> int:
     for ri, r in enumerate(regions, 1):
         region, count = r["key"], r["count"]
         pg.set_progress("decoding_global", f"Finding trending {region} stories", ri, len(regions), region)
-        for st in _decode_region(region, count, already, prior, today):
+        picks = preloaded[region] if merge_only else _decode_region(region, count, already, prior, today)
+        for st in picks:
             nt = _norm(st.get("title"))
             stoks = build_dashboard._sig_tokens(st)
             if nt in already or build_dashboard._is_near_dup(stoks, toks_by_region.get(region, [])):
