@@ -1009,7 +1009,10 @@ function openLibrary(){
   }).join('');
   openSheet('📚 Your library',
     `<div class="arch-hint">${parts.length} part${parts.length==1?'':'s'} · ✓ done · ▶ current · ○ ahead — tap any to read or revisit</div>`
-    + `<div class="jlist" style="max-height:70vh">${rows}</div>`, 'learn');
+    + `<div class="jlist" style="max-height:62vh">${rows}</div>`
+    + `<a class="lchip" href="../learn-course.epub" download style="display:inline-flex;margin-top:14px">📖 Download the whole course for Kindle (EPUB)</a>`
+    + `<div class="arch-hint" style="margin-top:8px">Nicer on e-ink. Save the file, then open Amazon's free <b>Send to Kindle</b> app (or send.amazon.com) and drop it in — it arrives on your Kindle over WiFi.</div>`,
+    'learn');
 }
 function gotoLesson(seq){ setPos(seq); closeSheet(); render(); document.getElementById('deck').scrollTo(0,0); }
 // tiny bottom toast
