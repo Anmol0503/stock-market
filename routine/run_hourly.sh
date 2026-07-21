@@ -1,7 +1,11 @@
 #!/bin/bash
-# Daily Intelligence — top-up. Adds ONE trending new story per region (Global + India) to the
-# live feed, every 30 minutes the laptop is on. Light + fast (only 2 stories decoded), so it never hits
-# the oversized-generation drop. The heavy ~40-story decode stays on-demand (routine/run_daily.sh).
+# Daily Intelligence — Mac-side maintenance (Learn course + Kindle), every 30 minutes the laptop is on.
+#
+# NOTE: the NEWS top-up now runs 24/7 in the CLOUD (RemoteTrigger routine, hourly) so it keeps publishing
+# even when this laptop is off. To avoid doing the same expensive decode in two places, this Mac run no
+# longer fetches/decodes news — it only advances the 🎓 Learn course and (re)builds + emails the Kindle
+# EPUB, which needs the local .env secrets the cloud can't have. It still pulls the cloud's news pushes
+# before publishing its own changes.
 #
 # Fired by ~/Library/LaunchAgents/com.dailyintel.hourly.plist (StartInterval 1800 = 30 min).
 # Manual:  bash routine/run_hourly.sh
@@ -34,19 +38,11 @@ trap 'rmdir "'"$LOCK"'" 2>/dev/null' EXIT
 
 progress () { "$PY" routine/progress.py "$@" >/dev/null 2>&1 || true; }
 
-echo "=== hourly top-up started $(date '+%F %T') ==="
+echo "=== mac maintenance (Learn + Kindle) started $(date '+%F %T') ==="
 export CLAUDE_BIN="$CLAUDE"; [ -x "$CLAUDE_BIN" ] || export CLAUDE_BIN="claude"
 
-# ---- fresh raw pull so we can spot what's trending this hour ----
-progress fetching "Checking what's trending" 0 0 "pulling fresh feeds"
-"$PY" fetch_world.py || echo "WARN: fetch_world failed"
-
-# ---- decode 1 trending new story per region + append + rebuild ----
-if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
-  "$PY" routine/hourly_top.py || echo "WARN: hourly top-up failed"
-else
-  echo "WARN: claude CLI not found — no hourly story added"
-fi
+# ---- NEWS is handled by the cloud routine now (see header) — nothing to fetch/decode here. ----
+progress fetching "Refreshing Learn course" 0 0 "cloud handles news; Mac does Learn + Kindle"
 
 # ---- advance the deep-dive course when the reader marked the current part complete (reader-paced) ----
 #      decode_lesson.py only authors the next part if output/lesson-next.flag exists (set by the reels
@@ -67,11 +63,11 @@ if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then
   if git diff --cached --quiet; then
     echo "nothing new to publish this hour"
   else
-    git commit -m "hourly: +trending stories $TODAY $(date '+%H:%M')" >/dev/null
+    git commit -m "mac: Learn/Kindle refresh $TODAY $(date '+%H:%M')" >/dev/null
     git pull --rebase --autostash origin main >/dev/null 2>&1 || true
-    git push origin main && echo "published hourly top-up" || echo "WARN: git publish failed"
+    git push origin main && echo "published Mac maintenance" || echo "WARN: git publish failed"
   fi
 fi
 
-progress done "Up to date" 0 0 "hourly top-up $(date '+%H:%M')" false
-echo "=== hourly top-up finished $(date '+%F %T') ==="
+progress done "Up to date" 0 0 "Learn/Kindle refresh $(date '+%H:%M')" false
+echo "=== mac maintenance finished $(date '+%F %T') ==="
