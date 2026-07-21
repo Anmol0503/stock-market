@@ -38,7 +38,7 @@ LOGS = ROOT / "logs"
 SOCIAL_OUT = ROOT / "social" / "out"
 PORT = 8000
 
-LIVE_REELS = "https://anmol-png.github.io/stock-market/dashboard/reels.json"
+LIVE_REELS = "https://anmol0503.github.io/stock-market/dashboard/reels.json"
 
 # Freshness thresholds (minutes). The pipeline runs ~every 2h while the laptop is awake,
 # so "fresh" is a cycle + buffer; overnight (laptop closed) naturally drifts into "aging".

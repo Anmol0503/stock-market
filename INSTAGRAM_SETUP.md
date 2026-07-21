@@ -106,7 +106,7 @@ Your slides/captions say **"link in bio."** Point it at your public dashboard so
 decoded feed:
 
 - Simplest: paste your GitHub Pages URL directly in the **Website** field:
-  `https://anmol-png.github.io/stock-market/dashboard/reels/`
+  `https://anmol0503.github.io/stock-market/dashboard/reels/`
 - Nicer later: a free **Linktree** / **beacons.ai** page with two buttons ("🌍 Read today's feed",
   "📩 Newsletter") — gives you room for a sponsor/affiliate link when you monetize.
 
