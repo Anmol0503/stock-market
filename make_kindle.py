@@ -266,9 +266,21 @@ def main(argv: list[str]) -> int:
               ".env) — the published EPUB above is ready to download + Send-to-Kindle manually.")
         return 0
 
-    last_seq = 0 if (send_all or force) else int((_load(STATE) or {}).get("last_seq") or 0)
-    to_send = parts if send_all else (parts[-1:] if force else
-                                      [p for p in parts if (p.get("seq") or 0) > last_seq])
+    # ONE complete lesson per calendar day. Parts are authored AHEAD of the reader (a buffer), but the
+    # Kindle should receive just the next unsent one each day — a steady daily read, each its own document.
+    # (--all resends the whole course; --force pushes the newest part right now, bypassing the daily gate.)
+    today = dt.date.today().isoformat()
+    st = _load(STATE) or {}
+    last_seq = int(st.get("last_seq") or 0)
+    if send_all:
+        to_send = parts
+    elif force:
+        to_send = parts[-1:]
+    else:
+        if st.get("last_sent_date") == today:
+            print(f"Kindle already received today's lesson (through seq {last_seq}) — one per day.")
+            return 0
+        to_send = [p for p in parts if (p.get("seq") or 0) > last_seq][:1]   # exactly the NEXT one
     if not to_send:
         print(f"Kindle is up to date (through part seq {last_seq}) — nothing new to e-mail.")
         return 0
@@ -278,10 +290,11 @@ def main(argv: list[str]) -> int:
     else:
         title = f'{subj} — Parts {to_send[0].get("part")}–{to_send[-1].get("part")}'
     epub = build_epub(to_send, title, OUT_DIR / "kindle-learn.epub")
-    print(f"Built {epub.name} ({len(to_send)} new part(s), {epub.stat().st_size//1024} KB)")
+    print(f"Built {epub.name} ({len(to_send)} part(s), {epub.stat().st_size//1024} KB)")
     if send_to_kindle(epub, title):
         STATE.write_text(json.dumps(
             {"last_seq": max(p.get("seq") or 0 for p in to_send),
+             "last_sent_date": today,
              "sent_at": dt.datetime.now().isoformat(timespec="seconds")}, indent=2))
     return 0
 

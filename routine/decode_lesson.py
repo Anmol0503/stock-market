@@ -200,8 +200,12 @@ def main(argv: list[str]) -> int:
     if authored_seq is None:                       # derive on first run / migration
         authored_seq = len(parts)
 
-    completed = (_load(PROGRESS) or {}).get("completed_seq") or 0
-    completed = max(0, min(int(completed), authored_seq))   # clamp to a sane range
+    # "Read" position = the furthest of the reels reader (localhost best-effort) and what the Kindle has
+    # already been e-mailed. Folding in the Kindle keeps authoring one step ahead of the daily Kindle drip,
+    # so a Kindle-only reader (who never taps the reels) still gets a fresh lesson every day, indefinitely.
+    reader = int((_load(PROGRESS) or {}).get("completed_seq") or 0)
+    kindle = int((_load(OUT / "kindle-sent.json") or {}).get("last_seq") or 0)
+    completed = max(0, min(max(reader, kindle), authored_seq))   # clamp to a sane range
 
     # How many parts SHOULD exist: keep AHEAD beyond what the reader finished, plus a +1/day drip
     # (capped at DRIP_CAP beyond the reader so an inactive reader doesn't author the whole syllabus).
