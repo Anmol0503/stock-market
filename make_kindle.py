@@ -177,7 +177,9 @@ def build_epub(parts: list[dict], book_title: str, out_path: pathlib.Path) -> pa
         navpoints.append(f'<navPoint id="nav{idx}" playOrder="{idx}"><navLabel><text>{_esc(ctitle)}</text>'
                          f'</navLabel><content src="{fn}"/></navPoint>')
 
-    uid = f"dailylearn-{dt.date.today().isoformat()}-{parts[0].get('seq','') if parts else ''}"
+    # content-based id (NOT today's date) so an unchanged course rebuilds to identical bytes — avoids a
+    # fresh commit every run.
+    uid = f"dailylearn-{parts[0].get('seq','') if parts else '0'}-{parts[-1].get('seq','') if parts else '0'}"
     opf = ('<?xml version="1.0" encoding="utf-8"?>\n'
            '<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="bookid">'
            '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">'
@@ -195,21 +197,30 @@ def build_epub(parts: list[dict], book_title: str, out_path: pathlib.Path) -> pa
            f'<docTitle><text>{_esc(book_title)}</text></docTitle>'
            f'<navMap>{"".join(navpoints)}</navMap></ncx>')
 
+    # fixed timestamp on every entry → identical content yields byte-identical zips (no timestamp churn).
+    FIXED = (1980, 1, 1, 0, 0, 0)
+
+    def _w(z, name, data, stored=False):
+        zi = zipfile.ZipInfo(name, date_time=FIXED)
+        zi.compress_type = zipfile.ZIP_STORED if stored else zipfile.ZIP_DEFLATED
+        zi.external_attr = 0o644 << 16
+        z.writestr(zi, data)
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile(out_path, "w") as z:
         # mimetype MUST be first and stored (uncompressed)
-        z.writestr("mimetype", "application/epub+zip", compress_type=zipfile.ZIP_STORED)
-        z.writestr("META-INF/container.xml",
-                   '<?xml version="1.0" encoding="utf-8"?>\n'
-                   '<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">'
-                   '<rootfiles><rootfile full-path="OEBPS/content.opf" '
-                   'media-type="application/oebps-package+xml"/></rootfiles></container>')
-        z.writestr("OEBPS/content.opf", opf)
-        z.writestr("OEBPS/toc.ncx", ncx)
-        z.writestr("OEBPS/style.css", CSS)
-        z.writestr("OEBPS/cover.xhtml", cover)
+        _w(z, "mimetype", "application/epub+zip", stored=True)
+        _w(z, "META-INF/container.xml",
+           '<?xml version="1.0" encoding="utf-8"?>\n'
+           '<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">'
+           '<rootfiles><rootfile full-path="OEBPS/content.opf" '
+           'media-type="application/oebps-package+xml"/></rootfiles></container>')
+        _w(z, "OEBPS/content.opf", opf)
+        _w(z, "OEBPS/toc.ncx", ncx)
+        _w(z, "OEBPS/style.css", CSS)
+        _w(z, "OEBPS/cover.xhtml", cover)
         for cid, fn, ctitle, xh in chapters:
-            z.writestr(f"OEBPS/{fn}", xh)
+            _w(z, f"OEBPS/{fn}", xh)
     return out_path
 
 
