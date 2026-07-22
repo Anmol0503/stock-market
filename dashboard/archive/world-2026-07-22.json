@@ -1,9 +1,63 @@
 {
   "date": "2026-07-22",
-  "generated_at": "2026-07-23T01:58:58+05:30",
+  "generated_at": "2026-07-23T03:01:44+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "category": "technology",
+      "published_iso": "2026-07-22T14:00:00Z",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "title": "The US government hands nearly 300 AI science projects to nine national labs \u2014 and Meta's free vision models are already doing the heavy lifting",
+      "key_points": [
+        "The Department of Energy names almost 300 'Genesis Mission' projects across nine national labs",
+        "Berkeley Lab's flagship project, SYNAPS-I, uses Meta's free SAM and DINOv3 AI models to read lab images",
+        "The pipeline compresses a month of manual scientific image-labeling into about 15 minutes",
+        "First target: how grapevines survive drought, using micro-CT scans of plant tissue"
+      ],
+      "background": "The US Department of Energy runs 17 national laboratories that do frontier science \u2014 nuclear physics, materials, biology, climate. A huge amount of that work involves humans manually poring over images from microscopes, X-ray scanners, and telescopes to label what they're looking at, which is slow and expensive. In 2025 the White House announced the 'Genesis Mission,' a push to use artificial intelligence to speed up that bottleneck across the whole national lab system. Meta, better known for Instagram and WhatsApp, has for several years released its AI models for free ('open-weight') rather than locking them up, including a family of vision models called Segment Anything (SAM) and DINOv3.",
+      "what_happened": "The DOE announced awards for nearly 300 Genesis Mission projects spread across national labs including Berkeley, Argonne, Brookhaven, and Oak Ridge. Berkeley Lab is leading a flagship effort called SYNAPS-I, which pairs Meta's DINOv3 (which recognizes what's in an image and roughly where) with SAM (which draws exact pixel-by-pixel outlines around each object) to automatically analyze scientific images. Running across 300 AI chips (Nvidia A100 GPUs) at four labs, the first application analyzes 3D micro-CT scans of grapevines to understand how they respond to drought at a cellular level \u2014 turning roughly a month of manual labeling work into about 15 minutes.",
+      "why_it_matters": "This is a concrete, working example of general-purpose AI tools \u2014 not built for science at all \u2014 being repurposed to remove a real bottleneck in basic research. If a month of expert labor becomes 15 minutes, scientists can run far more experiments and test far more ideas per year, which compounds over time into faster progress on things like drought-resistant crops.",
+      "ripple_effects": "Faster plant-drought research matters directly for food security as climate change makes droughts more frequent and severe. It's also a proof point in the broader AI race: it shows a US strategy of using open, freely available AI models as public scientific infrastructure, rather than each lab building its own from scratch or relying on a paid vendor. Expect other agencies and other countries to point to this as a template, and expect more 'AI + national lab' project announcements to follow across the other 270-plus Genesis Mission awards.",
+      "why_now": "The Genesis Mission was announced in late 2025 as a White House initiative; this week marks the first wave of concrete project awards and the first public technical detail (via Meta's own blog) of how the AI is actually being used in a real lab.",
+      "watch_next": "Watch for results from the grapevine drought study itself, and for similar before/after speed-up numbers to emerge from the other ~270 Genesis Mission projects at the other national labs.",
+      "key_terms": [
+        {
+          "term": "open-weight AI model",
+          "definition": "An AI model whose underlying parameters are published for anyone to download and run, instead of being locked behind a paid company API."
+        },
+        {
+          "term": "micro-CT scan",
+          "definition": "A miniature version of a CT (CAT) scan that produces a detailed 3D image of the internal structure of very small things, like a sliver of plant tissue."
+        }
+      ],
+      "the_lesson": "The same general-purpose AI tool can often be repointed at a completely different problem than the one it was built for \u2014 a model trained to find objects in photos can just as easily find structures in a scientific scan. The biggest AI productivity gains sometimes come not from building a new smarter model, but from finding a slow manual task and simply pointing an existing model at it.",
+      "concepts": [
+        "supply_chain"
+      ],
+      "market_link": "Meta (META) gets a reputational and strategic win for its open-model strategy versus closed rivals like OpenAI and Google; Nvidia (NVDA) benefits as the GPUs (A100s) doing the computation across the national labs.",
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Meta AI Blog",
+          "url": "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/"
+        },
+        {
+          "name": "HPCwire",
+          "url": "https://www.hpcwire.com/2026/07/22/doe-unveils-awards-for-nearly-300-genesis-mission-projects/"
+        },
+        {
+          "name": "Berkeley Lab News Center",
+          "url": "https://newscenter.lbl.gov/2026/07/22/berkeley-lab-to-lead-13-new-genesis-mission-ai-projects/"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-07-23T03:01:44+05:30",
+      "rank": 1
+    },
     {
       "category": "economy",
       "published_iso": "2026-07-21T23:00:00Z",
@@ -52,7 +106,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-23T01:58:58+05:30",
-      "rank": 1
+      "rank": 2
     },
     {
       "category": "geopolitics",
@@ -101,7 +155,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-23T01:58:58+05:30",
-      "rank": 2
+      "rank": 3
     },
     {
       "category": "geopolitics",
@@ -152,7 +206,7 @@
         }
       ],
       "added_at": "2026-07-23T00:59:40+05:30",
-      "rank": 3
+      "rank": 4
     },
     {
       "category": "health",
@@ -202,7 +256,7 @@
         }
       ],
       "added_at": "2026-07-23T00:59:40+05:30",
-      "rank": 4
+      "rank": 5
     },
     {
       "category": "health",
@@ -250,7 +304,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-22T23:57:10+05:30",
-      "rank": 5
+      "rank": 6
     },
     {
       "category": "economy",
@@ -307,7 +361,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-22T23:57:10+05:30",
-      "rank": 6
+      "rank": 7
     },
     {
       "category": "climate",
@@ -354,7 +408,7 @@
         }
       ],
       "added_at": "2026-07-22T22:05:23+05:30",
-      "rank": 7
+      "rank": 8
     },
     {
       "category": "geopolitics",
@@ -419,7 +473,7 @@
         "title": "Trump threatens to hit Iran's underground 'Pickaxe Mountain' site as Tehran strikes three more Gulf allies",
         "date": null
       },
-      "rank": 8
+      "rank": 9
     },
     {
       "category": "climate",
@@ -458,7 +512,7 @@
         }
       ],
       "added_at": "2026-07-22T21:02:26+05:30",
-      "rank": 9
+      "rank": 10
     },
     {
       "category": "geopolitics",
@@ -505,7 +559,7 @@
         }
       ],
       "added_at": "2026-07-22T21:02:26+05:30",
-      "rank": 10
+      "rank": 11
     },
     {
       "region": "global",
@@ -550,7 +604,7 @@
         }
       ],
       "added_at": "2026-07-22T20:01:54+05:30",
-      "rank": 11
+      "rank": 12
     },
     {
       "region": "global",
@@ -594,7 +648,7 @@
         }
       ],
       "added_at": "2026-07-22T20:01:54+05:30",
-      "rank": 12
+      "rank": 13
     },
     {
       "category": "geopolitics",
@@ -645,7 +699,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 13
+      "rank": 14
     },
     {
       "category": "geopolitics",
@@ -701,7 +755,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 14
+      "rank": 15
     },
     {
       "category": "geopolitics",
@@ -755,7 +809,7 @@
         "title": "Ukraine erupts in wartime protests demanding army chief Syrsky be sacked \u2014 Zelensky is already interviewing replacements",
         "date": null
       },
-      "rank": 15
+      "rank": 16
     },
     {
       "category": "geopolitics",
@@ -805,7 +859,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-22T18:02:12+05:30",
-      "rank": 16
+      "rank": 17
     },
     {
       "region": "global",
@@ -855,7 +909,7 @@
         }
       ],
       "added_at": "2026-07-22T17:01:28+05:30",
-      "rank": 17
+      "rank": 18
     },
     {
       "region": "global",
@@ -903,7 +957,7 @@
         }
       ],
       "added_at": "2026-07-22T17:01:28+05:30",
-      "rank": 18
+      "rank": 19
     },
     {
       "region": "global",
@@ -954,57 +1008,100 @@
         }
       ],
       "added_at": "2026-07-22T15:58:41+05:30",
-      "rank": 19
+      "rank": 20
     },
     {
-      "region": "global",
-      "category": "climate",
-      "published_iso": "2026-07-20T12:00:00Z",
+      "category": "india",
+      "published_iso": "2026-07-22T08:00:00+05:30",
       "regions": [
-        "Venezuela",
-        "Latin America"
+        "India"
       ],
-      "title": "Venezuela's earthquake death toll passes 5,000 as the IMF releases emergency aid",
+      "title": "RBI says India's economy is holding up despite the oil-price shock from the US-Iran war",
       "key_points": [
-        "Twin quakes (7.2 and 7.5 magnitude) hit June 24 \u2014 now confirmed dead: over 5,000",
-        "16,700+ injured, tens of thousands still unaccounted for weeks later",
-        "IMF released $346 million in emergency financing from Venezuela's own reserves",
-        "US has sent $300 million in aid plus an Air Force team to fix the damaged main airport"
+        "RBI's July 2026 Bulletin says the economy 'remains resilient' despite global uncertainty",
+        "Credits strong domestic demand plus industrial and services-sector growth",
+        "Says improving liquidity (how easily banks can lend) is supporting credit growth",
+        "Comes the same day Sensex fell for a third straight session on Iran-war oil fears"
       ],
-      "background": "On June 24, 2026, two massive earthquakes struck Venezuela's Caribbean coast near the town of Mor\u00f3n, only 39 seconds apart \u2014 magnitudes 7.2 and 7.5. It was the strongest shaking Venezuela has felt since 1900. The coastal state of La Guaira, next to the capital Caracas, took the worst of it: roughly 80% of its buildings collapsed or were damaged beyond safe use.",
-      "what_happened": "Nearly a month later, the confirmed death toll has passed 5,000, with over 16,700 people injured and tens of thousands still missing \u2014 figures that keep rising as rescuers clear more rubble. The IMF released $346 million to Venezuela by drawing down the country's own reserve position (a fast-access emergency mechanism, not a new loan). The US \u2014 despite years of hostile relations with Caracas \u2014 has committed $300 million and sent a specialized Air Force team to help repair the country's main international airport, alongside search-and-rescue teams and aid from Brazil, Canada, Mexico, Colombia and others.",
-      "why_it_matters": "This is now one of the deadliest natural disasters of the decade, and it's hitting a country whose economy was already fragile after years of US sanctions and hyperinflation. How fast Venezuela can rebuild \u2014 and who is willing to help it do so \u2014 will shape the humanitarian and economic picture there for years.",
-      "ripple_effects": "Reconstruction costs will strain a government budget that has few reserves to spare, likely deepening Venezuela's dependence on external financing. The scale of destruction in La Guaira, a key port state, could disrupt trade and oil-export logistics further. The unusual sight of US aid flowing to Maduro's Venezuela \u2014 normally an adversarial relationship \u2014 is also a small but real thaw worth watching diplomatically.",
-      "why_now": "The story is surfacing again today because the response has shifted from emergency search-and-rescue into the longer, harder phase of the recovery \u2014 measured in aid dollars, rebuilding timelines, and a death toll that is still being finalized.",
-      "watch_next": "Whether the confirmed death toll stabilizes or keeps climbing toward the 10,000 some early models feared, and whether Venezuela accepts a broader package of Western aid given its historically closed-door relationship with the US.",
+      "background": "The Reserve Bank of India (RBI) is India's central bank \u2014 it sets interest rates, manages the rupee, and publishes a monthly Bulletin that gives its own read on how the economy is doing. It's meant as a factual, technical assessment, not a political statement, though markets and the government both watch it closely for the central bank's tone. This assessment lands at a tense moment: the US-Iran war has pushed oil prices to a one-month high, which matters enormously for India because it imports roughly 85% of its crude oil, so pricier oil widens India's import bill, pressures the rupee, and stokes inflation.",
+      "what_happened": "In its July 2026 Bulletin, the RBI said India's economic activity has stayed resilient even as global uncertainty \u2014 geopolitical tension and supply-chain disruption \u2014 has intensified. It pointed to healthy domestic consumer demand and strong industrial and services-sector output as the main supports, and said improving liquidity conditions (banks having more spare cash to lend) is helping sustain credit growth.",
+      "why_it_matters": "This is the RBI's own house view that India's underlying economy is not cracking even as its stock market has been sliding for three straight sessions and the rupee weakens \u2014 a signal that today's market stress may be a sentiment and oil-price story more than a sign of a broken economy. That distinction matters for whether the RBI feels pressure to change interest rates or intervene more aggressively to defend the rupee.",
+      "ripple_effects": "A resilient-economy message can help steady investor nerves in equities and the currency market, but if oil stays elevated because of the Iran war, the RBI's optimism will be tested by rising import costs and inflation in the months ahead. It also gives the government a data point to lean on if it faces questions in Parliament about the economy's health amid the market selloff.",
+      "why_now": "The Bulletin is a routine monthly release, but this edition lands the same day the Sensex extended its losing streak on Iran-war oil fears, sharpening the contrast between the RBI's calmer read and the market's jitters.",
+      "watch_next": "Watch the next RBI Monetary Policy Committee decision and India's upcoming inflation (CPI) print for whether rising oil costs are starting to show up in the numbers the RBI is citing as resilient.",
       "key_terms": [
         {
-          "term": "IMF reserve tranche",
-          "definition": "A portion of a country's own funds held at the IMF that it can draw on quickly in an emergency \u2014 unlike a loan, it doesn't add new debt."
+          "term": "RBI Bulletin",
+          "definition": "A monthly publication from India's central bank giving its official assessment of economic conditions, alongside data and research articles."
         },
         {
-          "term": "Moment magnitude",
-          "definition": "The modern scale scientists use to measure how much energy an earthquake released \u2014 each whole number up is roughly 32 times more powerful."
+          "term": "liquidity",
+          "definition": "How much spare, readily available cash is sloshing around the banking system \u2014 more liquidity generally makes it easier and cheaper for banks to lend."
         }
       ],
-      "the_lesson": "The immediate death toll from a disaster is rarely the final one \u2014 injury, disease, and displacement keep adding to the human cost for weeks, which is why responsible reporting keeps updating the number instead of anchoring to the first headline.",
+      "the_lesson": "A central bank's own economic assessment and a falling stock market can point in different directions at the same time \u2014 markets often react to near-term shocks (like an oil-price spike) while a central bank's Bulletin tends to reflect slower-moving underlying data like factory output and consumer spending.",
       "concepts": [
-        "imf_world_bank"
+        "rbi",
+        "cpi_wpi",
+        "crude_geopolitics"
       ],
-      "market_link": "Limited direct exposure for US/India-focused portfolios, but global reinsurers and catastrophe-bond holders are absorbing a multi-billion-dollar disaster loss, and Venezuela's oil-export capacity (already sanctions-constrained) faces further disruption.",
-      "importance": "critical",
+      "market_link": "A resilient-economy signal from the RBI is a mild positive for Indian equities and the rupee, though it's competing today against oil prices near a one-month high on the US-Iran war.",
+      "importance": "notable",
       "sources": [
         {
-          "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/7/18/venezuela-quake-death-toll-tops-5000-as-imf-releases-emergency-aid"
-        },
-        {
-          "name": "World Vision",
-          "url": "https://www.worldvision.org/disaster-relief-news-stories/venezuela-earthquake-facts"
+          "name": "Business Today",
+          "url": "https://www.businesstoday.in/latest/economy/story/rbi-says-indias-economy-remains-resilient-despite-global-uncertainty-544618-2026-07-22"
         }
       ],
-      "added_at": "2026-07-22T15:58:41+05:30",
-      "rank": 20
+      "region": "india",
+      "added_at": "2026-07-23T03:01:44+05:30",
+      "rank": 21
+    },
+    {
+      "category": "india",
+      "published_iso": "2026-07-22T09:30:00+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "TMC's Kalyan Banerjee suspended from the Lok Sabha for the rest of the Monsoon Session over remarks against a woman MP",
+      "key_points": [
+        "Lok Sabha Speaker Om Birla suspends TMC MP Kalyan Banerjee till the session ends on August 13",
+        "Suspension follows a complaint by an MP over Banerjee's 'unparliamentary language,' including calling a colleague 'chor' (thief)",
+        "Comes amid reports of friction between Banerjee and his own party chief, Mamata Banerjee",
+        "Adds to an already disrupted Monsoon Session already gripped by NEET-leak and Vande Mataram bill rows"
+      ],
+      "background": "India's Parliament runs on a code of conduct enforced by the Speaker (in the Lok Sabha, the lower house) \u2014 MPs who use abusive or 'unparliamentary' language, especially targeting women colleagues, can be suspended for a period the Speaker sets. Kalyan Banerjee is a veteran Trinamool Congress (TMC) MP from West Bengal and one of the party's most vocal, combative speakers in the House. This Monsoon Session (India's Parliament sits roughly three times a year \u2014 Budget, Monsoon, Winter) has already been chaotic, repeatedly adjourned over the NEET medical-entrance paper leak and a bill on insulting the national song, Vande Mataram.",
+      "what_happened": "The Lok Sabha suspended Banerjee for the remainder of the Monsoon Session \u2014 effective until it ends on August 13 \u2014 after a complaint that he had used unparliamentary language, including calling a fellow MP 'chor' and making objectionable remarks directed at women members of the House. The move follows reports of an internal TMC rift, with Banerjee reportedly clashing publicly with party supremo Mamata Banerjee at a recent event.",
+      "why_it_matters": "A suspension removes an elected MP's voice from the House floor for weeks, at a moment when Parliament is meant to be scrutinizing major bills and government spending. It also puts a spotlight on decorum standards in India's Parliament and on cracks within the TMC, one of the key opposition parties, right as national attention is on the government's handling of the NEET protests.",
+      "ripple_effects": "Expect TMC to frame this as a crackdown on opposition voices, layering onto its existing NEET-and-Vande-Mataram grievances, while the ruling side will point to it as simple enforcement of House rules. It also feeds speculation about internal TMC discipline and succession dynamics ahead of West Bengal's next state election cycle.",
+      "why_now": "The suspension was voted through today as the Monsoon Session's disruptions reached a new flashpoint, days after the initial complaint against Banerjee was filed.",
+      "watch_next": "Watch whether TMC leadership publicly backs or distances itself from Banerjee, and whether other MPs face similar suspensions as the session's remaining sittings continue.",
+      "key_terms": [
+        {
+          "term": "unparliamentary language",
+          "definition": "Words or remarks in a legislature that violate the House's rules of decorum \u2014 such as insults or abusive language \u2014 and can be ordered removed from the record or punished with suspension."
+        }
+      ],
+      "the_lesson": "Legislatures police their own members' conduct through the presiding officer's suspension power \u2014 a tool that keeps order but can also be read, depending on who's suspended and when, as either even-handed discipline or a way to silence opposition voices.",
+      "concepts": [
+        "lok_sabha",
+        "parliament_india"
+      ],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "India TV News",
+          "url": "https://www.indiatvnews.com/news/india/tmc-leader-kalyan-banerjee-suspended-from-lok-sabha-for-rest-of-monsoon-session-over-remark-against-woman-mp-latest-updates-2026-07-22-1049035"
+        },
+        {
+          "name": "The Week",
+          "url": "https://www.theweek.in/news/india/2026/07/22/why-was-tmc-mp-kalyan-banerjee-suspended-by-lok-sabha-speaker.amp.html"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-07-23T03:01:44+05:30",
+      "rank": 22
     },
     {
       "category": "india",
@@ -1056,7 +1153,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-23T01:58:58+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "category": "india",
@@ -1094,7 +1191,7 @@
         }
       ],
       "added_at": "2026-07-23T00:59:40+05:30",
-      "rank": 22
+      "rank": 24
     },
     {
       "category": "india",
@@ -1146,7 +1243,7 @@
         }
       ],
       "added_at": "2026-07-23T00:59:40+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "category": "india",
@@ -1192,7 +1289,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-22T23:57:10+05:30",
-      "rank": 24
+      "rank": 26
     },
     {
       "category": "india",
@@ -1246,7 +1343,7 @@
         "title": "Centre signals it's open to talks with Sonam Wangchuk as ministers visit him at Medanta Hospital",
         "date": null
       },
-      "rank": 25
+      "rank": 27
     },
     {
       "category": "india",
@@ -1304,7 +1401,7 @@
         "title": "Parliament's Monsoon Session descends into chaos \u2014 repeatedly adjourned as Opposition demands answers on NEET leak, Ram Mandir donations and the Cockroach protest crackdown",
         "date": null
       },
-      "rank": 26
+      "rank": 28
     },
     {
       "category": "india",
@@ -1348,7 +1445,7 @@
         }
       ],
       "added_at": "2026-07-22T22:05:23+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "category": "india",
@@ -1397,7 +1494,7 @@
         }
       ],
       "added_at": "2026-07-22T21:02:26+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "category": "india",
@@ -1442,7 +1539,7 @@
         }
       ],
       "added_at": "2026-07-22T21:02:26+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "region": "india",
@@ -1488,7 +1585,7 @@
         }
       ],
       "added_at": "2026-07-22T20:01:54+05:30",
-      "rank": 30
+      "rank": 32
     },
     {
       "region": "india",
@@ -1534,7 +1631,7 @@
         }
       ],
       "added_at": "2026-07-22T20:01:54+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "category": "india",
@@ -1581,7 +1678,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1628,7 +1725,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1682,7 +1779,7 @@
         "title": "Sonam Wangchuk shifted to a private Gurugram hospital after Delhi High Court order, as his NEET hunger strike enters its fourth week",
         "date": null
       },
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1727,7 +1824,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-22T18:02:12+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "region": "india",
@@ -1770,7 +1867,7 @@
         }
       ],
       "added_at": "2026-07-22T17:01:28+05:30",
-      "rank": 36
+      "rank": 38
     },
     {
       "region": "india",
@@ -1817,7 +1914,7 @@
         }
       ],
       "added_at": "2026-07-22T17:01:28+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "region": "india",
@@ -1869,109 +1966,47 @@
         }
       ],
       "added_at": "2026-07-22T15:58:41+05:30",
-      "rank": 38
+      "rank": 40
     },
     {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-07-22T10:00:00+05:30",
+      "category": "cricket",
+      "published_iso": "2026-07-22T14:22:15+05:30",
       "regions": [
-        "India",
-        "Tamil Nadu"
+        "West Indies",
+        "Pakistan"
       ],
-      "title": "Modi launches \u20b95,650 crore worth of energy and infrastructure projects in Tamil Nadu's Tiruchirappalli",
+      "title": "West Indies coach Daren Sammy backs injured captain Roston Chase to be fit for the first Pakistan Test",
       "key_points": [
-        "Modi inaugurated/launched projects worth about \u20b95,650 crore in Trichy",
-        "Biggest piece: a \u20b93,700 crore gas pipeline network for Nilgiris and Erode districts",
-        "Also flagged off 5 new trains and 370 km of rural roads",
-        "Visit doubled as an NDA political rally in a state where BJP is historically weak"
+        "Chase has a finger injury that ruled him out of the recent New Zealand ODI series",
+        "Head coach Daren Sammy says he's confident Chase will recover in time",
+        "First Test against Pakistan starts July 25 in Trinidad, with valuable World Test Championship points on the line",
+        "Chase is both West Indies' captain and their main spin-bowling all-rounder, making his fitness a big swing factor"
       ],
-      "background": "Tamil Nadu is run by the DMK, a party that has long kept the BJP at arm's length, making it a state where the central government's infrastructure spending carries an extra political charge ahead of state elections. Modi's government has repeatedly used project launches like this one to build a development narrative in states it doesn't govern.",
-      "what_happened": "Modi inaugurated and laid foundation stones for around \u20b95,650 crore (about $680 million) in projects across Tamil Nadu. The centerpiece is a \u20b93,700 crore City Gas Distribution network for the Nilgiris and Erode districts, which will pipe cooking and industrial gas to nearly 9 lakh (900,000) households and businesses. He also dedicated an Indian Oil lube-blending plant in Chennai to the nation, flagged off five new train services including two Amrit Bharat Express trains, inaugurated 370 km of rural roads under the PM Gram Sadak Yojana, and addressed an NDA political rally.",
-      "why_it_matters": "This is the central government spending real money \u2014 and political capital \u2014 in a state it doesn't control, timed to coincide with a tense Parliament session back in Delhi. The gas pipeline alone will change how nearly a million households and businesses get their fuel.",
-      "ripple_effects": "State-run oil companies BPCL and IOC carry out these projects, so their capex and order books are directly affected. The visit also sets up a familiar tussle: the Centre claims credit for development, while the state government argues its own contribution is being overlooked \u2014 a recurring dynamic in Centre-versus-opposition-ruled-state politics.",
-      "why_now": "The timing lines up with Parliament's contentious Monsoon Session in Delhi, where the NEET paper-leak protests have dominated headlines \u2014 giving Modi a chance to project a development story from outside the capital while that fight continues.",
-      "watch_next": "How DMK and other Tamil Nadu opposition parties respond, and whether the announced projects hit their construction timelines.",
+      "background": "Roston Chase captains West Indies in Test cricket and is also their frontline spin-bowling all-rounder, meaning his absence hurts the team twice over \u2014 in leadership and in the XI's balance. He sustained an injury to his right index finger that kept him out of West Indies' recently finished three-match ODI series against New Zealand. West Indies now host Pakistan for a two-match Test series that counts toward the World Test Championship (WTC) \u2014 a league table run over a two-year cycle where results feed into rankings and eventually a final, and where both these sides currently sit near the bottom.",
+      "what_happened": "Head coach Daren Sammy said he's confident Chase will recover in time for the series-opening Test against Pakistan, which starts July 25 in Trinidad. Chase missed the New Zealand ODIs with swelling in the injured finger, but Sammy said the team's medical staff has a plan to keep him on the field, calling Chase 'a fighter' who won't want to miss Test cricket.",
+      "why_it_matters": "With both West Indies and Pakistan struggling near the bottom of the WTC standings, this series is a rare chance for either side to climb the table, and Chase's fitness directly affects West Indies' chances \u2014 losing their captain and a key all-rounder on the eve of the series would be a serious blow to a side already fighting to be competitive in Test cricket.",
+      "ripple_effects": "If Chase can't play, West Indies would need to hand the captaincy to a stand-in and rebalance their bowling attack without a frontline spinner, likely weakening their chances in conditions that could suit Pakistan's more experienced Test squad, itself led by a returning Babar Azam.",
+      "why_now": "Sammy's comments came just three days before the first Test begins, as the fitness call on Chase needs to be finalized ahead of the squad selection.",
+      "watch_next": "Watch for West Indies' final team confirmation and toss news on July 25 to see whether Chase actually takes the field.",
       "key_terms": [
         {
-          "term": "City Gas Distribution (CGD)",
-          "definition": "A network of pipelines that delivers natural gas directly to homes and businesses for cooking, heating or vehicle fuel, instead of using cylinders or trucked fuel."
-        },
-        {
-          "term": "PM Gram Sadak Yojana",
-          "definition": "A federal scheme that funds all-weather roads connecting rural villages to the wider road network."
+          "term": "World Test Championship (WTC)",
+          "definition": "A league table that ranks Test-playing nations over a roughly two-year cycle based on match results, with the top two meeting in a final."
         }
       ],
-      "the_lesson": "Infrastructure launches by a national government in a state it doesn't politically control usually serve two purposes at once \u2014 genuine development and political messaging \u2014 so it pays to read the economics and the politics of such visits together.",
-      "concepts": [
-        "psu"
-      ],
-      "market_link": "BPCL and IOC (both listed PSUs) are the executing companies for the gas and fuel projects \u2014 watch for capex guidance updates from either.",
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "PM India (Prime Minister's Office)",
-          "url": "https://www.pmindia.gov.in/en/news_updates/pm-inaugurates-dedicates-to-the-nation-lays-the-foundation-stone-and-flags-off-multiple-development-projects-worth-around-%E2%82%B95650-crore-in-tiruchirappalli-tamil-nadu/"
-        }
-      ],
-      "added_at": "2026-07-22T15:58:41+05:30",
-      "rank": 39
-    },
-    {
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-07-22T11:00:00+05:30",
-      "regions": [
-        "India",
-        "Maharashtra"
-      ],
-      "title": "Supreme Court refuses to block 6 Shiv Sena (UBT) MPs' merger into Shinde's party \u2014 but agrees to hear the challenge",
-      "key_points": [
-        "Shiv Sena (UBT) asked the Supreme Court to block the Speaker's recognition of 6 of its Lok Sabha MPs merging into Eknath Shinde's rival Shiv Sena",
-        "The Court declined to stay the Speaker's decision but issued notice, with the next hearing in two weeks",
-        "The merger cut Shiv Sena (UBT)'s Lok Sabha strength to just 3 MPs",
-        "It's the same anti-defection-law fight now playing out for TMC too, this time reaching the Lok Sabha instead of a state assembly"
-      ],
-      "background": "The Shiv Sena split in 2022, when Eknath Shinde broke away from Uddhav Thackeray's Shiv Sena with a large group of legislators; the Election Commission later recognized Shinde's faction as the 'real' Shiv Sena, keeping the party's name and bow-and-arrow symbol, while Thackeray's remnant became known as Shiv Sena (UBT). The two sides have been locked in overlapping legal and political battles ever since, mostly over state assembly seats \u2014 this new fight is about Lok Sabha MPs instead.",
-      "what_happened": "On 18 July, Lok Sabha Speaker Om Birla approved the merger of six Shiv Sena (UBT) MPs \u2014 Sanjay Deshmukh, Sanjay Bandu Jadhav, Sanjay Dina Patil, Nagesh Patil-Ashtikar, Omprakash Rajenimbalkar and Bhausaheb Wakchaure \u2014 into Eknath Shinde's Shiv Sena. UBT, through leader Arvind Sawant, challenged that decision in the Supreme Court, arguing the six were elected on the UBT ticket and that the Speaker had no basis to recognize a 'merger' of just six individuals into a rival party. A bench of Justices P.S. Narasimha and Alok Aradhe declined to pause the Speaker's decision but issued formal notice to the Speaker's office and the six MPs, directing them to respond, with the case returning in about two weeks.",
-      "why_it_matters": "This tests, at the national level, the same anti-defection-law question already reshaping Maharashtra's state politics: can a Speaker effectively legalize a group of defections by simply calling it a 'merger'? A loss for UBT would shrink Uddhav Thackeray's national footprint to just 3 Lok Sabha MPs and set a precedent other parties \u2014 and Speakers \u2014 could point to elsewhere.",
-      "ripple_effects": "A win for Shinde's side strengthens the BJP-led alliance both in Maharashtra and in Delhi, weakens UBT's leverage inside the opposition INDIA bloc, and keeps a legal precedent alive that could be cited in other, similar disputes playing out this same week \u2014 including the ongoing TMC-versus-NCPI fight in the Lok Sabha.",
-      "why_now": "UBT moved court within days of the Speaker's 18 July approval, right as the Monsoon Session began, and the Supreme Court heard the plea within 24 hours \u2014 making this fast-moving, live litigation rather than old news.",
-      "watch_next": "The counter-affidavits due from the Speaker's office and the six MPs, and the next hearing in roughly two weeks, which could determine whether the Court ultimately upholds or overturns the Speaker's merger recognition.",
-      "key_terms": [
-        {
-          "term": "anti-defection law",
-          "definition": "A constitutional rule that normally disqualifies a lawmaker who switches parties, with an exception if enough of the original party's members merge together at once."
-        },
-        {
-          "term": "interim stay",
-          "definition": "A court order pausing an action while it considers the full case \u2014 the Court here declined to grant one, meaning the merger stands for now."
-        },
-        {
-          "term": "Mahayuti",
-          "definition": "The ruling alliance in Maharashtra state made up of Eknath Shinde's Shiv Sena, the BJP, and a faction of the NCP."
-        }
-      ],
-      "the_lesson": "Anti-defection law was written to stop individual lawmakers from switching sides for personal gain, but its 'merger' exception can become a loophole when enough members move together \u2014 the same legal mechanism keeps resurfacing across different parties and states because the underlying incentive never goes away.",
-      "concepts": [
-        "lok_sabha",
-        "supreme_court_india",
-        "state_vs_centre"
-      ],
+      "the_lesson": "In cricket, a single player who combines two roles \u2014 like captain and frontline spinner \u2014 creates a single point of failure: their fitness alone can swing a team's balance far more than an ordinary player's would.",
+      "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "Free Press Journal",
-          "url": "https://www.freepressjournal.in/mumbai/setback-for-uddhav-thackeray-as-sc-refuses-to-stay-speaker-om-birlas-decision-on-merger-of-6-sena-ubt-mps-into-shinde-sena"
-        },
-        {
-          "name": "LiveLaw",
-          "url": "https://www.livelaw.in/top-stories/shiv-sena-ubt-supreme-court-lok-sabha-merger-6-mps-eknath-shinde-542132"
+          "name": "IANS via ianslive.in",
+          "url": "https://ianslive.in/sammy-confident-of-skipper-chase-being-fit-for-west-indies-first-test-against-pakistan--20260722142215"
         }
       ],
-      "region": "india",
-      "added_at": "2026-07-22T15:08:31+05:30"
+      "region": "cricket",
+      "added_at": "2026-07-23T03:01:44+05:30",
+      "rank": 41
     },
     {
       "category": "cricket",
@@ -2014,7 +2049,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-23T01:58:58+05:30",
-      "rank": 41
+      "rank": 42
     },
     {
       "category": "cricket",
@@ -2052,7 +2087,7 @@
         }
       ],
       "added_at": "2026-07-23T00:59:40+05:30",
-      "rank": 42
+      "rank": 43
     },
     {
       "category": "cricket",
@@ -2087,7 +2122,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T23:57:10+05:30",
-      "rank": 43
+      "rank": 44
     },
     {
       "category": "cricket",
@@ -2121,7 +2156,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T23:57:10+05:30",
-      "rank": 44
+      "rank": 45
     },
     {
       "category": "cricket",
@@ -2164,7 +2199,7 @@
         }
       ],
       "added_at": "2026-07-22T21:02:26+05:30",
-      "rank": 45
+      "rank": 46
     },
     {
       "region": "cricket",
@@ -2202,7 +2237,7 @@
         }
       ],
       "added_at": "2026-07-22T20:01:54+05:30",
-      "rank": 46
+      "rank": 47
     },
     {
       "category": "cricket",
@@ -2250,7 +2285,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 47
+      "rank": 48
     },
     {
       "category": "cricket",
@@ -2293,10 +2328,10 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T19:02:14+05:30",
-      "rank": 48
+      "rank": 49
     },
     {
-      "rank": 49,
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-07-21T18:00:00+05:30",
       "regions": [
@@ -2346,7 +2381,7 @@
       "added_at": "2026-07-22T15:08:31+05:30"
     },
     {
-      "rank": 50,
+      "rank": 51,
       "category": "cricket",
       "published_iso": "2026-07-21T21:00:00Z",
       "regions": [
@@ -2428,7 +2463,7 @@
         }
       ],
       "added_at": "2026-07-22T14:03:13+05:30",
-      "rank": 51
+      "rank": 52
     },
     {
       "region": "cricket",
@@ -2481,7 +2516,7 @@
         "title": "Babar Azam marks his return as Pakistan Test captain with a century in the West Indies tour warm-up",
         "date": null
       },
-      "rank": 52
+      "rank": 53
     },
     {
       "category": "cricket",
@@ -2526,7 +2561,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T12:02:41+05:30",
-      "rank": 53
+      "rank": 54
     },
     {
       "category": "cricket",
@@ -2570,7 +2605,7 @@
         }
       ],
       "added_at": "2026-07-22T11:02:12+05:30",
-      "rank": 54
+      "rank": 55
     },
     {
       "category": "cricket",
@@ -2615,7 +2650,7 @@
         "title": "Rohit Sharma shuts down retirement talk \u2014 his focus stays on India and the 2027 World Cup",
         "date": null
       },
-      "rank": 55
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2650,7 +2685,7 @@
         }
       ],
       "added_at": "2026-07-22T07:00:34+05:30",
-      "rank": 56
+      "rank": 57
     },
     {
       "category": "cricket",
@@ -2693,10 +2728,10 @@
         }
       ],
       "added_at": "2026-07-22T07:00:34+05:30",
-      "rank": 57
+      "rank": 58
     },
     {
-      "rank": 58,
+      "rank": 59,
       "category": "cricket",
       "published_iso": "2026-07-21T11:00:00+00:00",
       "regions": [
@@ -2730,7 +2765,7 @@
       "added_at": "2026-07-22T05:00:21+05:30"
     },
     {
-      "rank": 59,
+      "rank": 60,
       "category": "cricket",
       "published_iso": "2026-07-21T13:00:00+00:00",
       "regions": [
@@ -2766,44 +2801,6 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-22T05:00:21+05:30"
-    },
-    {
-      "category": "cricket",
-      "published_iso": "2026-07-21T17:15:00Z",
-      "regions": [
-        "Sri Lanka"
-      ],
-      "title": "Kandy Royals thump Dambulla Sixers by 43 runs in the Lanka Premier League, led by Hasaranga's side bouncing back from an opening loss",
-      "key_points": [
-        "Kandy Royals posted 194/6, Dambulla Sixers fell short at 151/8",
-        "6th match of LPL 2026, played at Rangiri Dambulla International Stadium",
-        "Kandy, captained by Wanindu Hasaranga, avenge their tournament-opening loss to the same side",
-        "Dambulla, captained by Dinesh Chandimal, drop to a losing head-to-head record this LPL"
-      ],
-      "background": "The Lanka Premier League (LPL) is Sri Lanka's Twenty20 franchise cricket tournament, now in its 2026 edition. Kandy Royals and Dambulla Sixers had already met once this tournament, on July 18, when Dambulla won by 18 runs behind an unbeaten 87 from Reeza Hendricks.",
-      "what_happened": "Kandy Royals scored 194 for 6 in their 20 overs and bowled Dambulla Sixers out for 151 for 8 in reply, winning the rematch by 43 runs at the Rangiri Dambulla International Stadium.",
-      "why_it_matters": "It's a statement bounce-back for Kandy Royals after losing the tournament opener to the same opponent, and reshuffles the early LPL 2026 table as the league phase continues.",
-      "ripple_effects": "The result affects both teams' net run rate and standings heading into the rest of the LPL league phase, with knock-on implications for who qualifies for the playoffs.",
-      "why_now": "This was a scheduled league match, played today as part of the ongoing LPL 2026 season.",
-      "watch_next": "How Kandy Royals build on this win as the LPL 2026 league phase continues.",
-      "key_terms": [],
-      "the_lesson": "In short-format tournaments like T20 leagues, a single bad night rarely defines a team \u2014 the head-to-head record between two sides can flip within days.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "ESPNcricinfo",
-          "url": "https://www.espncricinfo.com/series/lanka-premier-league-2026-1537330/dambulla-sixers-vs-kandy-royals-6th-match-1537336/full-scorecard"
-        },
-        {
-          "name": "ThePapare",
-          "url": "https://www.thepapare.com/dambulla-sixers-vs-kandy-royals-lanka-premier-league-2026-match-2-report"
-        }
-      ],
-      "region": "cricket",
-      "added_at": "2026-07-22T04:01:13+05:30",
-      "rank": 60
     },
     {
       "category": "f1",
