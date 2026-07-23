@@ -7,7 +7,7 @@
  *   - icons (*.png)                  -> cache-first (they don't change between versions).
  * Bump CACHE whenever this file changes so old caches are purged on activate.
  */
-const CACHE = "reels-v13";   // bump on any UI change → activate purges the old cache so stale pages can't linger
+const CACHE = "reels-v14";   // bump on any UI change → activate purges the old cache so stale pages can't linger
 const SHELL = ["./", "./index.html", "./manifest.json", "../glossary.js",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 

@@ -94,6 +94,24 @@
   .cover .chips,.cover .meta,.divider .chips{justify-content:center}
   .scrollcue{font-size:12.5px;font-weight:600;color:var(--dim);animation:bob 1.7s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(5px);opacity:1}}
+  /* ---- landing animation: ONLY the card you're on (.inview) animates → battery-friendly. GPU-only
+     props (transform/opacity/filter) so it never reflows. Ken Burns slow-zoom on the photo, blur-up as
+     it loads, and a staggered rise-in of the text as you settle on the card. ---- */
+  @keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+  @keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .cardimg{transform:scale(1.04);transform-origin:50% 32%;opacity:0;filter:blur(12px);
+    transition:opacity .7s ease,filter .8s ease}
+  .cardimg.loaded{opacity:1;filter:blur(0)}                 /* blur-up: JS/onload flips this when the photo lands */
+  .card.inview .cardimg{animation:kenburns 20s ease-out forwards}
+  .card.inview>*{animation:riseIn .55s cubic-bezier(.22,.61,.36,1) both}
+  .card.inview>*:nth-child(2){animation-delay:.05s}
+  .card.inview>*:nth-child(3){animation-delay:.11s}
+  .card.inview>*:nth-child(4){animation-delay:.17s}
+  .card.inview>*:nth-child(n+5){animation-delay:.23s}
+  @media (prefers-reduced-motion:reduce){
+    .cardimg{opacity:1;filter:none;transform:none;transition:none}
+    .card.inview .cardimg,.card.inview>*{animation:none}
+  }
   .divider .t{font-family:var(--round);font-weight:800;font-size:26px;letter-spacing:.01em}
   .divider .sub{font-size:14px;color:var(--dim);margin-top:8px;line-height:1.5}
   .bigemoji{font-size:56px;line-height:1}
@@ -213,7 +231,8 @@
   .cred-developing{background:rgba(245,185,66,.16);color:#f5b942}
   .cred-single{background:rgba(150,155,165,.16);color:#9aa3ad}
   .sheetimg-wrap{margin:0 0 10px;position:relative;width:100%;border-radius:16px;overflow:hidden;
-    aspect-ratio:3/2;background:#14141a;box-shadow:0 6px 20px rgba(0,0,0,.34)}
+    aspect-ratio:3/2;background:#14141a;box-shadow:0 6px 20px rgba(0,0,0,.34);
+    animation:riseIn .5s cubic-bezier(.22,.61,.36,1) both}
   .sheetimg-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
     background:linear-gradient(to top,rgba(0,0,0,.32) 0%,rgba(0,0,0,0) 24%)}
@@ -593,7 +612,7 @@ const storySummary = c => c.what_happened || (c.key_points || []).join(' ') || c
 function storyImg(c){
   if(!c.image) return '';
   return `<figure class="cardimg-wrap"><img class="cardimg" loading="lazy" alt="" src="${esc(c.image)}" `
-    + `onerror="this.closest('.cardimg-wrap').remove()">`
+    + `onload="this.classList.add('loaded')" onerror="this.closest('.cardimg-wrap').remove()">`
     + (c.image_credit?`<figcaption class="imgcredit">${esc(c.image_credit)}</figcaption>`:'') + `</figure>`;
 }
 // credibility chip — how well corroborated the story is across outlets (full explanation in credSec)
@@ -810,6 +829,10 @@ function render(){
     es.forEach(e=>{ if(e.isIntersecting){
       const i = +e.target.dataset.i;
       segs.forEach((s,j)=>{ s.className = j<i?'done':(j===i?'on':''); });
+      // tag the card you've landed on so its entrance + Ken Burns animation plays (and re-plays on return);
+      // clearing the others guarantees only one card ever animates at a time.
+      deck.querySelectorAll('.card.inview').forEach(c=>{ if(c!==e.target) c.classList.remove('inview'); });
+      e.target.classList.add('inview');
     }});
   },{rootMargin:'-45% 0px -45% 0px', threshold:0});
   [...deck.children].forEach(el=>io.observe(el));
