@@ -238,11 +238,11 @@ def main(argv: list[str]) -> int:
         pg.set_progress("failed", "Lesson generation failed", 0, 0, "", active=False)
         return 1
 
-    pg.set_progress("publishing", "Publishing today's lesson", 1, 1, f"{authored_seq} parts")
-    try:
-        build_dashboard.main()
-    except SystemExit:
-        pass   # build exits non-zero only if NO briefs exist yet; the catalog is already written
+    # Deliberately DO NOT rebuild the news dashboard here. The reels Learn tab reads dashboard/lessons.json
+    # directly (client-side), so writing the catalog above is all that's needed. Calling build_dashboard
+    # would rewrite the cloud-owned news files (world/reels/status/news-*) from this Mac's local data and
+    # collide with the cloud's hourly pushes on git rebase.
+    pg.set_progress("publishing", "Lesson published", 1, 1, f"{authored_seq} parts", active=False)
     print(f"lesson: authored {made} new part(s) this subject → {authored_seq} total", flush=True)
     return 0
 

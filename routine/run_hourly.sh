@@ -58,14 +58,24 @@ fi
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true
 
 # ---- publish (best-effort) ----
+# Publish ONLY the Mac-owned lesson artifacts (the catalog + the Kindle EPUB). Everything else under
+# dashboard/ (news, status, reels) is the CLOUD's — committing our local copies would collide with the
+# cloud's hourly pushes on rebase. So we stage just these two, then discard any other working-tree changes
+# before rebasing, guaranteeing a conflict-free fast-forward.
 if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then
-  git add -A >/dev/null 2>&1
+  git add dashboard/lessons.json dashboard/learn-course.epub >/dev/null 2>&1
   if git diff --cached --quiet; then
     echo "nothing new to publish this hour"
+    git checkout -- . >/dev/null 2>&1 || true          # drop stray regenerated files, keep tree clean
   else
     git commit -m "mac: Learn/Kindle refresh $TODAY $(date '+%H:%M')" >/dev/null
-    git pull --rebase --autostash origin main >/dev/null 2>&1 || true
-    git push origin main && echo "published Mac maintenance" || echo "WARN: git publish failed"
+    git checkout -- . >/dev/null 2>&1 || true          # discard cloud-owned files we may have touched
+    if git pull --rebase origin main >/dev/null 2>&1; then
+      git push origin main && echo "published Mac maintenance" || echo "WARN: git push failed"
+    else
+      git rebase --abort >/dev/null 2>&1 || true        # never leave a half-finished rebase behind
+      echo "WARN: rebase failed — skipped publish this tick"
+    fi
   fi
 fi
 

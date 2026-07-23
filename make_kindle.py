@@ -311,7 +311,7 @@ def main(argv: list[str]) -> int:
     ok_any = False
     for slug, ps in to_send:
         stitle = ps[0].get("subject_title") or "Lesson"
-        title = f'{ps[0].get("emoji","")} {stitle} — complete ({len(ps)} parts)'.strip()
+        title = f'{stitle} — Complete Course'      # clean, proper name for the Kindle library (no emoji clutter)
         epub = build_epub(ps, title, OUT_DIR / "kindle-learn.epub")
         print(f"Built '{stitle}' — {len(ps)} parts, {epub.stat().st_size//1024} KB")
         if send_to_kindle(epub, title):
