@@ -57,13 +57,18 @@ fi
 # ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true
 
+# ---- resolve news lead-images into the committed cache (THIS laptop has network; the cloud sandbox that
+#      publishes the news can't reach article hosts to read og:image). The cloud then attaches them for free.
+"$PY" routine/resolve_images.py || echo "WARN: image resolve failed"
+
 # ---- publish (best-effort) ----
-# Publish ONLY the Mac-owned lesson artifacts (the catalog + the Kindle EPUB). Everything else under
-# dashboard/ (news, status, reels) is the CLOUD's — committing our local copies would collide with the
-# cloud's hourly pushes on rebase. So we stage just these two, then discard any other working-tree changes
-# before rebasing, guaranteeing a conflict-free fast-forward.
+# Publish ONLY the Mac-owned files: the lesson artifacts + the image cache the cloud can't build itself.
+# Everything else under dashboard/ (news, status, reels) is the CLOUD's — committing our local copies would
+# collide with its hourly pushes on rebase. So we stage just these, then discard any other working-tree
+# changes before rebasing, guaranteeing a conflict-free fast-forward. (image-cache.json is Mac-written only,
+# so the cloud never conflicts on it.)
 if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then
-  git add dashboard/lessons.json dashboard/learn-course.epub >/dev/null 2>&1
+  git add dashboard/lessons.json dashboard/learn-course.epub dashboard/image-cache.json >/dev/null 2>&1
   if git diff --cached --quiet; then
     echo "nothing new to publish this hour"
     git checkout -- . >/dev/null 2>&1 || true          # drop stray regenerated files, keep tree clean

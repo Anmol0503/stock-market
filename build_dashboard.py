@@ -374,11 +374,10 @@ def build_reels() -> int:
     try:
         import media as _media
         _raw_index = _media.build_raw_index(ROOT / "output" / "world-raw-latest.json")
-        _img_cache = _media._load(_media.CACHE_PATH)
+        _img_cache = _media.load_cache()      # committed cache the Mac populated (works on the cloud too)
     except Exception as _e:  # noqa: BLE001
         _media, _raw_index, _img_cache = None, [], {}
         print(f"  · media enrichment unavailable ({_e})", file=sys.stderr)
-    _fetched, _FETCH_CAP = 0, 30      # bound og:image fetches per build (cache makes later builds instant)
 
     # -- world stories, already ranked/curated by the analyst (no cover — first swipe IS the top story)
     now = dt.datetime.now(IST)
@@ -388,11 +387,9 @@ def build_reels() -> int:
         added_min = _minutes_since(s.get("added_at"), now)   # None unless the hourly just added it
         if _media:
             try:
-                _purl = (s.get("sources") or [{}])[0].get("url")
-                _new_fetch = bool(_purl) and _purl not in _img_cache
-                _media.enrich(s, _raw_index, _img_cache, fetch_ok=(_fetched < _FETCH_CAP))
-                if _new_fetch:
-                    _fetched += 1
+                # never live-fetch here (the cloud can't, and it would slow the build) — read the committed
+                # cache + any RSS feed image. routine/resolve_images.py (Mac) keeps the cache stocked.
+                _media.enrich(s, _raw_index, _img_cache, fetch_ok=False)
             except Exception:  # noqa: BLE001 - media must never break the deck
                 pass
         story_cards.append({
@@ -417,11 +414,6 @@ def build_reels() -> int:
                 "background", "why_it_matters", "ripple_effects", "why_now",
                 "watch_next", "market_link", "key_terms", "sources")},
         })
-    if _media and _img_cache:
-        try:
-            _media.CACHE_PATH.write_text(json.dumps(_img_cache))
-        except Exception:  # noqa: BLE001
-            pass
 
     # Archive EVERYTHING first (nothing is lost), then build a FRESH, de-duped live feed per region:
     # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never

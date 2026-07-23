@@ -20,7 +20,10 @@ import re
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CACHE_PATH = ROOT / "output" / "image-cache.json"     # {source_url: image_url_or_""} — gitignored
+# The image cache is COMMITTED (a plain {source_url: image_url} map — no secrets) so the cloud, which can't
+# reach arbitrary article hosts to read og:image, can still attach images the Mac resolved. Only the Mac
+# writes it (routine/resolve_images.py); build_reels everywhere just READS it.
+CACHE_PATH = ROOT / "dashboard" / "image-cache.json"
 UA = "Mozilla/5.0 (compatible; DailyIntel/1.0; +https://anmol0503.github.io/stock-market)"
 
 _STOP = {"the", "a", "an", "of", "to", "in", "on", "and", "for", "is", "are", "as", "at", "by", "with",
@@ -103,6 +106,35 @@ def build_raw_index(raw_path: pathlib.Path) -> list[tuple]:
     return [(sig(h.get("headline")), h) for h in heads]
 
 
+def load_cache() -> dict:
+    """The committed {source_url: image_url} map that build_reels reads on every machine."""
+    return _load(CACHE_PATH)
+
+
+def resolve_all(world_path: pathlib.Path, cap: int = 40) -> tuple:
+    """Mac-side: fetch og:image for the current stories' primary sources into the COMMITTED cache.
+
+    The Mac has real network; the cloud sandbox doesn't, so it just reads what we resolve here. Only fetches
+    URLs not already cached (bounded by `cap`). Returns (total_cached, newly_resolved)."""
+    stories = (_load(pathlib.Path(world_path)).get("stories") or [])
+    cache = _load(CACHE_PATH)
+    new = 0
+    for st in stories:
+        srcs = st.get("sources") or []
+        url = (srcs[0] if srcs else {}).get("url")
+        if url and url not in cache:
+            if new >= cap:
+                break
+            og_image(url, cache)
+            new += 1
+    if new:
+        try:
+            CACHE_PATH.write_text(json.dumps(cache, indent=0, ensure_ascii=False))
+        except OSError:
+            pass
+    return len(cache), new
+
+
 def enrich(story: dict, raw_index: list[tuple], cache: dict, *, fetch_ok: bool = True) -> dict:
     """Attach `image`, `image_credit`, `credibility` to one story dict (in place). Returns the story."""
     srcs = story.get("sources") or []
@@ -118,10 +150,14 @@ def enrich(story: dict, raw_index: list[tuple], cache: dict, *, fetch_ok: bool =
                 best, matched = j, item
     matched = matched if best >= 0.35 else None
 
-    # image: feed image → article og:image (fallback). URL only; never downloaded.
+    # image: feed image → committed cache → live og:image (only where there's network). URL only.
     img = (matched or {}).get("image") or ""
-    if not img and fetch_ok and primary.get("url"):
-        img = og_image(primary["url"], cache)
+    purl = primary.get("url")
+    if not img and purl:
+        if purl in cache:
+            img = cache[purl] or ""               # what the Mac already resolved (works on the cloud too)
+        elif fetch_ok:
+            img = og_image(purl, cache)           # live fetch — succeeds on the Mac, no-ops on the cloud
     story["image"] = img or None
     story["image_credit"] = primary.get("name") or (matched or {}).get("source")
 
