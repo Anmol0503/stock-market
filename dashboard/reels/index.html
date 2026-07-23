@@ -104,10 +104,13 @@
      scale on the in-view card only. */
   .cardimg{transform:scale(1.05);transform-origin:50% 32%;opacity:0;transition:opacity .5s ease}
   .cardimg.loaded{opacity:1}
-  .card.inview .cardimg{animation:kenburns 22s ease-out forwards}
-  /* Text rises in ONCE as you land. The image wrapper is excluded, so the photo never shifts while the card
-     snaps into place. `.inview` is added once and NEVER removed (see the observer), so scrolling back never
-     re-triggers the entrance → the scroll stays perfectly smooth. */
+  /* Ken Burns is ASSIGNED to every landed card but PAUSED; only the current card (.active) runs it, so at
+     most one transform animation ever ticks. Pausing (not removing) means returning to a card resumes the
+     zoom instead of restarting it — no jank, no jump. */
+  .card.inview .cardimg{animation:kenburns 24s ease-out both;animation-play-state:paused}
+  .card.active .cardimg{animation-play-state:running}
+  /* Text rises in ONCE when the scroll settles (never during the scroll). The image wrapper is excluded so
+     the photo never shifts. `.inview` is added a single time, so scrolling back never re-triggers it. */
   .card.inview>*:not(.cardimg-wrap){animation:riseIn .5s cubic-bezier(.22,.61,.36,1) both}
   .card.inview>*:nth-child(3){animation-delay:.06s}
   .card.inview>*:nth-child(4){animation-delay:.12s}
@@ -828,18 +831,33 @@ function render(){
   const prog = document.getElementById('progress');
   prog.innerHTML = cards.map((_,i)=>`<i data-i="${i}"></i>`).join('');
   const segs = [...prog.children];
-  // "on" = the card crossing the vertical middle → the progress segment tracks which reel you're on
+  // "on" = the card crossing the vertical middle → the progress segment tracks which reel you're on.
+  // The observer ONLY updates progress dots (must stay live during scroll); it never animates.
+  let curIdx = 0;
   const io = new IntersectionObserver(es=>{
     es.forEach(e=>{ if(e.isIntersecting){
-      const i = +e.target.dataset.i;
-      segs.forEach((s,j)=>{ s.className = j<i?'done':(j===i?'on':''); });
-      // tag the card once so its entrance + Ken Burns plays a SINGLE time. We never remove it: re-adding an
-      // existing class can't restart a CSS animation, so scrolling back and forth stays butter-smooth (no
-      // re-trigger, no content flashing). Completed animations cost nothing, so leaving the class is free.
-      e.target.classList.add('inview');
+      curIdx = +e.target.dataset.i;
+      segs.forEach((s,j)=>{ s.className = j<curIdx?'done':(j===curIdx?'on':''); });
     }});
   },{rootMargin:'-45% 0px -45% 0px', threshold:0});
   [...deck.children].forEach(el=>io.observe(el));
+
+  // Animations fire ONLY when the scroll SETTLES — never mid-scroll — so the scroll stays perfectly pure.
+  // `inview` (added once) plays the one-time entrance; `active` (only ever on the current card) is the sole
+  // card whose Ken Burns ticks (paused→running via play-state, so returning resumes without a restart).
+  // `scrollend` is the native "scroll stopped" signal; the debounced timer is the fallback for browsers
+  // without it. Property assignment (not addEventListener) means re-renders can't stack duplicate handlers.
+  let settleT;
+  const onSettle = ()=>{
+    const best = deck.children[curIdx];
+    if(!best) return;
+    best.classList.add('inview');
+    const cur = deck.querySelector('.card.active');
+    if(cur !== best){ if(cur) cur.classList.remove('active'); best.classList.add('active'); }
+  };
+  deck.onscroll = ()=>{ clearTimeout(settleT); settleT = setTimeout(onSettle, 90); };
+  deck.onscrollend = onSettle;
+  onSettle();          // light up the first card on load
   paintFresh();
 }
 
