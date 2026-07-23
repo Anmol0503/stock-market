@@ -193,21 +193,31 @@
   /* the news card face: the FULL headline, shown in full (no clamp) — nothing else competes for space */
   h1.headline{font-size:clamp(21px,5.4vw,27px);line-height:1.34;font-weight:800;letter-spacing:-.3px;
     overflow-wrap:break-word;word-break:normal}
-  /* news lead image on the reel face — capped so headline + meta + button still fit one screen */
-  .cardimg-wrap{margin:0;position:relative;width:100%;max-width:540px;border-radius:16px;overflow:hidden;
-    aspect-ratio:16/9;max-height:34vh;background:#17171c;box-shadow:0 6px 22px rgba(0,0,0,.35)}
-  .cardimg{width:100%;height:100%;object-fit:cover;display:block}
-  .imgcredit{position:absolute;bottom:0;right:0;font-size:10px;padding:2px 7px;color:#e6e6ea;
-    background:rgba(0,0,0,.55);border-top-left-radius:8px;letter-spacing:.02em}
+  /* news lead image on the reel face — 3:2 (classic photo ratio) shows far more of the shot than a
+     16:9 letterbox; object-position biases up because news subjects sit in the upper-middle. Capped by
+     max-height so headline + meta + button still fit one screen. */
+  .cardimg-wrap{margin:0 0 2px;position:relative;width:100%;max-width:540px;border-radius:18px;overflow:hidden;
+    aspect-ratio:3/2;max-height:42vh;background:#14141a;box-shadow:0 8px 26px rgba(0,0,0,.42);
+    -webkit-mask-image:-webkit-radial-gradient(#fff,#000)}
+  .cardimg-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);
+    background:linear-gradient(to top,rgba(0,0,0,.34) 0%,rgba(0,0,0,0) 26%)}
+  .cardimg{width:100%;height:100%;object-fit:cover;object-position:50% 32%;display:block}
+  .imgcredit{position:absolute;bottom:7px;right:8px;font-size:10px;padding:2.5px 8px;color:#eef0f4;z-index:1;
+    background:rgba(20,20,26,.42);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    border-radius:99px;letter-spacing:.02em;font-weight:600}
   /* credibility chip (reel face) + verdict block (detail sheet) */
   .cred{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;
     padding:3px 9px;border-radius:99px;white-space:nowrap}
   .cred-confirmed{background:rgba(63,185,80,.16);color:#3fb950}
   .cred-developing{background:rgba(245,185,66,.16);color:#f5b942}
   .cred-single{background:rgba(150,155,165,.16);color:#9aa3ad}
-  .sheetimg-wrap{margin:0 0 4px;position:relative;width:100%;border-radius:14px;overflow:hidden;
-    aspect-ratio:16/9;background:#17171c}
-  .sheetimg{width:100%;height:100%;object-fit:cover;display:block}
+  .sheetimg-wrap{margin:0 0 10px;position:relative;width:100%;border-radius:16px;overflow:hidden;
+    aspect-ratio:3/2;background:#14141a;box-shadow:0 6px 20px rgba(0,0,0,.34)}
+  .sheetimg-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+    background:linear-gradient(to top,rgba(0,0,0,.32) 0%,rgba(0,0,0,0) 24%)}
+  .sheetimg{width:100%;height:100%;object-fit:cover;object-position:50% 32%;display:block}
   .credverdict{font-weight:800;font-size:15px;margin:2px 0 4px}
   .credverdict.cred-confirmed{color:#3fb950}.credverdict.cred-developing{color:#f5b942}
   .credverdict.cred-single{color:#9aa3ad}
