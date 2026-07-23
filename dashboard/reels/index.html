@@ -193,6 +193,26 @@
   /* the news card face: the FULL headline, shown in full (no clamp) — nothing else competes for space */
   h1.headline{font-size:clamp(21px,5.4vw,27px);line-height:1.34;font-weight:800;letter-spacing:-.3px;
     overflow-wrap:break-word;word-break:normal}
+  /* news lead image on the reel face — capped so headline + meta + button still fit one screen */
+  .cardimg-wrap{margin:0;position:relative;width:100%;max-width:540px;border-radius:16px;overflow:hidden;
+    aspect-ratio:16/9;max-height:34vh;background:#17171c;box-shadow:0 6px 22px rgba(0,0,0,.35)}
+  .cardimg{width:100%;height:100%;object-fit:cover;display:block}
+  .imgcredit{position:absolute;bottom:0;right:0;font-size:10px;padding:2px 7px;color:#e6e6ea;
+    background:rgba(0,0,0,.55);border-top-left-radius:8px;letter-spacing:.02em}
+  /* credibility chip (reel face) + verdict block (detail sheet) */
+  .cred{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;
+    padding:3px 9px;border-radius:99px;white-space:nowrap}
+  .cred-confirmed{background:rgba(63,185,80,.16);color:#3fb950}
+  .cred-developing{background:rgba(245,185,66,.16);color:#f5b942}
+  .cred-single{background:rgba(150,155,165,.16);color:#9aa3ad}
+  .sheetimg-wrap{margin:0 0 4px;position:relative;width:100%;border-radius:14px;overflow:hidden;
+    aspect-ratio:16/9;background:#17171c}
+  .sheetimg{width:100%;height:100%;object-fit:cover;display:block}
+  .credverdict{font-weight:800;font-size:15px;margin:2px 0 4px}
+  .credverdict.cred-confirmed{color:#3fb950}.credverdict.cred-developing{color:#f5b942}
+  .credverdict.cred-single{color:#9aa3ad}
+  .credwhy{font-size:14px;line-height:1.55;color:#c7cfda;margin:0 0 8px}
+  .credoutlets{font-size:13px;line-height:1.5;color:#aeb6c2}.credoutlets b{color:#d3dbe6}
   .body{font-size:16px;line-height:1.62;color:#d3dbe6}
   /* the news summary on the reel face — CLAMPED so a long story never pushes the button off-screen */
   h1.clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
@@ -558,6 +578,21 @@ function sparkSVG(pts){
 const expandBtn = (onclick, label) => `<button class="expand" onclick='${onclick}'>${label} <span class="ar">↓</span></button>`;
 // the news summary shown ON the reel face (the takeaway now lives inside the full story instead)
 const storySummary = c => c.what_happened || (c.key_points || []).join(' ') || c.moot || '';
+// news lead image — a hotlinked og:image (URL only, never stored). onerror removes the figure so a broken
+// hotlink never leaves an empty gap; the card just falls back to the clean text layout.
+function storyImg(c){
+  if(!c.image) return '';
+  return `<figure class="cardimg-wrap"><img class="cardimg" loading="lazy" alt="" src="${esc(c.image)}" `
+    + `onerror="this.closest('.cardimg-wrap').remove()">`
+    + (c.image_credit?`<figcaption class="imgcredit">${esc(c.image_credit)}</figcaption>`:'') + `</figure>`;
+}
+// credibility chip — how well corroborated the story is across outlets (full explanation in credSec)
+const CRED = {confirmed:['🟢','Corroborated'], developing:['🟡','Developing'], single:['⚪','Unverified']};
+function credChip(cr){
+  if(!cr || !cr.level) return '';
+  const m = CRED[cr.level] || CRED.single;
+  return `<span class="cred cred-${esc(cr.level)}">${m[0]} ${esc(m[1])}</span>`;
+}
 
 // Reel faces: category + hook + THE TAKEAWAY (hero) + expand. Body stays hidden until the button is tapped.
 const R = {
@@ -580,7 +615,8 @@ const R = {
   },
 
   story: c => `
-    <div class="meta">${catChip(c.category)}${c.development?'<span class="devbadge">🔄 Development</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
+    ${storyImg(c)}
+    <div class="meta">${catChip(c.category)}${credChip(c.credibility)}${c.development?'<span class="devbadge">🔄 Development</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
     <h1 class="headline">${esc(c.title)}</h1>
     ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
@@ -826,6 +862,28 @@ function sourcesSec(sources){
     + sources.map(s=>`<div class="src"><a href="${esc(s.url)}" target="_blank">${esc(s.name)}</a></div>`).join('') + `</div>`;
 }
 function pinnedMoot(txt){ return txt?`<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(txt)}</div></div>`:''; }
+// the lead image at the top of a story's detail sheet (same hotlinked og:image; onerror hides it)
+function sheetImg(c){
+  if(!c.image) return '';
+  return `<figure class="sheetimg-wrap"><img class="sheetimg" loading="lazy" alt="" src="${esc(c.image)}" `
+    + `onerror="this.closest('.sheetimg-wrap').remove()">`
+    + (c.image_credit?`<figcaption class="imgcredit">${esc(c.image_credit)}</figcaption>`:'') + `</figure>`;
+}
+// credibility explainer — teaches media literacy: what the badge means + which outlets carried it
+const CRED_FULL = {
+  confirmed: ['🟢','Well corroborated','Multiple credible outlets — often including a major wire like Reuters or AP — are reporting this. Safe to treat as established.'],
+  developing:['🟡','Developing story','Reported, but not yet widely corroborated. Solid, but details can still shift as more outlets confirm.'],
+  single:    ['⚪','Single / unverified','Seen on just one low-tier or social source. Treat as a lead, not a confirmed fact.']
+};
+function credSec(cr){
+  if(!cr || !cr.level) return '';
+  const m = CRED_FULL[cr.level] || CRED_FULL.single;
+  const outlets = (cr.outlets||[]).length
+    ? `<div class="credoutlets"><b>Reported by:</b> ${cr.outlets.map(esc).join(' · ')}</div>` : '';
+  return `<div class="bsec"><div class="bh"><span class="bi">${m[0]}</span>How trustworthy is this?</div>`
+    + `<div class="credverdict cred-${esc(cr.level)}">${esc(m[1])}</div>`
+    + `<p class="credwhy">${esc(m[2])}</p>${outlets}</div>`;
+}
 // India-notation money made legible (built deterministically in build_dashboard.py — never invented)
 function figuresSec(figs){
   if(!(figs||[]).length) return '';
@@ -1033,6 +1091,7 @@ function openDecodeCard(c){
   // NEWS STORIES: keep it tight — what happened, the backstory, the key points in plain language,
   // and the sources. Nothing else. (If it continues earlier coverage, lead with what's new.)
   if(c.type==='story'){
+    h += sheetImg(c);
     if(c.development && c.prev_ref && c.prev_ref.title){
       h += `<button class="prevref" onclick='openPrevStory(${esc(JSON.stringify(c.prev_ref.title))})'>`
         + `<span class="pv-ic">🔄</span>`
@@ -1047,6 +1106,7 @@ function openDecodeCard(c){
     h += bulletSec('📖', 'The backstory', d.background);
     h += bulletSec('✦', 'Most important points', (c.key_points && c.key_points.length) ? c.key_points : null);
     h += sourcesSec(d.sources);
+    h += credSec(c.credibility);             // how well-corroborated this is + what that means
     h += occurredSec(c.published_iso);       // when the news actually happened, below the sources
     masteryNote(c);
     openSheet(c.title || 'Decoded', h, c.category);

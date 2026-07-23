@@ -367,12 +367,34 @@ def build_reels() -> int:
     stories = (world or {}).get("stories", []) or []
     watch = (brief or {}).get("what_to_watch", []) or []
 
+    # -- media + credibility: attach a lead image (hotlinked, feed/og:image) and a trust verdict to each
+    #    story. Deterministic (routine/media.py), free, cached — see that module. Best-effort: if it can't
+    #    load, cards simply render text-only as before.
+    sys.path.insert(0, str(ROOT / "routine"))
+    try:
+        import media as _media
+        _raw_index = _media.build_raw_index(ROOT / "output" / "world-raw-latest.json")
+        _img_cache = _media._load(_media.CACHE_PATH)
+    except Exception as _e:  # noqa: BLE001
+        _media, _raw_index, _img_cache = None, [], {}
+        print(f"  · media enrichment unavailable ({_e})", file=sys.stderr)
+    _fetched, _FETCH_CAP = 0, 30      # bound og:image fetches per build (cache makes later builds instant)
+
     # -- world stories, already ranked/curated by the analyst (no cover — first swipe IS the top story)
     now = dt.datetime.now(IST)
     story_cards: list[dict] = []
     for s in stories:
         src = (s.get("sources") or [{}])[0].get("name")
         added_min = _minutes_since(s.get("added_at"), now)   # None unless the hourly just added it
+        if _media:
+            try:
+                _purl = (s.get("sources") or [{}])[0].get("url")
+                _new_fetch = bool(_purl) and _purl not in _img_cache
+                _media.enrich(s, _raw_index, _img_cache, fetch_ok=(_fetched < _FETCH_CAP))
+                if _new_fetch:
+                    _fetched += 1
+            except Exception:  # noqa: BLE001 - media must never break the deck
+                pass
         story_cards.append({
             "type": "story", "id": f"story-{s.get('rank')}",
             "rank": s.get("rank"), "category": s.get("category"),
@@ -384,6 +406,9 @@ def build_reels() -> int:
             "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
             "key_points": s.get("key_points") or [],
             "moot": s.get("the_lesson") or _first_sentence(s.get("why_it_matters", "")),
+            **({"image": s["image"]} if s.get("image") else {}),
+            **({"image_credit": s["image_credit"]} if s.get("image_credit") else {}),
+            **({"credibility": s["credibility"]} if s.get("credibility") else {}),
             **({"thread": s["thread"]} if s.get("thread") else {}),
             "concepts": s.get("concepts") or [],
             "figures": _decode_figures(
@@ -392,6 +417,11 @@ def build_reels() -> int:
                 "background", "why_it_matters", "ripple_effects", "why_now",
                 "watch_next", "market_link", "key_terms", "sources")},
         })
+    if _media and _img_cache:
+        try:
+            _media.CACHE_PATH.write_text(json.dumps(_img_cache))
+        except Exception:  # noqa: BLE001
+            pass
 
     # Archive EVERYTHING first (nothing is lost), then build a FRESH, de-duped live feed per region:
     # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never

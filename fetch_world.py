@@ -168,6 +168,64 @@ GDELT_QUERY = (
 )
 
 
+def _looks_image(u: str) -> bool:
+    import re
+    return bool(re.search(r"\.(jpe?g|png|webp|gif)(\?|$)", (u or "").lower()))
+
+
+def _entry_image(entry) -> str | None:
+    """Pull a lead image URL from a feed entry (media:content / media:thumbnail / enclosure).
+
+    feedparser already parses these — we just never read them before. Returns the first plausible
+    image URL, or None. Best-effort: never raise on a weird entry shape."""
+    try:
+        for mc in (entry.get("media_content") or []):
+            u = mc.get("url")
+            if u and (mc.get("medium") == "image" or str(mc.get("type", "")).startswith("image")
+                      or _looks_image(u)):
+                return u
+        for mt in (entry.get("media_thumbnail") or []):
+            if mt.get("url"):
+                return mt["url"]
+        for en in (entry.get("enclosures") or []):
+            u = en.get("href") or en.get("url")
+            if u and (str(en.get("type", "")).startswith("image") or _looks_image(u)):
+                return u
+        for ln in (entry.get("links") or []):
+            if ln.get("rel") == "enclosure" and str(ln.get("type", "")).startswith("image") and ln.get("href"):
+                return ln["href"]
+    except Exception:  # noqa: BLE001 - media is a nice-to-have, never break ingestion
+        pass
+    return None
+
+
+# Rough source-credibility tiers (1 = wire/established, 2 = other outlet, 3 = social/aggregator "lead only").
+# Keyword-matched against the human source name so it works for the whole feed set without an exhaustive map.
+_TIER1_KW = ("reuters", "associated press", "ap news", "afp", "bloomberg", "bbc", "guardian",
+             "financial times", "wsj", "wall street journal", "new york times", "washington post",
+             "npr", "al jazeera", "the hindu", "press trust", "espncricinfo", "autosport", "nature",
+             "science", "economist", "cnbc", "cnn", "the race", "planetf1", "sky sport")
+_TIER3_KW = ("reddit", "nitter", "twitter", "/r/", "gnews", "google news", "substack", "medium", "blog")
+
+
+def _source_tier(source: str) -> int:
+    s = (source or "").lower()
+    if any(k in s for k in _TIER3_KW):
+        return 3
+    if any(k in s for k in _TIER1_KW):
+        return 1
+    return 2
+
+
+def _sig(headline: str) -> set:
+    import re
+    _stop = {"the", "a", "an", "of", "to", "in", "on", "and", "for", "is", "are", "as", "at", "by",
+             "with", "from", "its", "it", "after", "over", "amid", "says", "say", "new", "will",
+             "has", "have", "was", "were", "be", "that", "this", "up", "out"}
+    toks = re.findall(r"[a-z0-9]+", (headline or "").lower())
+    return {t for t in toks if len(t) > 2 and t not in _stop}
+
+
 def rss_world(per_feed: int = 12) -> list[dict]:
     if feedparser is None:
         print("  ! feedparser not installed; skipping RSS", file=sys.stderr)
@@ -195,6 +253,7 @@ def rss_world(per_feed: int = 12) -> list[dict]:
                     "summary": _clean(summary)[:400],
                     "published": published,
                     "published_iso": _parse_published(published),
+                    "image": _entry_image(entry),   # lead image straight from the feed, if any
                 })
         except Exception as e:  # noqa: BLE001 - never let one feed break the run
             print(f"  ! rss {source} failed: {e}", file=sys.stderr)
@@ -267,12 +326,39 @@ def _parse_published(raw: str) -> str | None:
 
 
 def _dedupe(items: list[dict]) -> list[dict]:
-    seen, out = set(), []
+    """Collapse the same story across feeds, but KEEP the corroboration signal we used to throw away.
+
+    Groups near-duplicate headlines (token-signature Jaccard ≥ 0.5), keeps one representative, and stamps
+    it with how many DISTINCT outlets carried it (`corroboration`), which ones (`corroborating`), and the
+    best source tier in the group (`tier`, 1 = wire). Also borrows an image from any group member if the
+    representative lacks one. This many-outlets-agree count is the backbone of the credibility badge."""
+    clusters: list[dict] = []   # {"rep", "sig", "sources": set, "members": []}
     for it in items:
-        key = (it.get("headline") or "").strip().lower()
-        if key and key not in seen:
-            seen.add(key)
-            out.append(it)
+        sig = _sig(it.get("headline"))
+        best = None
+        for cl in clusters:
+            if sig and cl["sig"] and len(sig & cl["sig"]) / len(sig | cl["sig"]) >= 0.5:
+                best = cl
+                break
+        if best is None:
+            clusters.append({"rep": it, "sig": sig, "sources": {it.get("source")}, "members": [it]})
+        else:
+            best["sources"].add(it.get("source"))
+            best["members"].append(it)
+
+    out = []
+    for cl in clusters:
+        rep = cl["rep"]
+        srcs = sorted({s for s in cl["sources"] if s})
+        rep["corroboration"] = len(srcs)
+        rep["corroborating"] = srcs[:12]
+        rep["tier"] = min((_source_tier(s) for s in srcs), default=3)
+        if not rep.get("image"):                     # borrow a picture from any outlet that had one
+            for m in cl["members"]:
+                if m.get("image"):
+                    rep["image"] = m["image"]
+                    break
+        out.append(rep)
     return out
 
 

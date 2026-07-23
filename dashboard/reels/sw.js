@@ -7,7 +7,7 @@
  *   - icons (*.png)                  -> cache-first (they don't change between versions).
  * Bump CACHE whenever this file changes so old caches are purged on activate.
  */
-const CACHE = "reels-v11";   // bump on any UI change → activate purges the old cache so stale pages can't linger
+const CACHE = "reels-v12";   // bump on any UI change → activate purges the old cache so stale pages can't linger
 const SHELL = ["./", "./index.html", "./manifest.json", "../glossary.js",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 
@@ -25,14 +25,17 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
-  const isIcon = /\.png$/.test(new URL(req.url).pathname);
+  const url = new URL(req.url);
+  // Images = local icons AND remote news lead-images (hotlinked og:image). Both are effectively immutable,
+  // and news images are usually cross-origin, so cache-first: swiping back to a card never refetches, and
+  // opaque cross-origin responses cache fine. Network is the fallback only when the image isn't cached yet.
+  const isImage = req.destination === "image" || /\.(jpe?g|png|webp|gif|avif)(\?|$)/i.test(url.pathname);
 
-  if (isIcon) {
-    // cache-first: icons are effectively immutable
+  if (isImage) {
     e.respondWith(
-      caches.match(req).then(hit => hit || fetch(req).then(res => {
-        const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return res;
-      }))
+      caches.open(CACHE).then(c => c.match(req).then(hit => hit || fetch(req).then(res => {
+        try { c.put(req, res.clone()); } catch (_) {} return res;
+      }).catch(() => hit)))
     );
   } else {
     // network-first: HTML, glossary, and JSON are always fresh when online; cached copy is the
