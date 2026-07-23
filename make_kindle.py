@@ -277,36 +277,52 @@ def main(argv: list[str]) -> int:
               ".env) — the published EPUB above is ready to download + Send-to-Kindle manually.")
         return 0
 
-    # ONE complete lesson per calendar day. Parts are authored AHEAD of the reader (a buffer), but the
-    # Kindle should receive just the next unsent one each day — a steady daily read, each its own document.
-    # (--all resends the whole course; --force pushes the newest part right now, bypassing the daily gate.)
+    # Deliver ONE COMPLETE SUBJECT per calendar day — ALL its parts together as a single document (the
+    # reader wants whole lessons, not one session at a time). A subject is "ready" only once EVERY one of
+    # its parts is authored; a partial subject waits. Sent subjects are tracked by slug so none repeats.
+    #   normal run : the next unsent complete subject (at most one per calendar day)
+    #   --force    : send the newest complete subject right now (bypasses the daily gate)
+    #   --all      : resend every complete subject (each as its own document)
     today = dt.date.today().isoformat()
     st = _load(STATE) or {}
-    last_seq = int(st.get("last_seq") or 0)
+    sent = set(st.get("sent_subjects") or [])
+
+    groups = {}                                  # subject_slug -> [parts], in catalog (seq) order
+    for p in parts:
+        groups.setdefault(p.get("subject_slug"), []).append(p)
+    complete = [(slug, sorted(ps, key=lambda x: x.get("part") or 0))
+                for slug, ps in groups.items()
+                if ps and len({p.get("part") for p in ps}) >= (ps[0].get("total_parts") or len(ps))]
+
     if send_all:
-        to_send = parts
+        to_send = complete
     elif force:
-        to_send = parts[-1:]
+        unsent = [g for g in complete if g[0] not in sent]
+        to_send = [(unsent or complete)[-1]] if complete else []
     else:
         if st.get("last_sent_date") == today:
-            print(f"Kindle already received today's lesson (through seq {last_seq}) — one per day.")
+            print("Kindle already received today's subject — one complete lesson per day.")
             return 0
-        to_send = [p for p in parts if (p.get("seq") or 0) > last_seq][:1]   # exactly the NEXT one
+        to_send = [g for g in complete if g[0] not in sent][:1]   # earliest unsent complete subject
     if not to_send:
-        print(f"Kindle is up to date (through part seq {last_seq}) — nothing new to e-mail.")
+        print("No new complete subject ready to e-mail (a partial subject waits for all its parts).")
         return 0
 
-    if len(to_send) == 1:
-        title = f'{subj} — Part {to_send[0].get("part")}: {to_send[0].get("session_title") or ""}'.strip(": ")
-    else:
-        title = f'{subj} — Parts {to_send[0].get("part")}–{to_send[-1].get("part")}'
-    epub = build_epub(to_send, title, OUT_DIR / "kindle-learn.epub")
-    print(f"Built {epub.name} ({len(to_send)} part(s), {epub.stat().st_size//1024} KB)")
-    if send_to_kindle(epub, title):
-        STATE.write_text(json.dumps(
-            {"last_seq": max(p.get("seq") or 0 for p in to_send),
-             "last_sent_date": today,
-             "sent_at": dt.datetime.now().isoformat(timespec="seconds")}, indent=2))
+    ok_any = False
+    for slug, ps in to_send:
+        stitle = ps[0].get("subject_title") or "Lesson"
+        title = f'{ps[0].get("emoji","")} {stitle} — complete ({len(ps)} parts)'.strip()
+        epub = build_epub(ps, title, OUT_DIR / "kindle-learn.epub")
+        print(f"Built '{stitle}' — {len(ps)} parts, {epub.stat().st_size//1024} KB")
+        if send_to_kindle(epub, title):
+            sent.add(slug); ok_any = True
+    if ok_any:
+        STATE.write_text(json.dumps({
+            "sent_subjects": sorted(sent),
+            "last_seq": max((p.get("seq") or 0 for p in parts if p.get("subject_slug") in sent),
+                            default=int(st.get("last_seq") or 0)),
+            "last_sent_date": today,
+            "sent_at": dt.datetime.now().isoformat(timespec="seconds")}, indent=2))
     return 0
 
 
