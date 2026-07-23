@@ -200,28 +200,15 @@ def main(argv: list[str]) -> int:
     if authored_seq is None:                       # derive on first run / migration
         authored_seq = len(parts)
 
-    # "Read" position = the furthest of the reels reader (localhost best-effort) and what the Kindle has
-    # already been e-mailed. Folding in the Kindle keeps authoring one step ahead of the daily Kindle drip,
-    # so a Kindle-only reader (who never taps the reels) still gets a fresh lesson every day, indefinitely.
-    reader = int((_load(PROGRESS) or {}).get("completed_seq") or 0)
-    kindle = int((_load(OUT / "kindle-sent.json") or {}).get("last_seq") or 0)
-    completed = max(0, min(max(reader, kindle), authored_seq))   # clamp to a sane range
-
-    # How many parts SHOULD exist: keep AHEAD beyond what the reader finished, plus a +1/day drip
-    # (capped at DRIP_CAP beyond the reader so an inactive reader doesn't author the whole syllabus).
-    buffer_target = completed + AHEAD
-    drip_target = authored_seq + (1 if (last_date != today and authored_seq < completed + DRIP_CAP) else 0)
-    target = max(buffer_target, drip_target)
-    if force:
-        target = max(target, authored_seq + 1)
-    to_make = max(0, min(target - authored_seq, MAX_PER_RUN))
-
-    if to_make == 0:
-        print(f"lesson: catalog is stocked ({authored_seq} parts, reader at {completed}) — nothing to write")
-        pg.set_progress("lessons", "Your lessons are ready", 1, 1, "buffer full", active=False)
+    # ONE FRESH SUBJECT PER CALENDAR DAY: each day, author every remaining session of the subject at the
+    # pointer so a whole new lesson (all its parts) is ready — the reader wanted a complete subject daily,
+    # delivered together to the Kindle. `--force` authors a subject now regardless of the daily gate.
+    if last_date == today and not force:
+        print(f"lesson: today's subject already authored ({authored_seq} parts) — one subject/day")
+        pg.set_progress("lessons", "Today's lesson is ready", 1, 1, "one complete subject per day", active=False)
         return 0
 
-    pg.set_progress("lessons", "Stocking your course", 0, to_make, f"{authored_seq} parts so far")
+    pg.set_progress("lessons", "Writing today's lesson", 0, 0, f"{authored_seq} parts so far")
     cur = _ensure_syllabus()
     if not cur:
         print("WARN: curriculum authoring failed — no lessons this run", file=sys.stderr)
@@ -229,32 +216,34 @@ def main(argv: list[str]) -> int:
         return 1
     subjects = cur["subjects"]
 
+    SAFETY_CAP = 8      # a subject is 4-6 sessions; this just backstops a runaway loop
     made = 0
-    for _ in range(to_make):
+    for _ in range(SAFETY_CAP):
         res = _author_one(subjects, si, ji, authored_seq + 1, today)
         if not res:
             break
         lesson, si, ji = res
         parts.append(lesson)
         authored_seq = lesson["seq"]
-        last_date = today
         made += 1
         # persist incrementally so a mid-run crash keeps what we made
         _write_catalog(parts)
         STATE.write_text(json.dumps({
             "subject_index": si, "session_index": ji,
-            "authored_seq": authored_seq, "last_authored_date": last_date}, indent=2))
+            "authored_seq": authored_seq, "last_authored_date": today}, indent=2))
+        if ji == 0:     # pointer rolled to the next subject's start → this subject is COMPLETE, stop for the day
+            break
 
     if made == 0:
         pg.set_progress("failed", "Lesson generation failed", 0, 0, "", active=False)
         return 1
 
-    pg.set_progress("publishing", "Publishing your lessons", 1, 1, f"{authored_seq} parts")
+    pg.set_progress("publishing", "Publishing today's lesson", 1, 1, f"{authored_seq} parts")
     try:
         build_dashboard.main()
     except SystemExit:
         pass   # build exits non-zero only if NO briefs exist yet; the catalog is already written
-    print(f"lesson: authored {made} new part(s) → {authored_seq} total (reader at {completed})", flush=True)
+    print(f"lesson: authored {made} new part(s) this subject → {authored_seq} total", flush=True)
     return 0
 
 
