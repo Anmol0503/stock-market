@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "generated_at": "2026-07-25T00:00:33+05:30",
+  "generated_at": "2026-07-25T00:58:43+05:30",
   "day_label": "Friday · 24 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,6 +8,147 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
+      "category": "economy",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Yemen's Houthis strike two Saudi oil tankers, opening a dangerous new front alongside the collapsing Iran ceasefire",
+        "date": null
+      },
+      "published_iso": "2026-07-24T08:18:00Z",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "Yahoo Finance",
+      "importance": "high",
+      "regions": [
+        "US",
+        "Middle East",
+        "Pakistan",
+        "China",
+        "Global Oil Markets"
+      ],
+      "title": "Wall Street bounces back as Pakistan and China push a new plan to revive the collapsed US-Iran ceasefire talks",
+      "what_happened": "Chinese Foreign Minister Wang Yi and Pakistani Deputy PM Ishaq Dar met in Shanghai and jointly called for an early ceasefire and a return to talks. Iran's interior minister also visited Islamabad twice in ten days for exploratory discussions. The proposal on the table would halt fighting and reopen shipping through the Strait of Hormuz — a critical oil chokepoint — while the US and Iran try to salvage their broader agreement. US stocks rose Friday and oil eased as traders read the diplomatic push as a reason the war might not escalate further, even though no formal deal has been reached.",
+      "key_points": [
+        "Dow rose 0.7%, S&P 500 gained 0.5% Friday, clawing back Thursday's selloff",
+        "Oil eased back from near $100 a barrel on hopes of renewed diplomacy",
+        "Pakistan and China jointly called for the US and Iran to resume ceasefire talks",
+        "Neither Trump nor Iran has accepted the new proposal yet — fighting continues"
+      ],
+      "moot": "Markets price geopolitical risk asymmetrically: a mere signal of de-escalation can unwind days of one-way selling almost overnight, because fear premiums evaporate faster than they build.",
+      "image_credit": "Yahoo Finance",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Pakistan Today",
+          "Yahoo Finance"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "previously": "We covered the Houthis opening a new front by striking two Saudi oil tankers, escalating alongside the collapsing US-Iran ceasefire and pushing oil toward $100 a barrel.",
+        "changed": "Today, Pakistan and China are jointly pushing a new ceasefire proposal to get the US and Iran back to talks, and markets rallied on that hope — even though neither side has accepted it yet and fighting on the ground continues."
+      },
+      "concepts": [
+        "crude_geopolitics",
+        "risk_on_off"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "The US and Iran have been in an escalating conflict for months: a ceasefire broke down, US strikes on Iran have continued for nearly two weeks straight, and Iran-aligned Houthi fighters opened a second front by striking Saudi oil tankers in the Red Sea — all of which pushed oil prices up and rattled stock markets on fears of a wider Middle East war. Pakistan, which has diplomatic channels to Tehran, and China, which has been courting a bigger regional role, have both been quietly trying to broker a way back to talks.",
+        "why_it_matters": "Markets have spent weeks trading almost entirely off war-escalation headlines, with oil and stocks swinging on every strike and counter-strike. A credible diplomatic channel — even an unconfirmed, early-stage one — is enough to unwind some of the 'fear premium' that had been built into oil prices and risk assets, showing how much of the recent moves were about anticipated risk rather than actual supply disruption.",
+        "ripple_effects": "If talks genuinely restart, easing oil prices would help cool inflation worldwide, including in oil-importing economies like India, whose rupee and stock market have both been hit by the same crude spike. If the effort collapses like prior attempts, markets could snap back into selloff mode just as quickly — this is a fragile, reversible rally, not a resolution.",
+        "why_now": "This follows directly on the heels of 13 straight nights of US strikes on Iran and the new Houthi tanker attacks that had pushed oil toward $100 a barrel, testing how much further markets could tolerate one-way escalation.",
+        "watch_next": "Whether Washington or Tehran formally responds to the Pakistan-China proposal in the coming days, and whether Houthi attacks pause during any negotiation window.",
+        "market_link": "Brent/WTI crude, US equity futures, and Gulf-exposed shipping and insurance stocks are the direct trades on any real ceasefire progress — and the direct losers if talks collapse again.",
+        "key_terms": [
+          {
+            "term": "Strait of Hormuz",
+            "definition": "A narrow waterway between Iran and Oman that a large share of the world's oil shipments must pass through — closing or threatening it can move global oil prices."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Yahoo Finance",
+            "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-july-24-dow-sp-500-nasdaq-081854465.html"
+          },
+          {
+            "name": "Pakistan Today",
+            "url": "https://www.pakistantoday.com.pk/2026/07/24/pakistan-explores-route-to-renewed-us-iran-talks-after-china-backed-push"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-07-23T00:00:00Z",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "The Hacker News",
+      "importance": "high",
+      "regions": [
+        "Global",
+        "AI Industry"
+      ],
+      "title": "Researchers fully escape Anthropic's Claude Cowork sandbox with a single message, exposing Mac users' SSH keys",
+      "what_happened": "Security researcher Oren Yomtov of Accomplish AI found that the sandbox's isolation could be broken with a single crafted message. The VM shared the host Mac's entire filesystem through a mount point meant to be locked to 'root' access inside the guest only — but Yomtov showed a normal session user could gain that root access and then read or write any file on the host Mac, including private SSH keys and cloud credentials. The exploit uses a real software bug, CVE-2026-46331, in a Linux networking component. Accomplish AI says roughly 500,000 macOS users running Cowork locally were exposed before Anthropic patched the specific path they used.",
+      "key_points": [
+        "Researchers escaped Claude Cowork's isolated VM with just one short message",
+        "Flaw exposed SSH keys and cloud credentials on an estimated 500,000 Macs",
+        "Anthropic closed the bug report as 'informative' without issuing a dedicated fix",
+        "Anthropic has since moved Cowork's default execution from local Macs to the cloud"
+      ],
+      "moot": "A security boundary is only as strong as its weakest shared resource — sharing a filesystem mount between a guest and a host, even one 'meant' to be locked down, can become a full breakout if the permissions around it aren't airtight.",
+      "image_credit": "The Hacker News",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "GBHackers",
+          "The Hacker News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Claude Cowork is Anthropic's AI agent that can take actions directly on your computer — opening apps, editing files, running commands — instead of just chatting. Because letting an AI act on your machine is risky if it goes wrong or gets tricked by malicious content, Anthropic runs it inside a 'sandbox': an isolated virtual computer (VM) that is supposed to have no access to your real files, passwords, or login keys, only the folder you explicitly share with it.",
+        "why_it_matters": "A sandbox is the entire safety promise of an AI agent that can act on your computer: it's the wall that's supposed to stop a mistake, a bug, or a malicious instruction from reaching your real files. If that wall has a hole, every promise built on top of it — 'the AI can only touch what you share with it' — stops being true, and the credentials it exposes (SSH keys, cloud logins) are exactly what an attacker needs to move further into a person's accounts and systems.",
+        "ripple_effects": "This lands at a moment when AI agents that act autonomously on computers are being pushed hard into consumer and enterprise use — a serious sandbox-escape bug invites scrutiny of every AI vendor's isolation claims, not just Anthropic's, and may slow enterprise adoption of 'agentic' tools that touch real files. Anthropic's move to make cloud execution the default (rather than running locally on a user's own Mac) is a direct response, shifting the security burden to infrastructure Anthropic controls.",
+        "why_now": "The flaw was disclosed this week as AI-agent adoption is scaling fast enough that sandbox security has become a genuine attack surface, not just a theoretical one.",
+        "watch_next": "Whether Anthropic issues a proper patch for local Cowork execution, or phases it out entirely in favor of cloud-only sessions.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Sandbox",
+            "definition": "An isolated, restricted environment where a program (here, an AI agent) runs so that even if it misbehaves, it can't touch the real computer outside it."
+          },
+          {
+            "term": "CVE",
+            "definition": "Common Vulnerabilities and Exposures — a public ID number assigned to a specific, documented security flaw so researchers and companies can refer to it consistently."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html"
+          },
+          {
+            "name": "GBHackers",
+            "url": "https://gbhackers.com/claude-cowork-sandbox-escape-flaw/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
       "category": "health",
       "is_new": true,
       "published_iso": "2026-07-23T08:49:00+00:00",
@@ -71,8 +212,8 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "technology",
       "is_new": true,
       "published_iso": "2026-07-24T10:00:00+00:00",
@@ -140,10 +281,9 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-07-24T05:00:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "Al Jazeera",
@@ -201,10 +341,9 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-07-24T05:30:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "Al Jazeera",
@@ -275,8 +414,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "technology",
       "development": true,
       "prev_ref": {
@@ -348,8 +487,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "climate",
       "published_iso": "2026-07-24T06:00:00Z",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -410,8 +549,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -483,8 +622,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -552,8 +691,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "economy",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T20:01:23+05:30",
@@ -619,8 +758,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "geopolitics",
       "published_iso": "2026-07-24T07:00:00+03:00",
       "added_at": "2026-07-24T19:01:48+05:30",
@@ -682,8 +821,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "economy",
       "published_iso": "2026-07-24T00:00:00+09:00",
       "added_at": "2026-07-24T18:04:03+05:30",
@@ -747,8 +886,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "economy",
       "published_iso": "2026-07-24T02:00:00Z",
       "added_at": "2026-07-24T17:03:38+05:30",
@@ -823,234 +962,147 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
-      "category": "technology",
-      "published_iso": "2026-07-23T13:00:00Z",
-      "added_at": "2026-07-24T17:03:38+05:30",
-      "source": "CNBC",
-      "importance": "high",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-24T00:00:00+05:30",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "Business Standard",
+      "importance": "notable",
       "regions": [
-        "United States",
-        "China"
+        "India"
       ],
-      "title": "White House accuses China's Moonshot AI of copying Anthropic's model to build Kimi K3",
-      "what_happened": "On Wednesday, Michael Kratsios, director of the White House Office of Science and Technology Policy, posted on X that the US has 'information that Moonshot AI distilled Anthropic's Fable for the development of its K3 model,' alleging Moonshot built an internal system to harvest outputs from US models while evading detection. He also alleged Moonshot 'acquired GB300-equipped servers and has accessed GB300s in Thailand' — hardware Nvidia is barred from selling directly to China. Moonshot's head of enterprise business publicly denied the claims, and a company employee noted Fable went public July 1 and K3 launched just 15 days later, questioning how a 'brand new frontier model' could have been trained that fast. Independent AI researchers quoted by TechCrunch and the South China Morning Post said the speed and quality of K3 argues against pure distillation.",
+      "title": "Bajaj Finance's profit jumps 22% to ₹4,765 crore, showing India's consumer-lending engine is still humming",
+      "what_happened": "For the quarter ending June 2026, Bajaj Finance reported consolidated net profit of ₹4,765 crore, up 22% from a year earlier, on net interest income of ₹10,227 crore, also up 22%. At the same time, the amount it set aside for loans that might go bad rose even faster, 26%, to ₹2,120 crore.",
       "key_points": [
-        "Top White House tech official accuses Moonshot AI of 'distilling' Anthropic's Fable model",
-        "Claim: Moonshot also accessed banned Nvidia GB300 chips via Thailand",
-        "Moonshot AI denies the accusation; independent AI researchers are skeptical",
-        "Kimi K3, released July 15-16, is a free, open-weight model beating some US rivals on benchmarks"
+        "Net profit up 22% year-on-year to ₹4,765 crore in Q1 FY26",
+        "Net interest income (its core lending margin) rose 22% to ₹10,227 crore",
+        "But loan-loss provisions grew even faster — up 26% to ₹2,120 crore",
+        "Results land the same week Sensex and Nifty are sliding on oil and global jitters"
       ],
-      "moot": "Export controls and trade secrets are hard to enforce in software because AI model outputs can be copied cheaply and chips can move through third countries — technology restrictions often get tested at their weakest links, not their strongest ones.",
-      "image": "https://image.cnbcfm.com/api/v1/image/108280621-1773959104036-gettyimages-2266837944-NVIDIA_GTC.jpeg?v=1773959281&w=1920&h=1080",
-      "image_credit": "CNBC",
+      "moot": "Rising profit and rising loan-loss provisions together aren't automatically a red flag — it can mean a lender is growing its book quickly while being appropriately cautious about future defaults, which is very different from profit growth built on ignoring risk.",
+      "image_credit": "Business Standard",
       "credibility": {
-        "level": "confirmed",
-        "count": 4,
-        "tier": 1,
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
         "outlets": [
-          "CNBC",
-          "CNN Business",
-          "South China Morning Post",
-          "TechCrunch"
+          "Business Standard"
         ],
         "corroboration": 0
       },
       "concepts": [
-        "sanctions",
-        "supply_chain"
+        "crore_lakh"
       ],
-      "figures": [],
+      "figures": [
+        {
+          "raw": "₹4,765 crore",
+          "words": "₹47.65 billion",
+          "usd_approx": "≈ $495mn"
+        },
+        {
+          "raw": "₹10,227 crore",
+          "words": "₹102.27 billion",
+          "usd_approx": "≈ $1.1bn"
+        },
+        {
+          "raw": "₹2,120 crore",
+          "words": "₹21.2 billion",
+          "usd_approx": "≈ $220mn"
+        }
+      ],
       "depth": {
-        "background": "Kimi K3 is a new, free, open-weight AI model from Chinese startup Moonshot AI that quickly topped a coding benchmark, beating Anthropic's flagship Claude Fable 5 model. The US restricts export of Nvidia's most advanced AI chips, including the GB300, to China specifically to slow Chinese AI progress, and Anthropic separately accused several Chinese AI labs of 'distillation' campaigns back in February 2026.",
-        "why_it_matters": "This is the most direct, named US government accusation yet that a Chinese AI company is both stealing US model outputs and circumventing chip export controls — the two main tools Washington uses to keep an edge in AI. If true, it undercuts the entire premise of the export-control strategy; if false or exaggerated, it signals Washington is willing to use unproven claims to pressure China's fastest-rising AI lab.",
-        "ripple_effects": "Expect renewed calls in Washington for tighter enforcement against 'distillation' (training on a rival's model outputs) and against Nvidia chips reaching China through third countries like Thailand. Anthropic and other US labs may face pressure to further restrict or monitor access to their models from accounts linked to Chinese firms. Chip stocks and Chinese AI firms could see volatility if this leads to new sanctions or an investigation.",
-        "why_now": "The claim was made and spread rapidly on Wednesday and picked up by major outlets (CNBC, CNN, TechCrunch, SCMP, Fortune) Thursday, with Moonshot's denial and expert pushback landing the same day, keeping the story actively developing.",
-        "watch_next": "Whether the Trump administration follows the accusation with formal export-control enforcement action or new sanctions targeting Moonshot AI or Thailand-based chip transfers.",
-        "market_link": "Nvidia and other AI/chip stocks, plus Chinese AI-linked names, are sensitive to any move toward tighter export enforcement or new sanctions stemming from this dispute.",
+        "background": "Bajaj Finance is India's largest NBFC (non-banking financial company) — a lender that isn't a bank but still issues loans, here mostly for consumer goods, personal credit, and small businesses. Because so much of the Indian middle class borrows through it, its results are widely watched as a bellwether for how confident Indian consumers feel about spending and borrowing.",
+        "why_it_matters": "Rising profit alongside rising provisions is a specific, healthy signal: the company is lending fast and earning more from it, while also getting more cautious about the loans most likely to sour — not simply growing profit by ignoring risk. That combination is what analysts want to see from a consumer lender in an uncertain macro environment.",
+        "ripple_effects": "As a bellwether, a strong result here supports the case that Indian consumer demand and credit quality remain resilient even as the headline Sensex and Nifty slide — for reasons tied to global oil prices and the Middle East war, not to Indian company fundamentals. It can also move sentiment across other NBFC and consumer-lending stocks.",
+        "why_now": "Q1 FY26 (the April-June quarter) results season is underway across corporate India this week.",
+        "watch_next": "What management says on the earnings call about how it expects credit costs and provisioning to trend for the rest of FY26.",
+        "market_link": "Bajaj Finance is a heavyweight in the Nifty Financial Services index and is often used as a bellwether for consumer-credit sentiment across Bank Nifty and NBFC stocks.",
         "key_terms": [
           {
-            "term": "Distillation",
-            "definition": "Training a new AI model by having it learn from another company's more advanced model's outputs, without permission — a shortcut that can save huge amounts of money and time."
+            "term": "NBFC",
+            "definition": "Non-Banking Financial Company — a lender that isn't a licensed bank but still makes loans, for things like consumer durables, personal loans, or gold loans."
           },
           {
-            "term": "GB300",
-            "definition": "One of Nvidia's newest, most powerful AI chips; US rules bar selling it directly to Chinese companies to slow their AI progress."
-          },
-          {
-            "term": "Open-weight model",
-            "definition": "An AI model whose internal parameters are published for anyone to download and run on their own computers, unlike closed models you can only access through a paid subscription."
+            "term": "Net interest income (NII)",
+            "definition": "The money a lender earns from interest on loans, minus what it pays out on its own borrowings — its core profit engine before other costs and provisions."
           }
         ],
         "sources": [
           {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/23/moonshot-kimi-nvidia-ai-chips-export-ban.html"
-          },
-          {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/"
-          },
-          {
-            "name": "CNN Business",
-            "url": "https://www.cnn.com/2026/07/23/tech/china-ai-moonshot-kimi-explainer-intl-hnk"
-          },
-          {
-            "name": "South China Morning Post",
-            "url": "https://www.scmp.com/tech/tech-war/article/3361625/global-ai-experts-push-back-us-distillation-claims-against-moonshots-kimi-k3-model"
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/companies/quarterly-results/bajaj-finance-q1-net-up-22-percent-125072401454_1.html"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-19",
-      "rank": 19,
-      "category": "economy",
-      "published_iso": "2026-07-24T08:00:00Z",
-      "added_at": "2026-07-24T15:00:20+05:30",
-      "source": "CoinGabbar",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-24T23:41:00+05:30",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "IANS",
       "importance": "notable",
       "regions": [
-        "Global",
-        "Crypto markets"
+        "India",
+        "Scotland",
+        "Commonwealth Games"
       ],
-      "title": "Crypto's fear gauge drops to 28 as Bitcoin slides under $65,000 — even as DeFi tokens surge 9.8%",
-      "what_happened": "Bitcoin fell roughly 1.4-1.8% to around $65,000 and Ethereum declined too, dragging the total crypto market capitalization down 1.3% to $2.3 trillion on $58.9 billion of trading volume. The Fear & Greed Index slid to 28, signaling traders are turning cautious again. The one outlier: DeFi tokens (cryptocurrencies tied to lending, trading and other financial apps built without banks) jumped 9.8%, suggesting money rotated into that corner of the market even as the majors sold off.",
+      "title": "India's Jadumani Singh dominates Scotland's Aaron Cullen 5-0 to reach Commonwealth Games boxing pre-quarterfinals",
+      "what_happened": "At the SEC Hall in Glasgow, Jadumani Singh Mandengbam dictated the fight from the start against Scotland's Aaron Cullen, dominating with pace, accuracy, and control. All five judges scored it 30-27 in his favour, giving him a clean 5-0 unanimous decision and a place in the Round of 16, where he'll meet Pakistan's Rehman on July 26.",
       "key_points": [
-        "Total crypto market cap fell 1.3% to $2.3 trillion today",
-        "Bitcoin dropped to around $65,000, Ethereum fell too",
-        "The Fear & Greed Index — a 0-100 sentiment gauge — dropped to 28, deep in 'Fear' territory",
-        "DeFi (decentralized finance) tokens bucked the trend, surging 9.8%"
+        "Jadumani wins the men's 55kg Round of 32 bout 5-0, on identical 30-27 scorecards",
+        "All five judges gave Jadumani every round of the fight",
+        "He advances to face Pakistan's Rehman in the Round of 16 on July 26",
+        "Comes a day after Lovlina Borgohain was already guaranteed a medal via a bye"
       ],
-      "moot": "In stressed markets, assets that are supposed to be 'alternative' or 'uncorrelated' — like crypto — often move in lockstep with stocks anyway, because both are ultimately driven by the same investor risk appetite.",
-      "image_credit": "CoinGabbar",
+      "moot": "In knockout sports, a dominant early win does more than advance an athlete — it becomes the marker rivals and media use to judge form heading into the tougher rounds ahead.",
+      "image_credit": "IANS",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "CoinGabbar",
-          "Milk Road (Fear & Greed Index)"
+          "IANS",
+          "Outlook India"
         ],
         "corroboration": 0
       },
-      "concepts": [
-        "bitcoin_asset",
-        "risk_on_off"
-      ],
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Crypto prices move heavily on sentiment, and traders track a 'Fear & Greed Index' that blends volatility, trading volume, social-media buzz and momentum into one number from 0 (Extreme Fear) to 100 (Extreme Greed). Bitcoin has been range-bound for weeks as investors debate whether the market has bottomed after a rough stretch, and the broader macro backdrop — a stock-market selloff, rising oil prices from the Iran conflict, and persistent uncertainty about interest rates — has kept risk appetite fragile across all speculative assets, not just crypto.",
-        "why_it_matters": "Crypto now trades in the same 'risk-on/risk-off' basket as tech stocks — when investors get nervous about the broader economy, both get sold together. Today's drop shows that nervousness spreading from Wall Street's tech-driven selloff and the Iran-driven oil spike into digital assets too, even as pockets of the market (DeFi) show investors are still willing to take some risk, just more selectively.",
-        "ripple_effects": "A falling Fear & Greed reading tends to be self-reinforcing in the short term — cautious traders sell into weakness, which pushes sentiment lower still. Crypto-adjacent stocks (exchanges, miners, companies holding Bitcoin on their balance sheets) typically move with these swings. The DeFi rotation is worth watching too: if it continues, it suggests capital searching for yield within crypto rather than fleeing the asset class entirely.",
-        "why_now": "The drop lines up with the same day Wall Street is digesting its worst tech-driven selloff in a month and oil crossing $100 a barrel on the Iran conflict — three separate risk-off signals converging on the same day points to a broader flight from speculative assets, not a crypto-specific problem.",
-        "watch_next": "Whether Bitcoin holds the $60,000-$65,000 range this weekend or breaks lower, which would confirm the 'Fear' reading is turning into a deeper selloff rather than a one-day wobble.",
-        "market_link": "Bitcoin, Ethereum, crypto-exchange and Bitcoin-treasury stocks, and DeFi tokens are the direct movers here.",
+        "background": "Commonwealth Games boxing is a straight knockout draw — win and advance, lose and you're out. A round of 32 opener is the first hurdle for most boxers, and Indian boxing has historically been one of the country's most reliable sources of Commonwealth Games medals.",
+        "why_it_matters": "A dominant, judges'-unanimous win is more than just an advance — it signals genuine form heading into tougher rounds, and adds to India's medal push at a Games where a doping scandal involving other Indian athletes has already been a distraction.",
+        "ripple_effects": "It keeps India's overall medal-tally ambitions on track and sets up a closely watched India-Pakistan boxing clash in the Round of 16.",
+        "why_now": "This is Day 2 of the Commonwealth Games, when the boxing knockout draw opened.",
+        "watch_next": "Jadumani's Round of 16 bout against Pakistan's Rehman on July 26, which will decide a quarterfinal spot.",
+        "market_link": null,
         "key_terms": [
           {
-            "term": "Fear & Greed Index",
-            "definition": "A crypto-market sentiment gauge from 0 (Extreme Fear, investors panicking and selling) to 100 (Extreme Greed, investors chasing prices higher)."
-          },
-          {
-            "term": "DeFi",
-            "definition": "Decentralized finance — crypto apps that offer lending, trading and other financial services without a bank or broker in the middle."
+            "term": "Round of 32",
+            "definition": "The first knockout stage of a single-elimination bracket with 32 competitors — win, and you move to the round of 16; lose, and you're eliminated."
           }
         ],
         "sources": [
           {
-            "name": "CoinGabbar",
-            "url": "https://www.coingabbar.com/en/crypto-currency-news/crypto-news-today-24-july-btc-eth-pi-drop-defi-market-surges"
+            "name": "IANS",
+            "url": "https://ianslive.in/cwg-2026-indian-boxer-jadumani-cruises-into-mens-55kg-pre-quarterfinals-with-dominant-5-0-win--20260724234142"
           },
           {
-            "name": "Milk Road (Fear & Greed Index)",
-            "url": "https://milkroad.com/fear-greed/"
+            "name": "Outlook India",
+            "url": "https://www.outlookindia.com/sports/others/jadumani-mandengbam-vs-aaron-cullen-boxing-live-updates-commonwealth-games-2026-day-2-glasgow-cwg-highlights"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Trump vows to bomb an Iranian bridge or power plant every time Iran fires on a ship in the Strait of Hormuz",
-        "date": null
-      },
-      "published_iso": "2026-07-24T01:00:00Z",
-      "added_at": "2026-07-24T15:00:20+05:30",
-      "source": "CNN",
-      "importance": "critical",
-      "regions": [
-        "Iran",
-        "US",
-        "Middle East"
-      ],
-      "title": "US completes a 13th straight night of strikes on Iran as Tehran rejects an Iraq-brokered ceasefire",
-      "what_happened": "US Central Command carried out its 13th consecutive night of strikes on Iran, hitting military command centers, drone storage facilities, communications networks, coastal surveillance sites, and assets Iran could use against ships in the Strait of Hormuz. The strikes wrapped up around 9pm US Eastern time. State media said at least four people were killed. Separately, Iran rejected a ceasefire proposal that Iraq's prime minister had carried to Tehran on Washington's behalf — Iranian officials said they would not accept any deal that left control of the Strait unresolved. President Trump said Thursday that Iran needs 'more of the same,' signaling no near-term pause.",
-      "key_points": [
-        "US hit Iranian command centers, drone storage sites and coastal radar for the 13th consecutive night",
-        "Iran rejected a temporary ceasefire relayed by Iraq's prime minister",
-        "Sticking point: who controls the Strait of Hormuz, the oil chokepoint",
-        "Trump says Iran needs 'more of the same' — no truce signaled"
-      ],
-      "moot": "Wars fought as nightly, incremental strikes rather than one decisive campaign can drag on far longer than markets initially price in — and each night that passes without a ceasefire is itself a data point that traders and governments read as 'this isn't ending soon.'",
-      "image_credit": "CNN",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "CNN",
-          "NBC News"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "Yesterday we reported Trump's threat to strike Iranian infrastructure — a bridge or power plant — every time Iran fired on a ship near Hormuz, as the ceasefire that had briefly held collapsed.",
-        "changed": "That threat has become a sustained campaign: a 13th straight night of US strikes, a rejected Iraqi-mediated ceasefire offer, and Trump saying Iran needs 'more of the same' — the confrontation has hardened rather than cooled."
-      },
-      "concepts": [
-        "strait_chokepoint",
-        "crude_geopolitics"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "The US and Iran have been in an escalating shadow war for months, triggered by Iran targeting tankers and infrastructure near the Strait of Hormuz — the narrow waterway between Iran and Oman that roughly a fifth of the world's oil passes through. Washington has responded with nightly airstrikes rather than a single knockout campaign, betting that sustained pressure forces Tehran back to the table. Iraq, which borders both the US's regional partners and Iran, has been quietly shuttling ceasefire proposals between the two sides.",
-        "why_it_matters": "This is now the longest sustained US military campaign against a state adversary since the Iraq war, and it's happening over the world's most important oil corridor. Every night of strikes without a ceasefire keeps oil markets on edge and raises the odds of a miscalculation — a hit that kills the wrong person, or an Iranian response that draws in a third country.",
-        "ripple_effects": "Oil has already crossed $100 a barrel for the first time since May on fear of a prolonged shutdown risk in Hormuz; a real closure or major tanker incident could push it toward $120, per Goldman Sachs. Higher crude feeds directly into inflation and fuel costs everywhere, including India, which imports most of its oil. Gulf allies like Saudi Arabia and the UAE are being pulled deeper into the conflict's blast radius, and shipping insurers are already repricing risk for vessels transiting the Strait.",
-        "why_now": "Trump's rejection of a pause and Iran's rejection of the Iraq-mediated offer both landed within the same 24 hours, confirming that neither side currently sees an off-ramp — this is the moment the conflict shifted from 'de-escalating' back to 'open-ended.'",
-        "watch_next": "Whether Iran retaliates against a Gulf-state target or attempts to actually close shipping lanes in the Strait of Hormuz, which would be the biggest escalation yet.",
-        "market_link": "Crude oil (already above $100/barrel), oil-tanker and shipping-insurance stocks, and defense contractors with Middle East exposure all move on every escalation or de-escalation signal here.",
-        "key_terms": [
-          {
-            "term": "Strait of Hormuz",
-            "definition": "A narrow sea passage between Iran and Oman that about a fifth of the world's oil shipments pass through — whoever controls it can choke global energy supply."
-          },
-          {
-            "term": "CENTCOM",
-            "definition": "US Central Command, the American military headquarters responsible for operations across the Middle East."
-          }
-        ],
-        "sources": [
-          {
-            "name": "CNN",
-            "url": "https://www.cnn.com/2026/07/24/world/live-news/iran-war-trump"
-          },
-          {
-            "name": "NBC News",
-            "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-attacks-gulf-us-strikes-tehran-ships-hormuz-oil-rcna353439"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
       "is_new": true,
       "published_iso": "2026-07-24T00:00:00+05:30",
@@ -1109,8 +1161,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "is_new": true,
       "published_iso": "2026-07-23T00:00:00+00:00",
@@ -1177,10 +1229,9 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-07-24T17:25:38+05:30",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "ANI",
@@ -1261,10 +1312,9 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-07-23T12:00:00+05:30",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "The Print",
@@ -1331,8 +1381,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-24T11:00:00+01:00",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -1382,8 +1432,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-07-24T10:00:00+05:30",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -1433,8 +1483,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1504,8 +1554,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-07-24T05:00:00+00:00",
       "added_at": "2026-07-24T20:59:13+05:30",
@@ -1565,8 +1615,8 @@
     },
     {
       "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1631,8 +1681,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1699,8 +1749,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": "2026-07-24T16:21:39+05:30",
       "added_at": "2026-07-24T18:04:03+05:30",
@@ -1764,8 +1814,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-07-24T15:30:00+05:30",
       "added_at": "2026-07-24T17:03:38+05:30",
@@ -1847,8 +1897,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "published_iso": "2026-07-24T09:31:00+05:30",
       "added_at": "2026-07-24T17:03:38+05:30",
@@ -1926,8 +1976,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-07-24T05:00:00+00:00",
       "added_at": "2026-07-24T16:02:05+05:30",
@@ -1990,141 +2040,126 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
-      "category": "india",
-      "development": true,
-      "prev_ref": {
-        "title": "Assam floods kill 10 more in a day, pushing the week's death toll to 36 as 650,000 people are hit across 11 districts",
-        "date": null
-      },
-      "published_iso": "2026-07-24T07:35:00Z",
-      "added_at": "2026-07-24T15:00:20+05:30",
-      "source": "Yahoo News / AP",
-      "importance": "high",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-07-24T13:00:00+02:00",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "Sky Sports",
+      "importance": "notable",
       "regions": [
-        "India",
-        "Assam"
+        "Hungary",
+        "Formula 1"
       ],
-      "title": "Assam's flood death toll climbs to 50 as 700,000 people are displaced and Guwahati's roads go under",
-      "what_happened": "Assam's flood death toll has risen to at least 50, up from 36 the day before, with 700,000 people now displaced after days of heavy monsoon rain overflowed the Brahmaputra. Nearly 900 villages have been submerged and more than 7,000 homes lost power. Almost 300,000 people are now in government relief camps. Flooding on Thursday evening disrupted Guwahati, Assam's capital and home to about 2 million people, leaving commuters stranded on submerged roads for hours. Chief Minister Himanta Biswa Sarma said authorities are running relief operations including helicopter airdrops of food and supplies.",
+      "title": "F1 championship leader Kimi Antonelli sits out Hungarian GP practice — then struggles once he's back in the car",
+      "what_happened": "Mercedes used its Hungarian GP FP1 rookie obligation to give Fred Vesti the wheel instead of Antonelli, and Vesti finished a credible 7th in the session. When Antonelli returned for FP2 in the afternoon, he struggled to find a balance with the car and ended up only 13th fastest — a poor showing for a driver leading the standings.",
       "key_points": [
-        "Death toll now at least 50, up from 36 a day earlier",
-        "700,000 people displaced; nearly 300,000 in relief camps",
-        "Almost 900 villages submerged by the overflowing Brahmaputra river",
-        "State capital Guwahati (2 million people) had roads flood Thursday evening, stranding commuters"
+        "Mercedes benched points leader Antonelli for FP1, handing the seat to reserve driver Fred Vesti",
+        "Vesti finished 7th in his session — a solid reserve-driver outing",
+        "Antonelli returned for FP2 but could only manage 13th, well off the pace",
+        "Part of F1's rule requiring teams to give rookies FP1 track time"
       ],
-      "moot": "Flood disasters often escalate gradually and get under-covered day to day — but the cumulative toll (villages, displacement, deaths) can end up far larger than any single day's headline suggests, which is why tracking the trend line matters more than any one number.",
-      "image_credit": "Yahoo News / AP",
+      "moot": "A single bad practice session for a title contender means little in isolation, but it forces the driver, the team, and rivals alike to watch the next session more closely to see if it's a real signal.",
+      "image": "https://e0.365dm.com/26/07/1600x900/skysports-f1-kimi-antonelli_7304329.jpg?20260722160311",
+      "image_credit": "Sky Sports",
       "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
         "outlets": [
-          "Yahoo News / AP"
+          "Grande Prêmio",
+          "Sky Sports"
         ],
         "corroboration": 0
-      },
-      "thread": {
-        "previously": "Yesterday we reported the Assam floods had killed 36 people for the week and affected 650,000 across 11 districts, with the toll climbing daily.",
-        "changed": "The death toll has risen to at least 50 and displacement to 700,000, and the flooding has now reached the state capital Guwahati itself, disrupting roads and stranding commuters for the first time."
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Assam sits on the floodplain of the Brahmaputra, one of Asia's largest rivers, which starts in Tibet and flows nearly 900 km through the state. Heavy monsoon rain every year swells the river past its banks, and this year's monsoon has been especially severe — deaths and displacement have been climbing steadily through the week as more districts get hit.",
-        "why_it_matters": "This has gone from a serious regional flood to one of the deadliest monsoon disasters India has seen this year, and it's now reaching the state capital itself rather than staying confined to rural districts — meaning the economic and logistical disruption is spreading beyond the immediate humanitarian toll.",
-        "ripple_effects": "Displaced families lose homes, crops and livestock, often for months; relief spending strains the state budget; and disrupted roads and rail lines through Assam matter nationally too, since the state is a gateway to India's northeast. Insurers and disaster-relief agencies will be watching the death toll and damage estimates as the situation develops.",
-        "why_now": "The toll roughly kept pace with the river through the week; today's jump to 50 dead and 700,000 displaced — from 36 dead and 650,000 affected just a day earlier — plus flooding reaching the capital for the first time, marks the point where this stopped being a contained district-level problem.",
-        "watch_next": "Whether the Brahmaputra crests and recedes over the next few days, or whether more rain pushes the death toll and displacement figures higher still.",
+        "background": "F1 rules require every team to give an F1-inexperienced driver track time in at least two Free Practice 1 sessions each season, which is why regular race drivers sometimes sit out Friday mornings for reserves or juniors. Antonelli is Mercedes' young driver currently leading the championship; Vesti is the team's reserve and test driver.",
+        "why_it_matters": "A championship leader posting a weak practice session right before a race is notable heading into a tight title fight — it raises the question of whether it's a one-off setup issue specific to missing FP1, or the start of a more concerning trend as rivals close in.",
+        "ripple_effects": "If the struggles continue into qualifying and the race, competitors like Verstappen and Piastri have a real chance to cut into Antonelli's points lead this weekend.",
+        "why_now": "It's Friday practice for the Hungarian Grand Prix, and Mercedes chose this weekend to fulfil its rookie FP1 requirement.",
+        "watch_next": "How Antonelli's Mercedes performs once he's back in the car for FP3 and qualifying on Saturday.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "Brahmaputra",
-            "definition": "One of Asia's largest rivers, flowing from Tibet through Assam — its annual monsoon swell is the main cause of Assam's recurring floods."
+            "term": "FP1 rookie rule",
+            "definition": "An F1 regulation requiring each team to give an F1-inexperienced driver track time in at least two Free Practice 1 sessions per season."
           }
         ],
         "sources": [
           {
-            "name": "Yahoo News / AP",
-            "url": "https://www.yahoo.com/news/world/articles/least-50-people-killed-700-073512428.html"
+            "name": "Sky Sports",
+            "url": "https://www.skysports.com/f1/news/12433/13565957/hungarian-gp-kimi-antonelli-oscar-piastri-among-five-drivers-to-miss-first-practice-for-race-in-budapest"
+          },
+          {
+            "name": "Grande Prêmio",
+            "url": "https://grandepremio.com/en/f1/mercedes-benches-andrea-kimi-antonelli-frederik-vesti-hungarian-gp-fp1/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-07-24T00:00:00Z",
-      "added_at": "2026-07-24T14:03:41+05:30",
-      "source": "Business Standard",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-07-24T13:00:00+02:00",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "PlanetF1",
       "importance": "notable",
       "regions": [
-        "India"
+        "Hungary",
+        "Formula 1"
       ],
-      "title": "India's ₹5,000 crore highway-investment trust IPO closes today — its biggest InvIT listing bid yet",
-      "what_happened": "Cube Highways Trust's InvIT public offer, which opened July 22, closes today at a price band of ₹151-152 per unit, targeting roughly ₹5,000 crore. The entire issue is an offer-for-sale of about 32.9 crore units by existing unit-holders — the trust itself raises no fresh money from this sale. Qualified institutional buyers get 75% of the allocation and high-net-worth investors get the rest; ordinary retail investors have zero allocated quota. Units are set to begin trading on the NSE and BSE on July 29.",
+      "title": "Charles Leclerc tops Hungarian GP practice despite a scary mechanical scare — 'something broke'",
+      "what_happened": "Leclerc set the pace on soft tyres in FP1 at the Hungaroring, but with seven minutes left in the session reported a technical issue — 'something broke' — while upshifting on a flying lap. Replays suggested a possible power-related fault, and Ferrari's crew used a fire extinguisher as a precaution while monitoring high brake temperatures; Leclerc got the car to the pit lane but had to be pushed the rest of the way to the garage. He still held onto P1 for the session. In the afternoon's FP2, Lewis Hamilton beat him to fastest time by 0.148 seconds.",
       "key_points": [
-        "Cube Highways Trust's ₹5,000 crore public offer closes today, priced at ₹151-152 a unit",
-        "It's an offer-for-sale — existing owners cashing out, not new money for building roads",
-        "Institutional investors get 75% of the units; ordinary retail investors get none",
-        "Units list on the NSE and BSE on July 29"
+        "Leclerc set the fastest FP1 lap, 1:19.075, nearly half a second clear of Verstappen and Hamilton",
+        "With 7 minutes left, he reported 'something broke' after an upshift on a flying lap",
+        "Team used a fire extinguisher near the brakes as a precaution; the car had to be pushed back to the garage",
+        "Hamilton then beat him in FP2, setting up a tight qualifying battle"
       ],
-      "moot": "Infrastructure 'recycling' — selling a completed toll road to public investors — lets a country build more roads with the same pool of money, by turning a slow-return asset into cash the original builder can redeploy immediately.",
-      "image_credit": "Business Standard",
+      "moot": "In Formula 1, being fastest on a Friday means little if it comes with a reliability question mark — teams are really racing against Saturday and Sunday, not each other's practice times.",
+      "image_credit": "PlanetF1",
       "credibility": {
-        "level": "developing",
+        "level": "confirmed",
         "count": 2,
-        "tier": 2,
+        "tier": 1,
         "outlets": [
-          "Business Standard",
-          "Goodreturns"
+          "Crash.net",
+          "PlanetF1"
         ],
         "corroboration": 0
       },
       "concepts": [],
-      "figures": [
-        {
-          "raw": "₹5,000 crore",
-          "words": "₹50 billion",
-          "usd_approx": "≈ $520mn"
-        }
-      ],
+      "figures": [],
       "depth": {
-        "background": "An InvIT (Infrastructure Investment Trust) is a vehicle that owns income-generating infrastructure — in this case, operating toll roads — and passes most of the toll income straight through to unit-holders as regular payouts, similar to how a REIT works for buildings. Cube Highways, backed by global infrastructure investor I Squared Capital, owns a portfolio of operating toll highways across India.",
-        "why_it_matters": "This is a real-world example of 'capital recycling': instead of waiting on government budgets, existing investors sell their stake in already-built, already-earning toll roads to public-market investors, freeing up cash to go build the next batch of highways. A strong close signals investor appetite for India's broader pipeline of infrastructure trusts.",
-        "ripple_effects": "How this IPO gets subscribed and how the units trade on debut will be watched as a bellwether for other InvITs and REITs planning to list, and for how cheaply India's road-building companies can raise future capital. Because retail investors are shut out this time, most of any listing-day gains will flow to institutions rather than everyday investors.",
-        "why_now": "The offer window (July 22-24) coincides with a wider wave of mid-2026 IPO activity as companies rush to list before the earnings-season lull.",
-        "watch_next": "The final subscription numbers once the books close today, and how the units trade when they debut on July 29.",
-        "market_link": "Read-through for India's broader InvIT/REIT sector (e.g., IRB InvIT, PowerGrid InvIT) — strong demand here would support more infrastructure-trust listings.",
-        "key_terms": [
-          {
-            "term": "InvIT (Infrastructure Investment Trust)",
-            "definition": "A publicly listed fund that owns completed infrastructure assets — like toll roads — and pays out most of the income they earn to investors."
-          },
-          {
-            "term": "offer for sale",
-            "definition": "An IPO structure where existing owners sell their existing stake to the public, as opposed to the company issuing new shares to raise fresh money."
-          }
-        ],
+        "background": "Friday practice sessions (FP1 and FP2) exist so teams can test setups before Saturday's qualifying and Sunday's race — being fastest on Friday matters far less than being reliable and quick when points are actually on the line. Ferrari and Leclerc are chasing a title fight this season against Red Bull's Verstappen and a resurgent Hamilton/Ferrari teammate pairing.",
+        "why_it_matters": "A mechanical issue this late on a Friday, even a seemingly minor one, forces a team to diagnose and fix it overnight before the weekend's limited part allocations and setup rules narrow their options — reliability scares here can turn into grid penalties if a component needs an unscheduled change.",
+        "ripple_effects": "It puts pressure on Ferrari's confidence and setup choices heading into qualifying, and gives rivals like Verstappen and Hamilton a psychological edge after a session where Ferrari's pace was undercut by doubt about the car's reliability.",
+        "why_now": "It's race weekend for the Hungarian Grand Prix, with the race itself on Sunday, July 26.",
+        "watch_next": "Whether Ferrari identifies and fixes the fault without needing a grid penalty before Saturday's qualifying.",
+        "market_link": null,
+        "key_terms": [],
         "sources": [
           {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/markets/ipo/cube-highways-trust-invit-ipo-details-lot-size-gmp-should-you-consider-applying-126072200178_1.html"
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/hungarian-grand-prix-2026-fp1-report"
           },
           {
-            "name": "Goodreturns",
-            "url": "https://www.goodreturns.in/ipo/cube-highways-trust-ipo/"
+            "name": "Crash.net",
+            "url": "https://www.crash.net/f1/news/1101627/1/charles-leclerc-fastest-first-hungary-f1-practice-new-aston-martin-car-breaks"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
       "is_new": true,
       "published_iso": "2026-07-24T09:00:00+00:00",
@@ -2178,10 +2213,9 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-07-24T15:45:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "RacingNews365",
@@ -2238,10 +2272,9 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-07-24T16:30:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "RacingNews365",
@@ -2298,8 +2331,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-07-24T06:00:00Z",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -2354,8 +2387,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-07-24T13:30:00+02:00",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -2409,8 +2442,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-24T10:00:00+00:00",
       "added_at": "2026-07-24T20:59:13+05:30",
@@ -2468,8 +2501,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
+      "id": "story-69",
+      "rank": 69,
       "category": "f1",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T20:01:23+05:30",
@@ -2517,8 +2550,8 @@
     },
     {
       "type": "story",
-      "id": "story-68",
-      "rank": 68,
+      "id": "story-70",
+      "rank": 70,
       "category": "f1",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T20:01:23+05:30",
@@ -2571,8 +2604,8 @@
     },
     {
       "type": "story",
-      "id": "story-69",
-      "rank": 69,
+      "id": "story-71",
+      "rank": 71,
       "category": "f1",
       "published_iso": "2026-07-24T13:00:00+02:00",
       "added_at": "2026-07-24T19:01:48+05:30",
@@ -2630,8 +2663,8 @@
     },
     {
       "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-07-24T13:15:00+02:00",
       "added_at": "2026-07-24T19:01:48+05:30",
@@ -2684,8 +2717,8 @@
     },
     {
       "type": "story",
-      "id": "story-72",
-      "rank": 72,
+      "id": "story-74",
+      "rank": 74,
       "category": "f1",
       "published_iso": "2026-07-24T13:00:00+02:00",
       "added_at": "2026-07-24T17:03:38+05:30",
@@ -2758,8 +2791,8 @@
     },
     {
       "type": "story",
-      "id": "story-74",
-      "rank": 74,
+      "id": "story-76",
+      "rank": 76,
       "category": "f1",
       "published_iso": "2026-07-24T07:00:00+00:00",
       "added_at": "2026-07-24T16:02:05+05:30",
@@ -2822,8 +2855,8 @@
     },
     {
       "type": "story",
-      "id": "story-76",
-      "rank": 76,
+      "id": "story-78",
+      "rank": 78,
       "category": "f1",
       "published_iso": "2026-07-24T06:00:00Z",
       "added_at": "2026-07-24T15:00:20+05:30",
@@ -2886,8 +2919,8 @@
     },
     {
       "type": "story",
-      "id": "story-77",
-      "rank": 77,
+      "id": "story-79",
+      "rank": 79,
       "category": "f1",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T14:03:41+05:30",
@@ -2946,67 +2979,64 @@
     },
     {
       "type": "story",
-      "id": "story-80",
-      "rank": 80,
-      "category": "f1",
-      "published_iso": "2026-07-24T00:00:00Z",
-      "added_at": "2026-07-24T12:01:41+05:30",
-      "source": "F1oversteer",
+      "id": "story-41",
+      "rank": 41,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-07-24T00:00:00+01:00",
+      "added_at": "2026-07-25T00:58:43+05:30",
+      "source": "ESPNcricinfo",
       "importance": "notable",
       "regions": [
-        "Hungary"
+        "England",
+        "Cricket"
       ],
-      "title": "Lewis Hamilton pays for skipping Ferrari's simulator — only Charles Leclerc gets to test the team's new rear wing in Hungary practice",
-      "what_happened": "At Friday practice for the Hungarian Grand Prix, Ferrari let only Leclerc run the team's new 'Macarena' rear wing, because he'd already built confidence with it on the simulator. Hamilton, who opted out of simulator work months ago, is sticking with the wing spec he raced at Spa last weekend instead.",
+      "title": "Trent Rockets bowl out Birmingham Phoenix Women for just 64 — the joint-second lowest total in Hundred history",
+      "what_happened": "Birmingham Phoenix Women collapsed to just 64 all out against Trent Rockets at Edgbaston — the joint-second lowest total in the women's competition's history — with debutant Samantha Bates (3 for 10) and Georgia Elwiss (3 for 13) combining for 6 wickets for just 23 runs. Trent Rockets knocked off the target with 69 balls to spare, led by Sophia Dunkley's unbeaten 43 off 17 balls.",
       "key_points": [
-        "Only Charles Leclerc trials Ferrari's updated 'Macarena' rear wing in first practice at the Hungaroring",
-        "Hamilton keeps running the older wing spec he used last weekend at Spa",
-        "Reason: Hamilton stopped using Ferrari's driving simulator ahead of May's Canadian GP, saying it can 'mislead' a driver more than it helps",
-        "Leclerc, by contrast, leans heavily on the simulator and had already logged laps with the new wing there",
-        "The Hungaroring's tight, high-downforce corners reward the new wing far more than Spa's high-speed layout did"
+        "Birmingham Phoenix Women collapse to 64 all out at Edgbaston",
+        "Samantha Bates (3/10, on Hundred debut) and Georgia Elwiss (3/13) share 6 wickets for 23 runs",
+        "Trent Rockets chase it down for a 9-wicket win, with 69 balls to spare",
+        "Sophia Dunkley finishes unbeaten on 43 off just 17 balls"
       ],
-      "moot": "Using — or skipping — the tools your rivals rely on isn't inherently right or wrong; it only becomes a real cost when circumstances, like a track that rewards exactly what you didn't prepare for, expose the gap.",
-      "image_credit": "F1oversteer",
+      "moot": "In short-format cricket, a handful of early wickets can spiral into a full collapse — there simply aren't enough balls left to rebuild an innings once the early damage is done.",
+      "image_credit": "ESPNcricinfo",
       "credibility": {
-        "level": "developing",
+        "level": "confirmed",
         "count": 1,
-        "tier": 2,
+        "tier": 1,
         "outlets": [
-          "F1oversteer"
+          "ESPNcricinfo"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "A rear wing shapes how much downforce (the force pushing a car onto the track, helping it corner faster) a car generates — teams constantly tweak the design and test changes in a simulator (a motion-and-screen rig that mimics a car's handling) before risking them in a real session. Hamilton has been skeptical of simulators since 1997, saying they can teach bad habits that don't match the real car; Leclerc uses Ferrari's simulator extensively to prepare.",
-        "why_it_matters": "It's a real, if self-inflicted, disadvantage for Hamilton at a track where fine-tuned setup matters enormously — the Hungaroring is tight and low-speed, making overtaking hard, so losing practice time with the better part could cost him track position all weekend.",
-        "ripple_effects": "It could affect Hamilton's qualifying and race pace just before Formula 1's month-long summer break, and adds fuel to the debate inside Ferrari about balancing a driver's personal preparation style against the team's development tools.",
-        "why_now": "This is Friday's practice session at the first day of the Hungarian Grand Prix weekend — the last race before F1 shuts down for its mandatory summer break.",
-        "watch_next": "Whether Hamilton gets his own version of the new wing once Ferrari has more track data, and how the gap shows up in Saturday's qualifying.",
+        "background": "The Hundred is England's short-format cricket competition where each team faces 100 balls per innings (rather than the usual 120-ball T20 over count), with men's and women's tournaments running in parallel each summer — designed to be fast, high-scoring, and easy for newcomers to follow.",
+        "why_it_matters": "A total this low in a format built around aggressive batting is a genuine outlier — it highlights how quickly momentum can swing in 100-ball cricket, where there's very little time to recover from an early collapse.",
+        "ripple_effects": "The result is a big early statement for Trent Rockets in the standings and a morale blow for Birmingham Phoenix heading into their remaining group games.",
+        "why_now": "It's an active group-stage matchday in this year's Hundred competition.",
+        "watch_next": "Whether Birmingham Phoenix Women can recover form in their next fixture.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "rear wing",
-            "definition": "The aerodynamic part at the back of an F1 car that generates downforce, helping the car grip the track through corners."
-          },
-          {
-            "term": "simulator",
-            "definition": "A motion-and-screen rig teams use to let drivers test car changes and practice without using real track time or a physical part."
+            "term": "The Hundred",
+            "definition": "An English short-format cricket competition where each team faces 100 balls per innings, designed to be faster and simpler for newcomers than traditional T20 cricket."
           }
         ],
         "sources": [
           {
-            "name": "F1oversteer",
-            "url": "https://www.f1oversteer.com/news/lewis-hamilton-clearly-pays-price-for-his-reluctance-after-ferraris-change-on-charles-leclercs-car/"
+            "name": "ESPNcricinfo",
+            "url": "https://www.espncricinfo.com/series/the-hundred-women-s-competition-2026-1521193/birmingham-phoenix-women-vs-trent-rockets-women-4th-match-1521200/match-report"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-41",
-      "rank": 41,
+      "id": "story-42",
+      "rank": 42,
       "category": "cricket",
       "is_new": true,
       "published_iso": "2026-07-24T19:12:00+05:30",
@@ -3060,10 +3090,9 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-07-23T10:00:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "Sky Sports",
@@ -3121,10 +3150,9 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-07-24T18:00:00+00:00",
       "added_at": "2026-07-24T22:59:19+05:30",
       "source": "ESPNcricinfo",
@@ -3183,8 +3211,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-07-24T07:00:00Z",
       "added_at": "2026-07-24T21:59:24+05:30",
@@ -3241,8 +3269,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3305,8 +3333,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-07-24T08:00:00+00:00",
       "added_at": "2026-07-24T20:59:13+05:30",
@@ -3361,8 +3389,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-07-24T12:14:25+00:00",
       "added_at": "2026-07-24T20:59:13+05:30",
@@ -3420,8 +3448,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T20:01:23+05:30",
@@ -3475,8 +3503,8 @@
     },
     {
       "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-50",
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T20:01:23+05:30",
@@ -3524,8 +3552,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "published_iso": "2026-07-23T15:00:00Z",
       "added_at": "2026-07-24T17:03:38+05:30",
@@ -3599,8 +3627,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
+      "id": "story-53",
+      "rank": 53,
       "category": "cricket",
       "published_iso": "2026-07-23T14:00:00+00:00",
       "added_at": "2026-07-24T16:02:05+05:30",
@@ -3659,8 +3687,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T12:01:41+05:30",
@@ -3713,8 +3741,8 @@
     },
     {
       "type": "story",
-      "id": "story-55",
-      "rank": 55,
+      "id": "story-56",
+      "rank": 56,
       "category": "cricket",
       "published_iso": "2026-07-23T14:00:00Z",
       "added_at": "2026-07-24T11:03:29+05:30",
@@ -3767,8 +3795,8 @@
     },
     {
       "type": "story",
-      "id": "story-56",
-      "rank": 56,
+      "id": "story-57",
+      "rank": 57,
       "category": "cricket",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-24T07:00:25+05:30",
@@ -3831,8 +3859,8 @@
     },
     {
       "type": "story",
-      "id": "story-59",
-      "rank": 59,
+      "id": "story-60",
+      "rank": 60,
       "category": "cricket",
       "published_iso": "2026-07-23T20:00:00Z",
       "added_at": "2026-07-24T06:00:58+05:30",
@@ -3889,82 +3917,18 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-60",
-      "rank": 60,
-      "category": "cricket",
-      "published_iso": "2026-07-23T14:00:00+00:00",
-      "added_at": "2026-07-24T04:02:25+05:30",
-      "source": "nationnews.com",
-      "importance": "notable",
-      "regions": [
-        "West Indies",
-        "Pakistan"
-      ],
-      "title": "West Indies name their Test squad for Pakistan, with a first-ever Test venue and a fresh face in the spin attack",
-      "what_happened": "Cricket West Indies (CWI) announced its 15-player squad for a two-match home Test series against Pakistan, running from July 25 to August 6. Joshua Bishop, a left-arm orthodox spinner who has taken 91 wickets in regional cricket for Barbados Pride and the West Indies Academy over the last three seasons, earns his first Test call-up. Kirk McKenzie returns to the squad after last playing a Test in 2024, replacing opener John Campbell, who is out with a left hamstring strain suffered during the recent ODI series against New Zealand. The first Test will be played at the Brian Lara Cricket Academy in Trinidad — the venue's first-ever men's Test match.",
-      "key_points": [
-        "Roston Chase captains a 15-man squad; Jomel Warrican is vice-captain",
-        "Left-arm spinner Joshua Bishop gets his maiden Test call-up",
-        "Kirk McKenzie returns, replacing the injured John Campbell",
-        "The opening Test at Trinidad's Brian Lara Academy will be the ground's first-ever men's Test"
-      ],
-      "moot": "Rebuilding a national team isn't just about winning the next match — it's also about deliberately creating new opportunities, like debuting fresh talent and opening new venues, that pay off over years rather than one series.",
-      "image_credit": "nationnews.com",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "nationnews.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "West Indies cricket has been rebuilding in recent years, and this squad largely keeps the core group that just won a Test series against Sri Lanka. Roston Chase, primarily known as an all-rounder, has been entrusted with the captaincy for this series.",
-        "why_it_matters": "Blooding a specialist spinner and giving a new venue its first Test both matter for West Indies' longer-term rebuilding — spin depth and expanding the pool of Test venues have both been in short supply for the board in recent years.",
-        "ripple_effects": "A strong debut from Bishop would boost West Indies' spin options for future series in Asia, where the team has historically struggled; a successful first Test at the Brian Lara Academy could put the ground in line for more regular international fixtures.",
-        "why_now": "The squad announcement comes two days before the series opener on July 25, standard timing for a home series, right after the same core group won its just-completed series against Sri Lanka 1-0.",
-        "watch_next": "How Joshua Bishop performs in his first Test cap, and the result of the two-match series against Pakistan, who arrive off a dominant warm-up win.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "maiden Test call-up",
-            "definition": "A player's first-ever selection to a national squad for a Test match, cricket's longest and most prestigious format."
-          },
-          {
-            "term": "left-arm orthodox spinner",
-            "definition": "A bowler who delivers the ball with their left hand, spinning it away from a right-handed batter — a specific and valued skill in cricket attacks."
-          }
-        ],
-        "sources": [
-          {
-            "name": "nationnews.com",
-            "url": "https://nationnews.com/2026/07/23/cwi-announces-15-member-squad-for-test-series-against-pakistan/"
-          },
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/story/bishop-earns-maiden-call-up-mckenzie-returns-for-west-indies-tests-against-pakistan-1547309"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 147
+      "older_count": 145
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 133
+      "older_count": 135
     },
     {
       "type": "archive",
