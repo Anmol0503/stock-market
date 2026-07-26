@@ -1,6 +1,6 @@
 {
   "date": "2026-07-26",
-  "generated_at": "2026-07-27T04:03:39+05:30",
+  "generated_at": "2026-07-27T05:01:12+05:30",
   "day_label": "Sunday · 26 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,6 +8,133 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-07-25T00:00:00Z",
+      "added_at": "2026-07-27T05:01:12+05:30",
+      "source": "CNBC",
+      "importance": "high",
+      "regions": [
+        "United States",
+        "Global"
+      ],
+      "title": "Big Tech's 'open-weight AI' letter doubles to 50 signatories overnight, as Washington weighs curbing Chinese AI models",
+      "what_happened": "More than two dozen companies — including Meta, Microsoft, Nvidia, IBM, Dell, CrowdStrike, Palantir, Hugging Face, Perplexity, Mistral and the Linux Foundation — signed an open letter urging US policymakers not to impose broad \"premature restrictions\" on open-weight AI models. Within a single day the signature count nearly doubled to 50, with OpenAI and Google joining. Amazon and Anthropic have not signed.",
+      "key_points": [
+        "Meta, Microsoft, Nvidia and ~20 others signed a letter defending open-weight AI models",
+        "Signatures nearly doubled to 50 in a single day, adding OpenAI and Google",
+        "Comes as Washington debates restricting Chinese open-weight models like DeepSeek",
+        "Amazon and Anthropic are notably still not on the list"
+      ],
+      "moot": "When a technology becomes strategically important, companies that normally compete will unite to lobby against regulation that could hurt the whole sector — even letting rivals sign the very same letter.",
+      "image_credit": "CNBC",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNBC",
+          "Forbes"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "\"Open-weight\" AI models are ones where the company publishes the actual trained parameters, so anyone can download, run, and modify them for free — unlike closed models such as flagship GPT or Claude versions, which you can only use through the company's paid service. Open-weight models, like Meta's Llama or China's DeepSeek, have become central to a US-China rivalry: they spread fast and get built into products everywhere, and Washington has grown worried that letting Chinese open-weight models dominate could hand China long-term influence over global AI infrastructure — so some policymakers now want to restrict them.",
+        "why_it_matters": "This is a rare moment of AI-industry unity aimed directly at shaping US policy, coming as the Trump administration reportedly weighs banning Chinese open-weight models over intellectual-property concerns. The letter argues America's AI edge depends on a strong open ecosystem, not just one best closed model — pushing back on any restriction broad enough to sweep in US open-source projects too, not just Chinese ones.",
+        "ripple_effects": "If Washington restricts open-weight models, it could reshape which AI tools startups, researchers and smaller countries can legally use and build on, since open models are the ones cheap enough for anyone to run without paying a big US or Chinese cloud company. It could also accelerate a split between a US-approved AI stack and a Chinese-led one used elsewhere in the world.",
+        "why_now": "The letter is a direct response to the Trump administration actively weighing new restrictions on Chinese AI models right now, driven by allegations that Chinese labs used stolen US intellectual property to build their models.",
+        "watch_next": "Whether the administration moves ahead with any formal restriction on open-weight models, and whether Anthropic or Amazon eventually add their names to the letter.",
+        "market_link": "Watch Nvidia (chips), Meta and Microsoft — all reliant on open-model ecosystems for AI infrastructure demand; a restrictive US policy could dent the enterprise AI-spending forecasts markets are already nervous about this earnings season.",
+        "key_terms": [
+          {
+            "term": "open-weight model",
+            "definition": "An AI model whose trained parameters are published publicly, so anyone can download and run it themselves instead of only accessing it through the company's paid service."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html"
+          },
+          {
+            "name": "Forbes",
+            "url": "https://www.forbes.com/sites/sandycarter/2026/07/25/huangs-open-weights-letter-doubled-to-50-without-amazon-and-anthropic/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "health",
+      "is_new": true,
+      "published_iso": "2026-07-26T00:00:00Z",
+      "added_at": "2026-07-27T05:01:12+05:30",
+      "source": "CDC",
+      "importance": "notable",
+      "regions": [
+        "United States"
+      ],
+      "title": "A shredded-lettuce outbreak has now sickened nearly 2,000 people across 9 US states",
+      "what_happened": "The US CDC says 1,947 people across nine states — Illinois, Indiana, Kansas, Kentucky, Michigan, Ohio, Oklahoma, Pennsylvania and West Virginia — have been sickened by Cyclospora since illnesses began on June 22. At least 98 people have been hospitalized; no deaths have been reported. Investigators traced the outbreak to shredded iceberg lettuce from Taylor Farms de Mexico, some of it served at Taco Bell locations, and the company recalled all iceberg lettuce sourced from central Mexico on July 17.",
+      "key_points": [
+        "Cyclospora parasite traced to Taylor Farms iceberg lettuce from Mexico",
+        "1,947 confirmed cases across 9 states, 98 hospitalized, zero deaths",
+        "Lettuce was recalled July 17, but new cases kept appearing after that",
+        "Diagnosis can take up to 6 weeks, so the real toll is likely higher"
+      ],
+      "moot": "Fresh-produce outbreaks are uniquely hard to stop because the food can't be cooked to kill the pathogen, and by the time lab tests confirm the link, the tainted batches have usually already been eaten — recalls end up chasing the outbreak more than preventing it.",
+      "image_credit": "CDC",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "CDC",
+          "CDC Newsroom"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supply_chain"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Cyclospora cayetanensis is a microscopic parasite that lives in soil and water and can end up on fresh produce like lettuce, herbs, and berries if irrigation water or a worker's hands carry trace amounts of human waste. It has caused a US outbreak almost every summer for over a decade, usually tied to imported fresh produce, because the parasite doesn't rinse off easily and cooking — which would normally kill it — isn't an option for salad greens.",
+        "why_it_matters": "This is one of the larger US foodborne outbreaks this year, and it kept growing even after the recall — a sign of how hard it is to fully pull contaminated fresh produce out of a supply chain once it has already shipped. It also lands amid criticism from consumer groups over recent cuts to FDA and CDC food-safety staffing, who argue outbreaks like this now take longer to catch and contain.",
+        "ripple_effects": "Restaurants and grocers that used the recalled lettuce face financial and reputational costs, and Taylor Farms will face heightened scrutiny of its Mexico supply chain. Expect renewed political debate over FDA/CDC food-inspection funding, and a likely short-term dip in demand for shredded lettuce products as shoppers grow cautious.",
+        "why_now": "Case counts keep climbing in each CDC update because Cyclospora infections can take up to six weeks to be lab-confirmed — so people who got sick even in early July are only now showing up in the official tally.",
+        "watch_next": "The next CDC update (roughly weekly) will show whether new cases have stopped appearing, which would confirm the recall actually cleared the contaminated lettuce out of the supply chain.",
+        "market_link": "Yum Brands (Taco Bell's parent) and packaged-salad suppliers like Taylor Farms face reputational and earnings risk; watch for any sales-impact guidance on Yum's next earnings call.",
+        "key_terms": [
+          {
+            "term": "Cyclospora",
+            "definition": "A microscopic, one-celled parasite that causes intestinal illness when ingested, often via contaminated fresh produce or water."
+          },
+          {
+            "term": "traceback",
+            "definition": "The investigative process health agencies use to follow a contaminated food backward through the supply chain to its source."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CDC",
+            "url": "https://www.cdc.gov/cyclosporiasis/outbreaks/07-26/investigation.html"
+          },
+          {
+            "name": "CDC Newsroom",
+            "url": "https://www.cdc.gov/media/releases/2026/cyclospora-outbreak-linked-to-iceberg-lettuce-expanded-to-four-new-states.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
       "category": "geopolitics",
       "is_new": true,
       "published_iso": "2026-07-26T00:00:00Z",
@@ -64,8 +191,8 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
       "is_new": true,
       "published_iso": "2026-07-26T16:00:00+00:00",
@@ -129,10 +256,9 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "climate",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Spain declares its first-ever national wildfire emergency as evacuations pass 300,000",
@@ -200,10 +326,9 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Oman's Iran shuttle diplomacy pays off — US pauses strikes as talks to reopen the Strait of Hormuz advance",
@@ -277,8 +402,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "economy",
       "published_iso": "2026-07-26T00:00:00Z",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -340,8 +465,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "health",
       "published_iso": "2026-07-26T01:52:50Z",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -407,8 +532,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "published_iso": "2026-07-26T00:00:00+00:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -475,8 +600,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "climate",
       "published_iso": "2026-07-26T00:00:00+00:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -538,8 +663,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "geopolitics",
       "published_iso": "2026-07-26T00:00:00Z",
       "added_at": "2026-07-26T23:02:09+05:30",
@@ -601,8 +726,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "science",
       "published_iso": "2026-07-26T01:52:57Z",
       "added_at": "2026-07-26T23:02:09+05:30",
@@ -665,8 +790,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "geopolitics",
       "published_iso": "2026-07-25T22:00:00+00:00",
       "added_at": "2026-07-26T22:04:02+05:30",
@@ -729,8 +854,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -799,8 +924,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "economy",
       "published_iso": "2026-07-26T01:00:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -863,8 +988,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "published_iso": "2026-07-25T19:00:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -926,68 +1051,72 @@
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "health",
-      "published_iso": "2026-07-26T00:00:00Z",
-      "added_at": "2026-07-26T17:59:20+05:30",
-      "source": "Euronews",
-      "importance": "high",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-26T11:00:40+05:30",
+      "added_at": "2026-07-27T05:01:12+05:30",
+      "source": "ANI News",
+      "importance": "notable",
       "regions": [
-        "Middle East",
-        "Gaza"
+        "India",
+        "Pakistan"
       ],
-      "title": "Chickenpox tears through Gaza's displacement camps — 9,300 cases in two weeks",
-      "what_happened": "Health workers report roughly 9,300 chickenpox cases across more than 130 health facilities in Gaza in just the past two weeks, according to reporting confirmed by multiple outlets including Euronews and Arab News. Chickenpox is a highly contagious virus that causes an itchy, blistering rash and fever — usually mild in healthy, vaccinated children, but it spreads fast in crowded, unhygienic conditions and can be more dangerous for malnourished or unvaccinated kids.",
+      "title": "On Kargil Vijay Diwas, India's defence minister tells Pakistan: 'we design chips, you produce suicide bombers'",
+      "what_happened": "India marked the 27th Kargil Vijay Diwas on Sunday. President Droupadi Murmu and Prime Minister Narendra Modi paid tribute to the soldiers who died in the 1999 war, calling their sacrifice a lasting source of national pride. In Drass, Defence Minister Rajnath Singh laid a wreath at the war memorial, inaugurated a virtual version of the memorial, and delivered a pointed message to Pakistan: \"While India is manufacturing semiconductors, Pakistan is producing suicide bombers,\" contrasting India's start-up and tech ecosystem with what he called Pakistan's 'terror ecosystem.' He also warned that the enemy 'still resorts to proxy war and infiltration' and said India could respond to any Pakistani 'misadventure' far more harshly than Pakistan can imagine.",
       "key_points": [
-        "About 9,300 chickenpox cases logged in just two weeks across 130+ clinics",
-        "Doctors say the real number is almost certainly higher",
-        "Overcrowded tents with no clean water make isolating the sick impossible",
-        "Worst hit area is Khan Yunis in southern Gaza"
+        "27th anniversary of India's 1999 Kargil War victory over Pakistani intrusion",
+        "President Murmu and PM Modi led tributes to soldiers at war memorials nationwide",
+        "Defence Minister Rajnath Singh, speaking in Drass, contrasted India's tech rise with Pakistan's militancy",
+        "Singh said India can hit back 'far harsher' at any future Pakistani provocation"
       ],
-      "moot": "War doesn't just kill directly — it disables the basic infrastructure (clean water, vaccines, hospitals) that normally keeps ordinary diseases from becoming crises. When that infrastructure goes, illnesses that are minor elsewhere become emergencies.",
-      "image_credit": "Euronews",
+      "moot": "Anniversaries of past wars are rarely just commemorations — governments use them to send calibrated political messages to rivals and to shape domestic narratives, so the timing and wording of leaders' remarks on these dates is itself a signal worth reading.",
+      "image_credit": "ANI News",
       "credibility": {
         "level": "developing",
-        "count": 2,
+        "count": 1,
         "tier": 2,
         "outlets": [
-          "Arab News",
-          "Euronews"
+          "ANI News"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Gaza's population has been squeezed into crowded tent camps for the better part of two years of war, with hospitals and clinics damaged and medicine and staff in short supply. Many children born during the war missed routine vaccinations, leaving a generation with weaker defenses against diseases that are normally minor and easily prevented.",
-        "why_it_matters": "A disease this easy to prevent (a routine childhood vaccine exists) is spreading explosively because the basic conditions for stopping it — space, clean water, medical access — have collapsed. It's a visible symptom of a healthcare and sanitation system that has broken down almost completely.",
-        "ripple_effects": "More sick children means more strain on a health system that is already overwhelmed, less capacity to treat war injuries or other diseases, and higher risk that chickenpox is followed by more serious outbreaks (measles, cholera) in the same crowded camps. It adds pressure on aid agencies and on ceasefire diplomacy to allow more medical supplies in.",
-        "why_now": "The outbreak has accelerated sharply in just the last two weeks as camps have grown more crowded and the hot summer months make hygiene even harder to maintain.",
-        "watch_next": "Whether the World Health Organization and aid groups can get more vaccines and medical supplies into Gaza's camps to stop the outbreak from widening into more dangerous diseases.",
+        "background": "In summer 1999, Pakistani soldiers and militants secretly crossed the Line of Control (the de facto India-Pakistan border in disputed Kashmir) and occupied high mountain posts above the town of Kargil in Ladakh. India fought a two-month war, Operation Vijay, to reclaim those peaks at extreme altitude, losing over 500 soldiers before declaring victory on July 26, 1999. India has marked that date as Kargil Vijay Diwas ('Victory Day') every year since, with the main ceremony held at the Kargil War Memorial in Drass, near the old battlefield.",
+        "why_it_matters": "Kargil Vijay Diwas is one of India's most emotionally resonant military anniversaries, and ministers regularly use the platform to set the tone on India-Pakistan relations for months ahead. Rajnath Singh's blunt economy-versus-terror framing signals New Delhi wants to publicly link its tech and defence-manufacturing ambitions to a harder line on Pakistan, at a time when India has been emphasizing self-reliant defence production.",
+        "ripple_effects": "Expect a sharp rejection from Pakistan's foreign office or military, which typically disputes Indian ministers' characterizations. Domestically, the remarks reinforce the government's narrative of India as a rising tech and defence power, feeding into its broader push for semiconductor manufacturing and defence exports. It also keeps India-Pakistan tensions in the headlines even without any new military incident.",
+        "why_now": "July 26 is the fixed annual date of Kargil Vijay Diwas, marking the exact day in 1999 that India declared victory — so the ceremonies and ministerial statements happen every year on this date.",
+        "watch_next": "Any formal reaction from Islamabad, and whether Rajnath Singh's 'harsher response' language resurfaces in upcoming defence-budget or border-security announcements.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "Displacement camp",
-            "definition": "A temporary settlement of tents or shelters where people forced from their homes by war or disaster live, often with limited water, sanitation, and medical care."
+            "term": "Line of Control",
+            "definition": "The de facto military border dividing Indian- and Pakistani-administered Kashmir; it is not an internationally recognized border, which is part of why both countries dispute the territory."
+          },
+          {
+            "term": "Operation Vijay",
+            "definition": "India's 1999 military operation to retake the mountain posts near Kargil that Pakistani forces had occupied."
           }
         ],
         "sources": [
           {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/2026/07/26/chickenpox-sweeps-gaza-camps-as-thousands-of-cases-emerge-in-two-weeks"
+            "name": "ANI News",
+            "url": "https://www.aninews.in/news/national/general-news/india-has-capability-to-respond-to-every-pakistani-misadventure-in-a-manner-far-harsher-than-it-can-imagine-rajnath-singh-in-drass20260726110040/"
           },
           {
-            "name": "Arab News",
-            "url": "https://www.arabnews.com/node/2651698/middle-east"
+            "name": "ANI News",
+            "url": "https://aninews.in/news/national/general-news/enemy-still-resorts-to-proxy-war-and-infiltration-rajnath-singh-warns-on-eve-of-kargil-vijay-diwas20260726000845/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
       "development": true,
@@ -1051,8 +1180,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
       "is_new": true,
       "development": true,
@@ -1122,10 +1251,9 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Woman critically hurt in Delhi's 'Chalo Sansad' protest crackdown taken off ventilator, now conscious and stable",
@@ -1195,8 +1323,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-27T00:58:47+05:30",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -1257,8 +1385,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-07-26T00:00:00+05:30",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -1330,8 +1458,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-26T19:13:00+05:30",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -1396,8 +1524,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1467,70 +1595,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-07-24T15:30:00+05:30",
-      "added_at": "2026-07-27T00:01:57+05:30",
-      "source": "Trading Economics",
-      "importance": "high",
-      "regions": [
-        "India"
-      ],
-      "title": "Sensex and Nifty slide to a one-month low as surging oil prices squeeze Indian stocks",
-      "what_happened": "India's benchmark stock indices fell on Friday, July 24, with the Sensex down 332 points (0.43%) to 76,060 and the Nifty 50 down about 0.4% to 23,770 — both one-month lows. The decline tracked a sharp rise in crude oil prices driven by escalating Middle East tensions, which pushes up India's import costs and pressures the rupee. Bajaj Finance and Mahindra & Mahindra were among the top losers; HCL Tech, ITC and Reliance Industries bucked the trend.",
-      "key_points": [
-        "India's Sensex fell 332 points (0.43%) to close at 76,060; the Nifty 50 fell about 0.4% to 23,770 — both their lowest in over a month",
-        "The trigger: crude oil jumping on Middle East tensions (Houthi attacks on Saudi tankers, US-Iran strikes), which raises India's oil-import bill and pressures the rupee",
-        "Bajaj Finance and Mahindra & Mahindra led the losses; HCL Tech, ITC and Reliance Industries were among the few gainers"
-      ],
-      "moot": "Countries that import most of their energy are structurally more exposed to global oil shocks — the same event, tankers attacked thousands of miles away, can move an Indian saver's mutual fund and a Gulf oil trader's screen on the very same day, because energy costs ripple through currencies, inflation and stock prices almost immediately.",
-      "image_credit": "Trading Economics",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Trading Economics"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "currency_strength",
-        "crude_asset",
-        "usdinr",
-        "inflation"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "India imports the vast majority of the crude oil it uses, so global oil-price spikes hit it harder than most large economies — both by raising fuel and import costs directly, and by weakening the rupee, since India has to spend more dollars buying the same amount of oil. Indian stocks, especially import-heavy and rate-sensitive sectors, tend to wobble when oil jumps.",
-        "why_it_matters": "India is one of the world's largest oil importers, so this is the clearest, fastest channel by which a Middle East conflict thousands of kilometres away shows up in an ordinary Indian investor's portfolio or a commuter's fuel bill. It's a reminder that Indian markets stay sensitive to global energy shocks even as the domestic economy grows quickly.",
-        "ripple_effects": "A weaker rupee, driven by costlier oil imports, makes everything India imports more expensive, adding to inflation pressure — which could complicate any future RBI (India's central bank) plans to cut interest rates. Fuel- and import-reliant sectors like aviation, logistics and autos face tighter margins, while IT and export-oriented firms that earn in dollars can actually benefit from a weaker rupee.",
-        "why_now": "This is showing up in Indian markets right now because the oil-price spike from the Houthi tanker attacks and US-Iran tensions happened this week — Indian markets, which price in global energy costs quickly, reacted within the same trading session.",
-        "watch_next": "Watch India's crude oil import basket price and the rupee-dollar exchange rate over the coming days — if oil stays near $100, expect continued pressure on Indian markets and imported inflation.",
-        "market_link": "Directly about Indian equity indices (Sensex, Nifty), the rupee, and oil-import-exposed sectors — the domestic flip side of the global oil-price story.",
-        "key_terms": [
-          {
-            "term": "Nifty 50",
-            "definition": "An index tracking the 50 largest, most-traded companies on India's National Stock Exchange — one of the two main gauges, along with the Sensex, of how Indian stocks are doing overall."
-          },
-          {
-            "term": "rupee",
-            "definition": "India's currency; it tends to weaken when India has to spend more dollars importing costly goods like oil."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Trading Economics",
-            "url": "https://tradingeconomics.com/india/stock-market"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-07-26T00:00:00Z",
       "added_at": "2026-07-27T00:01:32+05:30",
@@ -1595,8 +1661,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-07-26T00:00:00+05:30",
       "added_at": "2026-07-26T23:02:09+05:30",
@@ -1653,8 +1719,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-07-26T01:00:00+00:00",
       "added_at": "2026-07-26T22:04:02+05:30",
@@ -1708,8 +1774,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-07-26T14:00:00+00:00",
       "added_at": "2026-07-26T22:04:02+05:30",
@@ -1769,8 +1835,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": "2026-07-26T03:30:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -1829,8 +1895,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": "2026-07-26T04:00:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -1893,8 +1959,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-07-26T06:00:00+05:30",
       "added_at": "2026-07-26T20:03:32+05:30",
@@ -1954,8 +2020,8 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-07-26T06:00:00+00:00",
       "added_at": "2026-07-26T16:59:13+05:30",
@@ -2024,63 +2090,72 @@
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-07-26T12:00:00+00:00",
-      "added_at": "2026-07-26T16:06:36+05:30",
-      "source": "Sunday Guardian Live",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-07-25T00:00:00Z",
+      "added_at": "2026-07-27T05:01:12+05:30",
+      "source": "RTÉ Sport",
       "importance": "notable",
       "regions": [
-        "India",
-        "UK"
+        "Middle East",
+        "Italy",
+        "Malaysia"
       ],
-      "title": "India's Commonwealth Games Day 3: lawn bowls pair wins, boxer advances, but swimmers miss the final",
-      "what_happened": "On Day 3 (July 26), India's women's lawn bowls pair of Rupa Rani Tirkey and Pinky Singh won their sectional match against Namibia. In boxing, Sachin Siwach moved a step closer to a medal in the men's 60kg category. But in the pool, swimmers Dhakshan Shashikumar and Aryan Nehra failed to qualify for the men's 400m freestyle final, while the men's 4x200m freestyle relay team was still to swim its heats later in the day.",
+      "title": "F1 lines up Imola and Sepang as backup venues in case Iran tensions force Qatar and Abu Dhabi off the calendar",
+      "what_happened": "With the US and Iran locked in an escalating standoff that has already put fuel-shipping routes through the Strait of Hormuz at risk, F1 organizers have quietly lined up backup plans for the season's Middle East finale. Imola is the leading candidate to replace Qatar's race on the same November 29 weekend if it's scrapped, which would mark F1's first European season finale in nearly 30 years, since Jerez in 1997. Sepang is separately being considered as an alternative for an early-October date. The tension has also ended any chance of Bahrain returning to the calendar this year.",
       "key_points": [
-        "Rupa Rani Tirkey and Pinky Singh win women's pairs lawn bowls vs Namibia",
-        "Boxer Sachin Siwach moves a step closer to a medal in men's 60kg",
-        "Dhakshan Shashikumar and Aryan Nehra fail to make the men's 400m freestyle final",
-        "Men's 4x200m freestyle relay heats still to come later in the day"
+        "F1's 2026 season is due to finish in Qatar (Nov 29) and Abu Dhabi (Dec 6)",
+        "Escalating US-Iran tensions have put both Gulf races in doubt",
+        "Imola (Italy) is the leading contingency to host the season finale instead",
+        "Sepang (Malaysia) is also on standby for an early-October slot"
       ],
-      "moot": "A country's strength at a multi-sport event is rarely uniform — success in disciplines with dedicated domestic pipelines (boxing, weightlifting, wrestling for India) coexists with persistent gaps in others (like swimming), and overall medal tables often mask that unevenness.",
-      "image_credit": "Sunday Guardian Live",
+      "moot": "Global events plan for geopolitical risk the same way investors do — by keeping a backup plan ready, because a crisis in one region can force a costly change of plans somewhere that seems completely unrelated at first glance.",
+      "image_credit": "RTÉ Sport",
       "credibility": {
-        "level": "confirmed",
+        "level": "developing",
         "count": 2,
-        "tier": 1,
+        "tier": 2,
         "outlets": [
-          "ESPN",
-          "Sunday Guardian Live"
+          "GrandPrix247",
+          "RTÉ Sport"
         ],
         "corroboration": 0
       },
-      "concepts": [],
+      "concepts": [
+        "crude_geopolitics"
+      ],
       "figures": [],
       "depth": {
-        "background": "India arrived at the Glasgow 2026 Commonwealth Games with two bronze medals already banked — including one from Lovlina Borgohain's boxing bye into the semifinals — and is chasing a broader medal push across boxing, gymnastics, swimming and lawn bowls through the Games' first week.",
-        "why_it_matters": "Lawn bowls and boxing are two of India's more reliable Commonwealth Games medal sources, while swimming has long been a weaker discipline for the country — Day 3's mixed results are a realistic snapshot of where India's medal push is genuinely strong versus where it still lags the world's best.",
-        "ripple_effects": "Continued lawn bowls and boxing success builds India's overall medal tally (currently 10th on the table); the swimming miss extends a long-standing competitiveness gap in pool sports at global multi-sport events, a recurring point of domestic debate about sports funding and grassroots development.",
-        "why_now": "These are live results from Day 3 of the Glasgow 2026 Games, which run for roughly ten days in total.",
-        "watch_next": "Sachin Siwach's next boxing bout as he continues his medal push, and Mirabai Chanu's bid for a third consecutive Commonwealth weightlifting gold in the women's 48kg event later today.",
-        "market_link": null,
-        "key_terms": [],
+        "background": "Formula 1's calendar has leaned heavily on the Gulf region in recent years, with Qatar and Abu Dhabi hosting the season's final two races. That only works if the region is stable enough for teams, sponsors and fans to travel safely. Imola, officially the Autodromo Enzo e Dino Ferrari, is one of F1's classic European circuits and hosted a round as recently as 2025; Sepang, in Malaysia, held F1 races from 1999 to 2017 before dropping off the calendar.",
+        "why_it_matters": "This shows how a geopolitical crisis thousands of miles from a racetrack can reshape a global sport's calendar in real time — sponsors, broadcasters and logistics are all built around locked-in race dates and locations, so swapping venues months out is a major operational and financial scramble for F1 and its teams.",
+        "ripple_effects": "A shift to Imola would be a win for European fans and TV audiences (friendlier time zones) but a blow to Qatar's tourism push, which has invested heavily in hosting marquee sports events. Teams would also need to rework logistics built around a Gulf-based finale. It's a reminder that the same Iran tensions rattling oil markets and Gulf shipping are now reaching into sports scheduling too.",
+        "why_now": "Contingency planning has intensified because the US-Iran standoff has escalated further this month, adding real doubt about whether the two Gulf races set for late November and early December can safely go ahead.",
+        "watch_next": "F1's official confirmation, likely to come closer to the November race weekend as organizers watch whether the US-Iran situation stabilizes or worsens.",
+        "market_link": "Ties directly to the same US-Iran tensions moving oil prices — further escalation disrupting Gulf logistics for F1 would likely coincide with renewed pressure on Brent crude and shipping-insurance costs through the Strait of Hormuz.",
+        "key_terms": [
+          {
+            "term": "season finale",
+            "definition": "The last race (or races) of the Formula 1 calendar year, often decisive for the drivers' and constructors' championships."
+          }
+        ],
         "sources": [
           {
-            "name": "Sunday Guardian Live",
-            "url": "https://sundayguardianlive.com/live-updates/sports/commonwealth-games-2026-live-updates-catch-cwg-day-3-india-in-action-across-boxing-swimming-gymnastics-lawn-bowls-more-follow-live-update-245798/"
+            "name": "RTÉ Sport",
+            "url": "https://www.rte.ie/sport/motorsport/2026/0725/1585077-imola-on-standby-to-stage-formula-one-season-finale/"
           },
           {
-            "name": "ESPN",
-            "url": "https://www.espn.com/commonwealth-games/story/_/id/49451313/india-commonwealth-games-2026-live-updates-scores-news-results-commentary-schedule-timings-july-26-sunday-cwg-glasgow"
+            "name": "GrandPrix247",
+            "url": "https://www.grandprix247.com/grand-prix-f1-weekend-news/imola-and-sepang-on-standby-to-replace-middle-east-war-affected-races"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
       "is_new": true,
       "published_iso": "2026-07-26T15:30:00+02:00",
@@ -2139,8 +2214,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
       "is_new": true,
       "published_iso": "2026-07-26T15:30:00+02:00",
@@ -2199,10 +2274,9 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-07-25T00:00:00+00:00",
       "added_at": "2026-07-27T03:03:19+05:30",
       "source": "GrandPrix.com",
@@ -2260,10 +2334,9 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-07-26T15:00:00+02:00",
       "added_at": "2026-07-27T03:03:19+05:30",
       "source": "Formula1.com",
@@ -2321,8 +2394,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-07-25T00:00:00+02:00",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -2386,8 +2459,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-07-26T17:00:00+02:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -2446,8 +2519,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-26T16:30:00+02:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -2510,8 +2583,8 @@
     },
     {
       "type": "story",
-      "id": "story-68",
-      "rank": 68,
+      "id": "story-69",
+      "rank": 69,
       "category": "f1",
       "published_iso": "2026-07-26T00:00:00+02:00",
       "added_at": "2026-07-26T23:02:09+05:30",
@@ -2565,8 +2638,8 @@
     },
     {
       "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-71",
+      "rank": 71,
       "category": "f1",
       "published_iso": "2026-07-26T14:30:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -2619,8 +2692,8 @@
     },
     {
       "type": "story",
-      "id": "story-71",
-      "rank": 71,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-07-26T14:00:00+00:00",
       "added_at": "2026-07-26T21:02:32+05:30",
@@ -2679,8 +2752,8 @@
     },
     {
       "type": "story",
-      "id": "story-72",
-      "rank": 72,
+      "id": "story-73",
+      "rank": 73,
       "category": "f1",
       "published_iso": "2026-07-26T00:00:00+00:00",
       "added_at": "2026-07-26T20:03:32+05:30",
@@ -2738,8 +2811,8 @@
     },
     {
       "type": "story",
-      "id": "story-73",
-      "rank": 73,
+      "id": "story-74",
+      "rank": 74,
       "category": "f1",
       "published_iso": "2026-07-26T00:00:00+00:00",
       "added_at": "2026-07-26T20:03:32+05:30",
@@ -2798,8 +2871,8 @@
     },
     {
       "type": "story",
-      "id": "story-76",
-      "rank": 76,
+      "id": "story-77",
+      "rank": 77,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2867,8 +2940,8 @@
     },
     {
       "type": "story",
-      "id": "story-79",
-      "rank": 79,
+      "id": "story-80",
+      "rank": 80,
       "category": "f1",
       "published_iso": "2026-07-25T20:00:00+02:00",
       "added_at": "2026-07-26T13:57:34+05:30",
@@ -3039,7 +3112,6 @@
       "id": "story-43",
       "rank": 43,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-07-26T21:00:00+01:00",
       "added_at": "2026-07-27T03:03:19+05:30",
       "source": "ESPNcricinfo",
@@ -3094,7 +3166,6 @@
       "id": "story-44",
       "rank": 44,
       "category": "cricket",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "West Indies build a commanding 303/7 at lunch on Day 2 of the Pakistan Test",
@@ -3744,7 +3815,7 @@
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 130
+      "older_count": 131
     },
     {
       "type": "archive",
@@ -3758,7 +3829,7 @@
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 81
+      "older_count": 79
     },
     {
       "type": "outro",
