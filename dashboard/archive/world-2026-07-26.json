@@ -1,9 +1,111 @@
 {
   "date": "2026-07-26",
-  "generated_at": "2026-07-26T09:02:04+05:30",
+  "generated_at": "2026-07-26T10:07:57+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "category": "technology",
+      "published_iso": "2026-07-25T00:00:00Z",
+      "regions": [
+        "Global"
+      ],
+      "title": "Critical, unpatched security flaw in Alibaba's Fastjson is being actively exploited \u2014 no fix exists yet",
+      "key_points": [
+        "CVE-2026-16723, severity 9.0 out of 10 \u2014 critical",
+        "Affects Fastjson 1.2.68 through 1.2.83, widely used in enterprise Java apps",
+        "Attackers can run code with no login needed, no patch available yet",
+        "Active attacks confirmed since July 22, mostly against US firms"
+      ],
+      "background": "Fastjson is a free code library, maintained by Chinese tech giant Alibaba, that lets Java programs read and write JSON data (a common format for exchanging information between computer systems). Because it's fast and free, it got embedded into huge numbers of enterprise applications built on Java and Spring Boot \u2014 the same programming stack used by banks, hospitals, retailers and many other large organizations worldwide.",
+      "what_happened": "Security researchers at FearsOff discovered a critical vulnerability in Fastjson, tracked as CVE-2026-16723, that lets an attacker send a specially crafted piece of JSON data to a vulnerable application and run their own code on it \u2014 no password or login required. Fastjson's maintainers published an advisory on July 21. Security firm ThreatBook confirmed real-world attacks starting July 22. As of the latest reporting on July 25, Alibaba had not released a fix, and the attack works even when standard safety settings that normally block similar bugs are turned on.",
+      "why_it_matters": "This is the kind of bug security professionals dread most: a widely-used piece of shared code, a way in that needs no password, and no official fix yet. It echoes 2021's 'Log4Shell' incident, where a similar flaw in a different widely-used Java library forced companies worldwide into emergency patching. Because Fastjson sits quietly inside so many enterprise systems, many organizations may not even realize they're using it.",
+      "ripple_effects": "Financial services, healthcare, retail and computing firms \u2014 mostly in the US, with some attacks in Singapore and Canada \u2014 are already being targeted. Security teams globally are being pushed into emergency mitigation work (enabling 'SafeMode' or switching library versions) rather than a routine patch cycle. Expect a wave of similar advisories from other vendors auditing whether they also use the vulnerable Fastjson versions.",
+      "why_now": "Confirmed active exploitation in the wild, combined with the continued absence of an official patch nearly a week after the advisory, is what's driving today's fresh wave of coverage and urgency.",
+      "watch_next": "Whether Alibaba ships an official patch for Fastjson 1.x, and whether attacks spread beyond the US-concentrated pattern seen so far.",
+      "key_terms": [
+        {
+          "term": "RCE (remote code execution)",
+          "definition": "A type of security flaw that lets an attacker run their own commands on someone else's computer or server, usually the most serious kind of bug."
+        },
+        {
+          "term": "CVE",
+          "definition": "A public ID number assigned to a specific known security vulnerability, used by researchers and companies worldwide to track and discuss it."
+        },
+        {
+          "term": "Zero-day",
+          "definition": "A vulnerability that is being exploited by attackers before a fix is available \u2014 meaning defenders have had 'zero days' to patch it."
+        }
+      ],
+      "the_lesson": "Modern software is built from thousands of shared, often-invisible building blocks \u2014 when one of them has a critical flaw, it doesn't just affect one company, it can simultaneously expose banks, hospitals and retailers who never wrote a line of the vulnerable code themselves.",
+      "concepts": [
+        "supply_chain"
+      ],
+      "market_link": null,
+      "importance": "high",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html"
+        },
+        {
+          "name": "Security Boulevard (Imperva)",
+          "url": "https://securityboulevard.com/2026/07/imperva-customers-protected-against-cve-2026-16723-critical-fastjson-1-x-zero-day-rce/"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 1
+    },
+    {
+      "category": "health",
+      "published_iso": "2026-07-26T00:00:00-04:00",
+      "regions": [
+        "United States"
+      ],
+      "title": "US Cyclospora outbreak tied to Taco Bell lettuce grows to nearly 2,000 cases across 9 states",
+      "key_points": [
+        "1,947 confirmed cases across 9 US states, 98 hospitalized",
+        "Traced to Taylor Farms de Mexico iceberg lettuce used by Taco Bell",
+        "Supplier recalled all central-Mexico iceberg lettuce on July 17",
+        "Illnesses started as early as June 22, still climbing"
+      ],
+      "background": "Cyclospora cayetanensis is a microscopic parasite that spreads through food or water contaminated with human waste \u2014 usually irrigation water tainted by leaking sewage, or field workers without proper sanitation. It's not spread person-to-person. The US has had smaller outbreaks before, usually linked to imported produce like cilantro or basil, but this one has grown unusually large and is centered on a major fast-food chain's supply chain.",
+      "what_happened": "The CDC's latest update, published today, puts the outbreak at 1,947 confirmed cases across Illinois, Indiana, Kansas, Kentucky, Michigan, Ohio, Oklahoma, Pennsylvania and West Virginia, with at least 98 people hospitalized and no deaths reported. Investigators traced the source to iceberg lettuce grown by Taylor Farms de Mexico, which moved through Taco Bell's supply chain. The company issued a nationwide recall of its central-Mexico iceberg lettuce on July 17. Illness onset dates range from June 22 to July 20, meaning the outbreak has been quietly growing for over a month.",
+      "why_it_matters": "This is one of the largest fresh-produce outbreaks tied to a major restaurant chain in years, and it's still active \u2014 case counts have grown even after the recall, which usually signals contaminated product was already in the supply chain longer than first realized. It puts fresh scrutiny on how imported produce is grown and washed before it reaches US kitchens.",
+      "ripple_effects": "Taco Bell faces reputational and potential legal exposure as case numbers climb. Regulators (FDA and CDC) are expected to tighten inspection and traceability requirements on imported lettuce, which could raise costs across the fast-food and grocery supply chain. Other chains sourcing from the same growing regions may face precautionary scrutiny even without confirmed contamination.",
+      "why_now": "The CDC's investigation page was updated today with the latest case count, reflecting the outbreak's continued growth even three weeks after the recall was issued.",
+      "watch_next": "Whether the case count keeps rising in the coming days, which would suggest contaminated lettuce is still in circulation somewhere in the supply chain.",
+      "key_terms": [
+        {
+          "term": "Cyclosporiasis",
+          "definition": "An intestinal illness caused by the microscopic parasite Cyclospora cayetanensis, spread through food or water contaminated with human fecal matter."
+        },
+        {
+          "term": "Traceback investigation",
+          "definition": "The process regulators use to work backward from sick patients through the supply chain to find the contaminated source."
+        }
+      ],
+      "the_lesson": "A food safety problem doesn't stay contained to one restaurant \u2014 a single contaminated ingredient from one farm can ripple through a national supply chain and sicken thousands before anyone notices, because symptoms can take up to two weeks to appear and get reported.",
+      "concepts": [
+        "supply_chain"
+      ],
+      "market_link": "Yum Brands (Taco Bell's parent) and Taylor Farms-linked suppliers could see near-term reputational and legal cost pressure as the case count grows.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "CDC",
+          "url": "https://www.cdc.gov/cyclosporiasis/outbreaks/07-26/investigation.html"
+        },
+        {
+          "name": "STAT News",
+          "url": "https://www.statnews.com/2026/07/17/cyclosporiasis-outbreak-traced-taylor-farms-lettuce-taco-bell/"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 2
+    },
     {
       "region": "global",
       "category": "climate",
@@ -57,7 +159,7 @@
         "title": "Spain declares its first-ever national wildfire emergency as Spain and France's fire season hits a record \u2014 over 250,000 evacuated",
         "date": null
       },
-      "rank": 1
+      "rank": 3
     },
     {
       "category": "geopolitics",
@@ -109,7 +211,7 @@
         }
       ],
       "added_at": "2026-07-26T07:59:53+05:30",
-      "rank": 2
+      "rank": 4
     },
     {
       "category": "geopolitics",
@@ -158,7 +260,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T07:02:07+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "category": "geopolitics",
@@ -214,10 +316,10 @@
         "title": "Russian missile hits a Ukrainian arms exhibition near Kyiv, killing at least 10 and injuring 100",
         "date": null
       },
-      "rank": 4
+      "rank": 6
     },
     {
-      "rank": 5,
+      "rank": 7,
       "category": "geopolitics",
       "published_iso": "2026-07-24T20:00:00+03:00",
       "regions": [
@@ -259,7 +361,7 @@
       "added_at": "2026-07-26T06:00:10+05:30"
     },
     {
-      "rank": 6,
+      "rank": 8,
       "category": "geopolitics",
       "published_iso": "2026-07-25T05:00:00Z",
       "regions": [
@@ -359,7 +461,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T05:02:02+05:30",
-      "rank": 7
+      "rank": 9
     },
     {
       "category": "climate",
@@ -407,7 +509,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T05:02:02+05:30",
-      "rank": 8
+      "rank": 10
     },
     {
       "category": "geopolitics",
@@ -456,7 +558,7 @@
         }
       ],
       "added_at": "2026-07-26T04:01:39+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "category": "geopolitics",
@@ -512,7 +614,7 @@
         "title": "Netanyahu heads to the White House for his first face-to-face with Trump since the Iran war began",
         "date": null
       },
-      "rank": 10
+      "rank": 12
     },
     {
       "category": "geopolitics",
@@ -565,7 +667,7 @@
         "title": "Iran fires drones at US bases in Bahrain, Kuwait and Jordan as its retaliation spreads across the Gulf",
         "date": null
       },
-      "rank": 11
+      "rank": 13
     },
     {
       "category": "health",
@@ -611,7 +713,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T01:59:55+05:30",
-      "rank": 12
+      "rank": 14
     },
     {
       "region": "global",
@@ -664,7 +766,7 @@
         }
       ],
       "added_at": "2026-07-26T01:01:41+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "region": "global",
@@ -715,7 +817,7 @@
         }
       ],
       "added_at": "2026-07-26T01:01:41+05:30",
-      "rank": 14
+      "rank": 16
     },
     {
       "category": "climate",
@@ -760,7 +862,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T00:08:32+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "category": "geopolitics",
@@ -807,7 +909,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-26T00:08:32+05:30",
-      "rank": 16
+      "rank": 18
     },
     {
       "category": "geopolitics",
@@ -855,7 +957,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-25T22:59:57+05:30",
-      "rank": 17
+      "rank": 19
     },
     {
       "category": "geopolitics",
@@ -908,114 +1010,110 @@
       ],
       "region": "global",
       "added_at": "2026-07-25T22:59:57+05:30",
-      "rank": 18
-    },
-    {
-      "region": "global",
-      "category": "economy",
-      "published_iso": "2026-07-24T18:00:00Z",
-      "regions": [
-        "US"
-      ],
-      "title": "Paramount agrees to delay its Warner Bros. Discovery buyout until mid-2027 as state lawsuits threaten to kill the deal",
-      "key_points": [
-        "Paramount won't close the Warner Bros. Discovery deal until a court rules on an antitrust challenge, or June 1, 2027 \u2014 whichever comes first",
-        "A federal judge had already ordered a 2-week halt to the merger earlier in the week",
-        "12 state attorneys general, led by California's Rob Bonta, are suing to block it outright",
-        "The Writers Guild of America filed a separate suit, saying the merger would mean lower pay and fewer jobs for writers"
-      ],
-      "background": "Paramount (owner of CBS and Paramount Pictures) agreed to buy Warner Bros. Discovery (owner of HBO, CNN, and Warner Bros. studios) in one of the largest media mergers in Hollywood history \u2014 combining two major studios, two streaming services, and a stack of TV networks into one company. Big mergers like this need antitrust approval because regulators worry about one company controlling too much of an industry, which can mean higher prices and fewer choices for consumers.",
-      "what_happened": "Paramount said in a Friday afternoon court filing that it will not complete the merger until either an antitrust trial takes place or June 1, 2027, whichever is sooner. This came just days after a federal judge had already ordered the two companies to pause the deal for at least two weeks while a legal challenge from a coalition of state attorneys general plays out. The Writers Guild of America filed its own separate lawsuit making similar antitrust arguments.",
-      "why_it_matters": "This is a real threat to one of the biggest media deals in years, not just a paperwork delay. If the states win, the merger could be blocked entirely, reshaping who controls Hollywood's studios and streaming services. Every quarter the deal is delayed, Paramount also owes Warner Bros. Discovery a contractual 'ticking fee' \u2014 extra money that makes waiting expensive for Paramount.",
-      "ripple_effects": "A prolonged delay adds real cost pressure on Paramount and creates uncertainty for both companies' employees, especially writers and other creative workers the WGA says would be hurt by less competition among studios. It also sets a precedent other media and tech mergers will watch closely \u2014 state attorneys general successfully forcing a pause signals they're willing to fight big consolidation deals even after federal regulators have weighed in.",
-      "why_now": "The delay was forced by a fast-moving legal fight: a federal judge ordered a halt earlier in the week, and state AGs plus the WGA filed suits within days of each other in mid-July, escalating pressure that led Paramount to concede the delay rather than fight to close on the original schedule.",
-      "watch_next": "The antitrust trial date and any ruling on the states' request for an injunction \u2014 that outcome decides whether the merger proceeds at all.",
-      "key_terms": [
-        {
-          "term": "antitrust lawsuit",
-          "definition": "A legal case arguing that a merger or business practice illegally reduces competition, which can lead to higher prices or fewer choices for consumers."
-        },
-        {
-          "term": "ticking fee",
-          "definition": "A penalty payment, often per share per quarter, that one company owes another for delaying a deal's closing \u2014 it makes stalling costly."
-        }
-      ],
-      "the_lesson": "Even after two companies and their boards agree to merge, government lawyers \u2014 federal or state \u2014 can still delay or kill the deal if they believe it hurts competition. Regulatory risk doesn't end at the handshake; it can drag on for years and cost real money.",
-      "concepts": [],
-      "market_link": "Paramount Skydance and Warner Bros. Discovery shares are sensitive to every twist in this case; a prolonged delay or a block would hit merger-arbitrage investors betting on the deal closing on schedule.",
-      "importance": "high",
-      "sources": [
-        {
-          "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/07/24/paramount-wbd-merger-delay.html"
-        },
-        {
-          "name": "CNN Business",
-          "url": "https://www.cnn.com/2026/07/24/media/paramount-warner-bros-discovery-merger-delay"
-        }
-      ],
-      "added_at": "2026-07-25T21:59:22+05:30",
-      "rank": 19
-    },
-    {
-      "category": "economy",
-      "region": "global",
-      "published_iso": "2026-07-24T00:01:00-04:00",
-      "regions": [
-        "US",
-        "Global"
-      ],
-      "title": "Trump rolls out new 10\u201312.5% tariffs on 60 countries over 'forced labor' \u2014 the replacement for the tariffs the Supreme Court struck down",
-      "key_points": [
-        "New tariffs of 10% or 12.5% now apply to goods from 60 countries, covering over 99% of all US imports",
-        "Legal basis this time is a forced-labor law (Section 301), not the emergency powers law the Supreme Court rejected in February",
-        "Countries get the lower 10% rate if they've banned forced-labor imports, 12.5% if they haven't",
-        "Trade partners are furious and legal challenges have already been filed"
-      ],
-      "background": "In February 2026, the Supreme Court ruled that Trump's original 'Liberation Day' tariffs were illegal \u2014 the emergency-powers law he used (called IEEPA) doesn't actually let a president impose tariffs, the Court said. That should have ended the blanket tariffs. Instead, the administration spent months building a legal workaround: investigations into whether America's 60 biggest trading partners were doing enough to stop goods made with forced labor from entering their supply chains.",
-      "what_happened": "Those new tariffs took effect on July 24, 2026. They use a different law \u2014 Section 301 of the Trade Act of 1974, which lets a president retaliate against 'unfair trade practices' \u2014 instead of the law the Supreme Court struck down. US trade investigators concluded all 60 partners had failed to adequately block forced-labor goods, triggering duties of 10% (for countries that have at least banned such imports on paper) or 12.5% (for those that haven't). Together the 60 countries account for 99.4% of US trade.",
-      "why_it_matters": "This is Trump effectively rebuilding the same broad tariff wall the Supreme Court just tore down, using a different legal doorway. If it holds up, it resets import costs across nearly all of US trade \u2014 the exact outcome the Court's ruling was supposed to prevent. If it doesn't hold up in court, it's another few months of tariff whiplash for businesses trying to plan.",
-      "ripple_effects": "Companies that import goods \u2014 retailers, manufacturers, electronics firms \u2014 face higher costs again just as they'd adjusted to the tariffs being voided, likely passing some of it on to consumers. Trading partners, who see the 'forced labor' justification as a pretext, are weighing retaliation, which could reignite trade fights with the EU, China, and others. Legal challenges are already filed, so this could head back toward the Supreme Court.",
-      "why_now": "The administration moved fast to have a replacement ready the moment the old tariffs were struck down, rather than let the country go tariff-free even briefly \u2014 and July 24 was when the USTR's forced-labor investigations formally concluded.",
-      "watch_next": "Watch the first court rulings on the new lawsuits \u2014 a fast injunction would signal this workaround is as legally shaky as the last one.",
-      "key_terms": [
-        {
-          "term": "IEEPA",
-          "definition": "The International Emergency Economic Powers Act \u2014 a law letting presidents act during declared emergencies. The Supreme Court ruled it doesn't cover imposing tariffs."
-        },
-        {
-          "term": "Section 301",
-          "definition": "A different, older trade law that lets a president impose tariffs specifically to retaliate against 'unfair' foreign trade practices \u2014 the legal route used this time."
-        }
-      ],
-      "the_lesson": "When a court strikes down a policy on narrow legal grounds, that often isn't the end \u2014 governments frequently just find a different legal lever to reach the same goal. Watch the substance of a policy, not just which law it's parked under.",
-      "concepts": [
-        "tariffs",
-        "supply_chain"
-      ],
-      "market_link": "Broad tariff resets like this move currency and equity markets tied to US trade exposure \u2014 export-heavy sectors and countries on the 12.5% list are most at risk of margin pressure.",
-      "importance": "high",
-      "thread": {
-        "previously": "Yesterday's story reported that Trump's original blanket 10% tariff was expiring by law and that a replacement was already being prepared.",
-        "changed": "That replacement is now live: a 60-country, forced-labor-justified tariff regime took effect July 24, using a different law than the one the Supreme Court struck down."
-      },
-      "sources": [
-        {
-          "name": "NPR",
-          "url": "https://www.npr.org/2026/07/24/nx-s1-5905783/trump-tariff-trade-global-canada"
-        },
-        {
-          "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/07/24/trump-global-tariffs-trade-imbalance-forced-labor.html"
-        }
-      ],
-      "added_at": "2026-07-25T21:01:11+05:30",
-      "development": true,
-      "prev_ref": {
-        "title": "Trump's blanket 10% global tariff expires by law \u2014 and a replacement is already coming",
-        "date": null
-      },
       "rank": 20
+    },
+    {
+      "category": "india",
+      "published_iso": "2026-07-25T00:00:00+05:30",
+      "regions": [
+        "Tamil Nadu",
+        "Karnataka"
+      ],
+      "title": "Tamil Nadu CM Vijay's plan for direct Cauvery water talks with Karnataka draws backlash, including from DMK's Stalin",
+      "key_points": [
+        "TN got only 3.5 TMC of water against its 31 TMC entitlement since June 1",
+        "New CM Vijay proposes bilateral talks with Karnataka CM, visit set for Aug 3",
+        "Farmers' groups, PMK and rival DMK's Stalin all criticize the plan",
+        "Statutory water body (CWRC) meets July 28 on a pro-rata sharing formula"
+      ],
+      "background": "The Cauvery river flows from Karnataka into Tamil Nadu, and the two states have fought over sharing its water for over a century \u2014 it's one of India's most sensitive inter-state disputes because millions of farmers in both states depend on it. The Supreme Court has laid down a fixed release schedule, policed by statutory bodies like the Cauvery Water Management Authority (CWMA), specifically so the states don't have to negotiate the issue from scratch each time there's a shortfall. C. Joseph Vijay, the actor-turned-politician who leads the TVK party, became Tamil Nadu's Chief Minister after his party won the state's 2026 assembly election, unseating the DMK.",
+      "what_happened": "Tamil Nadu has received only 3.5 TMC (thousand million cubic feet) of Cauvery water since June 1 against an entitlement of 31 TMC under the Supreme Court's release schedule \u2014 a severe shortfall for farmers downstream. On July 22, the CWMA declined to order an immediate release and instead referred the matter to the Cauvery Water Regulatory Committee (CWRC), which meets on July 28. In response, new Tamil Nadu CM Vijay proposed holding direct, bilateral talks with Karnataka CM D.K. Shivakumar, with a visit planned for August 3, to try to resolve the shortfall outside the usual statutory process.",
+      "why_it_matters": "This is the new TVK government's first big test on a highly emotional, farmer-livelihood issue that has shaped Tamil Nadu politics for decades. Farmers' groups and rival politicians worry that bypassing the statutory, court-backed mechanism in favor of direct talks could weaken Tamil Nadu's legal position, since bilateral talks between states have historically not resolved the dispute and could let Karnataka set terms informally.",
+      "ripple_effects": "If the CWRC's July 28 meeting doesn't fix a pro-rata release formula, pressure will build on Vijay's August 3 meeting with Shivakumar to show results, or he risks looking weak on an issue that unseated the previous DMK government's opponents in the past. DMK, now in opposition, is using the episode to paint the new government as inexperienced on a sensitive inter-state issue \u2014 an early preview of how the two parties will contest future disputes.",
+      "why_now": "The immediate trigger is the CWMA's July 22 decision to punt the shortfall issue to the CWRC instead of ordering a release, which pushed Vijay to publicly propose bilateral talks on July 25.",
+      "watch_next": "The outcome of the CWRC's July 28 meeting on a pro-rata water-sharing formula, and whether Vijay's August 3 meeting with Shivakumar goes ahead as planned.",
+      "key_terms": [
+        {
+          "term": "TMC (thousand million cubic feet)",
+          "definition": "A unit used in India to measure large volumes of river water, especially in inter-state sharing disputes."
+        },
+        {
+          "term": "Cauvery Water Management Authority",
+          "definition": "The Supreme Court-mandated body that oversees how much Cauvery river water Karnataka must release to Tamil Nadu each month."
+        }
+      ],
+      "the_lesson": "When a legal or institutional process already exists to settle a dispute, trying to negotiate around it directly can look efficient in the short term but often draws suspicion, because it risks trading away protections that took years of litigation to secure.",
+      "concepts": [
+        "state_vs_centre"
+      ],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "The Print",
+          "url": "https://theprint.in/india/tn-cms-proposal-for-talks-with-karnataka-over-cauvery-issue-draws-backlash-from-farmers-parties/2996406/"
+        },
+        {
+          "name": "Deccan Herald",
+          "url": "https://www.deccanherald.com/india/tamil-nadu/cm-vijays-cauvery-talks-plan-with-karnataka-sparks-political-row-in-tamil-nadu-4086857"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 21
+    },
+    {
+      "category": "india",
+      "published_iso": "2026-07-25T18:22:25+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "IDFC FIRST Bank posts record \u20b91,075 crore quarterly profit, crossing \u20b91,000 crore for the first time",
+      "key_points": [
+        "Q1 FY27 profit up 132% year-on-year to \u20b91,075 crore",
+        "Loan book grew 20.6% to over \u20b93 lakh crore",
+        "Bad loans (gross NPA) fell to 1.51% from 1.97% a year ago",
+        "Provisions (money set aside for bad loans) dropped 31%"
+      ],
+      "background": "IDFC FIRST Bank was formed in 2018 from the merger of IDFC Bank and Capital First, and spent its early years absorbing heavy loan losses as it built out a retail banking business from scratch. Under CEO V. Vaidyanathan, it has been shifting from riskier infrastructure and wholesale lending toward retail loans and deposits, a slower but usually steadier path to profitability. As recently as early 2025 the bank posted a quarterly loss, so this result marks a sharp turnaround.",
+      "what_happened": "IDFC FIRST Bank reported its highest-ever quarterly net profit of \u20b91,075 crore for the April-June 2026 quarter (Q1 FY27), up 132.4% from \u20b9463 crore a year earlier \u2014 the first time it has crossed \u20b91,000 crore in a single quarter. Its loan book grew 20.6% year-on-year to \u20b93,05,488 crore, net interest income rose 21.1% to \u20b95,972 crore, and its share of low-cost current and savings account deposits (CASA ratio) hit a multi-quarter high of 50.8%. Gross bad loans fell to 1.51% of the loan book from 1.97% a year ago, and provisions for bad loans dropped 31%, helped by a \u20b9514.82 crore insurance claim payout.",
+      "why_it_matters": "For a bank that was still absorbing losses from its 2018 merger just a couple of years ago, crossing \u20b91,000 crore in quarterly profit for the first time is a meaningful signal that its credit-cost cycle has turned and its retail-focused strategy is paying off. It's a closely watched name among India's mid-sized private banks, where investors have been waiting to see if smaller lenders can match the scale economics of giants like HDFC Bank and ICICI Bank.",
+      "ripple_effects": "The stock, trading near \u20b980-81 and close to its 52-week high of \u20b987, could see renewed investor interest. A cleaner asset-quality picture also gives the bank more room to lend and grow its deposit base without needing to raise fresh capital as urgently. It's also a data point for the broader debate on whether India's private banking sector's post-pandemic clean-up is largely complete.",
+      "why_now": "The results were announced and the bank's board met on July 25, prompting immediate market and media coverage.",
+      "watch_next": "Whether the bank sustains this margin and asset-quality improvement over the next couple of quarters, or whether this was boosted by one-off items like the insurance claim receipt.",
+      "key_terms": [
+        {
+          "term": "CASA ratio",
+          "definition": "The share of a bank's deposits sitting in current and savings accounts, which pay little or no interest \u2014 a higher ratio means cheaper funding for the bank."
+        },
+        {
+          "term": "Gross NPA",
+          "definition": "Non-performing assets \u2014 loans where the borrower has stopped repaying \u2014 expressed as a percentage of all the loans a bank has given out."
+        },
+        {
+          "term": "Net interest margin (NIM)",
+          "definition": "The difference between the interest a bank earns on loans and the interest it pays on deposits, as a percentage of its assets \u2014 a core measure of banking profitability."
+        }
+      ],
+      "the_lesson": "Bank turnarounds tend to show up first in the numbers that don't grab headlines \u2014 falling bad-loan ratios and provisions \u2014 well before the profit figure itself becomes impressive; watching the trend in asset quality tells you where profits are headed before they arrive.",
+      "concepts": [
+        "repo_rate"
+      ],
+      "market_link": "IDFC FIRST Bank shares (NSE: IDFCFIRSTB) are likely to see renewed attention after the results; relevant to anyone tracking India's mid-tier private banking space.",
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/companies/news/idfc-first-bank-q1fy27-net-profit-rises-132-pc-to-rs-1-075-cr-126072500903_1.html"
+        },
+        {
+          "name": "ANI News",
+          "url": "https://www.aninews.in/news/business/idfc-first-bank-q1fy27-results-highest-ever-pat-of-83771075-crore-up-1324-yoy20260725182225/"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 22
     },
     {
       "region": "india",
@@ -1065,7 +1163,7 @@
         "title": "Assam's flood toll jumps to 61 \u2014 14 people died in a single day as 700,000+ are now affected",
         "date": null
       },
-      "rank": 21
+      "rank": 23
     },
     {
       "category": "india",
@@ -1115,10 +1213,10 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T07:02:07+05:30",
-      "rank": 22
+      "rank": 24
     },
     {
-      "rank": 23,
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-25T00:00:00+05:30",
       "regions": [
@@ -1167,7 +1265,7 @@
       "added_at": "2026-07-26T06:00:10+05:30"
     },
     {
-      "rank": 24,
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-07-24T00:00:00+05:30",
       "regions": [
@@ -1254,7 +1352,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T05:02:02+05:30",
-      "rank": 25
+      "rank": 27
     },
     {
       "category": "india",
@@ -1300,7 +1398,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T05:02:02+05:30",
-      "rank": 26
+      "rank": 28
     },
     {
       "category": "india",
@@ -1345,7 +1443,7 @@
         }
       ],
       "added_at": "2026-07-26T04:01:39+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "category": "india",
@@ -1391,7 +1489,7 @@
         }
       ],
       "added_at": "2026-07-26T04:01:39+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "category": "india",
@@ -1434,7 +1532,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T01:59:55+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "category": "india",
@@ -1473,7 +1571,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T01:59:55+05:30",
-      "rank": 30
+      "rank": 32
     },
     {
       "region": "india",
@@ -1523,7 +1621,7 @@
         }
       ],
       "added_at": "2026-07-26T01:01:41+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "region": "india",
@@ -1571,7 +1669,7 @@
         }
       ],
       "added_at": "2026-07-26T01:01:41+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1617,7 +1715,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-26T00:08:32+05:30",
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1672,7 +1770,7 @@
         "title": "India's monsoon turns deadly \u2014 cloudbursts and floods kill dozens, displace thousands",
         "date": null
       },
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1719,7 +1817,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-25T22:59:57+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "category": "india",
@@ -1778,7 +1876,7 @@
         "title": "NEET protests: government offers compensation and drops FIRs, but still won't remove minister Pradhan as Saturday deadline arrives",
         "date": null
       },
-      "rank": 36
+      "rank": 38
     },
     {
       "category": "india",
@@ -1828,7 +1926,7 @@
         }
       ],
       "added_at": "2026-07-25T21:01:11+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "category": "india",
@@ -1878,105 +1976,94 @@
         }
       ],
       "added_at": "2026-07-25T21:01:11+05:30",
-      "rank": 38
+      "rank": 40
     },
     {
-      "rank": 39,
-      "category": "india",
-      "published_iso": "2026-07-25T11:00:00+05:30",
+      "category": "cricket",
+      "published_iso": "2026-07-25T00:00:00-04:00",
       "regions": [
-        "India"
+        "Barbados",
+        "Caribbean"
       ],
-      "title": "Parliament moves to lock in a bigger Supreme Court: bill raising judge count from 33 to 37 comes up in the Lok Sabha",
+      "title": "Barbados prepares mass tribute and state funeral for cricket legend Sir Garfield Sobers on July 29",
       "key_points": [
-        "Bill amends a 1956 law to raise Supreme Court judges (excluding the Chief Justice) from 33 to 37",
-        "It replaces an ordinance the government had already issued in May to make the change immediately",
-        "Needs only a simple majority \u2014 the Constitution lets Parliament set the court's size by ordinary law",
-        "Opposition MPs moved a resolution objecting to the government's use of the ordinance route"
+        "State funeral set for July 29 at Kensington Oval, Barbados",
+        "Body lies in state at Parliament (Jul 27) then Kensington Oval (Jul 28)",
+        "Free public tickets being distributed to gauge crowd size",
+        "PM Mia Mottley declared a National Day of Mourning"
       ],
-      "background": "India's Supreme Court has grown its sanctioned strength several times over the decades as its caseload swelled \u2014 the court alone handles tens of thousands of pending cases at any time, on top of matters that flow up from High Courts across the country. In May, the government used its ordinance power \u2014 the ability to make a law when Parliament isn't in session, subject to later approval \u2014 to raise the judge count. Law Minister Arjun Ram Meghwal introduced the formal bill to replace that ordinance on July 20.",
-      "what_happened": "The Supreme Court (Number of Judges) Amendment Bill, 2026 came up in the Lok Sabha (the lower house of Parliament) during the ongoing Monsoon Session, seeking Parliament's formal approval to raise the Supreme Court's judge strength from 33 to 37 (excluding the Chief Justice of India). Because Article 124 of the Constitution lets Parliament change the court's size through an ordinary law, the bill needs only a simple majority to pass \u2014 not the two-thirds majority a constitutional amendment would require. Opposition MPs, including Sougata Ray, N.K. Premachandran and Dean Kuriakose, moved a statutory resolution objecting to the government's earlier use of the ordinance route.",
-      "why_it_matters": "More judges could help the Supreme Court clear its backlog faster, but the opposition's pushback isn't really about the number \u2014 it's about a government making structural changes to the judiciary by ordinance before Parliament gets to weigh in.",
-      "ripple_effects": "A larger sanctioned strength means more upcoming appointments, which will run through the collegium system (senior judges recommending future judges) \u2014 a process that itself has long been a friction point between the judiciary and the government. It also feeds into the broader monsoon-session tension between the government and opposition.",
-      "why_now": "It's moving through this Monsoon Session alongside other contentious business, including the NEET protests, showing the government pushing its legislative agenda even as it manages political pressure on other fronts.",
-      "watch_next": "Whether the bill clears the Lok Sabha and then the Rajya Sabha (upper house) this session, and how quickly the four new judge vacancies actually get filled.",
+      "background": "Sir Garfield 'Garry' Sobers, widely regarded as cricket's greatest-ever all-rounder, died on July 17, 2026, at his home in Barbados aged 89. He played 93 Tests for the West Indies between 1954 and 1974, scoring 8,032 runs and taking 235 wickets, and as a 21-year-old set what was then the world-record Test score of 365 not out \u2014 a mark that stood for 36 years. He also captained the West Indies for seven years and is a Barbadian National Hero.",
+      "what_happened": "Barbados is finalizing plans for a full state funeral for Sobers on Wednesday, July 29, at 10 a.m. at Kensington Oval \u2014 the island's most famous cricket ground. His body will lie in state at Parliament on July 27 and then at Kensington Oval on July 28 so the public can pay respects, before a public thanksgiving service and a private funeral at Coral Ridge Memorial Gardens. Free tickets to attend the Kensington Oval service are being handed out at post offices and government buildings islandwide purely to help organizers estimate the crowd, and condolence books have been placed at multiple sites across Barbados. Prime Minister Mia Mottley has declared a National Day of Mourning, and Barbados's overseas missions are hosting tribute events for the diaspora.",
+      "why_it_matters": "This is one of the largest ceremonial events in Caribbean cricket history \u2014 a multi-day national program that reflects Sobers's status not just as a sporting great but as a defining figure of Barbadian and West Indian identity. Tributes have come in from cricket's biggest modern names, including Virat Kohli, Sachin Tendulkar and Sunil Gavaskar.",
+      "ripple_effects": "The funeral will effectively pause the region's cricket and public life around it for several days, with commemorative events planned beyond the funeral itself. It's also likely to prompt renewed global discussion of Sobers's playing records and legacy in the sport.",
+      "why_now": "Organizers are in the final stretch before the July 29 funeral, with logistics \u2014 lying-in-state schedule and free ticket distribution \u2014 being finalized and reported on today.",
+      "watch_next": "The scale of public turnout at Kensington Oval on July 28-29, and tribute events from cricket boards and the ICC around the funeral date.",
       "key_terms": [
         {
-          "term": "ordinance",
-          "definition": "A law the President can issue on the government's advice when Parliament isn't in session \u2014 it takes effect immediately but must later be approved by Parliament or it lapses."
-        },
-        {
-          "term": "collegium",
-          "definition": "The system, developed through Supreme Court rulings rather than written into the Constitution, by which senior judges themselves recommend who becomes a judge \u2014 rather than the government choosing alone."
+          "term": "Lying in state",
+          "definition": "A public ceremony where a deceased notable figure's body is displayed in a public building before burial, so members of the public can pay their respects."
         }
       ],
-      "the_lesson": "Increasing the number of judges is one of the few levers a government can pull quickly against a judicial backlog \u2014 but doing it by ordinance instead of waiting for Parliament often generates as much political controversy as the substance of the change itself.",
-      "concepts": [
-        "supreme_court_india",
-        "ordinance",
-        "judiciary_collegium"
-      ],
+      "the_lesson": "How a country chooses to mourn a sportsperson \u2014 with a state funeral, a national day of mourning, days of public access \u2014 reveals how deeply sport is woven into a nation's sense of identity, beyond just its record books.",
+      "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "PRS Legislative Research",
-          "url": "https://prsindia.org/billtrack/the-supreme-court-number-of-judges-amendment-bill-2026"
+          "name": "Barbados Today",
+          "url": "https://barbadostoday.bb/2026/07/25/a-giant-returns-to-the-pavilion-but-his-legacy-will-never-leave-the-crease/"
         },
         {
-          "name": "India TV News",
-          "url": "https://www.indiatvnews.com/news/india/govt-tables-bill-to-raise-supreme-court-judges-strength-in-lok-sabha-all-you-need-to-know-2026-07-20-1048813"
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/7/17/all-time-west-indies-cricket-great-garfield-sobers-dies-aged-89"
         }
       ],
-      "region": "india",
-      "added_at": "2026-07-25T20:01:00+05:30"
+      "region": "cricket",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 41
     },
     {
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-07-25T11:00:00+05:30",
+      "category": "cricket",
+      "published_iso": "2026-07-25T00:00:00-04:00",
       "regions": [
-        "India",
-        "Bihar"
+        "Caribbean"
       ],
-      "title": "Left-wing student groups enforce a statewide Bihar Bandh over the NEET paper leak, clashing with police as RJD's Tej Pratap Yadav is detained",
+      "title": "CPL 2026: Trinbago Knight Riders re-sign spinner Usman Tariq, Guyana Amazon Warriors land Glenn Phillips",
       "key_points": [
-        "AISA- and RYA-led shutdown hits several Bihar districts; around 70,000 police personnel deployed",
-        "Protesters demand a fair, independent probe into the alleged NEET-UG paper leak \u2014 not just a resignation",
-        "Stone-pelting, tear gas and a lathi charge reported; the Samastipur\u2013Patna road blocked by burning tyres",
-        "RJD leader Tej Pratap Yadav detained after joining protesters, says he's 'ready to die' for the cause"
+        "TKR re-signs Pakistan spinner Usman Tariq, their 2025 title-winning top wicket-taker",
+        "Guyana Amazon Warriors sign NZ all-rounder Glenn Phillips, returning after 6 years away",
+        "CPL 2026 runs Aug 7\u2013Sep 20, now with 7 teams including new side Jamaica Kingsmen",
+        "Squads must mix senior West Indies players, overseas stars, and young 'Breakout' talent"
       ],
-      "background": "NEET-UG is the single national entrance exam that decides admission to nearly every medical college seat in India, making it high-stakes for lakhs of students every year. Weeks of protests broke out after a Bihar police report alleged the exam paper had been leaked for money, and the movement escalated into a hunger strike and sustained demonstrations at Delhi's Jantar Mantar demanding Union Education Minister Dharmendra Pradhan's resignation \u2014 which he ultimately gave.",
-      "what_happened": "On Saturday, left-wing student organisations called a statewide bandh (shutdown) across Bihar, with heavy security deployed as demonstrations turned confrontational in several districts. Police used tear gas and a lathi charge to disperse crowds after stone-pelting broke out; protesters blocked a key road by burning tyres. RJD leader Tej Pratap Yadav was detained after joining the protest in solidarity.",
-      "why_it_matters": "The bandh shows the protest movement isn't satisfied by Pradhan's resignation alone \u2014 it's now squarely about whether the exam process itself can be trusted, which matters to every future NEET aspirant, not just this year's cohort.",
-      "ripple_effects": "The shutdown disrupts transport, business and daily life across Bihar, raises pressure on both the state and central governments, and gives opposition parties like the RJD a fresh mobilising issue ahead of state elections.",
-      "why_now": "The bandh comes just days after Pradhan's resignation, signalling protesters see that as a partial win at best and want an independent probe into the leak itself before they stand down.",
-      "watch_next": "Whether the government agrees to order a formal, independent (or CBI) investigation into the alleged leak, and whether the bandh's momentum spreads beyond Bihar.",
+      "background": "The Caribbean Premier League (CPL) is the Caribbean's top T20 cricket tournament, drawing international stars alongside West Indies players during the Northern Hemisphere off-season. Ahead of each season, teams retain key players and draft new ones under rules requiring a mix of senior West Indies players, overseas signings, and young 'Breakout' players. Trinbago Knight Riders (TKR), partly owned by Bollywood star Shah Rukh Khan, are the defending 2025 champions.",
+      "what_happened": "Ahead of CPL 2026, TKR used a Right-to-Match Option to re-sign Pakistani 'mystery spinner' Usman Tariq, who took 20 wickets in 10 matches during their 2025 title run, alongside retaining Sunil Narine, Nicholas Pooran and other key players. Guyana Amazon Warriors (2025 runners-up) signed New Zealand all-rounder Glenn Phillips, who returns to the CPL after a six-year absence, along with Afghanistan's Mohammad Nabi and Rahmanullah Gurbaz, and re-signed veteran South African leg-spinner Imran Tahir as captain. Phillips had missed New Zealand's recent Caribbean ODI series with a side injury suffered while scoring his maiden Test century against England, and his signing signals he's fit again.",
+      "why_it_matters": "These squad announcements, made roughly two weeks before the tournament starts, largely set the competitive shape of CPL 2026 \u2014 a tournament that has grown to seven franchises this year with the addition of the Jamaica Kingsmen and a new venue in St Vincent and the Grenadines.",
+      "ripple_effects": "TKR enter as defending champions with their title-winning spin attack largely intact, while Guyana's beefed-up overseas roster raises their profile as top challengers after finishing runners-up last year. Fans and fantasy-league players will recalibrate expectations for both franchises ahead of the August 7 opener.",
+      "why_now": "CPL 2026 begins August 7, and retention/signing news is landing now as franchises finalize their 17-player squads before the season starts.",
+      "watch_next": "The full squad draft results for all seven teams, and the tournament opener between Jamaica Kingsmen and Antigua and Barbuda Falcons on August 7.",
       "key_terms": [
         {
-          "term": "NEET-UG",
-          "definition": "The National Eligibility cum Entrance Test \u2014 the single, mandatory national exam that decides admission to nearly all MBBS and BDS medical college seats in India."
-        },
-        {
-          "term": "bandh",
-          "definition": "A general strike or shutdown called by political or civil groups, where shops, transport and offices are urged \u2014 sometimes forced \u2014 to close in protest."
+          "term": "Right-to-Match Option",
+          "definition": "A rule in some T20 leagues letting a team match another franchise's bid to keep a player they already had, rather than losing them in an open auction or draft."
         }
       ],
-      "the_lesson": "When a controversy touches something as high-stakes as medical-school admissions for hundreds of thousands of students, a single resignation often isn't enough to end a protest \u2014 people want the underlying process fixed, not just someone held accountable for it.",
+      "the_lesson": "In T20 franchise cricket, championship windows are short \u2014 the squad-building decisions made weeks before a tournament, not just performances during it, often decide who's competitive by the time it starts.",
+      "concepts": [],
       "market_link": null,
-      "importance": "high",
+      "importance": "notable",
       "sources": [
         {
-          "name": "Free Press Journal",
-          "url": "https://www.freepressjournal.in/education/statewide-bihar-bandh-over-neet-paper-leak-gains-momentum-as-student-groups-hold-widespread-protests-amid-heavy-security-video"
+          "name": "ESPNcricinfo",
+          "url": "https://www.cricinfo.com/story/cpl-2026-usman-tariq-returns-to-tkr-glenn-phillips-signs-with-amazon-warriors-1547506"
         },
         {
-          "name": "India.com",
-          "url": "https://www.india.com/news/india/bihar-bandh-over-neet-paper-leak-police-vehicles-vandalised-stones-pelted-during-protest-students-demand-dharmendra-pradhans-resignation-watch-video-8483508/"
+          "name": "Caribbean National Weekly",
+          "url": "https://www.caribbeannationalweekly.com/posts/amazon-warriors-load-up-on-international-firepower-for-2026-cpl-title-push"
         }
       ],
-      "region": "india",
-      "added_at": "2026-07-25T20:01:00+05:30"
+      "region": "cricket",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "rank": 42
     },
     {
       "region": "cricket",
@@ -2026,7 +2113,7 @@
         "title": "Bangladesh loses fast bowler Nahid Rana for the Australia Tests to a side strain",
         "date": null
       },
-      "rank": 41
+      "rank": 43
     },
     {
       "region": "cricket",
@@ -2065,7 +2152,7 @@
         }
       ],
       "added_at": "2026-07-26T09:02:04+05:30",
-      "rank": 42
+      "rank": 44
     },
     {
       "category": "cricket",
@@ -2104,7 +2191,7 @@
         }
       ],
       "added_at": "2026-07-26T07:59:53+05:30",
-      "rank": 43
+      "rank": 45
     },
     {
       "category": "cricket",
@@ -2152,10 +2239,10 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T07:02:07+05:30",
-      "rank": 44
+      "rank": 46
     },
     {
-      "rank": 45,
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-07-25T21:00:00-04:00",
       "regions": [
@@ -2247,7 +2334,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T05:02:02+05:30",
-      "rank": 46
+      "rank": 48
     },
     {
       "category": "cricket",
@@ -2285,7 +2372,7 @@
         }
       ],
       "added_at": "2026-07-26T04:01:39+05:30",
-      "rank": 47
+      "rank": 49
     },
     {
       "category": "cricket",
@@ -2324,7 +2411,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T01:59:55+05:30",
-      "rank": 48
+      "rank": 50
     },
     {
       "category": "cricket",
@@ -2356,7 +2443,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T01:59:55+05:30",
-      "rank": 49
+      "rank": 51
     },
     {
       "category": "cricket",
@@ -2394,7 +2481,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T00:08:32+05:30",
-      "rank": 50
+      "rank": 52
     },
     {
       "category": "cricket",
@@ -2437,7 +2524,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-26T00:08:32+05:30",
-      "rank": 51
+      "rank": 53
     },
     {
       "category": "cricket",
@@ -2476,7 +2563,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-25T22:59:57+05:30",
-      "rank": 52
+      "rank": 54
     },
     {
       "category": "cricket",
@@ -2515,7 +2602,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-25T22:59:57+05:30",
-      "rank": 53
+      "rank": 55
     },
     {
       "region": "cricket",
@@ -2559,7 +2646,7 @@
         }
       ],
       "added_at": "2026-07-25T21:59:22+05:30",
-      "rank": 54
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2593,10 +2680,10 @@
         }
       ],
       "added_at": "2026-07-25T21:01:11+05:30",
-      "rank": 55
+      "rank": 57
     },
     {
-      "rank": 56,
+      "rank": 58,
       "category": "cricket",
       "published_iso": "2026-07-25T19:06:26+05:30",
       "regions": [
@@ -2639,7 +2726,7 @@
       "added_at": "2026-07-25T20:01:00+05:30"
     },
     {
-      "rank": 57,
+      "rank": 59,
       "category": "cricket",
       "published_iso": "2026-07-25T14:30:00+02:00",
       "regions": [
@@ -2677,7 +2764,7 @@
       "added_at": "2026-07-25T20:01:00+05:30"
     },
     {
-      "rank": 58,
+      "rank": 60,
       "category": "cricket",
       "region": "cricket",
       "published_iso": "2026-07-25T19:00:00-04:00",
@@ -2714,82 +2801,6 @@
         }
       ],
       "added_at": "2026-07-25T19:00:12+05:30"
-    },
-    {
-      "category": "cricket",
-      "published_iso": "2026-07-24T18:30:00+01:00",
-      "regions": [
-        "England"
-      ],
-      "title": "Manchester Super Giants edge London Spirit at Lord's despite a Livingstone masterclass in the Hundred",
-      "key_points": [
-        "Liam Livingstone hit 69 off 40 balls and took 2-14, but London Spirit still lost",
-        "Tim Seifert made 67 on his first-ever appearance at Lord's for Manchester",
-        "Young Sonny Baker defended just 12 runs in the final over to seal it",
-        "This is the men's opener at Lord's \u2014 separate from the earlier women's fixture there"
-      ],
-      "background": "The Hundred is English cricket's 100-balls-per-innings franchise tournament, running men's and women's competitions in parallel each summer at the same host grounds, including the historic Lord's ground in London. London Spirit and Manchester Super Giants are two of the eight franchise teams.",
-      "what_happened": "In the men's Hundred opener at Lord's, London Spirit captain Liam Livingstone put in a stand-out all-round performance \u2014 scoring 69 off just 40 balls and taking 2 wickets for 14 runs \u2014 but it wasn't enough to get his team over the line. Manchester Super Giants got a first-ever Lord's innings of 67 from Tim Seifert, and young bowler Sonny Baker held his nerve to defend just 12 runs in the final five balls and complete the win.",
-      "why_it_matters": "It's an early form marker for both franchises as the group stage develops, and a personal milestone night for Seifert (first Lord's appearance) and Baker (clutch finish under pressure) \u2014 the kind of performance that shapes team selection for the rest of the tournament.",
-      "ripple_effects": "A big containing spell like Baker's final over tends to boost a young bowler's stock for future death-overs duty, both in the Hundred and in wider domestic/franchise selection conversations.",
-      "why_now": "It's part of the ongoing group stage of this year's Hundred tournament, being played across English grounds through the summer.",
-      "watch_next": "How London Spirit respond in their next fixture against Trent Rockets, and whether Manchester Super Giants can back up the win at Old Trafford against Birmingham Phoenix.",
-      "key_terms": [
-        {
-          "term": "The Hundred",
-          "definition": "A shorter English franchise cricket format where each team bats 100 balls per innings (instead of the 120 balls in a normal T20), designed to be faster-paced and easier for newcomers to follow."
-        }
-      ],
-      "the_lesson": "In short-format cricket, a brilliant individual all-round performance can still lose if the opposition has one player who delivers exactly when it matters most \u2014 the final over often outweighs the rest of the innings combined.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "LiveScore",
-          "url": "https://www.livescore.com/en/news/cricket/livingstone-efforts-in-vain-as-manchester-super-giants-pip-london-spirit/"
-        }
-      ],
-      "region": "cricket",
-      "added_at": "2026-07-25T17:59:06+05:30",
-      "rank": 59
-    },
-    {
-      "region": "cricket",
-      "category": "cricket",
-      "published_iso": "2026-07-24T10:00:00+01:00",
-      "regions": [
-        "United Kingdom"
-      ],
-      "title": "England captain Nat Sciver-Brunt to sit out Trent Rockets' opening Hundred matches with calf trouble",
-      "key_points": [
-        "Sciver-Brunt will miss games against Birmingham Phoenix and London Spirit",
-        "She's managing a recurring calf injury that has bothered her all summer",
-        "She's set to return for Trent Rockets' trip to Cardiff next Wednesday",
-        "The injury already caused her to miss group games at the T20 World Cup this year"
-      ],
-      "background": "The Hundred is England's short-format domestic cricket franchise league, running annually each summer with eight men's and women's teams. Nat Sciver-Brunt, England's white-ball captain and one of the world's leading all-rounders, has carried a nagging calf injury through much of the 2026 season, which already forced her out of parts of the T20 World Cup earlier this year.",
-      "what_happened": "Trent Rockets confirmed that captain Nat Sciver-Brunt will be unavailable for their opening two Hundred fixtures of the 2026 season, against Birmingham Phoenix and London Spirit, as she continues managing a calf injury first suffered playing domestic cricket in April. She is expected to return for the team's match in Cardiff the following Wednesday.",
-      "why_it_matters": "Sciver-Brunt is one of the most important players in England's white-ball set-up and a key drawcard for Trent Rockets; her fitness management is being watched closely both for the Hundred and for England's upcoming international commitments, since a recurring soft-tissue injury in a key player raises longer-term workload concerns.",
-      "ripple_effects": "Trent Rockets have to reshuffle their batting order and leadership for the opening matches without their captain and top all-rounder. It also keeps pressure on England's medical staff to manage her workload carefully through the rest of the domestic season so she's fully fit for international duty.",
-      "why_now": "The team's official squad and availability update for the season-opening matches confirmed her absence just ahead of the fixtures.",
-      "watch_next": "Whether Sciver-Brunt returns as planned in Cardiff, and whether the calf issue flares up again once she resumes playing.",
-      "key_terms": [],
-      "the_lesson": "Managing a recurring soft-tissue injury is often about pacing across an entire season, not just recovering once \u2014 teams routinely sit a star player out of low-stakes games to protect them for bigger ones later.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "ESPNcricinfo",
-          "url": "https://www.cricinfo.com/live-blog/the-hundred-2026-news-and-updates-matt-roller-notebook-1525949"
-        },
-        {
-          "name": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/sciver-brunt-miss-first-two-130241548"
-        }
-      ],
-      "added_at": "2026-07-25T16:58:55+05:30",
-      "rank": 60
     },
     {
       "region": "f1",

@@ -1,6 +1,6 @@
 {
   "date": "2026-07-26",
-  "generated_at": "2026-07-26T09:02:04+05:30",
+  "generated_at": "2026-07-26T10:07:58+05:30",
   "day_label": "Sunday · 26 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,6 +8,142 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-07-25T00:00:00Z",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "The Hacker News",
+      "importance": "high",
+      "regions": [
+        "Global"
+      ],
+      "title": "Critical, unpatched security flaw in Alibaba's Fastjson is being actively exploited — no fix exists yet",
+      "what_happened": "Security researchers at FearsOff discovered a critical vulnerability in Fastjson, tracked as CVE-2026-16723, that lets an attacker send a specially crafted piece of JSON data to a vulnerable application and run their own code on it — no password or login required. Fastjson's maintainers published an advisory on July 21. Security firm ThreatBook confirmed real-world attacks starting July 22. As of the latest reporting on July 25, Alibaba had not released a fix, and the attack works even when standard safety settings that normally block similar bugs are turned on.",
+      "key_points": [
+        "CVE-2026-16723, severity 9.0 out of 10 — critical",
+        "Affects Fastjson 1.2.68 through 1.2.83, widely used in enterprise Java apps",
+        "Attackers can run code with no login needed, no patch available yet",
+        "Active attacks confirmed since July 22, mostly against US firms"
+      ],
+      "moot": "Modern software is built from thousands of shared, often-invisible building blocks — when one of them has a critical flaw, it doesn't just affect one company, it can simultaneously expose banks, hospitals and retailers who never wrote a line of the vulnerable code themselves.",
+      "image_credit": "The Hacker News",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Security Boulevard (Imperva)",
+          "The Hacker News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supply_chain"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Fastjson is a free code library, maintained by Chinese tech giant Alibaba, that lets Java programs read and write JSON data (a common format for exchanging information between computer systems). Because it's fast and free, it got embedded into huge numbers of enterprise applications built on Java and Spring Boot — the same programming stack used by banks, hospitals, retailers and many other large organizations worldwide.",
+        "why_it_matters": "This is the kind of bug security professionals dread most: a widely-used piece of shared code, a way in that needs no password, and no official fix yet. It echoes 2021's 'Log4Shell' incident, where a similar flaw in a different widely-used Java library forced companies worldwide into emergency patching. Because Fastjson sits quietly inside so many enterprise systems, many organizations may not even realize they're using it.",
+        "ripple_effects": "Financial services, healthcare, retail and computing firms — mostly in the US, with some attacks in Singapore and Canada — are already being targeted. Security teams globally are being pushed into emergency mitigation work (enabling 'SafeMode' or switching library versions) rather than a routine patch cycle. Expect a wave of similar advisories from other vendors auditing whether they also use the vulnerable Fastjson versions.",
+        "why_now": "Confirmed active exploitation in the wild, combined with the continued absence of an official patch nearly a week after the advisory, is what's driving today's fresh wave of coverage and urgency.",
+        "watch_next": "Whether Alibaba ships an official patch for Fastjson 1.x, and whether attacks spread beyond the US-concentrated pattern seen so far.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "RCE (remote code execution)",
+            "definition": "A type of security flaw that lets an attacker run their own commands on someone else's computer or server, usually the most serious kind of bug."
+          },
+          {
+            "term": "CVE",
+            "definition": "A public ID number assigned to a specific known security vulnerability, used by researchers and companies worldwide to track and discuss it."
+          },
+          {
+            "term": "Zero-day",
+            "definition": "A vulnerability that is being exploited by attackers before a fix is available — meaning defenders have had 'zero days' to patch it."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html"
+          },
+          {
+            "name": "Security Boulevard (Imperva)",
+            "url": "https://securityboulevard.com/2026/07/imperva-customers-protected-against-cve-2026-16723-critical-fastjson-1-x-zero-day-rce/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "health",
+      "is_new": true,
+      "published_iso": "2026-07-26T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "CDC",
+      "importance": "high",
+      "regions": [
+        "United States"
+      ],
+      "title": "US Cyclospora outbreak tied to Taco Bell lettuce grows to nearly 2,000 cases across 9 states",
+      "what_happened": "The CDC's latest update, published today, puts the outbreak at 1,947 confirmed cases across Illinois, Indiana, Kansas, Kentucky, Michigan, Ohio, Oklahoma, Pennsylvania and West Virginia, with at least 98 people hospitalized and no deaths reported. Investigators traced the source to iceberg lettuce grown by Taylor Farms de Mexico, which moved through Taco Bell's supply chain. The company issued a nationwide recall of its central-Mexico iceberg lettuce on July 17. Illness onset dates range from June 22 to July 20, meaning the outbreak has been quietly growing for over a month.",
+      "key_points": [
+        "1,947 confirmed cases across 9 US states, 98 hospitalized",
+        "Traced to Taylor Farms de Mexico iceberg lettuce used by Taco Bell",
+        "Supplier recalled all central-Mexico iceberg lettuce on July 17",
+        "Illnesses started as early as June 22, still climbing"
+      ],
+      "moot": "A food safety problem doesn't stay contained to one restaurant — a single contaminated ingredient from one farm can ripple through a national supply chain and sicken thousands before anyone notices, because symptoms can take up to two weeks to appear and get reported.",
+      "image_credit": "CDC",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "CDC",
+          "STAT News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supply_chain"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Cyclospora cayetanensis is a microscopic parasite that spreads through food or water contaminated with human waste — usually irrigation water tainted by leaking sewage, or field workers without proper sanitation. It's not spread person-to-person. The US has had smaller outbreaks before, usually linked to imported produce like cilantro or basil, but this one has grown unusually large and is centered on a major fast-food chain's supply chain.",
+        "why_it_matters": "This is one of the largest fresh-produce outbreaks tied to a major restaurant chain in years, and it's still active — case counts have grown even after the recall, which usually signals contaminated product was already in the supply chain longer than first realized. It puts fresh scrutiny on how imported produce is grown and washed before it reaches US kitchens.",
+        "ripple_effects": "Taco Bell faces reputational and potential legal exposure as case numbers climb. Regulators (FDA and CDC) are expected to tighten inspection and traceability requirements on imported lettuce, which could raise costs across the fast-food and grocery supply chain. Other chains sourcing from the same growing regions may face precautionary scrutiny even without confirmed contamination.",
+        "why_now": "The CDC's investigation page was updated today with the latest case count, reflecting the outbreak's continued growth even three weeks after the recall was issued.",
+        "watch_next": "Whether the case count keeps rising in the coming days, which would suggest contaminated lettuce is still in circulation somewhere in the supply chain.",
+        "market_link": "Yum Brands (Taco Bell's parent) and Taylor Farms-linked suppliers could see near-term reputational and legal cost pressure as the case count grows.",
+        "key_terms": [
+          {
+            "term": "Cyclosporiasis",
+            "definition": "An intestinal illness caused by the microscopic parasite Cyclospora cayetanensis, spread through food or water contaminated with human fecal matter."
+          },
+          {
+            "term": "Traceback investigation",
+            "definition": "The process regulators use to work backward from sick patients through the supply chain to find the contaminated source."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CDC",
+            "url": "https://www.cdc.gov/cyclosporiasis/outbreaks/07-26/investigation.html"
+          },
+          {
+            "name": "STAT News",
+            "url": "https://www.statnews.com/2026/07/17/cyclosporiasis-outbreak-traced-taylor-farms-lettuce-taco-bell/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
       "category": "climate",
       "is_new": true,
       "development": true,
@@ -79,10 +215,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": null,
       "added_at": "2026-07-26T07:59:53+05:30",
       "source": "The Times of Israel",
@@ -148,8 +283,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "published_iso": "2026-07-24T22:26:00Z",
       "added_at": "2026-07-26T07:02:07+05:30",
@@ -213,8 +348,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -285,8 +420,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "geopolitics",
       "published_iso": "2026-07-24T20:00:00+03:00",
       "added_at": "2026-07-26T06:00:10+05:30",
@@ -344,8 +479,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -422,8 +557,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "technology",
       "published_iso": "2026-07-24T22:51:00Z",
       "added_at": "2026-07-26T05:02:02+05:30",
@@ -482,8 +617,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "climate",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T05:02:02+05:30",
@@ -548,8 +683,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -620,8 +755,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -688,8 +823,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "health",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:59:55+05:30",
@@ -751,8 +886,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "technology",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:01:41+05:30",
@@ -818,8 +953,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "climate",
       "published_iso": null,
       "added_at": "2026-07-26T00:08:32+05:30",
@@ -879,8 +1014,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "published_iso": null,
       "added_at": "2026-07-26T00:08:32+05:30",
@@ -942,8 +1077,8 @@
     },
     {
       "type": "story",
-      "id": "story-17",
-      "rank": 17,
+      "id": "story-19",
+      "rank": 19,
       "category": "geopolitics",
       "published_iso": "2026-07-25T00:01:00-04:00",
       "added_at": "2026-07-25T22:59:57+05:30",
@@ -1006,8 +1141,8 @@
     },
     {
       "type": "story",
-      "id": "story-18",
-      "rank": 18,
+      "id": "story-20",
+      "rank": 20,
       "category": "geopolitics",
       "published_iso": "2026-07-25T11:33:00-04:00",
       "added_at": "2026-07-25T22:59:57+05:30",
@@ -1079,6 +1214,164 @@
       "rank": 21,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-07-25T00:00:00+05:30",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "The Print",
+      "importance": "notable",
+      "regions": [
+        "Tamil Nadu",
+        "Karnataka"
+      ],
+      "title": "Tamil Nadu CM Vijay's plan for direct Cauvery water talks with Karnataka draws backlash, including from DMK's Stalin",
+      "what_happened": "Tamil Nadu has received only 3.5 TMC (thousand million cubic feet) of Cauvery water since June 1 against an entitlement of 31 TMC under the Supreme Court's release schedule — a severe shortfall for farmers downstream. On July 22, the CWMA declined to order an immediate release and instead referred the matter to the Cauvery Water Regulatory Committee (CWRC), which meets on July 28. In response, new Tamil Nadu CM Vijay proposed holding direct, bilateral talks with Karnataka CM D.K. Shivakumar, with a visit planned for August 3, to try to resolve the shortfall outside the usual statutory process.",
+      "key_points": [
+        "TN got only 3.5 TMC of water against its 31 TMC entitlement since June 1",
+        "New CM Vijay proposes bilateral talks with Karnataka CM, visit set for Aug 3",
+        "Farmers' groups, PMK and rival DMK's Stalin all criticize the plan",
+        "Statutory water body (CWRC) meets July 28 on a pro-rata sharing formula"
+      ],
+      "moot": "When a legal or institutional process already exists to settle a dispute, trying to negotiate around it directly can look efficient in the short term but often draws suspicion, because it risks trading away protections that took years of litigation to secure.",
+      "image_credit": "The Print",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Deccan Herald",
+          "The Print"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "state_vs_centre"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "The Cauvery river flows from Karnataka into Tamil Nadu, and the two states have fought over sharing its water for over a century — it's one of India's most sensitive inter-state disputes because millions of farmers in both states depend on it. The Supreme Court has laid down a fixed release schedule, policed by statutory bodies like the Cauvery Water Management Authority (CWMA), specifically so the states don't have to negotiate the issue from scratch each time there's a shortfall. C. Joseph Vijay, the actor-turned-politician who leads the TVK party, became Tamil Nadu's Chief Minister after his party won the state's 2026 assembly election, unseating the DMK.",
+        "why_it_matters": "This is the new TVK government's first big test on a highly emotional, farmer-livelihood issue that has shaped Tamil Nadu politics for decades. Farmers' groups and rival politicians worry that bypassing the statutory, court-backed mechanism in favor of direct talks could weaken Tamil Nadu's legal position, since bilateral talks between states have historically not resolved the dispute and could let Karnataka set terms informally.",
+        "ripple_effects": "If the CWRC's July 28 meeting doesn't fix a pro-rata release formula, pressure will build on Vijay's August 3 meeting with Shivakumar to show results, or he risks looking weak on an issue that unseated the previous DMK government's opponents in the past. DMK, now in opposition, is using the episode to paint the new government as inexperienced on a sensitive inter-state issue — an early preview of how the two parties will contest future disputes.",
+        "why_now": "The immediate trigger is the CWMA's July 22 decision to punt the shortfall issue to the CWRC instead of ordering a release, which pushed Vijay to publicly propose bilateral talks on July 25.",
+        "watch_next": "The outcome of the CWRC's July 28 meeting on a pro-rata water-sharing formula, and whether Vijay's August 3 meeting with Shivakumar goes ahead as planned.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "TMC (thousand million cubic feet)",
+            "definition": "A unit used in India to measure large volumes of river water, especially in inter-state sharing disputes."
+          },
+          {
+            "term": "Cauvery Water Management Authority",
+            "definition": "The Supreme Court-mandated body that oversees how much Cauvery river water Karnataka must release to Tamil Nadu each month."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Print",
+            "url": "https://theprint.in/india/tn-cms-proposal-for-talks-with-karnataka-over-cauvery-issue-draws-backlash-from-farmers-parties/2996406/"
+          },
+          {
+            "name": "Deccan Herald",
+            "url": "https://www.deccanherald.com/india/tamil-nadu/cm-vijays-cauvery-talks-plan-with-karnataka-sparks-political-row-in-tamil-nadu-4086857"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-25T18:22:25+05:30",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "Business Standard",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "IDFC FIRST Bank posts record ₹1,075 crore quarterly profit, crossing ₹1,000 crore for the first time",
+      "what_happened": "IDFC FIRST Bank reported its highest-ever quarterly net profit of ₹1,075 crore for the April-June 2026 quarter (Q1 FY27), up 132.4% from ₹463 crore a year earlier — the first time it has crossed ₹1,000 crore in a single quarter. Its loan book grew 20.6% year-on-year to ₹3,05,488 crore, net interest income rose 21.1% to ₹5,972 crore, and its share of low-cost current and savings account deposits (CASA ratio) hit a multi-quarter high of 50.8%. Gross bad loans fell to 1.51% of the loan book from 1.97% a year ago, and provisions for bad loans dropped 31%, helped by a ₹514.82 crore insurance claim payout.",
+      "key_points": [
+        "Q1 FY27 profit up 132% year-on-year to ₹1,075 crore",
+        "Loan book grew 20.6% to over ₹3 lakh crore",
+        "Bad loans (gross NPA) fell to 1.51% from 1.97% a year ago",
+        "Provisions (money set aside for bad loans) dropped 31%"
+      ],
+      "moot": "Bank turnarounds tend to show up first in the numbers that don't grab headlines — falling bad-loan ratios and provisions — well before the profit figure itself becomes impressive; watching the trend in asset quality tells you where profits are headed before they arrive.",
+      "image_credit": "Business Standard",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "ANI News",
+          "Business Standard"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "repo_rate"
+      ],
+      "figures": [
+        {
+          "raw": "₹1,075 crore",
+          "words": "₹10.75 billion",
+          "usd_approx": "≈ $112mn"
+        },
+        {
+          "raw": "₹463 crore",
+          "words": "₹4.63 billion",
+          "usd_approx": "≈ $48mn"
+        },
+        {
+          "raw": "₹1,000 crore",
+          "words": "₹10 billion",
+          "usd_approx": "≈ $104mn"
+        },
+        {
+          "raw": "₹3,05,488 crore",
+          "words": "₹3.05 trillion",
+          "usd_approx": "≈ $32bn"
+        }
+      ],
+      "depth": {
+        "background": "IDFC FIRST Bank was formed in 2018 from the merger of IDFC Bank and Capital First, and spent its early years absorbing heavy loan losses as it built out a retail banking business from scratch. Under CEO V. Vaidyanathan, it has been shifting from riskier infrastructure and wholesale lending toward retail loans and deposits, a slower but usually steadier path to profitability. As recently as early 2025 the bank posted a quarterly loss, so this result marks a sharp turnaround.",
+        "why_it_matters": "For a bank that was still absorbing losses from its 2018 merger just a couple of years ago, crossing ₹1,000 crore in quarterly profit for the first time is a meaningful signal that its credit-cost cycle has turned and its retail-focused strategy is paying off. It's a closely watched name among India's mid-sized private banks, where investors have been waiting to see if smaller lenders can match the scale economics of giants like HDFC Bank and ICICI Bank.",
+        "ripple_effects": "The stock, trading near ₹80-81 and close to its 52-week high of ₹87, could see renewed investor interest. A cleaner asset-quality picture also gives the bank more room to lend and grow its deposit base without needing to raise fresh capital as urgently. It's also a data point for the broader debate on whether India's private banking sector's post-pandemic clean-up is largely complete.",
+        "why_now": "The results were announced and the bank's board met on July 25, prompting immediate market and media coverage.",
+        "watch_next": "Whether the bank sustains this margin and asset-quality improvement over the next couple of quarters, or whether this was boosted by one-off items like the insurance claim receipt.",
+        "market_link": "IDFC FIRST Bank shares (NSE: IDFCFIRSTB) are likely to see renewed attention after the results; relevant to anyone tracking India's mid-tier private banking space.",
+        "key_terms": [
+          {
+            "term": "CASA ratio",
+            "definition": "The share of a bank's deposits sitting in current and savings accounts, which pay little or no interest — a higher ratio means cheaper funding for the bank."
+          },
+          {
+            "term": "Gross NPA",
+            "definition": "Non-performing assets — loans where the borrower has stopped repaying — expressed as a percentage of all the loans a bank has given out."
+          },
+          {
+            "term": "Net interest margin (NIM)",
+            "definition": "The difference between the interest a bank earns on loans and the interest it pays on deposits, as a percentage of its assets — a core measure of banking profitability."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/companies/news/idfc-first-bank-q1fy27-net-profit-rises-132-pc-to-rs-1-075-cr-126072500903_1.html"
+          },
+          {
+            "name": "ANI News",
+            "url": "https://www.aninews.in/news/business/idfc-first-bank-q1fy27-results-highest-ever-pat-of-83771075-crore-up-1324-yoy20260725182225/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
+      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Assam's flood toll jumps to 61 — 14 people died in a single day as 700,000+ are now affected",
@@ -1142,8 +1435,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-07-25T15:50:00+05:30",
       "added_at": "2026-07-26T07:02:07+05:30",
@@ -1208,8 +1501,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-25T00:00:00+05:30",
       "added_at": "2026-07-26T06:00:10+05:30",
@@ -1285,8 +1578,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-07-24T00:00:00+05:30",
       "added_at": "2026-07-26T06:00:10+05:30",
@@ -1345,8 +1638,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-26T05:02:02+05:30",
@@ -1415,8 +1708,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-07-24T00:00:00Z",
       "added_at": "2026-07-26T05:02:02+05:30",
@@ -1484,132 +1777,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
-      "category": "india",
-      "published_iso": "2026-07-24T00:00:00Z",
-      "added_at": "2026-07-26T04:01:39+05:30",
-      "source": "Business Standard",
-      "importance": "high",
-      "regions": [
-        "India"
-      ],
-      "title": "India's private-sector growth slows to a 3-year low — but exports are quietly picking up speed",
-      "what_happened": "The HSBC flash India Composite PMI slipped to 54.3 in July from 57.1 in June — still growth, but the slowest pace in over three years. Manufacturing actually improved slightly, with its output index rising to 57.0 from 56.3, but services — a much bigger share of India's economy — fell sharply to 53.1 from 57.4, its weakest reading in 53 months. Survey respondents cited tougher competition, order cancellations, fewer client enquiries, and shortages of key raw materials. At the same time, new export orders for Indian goods and services grew at their fastest pace since March, driven by strong international demand.",
-      "key_points": [
-        "HSBC flash Composite PMI fell to 54.3 in July from 57.1 in June",
-        "That's the weakest private-sector expansion since March 2022",
-        "Services activity dropped to its worst reading in 53 months",
-        "But new export orders grew at their fastest pace since March"
-      ],
-      "moot": "A single month's dip in a survey like PMI is a speedometer reading, not proof the economy has stalled — it's the trend over several months, not one data point, that tells you whether a slowdown is real.",
-      "image_credit": "Business Standard",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Business Standard",
-          "Republic World"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "supply_chain"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "The Purchasing Managers' Index (PMI) is a monthly survey of manufacturing and services companies about whether business is getting better or worse — a reading above 50 means the sector is still growing, below 50 means it's shrinking. Economists watch it closely because it's available weeks before official GDP data, making it one of the earliest real-time snapshots of how the economy is actually doing.",
-        "why_it_matters": "This is the first real-time sign that India's usually-resilient private sector is losing momentum, arriving just as the Reserve Bank of India is already juggling a weaker rupee, Iran-war-driven oil costs, and a patchy monsoon. A domestic slowdown that persists could complicate the RBI's currently cautious, wait-and-watch stance on interest rates.",
-        "ripple_effects": "A softer services reading is a mild negative signal for consumer-facing and rate-sensitive Indian businesses and could feed into hiring and wage decisions over the next few months. The stronger export-orders number is the silver lining — it suggests overseas demand for Indian manufactured goods and services is holding up even as domestic momentum cools, which helps IT-services and export-oriented manufacturers.",
-        "why_now": "This is the preliminary ('flash') PMI reading for July, capturing business conditions through most of the month, against a backdrop of rising oil-import costs from the Iran war and a weaker rupee.",
-        "watch_next": "The final, non-flash PMI reading due in early August, and whether this slowdown shows up in the RBI's tone at its next monetary policy meeting.",
-        "market_link": "The weaker services PMI is a mild negative for rate-sensitive and domestic consumer stocks, while the surprisingly strong export-orders reading is a positive signal for IT-services and export-oriented manufacturers — expect traders to parse the split rather than just the headline number.",
-        "key_terms": [
-          {
-            "term": "Purchasing Managers' Index (PMI)",
-            "definition": "A monthly survey-based score where above 50 means a sector is growing and below 50 means it's shrinking — used as an early proxy for how the economy is doing."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/july-flash-pmi-falls-to-54-3-as-private-sector-growth-slows-to-3-year-low-126072400330_1.html"
-          },
-          {
-            "name": "Republic World",
-            "url": "https://www.republicworld.com/business/india-july-flash-pmi-falls-54-3-private-sector-growth-slows-services-decline-2026-07-24-133290"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-07-23T00:00:00Z",
-      "added_at": "2026-07-26T04:01:39+05:30",
-      "source": "PIB / Global Security (Parliament Q&A mirror)",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "India's Aditya-L1 and Chandrayaan-3 missions move from 'we landed' to 'we discovered'",
-      "what_happened": "The government gave Parliament a detailed update this week on what both missions' instruments have actually found, now published in peer-reviewed international journals. Chandrayaan-3's ChaSTE probe measured temperature down to 10 cm below the lunar surface and found a sharp shift in how the soil conducts heat at around 6 cm deep — evidence of a distinct two-layer 'cake-like' structure. Its APXS instrument found the elemental makeup of the soil was very uniform within 50 metres of the landing site. Aditya-L1, meanwhile, caught the first-ever spectroscopic signature of the onset phase of a coronal mass ejection (a burst of solar plasma), and combined with ground data helped explain the geomagnetic storms that hit Earth in 2024.",
-      "key_points": [
-        "Government tells Parliament both missions now have peer-reviewed published results",
-        "Chandrayaan-3's rover found a two-layer, 'cake-like' structure in lunar soil",
-        "Aditya-L1 captured the first-ever spectroscopic signature of a solar eruption's onset",
-        "Marks a shift from engineering firsts to genuine, citable science"
-      ],
-      "moot": "A space program matures when it stops being measured by 'did we get there' and starts being measured by 'did we learn something nobody knew before' — that shift from engineering milestone to scientific contribution is what turns a space agency into a research power.",
-      "image_credit": "PIB / Global Security (Parliament Q&A mirror)",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Organiser",
-          "PIB / Global Security (Parliament Q&A mirror)"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Chandrayaan-3 landed near the Moon's south pole in 2023 — a first for any country — while Aditya-L1, launched the same year, is India's first solar observatory, parked at a gravitationally stable point called L1 between Earth and the Sun so it can watch the Sun continuously. Landing and launching were the engineering headlines; what scientists actually do with the data afterwards is a separate, slower story.",
-        "why_it_matters": "Getting a spacecraft to land or launch successfully is one bar. Producing new data that other scientists around the world cite and build on is a much higher one — it's the difference between a country that can do space engineering and one that contributes original science. This update shows India's low-cost missions are clearing that second bar.",
-        "ripple_effects": "It strengthens India's case for future space science funding and international collaboration, and is a credibility boost for ISRO's instrument-makers and the broader domestic space startup ecosystem as India prepares bigger missions like the crewed Gaganyaan program and a planned Indian space station.",
-        "why_now": "The findings were shared via a written reply to Parliament this week, during the ongoing monsoon session, as the government highlighted the year's space science output.",
-        "watch_next": "How this data feeds into India's next missions — Gaganyaan's crewed flights and any follow-up solar or lunar science missions that build on what Aditya-L1 and Chandrayaan-3 found.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "peer-reviewed",
-            "definition": "Research that independent outside scientists have checked over before it's published — the standard way science distinguishes a solid finding from an unverified claim."
-          },
-          {
-            "term": "coronal mass ejection (CME)",
-            "definition": "A huge burst of plasma and magnetic field thrown off the Sun's surface, which can disrupt satellites, power grids, and radio signals on Earth when it arrives."
-          }
-        ],
-        "sources": [
-          {
-            "name": "PIB / Global Security (Parliament Q&A mirror)",
-            "url": "https://www.globalsecurity.org/space/library/news/2026/space-260723-india-pib02.htm"
-          },
-          {
-            "name": "Organiser",
-            "url": "https://organiser.org/2026/07/24/371461/bharat/aditya-l1-govt-highlight-discoveries-of-indias-solar-mission-hails-chandrayan-3-as-milestone-for-space-ambitions/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:59:55+05:30",
@@ -1674,8 +1843,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:59:55+05:30",
@@ -1729,8 +1898,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": "2026-07-25T20:32:18+05:30",
       "added_at": "2026-07-26T00:08:32+05:30",
@@ -1791,8 +1960,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-36",
+      "rank": 36,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1862,8 +2031,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1943,8 +2112,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-07-25T11:00:00+05:30",
       "added_at": "2026-07-25T21:01:11+05:30",
@@ -2013,137 +2182,6 @@
           {
             "name": "Deccan Chronicle",
             "url": "https://www.deccanchronicle.com/nation/investigation-into-paper-leak-cases-to-be-completed-in-2-months-bill-1973848"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-39",
-      "rank": 39,
-      "category": "india",
-      "published_iso": "2026-07-25T11:00:00+05:30",
-      "added_at": "2026-07-25T20:01:00+05:30",
-      "source": "PRS Legislative Research",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Parliament moves to lock in a bigger Supreme Court: bill raising judge count from 33 to 37 comes up in the Lok Sabha",
-      "what_happened": "The Supreme Court (Number of Judges) Amendment Bill, 2026 came up in the Lok Sabha (the lower house of Parliament) during the ongoing Monsoon Session, seeking Parliament's formal approval to raise the Supreme Court's judge strength from 33 to 37 (excluding the Chief Justice of India). Because Article 124 of the Constitution lets Parliament change the court's size through an ordinary law, the bill needs only a simple majority to pass — not the two-thirds majority a constitutional amendment would require. Opposition MPs, including Sougata Ray, N.K. Premachandran and Dean Kuriakose, moved a statutory resolution objecting to the government's earlier use of the ordinance route.",
-      "key_points": [
-        "Bill amends a 1956 law to raise Supreme Court judges (excluding the Chief Justice) from 33 to 37",
-        "It replaces an ordinance the government had already issued in May to make the change immediately",
-        "Needs only a simple majority — the Constitution lets Parliament set the court's size by ordinary law",
-        "Opposition MPs moved a resolution objecting to the government's use of the ordinance route"
-      ],
-      "moot": "Increasing the number of judges is one of the few levers a government can pull quickly against a judicial backlog — but doing it by ordinance instead of waiting for Parliament often generates as much political controversy as the substance of the change itself.",
-      "image_credit": "PRS Legislative Research",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "India TV News",
-          "PRS Legislative Research"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "supreme_court_india",
-        "ordinance",
-        "judiciary_collegium"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "India's Supreme Court has grown its sanctioned strength several times over the decades as its caseload swelled — the court alone handles tens of thousands of pending cases at any time, on top of matters that flow up from High Courts across the country. In May, the government used its ordinance power — the ability to make a law when Parliament isn't in session, subject to later approval — to raise the judge count. Law Minister Arjun Ram Meghwal introduced the formal bill to replace that ordinance on July 20.",
-        "why_it_matters": "More judges could help the Supreme Court clear its backlog faster, but the opposition's pushback isn't really about the number — it's about a government making structural changes to the judiciary by ordinance before Parliament gets to weigh in.",
-        "ripple_effects": "A larger sanctioned strength means more upcoming appointments, which will run through the collegium system (senior judges recommending future judges) — a process that itself has long been a friction point between the judiciary and the government. It also feeds into the broader monsoon-session tension between the government and opposition.",
-        "why_now": "It's moving through this Monsoon Session alongside other contentious business, including the NEET protests, showing the government pushing its legislative agenda even as it manages political pressure on other fronts.",
-        "watch_next": "Whether the bill clears the Lok Sabha and then the Rajya Sabha (upper house) this session, and how quickly the four new judge vacancies actually get filled.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "ordinance",
-            "definition": "A law the President can issue on the government's advice when Parliament isn't in session — it takes effect immediately but must later be approved by Parliament or it lapses."
-          },
-          {
-            "term": "collegium",
-            "definition": "The system, developed through Supreme Court rulings rather than written into the Constitution, by which senior judges themselves recommend who becomes a judge — rather than the government choosing alone."
-          }
-        ],
-        "sources": [
-          {
-            "name": "PRS Legislative Research",
-            "url": "https://prsindia.org/billtrack/the-supreme-court-number-of-judges-amendment-bill-2026"
-          },
-          {
-            "name": "India TV News",
-            "url": "https://www.indiatvnews.com/news/india/govt-tables-bill-to-raise-supreme-court-judges-strength-in-lok-sabha-all-you-need-to-know-2026-07-20-1048813"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-07-25T11:00:00+05:30",
-      "added_at": "2026-07-25T20:01:00+05:30",
-      "source": "Free Press Journal",
-      "importance": "high",
-      "regions": [
-        "India",
-        "Bihar"
-      ],
-      "title": "Left-wing student groups enforce a statewide Bihar Bandh over the NEET paper leak, clashing with police as RJD's Tej Pratap Yadav is detained",
-      "what_happened": "On Saturday, left-wing student organisations called a statewide bandh (shutdown) across Bihar, with heavy security deployed as demonstrations turned confrontational in several districts. Police used tear gas and a lathi charge to disperse crowds after stone-pelting broke out; protesters blocked a key road by burning tyres. RJD leader Tej Pratap Yadav was detained after joining the protest in solidarity.",
-      "key_points": [
-        "AISA- and RYA-led shutdown hits several Bihar districts; around 70,000 police personnel deployed",
-        "Protesters demand a fair, independent probe into the alleged NEET-UG paper leak — not just a resignation",
-        "Stone-pelting, tear gas and a lathi charge reported; the Samastipur–Patna road blocked by burning tyres",
-        "RJD leader Tej Pratap Yadav detained after joining protesters, says he's 'ready to die' for the cause"
-      ],
-      "moot": "When a controversy touches something as high-stakes as medical-school admissions for hundreds of thousands of students, a single resignation often isn't enough to end a protest — people want the underlying process fixed, not just someone held accountable for it.",
-      "image_credit": "Free Press Journal",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Free Press Journal",
-          "India.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "NEET-UG is the single national entrance exam that decides admission to nearly every medical college seat in India, making it high-stakes for lakhs of students every year. Weeks of protests broke out after a Bihar police report alleged the exam paper had been leaked for money, and the movement escalated into a hunger strike and sustained demonstrations at Delhi's Jantar Mantar demanding Union Education Minister Dharmendra Pradhan's resignation — which he ultimately gave.",
-        "why_it_matters": "The bandh shows the protest movement isn't satisfied by Pradhan's resignation alone — it's now squarely about whether the exam process itself can be trusted, which matters to every future NEET aspirant, not just this year's cohort.",
-        "ripple_effects": "The shutdown disrupts transport, business and daily life across Bihar, raises pressure on both the state and central governments, and gives opposition parties like the RJD a fresh mobilising issue ahead of state elections.",
-        "why_now": "The bandh comes just days after Pradhan's resignation, signalling protesters see that as a partial win at best and want an independent probe into the leak itself before they stand down.",
-        "watch_next": "Whether the government agrees to order a formal, independent (or CBI) investigation into the alleged leak, and whether the bandh's momentum spreads beyond Bihar.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "NEET-UG",
-            "definition": "The National Eligibility cum Entrance Test — the single, mandatory national exam that decides admission to nearly all MBBS and BDS medical college seats in India."
-          },
-          {
-            "term": "bandh",
-            "definition": "A general strike or shutdown called by political or civil groups, where shops, transport and offices are urged — sometimes forced — to close in protest."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Free Press Journal",
-            "url": "https://www.freepressjournal.in/education/statewide-bihar-bandh-over-neet-paper-leak-gains-momentum-as-student-groups-hold-widespread-protests-amid-heavy-security-video"
-          },
-          {
-            "name": "India.com",
-            "url": "https://www.india.com/news/india/bihar-bandh-over-neet-paper-leak-police-vehicles-vandalised-stones-pelted-during-protest-students-demand-dharmendra-pradhans-resignation-watch-video-8483508/"
           }
         ]
       }
@@ -2291,7 +2329,6 @@
       "id": "story-63",
       "rank": 63,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-07-26T15:00:00+02:00",
       "added_at": "2026-07-26T07:59:53+05:30",
       "source": "Gulf News",
@@ -2642,61 +2679,6 @@
           {
             "name": "Formula1.com",
             "url": "https://www.formula1.com/en/latest/article/perez-felt-dizzy-and-not-100-physically-in-hungarian-gp-qualifying.1KoVxOLOsKjipCtFJhF3pB"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-69",
-      "rank": 69,
-      "category": "f1",
-      "published_iso": "2026-07-25T00:00:00+02:00",
-      "added_at": "2026-07-26T01:01:41+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Hungary",
-        "Formula 1"
-      ],
-      "title": "Haas boss says an inconsistent car is clouding Ocon's case, as the team weighs its 2027 driver lineup",
-      "what_happened": "Haas team principal Ayao Komatsu said the team's VF-26 car has been inconsistent enough this season that it's difficult to fairly judge Esteban Ocon's true performance level, even though Ocon has been outqualified by teammate Oliver Bearman 3 times to 11 and trails him 3 points to 18 in the standings. The comments come as Haas ponders its driver lineup for 2027 and as the team gives reserve driver Ryo Hirakawa an FP1 outing in Bearman's car this weekend, ahead of the sport's summer break.",
-      "key_points": [
-        "Team principal Ayao Komatsu says the VF-26's inconsistency makes Esteban Ocon hard to judge fairly",
-        "Ocon has been outqualified 3-11 by teammate Oliver Bearman this season, scoring 3 points to Bearman's 18",
-        "Haas is weighing whether to keep Ocon or promote Bearman-paired talent for 2027",
-        "Comes as Haas hands Bearman's car to reserve driver Ryo Hirakawa for Friday practice this weekend"
-      ],
-      "moot": "When judging performance in a shared system — a car, a team, a market — it matters whether you're measuring the person or the platform; a fair evaluation has to separate the two.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Formula 1 teams typically decide their next season's driver lineup by mid-to-late summer, comparing how each of their two drivers performs in the identical car — since a faster car can flatter a mediocre driver and a difficult car can bury a good one, teams try to judge drivers on how they perform relative to their own teammate, not the raw lap time. Haas's current car is the VF-26.",
-        "why_it_matters": "A team boss publicly cautioning against reading too much into a lopsided points gap is often a signal that a driver's seat is under real pressure — teams don't usually offer this kind of public defense unless the alternative (an unflattering decision) is already being considered internally.",
-        "ripple_effects": "If Ocon is dropped for 2027, it reopens the driver market for one of the grid's more experienced seats, affecting drivers further down the pecking order in F2 and reserve roles (like Hirakawa) who are angling for a shot. It also puts pressure on Haas to fix the car's inconsistency, since an unreliable platform undermines whatever lineup decision they make.",
-        "why_now": "F1's 'silly season' — when driver contracts for the following year get decided — is compressed around the summer break, and Haas is actively testing alternatives (like Hirakawa's FP1 run) right now as part of that evaluation.",
-        "watch_next": "Whether Haas gives Hirakawa or another reserve more track time before the summer break, as a signal of how seriously they're considering a change from Ocon.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "silly season",
-            "definition": "F1 slang for the mid-to-late-season period when driver and team contract decisions for the following year get made and rumored."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/haas-f1-car-inconsistency-makes-it-hard-to-judge-esteban-ocon-ayao-komatsu/10841637/"
           }
         ]
       }
@@ -3182,6 +3164,127 @@
       "rank": 41,
       "category": "cricket",
       "is_new": true,
+      "published_iso": "2026-07-25T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "Barbados Today",
+      "importance": "notable",
+      "regions": [
+        "Barbados",
+        "Caribbean"
+      ],
+      "title": "Barbados prepares mass tribute and state funeral for cricket legend Sir Garfield Sobers on July 29",
+      "what_happened": "Barbados is finalizing plans for a full state funeral for Sobers on Wednesday, July 29, at 10 a.m. at Kensington Oval — the island's most famous cricket ground. His body will lie in state at Parliament on July 27 and then at Kensington Oval on July 28 so the public can pay respects, before a public thanksgiving service and a private funeral at Coral Ridge Memorial Gardens. Free tickets to attend the Kensington Oval service are being handed out at post offices and government buildings islandwide purely to help organizers estimate the crowd, and condolence books have been placed at multiple sites across Barbados. Prime Minister Mia Mottley has declared a National Day of Mourning, and Barbados's overseas missions are hosting tribute events for the diaspora.",
+      "key_points": [
+        "State funeral set for July 29 at Kensington Oval, Barbados",
+        "Body lies in state at Parliament (Jul 27) then Kensington Oval (Jul 28)",
+        "Free public tickets being distributed to gauge crowd size",
+        "PM Mia Mottley declared a National Day of Mourning"
+      ],
+      "moot": "How a country chooses to mourn a sportsperson — with a state funeral, a national day of mourning, days of public access — reveals how deeply sport is woven into a nation's sense of identity, beyond just its record books.",
+      "image_credit": "Barbados Today",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "Al Jazeera",
+          "Barbados Today"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Sir Garfield 'Garry' Sobers, widely regarded as cricket's greatest-ever all-rounder, died on July 17, 2026, at his home in Barbados aged 89. He played 93 Tests for the West Indies between 1954 and 1974, scoring 8,032 runs and taking 235 wickets, and as a 21-year-old set what was then the world-record Test score of 365 not out — a mark that stood for 36 years. He also captained the West Indies for seven years and is a Barbadian National Hero.",
+        "why_it_matters": "This is one of the largest ceremonial events in Caribbean cricket history — a multi-day national program that reflects Sobers's status not just as a sporting great but as a defining figure of Barbadian and West Indian identity. Tributes have come in from cricket's biggest modern names, including Virat Kohli, Sachin Tendulkar and Sunil Gavaskar.",
+        "ripple_effects": "The funeral will effectively pause the region's cricket and public life around it for several days, with commemorative events planned beyond the funeral itself. It's also likely to prompt renewed global discussion of Sobers's playing records and legacy in the sport.",
+        "why_now": "Organizers are in the final stretch before the July 29 funeral, with logistics — lying-in-state schedule and free ticket distribution — being finalized and reported on today.",
+        "watch_next": "The scale of public turnout at Kensington Oval on July 28-29, and tribute events from cricket boards and the ICC around the funeral date.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Lying in state",
+            "definition": "A public ceremony where a deceased notable figure's body is displayed in a public building before burial, so members of the public can pay their respects."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Barbados Today",
+            "url": "https://barbadostoday.bb/2026/07/25/a-giant-returns-to-the-pavilion-but-his-legacy-will-never-leave-the-crease/"
+          },
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/sports/2026/7/17/all-time-west-indies-cricket-great-garfield-sobers-dies-aged-89"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-07-25T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "ESPNcricinfo",
+      "importance": "notable",
+      "regions": [
+        "Caribbean"
+      ],
+      "title": "CPL 2026: Trinbago Knight Riders re-sign spinner Usman Tariq, Guyana Amazon Warriors land Glenn Phillips",
+      "what_happened": "Ahead of CPL 2026, TKR used a Right-to-Match Option to re-sign Pakistani 'mystery spinner' Usman Tariq, who took 20 wickets in 10 matches during their 2025 title run, alongside retaining Sunil Narine, Nicholas Pooran and other key players. Guyana Amazon Warriors (2025 runners-up) signed New Zealand all-rounder Glenn Phillips, who returns to the CPL after a six-year absence, along with Afghanistan's Mohammad Nabi and Rahmanullah Gurbaz, and re-signed veteran South African leg-spinner Imran Tahir as captain. Phillips had missed New Zealand's recent Caribbean ODI series with a side injury suffered while scoring his maiden Test century against England, and his signing signals he's fit again.",
+      "key_points": [
+        "TKR re-signs Pakistan spinner Usman Tariq, their 2025 title-winning top wicket-taker",
+        "Guyana Amazon Warriors sign NZ all-rounder Glenn Phillips, returning after 6 years away",
+        "CPL 2026 runs Aug 7–Sep 20, now with 7 teams including new side Jamaica Kingsmen",
+        "Squads must mix senior West Indies players, overseas stars, and young 'Breakout' talent"
+      ],
+      "moot": "In T20 franchise cricket, championship windows are short — the squad-building decisions made weeks before a tournament, not just performances during it, often decide who's competitive by the time it starts.",
+      "image_credit": "ESPNcricinfo",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "Caribbean National Weekly",
+          "ESPNcricinfo"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "The Caribbean Premier League (CPL) is the Caribbean's top T20 cricket tournament, drawing international stars alongside West Indies players during the Northern Hemisphere off-season. Ahead of each season, teams retain key players and draft new ones under rules requiring a mix of senior West Indies players, overseas signings, and young 'Breakout' players. Trinbago Knight Riders (TKR), partly owned by Bollywood star Shah Rukh Khan, are the defending 2025 champions.",
+        "why_it_matters": "These squad announcements, made roughly two weeks before the tournament starts, largely set the competitive shape of CPL 2026 — a tournament that has grown to seven franchises this year with the addition of the Jamaica Kingsmen and a new venue in St Vincent and the Grenadines.",
+        "ripple_effects": "TKR enter as defending champions with their title-winning spin attack largely intact, while Guyana's beefed-up overseas roster raises their profile as top challengers after finishing runners-up last year. Fans and fantasy-league players will recalibrate expectations for both franchises ahead of the August 7 opener.",
+        "why_now": "CPL 2026 begins August 7, and retention/signing news is landing now as franchises finalize their 17-player squads before the season starts.",
+        "watch_next": "The full squad draft results for all seven teams, and the tournament opener between Jamaica Kingsmen and Antigua and Barbuda Falcons on August 7.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Right-to-Match Option",
+            "definition": "A rule in some T20 leagues letting a team match another franchise's bid to keep a player they already had, rather than losing them in an open auction or draft."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/story/cpl-2026-usman-tariq-returns-to-tkr-glenn-phillips-signs-with-amazon-warriors-1547506"
+          },
+          {
+            "name": "Caribbean National Weekly",
+            "url": "https://www.caribbeannationalweekly.com/posts/amazon-warriors-load-up-on-international-firepower-for-2026-cpl-title-push"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-43",
+      "rank": 43,
+      "category": "cricket",
+      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Bangladesh loses fast bowler Nahid Rana for the Australia Tests to a side strain",
@@ -3245,8 +3348,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "is_new": true,
       "published_iso": "2026-07-26T13:00:00+02:00",
@@ -3301,10 +3404,9 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
-      "is_new": true,
       "published_iso": null,
       "added_at": "2026-07-26T07:59:53+05:30",
       "source": "BBC Sport",
@@ -3356,8 +3458,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-07-25T19:00:00Z",
       "added_at": "2026-07-26T07:02:07+05:30",
@@ -3420,8 +3522,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3489,8 +3591,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-07-24T18:30:00+01:00",
       "added_at": "2026-07-26T05:02:02+05:30",
@@ -3549,8 +3651,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-07-25T00:00:00+01:00",
       "added_at": "2026-07-26T04:01:39+05:30",
@@ -3603,8 +3705,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
+      "id": "story-50",
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:59:55+05:30",
@@ -3658,8 +3760,8 @@
     },
     {
       "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "published_iso": "2026-07-25T00:00:00Z",
       "added_at": "2026-07-26T01:59:55+05:30",
@@ -3707,8 +3809,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-52",
+      "rank": 52,
       "category": "cricket",
       "published_iso": null,
       "added_at": "2026-07-26T00:08:32+05:30",
@@ -3761,8 +3863,8 @@
     },
     {
       "type": "story",
-      "id": "story-51",
-      "rank": 51,
+      "id": "story-53",
+      "rank": 53,
       "category": "cricket",
       "published_iso": null,
       "added_at": "2026-07-26T00:08:32+05:30",
@@ -3820,8 +3922,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-07-25T17:30:00+05:30",
       "added_at": "2026-07-25T22:59:57+05:30",
@@ -3875,8 +3977,8 @@
     },
     {
       "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "published_iso": "2026-07-25T15:30:00+02:00",
       "added_at": "2026-07-25T22:59:57+05:30",
@@ -3930,8 +4032,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-56",
+      "rank": 56,
       "category": "cricket",
       "published_iso": "2026-07-25T15:30:00Z",
       "added_at": "2026-07-25T21:59:22+05:30",
@@ -3989,8 +4091,8 @@
     },
     {
       "type": "story",
-      "id": "story-55",
-      "rank": 55,
+      "id": "story-57",
+      "rank": 57,
       "category": "cricket",
       "published_iso": "2026-07-25T19:30:00+01:00",
       "added_at": "2026-07-25T21:01:11+05:30",
@@ -4039,8 +4141,8 @@
     },
     {
       "type": "story",
-      "id": "story-56",
-      "rank": 56,
+      "id": "story-58",
+      "rank": 58,
       "category": "cricket",
       "published_iso": "2026-07-25T19:06:26+05:30",
       "added_at": "2026-07-25T20:01:00+05:30",
@@ -4099,8 +4201,8 @@
     },
     {
       "type": "story",
-      "id": "story-57",
-      "rank": 57,
+      "id": "story-59",
+      "rank": 59,
       "category": "cricket",
       "published_iso": "2026-07-25T14:30:00+02:00",
       "added_at": "2026-07-25T20:01:00+05:30",
@@ -4154,8 +4256,8 @@
     },
     {
       "type": "story",
-      "id": "story-58",
-      "rank": 58,
+      "id": "story-60",
+      "rank": 60,
       "category": "cricket",
       "published_iso": "2026-07-25T19:00:00-04:00",
       "added_at": "2026-07-25T19:00:12+05:30",
@@ -4212,14 +4314,14 @@
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 134
+      "older_count": 130
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 138
+      "older_count": 142
     },
     {
       "type": "archive",
@@ -4233,7 +4335,7 @@
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 76
+      "older_count": 75
     },
     {
       "type": "outro",

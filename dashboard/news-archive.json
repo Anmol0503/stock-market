@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T09:02:04+05:30",
+  "generated_at": "2026-07-26T10:07:58+05:30",
   "count": 500,
   "stories": [
     {
@@ -50,6 +50,34 @@
           {
             "name": "ESPNcricinfo",
             "url": "https://www.cricinfo.com/series/india-in-zimbabwe-2026-1530058/match-schedule-fixtures-and-results"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "US Cyclospora outbreak tied to Taco Bell lettuce grows to nearly 2,000 cases across 9 states",
+      "category": "health",
+      "published_iso": "2026-07-26T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "CDC",
+      "what_happened": "The CDC's latest update, published today, puts the outbreak at 1,947 confirmed cases across Illinois, Indiana, Kansas, Kentucky, Michigan, Ohio, Oklahoma, Pennsylvania and West Virginia, with at least 98 people hospitalized and no deaths reported. Investigators traced the source to iceberg lettuce grown by Taylor Farms de Mexico, which moved through Taco Bell's supply chain. The company issued a nationwide recall of its central-Mexico iceberg lettuce on July 17. Illness onset dates range from June 22 to July 20, meaning the outbreak has been quietly growing for over a month.",
+      "key_points": [
+        "1,947 confirmed cases across 9 US states, 98 hospitalized",
+        "Traced to Taylor Farms de Mexico iceberg lettuce used by Taco Bell",
+        "Supplier recalled all central-Mexico iceberg lettuce on July 17",
+        "Illnesses started as early as June 22, still climbing"
+      ],
+      "depth": {
+        "background": "Cyclospora cayetanensis is a microscopic parasite that spreads through food or water contaminated with human waste — usually irrigation water tainted by leaking sewage, or field workers without proper sanitation. It's not spread person-to-person. The US has had smaller outbreaks before, usually linked to imported produce like cilantro or basil, but this one has grown unusually large and is centered on a major fast-food chain's supply chain.",
+        "sources": [
+          {
+            "name": "CDC",
+            "url": "https://www.cdc.gov/cyclosporiasis/outbreaks/07-26/investigation.html"
+          },
+          {
+            "name": "STAT News",
+            "url": "https://www.statnews.com/2026/07/17/cyclosporiasis-outbreak-traced-taylor-farms-lettuce-taco-bell/"
           }
         ]
       }
@@ -325,6 +353,34 @@
           {
             "name": "ESPNcricinfo",
             "url": "https://www.cricinfo.com/series/global-super-league-2026-1533122/match-schedule-fixtures-and-results"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "IDFC FIRST Bank posts record ₹1,075 crore quarterly profit, crossing ₹1,000 crore for the first time",
+      "category": "india",
+      "published_iso": "2026-07-25T18:22:25+05:30",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "Business Standard",
+      "what_happened": "IDFC FIRST Bank reported its highest-ever quarterly net profit of ₹1,075 crore for the April-June 2026 quarter (Q1 FY27), up 132.4% from ₹463 crore a year earlier — the first time it has crossed ₹1,000 crore in a single quarter. Its loan book grew 20.6% year-on-year to ₹3,05,488 crore, net interest income rose 21.1% to ₹5,972 crore, and its share of low-cost current and savings account deposits (CASA ratio) hit a multi-quarter high of 50.8%. Gross bad loans fell to 1.51% of the loan book from 1.97% a year ago, and provisions for bad loans dropped 31%, helped by a ₹514.82 crore insurance claim payout.",
+      "key_points": [
+        "Q1 FY27 profit up 132% year-on-year to ₹1,075 crore",
+        "Loan book grew 20.6% to over ₹3 lakh crore",
+        "Bad loans (gross NPA) fell to 1.51% from 1.97% a year ago",
+        "Provisions (money set aside for bad loans) dropped 31%"
+      ],
+      "depth": {
+        "background": "IDFC FIRST Bank was formed in 2018 from the merger of IDFC Bank and Capital First, and spent its early years absorbing heavy loan losses as it built out a retail banking business from scratch. Under CEO V. Vaidyanathan, it has been shifting from riskier infrastructure and wholesale lending toward retail loans and deposits, a slower but usually steadier path to profitability. As recently as early 2025 the bank posted a quarterly loss, so this result marks a sharp turnaround.",
+        "sources": [
+          {
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/companies/news/idfc-first-bank-q1fy27-net-profit-rises-132-pc-to-rs-1-075-cr-126072500903_1.html"
+          },
+          {
+            "name": "ANI News",
+            "url": "https://www.aninews.in/news/business/idfc-first-bank-q1fy27-results-highest-ever-pat-of-83771075-crore-up-1324-yoy20260725182225/"
           }
         ]
       }
@@ -1443,6 +1499,34 @@
     },
     {
       "type": "story",
+      "title": "Critical, unpatched security flaw in Alibaba's Fastjson is being actively exploited — no fix exists yet",
+      "category": "technology",
+      "published_iso": "2026-07-25T00:00:00Z",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "The Hacker News",
+      "what_happened": "Security researchers at FearsOff discovered a critical vulnerability in Fastjson, tracked as CVE-2026-16723, that lets an attacker send a specially crafted piece of JSON data to a vulnerable application and run their own code on it — no password or login required. Fastjson's maintainers published an advisory on July 21. Security firm ThreatBook confirmed real-world attacks starting July 22. As of the latest reporting on July 25, Alibaba had not released a fix, and the attack works even when standard safety settings that normally block similar bugs are turned on.",
+      "key_points": [
+        "CVE-2026-16723, severity 9.0 out of 10 — critical",
+        "Affects Fastjson 1.2.68 through 1.2.83, widely used in enterprise Java apps",
+        "Attackers can run code with no login needed, no patch available yet",
+        "Active attacks confirmed since July 22, mostly against US firms"
+      ],
+      "depth": {
+        "background": "Fastjson is a free code library, maintained by Chinese tech giant Alibaba, that lets Java programs read and write JSON data (a common format for exchanging information between computer systems). Because it's fast and free, it got embedded into huge numbers of enterprise applications built on Java and Spring Boot — the same programming stack used by banks, hospitals, retailers and many other large organizations worldwide.",
+        "sources": [
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html"
+          },
+          {
+            "name": "Security Boulevard (Imperva)",
+            "url": "https://securityboulevard.com/2026/07/imperva-customers-protected-against-cve-2026-16723-critical-fastjson-1-x-zero-day-rce/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
       "title": "First death confirmed as Spain and France wildfires grow to 25,000 hectares; Germany sends aid",
       "category": "climate",
       "published_iso": "2026-07-25T00:00:00Z",
@@ -1793,6 +1877,90 @@
           {
             "name": "NVIDIA Newsroom",
             "url": "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Barbados prepares mass tribute and state funeral for cricket legend Sir Garfield Sobers on July 29",
+      "category": "cricket",
+      "published_iso": "2026-07-25T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "Barbados Today",
+      "what_happened": "Barbados is finalizing plans for a full state funeral for Sobers on Wednesday, July 29, at 10 a.m. at Kensington Oval — the island's most famous cricket ground. His body will lie in state at Parliament on July 27 and then at Kensington Oval on July 28 so the public can pay respects, before a public thanksgiving service and a private funeral at Coral Ridge Memorial Gardens. Free tickets to attend the Kensington Oval service are being handed out at post offices and government buildings islandwide purely to help organizers estimate the crowd, and condolence books have been placed at multiple sites across Barbados. Prime Minister Mia Mottley has declared a National Day of Mourning, and Barbados's overseas missions are hosting tribute events for the diaspora.",
+      "key_points": [
+        "State funeral set for July 29 at Kensington Oval, Barbados",
+        "Body lies in state at Parliament (Jul 27) then Kensington Oval (Jul 28)",
+        "Free public tickets being distributed to gauge crowd size",
+        "PM Mia Mottley declared a National Day of Mourning"
+      ],
+      "depth": {
+        "background": "Sir Garfield 'Garry' Sobers, widely regarded as cricket's greatest-ever all-rounder, died on July 17, 2026, at his home in Barbados aged 89. He played 93 Tests for the West Indies between 1954 and 1974, scoring 8,032 runs and taking 235 wickets, and as a 21-year-old set what was then the world-record Test score of 365 not out — a mark that stood for 36 years. He also captained the West Indies for seven years and is a Barbadian National Hero.",
+        "sources": [
+          {
+            "name": "Barbados Today",
+            "url": "https://barbadostoday.bb/2026/07/25/a-giant-returns-to-the-pavilion-but-his-legacy-will-never-leave-the-crease/"
+          },
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/sports/2026/7/17/all-time-west-indies-cricket-great-garfield-sobers-dies-aged-89"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "CPL 2026: Trinbago Knight Riders re-sign spinner Usman Tariq, Guyana Amazon Warriors land Glenn Phillips",
+      "category": "cricket",
+      "published_iso": "2026-07-25T00:00:00-04:00",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "ESPNcricinfo",
+      "what_happened": "Ahead of CPL 2026, TKR used a Right-to-Match Option to re-sign Pakistani 'mystery spinner' Usman Tariq, who took 20 wickets in 10 matches during their 2025 title run, alongside retaining Sunil Narine, Nicholas Pooran and other key players. Guyana Amazon Warriors (2025 runners-up) signed New Zealand all-rounder Glenn Phillips, who returns to the CPL after a six-year absence, along with Afghanistan's Mohammad Nabi and Rahmanullah Gurbaz, and re-signed veteran South African leg-spinner Imran Tahir as captain. Phillips had missed New Zealand's recent Caribbean ODI series with a side injury suffered while scoring his maiden Test century against England, and his signing signals he's fit again.",
+      "key_points": [
+        "TKR re-signs Pakistan spinner Usman Tariq, their 2025 title-winning top wicket-taker",
+        "Guyana Amazon Warriors sign NZ all-rounder Glenn Phillips, returning after 6 years away",
+        "CPL 2026 runs Aug 7–Sep 20, now with 7 teams including new side Jamaica Kingsmen",
+        "Squads must mix senior West Indies players, overseas stars, and young 'Breakout' talent"
+      ],
+      "depth": {
+        "background": "The Caribbean Premier League (CPL) is the Caribbean's top T20 cricket tournament, drawing international stars alongside West Indies players during the Northern Hemisphere off-season. Ahead of each season, teams retain key players and draft new ones under rules requiring a mix of senior West Indies players, overseas signings, and young 'Breakout' players. Trinbago Knight Riders (TKR), partly owned by Bollywood star Shah Rukh Khan, are the defending 2025 champions.",
+        "sources": [
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/story/cpl-2026-usman-tariq-returns-to-tkr-glenn-phillips-signs-with-amazon-warriors-1547506"
+          },
+          {
+            "name": "Caribbean National Weekly",
+            "url": "https://www.caribbeannationalweekly.com/posts/amazon-warriors-load-up-on-international-firepower-for-2026-cpl-title-push"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Tamil Nadu CM Vijay's plan for direct Cauvery water talks with Karnataka draws backlash, including from DMK's Stalin",
+      "category": "india",
+      "published_iso": "2026-07-25T00:00:00+05:30",
+      "added_at": "2026-07-26T10:07:57+05:30",
+      "source": "The Print",
+      "what_happened": "Tamil Nadu has received only 3.5 TMC (thousand million cubic feet) of Cauvery water since June 1 against an entitlement of 31 TMC under the Supreme Court's release schedule — a severe shortfall for farmers downstream. On July 22, the CWMA declined to order an immediate release and instead referred the matter to the Cauvery Water Regulatory Committee (CWRC), which meets on July 28. In response, new Tamil Nadu CM Vijay proposed holding direct, bilateral talks with Karnataka CM D.K. Shivakumar, with a visit planned for August 3, to try to resolve the shortfall outside the usual statutory process.",
+      "key_points": [
+        "TN got only 3.5 TMC of water against its 31 TMC entitlement since June 1",
+        "New CM Vijay proposes bilateral talks with Karnataka CM, visit set for Aug 3",
+        "Farmers' groups, PMK and rival DMK's Stalin all criticize the plan",
+        "Statutory water body (CWRC) meets July 28 on a pro-rata sharing formula"
+      ],
+      "depth": {
+        "background": "The Cauvery river flows from Karnataka into Tamil Nadu, and the two states have fought over sharing its water for over a century — it's one of India's most sensitive inter-state disputes because millions of farmers in both states depend on it. The Supreme Court has laid down a fixed release schedule, policed by statutory bodies like the Cauvery Water Management Authority (CWMA), specifically so the states don't have to negotiate the issue from scratch each time there's a shortfall. C. Joseph Vijay, the actor-turned-politician who leads the TVK party, became Tamil Nadu's Chief Minister after his party won the state's 2026 assembly election, unseating the DMK.",
+        "sources": [
+          {
+            "name": "The Print",
+            "url": "https://theprint.in/india/tn-cms-proposal-for-talks-with-karnataka-over-cauvery-issue-draws-backlash-from-farmers-parties/2996406/"
+          },
+          {
+            "name": "Deccan Herald",
+            "url": "https://www.deccanherald.com/india/tamil-nadu/cm-vijays-cauvery-talks-plan-with-karnataka-sparks-political-row-in-tamil-nadu-4086857"
           }
         ]
       }
@@ -14407,183 +14575,6 @@
           {
             "name": "The Judge 13",
             "url": "https://thejudge13.com/2026/07/22/team-orders-now-in-place-at-mercedes-amg-f1/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Oil jumps toward $95 a barrel as the US-Iran ceasefire fully collapses and Rubio calls Iran 'not serious' about peace",
-      "category": "economy",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T13:01:15+05:30",
-      "source": "CNBC",
-      "what_happened": "US Central Command carried out an 11th consecutive night of strikes on Iran this week, as Secretary of State Marco Rubio declared Tehran 'not serious' about diplomatic talks — a notable hardening from his comments just a day earlier that the US remained open to a deal. Brent crude jumped nearly 5% toward $95 a barrel and US pump prices extended their climb above $4 a gallon as traders priced in a ceasefire that looks fully collapsed rather than merely strained.",
-      "key_points": [
-        "Brent crude rose as much as 4.9% toward $95/barrel, a nearly six-week high",
-        "US strikes hit Iran for an 11th straight night as diplomacy stalls",
-        "Rubio says Tehran is 'not serious' about talks — a sharp reversal from his stance a day earlier",
-        "US pump prices are climbing again, extending their rise above $4/gallon"
-      ],
-      "depth": {
-        "background": "The US and Iran agreed a ceasefire in April after a direct war, and signed a memorandum of understanding in June meant to lead to a lasting peace. That truce has repeatedly broken down since, with both sides trading strikes — the pattern our earlier coverage has tracked through Iran's tanker attacks and Trump's retaliation threats.",
-        "sources": [
-          {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/22/oil-prices-iran-war-macro-rubio-brent-wti.html"
-          },
-          {
-            "name": "NBC News",
-            "url": "https://www.nbcnews.com/business/business-news/oil-prices-brent-gas-iran-war-trump-hormuz-red-sea-houthis-rcna588671"
-          }
-        ]
-      },
-      "thread": {
-        "previously": "We reported Rubio saying the US remained open to an Iran deal, while warning that Iran's demand over a Hormuz shipping toll could 'threaten the world economy.'",
-        "changed": "Rubio has now hardened his tone, calling Iran 'not serious' about talks, as US strikes reach an 11th straight night and oil jumps toward $95 a barrel — the ceasefire looks fully collapsed rather than just strained."
-      },
-      "development": true,
-      "prev_ref": {
-        "title": "Rubio says the US is open to an Iran deal, but warns Iran's Hormuz toll demand would 'threaten the world economy'",
-        "date": null
-      }
-    },
-    {
-      "type": "story",
-      "title": "Zelenskyy fires Ukraine's top general and defense minister in one week, installs a younger war cabinet",
-      "category": "geopolitics",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T13:01:15+05:30",
-      "source": "CNN",
-      "what_happened": "President Volodymyr Zelenskyy fired commander-in-chief Oleksandr Syrskyi on Wednesday and replaced him with 43-year-old General Mykhailo Drapatyi, described as part of a newer generation of commanders. The move came days after Zelenskyy removed defense minister and close ally Mykhailo Fedorov, whose public clashes with Syrskyi over military strategy triggered rare street protests in Kyiv. Drapatyi said the military would 'continue and intensify offensive operations in all domains.'",
-      "key_points": [
-        "Zelenskyy sacked army chief Oleksandr Syrskyi, days after removing defense minister Mykhailo Fedorov",
-        "43-year-old Mykhailo Drapatyi named the new commander-in-chief",
-        "Move followed a week of rare wartime protests in Kyiv over war strategy",
-        "Drapatyi has pledged to 'intensify offensive operations in all domains'"
-      ],
-      "depth": {
-        "background": "Ukraine has fought Russia's full-scale invasion since February 2022. Zelenskyy had largely kept the same senior military and political team in place for most of the war, valuing continuity. Syrskyi, a Soviet-trained general nicknamed 'the Butcher' by critics for costly battlefield decisions, had led Ukraine's armed forces since February 2024. Frustration over his strategy — and over the war effort's broader direction — had been building for months among soldiers and the public.",
-        "sources": [
-          {
-            "name": "CNN",
-            "url": "https://www.cnn.com/2026/07/22/europe/ukraine-new-military-chief-zelensky-drapatyi-intl"
-          },
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/7/22/ukraines-new-military-chief-pledges-to-escalate-retaliation-against-russia"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "BCCI bans no-ball offenders for the rest of the match and axes forfeiture in new domestic playing rules",
-      "category": "cricket",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T13:01:15+05:30",
-      "source": "ESPNcricinfo",
-      "what_happened": "The BCCI announced playing-condition changes for India's 2026-27 domestic season. The headline change: a bowler found by umpires to have deliberately bowled a no-ball — overstepping or not releasing the ball properly — is now suspended for the remainder of the match, up from just the rest of that innings. The board also scrapped the option for teams to declare or forfeit the final innings of a red-ball match, redefined what counts as an 'overthrow,' and eased wicketkeeper glove-positioning rules.",
-      "key_points": [
-        "A bowler ruled to have deliberately bowled a no-ball is now suspended for the rest of the match, not just the innings",
-        "Teams can no longer declare or forfeit an innings to manufacture a red-ball result",
-        "Wicketkeepers only need gloves behind the stumps at the moment of delivery, not through the run-up",
-        "New rules apply from next month's Duleep Trophy, the start of the 2026-27 domestic season"
-      ],
-      "depth": {
-        "background": "Domestic cricket boards set their own playing conditions and often trial changes before they're proposed as international law through the MCC, cricket's rule-making body. India's BCCI runs the world's largest domestic cricket program, and its rule changes often shape the global conversation about the sport's laws.",
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/story/bcci-updates-domestic-rules-for-overthrows-deliberate-no-balls-and-legside-wides-1546941"
-          },
-          {
-            "name": "News Today",
-            "url": "https://newstodaynet.com/2026/07/22/bowlers-face-match-suspension-for-deliberate-no-balls/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Verstappen can now trigger an exit clause to leave Red Bull for 2027 — and rival drivers are already calling",
-      "category": "f1",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T13:01:15+05:30",
-      "source": "Sky Sports",
-      "what_happened": "A clause in Verstappen's Red Bull contract has been triggered because he finished the Belgian Grand Prix outside the top two in the championship standings, the threshold written into his deal. That gives him the option — not the obligation — to leave for another team in 2027. Red Bull principal Laurent Mekies confirmed this week that 'many good drivers' have already been in touch about a potential Red Bull seat, while saying he remains confident Verstappen will stay.",
-      "key_points": [
-        "A performance clause in Verstappen's contract activates because he wasn't top-2 in the standings after Belgium",
-        "Red Bull boss Laurent Mekies admits 'many good drivers' are already enquiring about a seat",
-        "17 F1 driver contracts expire after this season, setting up a chaotic 2027 market",
-        "Verstappen's camp says a decision could come before the summer break"
-      ],
-      "depth": {
-        "background": "Max Verstappen has won four world championships with Red Bull, but the team's form has dipped this season against Mercedes and Ferrari. Like most top F1 drivers, his contract — running on paper through 2028 — contains performance-linked clauses letting him leave early if results fall short of a set bar, a common way both driver and team hedge against decline.",
-        "sources": [
-          {
-            "name": "Sky Sports",
-            "url": "https://www.skysports.com/f1/news/12433/13565601/f1-driver-market-red-bull-getting-calls-from-good-drivers-says-laurent-mekies-but-optimistic-on-max-verstappen-stay"
-          },
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/max-verstappen-can-now-trigger-exit-clause-to-potentially-leave-red-bull"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "A US judge sets a June 2027 trial date for Venezuela's ousted leader Maduro",
-      "category": "geopolitics",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T12:09:14+05:30",
-      "source": "Al Jazeera",
-      "what_happened": "At a hearing in Manhattan federal court on Wednesday, Judge Alvin Hellerstein set June 1, 2027 as the trial date for Maduro and Flores. He also scheduled a separate hearing for November on a defense motion to dismiss the case on grounds of sovereign immunity — the argument that Maduro cannot be prosecuted in a US court because he was acting as the head of a sovereign nation.",
-      "key_points": [
-        "Judge sets June 1, 2027 as the trial date for Maduro and wife Cilia Flores",
-        "Both face US drug-trafficking, kidnapping and murder charges",
-        "Maduro was captured by US special forces in Caracas in January",
-        "Defense will argue in November that Maduro is immune from US prosecution"
-      ],
-      "depth": {
-        "background": "In January, US special forces carried out an overnight raid on Nicolás Maduro's home in Caracas and flew him and his wife, Cilia Flores, to the United States, ending his rule of Venezuela. Since then the country has been run by his former vice president, Delcy Rodríguez, who has built closer ties with the Trump administration. US federal prosecutors indicted Maduro and Flores in New York, accusing them of conspiring with drug cartels to move thousands of tons of cocaine into the US. Both pleaded not guilty and, through their lawyers, have disputed the very legitimacy of trying a former head of state in a US court.",
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/7/22/us-judge-sets-2027-trial-date-for-venezuelas-maduro-and-wife"
-          },
-          {
-            "name": "US News",
-            "url": "https://www.usnews.com/news/world/articles/2026-07-22/venezuelas-maduro-due-back-in-us-court-in-drug-trafficking-case"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "A Chinese coast guard attack injures a Philippine sailor near a disputed reef — Manila summons Beijing's envoy as the US, Japan and Australia rally behind it",
-      "category": "geopolitics",
-      "published_iso": "2026-07-22T00:00:00Z",
-      "added_at": "2026-07-23T09:01:56+05:30",
-      "source": "UPI",
-      "what_happened": "Chinese coast guard personnel clashed with Philippine Navy personnel at Ayungin Shoal on Monday, July 20, injuring at least one Filipino sailor. President Ferdinand Marcos Jr. summoned China's ambassador, Jing Quan, to the presidential palace on Wednesday to protest the incident; China, in turn, summoned the Philippine ambassador in Beijing. Days later, Marcos met US Secretary of State Marco Rubio, who underscored Washington's commitment to freedom of navigation in the sea, and separately met with Japanese and Australian counterparts.",
-      "key_points": [
-        "Chinese coast guard personnel injured a Philippine Navy sailor at Ayungin Shoal on Monday",
-        "Marcos summoned China's ambassador; Beijing summoned the Philippine envoy right back",
-        "It's the 10th anniversary of the 2016 international ruling that favored the Philippines over China here",
-        "US Secretary of State Rubio met Marcos this week to reaffirm support for freedom of navigation"
-      ],
-      "depth": {
-        "background": "Ayungin Shoal (also called Second Thomas Shoal) is a reef in the South China Sea inside the Philippines' internationally recognized economic zone, but China claims almost the entire sea as its own. The Philippines keeps a small marine garrison on a deliberately grounded, rusting warship there to assert its claim; China's coast guard regularly harasses supply missions to it with water cannons and blocking maneuvers. In 2016, an international tribunal ruled decisively that China's sweeping claim has no legal basis — a ruling Beijing has ignored ever since.",
-        "sources": [
-          {
-            "name": "UPI",
-            "url": "https://www.upi.com/Top_News/US/2026/07/22/rubio-meets-Marcos-Manila/8191784759348/"
-          },
-          {
-            "name": "Rappler",
-            "url": "https://www.rappler.com/philippines/marcos-summon-china-ambassador-jing-quan-july-2026/"
           }
         ]
       }
