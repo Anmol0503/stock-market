@@ -1,6 +1,6 @@
 {
   "date": "2026-07-27",
-  "generated_at": "2026-07-27T21:59:59+05:30",
+  "generated_at": "2026-07-28T00:02:12+05:30",
   "day_label": "Monday · 27 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,142 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "economy",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-07-26T23:30:00Z",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "Tom's Hardware",
+      "importance": "high",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "title": "China's Moonshot AI releases Kimi K3, the largest open-weight AI model ever built",
+      "what_happened": "Beijing-based Moonshot AI released the open weights for **Kimi K3**, a **2.8-trillion-parameter** AI model, making it downloadable for free roughly **a day earlier** than the company's own July 27 target. The model uses a 'sparse mixture-of-experts' design, meaning it only activates a small slice of its total parameters for any given task, which keeps inference costs down compared to a dense model of the same size. It supports a **1-million-token context window**, letting it process entire codebases or large document sets in a single pass. On independent benchmarks, K3 ranked behind only Anthropic's and OpenAI's top models on general intelligence, while beating other rivals, including Anthropic's Opus-tier model, on coding and agentic tasks specifically. Moonshot priced API access at **$3 per million input tokens and $15 per million output tokens** — the highest of any Chinese lab, but still roughly half the cost of Anthropic's premium model for comparable work.",
+      "key_points": [
+        "Kimi K3 has **2.8 trillion parameters**, making it the largest open-weight AI model released to date.",
+        "Moonshot AI shipped the free download **a day early**, at roughly 7:30pm EDT on July 26.",
+        "It only activates a fraction of its parameters per request (a 'mixture-of-experts' design), keeping running costs down despite its size.",
+        "It ranks **fourth overall** on the Artificial Analysis Intelligence Index, just behind Claude and GPT's top models but ahead of several others.",
+        "Moonshot is charging **roughly half** what Anthropic charges for its priciest model, undercutting Western rivals on price."
+      ],
+      "moot": "When a country or company is restricted from the best hardware, one workaround is to compete on openness and price instead of raw scale — giving a model away for free can win market share even against a technically superior paid rival.",
+      "image_credit": "Tom's Hardware",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "Tom's Hardware"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "'Open-weight' models are AI systems whose trained parameters are published for anyone to download and run, unlike 'closed' models such as those from OpenAI or Anthropic, which are only accessible through a paid API. Chinese AI labs, including Moonshot AI, have leaned into open-weight releases partly because **U.S. export controls limit their access to the most advanced computer chips**, making it harder to compete purely on raw compute — so they compete on giving the model away and letting the ecosystem build on it instead. Moonshot's prior model, Kimi K2.6, was already a well-regarded open-weight system; K3 is a major step up in scale.",
+        "why_it_matters": "This is the largest open-weight AI model ever released, and it narrows the performance gap with the best closed, paid models from U.S. labs — while being cheaper and freely downloadable. That combination matters for any company or developer deciding which AI model to build on.",
+        "ripple_effects": "Cheaper, high-performing open-weight models put pricing pressure on the closed-model leaders (Anthropic, OpenAI, Google), and give companies in China and elsewhere a credible, low-cost alternative that doesn't depend on cutting-edge U.S.-controlled chips to run inference at scale. It also strengthens China's position in the global AI race despite chip export restrictions.",
+        "why_now": "Moonshot moved its own release date up by a day, shipping K3 on July 26 instead of the previously announced July 27 — a sign the company wanted to be first to market with a 3-trillion-parameter-class open model.",
+        "watch_next": "Whether U.S. labs respond with price cuts or a faster release cadence, and how quickly developers adopt K3 given its hardware demands.",
+        "market_link": "Adds competitive pressure on Nvidia's biggest AI customers and on Western AI labs' pricing power; watch chipmakers and AI-infrastructure stocks for reaction.",
+        "key_terms": [
+          {
+            "term": "open-weight model",
+            "definition": "An AI model whose trained parameters are published for anyone to download and run themselves, instead of being locked behind a paid company API."
+          },
+          {
+            "term": "mixture-of-experts",
+            "definition": "A model design where only a subset of the model's total parameters are used for any single request, cutting compute costs while keeping a very large total model size."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Tom's Hardware",
+            "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "climate",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Spain's wildfire death toll climbs to 14 this month, with 10 people still missing",
+        "date": null
+      },
+      "published_iso": "2026-07-27T08:00:00Z",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "CNBC",
+      "importance": "high",
+      "regions": [
+        "France",
+        "Spain",
+        "Europe"
+      ],
+      "title": "Wildfires force over 360,000 to flee France and Spain as Macron calls an emergency meeting",
+      "what_happened": "Wildfires that started in France's Gironde region last Wednesday have now forced more than **360,000 people** to evacuate their homes across France and Spain — one of the largest evacuations in French history. The fire has burned nearly **104,000 acres** in southwestern France and around **190,000 acres** in the Avila and Toledo areas west of Madrid. France has mobilized **2,500 firefighters, 1,500 military personnel, and roughly 1,200 police officers** to contain the blazes. French President **Emmanuel Macron** is holding a crisis cabinet meeting today, while Spanish Prime Minister **Pedro Sánchez** is visiting fire-hit areas in Valencia. Forecasters warn a fresh heatwave pushing temperatures to **40°C (104°F)** or higher is due to arrive this week, which could further complicate firefighting efforts.",
+      "key_points": [
+        "More than **360,000 people** have now been evacuated across France and Spain combined.",
+        "The fire started in France's **Gironde region** last Wednesday before spreading into Spain.",
+        "It has burned roughly **104,000 acres in France** and **190,000 acres** around Avila and Toledo in Spain.",
+        "France has deployed **2,500 firefighters, 1,500 soldiers, and 1,200 police** to fight the blazes.",
+        "A **new heatwave** with temperatures near **40°C (104°F)** is forecast to hit the region this week."
+      ],
+      "moot": "Wildfires rarely respect borders — when conditions are right (heat, dry vegetation, wind), a single ignition can force evacuations across an entire region and overwhelm the emergency services of more than one country at once.",
+      "image_credit": "CNBC",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNBC",
+          "Democracy Now!"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "status": "escalating",
+        "day": 2,
+        "previously": "We reported Spain's wildfire death toll had climbed to 14 for the month, with 10 people still missing, as fires burned across the country.",
+        "changed": "The evacuation count has surged past **360,000 people** across France and Spain combined — one of the largest evacuations in French history — and French President Emmanuel Macron has called a crisis cabinet meeting today as a fresh heatwave threatens to make things worse."
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Southwestern Europe has been battling an unusually severe wildfire season this July, driven by a prolonged heatwave and tinder-dry vegetation after weeks of little rain. The fires began in France's Gironde wine region — the same area hit by major fires in 2022 — before winds pushed the blaze across the border into Spain's Castile and León and Madrid regions. Spain's death toll from this month's fires already stood at **14**, with **10 people still missing**, before this latest evacuation surge. Emergency services across both countries have been stretched thin fighting fires simultaneously on multiple fronts.",
+        "why_it_matters": "This is now one of the largest civilian evacuations in recent French history, and it's unfolding while the fires are still actively spreading rather than winding down. The combination of ongoing fires and an incoming heatwave raises the risk that containment lines firefighters have built could fail.",
+        "ripple_effects": "Tourism-dependent regions in southwestern France and central Spain face major economic disruption during peak summer season. Insurers face a growing bill for destroyed homes and vineyards, and European governments are under renewed pressure to fund climate adaptation and firefighting capacity as these events become more frequent.",
+        "why_now": "A fresh heatwave arriving this week, on top of fires that have burned for nearly a week, has pushed both governments to escalate their response — hence Macron's crisis meeting and Sánchez's site visit today.",
+        "watch_next": "Whether firefighters can contain the blazes before the new 40°C heatwave arrives this week, and whether the missing-persons count in Spain changes.",
+        "market_link": "Insurers with exposure to French and Spanish property, and European utilities/reinsurers, can see claims estimates move on days like this.",
+        "key_terms": [
+          {
+            "term": "crisis cabinet meeting",
+            "definition": "An emergency gathering of a country's top government ministers to coordinate an urgent response, called when a situation is serious enough to need decisions above the level of individual agencies."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/07/27/wildfires-spain-france-bordeaux-heatwave.html"
+          },
+          {
+            "name": "Democracy Now!",
+            "url": "https://www.democracynow.org/2026/7/27/headlines/devastating_wildfires_force_more_than_360_000_people_to_evacuate_in_france_and_spain"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "economy",
       "published_iso": "2026-07-27T07:00:00+00:00",
       "added_at": "2026-07-27T21:59:59+05:30",
       "source": "CNBC",
@@ -75,10 +209,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-07-27T09:00:00+03:00",
       "added_at": "2026-07-27T21:59:59+05:30",
       "source": "Al Jazeera",
@@ -145,8 +278,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -215,8 +348,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "economy",
       "published_iso": "2026-07-27T07:00:00+08:00",
       "added_at": "2026-07-27T20:02:21+05:30",
@@ -281,8 +414,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "health",
       "published_iso": "2026-07-27T05:00:00Z",
       "added_at": "2026-07-27T18:01:12+05:30",
@@ -344,8 +477,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "published_iso": "2026-07-27T01:00:00Z",
       "added_at": "2026-07-27T18:01:12+05:30",
@@ -399,8 +532,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "technology",
       "published_iso": "2026-07-26T20:00:00-04:00",
       "added_at": "2026-07-27T16:01:58+05:30",
@@ -459,8 +592,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "geopolitics",
       "published_iso": "2026-07-26T18:00:00+02:00",
       "added_at": "2026-07-27T16:01:58+05:30",
@@ -520,8 +653,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "geopolitics",
       "published_iso": "2026-07-27T00:00:00+00:00",
       "added_at": "2026-07-27T14:02:18+05:30",
@@ -583,8 +716,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "technology",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-27T13:02:56+05:30",
@@ -648,8 +781,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "economy",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-27T12:02:57+05:30",
@@ -705,133 +838,71 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
-      "category": "geopolitics",
-      "published_iso": "2026-07-26T11:00:00Z",
-      "added_at": "2026-07-27T10:58:53+05:30",
-      "source": "Arab News",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-27T12:00:00+05:30",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "India TV News",
       "importance": "high",
       "regions": [
-        "Syria",
-        "Middle East"
+        "India"
       ],
-      "title": "UN chief Guterres demands the immediate removal of all remaining Syria sanctions",
-      "what_happened": "UN Secretary-General António Guterres said on Sunday, wrapping up a two-day visit to Syria, that 'all these sanctions must be removed immediately,' while welcoming the steps already taken to ease them. He argued continued restrictions are choking off the economic recovery and reconstruction Syria needs after over a decade of war. The World Bank has estimated rebuilding Syria's shattered infrastructure and institutions could cost around $216 billion.",
+      "title": "Supreme Court: 'peaceful protest is a constitutional right, mere agitation can't justify a lathi-charge'",
+      "what_happened": "A Supreme Court bench of Chief Justice **Surya Kant**, Justice **Joymalya Bagchi**, and Justice **V. Mohana** orally observed, while hearing a batch of petitions over police action against student protesters, that **peaceful and lawful protest is constitutionally protected** and that **'mere agitation cannot justify a lathi-charge.'** The bench was responding to petitions alleging excessive police force during protests over exam paper leaks, including the **July 20 lathi-charge** on a student march toward Parliament in New Delhi. The Court said allegations of police excess should be **independently examined** and stressed the need for **uniform protocols** across states for how police handle demonstrations, rather than each state force setting its own rules.",
       "key_points": [
-        "Guterres made the call at the end of a two-day visit to Damascus",
-        "Western countries, including the US, have already eased some sanctions since Assad's fall",
-        "World Bank estimates Syria's post-war reconstruction could cost $216 billion",
-        "Investors remain cautious despite the partial easing so far"
+        "Chief Justice **Surya Kant**, with two other judges, made the oral observations while hearing petitions on police force against student protesters.",
+        "The Court said the **right to peaceful protest is constitutionally protected** and can't be answered with a lathi-charge.",
+        "It specifically referenced the **July 20 lathi-charge on students marching toward Parliament**.",
+        "The bench called for allegations of police excess to be **independently examined** and for **uniform police protocols** on handling protests nationwide."
       ],
-      "moot": "Sanctions are easy to impose but hard to unwind — even after the government they targeted is gone, the restrictions can keep choking a country's economy until outside powers actively decide to remove them.",
-      "image_credit": "Arab News",
+      "moot": "Courts can shape how state power is used against citizens not just by ruling on individual cases, but by publicly stating a principle — like 'protest isn't a crime' — that becomes a reference point for future disputes.",
+      "image_credit": "India TV News",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "Arab News",
-          "Euronews"
+          "India TV News",
+          "LiveLaw"
         ],
         "corroboration": 0
       },
       "concepts": [
-        "sanctions",
-        "sovereign_debt"
+        "supreme_court_india"
       ],
       "figures": [],
       "depth": {
-        "background": "Syria's sanctions were imposed by the US, EU and others over decades of human-rights abuses under the Assad family's rule, which ended when Bashar al-Assad was toppled in December 2024. Syria's new authorities have spent the time since trying to rebuild a state shattered by more than 13 years of civil war and reconnect the country to a global financial system it was locked out of. Western governments have gradually eased — but not fully lifted — sanctions, wary of how the new government will govern.",
-        "why_it_matters": "Sanctions cut a country off from international banks, investment and trade — so as long as they stay even partly in place, foreign companies and lenders stay cautious, which slows reconstruction and keeps millions of Syrians in poverty and displacement. Guterres's intervention adds the UN's weight to pressure on Washington and European capitals to move faster.",
-        "ripple_effects": "A full sanctions lift would open the door to foreign investment in Syrian energy, construction and banking, and could accelerate the return of some of the millions of Syrian refugees still living in neighbouring countries and Europe. It would also test how the new Syrian government handles governance and human rights once Western leverage over it (via sanctions) is gone — a sensitive point given how the transition has gone so far.",
-        "why_now": "Guterres timed the call to the close of his own visit to Syria, using the moment to press Western governments who still hold decision-making power over the remaining sanctions.",
-        "watch_next": "Whether the US Treasury or EU announce further sanctions relief in the weeks following Guterres's appeal, and how Syria's government responds to the pressure to show it deserves that trust.",
-        "market_link": "A full lift would open Syria to foreign banks and investors, and is watched closely by regional infrastructure and energy firms eyeing reconstruction contracts.",
-        "key_terms": [
-          {
-            "term": "sanctions",
-            "definition": "Economic penalties — like bans on trade, banking access, or asset freezes — that governments impose on a country to punish or pressure its rulers, usually cutting it off from parts of the global financial system."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Arab News",
-            "url": "https://www.arabnews.com/node/2652363/middle-east"
-          },
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/2026/07/26/un-chief-calls-for-end-of-all-sanctions-on-syria-during-second-day-of-visit"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-16",
-      "rank": 16,
-      "category": "geopolitics",
-      "published_iso": "2026-07-26T12:00:00Z",
-      "added_at": "2026-07-27T10:58:53+05:30",
-      "source": "CP24",
-      "importance": "notable",
-      "regions": [
-        "Canada",
-        "North America"
-      ],
-      "title": "Gunfire and vandalism hit two Jewish-owned Toronto bakeries in suspected hate crime",
-      "what_happened": "Toronto police were called shortly after 8am Sunday to a Kiva's Bagel Bakery location near Yonge Street and St. Clair Avenue West after reports of a shattered window; investigators found evidence a firearm had been discharged, though no one was injured. Less than 20 minutes later, officers responded to a second Kiva's location about 14km north, near Bathurst Street and Steeles Avenue West, after another window was broken. Police are examining whether the two incidents are connected and are treating both as suspected hate-motivated offences.",
-      "key_points": [
-        "Two Kiva's Bagel Bakery locations in Toronto hit within 20 minutes on Sunday morning",
-        "One had a window struck by gunfire; no one was hurt",
-        "Toronto Police's Hate Crime Unit is treating both as suspected hate-motivated offences",
-        "Mayor Olivia Chow called them 'targeted attacks' on a Jewish-owned business"
-      ],
-      "moot": "Attacks on identity-linked businesses are a recognised way to intimidate a whole community at once — which is why police treat them as hate crimes rather than ordinary vandalism, even when no one is physically hurt.",
-      "image_credit": "CP24",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "CNN",
-          "CP24"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Antisemitic incidents — vandalism, threats, and attacks on Jewish-owned businesses and institutions — have risen sharply across North America and Europe since the Israel-Hamas war began in 2023, and have stayed elevated through the on-and-off Gaza ceasefire that followed. Toronto, home to Canada's largest Jewish community, has recorded a string of such incidents at synagogues, schools, and shops over the past two years. Kiva's is a well-known local bagel chain with several locations across the city.",
-        "why_it_matters": "An attack on a business simply for being Jewish-owned is meant to intimidate an entire community, not just the people who work there. It lands at a moment when Jewish communities worldwide are already reporting record levels of harassment, so each new incident reinforces a climate of fear that shapes where people feel safe living, working, and sending their kids to school.",
-        "ripple_effects": "Expect heightened police presence at Jewish-owned businesses and institutions across Toronto in the coming days, and renewed political pressure on Canadian federal and provincial leaders to fund hate-crime units and community security. Jewish advocacy groups are likely to cite the incident in ongoing pushes for tougher hate-crime legislation, while it may also feed into Canada's broader debate over how domestic tensions from the Israel-Gaza conflict are playing out at home.",
-        "why_now": "The incidents happened Sunday morning and were still an active, unresolved police investigation as of Monday, with no suspects identified yet.",
-        "watch_next": "Whether Toronto police identify a suspect or motive, and whether similar incidents are reported at other Jewish-owned businesses in the city this week.",
+        "background": "Since a National Testing Agency (NTA) paper-leak scandal hit India's NEET medical entrance exam, student protests have spread to more than a dozen cities under the banner of the 'Cockroach Janta Party' (CJP), a satirical youth protest movement. On **July 20**, a student march toward Parliament in Delhi was met with a police lathi-charge — a baton charge used to disperse crowds — leaving several protesters injured, including one woman who was critically hurt and put on a ventilator. The crackdown became a flashpoint in its own right, drawing opposition demands in Parliament for Home Minister Amit Shah to explain the police response, separate from the original exam-leak grievance.",
+        "why_it_matters": "This is the country's highest court putting its weight behind the principle that protest itself isn't grounds for police violence — a significant statement given how large and sustained the exam-leak protests have been, and given that a protester was critically injured in the very incident the Court referenced.",
+        "ripple_effects": "The observations could shape how state police forces handle future protests and add pressure for an independent inquiry into the July 20 crackdown specifically. It also gives protest organizers and opposition parties a strong legal and rhetorical point to cite going forward.",
+        "why_now": "The comments came as the Court took up a batch of pending petitions on the police response to the paper-leak protests, formally putting the judiciary on record after weeks of political back-and-forth over the crackdown.",
+        "watch_next": "Whether the Court orders a formal, independent probe into the July 20 lathi-charge, and whether states move to adopt uniform protest-policing protocols.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "hate crime",
-            "definition": "A criminal act motivated by bias against a group's race, religion, ethnicity, or other identity — most countries, including Canada, prosecute these more severely than similar crimes without that motive."
+            "term": "lathi-charge",
+            "definition": "A crowd-control tactic used by Indian police where officers strike people with long batons (lathis) to disperse a crowd."
           }
         ],
         "sources": [
           {
-            "name": "CP24",
-            "url": "https://www.cp24.com/local/toronto/2026/07/26/this-is-concerning-2-jewish-owned-toronto-bakery-locations-targeted-in-suspected-hate-motivated-attacks/"
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/news/india/supreme-court-on-police-action-against-jantar-mantar-protesters-says-mere-agitation-can-t-justify-lathicharge-2026-07-27-1049505"
           },
           {
-            "name": "CNN",
-            "url": "https://www.cnn.com/2026/07/26/world/toronto-jewish-bagel-shop-vandalism"
+            "name": "LiveLaw",
+            "url": "https://www.livelaw.in/top-stories/supreme-court-pleas-against-excessive-police-force-student-protestors-paper-leaks-542972"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-07-27T14:00:00+01:00",
       "added_at": "2026-07-27T21:59:59+05:30",
       "source": "Deccan Herald",
@@ -889,10 +960,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-07-27T05:07:32+00:00",
       "added_at": "2026-07-27T21:59:59+05:30",
       "source": "Reuters (via Yahoo Finance)",
@@ -965,8 +1035,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-07-27T12:00:00+05:30",
       "added_at": "2026-07-27T20:02:21+05:30",
@@ -1015,8 +1085,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-27T16:01:00+05:30",
       "added_at": "2026-07-27T20:02:21+05:30",
@@ -1073,8 +1143,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-07-27T12:05:37+05:30",
       "added_at": "2026-07-27T18:01:12+05:30",
@@ -1135,8 +1205,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-27T15:27:00+05:30",
       "added_at": "2026-07-27T18:01:12+05:30",
@@ -1195,8 +1265,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1267,8 +1337,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-07-27T02:00:00+05:30",
       "added_at": "2026-07-27T16:01:58+05:30",
@@ -1322,8 +1392,8 @@
     },
     {
       "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-07-27T08:49:00+05:30",
       "added_at": "2026-07-27T14:02:18+05:30",
@@ -1391,8 +1461,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1462,8 +1532,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-07-27T11:30:00+05:30",
       "added_at": "2026-07-27T13:02:56+05:30",
@@ -1524,8 +1594,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-07-27T00:00:00+05:30",
       "added_at": "2026-07-27T12:02:57+05:30",
@@ -1584,8 +1654,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": "2026-07-27T00:00:00+05:30",
       "added_at": "2026-07-27T12:02:57+05:30",
@@ -1639,8 +1709,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-36",
+      "rank": 36,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1711,8 +1781,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-07-27T06:03:07+05:30",
       "added_at": "2026-07-27T10:03:09+05:30",
@@ -1771,8 +1841,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1844,8 +1914,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-07-27T00:00:00+05:30",
       "added_at": "2026-07-27T09:03:11+05:30",
@@ -1906,8 +1976,8 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-07-27T13:00:00Z",
       "added_at": "2026-07-27T08:04:16+05:30",
@@ -1972,6 +2042,66 @@
       "rank": 61,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-07-27T10:00:00Z",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "RacingNews365",
+      "importance": "notable",
+      "regions": [
+        "UK",
+        "Global"
+      ],
+      "title": "Red Bull poaches Mercedes' driver-development chief Gwen Lagrue to replace Helmut Marko",
+      "what_happened": "**Mercedes officially confirmed** that **Gwen Lagrue**, its driver-development chief for the past decade, is leaving the team after being approached by **Red Bull**. Lagrue will join Red Bull's leadership team in **2027** as **director of its junior driver programme**, taking over the role long held by **Helmut Marko**, who departed at the end of the 2025 season. During his time at Mercedes, Lagrue was credited with guiding drivers including **George Russell, Kimi Antonelli, and Esteban Ocon** into Formula 1.",
+      "key_points": [
+        "**Mercedes confirmed** that **Gwen Lagrue** is leaving after a decade with the team, following a **Red Bull approach**.",
+        "Lagrue will become **director of Red Bull's junior driver programme** starting in **2027**.",
+        "He succeeds **Helmut Marko**, the influential Austrian who ran Red Bull's junior programme for years before departing.",
+        "At Mercedes, Lagrue helped develop **George Russell, Kimi Antonelli, and Esteban Ocon** into F1 drivers."
+      ],
+      "moot": "In Formula 1, success isn't only decided by what happens on track — the people who scout and develop young talent behind the scenes shape a team's competitiveness years down the line.",
+      "image_credit": "RacingNews365",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Motorsport.com",
+          "RacingNews365"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Helmut Marko was, for nearly two decades, one of the most powerful and controversial figures in Formula 1 — the gatekeeper of Red Bull's famed young-driver pipeline that produced stars like Max Verstappen. His departure left a major gap in how Red Bull identifies and develops future talent. Gwen Lagrue joined Mercedes in January 2016 as driver development chief and built a strong reputation for spotting and nurturing young talent, including current Mercedes driver Kimi Antonelli.",
+        "why_it_matters": "Red Bull's junior programme has been central to its success, producing multiple world champions — who runs it next shapes which young drivers get a shot at F1 seats for years to come. Poaching a rival's chief talent-spotter is also a notable signal of Red Bull rebuilding key off-track roles after a turbulent period for the team.",
+        "ripple_effects": "Mercedes now needs a new driver-development lead at a moment when it's still nurturing young talent like Antonelli. Red Bull's junior driver pipeline — and by extension which prospects eventually get promoted to its main or sister team — will bear Lagrue's imprint going forward.",
+        "why_now": "The move was officially announced and confirmed by both teams today, ending speculation about Lagrue's future after reports of Red Bull's interest had been circulating.",
+        "watch_next": "Who Mercedes appoints to replace Lagrue, and how Red Bull's junior driver lineup evolves once he formally starts in 2027.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "junior driver programme",
+            "definition": "A team's system for scouting, funding, and developing young drivers through junior racing categories, with the goal of eventually promoting the best of them to Formula 1."
+          }
+        ],
+        "sources": [
+          {
+            "name": "RacingNews365",
+            "url": "https://racingnews365.com/mercedes-confirm-exit-of-senior-team-member-after-red-bull-approach"
+          },
+          {
+            "name": "Motorsport.com",
+            "url": "https://www.motorsport.com/f1/news/mercedes-confirms-exit-gwen-lagrue-ahead-red-bull-f1-move/10842432/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
       "published_iso": "2026-07-26T16:00:00+02:00",
       "added_at": "2026-07-27T21:59:59+05:30",
       "source": "Formula1.com",
@@ -2029,8 +2159,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
       "published_iso": "2026-07-27T08:00:00+00:00",
       "added_at": "2026-07-27T20:02:21+05:30",
@@ -2085,8 +2215,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-07-27T09:00:00+00:00",
       "added_at": "2026-07-27T20:02:21+05:30",
@@ -2136,8 +2266,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2205,8 +2335,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-07-26T20:00:00+02:00",
       "added_at": "2026-07-27T13:02:56+05:30",
@@ -2265,8 +2395,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-07-26T00:00:00Z",
       "added_at": "2026-07-27T12:02:57+05:30",
@@ -2325,8 +2455,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-26T00:00:00Z",
       "added_at": "2026-07-27T12:02:57+05:30",
@@ -2384,8 +2514,8 @@
     },
     {
       "type": "story",
-      "id": "story-68",
-      "rank": 68,
+      "id": "story-69",
+      "rank": 69,
       "category": "f1",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-27T10:03:09+05:30",
@@ -2448,8 +2578,8 @@
     },
     {
       "type": "story",
-      "id": "story-69",
-      "rank": 69,
+      "id": "story-70",
+      "rank": 70,
       "category": "f1",
       "published_iso": "2026-07-27T08:00:00Z",
       "added_at": "2026-07-27T08:04:16+05:30",
@@ -2509,8 +2639,8 @@
     },
     {
       "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-71",
+      "rank": 71,
       "category": "f1",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-27T08:04:16+05:30",
@@ -2569,8 +2699,8 @@
     },
     {
       "type": "story",
-      "id": "story-74",
-      "rank": 74,
+      "id": "story-75",
+      "rank": 75,
       "category": "f1",
       "published_iso": "2026-07-26T15:30:00+02:00",
       "added_at": "2026-07-27T04:03:39+05:30",
@@ -2628,8 +2758,8 @@
     },
     {
       "type": "story",
-      "id": "story-75",
-      "rank": 75,
+      "id": "story-76",
+      "rank": 76,
       "category": "f1",
       "published_iso": "2026-07-26T15:30:00+02:00",
       "added_at": "2026-07-27T04:03:39+05:30",
@@ -2687,8 +2817,8 @@
     },
     {
       "type": "story",
-      "id": "story-77",
-      "rank": 77,
+      "id": "story-78",
+      "rank": 78,
       "category": "f1",
       "published_iso": "2026-07-26T15:00:00+02:00",
       "added_at": "2026-07-27T03:03:19+05:30",
@@ -2747,8 +2877,8 @@
     },
     {
       "type": "story",
-      "id": "story-79",
-      "rank": 79,
+      "id": "story-80",
+      "rank": 80,
       "category": "f1",
       "published_iso": "2026-07-26T17:00:00+02:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -2807,74 +2937,109 @@
     },
     {
       "type": "story",
-      "id": "story-80",
-      "rank": 80,
-      "category": "f1",
-      "published_iso": "2026-07-26T16:30:00+02:00",
-      "added_at": "2026-07-27T01:04:15+05:30",
-      "source": "RaceFans",
+      "id": "story-41",
+      "rank": 41,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-07-27T11:00:00+01:00",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "ESPNcricinfo",
       "importance": "notable",
       "regions": [
-        "Hungary",
-        "Global"
+        "England"
       ],
-      "title": "Toto Wolff launches a 'Teletubbies' rant at rival teams over a blue-flag failure that nearly cost Antonelli the Hungarian GP podium",
-      "what_happened": "A system fault during the Hungarian Grand Prix meant the automatic blue-flag light panels stopped working, so backmarkers could only be warned manually — and several didn't react in time, holding up Mercedes' Kimi Antonelli as he tried to catch Max Verstappen for 2nd place in the closing laps while defending from Lewis Hamilton behind him. Mercedes team principal Toto Wolff blasted rival teams afterwards, saying it was 'disgraceful' that 'some of the Teletubbies engineers... sitting on the pit walls' failed to tell their drivers what was happening, adding that lapped cars 'defending is just not acceptable.'",
+      "title": "England's Jacob Bethell ruled out of the Hundred with a knee injury, now a doubt for the Pakistan Tests",
+      "what_happened": "England all-rounder **Jacob Bethell** has withdrawn from **The Hundred Men's 2026** after suffering a **right knee injury** during England's recent ODI series win over India. He underwent an **MRI scan on Monday morning**, with the England medical team now awaiting results to determine the extent of the injury and how long recovery will take. Bethell had been set to **captain Birmingham Phoenix** in the tournament. The injury also puts him in doubt for England's home Test series against Pakistan, which begins **August 19 at Headingley**.",
       "key_points": [
-        "A light-panel system fault meant blue flags could only be shown manually to backmarkers",
-        "Antonelli was held up by slow lapped cars while chasing Verstappen for 2nd late in the race",
-        "Wolff called rival teams' pit-wall engineers 'Teletubbies' for not warning drivers in time",
-        "Antonelli still held on for 3rd, extending his championship lead to 50 points"
+        "**Jacob Bethell** has been ruled out of The Hundred 2026 with a **right knee injury**.",
+        "He was injured during England's recent **ODI series win over India**.",
+        "An **MRI scan on Monday** (today) will determine the injury's severity and recovery time.",
+        "He was set to **captain Birmingham Phoenix**, and is now a doubt for England's Test series against Pakistan starting **August 19** at Headingley."
       ],
-      "moot": "In any high-speed, safety-critical system, a single point of failure in 'boring' infrastructure — like a warning light — can end up deciding outcomes that look, on the surface, like driving or strategy stories.",
-      "image_credit": "RaceFans",
+      "moot": "In a packed modern cricket calendar, a single injury can ripple across multiple competitions at once — costing a player a franchise tournament and putting an international series assignment at risk simultaneously.",
+      "image_credit": "ESPNcricinfo",
       "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
+        "level": "confirmed",
+        "count": 1,
+        "tier": 1,
         "outlets": [
-          "ESPN",
-          "RaceFans"
+          "ESPNcricinfo"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Blue flags are shown to backmarkers (cars a lap or more behind) to tell them to let faster, competing cars past without a fight. Normally this is triggered automatically by trackside light panels, which teams and drivers rely on to know when to yield.",
-        "why_it_matters": "A technical failure in basic race-control infrastructure directly affected a title-fight podium battle — this isn't a driving controversy but a systems failure, which raises accountability questions for the FIA (F1's governing body) rather than just the teams involved.",
-        "ripple_effects": "Expect the FIA to review its blue-flag backup procedures before the next race, and rival team bosses to push back publicly on Wolff's characterization, given it implies their engineers, not just their drivers, were at fault. It also adds another flashpoint to an already tense summer-break build-up in the paddock.",
-        "why_now": "The rant came in the immediate post-race reaction window, when team bosses speak to media right after seeing how the race-defining laps played out.",
-        "watch_next": "Whether the FIA issues a formal explanation or fix for the blue-flag system failure before the next race after the summer break.",
+        "background": "Jacob Bethell is a 22-year-old England all-rounder who has been fast-tracked into the national side across formats, including a maiden ODI century against South Africa earlier this year. He was named captain of Birmingham Phoenix for this year's Hundred, a significant vote of confidence in a young player. England's next big assignment is a home Test series against Pakistan, opening at Headingley on August 19 — less than a month away.",
+        "why_it_matters": "Bethell is one of England's most-hyped young all-rounders and was handed a franchise captaincy this season — losing him for the Hundred is a blow to Birmingham Phoenix, and a knee issue this close to a home Test series raises real doubt about his Pakistan availability.",
+        "ripple_effects": "Birmingham Phoenix will need to name a replacement captain and player for the rest of their Hundred campaign. England's Test selectors now face a fitness question to resolve before naming their squad for the Pakistan series.",
+        "why_now": "The injury was confirmed today after Bethell underwent an MRI scan on Monday morning to assess the damage.",
+        "watch_next": "The MRI results, which will determine whether Bethell is fit in time for the August 19 Test against Pakistan.",
         "market_link": null,
-        "key_terms": [
-          {
-            "term": "blue flag",
-            "definition": "A flag (or light signal) shown to a backmarker car to tell its driver to let a faster car that is about to lap them go past without resistance."
-          },
-          {
-            "term": "backmarker",
-            "definition": "A car running well behind the leaders, typically a lap or more down, that faster cars need to lap (overtake for a second or third time) during the race."
-          }
-        ],
+        "key_terms": [],
         "sources": [
           {
-            "name": "RaceFans",
-            "url": "https://www.racefans.net/2026/07/26/disgraceful-wolff-criticises-teletubbies-at-rival-teams-over-blue-flags-delay/"
-          },
-          {
-            "name": "ESPN",
-            "url": "https://www.espn.com/f1/story/_/id/49456307/toto-wolff-fumes-teletubbies-engineers-hungarian-grand-prix-2026-blue-flag-rant"
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/story/bethell-ruled-out-of-hundred-with-knee-injury-1546471"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-41",
-      "rank": 41,
+      "id": "story-42",
+      "rank": 42,
       "category": "cricket",
       "is_new": true,
+      "published_iso": "2026-07-27T15:00:00+01:00",
+      "added_at": "2026-07-28T00:02:12+05:30",
+      "source": "Cricket World",
+      "importance": "notable",
+      "regions": [
+        "England"
+      ],
+      "title": "Southern Brave Women edge MI London by 1 run in a Hundred thriller at Southampton",
+      "what_happened": "In the **9th match of The Hundred Women's Competition 2026** at the Utilita Bowl in Southampton, Southern Brave Women posted **126 for 7**. Chasing 127 to win, MI London's **Hayley Matthews** struck four boundaries early before being bowled by **Issy Wong** with the score on 42. **Danni Wyatt-Hodge** then anchored the chase, finishing **52 not out**, but MI London fell **1 run short**, reaching 125/3. **Lauren Bell** held her nerve to defend just 8 runs off the last 5 balls and seal the win for Southern Brave, who remain unbeaten this season.",
+      "key_points": [
+        "Southern Brave Women won by just **1 run**, defending 126/7 against MI London's 125/3.",
+        "**Lauren Bell** defended **8 runs off the final 5 balls** to seal the win.",
+        "**Danni Wyatt-Hodge** top-scored for MI London with **52 not out** against her former side.",
+        "The win keeps Southern Brave **unbeaten** so far this Hundred season."
+      ],
+      "moot": "In white-ball cricket, a team defending a small total late in the innings can still win if the bowler holds their nerve — the margin for error shrinks to almost nothing, which is exactly what makes those finishes so gripping.",
+      "image_credit": "Cricket World",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "Cricket World"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "The Hundred is England's short-format, 100-ball domestic cricket competition, running men's and women's tournaments in parallel each summer since 2021. Southern Brave, based in Southampton, have been one of the stronger women's sides in the competition's history. Danni Wyatt-Hodge previously played for Southern Brave before moving to MI London, adding a personal edge to the contest against her old team.",
+        "why_it_matters": "A one-run margin is about as close as a cricket match gets — it's the kind of finish that shapes the season's net-run-rate table and playoff race, and keeps Southern Brave's unbeaten record intact heading into the back half of the tournament.",
+        "ripple_effects": "The result strengthens Southern Brave's position at the top of the Hundred Women's table, while MI London will need to make up ground in their remaining matches to stay in playoff contention.",
+        "why_now": "The match was played today as part of the ongoing 2026 Hundred Women's Competition group stage.",
+        "watch_next": "Whether Southern Brave can keep their unbeaten run going as the group stage continues toward the August 16 final.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "Cricket World",
+            "url": "https://www.cricketworld.com/southern-brave-women-vs-mi-london-women-live-streaming-and-match-report/112207.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-43",
+      "rank": 43,
+      "category": "cricket",
       "development": true,
       "prev_ref": {
         "title": "India's Test squad for Sri Lanka to be named by Tuesday — Jadeja set to return, Bumrah still under watch",
@@ -2936,8 +3101,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3006,8 +3171,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3066,8 +3231,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-07-26T19:00:00+01:00",
       "added_at": "2026-07-27T16:01:58+05:30",
@@ -3115,8 +3280,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-07-26T20:00:00+01:00",
       "added_at": "2026-07-27T16:01:58+05:30",
@@ -3174,8 +3339,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3240,8 +3405,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-07-26T20:00:00Z",
       "added_at": "2026-07-27T08:04:16+05:30",
@@ -3289,68 +3454,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
-      "category": "cricket",
-      "published_iso": "2026-07-25T00:00:00Z",
-      "added_at": "2026-07-27T08:04:16+05:30",
-      "source": "BBC Sport",
-      "importance": "notable",
-      "regions": [
-        "India",
-        "England"
-      ],
-      "title": "Rohit Sharma answers retirement talk the only way that matters — with a Lord's century",
-      "what_happened": "India lost the deciding 3rd ODI to England at Lord's by 27 runs, with England posting a List A-record 387/3 (Ben Duckett 141) and India replying with 360/7. Rohit Sharma scored 138 — his 34th ODI century and the first-ever men's ODI hundred by an Indian batter at Lord's — but it wasn't enough to prevent England winning the series 2-1, their first series win over India since 2018. Days later, BCCI vice-president Rajeev Shukla said in Agra that there was 'no question' of Rohit's retirement and that he remains part of the team.",
-      "key_points": [
-        "Rohit scored 138 at Lord's, his 34th ODI century, in a losing cause",
-        "England won the 3rd ODI by 27 runs and the series 2-1",
-        "BCCI vice-president Rajeev Shukla publicly shut down retirement rumours",
-        "Rohit, 39, has already retired from Tests and T20Is; ODIs are his last format"
-      ],
-      "moot": "In sport as in careers, the loudest retirement rumours often surface right after a low point — and the best answer to them is usually performance, not a press statement.",
-      "image_credit": "BBC Sport",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "BBC Sport",
-          "Cricket Country"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Rohit Sharma retired from Test cricket in 2025 and from T20Is earlier, keeping ODIs as his only remaining international format with an eye on playing the 2027 ODI World Cup. A poor run of ODI form on India's England tour had fuelled speculation that Lord's might be his farewell series.",
-        "why_it_matters": "Rohit is one of India's most successful ODI captains and batters; how and when he exits shapes India's batting order and captaincy plans heading into the 2027 World Cup. A public, on-record denial from a senior BCCI official is a stronger signal of his standing than any single innings.",
-        "ripple_effects": "It removes, for now, uncertainty over India's ODI top order and captaincy succession planning; selectors can plan the next 18 months around Rohit rather than around a transition. It also takes some heat off team management after a series loss.",
-        "why_now": "The retirement chatter peaked right after India lost the series at Lord's — a low-key finish is exactly the moment retirement speculation tends to spike for veteran players, making Rohit's century and the BCCI's statement a pointed rebuttal.",
-        "watch_next": "Rohit's form and role across India's next ODI assignments as the team builds toward the 2027 World Cup, co-hosted by South Africa, Zimbabwe and Namibia.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "List A cricket",
-            "definition": "The broader category of limited-overs cricket that includes ODIs — used when comparing records across all one-day matches, not just internationals."
-          }
-        ],
-        "sources": [
-          {
-            "name": "BBC Sport",
-            "url": "https://feeds.bbci.co.uk/sport/cricket/articles/c78xy20dlrdo"
-          },
-          {
-            "name": "Cricket Country",
-            "url": "https://www.cricketcountry.com/news/bcci-vice-president-rajeev-shukla-drops-bombshell-rohit-sharma-retirement-rumours-officially-shut-down-1356901/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3414,8 +3519,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-07-26T21:00:00+01:00",
       "added_at": "2026-07-27T03:03:19+05:30",
@@ -3468,8 +3573,8 @@
     },
     {
       "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3532,8 +3637,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-56",
+      "rank": 56,
       "category": "cricket",
       "published_iso": "2026-07-26T14:30:00+01:00",
       "added_at": "2026-07-27T02:03:22+05:30",
@@ -3586,8 +3691,8 @@
     },
     {
       "type": "story",
-      "id": "story-55",
-      "rank": 55,
+      "id": "story-57",
+      "rank": 57,
       "category": "cricket",
       "published_iso": "2026-07-26T19:00:00+05:30",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -3645,8 +3750,8 @@
     },
     {
       "type": "story",
-      "id": "story-56",
-      "rank": 56,
+      "id": "story-58",
+      "rank": 58,
       "category": "cricket",
       "published_iso": "2026-07-26T18:00:00+01:00",
       "added_at": "2026-07-27T01:04:15+05:30",
@@ -3699,8 +3804,8 @@
     },
     {
       "type": "story",
-      "id": "story-58",
-      "rank": 58,
+      "id": "story-60",
+      "rank": 60,
       "category": "cricket",
       "published_iso": "2026-07-26T14:30:00+00:00",
       "added_at": "2026-07-26T22:04:02+05:30",
@@ -3754,78 +3859,18 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-59",
-      "rank": 59,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Rain and Mohammad Abbas restrict West Indies to 23/1 on Day 1 of the Pakistan Test at a brand-new venue",
-        "date": null
-      },
-      "published_iso": "2026-07-26T16:30:00+00:00",
-      "added_at": "2026-07-26T22:04:02+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "West Indies",
-        "Pakistan",
-        "Trinidad"
-      ],
-      "title": "West Indies build a commanding 303/7 at lunch on Day 2 of the Pakistan Test",
-      "what_happened": "Resuming Day 2 from an overnight 194 for 3, West Indies added 109 runs in the first session to reach 303 for 7 by lunch, in 96 overs, despite losing four more wickets along the way. Shai Hope remained unbeaten on 89, anchoring the innings, while lower-order batter Shamar Joseph provided late fireworks with 23 not out off just 12 balls, hitting four boundaries and a six. Pakistan's Aamer Jamal was the most successful bowler in the session, taking a wicket for 81 runs.",
-      "key_points": [
-        "West Indies resumed Day 2 at 194/3 and reached 303/7 by the lunch break",
-        "Shai Hope anchored the innings with an unbeaten 89",
-        "Shamar Joseph blazed 23 off just 12 balls with four fours and a six",
-        "It's a big recovery from a rain-hit 23/1 at the same stage on Day 1"
-      ],
-      "moot": "In Test cricket, a shaky start (like 23/1 in bad light) doesn't determine the outcome — a team's total after a full day or two often looks completely different once conditions ease and set batters cash in.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported that rain and disciplined bowling from Mohammad Abbas had restricted West Indies to just 23 for 1 at the close of a truncated Day 1.",
-        "changed": "West Indies have recovered strongly on Day 2, reaching 303 for 7 by lunch on the back of Shai Hope's unbeaten 89 and a late blitz from Shamar Joseph."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "West Indies and Pakistan are playing the first Test of their series at the Brian Lara Stadium in Tarouba, Trinidad — a brand-new Test venue. Day 1 was badly disrupted by rain and tight bowling from Pakistan's Mohammad Abbas, which restricted West Indies to just 23 for 1 at the close.",
-        "why_it_matters": "The recovery from a rain-hit 23/1 on Day 1 to a substantial 300-plus total shows West Indies clawing back control of the match at a brand-new venue where conditions were initially tricky to read.",
-        "ripple_effects": "A big first-innings total puts early pressure on Pakistan's batting line-up and gives West Indies' bowlers a healthier cushion to work with; it also boosts confidence for a young West Indies side hosting Tests on a fresh ground.",
-        "why_now": "This is the live, developing Day 2 session of an ongoing five-day Test match.",
-        "watch_next": "Whether West Indies can push their total further past 350-400 before eventually declaring or being bowled out, and how Pakistan's top order responds under lights at the new venue.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-1st-test-1538630/live-cricket-score"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 147
+      "older_count": 146
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 135
+      "older_count": 134
     },
     {
       "type": "archive",
@@ -3839,7 +3884,7 @@
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 67
+      "older_count": 68
     },
     {
       "type": "outro",
