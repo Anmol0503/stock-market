@@ -390,7 +390,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/lesson/progress") or self.path.startswith("/api/lesson/complete"):
             self.handle_lesson_progress()
             return
+        if self.path.startswith("/api/kindle/send"):
+            self.handle_kindle_send()
+            return
         self.send_error(404, "not found")
+
+    def handle_kindle_send(self):
+        """On-demand: build the latest complete lesson and e-mail it to the Kindle (make_kindle.py --force).
+        Runs in the background so the request returns instantly; needs the local .env Gmail creds."""
+        try:
+            LOGS.mkdir(exist_ok=True)
+            logf = open(LOGS / "kindle.log", "a")  # noqa: SIM115 — child keeps it open
+            subprocess.Popen([sys.executable, str(ROOT / "make_kindle.py"), "--force"], cwd=ROOT,
+                             stdout=logf, stderr=subprocess.STDOUT, start_new_session=True)
+            self._send_json({"started": True})
+        except Exception as exc:  # noqa: BLE001
+            self._send_json({"started": False, "error": str(exc)})
 
     def handle_lesson_progress(self):
         """Best-effort: the reels post how far the reader has read (completed_seq) so decode_lesson.py

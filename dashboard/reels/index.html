@@ -348,6 +348,15 @@
   .bsec li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.5;color:#dbe3ee}
   .bsec li::before{content:"◆";position:absolute;left:0;top:1px;font-size:10px;color:var(--cat,var(--accent))}
   .bsec li mark{font-size:.94em}
+  .hlb{color:#fff;font-weight:800}                 /* author-marked **key phrase** emphasis */
+  /* collapsible "full story" section — tap the header to reveal the detailed summary */
+  .collapsec .collaptog{display:flex;align-items:center;gap:9px;width:100%;text-align:left;cursor:pointer;
+    font-family:var(--round);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--cat,var(--accent));background:none;border:none;padding:0;margin:0}
+  .collapsec .chev{margin-left:auto;font-size:13px;transition:transform .22s ease;opacity:.8}
+  .collapsec.open .chev{transform:rotate(180deg)}
+  .collapsec .collapbody{display:none;margin-top:12px}
+  .collapsec.open .collapbody{display:block;animation:riseIn .32s ease both}
   .kt{border-left:3px solid var(--cat,var(--accent));padding:5px 11px;margin:9px 0;font-size:14.5px;line-height:1.5}
   .kt b{color:var(--txt)}
   .fig{padding:6px 11px;margin:8px 0;font-size:15px;line-height:1.5;background:var(--panel2);border-radius:9px}
@@ -441,7 +450,10 @@ function paintFresh(){
     : (state==='stale' ? `Stale — last updated ${txt} ago. Tap to refresh.` : `Updated ${txt} ago. Tap to refresh.`);
 }
 // highlight standalone money/percent figures — runs AFTER esc(), so it's injection-safe
-const hl = s => esc(s).replace(/([₹$€£]\s?\d[\d,]*\.?\d*|\b\d+(?:\.\d+)?%)/g, '<mark>$1</mark>');
+// highlight: **key phrase** → bold (author-marked emphasis), then money/percent figures → <mark>
+const hl = s => esc(s)
+  .replace(/\*\*(.+?)\*\*/g, '<b class="hlb">$1</b>')
+  .replace(/([₹$€£]\s?\d[\d,]*\.?\d*|\b\d+(?:\.\d+)?%)/g, '<mark>$1</mark>');
 
 // a wall-clock time like "4:19 PM" from an ISO string
 function fmtClock(iso){ if(!iso) return ''; const t=new Date(iso); if(isNaN(t)) return '';
@@ -616,8 +628,10 @@ const expandBtn = (onclick, label) => `<button class="expand" onclick='${onclick
 const storySummary = c => c.what_happened || (c.key_points || []).join(' ') || c.moot || '';
 // news lead image — a hotlinked og:image (URL only, never stored). onerror removes the figure so a broken
 // hotlink never leaves an empty gap; the card just falls back to the clean text layout.
+// Images are OFF for now (flip SHOW_IMAGES back to true to restore lead photos everywhere).
+const SHOW_IMAGES = false;
 function storyImg(c){
-  if(!c.image) return '';
+  if(!SHOW_IMAGES || !c.image) return '';
   return `<figure class="cardimg-wrap"><img class="cardimg" loading="lazy" alt="" src="${esc(c.image)}" `
     + `onload="this.classList.add('loaded')" onerror="this.closest('.cardimg-wrap').remove()">`
     + (c.image_credit?`<figcaption class="imgcredit">${esc(c.image_credit)}</figcaption>`:'') + `</figure>`;
@@ -906,6 +920,16 @@ function bulletSec(icon, label, items){
   return `<div class="bsec"><div class="bh"><span class="bi">${icon}</span>${esc(label)}</div>`
     + `<ul>${arr.map(t=>`<li>${hl(t)}</li>`).join('')}</ul></div>`;
 }
+// a section whose body is hidden until tapped — used for the detailed "full story" summary.
+function collapsibleSec(icon, label, text){
+  const arr = (Array.isArray(text) ? text : toBullets(text)).filter(Boolean);
+  if(!arr.length) return '';
+  const body = arr.map(t=>`<p class="prose">${hl(t)}</p>`).join('');
+  return `<div class="bsec collapsec">`
+    + `<button class="collaptog" onclick="this.parentNode.classList.toggle('open')" aria-label="${esc(label)}">`
+    + `<span class="bi">${icon}</span><span>${esc(label)}</span><span class="chev">▾</span></button>`
+    + `<div class="collapbody">${body}</div></div>`;
+}
 function keyTermsSec(terms){
   if(!(terms||[]).length) return '';
   return `<div class="bsec"><div class="bh"><span class="bi">📚</span>Key terms</div>`
@@ -919,7 +943,7 @@ function sourcesSec(sources){
 function pinnedMoot(txt){ return txt?`<div class="sheetmoot"><div class="lbl">💡 The takeaway</div><div class="txt">${esc(txt)}</div></div>`:''; }
 // the lead image at the top of a story's detail sheet (same hotlinked og:image; onerror hides it)
 function sheetImg(c){
-  if(!c.image) return '';
+  if(!SHOW_IMAGES || !c.image) return '';
   return `<figure class="sheetimg-wrap"><img class="sheetimg" loading="lazy" alt="" src="${esc(c.image)}" `
     + `onerror="this.closest('.sheetimg-wrap').remove()">`
     + (c.image_credit?`<figcaption class="imgcredit">${esc(c.image_credit)}</figcaption>`:'') + `</figure>`;
@@ -1143,8 +1167,8 @@ function openDecode(id){ const c = DECK.cards.find(x=>x.id===id); if(c) openDeco
 function openDecodeCard(c){
   const d = c.depth||{}; let h = '';
 
-  // NEWS STORIES: keep it tight — what happened, the backstory, the key points in plain language,
-  // and the sources. Nothing else. (If it continues earlier coverage, lead with what's new.)
+  // NEWS STORIES: the reader wants the fast read first. Order: the key points (bullets) → the backstory
+  // → then the full detailed account, COLLAPSED behind a tap. Sources/credibility close it out.
   if(c.type==='story'){
     h += sheetImg(c);
     if(c.development && c.prev_ref && c.prev_ref.title){
@@ -1157,9 +1181,9 @@ function openDecodeCard(c){
       h += bulletSec('🧵', 'Previously', c.thread.previously);
       h += bulletSec('🔄', "What's new today", c.thread.changed);
     }
-    h += bulletSec('📰', 'What happened', c.what_happened);
-    h += bulletSec('📖', 'The backstory', d.background);
     h += bulletSec('✦', 'Most important points', (c.key_points && c.key_points.length) ? c.key_points : null);
+    h += bulletSec('📖', 'The backstory', d.background);
+    h += collapsibleSec('📰', 'The full story', c.what_happened);   // detailed summary — expand on tap
     h += sourcesSec(d.sources);
     h += credSec(c.credibility);             // how well-corroborated this is + what that means
     h += occurredSec(c.published_iso);       // when the news actually happened, below the sources

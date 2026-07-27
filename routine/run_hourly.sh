@@ -51,8 +51,9 @@ if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
   "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
 fi
 
-# ---- publish the 🎓 Learn course as a downloadable Kindle EPUB (+ auto-email new parts if .env has creds) ----
-"$PY" make_kindle.py || echo "WARN: kindle build failed"
+# ---- refresh the downloadable Learn-course EPUB (public). Emailing to the Kindle is ON-DEMAND now
+#      (triggered from the Update Center button → make_kindle.py --force), so the schedule never sends mail.
+"$PY" make_kindle.py --build-only || echo "WARN: kindle build failed"
 
 # ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true

@@ -130,10 +130,11 @@
 
   <div class="actions">
     <button id="runBtn" onclick="runNow()">↻ Update now</button>
+    <button class="ghost" id="kindleBtn" onclick="sendKindle()">📖 Send to Kindle</button>
     <button class="ghost" onclick="toggleLog()">📄 View log</button>
     <button class="ghost" onclick="load()">⟳ Refresh status</button>
   </div>
-  <div class="hint" id="runHint">“Update now” runs the full pipeline (fetch → Claude decodes both briefs → publish). Takes a few minutes.</div>
+  <div class="hint" id="runHint">“Update now” runs the full pipeline (fetch → Claude decodes both briefs → publish). Takes a few minutes. “Send to Kindle” e-mails the latest complete Learn lesson to your device on demand.</div>
 
   <div class="grid">
     <div class="card" id="topupCard">
@@ -314,6 +315,19 @@ async function runNow(){
     if(j.started) $('logwrap').classList.add('open');
     setTimeout(load, 1500);
   }catch(e){ $('runHint').textContent='⚠️ Could not reach the server.'; $('runBtn').disabled=false; }
+}
+async function sendKindle(){
+  if(!confirm('Build the latest complete Learn lesson and e-mail it to your Kindle now?')) return;
+  const b=$('kindleBtn'); b.disabled=true; const old=b.textContent; b.textContent='📖 Sending…';
+  try{
+    const r = await fetch('/api/kindle/send', {method:'POST'});
+    const j = await r.json();
+    $('runHint').textContent = j.started
+      ? '✅ Kindle send started — it builds + e-mails in the background (needs .env Gmail creds). Check the log for the result.'
+      : '⚠️ Could not start: '+(j.error||'unknown');
+    if(j.started) $('logwrap').classList.add('open');
+    setTimeout(()=>{ b.disabled=false; b.textContent=old; }, 4000);
+  }catch(e){ $('runHint').textContent='⚠️ Could not reach the server.'; b.disabled=false; b.textContent=old; }
 }
 function toggleLog(){ const w=$('logwrap'); w.classList.toggle('open'); if(w.classList.contains('open')) loadLog(); }
 async function loadLog(){

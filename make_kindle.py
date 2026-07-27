@@ -15,6 +15,8 @@ Env (.env, gitignored — NEVER commit these): GMAIL_ADDRESS, GMAIL_APP_PASSWORD
 Run:  python make_kindle.py            # send any new parts
       python make_kindle.py --force    # rebuild + resend the latest part even if already sent
       python make_kindle.py --all      # resend the WHOLE course as one EPUB
+      python make_kindle.py --build-only   # ONLY refresh the public downloadable EPUB — never e-mail
+                                           # (used by the hourly run; emailing is on-demand from the UI)
 """
 from __future__ import annotations
 
@@ -257,6 +259,7 @@ def _load(p: pathlib.Path):
 def main(argv: list[str]) -> int:
     force = "--force" in argv
     send_all = "--all" in argv
+    build_only = "--build-only" in argv
     cat = _load(CATALOG) or {}
     parts = sorted((cat.get("parts") or []), key=lambda p: p.get("seq") or 0)
     if not parts:
@@ -270,6 +273,12 @@ def main(argv: list[str]) -> int:
     build_epub(parts, whole_title, PUBLISHED)
     print(f"Published {PUBLISHED.relative_to(ROOT)} ({len(parts)} parts, {PUBLISHED.stat().st_size//1024} KB) "
           f"— downloadable for Send-to-Kindle.")
+
+    # --build-only: the scheduled hourly run stops here — it just keeps the public EPUB fresh. Emailing to
+    # the Kindle is now ON-DEMAND (the Update Center button → make_kindle.py --force), so the schedule
+    # never sends mail on its own.
+    if build_only:
+        return 0
 
     # 2) OPTIONALLY auto-email new parts to the Kindle (only if creds are configured in .env).
     if not (GMAIL_ADDRESS and GMAIL_APP_PASSWORD and KINDLE_EMAIL):

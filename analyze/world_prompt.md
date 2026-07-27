@@ -51,6 +51,21 @@ read three extra sentences that make them *understand* than a clipped summary th
   say so. Cite at least one credible source per story (name + URL).
 - Be neutral and factual on contested topics; present what's known and who claims what.
 
+### Depth + emphasis (the reader specifically asked for this)
+The three reader-facing fields — **`key_points`, `background`, `what_happened`** — must be **richer and more
+detailed than a summary**. Go long enough that the reader finishes genuinely understanding the event, the
+context, and the concrete facts (names, numbers, dates, places). Don't be afraid of a few extra sentences.
+- **Highlight the most important bits with `**double asterisks**`.** In every one of those three fields,
+  wrap the 2–4 phrases or numbers that matter most — the key figure, the decisive actor, the stakes — in
+  `**…**`. The app renders these bold. Example: "The central bank cut rates by **50 basis points**, its
+  **biggest cut since 2020**, to fight a **sharp slowdown in hiring**." Emphasize meaning, not everything —
+  if all of it is bold, none of it is.
+- `key_points`: **4–5** bullets now (was 3–4). Each is a punchy, information-dense takeaway (a real fact or
+  number, not a vague teaser), and should bold its single most important word/number.
+- `what_happened`: **4–6** plain sentences — the full, detailed account of the facts (who, what, when, the
+  numbers, the mechanics). This is the "detailed summary" the reader expands to read in full.
+- `background`: **3–4** sentences — enough backstory that a newcomer is fully oriented.
+
 ## Schema
 
 ```json
@@ -68,9 +83,9 @@ read three extra sentences that make them *understand* than a clipped summary th
                                           // feed item / earliest credible report. NEVER invent. null only if truly unknown.
       "regions": ["Middle East", "US"],
       "title": "Short, clear title — no clickbait.",
-      "key_points": ["3–4 short scannable bullets — the essence a reader grasps in 5 seconds. Each ≤ ~14 words, punchy, no need for full sentences. The fast read before the detail (e.g. 'Iran holds the biggest day of the funeral', 'The likely successor stays out of public view')."],
-      "background": "2–3 sentences: the backstory a newcomer needs. How we got here, the longer arc, who the key players are. This is what turns a headline into something the reader actually understands.",
-      "what_happened": "2–4 plain sentences: the facts. What occurred, who's involved, when, the key numbers.",
+      "key_points": ["4–5 short scannable bullets — the essence a reader grasps in 5 seconds. Each ≤ ~14 words, punchy, a real fact/number not a teaser. Bold the single most important word/number with **double asterisks** (e.g. 'Rates cut by **50 bps**, the biggest since 2020', 'The likely successor stays out of public view')."],
+      "background": "3–4 sentences: the backstory a newcomer needs. How we got here, the longer arc, who the key players are. This is what turns a headline into something the reader actually understands. Bold the 2–4 most important phrases/numbers with **double asterisks**.",
+      "what_happened": "4–6 plain sentences: the FULL detailed account — what occurred, who's involved, when, where, the key numbers and mechanics. This is the 'detailed summary' the reader expands to read in full. Bold the 2–4 most important phrases/numbers with **double asterisks**.",
       "why_it_matters": "2–3 sentences: why this is significant. What changes because of it. What's genuinely at stake.",
       "ripple_effects": "2–4 sentences: the second-order consequences. Who is affected and how — economies, industries, ordinary people, other countries, markets. The 'so what happens next'.",
       "why_now": "1–2 sentences: why this is surfacing today — what triggered it, what's the deeper trend it's part of, or why it escalated now.",
