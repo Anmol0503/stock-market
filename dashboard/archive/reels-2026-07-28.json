@@ -1,6 +1,6 @@
 {
   "date": "2026-07-28",
-  "generated_at": "2026-07-28T19:59:24+05:30",
+  "generated_at": "2026-07-28T22:04:03+05:30",
   "day_label": "Tuesday · 28 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,144 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "geopolitics",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-07-27T00:00:00Z",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "Tech Startups",
+      "importance": "high",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "title": "China's Moonshot AI releases Kimi K3, the largest open-weight AI model ever built",
+      "what_happened": "Moonshot AI published the complete weights for **Kimi K3**, a 2.8-trillion-parameter 'Mixture-of-Experts' model (a design where only a fraction of the model's parameters activate for any given task, keeping it efficient despite its huge total size), making it freely downloadable and runnable by anyone with sufficient hardware. The model supports a **1-million-token context window** and processes text, images and video natively. On a widely cited capability benchmark, it scored **57**, putting it within striking distance of closed frontier models from US labs. Hugging Face, the platform hosting the release, reported it as one of the fastest-growing model releases the site has seen.",
+      "key_points": [
+        "Chinese lab **Moonshot AI** released the full weights of **Kimi K3** on Hugging Face on July 27.",
+        "At **2.8 trillion parameters**, it's the **largest open-weight AI model** ever publicly released.",
+        "It natively handles text, images and video, with a **1-million-token context window** (roughly a 5,000-page book in one go).",
+        "It scores **57** on a widely-used AI capability benchmark, closing in on closed US frontier models.",
+        "The full download is about **1.4 terabytes**, compressed using a technique called MXFP4 quantization."
+      ],
+      "moot": "In AI, being closed-source isn't a permanent moat -- once a capable open alternative shows up, it puts real pressure on the pricing power of companies that were charging for access to something people can now get free.",
+      "image_credit": "Tech Startups",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Axios",
+          "Tech Startups"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "'Open-weight' means a company publishes the actual trained model file for anyone to download, run, and modify for free, instead of only renting access to it through a paid API -- which is how OpenAI, Anthropic, and Google mostly operate. 'Parameters' are the internal numerical dials a model tunes during training; more parameters generally (not always) means more capability, at the cost of needing more computing power to run. Moonshot AI had been teasing Kimi K3 for weeks before this full release, and it lands at a moment when Chinese labs -- despite US export controls limiting their access to top-end chips -- have been closing the capability gap with US labs faster than many expected.",
+        "why_it_matters": "This is fresh evidence that China's AI labs are closing the gap with the US despite chip-export restrictions meant to slow them down. It also directly threatens the business model of API-based AI companies: if a free, downloadable model performs close to what they charge for, it puts real pressure on their pricing power.",
+        "ripple_effects": "Developers and companies worldwide now have a free, near-frontier alternative to paid US AI APIs, which could slow revenue growth at OpenAI, Anthropic and Google's AI division. It adds to the same 'is AI spending paying off' anxiety already rattling chip stocks in Asia today, and is likely to reignite debate in Washington over whether export controls on chips are actually working as intended.",
+        "why_now": "The full weights went live on Hugging Face this week after Moonshot had been counting down to the release, landing right as Wall Street is already nervous about whether AI infrastructure spending is justified.",
+        "watch_next": "How fast Western developers and companies actually adopt Kimi K3 in production, and whether US policymakers respond with new restrictions or commentary.",
+        "market_link": "Adds to the same doubts about AI infrastructure spending that triggered today's Kospi crash in Samsung and SK Hynix, and could pressure the valuations of API-first AI companies.",
+        "key_terms": [
+          {
+            "term": "Open-weight model",
+            "definition": "An AI model whose trained parameters are published publicly, so anyone can download and run it themselves, instead of only accessing it through a company's paid service."
+          },
+          {
+            "term": "Mixture-of-Experts",
+            "definition": "A model design where only a subset of the model's total parameters activates for any given question, making a very large model cheaper to actually run."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Tech Startups",
+            "url": "https://techstartups.com/2026/07/27/moonshot-ai-releases-kimi-k3-open-weights-largest-free-ai-model-ever-at-2-8-trillion-parameters/"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "climate",
+      "is_new": true,
+      "published_iso": "2026-07-28T07:27:00Z",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "NPR",
+      "importance": "critical",
+      "regions": [
+        "Japan",
+        "Asia"
+      ],
+      "title": "Magnitude-7.1 earthquake hits southern Japan, mall collapse leaves at least 9 dead and 250 injured",
+      "what_happened": "A shallow **magnitude-7.1 earthquake** (Japan's Meteorological Agency measurement; the US Geological Survey initially logged 7.1 before revising toward 6.8) struck Kyushu at **4:27pm local time** on Tuesday, hitting the maximum **Shindo 7** intensity level in the hardest-hit areas. In Kashima Town, the second floor of an **Aeon Mall shopping center** collapsed, trapping an unknown number of shoppers and staff; fire officials said around **20 to 30 employees** were initially unaccounted for, with several people already pulled from the rubble and taken to hospital. Elsewhere in the Kumamoto region, the quake sparked several fires, damaged bridges, derailed a cargo train, and left a number of houses at risk of toppling over. A tsunami advisory covering the nearby Ariake and Yatsushiro Seas was issued and then lifted about two hours later after only minor sea-level changes were recorded. Japanese authorities have not yet given a final damage assessment, and rescue operations at the collapsed mall were still underway as of this report.",
+      "key_points": [
+        "A **magnitude-7.1 earthquake** struck Kyushu, Japan's southern main island, at **4:27pm local time** on Tuesday.",
+        "The quake registered the highest level, **Shindo 7**, on Japan's shaking-intensity scale.",
+        "The second floor of an **Aeon Mall shopping center** in Kashima Town, Kumamoto, collapsed, trapping dozens of people.",
+        "At least **9 people have died** and **more than 250 are injured** so far, with rescue crews still searching the mall.",
+        "A tsunami advisory was issued for nearby coasts and **lifted within two hours**, with no major tsunami detected."
+      ],
+      "moot": "A high magnitude doesn't automatically mean the worst possible damage -- how shallow the quake is, how intensely a specific spot shakes (Shindo, not just magnitude), and what kind of buildings sit on top of it determine whether a quake is merely alarming or genuinely deadly.",
+      "image_credit": "NPR",
+      "credibility": {
+        "level": "confirmed",
+        "count": 3,
+        "tier": 1,
+        "outlets": [
+          "France 24",
+          "Japan Times",
+          "NPR"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Japan sits directly on the Pacific 'Ring of Fire,' a horseshoe-shaped belt of fault lines that makes it one of the most earthquake-prone countries on Earth, with strict building codes built around that reality. Kyushu, the island hit today, has a painful precedent: a pair of earthquakes in **2016** centered on Kumamoto killed **273 people** and reshaped how Japan thinks about aftershock risk in this exact region. Kumamoto is also a major hub for **advanced semiconductor manufacturing** -- Sony and TSMC both operate large chip plants there -- which is why an earthquake in this specific area draws global industrial attention, not just humanitarian concern.",
+        "why_it_matters": "This is one of the deadliest earthquakes to hit Japan in years, and the mall collapse in particular raises hard questions about how a modern, quake-resistant building failed the way it did. It's also a live test of Japan's disaster-response system, which the world watches closely given how much global manufacturing (especially chips) runs through this exact region.",
+        "ripple_effects": "Rescue and recovery work at the mall will dominate Japanese news for days, and the death toll is likely to rise as crews clear the rubble. Kumamoto's chip plants (including TSMC's) may face inspection-related slowdowns even if undamaged, which matters for global electronics supply chains already jittery over chip-sector volatility. Japanese insurers face a fresh claims event, and aftershocks in the coming days/weeks are a real risk in this fault zone.",
+        "why_now": "The quake struck this afternoon, Tuesday, July 28, triggering the tsunami advisory and mall-collapse rescue operation that are still unfolding as this is written.",
+        "watch_next": "Whether the death toll rises as searchers finish clearing the collapsed mall floor, and whether Japan's Meteorological Agency issues further aftershock warnings for Kyushu.",
+        "market_link": "Kumamoto is a hub for Sony and TSMC chip plants, so any confirmed damage or inspection-driven slowdown there could add to the same AI-chip-supply jitters already rattling Samsung and SK Hynix this week.",
+        "key_terms": [
+          {
+            "term": "Shindo scale",
+            "definition": "Japan's own scale for how strongly an earthquake was actually felt/shook a specific location, separate from magnitude (which measures the quake's total energy at its source)."
+          },
+          {
+            "term": "Tsunami advisory",
+            "definition": "A step below a full tsunami warning -- it means officials expect only minor sea-level changes, not the large destructive waves a 'warning' implies."
+          }
+        ],
+        "sources": [
+          {
+            "name": "NPR",
+            "url": "https://www.npr.org/2026/07/28/nx-s1-5910498/japan-earthquake"
+          },
+          {
+            "name": "France 24",
+            "url": "https://www.france24.com/en/asia-pacific/20260728-multiple-deaths-in-japan-mall-collapse-after-7-1-magnitude-earthquake"
+          },
+          {
+            "name": "Japan Times",
+            "url": "https://www.japantimes.co.jp/news/2026/07/28/japan/strong-earthquake-kyushu/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "geopolitics",
       "published_iso": "2026-07-28T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "AP News (via The Republic)",
@@ -70,10 +206,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "health",
-      "is_new": true,
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "STAT News",
@@ -136,8 +271,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "climate",
       "published_iso": "2026-07-28T00:00:00Z",
       "added_at": "2026-07-28T18:00:54+05:30",
@@ -205,8 +340,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-07-28T06:18:00+05:30",
       "added_at": "2026-07-28T18:00:54+05:30",
@@ -276,8 +411,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -352,8 +487,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "technology",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T15:59:53+05:30",
@@ -423,141 +558,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "geopolitics",
-      "published_iso": "2026-07-27T11:00:00+01:00",
-      "added_at": "2026-07-28T14:02:10+05:30",
-      "source": "France 24",
-      "importance": "high",
-      "regions": [
-        "UK",
-        "Ukraine",
-        "Russia"
-      ],
-      "title": "Zelensky meets Britain's brand-new PM Andy Burnham aboard a Royal Navy carrier, wins fresh drone-jamming tech",
-      "what_happened": "On July 27, Zelensky travelled to Portsmouth Naval Base, where he met Burnham aboard the Royal Navy aircraft carrier HMS Queen Elizabeth — the first meeting between the two leaders and the first visit by any foreign head of state since Burnham took office roughly a week earlier. The two discussed joint drone projects, Ukraine's push for more ballistic-missile interceptors to counter Russian strikes, and closer joint defence production between the UK and Ukraine. Burnham announced the UK would supply new **'Stone Cloak' jamming technology** to protect Ukrainian drones from Russian jamming, on top of thousands of units Downing Street said had already been delivered. Burnham called the visit a signal of the UK's 'unwavering' support for Kyiv. The stop came one day before Zelensky's scheduled meeting with US President Trump in Washington.",
-      "key_points": [
-        "Ukraine's President Zelensky met UK PM **Andy Burnham** aboard the carrier **HMS Queen Elizabeth** at Portsmouth.",
-        "It was Zelensky's visit — the **first by any foreign leader** since Burnham took office **a week ago**.",
-        "Burnham pledged new **'Stone Cloak' drone-jamming technology**, with thousands of units already delivered.",
-        "Talks focused on **ballistic-missile interceptors** to counter Russian strikes and joint defence production.",
-        "The meeting came a day **before Zelensky was due in Washington** to meet Trump."
-      ],
-      "moot": "In alliance politics, the first meeting after a leadership change is a signal in itself — who a new leader chooses to host first, and what they promise, tells allies (and adversaries) whether a policy is going to hold or shift.",
-      "image_credit": "France 24",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 2,
-        "outlets": [
-          "France 24",
-          "The Hill / AP",
-          "UPI"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Russia's full-scale invasion of Ukraine, launched in February 2022, is now in its fifth year, and Ukraine remains heavily reliant on Western allies for air-defence equipment to shoot down Russian missiles and drones. The UK has been one of Kyiv's most consistent backers under successive governments. Andy Burnham became Britain's new prime minister only about a week before this meeting, making this Zelensky's first face-to-face test of where the new UK government stands on Ukraine.",
-        "why_it_matters": "A change of prime minister is often the moment allies get nervous about whether support will hold — this visit was Burnham using his very first foreign meeting to publicly commit to Ukraine, removing doubt about continuity in UK policy at a sensitive moment in the war.",
-        "ripple_effects": "The new jamming technology should make it harder for Russia to knock Ukrainian reconnaissance and strike drones out of the sky, a capability battle that has shaped much of the war's front lines. It also sets the tone heading into Zelensky's Washington meeting, where the bigger question — continued US military and financial backing — will be tested.",
-        "why_now": "Burnham took office only about a week ago, and hosting Zelensky first was a deliberate signal before he heads into wider diplomacy, including his own upcoming contacts with Washington and European partners.",
-        "watch_next": "What comes out of Zelensky's Washington meeting with Trump the next day, and whether the UK follows this visit with a broader package (funding or weapons) in the weeks ahead.",
-        "market_link": "Défense contractors tied to drone and jamming technology (UK and European) are a name to watch if the UK expands this kind of hardware commitment.",
-        "key_terms": [
-          {
-            "term": "Stone Cloak",
-            "definition": "UK-supplied electronic jamming technology intended to shield Ukrainian drones from being jammed or tracked by Russian countermeasures."
-          }
-        ],
-        "sources": [
-          {
-            "name": "France 24",
-            "url": "https://www.france24.com/en/europe/20260727-burnham-to-welcome-zelensky-on-first-foreign-leader-visit-to-london-since-taking-office"
-          },
-          {
-            "name": "The Hill / AP",
-            "url": "https://thehill.com/homenews/ap/ap-international/ap-zelenskyy-to-meet-sailors-and-britains-new-leader-on-visit-to-a-uk-port/"
-          },
-          {
-            "name": "UPI",
-            "url": "https://www.upi.com/Top_News/World-News/2026/07/27/Burnham-Zelensky-meeting/1131785151893/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "geopolitics",
-      "published_iso": "2026-07-26T23:00:00+01:00",
-      "added_at": "2026-07-28T14:02:10+05:30",
-      "source": "The Washington Post",
-      "importance": "high",
-      "regions": [
-        "Nigeria",
-        "West Africa"
-      ],
-      "title": "Gunmen kill at least 30 in a midnight raid on Naridon village in Kaduna State",
-      "what_happened": "At around 11 pm on Sunday, July 26, gunmen invaded Naridon village in Kauru Local Government Area of Kaduna State, firing indiscriminately at residents before setting houses and shops ablaze. At least **30 people were killed, including 8 children**, and several more were injured; recovery teams warned the toll could climb further. The attackers reportedly operated for hours without being confronted. Residents said military units stationed roughly two kilometres away in nearby Kamaru and Ungwan Magaji did not arrive in time to stop the killing, and that only a single soldier and four Mobile Police officers were deployed to the community afterward. The Kaduna state government has condemned the attack and ordered security agencies to hunt down those responsible.",
-      "key_points": [
-        "Gunmen attacked Naridon village around **11 pm on Sunday**, shooting residents and torching homes.",
-        "At least **30 people are dead, including 8 children**, with search teams fearing the toll could rise.",
-        "Nearby military posts were just **2 kilometres away** but reportedly did not respond during the hours-long attack.",
-        "Only **one soldier and four police officers** were stationed in the village after the killings.",
-        "The state government has ordered a **manhunt** and called the attack 'barbaric'."
-      ],
-      "moot": "A security force stationed 'nearby' isn't the same as protection — response time, not just troop numbers, decides whether a warning becomes a rescue or a headline about mass casualties.",
-      "image_credit": "The Washington Post",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
-        "outlets": [
-          "Punch Nigeria",
-          "Sahara Reporters",
-          "The Washington Post"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Naridon sits on the border between Kaduna and Plateau states, a stretch of central Nigeria known as the 'Middle Belt' where farming communities (mostly Christian) and herding communities (mostly Muslim Fulani) have clashed for years over land and water, a conflict often called the **Southern Kaduna crisis**. Armed groups — sometimes described as bandits, sometimes as militias — have repeatedly raided villages here with little warning and, residents say, little protection. Kaduna's state government has struggled for years to contain the violence despite repeated pledges of tougher security.",
-        "why_it_matters": "This is one of the deadliest single attacks in Nigeria's Middle Belt in months, and it underlines a pattern critics have raised for years: security forces stationed nearby but not reaching villages in time. For the families involved, it means sudden, mass loss of life in a region that had already been repeatedly targeted.",
-        "ripple_effects": "Expect renewed pressure on Nigeria's federal and Kaduna state governments to explain the security gap, and likely displacement as survivors flee to safer towns. Attacks like this also harden communal distrust between farming and herding communities, making local reconciliation efforts harder, and add to Nigeria's already heavy toll of conflict-driven displacement this year.",
-        "why_now": "The attack is the latest in a string of raids along the Kaduna-Plateau border in 2026, part of a longer-running cycle of communal violence that flares periodically when security deployments thin out.",
-        "watch_next": "Whether Kaduna state or federal authorities announce arrests or a beefed-up security deployment to the Kauru-Riyom border axis in the coming days.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Middle Belt",
-            "definition": "The central region of Nigeria where farming and herding communities of different faiths live close together and have repeatedly clashed over land."
-          }
-        ],
-        "sources": [
-          {
-            "name": "The Washington Post",
-            "url": "https://www.washingtonpost.com/world/2026/07/27/nigeria-gunmen-attack-kaduna-naridon-kaura/01ffd8d8-89d0-11f1-8912-d71e69d679d7_story.html"
-          },
-          {
-            "name": "Punch Nigeria",
-            "url": "https://punchng.com/30-killed-houses-burnt-in-fresh-kaduna-terror-attack/"
-          },
-          {
-            "name": "Sahara Reporters",
-            "url": "https://saharareporters.com/2026/07/27/breaking-gunmen-kill-least-30-including-women-children-fresh-southern-kaduna-attack"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-9",
-      "rank": 9,
+      "id": "story-11",
+      "rank": 11,
       "category": "geopolitics",
       "published_iso": "2026-07-27T14:00:00+00:00",
       "added_at": "2026-07-28T12:06:40+05:30",
@@ -614,8 +616,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -687,8 +689,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "economy",
       "published_iso": "2026-07-28T01:13:43Z",
       "added_at": "2026-07-28T10:02:13+05:30",
@@ -776,8 +778,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -863,8 +865,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "economy",
       "published_iso": "2026-07-28T05:00:00Z",
       "added_at": "2026-07-28T06:00:06+05:30",
@@ -937,8 +939,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1020,6 +1022,132 @@
       "rank": 21,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-07-27T00:00:00+05:30",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "LiveLaw",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "Supreme Court rules the accused has no right to a lawyer's continuous presence during police interrogation",
+      "what_happened": "A two-judge Supreme Court bench of Justices Vikram Nath and Sandeep Mehta modified custody conditions that a trial court had imposed, and an Andhra Pradesh High Court had partly upheld, in the case of a suspended police inspector accused over a custodial death. Interpreting Section 38 of the BNSS, the bench held that the law guarantees an arrested person's right to **meet** an advocate of their choice during interrogation, but does not require that advocate to be **continuously physically present** through every moment of questioning. The Court reasoned that stretching the provision that far would make routine police investigation impractical, while still affirming that safeguards against custodial abuse must remain intact in some form.",
+      "key_points": [
+        "The Supreme Court ruled that **Section 38 of the BNSS** guarantees only the right to **meet** a lawyer, not their **constant physical presence**.",
+        "The bench of Justices **Vikram Nath** and **Sandeep Mehta** issued the ruling while deciding a **custodial-death case** against a suspended police inspector.",
+        "The Court said custody safeguards **cannot be so strict** that they make police investigation impractical.",
+        "**BNSS** (Bharatiya Nagarik Suraksha Sanhita) replaced India's colonial-era **CrPC** as the country's criminal procedure code in **2024**."
+      ],
+      "moot": "New laws don't arrive with fully settled meanings -- courts fill in the gaps case by case, and those early rulings quietly set the boundaries everyone (police, lawyers, the accused) operates within afterward.",
+      "image_credit": "LiveLaw",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "LawBeat",
+          "LiveLaw"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supreme_court_india"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "India replaced its 160-year-old criminal procedure code, the CrPC, with a new law called the **BNSS** in 2024, and courts are still working out exactly what several of its provisions mean in practice -- this is one of the first major Supreme Court rulings interpreting Section 38, which deals with an arrested person's access to a lawyer. The case arose from a lower court granting police custody of a suspended police inspector accused in a custodial-death investigation, where the trial court had tried to impose strict conditions -- including a lawyer's continuous presence -- on how police could conduct the interrogation. India's courts have long balanced two competing concerns in custody cases: protecting arrested people from abuse in police custody, and not tying investigators' hands so tightly that they can't actually investigate.",
+        "why_it_matters": "This is one of the first significant Supreme Court interpretations of a core provision in India's new criminal procedure code, and it will guide how lower courts across the country handle custody conditions in every case going forward -- not just this one. It sits at the center of a real tension: protecting people from abuse in police custody versus letting police actually do their job.",
+        "ripple_effects": "Trial courts nationwide are likely to cite this ruling whenever defense lawyers argue for continuous presence during interrogation, effectively narrowing what conditions courts can impose on police custody. Human rights and legal-aid groups may push back publicly, given India's long history of concern over custodial abuse and deaths.",
+        "why_now": "The ruling, delivered this week, is one of the first Supreme Court clarifications of Section 38 since the BNSS came into force, arising directly from an active custodial-death case that forced the Court to define the provision's limits.",
+        "watch_next": "How trial and High Courts across India apply this precedent in future remand and custody hearings, and whether legal or civil-rights groups seek a larger-bench review.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "BNSS",
+            "definition": "The Bharatiya Nagarik Suraksha Sanhita, India's new criminal procedure code that replaced the colonial-era Code of Criminal Procedure (CrPC) in 2024."
+          }
+        ],
+        "sources": [
+          {
+            "name": "LiveLaw",
+            "url": "https://www.livelaw.in/supreme-court/s-38-bnss-advocate-of-accused-cannot-remain-present-throughout-police-interrogation-supreme-court-543081"
+          },
+          {
+            "name": "LawBeat",
+            "url": "https://lawbeat.in/supreme-court-judgments/section-38-bnss-supreme-court-says-lawyer-cannot-remain-present-throughout-police-interrogation-1616555"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-28T08:00:00+05:30",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "Republic World",
+      "importance": "high",
+      "regions": [
+        "India"
+      ],
+      "title": "RBI sells dollars for a third straight day to defend the rupee near its record low",
+      "what_happened": "The rupee hurtled toward its all-time low of **96.96 per dollar** last week as Middle East tensions spiked oil prices and global investors favored the dollar. Bankers estimate the RBI sold **$8 billion to $9 billion** across spot and forward markets on Friday alone to defend the currency, then followed up with further dollar sales on Monday and Tuesday -- a third consecutive day of intervention, deliberately timed around off-peak trading hours to get more impact per dollar spent. That sustained selling triggered stop-loss unwinding among traders who had bet on further rupee weakness, accelerating the currency's recovery. Combined with crude oil prices easing on hopes of a US-Iran diplomatic breakthrough, the rupee is now expected to hold above the 96/dollar level at Tuesday's market open, a level it had been in danger of breaching entirely.",
+      "key_points": [
+        "The rupee weakened toward its **record low of 96.96 per dollar** last week as Middle East tensions pushed up oil prices.",
+        "The RBI reportedly sold an estimated **$8-9 billion** on Friday alone, according to bankers.",
+        "The central bank has now intervened for a **third straight day**, targeting off-peak trading hours to amplify its impact.",
+        "Softening **crude oil prices**, on hopes of a US-Iran deal, are also helping take pressure off the currency.",
+        "The rupee is expected to **hold above the 96/dollar mark** at Tuesday's open."
+      ],
+      "moot": "Central banks don't defend a currency by announcement -- they do it by actually buying and selling in the market, which quietly spends down a limited pool of foreign-exchange reserves, so the size of an intervention like this week's tells you how seriously officials are taking the threat.",
+      "image_credit": "Republic World",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "Republic World",
+          "Yahoo Finance / Reuters"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "usdinr",
+        "forex_reserves",
+        "crude_asset"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "India imports roughly **90% of the oil** it uses, so a weaker rupee makes fuel, and everything that depends on it, more expensive -- which is why the central bank cares so much about defending psychologically important levels like 97 to the dollar. The **Reserve Bank of India (RBI)** manages currency swings mainly by buying or selling dollars from its foreign-exchange reserves; heavy selling like this week's is a costly, limited tool, not something it can do indefinitely. The current pressure traces back to escalating Middle East tension around the Iran war, which pushed oil prices up and rattled global currency markets, compounded by elevated US Treasury yields pulling investment money toward the dollar.",
+        "why_it_matters": "A rupee that keeps sliding toward 97 or beyond would make imported oil, electronics, and other goods more expensive for ordinary Indians, adding to inflation pressure right as the RBI is also trying to manage growth. The scale of intervention -- multiple billions of dollars in a single day -- shows how seriously the central bank is treating this specific threshold.",
+        "ripple_effects": "A stabilized rupee is a relief for import-heavy sectors and helps keep a lid on inflation, which factors into the RBI's own future interest-rate decisions. It also affects Indian stocks with dollar-denominated costs or debt, and eases pressure on the Sensex and Nifty, which have been swinging on this exact tug-of-war between oil prices and Fed-related uncertainty this week.",
+        "why_now": "The intervention has intensified over the past three trading days precisely because the rupee came within a hair of a fresh record low, and it coincides with the Fed's own two-day policy meeting, which is adding extra volatility to global currency markets this week.",
+        "watch_next": "Whether the rupee holds above 96/dollar through the week, and how Wednesday's US Federal Reserve rate decision affects the dollar's broader strength.",
+        "market_link": "A steadier rupee and softer crude oil are two of the tailwinds behind this week's choppy but resilient trading in the Sensex and Nifty, alongside nervousness over the Fed's rate decision.",
+        "key_terms": [
+          {
+            "term": "Currency intervention",
+            "definition": "When a central bank buys or sells its own currency (or a foreign one) in the open market specifically to influence the exchange rate, rather than letting the market set it freely."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Republic World",
+            "url": "https://www.republicworld.com/business/india-rupee-rupee-to-hold-its-rise-past-96-rbi-soft-oil-counter-dollar-strength-2026-07-28-133604"
+          },
+          {
+            "name": "Yahoo Finance / Reuters",
+            "url": "https://finance.yahoo.com/news/rbis-3-day-intervention-push-092110420.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "Free Press Journal",
@@ -1084,10 +1212,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-07-28T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "Free Press Journal",
@@ -1146,8 +1273,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-28T15:30:00+05:30",
       "added_at": "2026-07-28T18:00:54+05:30",
@@ -1214,8 +1341,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-07-28T00:00:00+05:30",
       "added_at": "2026-07-28T18:00:54+05:30",
@@ -1282,8 +1409,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T15:59:53+05:30",
@@ -1343,8 +1470,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T15:59:53+05:30",
@@ -1404,8 +1531,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1480,8 +1607,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1561,8 +1688,8 @@
     },
     {
       "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-07-28T09:15:00+05:30",
       "added_at": "2026-07-28T12:06:40+05:30",
@@ -1619,8 +1746,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1684,8 +1811,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-07-28T00:00:00+05:30",
       "added_at": "2026-07-28T10:02:13+05:30",
@@ -1771,8 +1898,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": "2026-07-27T22:28:24+05:30",
       "added_at": "2026-07-28T10:02:13+05:30",
@@ -1845,8 +1972,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1925,8 +2052,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-07-27T18:00:00+05:30",
       "added_at": "2026-07-28T06:00:06+05:30",
@@ -2008,8 +2135,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -2091,8 +2218,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-07-27T18:00:00+01:00",
       "added_at": "2026-07-28T04:02:53+05:30",
@@ -2156,6 +2283,130 @@
       "rank": 61,
       "category": "f1",
       "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Verstappen's Red Bull exit clause is now officially active — and Red Bull is racing to stop him leaving",
+        "date": null
+      },
+      "published_iso": "2026-07-28T09:00:00Z",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "RacingNews365",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Red Bull signals it will keep Isack Hadjar for 2027, its clearest hint yet on life after Verstappen",
+      "what_happened": "In an interview with Dutch outlet De Telegraaf, Red Bull team principal Laurent Mekies said the team hasn't formally discussed Hadjar's future yet, but that 'everyone can see Isack is doing an excellent job, so we will make a logical decision' -- language widely read as confirming Hadjar will keep his seat for 2027. Hadjar has scored points in every race he's finished bar one this season, with a best finish of P7 at Monaco, building a case for retention purely on results. The comments land in the middle of intensifying speculation that Verstappen could leave for McLaren, with reports of preliminary talks between Verstappen's camp and McLaren CEO Zak Brown during the Austrian Grand Prix weekend.",
+      "key_points": [
+        "Team principal **Laurent Mekies** told De Telegraaf Red Bull will make a **'logical decision'** on its 2027 lineup.",
+        "His comments point toward retaining **Isack Hadjar**, who was promoted to the senior team this season.",
+        "Hadjar has scored points in **most races he's finished**, with a best result of **P7** at Monaco.",
+        "The signal comes while **Max Verstappen's** decision on his exit clause still isn't due until **October**."
+      ],
+      "moot": "When a star's future is genuinely uncertain, teams don't just wait it out -- they quietly secure the pieces they can control, and that itself is a signal of how likely they think the worst case is.",
+      "image_credit": "RacingNews365",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Motorsport Week",
+          "RacingNews365"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "previously": "Verstappen's contract exit clause became mathematically active after the Hungarian GP left him 78 points behind second place at F1's summer break, with Red Bull offering a new deal through 2029 to keep him and McLaren emerging as his likeliest alternative seat.",
+        "changed": "Red Bull is now separately signalling, through team principal Laurent Mekies, that it intends to keep young driver Isack Hadjar for 2027 regardless of how the Verstappen situation resolves -- its clearest move yet toward planning for a lineup that might not include its four-time champion."
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Isack Hadjar was promoted from Racing Bulls (Red Bull's junior team) to the senior Red Bull team this season, replacing Yuki Tsunoda, and has quietly built a solid rookie campaign. His future is one of the few concrete pieces Red Bull can control while the far bigger question -- whether Max Verstappen stays or leaves via his newly active exit clause -- remains unresolved until Verstappen's October deadline. Red Bull has already offered Verstappen a new contract through 2029 that would remove the exit clause entirely, but hasn't gotten an answer yet.",
+        "why_it_matters": "It shows Red Bull isn't just waiting passively on Verstappen's October decision -- it's quietly locking in the parts of its 2027 lineup it can control now, which is itself a signal about how seriously the team is taking the possibility of losing its four-time champion.",
+        "ripple_effects": "Confirming Hadjar creates a knock-on question for Racing Bulls, which would need to find his replacement there, adding another seat to the 17 driver contracts already expiring across the grid after 2026. It also narrows the field of teams positioning themselves as a landing spot if Verstappen does leave, since Red Bull's other senior seat effectively stays put.",
+        "why_now": "Mekies' comments came in a fresh interview this week, as speculation over a Verstappen-to-McLaren move keeps intensifying heading into F1's summer break.",
+        "watch_next": "Whether Red Bull formally confirms Hadjar's 2027 seat, and whether Verstappen responds -- either by signing Red Bull's retention offer or moving toward a rival.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "RacingNews365",
+            "url": "https://racingnews365.com/red-bull-issue-major-hint-over-f1-driver-line-up-decision"
+          },
+          {
+            "name": "Motorsport Week",
+            "url": "https://www.motorsportweek.com/2026/07/28/red-bull-close-to-logical-f1-2027-line-up-decision/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-07-28T12:00:00Z",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "The Race",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "FIA scraps Qatar and Bahrain from its endurance series, deepening doubt over F1's own season finale",
+      "what_happened": "The FIA confirmed on Tuesday that it has cancelled the World Endurance Championship's races in Qatar and Bahrain for the rest of the year, citing the same regional instability that already forced F1 to scrap its own Bahrain and Saudi Arabia rounds earlier in 2026. F1's Qatar Grand Prix (around November 29 at Lusail) and its traditional Abu Dhabi season finale (around December 6 at Yas Marina) both remain on the calendar for now, but the WEC decision has sharpened doubts that either can actually happen. Italy's Imola circuit -- which filled in during the Covid-disrupted 2020 and 2021 seasons -- has emerged as the frontrunner to host a replacement finale, ahead of Portimao (which is undergoing construction work) and a more speculative option in Istanbul. One complication: December temperatures in Imola average just 4°C, which could make it hard for cars to generate proper tyre temperature and create tricky racing conditions.",
+      "key_points": [
+        "The FIA's **World Endurance Championship (WEC)** confirmed Tuesday it has **cancelled its Qatar and Bahrain rounds**.",
+        "The move intensifies doubt that F1's own **Qatar** (Nov 29) and **Abu Dhabi** (Dec 6) season-finale races can go ahead.",
+        "Escalating **US-Iran tensions** already forced F1 to cancel its **Bahrain and Saudi Arabia** Grands Prix earlier this year.",
+        "Italy's **Imola** circuit has emerged as the leading backup to host F1's finale if needed.",
+        "F1 wants to **delay a final call** on Qatar and Abu Dhabi for as long as possible."
+      ],
+      "moot": "When a region becomes a geopolitical flashpoint, the disruption doesn't stay contained to the conflict itself -- it spreads sideways into calendars, contracts and logistics for things, like a car race, that have nothing to do with the politics.",
+      "image_credit": "The Race",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "PlanetF1",
+          "The Race"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "F1's 2026 calendar has already been disrupted once this year: the Bahrain and Saudi Arabian Grands Prix were both cancelled earlier in the season because of the escalating Iran war, with Bahrain's slot later filled by a Malaysia race in October. The same conflict -- centered on tensions around the Strait of Hormuz, a critical shipping route -- creates real logistical problems for hosting a global sport in the Gulf: airspace closures, freight complications, and insurance costs all become issues. The FIA also governs the WEC, a separate global endurance-racing championship, and its decision to pull its own Qatar and Bahrain rounds is being read as a signal about how the same body may eventually treat F1's races in the same region.",
+        "why_it_matters": "Reshuffling two of the last three races on the calendar this late in the season is highly unusual, expensive, and logistically difficult for teams, broadcasters and sponsors alike. It's also a clear sign of how far a regional conflict can reach into things that look completely unrelated to it, like a Grand Prix calendar.",
+        "ripple_effects": "Broadcasters and sponsors with deals tied to the Gulf races face disruption, and any replacement venue (Imola or otherwise) has only months to prepare for a full Grand Prix weekend on short notice. Other global sporting events scheduled in the Gulf region may face similar reconsideration if the conflict continues.",
+        "why_now": "The FIA's Tuesday announcement on its WEC calendar is the immediate trigger, arriving as F1 itself continues to delay a final decision on its own late-season Gulf races.",
+        "watch_next": "F1's own formal decision on whether Qatar and Abu Dhabi go ahead, which organizers are expected to make closer to November.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "WEC",
+            "definition": "The World Endurance Championship, a separate global sports-car racing series also governed by the FIA, motorsport's international governing body."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Race",
+            "url": "https://www.the-race.com/formula-1/new-contender-emerges-as-f1-2026-season-finale-back-up/"
+          },
+          {
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/f1-qatar-grand-prix-abu-dhabi-races-doubt-wec-calendar-change"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-07-28T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "PlanetF1",
@@ -2214,8 +2465,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T15:59:53+05:30",
@@ -2279,8 +2530,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2354,8 +2605,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-07-27T12:00:00+00:00",
       "added_at": "2026-07-28T14:02:10+05:30",
@@ -2415,8 +2666,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-07-26T12:00:00+00:00",
       "added_at": "2026-07-28T12:06:40+05:30",
@@ -2465,8 +2716,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-27T10:00:00+00:00",
       "added_at": "2026-07-28T12:06:40+05:30",
@@ -2520,157 +2771,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-07-26T00:00:00Z",
-      "added_at": "2026-07-28T10:02:13+05:30",
-      "source": "Formula1.com",
-      "importance": "notable",
-      "regions": [
-        "Hungary",
-        "Budapest",
-        "Hungaroring"
-      ],
-      "title": "Aston Martin's 16-part upgrade finally shows signs of life — but still no points",
-      "what_happened": "Aston Martin rolled out a sweeping 16-part aerodynamic upgrade for the Hungarian Grand Prix, touching nearly every visible surface of the AMR26. In qualifying, Alonso broke into Q2 for the first time in 2026, starting 16th — a clear step up after five consecutive last-row qualifying results. In the race, Alonso climbed to 14th and Stroll to 13th, each missing the points by a few positions. Team owner Lawrence Stroll called it 'a very big step forward, one of many to come,' while technical boss Adrian Newey was more measured, saying the goal now was simply to reach 'a point of respectability' after what he called a 'complete nightmare' start to the season. Newey also said this upgrade is only the first part of a wider car revamp, with a Honda engine update due next at Zandvoort.",
-      "key_points": [
-        "Aston Martin brought a **16-part upgrade** to Hungary, effectively a new car, after a season the team itself calls a **'nightmare'**",
-        "Fernando Alonso escaped **Q1 for the first time all season**, reaching Q2 and starting 16th — ending a run of five straight back-row qualifying sessions",
-        "Team came into the weekend **10th (last) in constructors' standings with just 1 point** all year, scored by Alonso at Monaco",
-        "Race result: Stroll finished **P13**, Alonso **P14** — progress, but still no points scored despite the upgrade",
-        "Technical boss **Adrian Newey** called the immediate goal simply **'a point of respectability'**, not a return to the front"
-      ],
-      "moot": "In a sport built on marginal gains, a team's turnaround often shows up first as small, incremental steps — a qualifying session, a few grid slots — long before it shows up as a trophy or even a points finish.",
-      "image_credit": "Formula1.com",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
-        "outlets": [
-          "Formula1.com",
-          "GPFans",
-          "Sky Sports"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Aston Martin, run by owner Lawrence Stroll and led technically by legendary designer Adrian Newey, switched to a new Honda power unit and an all-new car concept for 2026 but has struggled badly all season, with drivers reportedly unable to push the car hard for more than a lap or two before vibrations became unmanageable. Fernando Alonso, a two-time world champion weighing retirement, has said his future in the sport may hinge on whether this car becomes competitive. The Hungarian GP marked the team's first major in-season upgrade, with an engine update planned next for the Dutch Grand Prix at Zandvoort.",
-        "why_it_matters": "For a team that has scored just a single point all season, even a narrow miss on points is meaningful evidence the car is finally moving in the right direction. It also matters directly to Fernando Alonso's career decision — he has said the team's competitiveness this summer will influence whether his 25-year F1 career continues.",
-        "ripple_effects": "If the upgrade trend holds, it strengthens the case for Alonso to stay at Aston Martin rather than pursue a move elsewhere, and eases pressure on Newey's design leadership after a rocky start. A stronger Aston Martin could also reshape the fight for lower midfield constructors' points over the second half of the season.",
-        "why_now": "The upgrade debuted at the Hungarian GP on 26 July, with team and driver reactions — including Newey's and Stroll's comments — following through 27 July, right before the summer break.",
-        "watch_next": "Whether Aston Martin's next upgrade, including the Honda engine update at the Dutch GP at Zandvoort, converts this near-miss into the team's second point of the season.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "constructors' standings",
-            "definition": "The championship table ranking F1 teams by the combined points of both their drivers across the season."
-          },
-          {
-            "term": "Q1/Q2",
-            "definition": "The first two knockout stages of qualifying; cars eliminated in Q1 start from the back of the grid, so reaching Q2 is a sign of pace improvement."
-          },
-          {
-            "term": "power unit",
-            "definition": "The combined engine and hybrid-energy system that powers an F1 car; Aston Martin switched suppliers to Honda for 2026."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/how-hungary-showed-aston-martin-is-back-racing-after-upgrades-work.2FxnUtTxAbc3dARczm3lfW"
-          },
-          {
-            "name": "Sky Sports",
-            "url": "https://www.skysports.com/f1/news/12433/13566540/aston-martin-fernando-alonso-pleased-with-upgraded-car-at-hungarian-gp-as-team-boss-adrian-newey-targets-respectability"
-          },
-          {
-            "name": "GPFans",
-            "url": "https://www.gpfans.com/en/f1-news/1088331/aston-martin-f1-owner-lawrence-stroll-team-message-hungarian-grand-prix-upgrades-breakthrough/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-07-27T00:00:00Z",
-      "added_at": "2026-07-28T10:02:13+05:30",
-      "source": "PlanetF1",
-      "importance": "notable",
-      "regions": [
-        "Hungary",
-        "Budapest",
-        "Hungaroring"
-      ],
-      "title": "Verstappen brands Racing Bulls drivers 'morons' after blue-flag system failure costs him time",
-      "what_happened": "Mid-race, Verstappen caught up to lap Lawson and Lindblad, who were battling each other for their own position and went side-by-side into a corner instead of immediately yielding. That cost Verstappen time as he pushed for a strong finish. He erupted over team radio, demanding the pair be penalized and calling them 'morons.' It later emerged the blue-flag light-panel system in the cars had malfunctioned, so race control had to revert to manual marshalling with flags — meaning several drivers, including Lawson and Lindblad, may not have clearly seen the signal telling them to move over. Given the technical failure, stewards issued no penalty to either Racing Bulls driver. Verstappen crossed the line second behind Norris, while Lawson finished eighth and Lindblad tenth, both inside the points.",
-      "key_points": [
-        "Verstappen ripped into Racing Bulls pair **Liam Lawson** and **Arvid Lindblad** on untelevised radio, calling them **'morons'** for not yielding while he tried to lap them",
-        "Cause: a **light-panel system failure** meant blue flags weren't showing properly in cockpits, forcing marshals to fall back on manual flag-waving",
-        "His exact radio quote: *\"Oh, they should get a penalty. This is f***ing ridiculous, these morons! My God\"*",
-        "Verstappen still finished **P2**, 15 seconds behind winner Lando Norris, so the delay didn't cost him the podium",
-        "**Race control took no action** against either Racing Bulls driver once the system fault came to light; Lawson (P8) and Lindblad (P10) both scored points"
-      ],
-      "moot": "Even routine officiating tools can fail, and when they do, the fallout exposes underlying tensions — here, between a top team and the junior squad it both depends on and competes against.",
-      "image_credit": "PlanetF1",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Crash.net",
-          "PlanetF1"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "A blue flag (shown on track and as a light on the steering wheel) tells a lapped, slower car to immediately let a faster leader through. Racing Bulls is Red Bull's junior sister team, developing young talent like rookie Arvid Lindblad and Liam Lawson, but the two squads race as full rivals on track. Verstappen, Red Bull's four-time champion, is fighting to close ground in a title race Mercedes rookie Kimi Antonelli currently leads.",
-        "why_it_matters": "The episode shows how a single officiating-system glitch can nearly disrupt a title contender's race and briefly inflame tensions between Red Bull and the junior team it depends on to produce future talent. It also lands in a week when Red Bull's handling of that junior pipeline is already under scrutiny.",
-        "ripple_effects": "Expect the FIA to review the reliability of the blue-flag light system before the next race. The flare-up also adds friction to a summer already tense for Red Bull's junior operation — coming right after Red Bull turned down a $3 billion bid for Racing Bulls and hired Mercedes' driver-development chief to overhaul how it grooms young drivers.",
-        "why_now": "Full details of the untelevised radio exchange and the blue-flag system failure only emerged in post-race reporting on 27 July, a day after the Hungarian GP.",
-        "watch_next": "Whether the FIA confirms a fix for the blue-flag signalling system before the next race after the summer break.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "blue flag",
-            "definition": "A flag and matching cockpit light signal shown to a slower, lapped car telling it to immediately let a faster car overtake."
-          },
-          {
-            "term": "lapped",
-            "definition": "When the race leader has completed one more full lap than another car still in the race."
-          },
-          {
-            "term": "backmarker",
-            "definition": "A car running near the back of the field, often about to be lapped by the race leaders."
-          }
-        ],
-        "sources": [
-          {
-            "name": "PlanetF1",
-            "url": "https://www.planetf1.com/news/max-verstappen-fia-hungarian-grand-prix-2026-team-radio"
-          },
-          {
-            "name": "Crash.net",
-            "url": "https://www.crash.net/f1/news/1101945/1/max-verstappen-scolds-racing-bulls-drivers-morons-angry-f1-radio-rant"
-          },
-          {
-            "name": "Crash.net",
-            "url": "https://www.crash.net/f1/news/1101956/1/racing-bulls-pair-explain-blue-flag-troubles-after-max-verstappens-moron"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-07-27T12:00:00Z",
       "added_at": "2026-07-28T07:58:50+05:30",
@@ -2727,172 +2829,74 @@
     },
     {
       "type": "story",
-      "id": "story-75",
-      "rank": 75,
-      "category": "f1",
-      "published_iso": "2026-07-27T09:30:00Z",
-      "added_at": "2026-07-28T02:04:48+05:30",
-      "source": "Formula1.com",
-      "importance": "notable",
-      "regions": [
-        "Hungary",
-        "F1"
-      ],
-      "title": "Ferrari boss Fred Vasseur says 'everything went wrong' as the team fumbles a Hungarian GP it should have won",
-      "what_happened": "Ferrari team principal Fred Vasseur said \"everything went wrong\" for the team at Sunday's Hungarian Grand Prix, a race Ferrari had entered with real hope of a strong result given the circuit suited its car. Instead, both Ferrari drivers missed the podium: Charles Leclerc finished 4th and Lewis Hamilton 5th, with Vasseur cataloguing a string of unforced errors — a weak start, a penalty, being passed on-track by Max Verstappen, and pit stops that were consistently **0.2 to 0.3 seconds** slower than they should have been, costing positions each time. Vasseur was blunt that the team's execution, not raw car pace, was the problem on the day. The comments land just as the sport heads into its summer break, giving Ferrari's engineers and strategists several weeks to dig into what went wrong before racing resumes.",
-      "key_points": [
-        "Ferrari team principal **Fred Vasseur** admitted the team made \"too many mistakes\" during Sunday's Hungarian Grand Prix, a race its car was expected to suit.",
-        "Ferrari lost ground from the start: a poor getaway, a penalty, being **overtaken on track by Max Verstappen**, and repeated slow pit stops.",
-        "Both Ferrari drivers — **Charles Leclerc (4th) and Lewis Hamilton (5th)** — missed the podium despite the Hungaroring's layout suiting the car on paper.",
-        "Vasseur singled out pit-stop execution, saying the team lost positions over stops that were **0.2-0.3 seconds** slower than they should have been.",
-        "The admission comes just as F1 enters its **summer break**, giving Ferrari weeks to fix the issues before racing resumes."
-      ],
-      "moot": "In competitive environments, execution mistakes — small, repeated errors in the routine parts of the job — often cost more than any single big strategic blunder, which is why consistency in the boring parts of a job is its own competitive advantage.",
-      "image_credit": "Formula1.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Formula1.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Formula 1 team principals are effectively CEOs of their racing operations, responsible for strategy calls, pit-stop execution, and managing driver dynamics — when a team underperforms, the principal is the one who fronts up to explain why. Ferrari came into the Hungarian Grand Prix weekend with genuine optimism: the Hungaroring's slow, twisty corners were expected to favour its car's strengths over faster circuits, making a result well below expectations sting more.",
-        "why_it_matters": "For a team that's spent years trying to end a long championship drought, repeatedly losing ground through self-inflicted mistakes — not being outpaced by faster cars — is a harder problem to fix, because it points at process and decision-making rather than just engineering.",
-        "ripple_effects": "Continued execution errors put more pressure on Ferrari's strategy team and could affect driver morale heading into the second half of the season, right as Ferrari tries to close a real points gap to Mercedes in the constructors' championship.",
-        "why_now": "Vasseur's comments came in the immediate post-race debrief, landing just as the sport pauses for its annual summer break — giving the remarks extra weight as a marker for what Ferrari needs to fix before racing resumes.",
-        "watch_next": "Whether Ferrari shows operational improvement — cleaner pit stops, sharper strategy calls — when F1 resumes after the summer break.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/everything-went-wrong-vasseur-critical-of-ferraris-hungarian-grand-prix-performance.7u9mA10W6pQaMYYNe7q1Y5"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-76",
-      "rank": 76,
-      "category": "f1",
-      "published_iso": "2026-07-27T10:00:00Z",
-      "added_at": "2026-07-28T00:02:12+05:30",
-      "source": "RacingNews365",
-      "importance": "notable",
-      "regions": [
-        "UK",
-        "Global"
-      ],
-      "title": "Red Bull poaches Mercedes' driver-development chief Gwen Lagrue to replace Helmut Marko",
-      "what_happened": "**Mercedes officially confirmed** that **Gwen Lagrue**, its driver-development chief for the past decade, is leaving the team after being approached by **Red Bull**. Lagrue will join Red Bull's leadership team in **2027** as **director of its junior driver programme**, taking over the role long held by **Helmut Marko**, who departed at the end of the 2025 season. During his time at Mercedes, Lagrue was credited with guiding drivers including **George Russell, Kimi Antonelli, and Esteban Ocon** into Formula 1.",
-      "key_points": [
-        "**Mercedes confirmed** that **Gwen Lagrue** is leaving after a decade with the team, following a **Red Bull approach**.",
-        "Lagrue will become **director of Red Bull's junior driver programme** starting in **2027**.",
-        "He succeeds **Helmut Marko**, the influential Austrian who ran Red Bull's junior programme for years before departing.",
-        "At Mercedes, Lagrue helped develop **George Russell, Kimi Antonelli, and Esteban Ocon** into F1 drivers."
-      ],
-      "moot": "In Formula 1, success isn't only decided by what happens on track — the people who scout and develop young talent behind the scenes shape a team's competitiveness years down the line.",
-      "image_credit": "RacingNews365",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Motorsport.com",
-          "RacingNews365"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Helmut Marko was, for nearly two decades, one of the most powerful and controversial figures in Formula 1 — the gatekeeper of Red Bull's famed young-driver pipeline that produced stars like Max Verstappen. His departure left a major gap in how Red Bull identifies and develops future talent. Gwen Lagrue joined Mercedes in January 2016 as driver development chief and built a strong reputation for spotting and nurturing young talent, including current Mercedes driver Kimi Antonelli.",
-        "why_it_matters": "Red Bull's junior programme has been central to its success, producing multiple world champions — who runs it next shapes which young drivers get a shot at F1 seats for years to come. Poaching a rival's chief talent-spotter is also a notable signal of Red Bull rebuilding key off-track roles after a turbulent period for the team.",
-        "ripple_effects": "Mercedes now needs a new driver-development lead at a moment when it's still nurturing young talent like Antonelli. Red Bull's junior driver pipeline — and by extension which prospects eventually get promoted to its main or sister team — will bear Lagrue's imprint going forward.",
-        "why_now": "The move was officially announced and confirmed by both teams today, ending speculation about Lagrue's future after reports of Red Bull's interest had been circulating.",
-        "watch_next": "Who Mercedes appoints to replace Lagrue, and how Red Bull's junior driver lineup evolves once he formally starts in 2027.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "junior driver programme",
-            "definition": "A team's system for scouting, funding, and developing young drivers through junior racing categories, with the goal of eventually promoting the best of them to Formula 1."
-          }
-        ],
-        "sources": [
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/mercedes-confirm-exit-of-senior-team-member-after-red-bull-approach"
-          },
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/mercedes-confirms-exit-gwen-lagrue-ahead-red-bull-f1-move/10842432/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-79",
-      "rank": 79,
-      "category": "f1",
-      "published_iso": "2026-07-27T09:00:00+00:00",
-      "added_at": "2026-07-27T20:02:21+05:30",
-      "source": "Formula1.com",
-      "importance": "notable",
-      "regions": [
-        "Global",
-        "Formula 1"
-      ],
-      "title": "Lewis Hamilton admits he's \"left too many points on the table\" after a rough first season with Ferrari",
-      "what_happened": "Speaking after the Hungarian Grand Prix, Hamilton candidly assessed his recent form, saying the last few races have been costly and that he's left too many points on the table. He added that he doesn't yet have a clear mindset heading into next year, reflecting the toll of a difficult debut season with Ferrari. He noted he's still second in the drivers' championship with plenty of the season left, and separately pushed back on suggestions he's lost his love for racing despite the frustrations.",
-      "key_points": [
-        "Hamilton said his recent races have been costly, admitting he's **\"left too many points on the table\"**",
-        "He said he **\"doesn't have a mindset into next year\"** yet, reflecting a difficult first Ferrari season",
-        "Despite the frustration, he's still **second in the championship**, with \"a long way to go\" left in the season",
-        "The comments come right after the Hungarian Grand Prix, as F1 heads into its summer break",
-        "Hamilton has separately said he still **\"loves racing\"** despite the struggles"
-      ],
-      "moot": "Even elite performers can take real time to adapt after a major change of environment — a champion's struggles with a new team aren't necessarily about declining skill, but about the friction of adapting to a new car, crew, and culture.",
-      "image_credit": "Formula1.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Formula1.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Lewis Hamilton, a seven-time world champion, made a high-profile switch from Mercedes to Ferrari for this season — one of the biggest driver moves in modern F1 history, given Ferrari's status as the sport's most storied team and Hamilton's decade-plus rivalry with it. The move was billed as a shot at an eighth title with a fresh team, but his first season in red has been bumpier than expected, including recent penalties and inconsistent race pace, fuelling speculation about his mindset and long-term fit at Ferrari.",
-        "why_it_matters": "Hamilton's tone matters beyond one race weekend — it's a signal of how the sport's biggest name is processing a high-stakes team switch that hasn't gone entirely to plan. How he resets over the summer break could shape both his championship push and the broader Hamilton-Ferrari narrative for the rest of his contract.",
-        "ripple_effects": "Continued underperformance could intensify scrutiny of Ferrari's car development and strategy calls, and keep alive speculation about Hamilton's long-term future at the team. It also affects the wider title picture, since points he's \"left on the table\" are points a rival could capitalize on.",
-        "why_now": "His comments come right as the sport enters its summer break — a natural moment for drivers and teams to reflect on the first half of the season before the second half begins.",
-        "watch_next": "Watch how Hamilton and Ferrari perform when F1 resumes at the Dutch Grand Prix in late August, and whether Ferrari makes any car or personnel changes over the break.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/hamilton-doesnt-have-a-mindset-into-next-year-after-difficult-first-season.5KFKbHnWCSksJdJRe6sYMg"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
       "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "West Indies rip through 14 wickets in a single day to seize control of the Trinidad Test",
+        "date": null
+      },
+      "published_iso": "2026-07-28T15:30:00Z",
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "source": "ESPNcricinfo",
+      "importance": "notable",
+      "regions": [
+        "West Indies",
+        "Pakistan"
+      ],
+      "title": "West Indies set Pakistan 190 to win the Trinidad Test as Pakistan's chase gets off to a shaky start",
+      "what_happened": "On day four, West Indies' remaining second-innings batters added a handful of runs before the innings closed, leaving Pakistan needing exactly **190 runs** to win the Test and take a 1-0 series lead. Pakistan's chase started shakily: opener Azan Awais fell for just 3 runs, caught by Hope off the bowling of Jayden Seales. At the point of this report, **Babar Azam** was unbeaten on 10 and captain **Salman Agha** on 0, both working to steady the innings against a West Indies attack that had earlier skittled Pakistan for 282 in the first innings, led by Justin Greaves' career-best figures of 5 for 27.",
+      "key_points": [
+        "West Indies' second innings closed, setting Pakistan a target of **190** to win the series-opening Test.",
+        "Pakistan lost opener **Azan Awais for just 3 runs** early in the chase, caught behind off Jayden Seales.",
+        "**Babar Azam (10\\*)** and captain **Salman Agha (0\\*)** were steadying the innings as play continued.",
+        "**Justin Greaves' career-best 5/27** had earlier bowled Pakistan out for 282, setting up West Indies' lead."
+      ],
+      "moot": "In Test cricket, a small fourth-innings target isn't automatically a safe one -- low chases have a long history of collapsing under pressure, because a small gap concentrates the pressure on both the batting and bowling side alike.",
+      "image_credit": "ESPNcricinfo",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "ESPNcricinfo",
+          "Pakistan Today"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "previously": "At the end of day three, West Indies led by 155 runs with three second-innings wickets in hand, after Justin Greaves' 5/27 bowled out Pakistan for 282 and a late Shamar Joseph counter-attack steadied West Indies' own collapse to 93/7.",
+        "changed": "West Indies' innings has now closed, setting Pakistan an exact target of 190 to win -- and Pakistan's chase is already under pressure after losing opener Azan Awais early."
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "This is the first Test of Pakistan's tour of the West Indies, being played at the Brian Lara Stadium in Tarouba, Trinidad, from July 25-29. The match has swung repeatedly: a rain-hit first day saw West Indies reach a solid start, Shan Masood's century then anchored Pakistan to 282 for a slender first-innings lead of 29 runs, before West Indies' own batting collapsed to 93 for 7 in their second innings, only for Shamar Joseph's aggressive 22 not out to drag them to a defendable position.",
+        "why_it_matters": "A target as low as 190 sounds gettable on paper, but on a pitch that has already produced two batting collapses in this match, it's genuinely up for grabs either way -- this sets up a tense finish on what could be the match's decisive final day.",
+        "ripple_effects": "The result of this opener will set the tone for the rest of Pakistan's tour of the West Indies, and another failure by Babar Azam specifically will intensify scrutiny on his recent Test form.",
+        "why_now": "This is day four of a five-day Test, with the match reaching its business end as Pakistan's run-chase gets underway.",
+        "watch_next": "Whether Pakistan completes the chase to 190 or West Indies bowl them out first to win the series opener.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-1st-test-1538630/live-cricket-score"
+          },
+          {
+            "name": "Pakistan Today",
+            "url": "https://www.pakistantoday.com.pk/2026/07/28/west-indies-stretch-lead-to-155-after-pakistan-collapse-in-trinidad-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "The Sports Tak",
@@ -2945,10 +2949,9 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-07-28T00:00:00Z",
       "added_at": "2026-07-28T19:59:24+05:30",
       "source": "ARY News",
@@ -3002,8 +3005,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-07-27T00:00:00Z",
       "added_at": "2026-07-28T18:00:54+05:30",
@@ -3063,8 +3066,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3138,8 +3141,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-07-28T09:30:00+05:30",
       "added_at": "2026-07-28T12:06:40+05:30",
@@ -3193,8 +3196,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-07-28T02:00:00Z",
       "added_at": "2026-07-28T10:02:13+05:30",
@@ -3263,8 +3266,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-07-27T10:00:00+05:30",
       "added_at": "2026-07-28T10:02:13+05:30",
@@ -3337,8 +3340,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3407,8 +3410,8 @@
     },
     {
       "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-50",
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-07-27T21:00:00+01:00",
       "added_at": "2026-07-28T04:02:53+05:30",
@@ -3467,8 +3470,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3534,57 +3537,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
-      "category": "cricket",
-      "published_iso": "2026-07-27T11:00:00+01:00",
-      "added_at": "2026-07-28T00:02:12+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "England"
-      ],
-      "title": "England's Jacob Bethell ruled out of the Hundred with a knee injury, now a doubt for the Pakistan Tests",
-      "what_happened": "England all-rounder **Jacob Bethell** has withdrawn from **The Hundred Men's 2026** after suffering a **right knee injury** during England's recent ODI series win over India. He underwent an **MRI scan on Monday morning**, with the England medical team now awaiting results to determine the extent of the injury and how long recovery will take. Bethell had been set to **captain Birmingham Phoenix** in the tournament. The injury also puts him in doubt for England's home Test series against Pakistan, which begins **August 19 at Headingley**.",
-      "key_points": [
-        "**Jacob Bethell** has been ruled out of The Hundred 2026 with a **right knee injury**.",
-        "He was injured during England's recent **ODI series win over India**.",
-        "An **MRI scan on Monday** (today) will determine the injury's severity and recovery time.",
-        "He was set to **captain Birmingham Phoenix**, and is now a doubt for England's Test series against Pakistan starting **August 19** at Headingley."
-      ],
-      "moot": "In a packed modern cricket calendar, a single injury can ripple across multiple competitions at once — costing a player a franchise tournament and putting an international series assignment at risk simultaneously.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Jacob Bethell is a 22-year-old England all-rounder who has been fast-tracked into the national side across formats, including a maiden ODI century against South Africa earlier this year. He was named captain of Birmingham Phoenix for this year's Hundred, a significant vote of confidence in a young player. England's next big assignment is a home Test series against Pakistan, opening at Headingley on August 19 — less than a month away.",
-        "why_it_matters": "Bethell is one of England's most-hyped young all-rounders and was handed a franchise captaincy this season — losing him for the Hundred is a blow to Birmingham Phoenix, and a knee issue this close to a home Test series raises real doubt about his Pakistan availability.",
-        "ripple_effects": "Birmingham Phoenix will need to name a replacement captain and player for the rest of their Hundred campaign. England's Test selectors now face a fitness question to resolve before naming their squad for the Pakistan series.",
-        "why_now": "The injury was confirmed today after Bethell underwent an MRI scan on Monday morning to assess the damage.",
-        "watch_next": "The MRI results, which will determine whether Bethell is fit in time for the August 19 Test against Pakistan.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/story/bethell-ruled-out-of-hundred-with-knee-injury-1546471"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-07-27T15:00:00+01:00",
       "added_at": "2026-07-28T00:02:12+05:30",
@@ -3632,8 +3586,8 @@
     },
     {
       "type": "story",
-      "id": "story-55",
-      "rank": 55,
+      "id": "story-56",
+      "rank": 56,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3719,14 +3673,14 @@
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 97
+      "older_count": 100
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 75
+      "older_count": 73
     },
     {
       "type": "outro",

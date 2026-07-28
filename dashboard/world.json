@@ -1,9 +1,111 @@
 {
   "date": "2026-07-28",
-  "generated_at": "2026-07-28T19:59:24+05:30",
+  "generated_at": "2026-07-28T22:04:03+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "region": "global",
+      "category": "technology",
+      "published_iso": "2026-07-27T00:00:00Z",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "title": "China's Moonshot AI releases Kimi K3, the largest open-weight AI model ever built",
+      "key_points": [
+        "Chinese lab **Moonshot AI** released the full weights of **Kimi K3** on Hugging Face on July 27.",
+        "At **2.8 trillion parameters**, it's the **largest open-weight AI model** ever publicly released.",
+        "It natively handles text, images and video, with a **1-million-token context window** (roughly a 5,000-page book in one go).",
+        "It scores **57** on a widely-used AI capability benchmark, closing in on closed US frontier models.",
+        "The full download is about **1.4 terabytes**, compressed using a technique called MXFP4 quantization."
+      ],
+      "background": "'Open-weight' means a company publishes the actual trained model file for anyone to download, run, and modify for free, instead of only renting access to it through a paid API -- which is how OpenAI, Anthropic, and Google mostly operate. 'Parameters' are the internal numerical dials a model tunes during training; more parameters generally (not always) means more capability, at the cost of needing more computing power to run. Moonshot AI had been teasing Kimi K3 for weeks before this full release, and it lands at a moment when Chinese labs -- despite US export controls limiting their access to top-end chips -- have been closing the capability gap with US labs faster than many expected.",
+      "what_happened": "Moonshot AI published the complete weights for **Kimi K3**, a 2.8-trillion-parameter 'Mixture-of-Experts' model (a design where only a fraction of the model's parameters activate for any given task, keeping it efficient despite its huge total size), making it freely downloadable and runnable by anyone with sufficient hardware. The model supports a **1-million-token context window** and processes text, images and video natively. On a widely cited capability benchmark, it scored **57**, putting it within striking distance of closed frontier models from US labs. Hugging Face, the platform hosting the release, reported it as one of the fastest-growing model releases the site has seen.",
+      "why_it_matters": "This is fresh evidence that China's AI labs are closing the gap with the US despite chip-export restrictions meant to slow them down. It also directly threatens the business model of API-based AI companies: if a free, downloadable model performs close to what they charge for, it puts real pressure on their pricing power.",
+      "ripple_effects": "Developers and companies worldwide now have a free, near-frontier alternative to paid US AI APIs, which could slow revenue growth at OpenAI, Anthropic and Google's AI division. It adds to the same 'is AI spending paying off' anxiety already rattling chip stocks in Asia today, and is likely to reignite debate in Washington over whether export controls on chips are actually working as intended.",
+      "why_now": "The full weights went live on Hugging Face this week after Moonshot had been counting down to the release, landing right as Wall Street is already nervous about whether AI infrastructure spending is justified.",
+      "watch_next": "How fast Western developers and companies actually adopt Kimi K3 in production, and whether US policymakers respond with new restrictions or commentary.",
+      "key_terms": [
+        {
+          "term": "Open-weight model",
+          "definition": "An AI model whose trained parameters are published publicly, so anyone can download and run it themselves, instead of only accessing it through a company's paid service."
+        },
+        {
+          "term": "Mixture-of-Experts",
+          "definition": "A model design where only a subset of the model's total parameters activates for any given question, making a very large model cheaper to actually run."
+        }
+      ],
+      "the_lesson": "In AI, being closed-source isn't a permanent moat -- once a capable open alternative shows up, it puts real pressure on the pricing power of companies that were charging for access to something people can now get free.",
+      "concepts": [],
+      "market_link": "Adds to the same doubts about AI infrastructure spending that triggered today's Kospi crash in Samsung and SK Hynix, and could pressure the valuations of API-first AI companies.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "Tech Startups",
+          "url": "https://techstartups.com/2026/07/27/moonshot-ai-releases-kimi-k3-open-weights-largest-free-ai-model-ever-at-2-8-trillion-parameters/"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic"
+        }
+      ],
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "rank": 1
+    },
+    {
+      "region": "global",
+      "category": "climate",
+      "published_iso": "2026-07-28T07:27:00Z",
+      "regions": [
+        "Japan",
+        "Asia"
+      ],
+      "title": "Magnitude-7.1 earthquake hits southern Japan, mall collapse leaves at least 9 dead and 250 injured",
+      "key_points": [
+        "A **magnitude-7.1 earthquake** struck Kyushu, Japan's southern main island, at **4:27pm local time** on Tuesday.",
+        "The quake registered the highest level, **Shindo 7**, on Japan's shaking-intensity scale.",
+        "The second floor of an **Aeon Mall shopping center** in Kashima Town, Kumamoto, collapsed, trapping dozens of people.",
+        "At least **9 people have died** and **more than 250 are injured** so far, with rescue crews still searching the mall.",
+        "A tsunami advisory was issued for nearby coasts and **lifted within two hours**, with no major tsunami detected."
+      ],
+      "background": "Japan sits directly on the Pacific 'Ring of Fire,' a horseshoe-shaped belt of fault lines that makes it one of the most earthquake-prone countries on Earth, with strict building codes built around that reality. Kyushu, the island hit today, has a painful precedent: a pair of earthquakes in **2016** centered on Kumamoto killed **273 people** and reshaped how Japan thinks about aftershock risk in this exact region. Kumamoto is also a major hub for **advanced semiconductor manufacturing** -- Sony and TSMC both operate large chip plants there -- which is why an earthquake in this specific area draws global industrial attention, not just humanitarian concern.",
+      "what_happened": "A shallow **magnitude-7.1 earthquake** (Japan's Meteorological Agency measurement; the US Geological Survey initially logged 7.1 before revising toward 6.8) struck Kyushu at **4:27pm local time** on Tuesday, hitting the maximum **Shindo 7** intensity level in the hardest-hit areas. In Kashima Town, the second floor of an **Aeon Mall shopping center** collapsed, trapping an unknown number of shoppers and staff; fire officials said around **20 to 30 employees** were initially unaccounted for, with several people already pulled from the rubble and taken to hospital. Elsewhere in the Kumamoto region, the quake sparked several fires, damaged bridges, derailed a cargo train, and left a number of houses at risk of toppling over. A tsunami advisory covering the nearby Ariake and Yatsushiro Seas was issued and then lifted about two hours later after only minor sea-level changes were recorded. Japanese authorities have not yet given a final damage assessment, and rescue operations at the collapsed mall were still underway as of this report.",
+      "why_it_matters": "This is one of the deadliest earthquakes to hit Japan in years, and the mall collapse in particular raises hard questions about how a modern, quake-resistant building failed the way it did. It's also a live test of Japan's disaster-response system, which the world watches closely given how much global manufacturing (especially chips) runs through this exact region.",
+      "ripple_effects": "Rescue and recovery work at the mall will dominate Japanese news for days, and the death toll is likely to rise as crews clear the rubble. Kumamoto's chip plants (including TSMC's) may face inspection-related slowdowns even if undamaged, which matters for global electronics supply chains already jittery over chip-sector volatility. Japanese insurers face a fresh claims event, and aftershocks in the coming days/weeks are a real risk in this fault zone.",
+      "why_now": "The quake struck this afternoon, Tuesday, July 28, triggering the tsunami advisory and mall-collapse rescue operation that are still unfolding as this is written.",
+      "watch_next": "Whether the death toll rises as searchers finish clearing the collapsed mall floor, and whether Japan's Meteorological Agency issues further aftershock warnings for Kyushu.",
+      "key_terms": [
+        {
+          "term": "Shindo scale",
+          "definition": "Japan's own scale for how strongly an earthquake was actually felt/shook a specific location, separate from magnitude (which measures the quake's total energy at its source)."
+        },
+        {
+          "term": "Tsunami advisory",
+          "definition": "A step below a full tsunami warning -- it means officials expect only minor sea-level changes, not the large destructive waves a 'warning' implies."
+        }
+      ],
+      "the_lesson": "A high magnitude doesn't automatically mean the worst possible damage -- how shallow the quake is, how intensely a specific spot shakes (Shindo, not just magnitude), and what kind of buildings sit on top of it determine whether a quake is merely alarming or genuinely deadly.",
+      "concepts": [],
+      "market_link": "Kumamoto is a hub for Sony and TSMC chip plants, so any confirmed damage or inspection-driven slowdown there could add to the same AI-chip-supply jitters already rattling Samsung and SK Hynix this week.",
+      "importance": "critical",
+      "sources": [
+        {
+          "name": "NPR",
+          "url": "https://www.npr.org/2026/07/28/nx-s1-5910498/japan-earthquake"
+        },
+        {
+          "name": "France 24",
+          "url": "https://www.france24.com/en/asia-pacific/20260728-multiple-deaths-in-japan-mall-collapse-after-7-1-magnitude-earthquake"
+        },
+        {
+          "name": "Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/07/28/japan/strong-earthquake-kyushu/"
+        }
+      ],
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "rank": 2
+    },
     {
       "category": "geopolitics",
       "region": "global",
@@ -50,7 +152,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "category": "health",
@@ -98,7 +200,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 2
+      "rank": 4
     },
     {
       "category": "climate",
@@ -151,7 +253,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "category": "geopolitics",
@@ -206,7 +308,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 4
+      "rank": 6
     },
     {
       "category": "geopolitics",
@@ -266,7 +368,7 @@
         "title": "Sudan's Army Retakes Key Highway as El-Obeid Braces for a Possible Genocide-Level Siege",
         "date": null
       },
-      "rank": 5
+      "rank": 7
     },
     {
       "category": "technology",
@@ -321,7 +423,7 @@
         }
       ],
       "added_at": "2026-07-28T15:59:53+05:30",
-      "rank": 6
+      "rank": 8
     },
     {
       "region": "global",
@@ -370,7 +472,7 @@
         }
       ],
       "added_at": "2026-07-28T14:02:10+05:30",
-      "rank": 7
+      "rank": 9
     },
     {
       "region": "global",
@@ -418,7 +520,7 @@
         }
       ],
       "added_at": "2026-07-28T14:02:10+05:30",
-      "rank": 8
+      "rank": 10
     },
     {
       "category": "geopolitics",
@@ -461,7 +563,7 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "category": "geopolitics",
@@ -518,7 +620,7 @@
         "title": "Zelensky says Russia is seeking 30,000 more North Korean troops for the Ukraine war",
         "date": null
       },
-      "rank": 10
+      "rank": 12
     },
     {
       "category": "geopolitics",
@@ -586,7 +688,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 11
+      "rank": 13
     },
     {
       "category": "economy",
@@ -657,7 +759,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 12
+      "rank": 14
     },
     {
       "category": "health",
@@ -707,7 +809,7 @@
         }
       ],
       "added_at": "2026-07-28T07:58:50+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "category": "geopolitics",
@@ -777,7 +879,7 @@
         "title": "Netanyahu heads to the White House for a tense Trump meeting, with Iran splitting the two leaders",
         "date": null
       },
-      "rank": 14
+      "rank": 16
     },
     {
       "category": "economy",
@@ -835,7 +937,7 @@
         }
       ],
       "added_at": "2026-07-28T06:00:06+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "category": "geopolitics",
@@ -898,7 +1000,7 @@
         "title": "Oil prices sink nearly 7% as the US-Iran ceasefire holds and Tehran opens Strait of Hormuz talks",
         "date": null
       },
-      "rank": 16
+      "rank": 18
     },
     {
       "region": "global",
@@ -943,7 +1045,7 @@
         }
       ],
       "added_at": "2026-07-28T04:02:53+05:30",
-      "rank": 17
+      "rank": 19
     },
     {
       "region": "global",
@@ -1008,105 +1110,100 @@
         "title": "Oil rockets past $100 a barrel after Houthi attacks on Saudi tankers, then eases back \u2014 why the Middle East keeps moving crude prices",
         "date": null
       },
-      "rank": 18
+      "rank": 20
     },
     {
-      "category": "science",
-      "published_iso": "2026-07-26T10:27:00Z",
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-07-27T00:00:00+05:30",
       "regions": [
-        "Space",
-        "US",
-        "Russia"
+        "India"
       ],
-      "title": "A NASA astronaut and two Russian cosmonauts land back on Earth after 241 days on the space station",
+      "title": "Supreme Court rules the accused has no right to a lawyer's continuous presence during police interrogation",
       "key_points": [
-        "NASA's Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev landed safely in Kazakhstan on Sunday after **241 days** aboard the International Space Station.",
-        "Their Soyuz MS-28 capsule made a parachute-assisted landing near **Zhezkazgan, Kazakhstan**, ending a mission that began on **November 27, 2025**.",
-        "The crew orbited Earth **3,856 times**, covering more than **102 million miles**.",
-        "It was the first spaceflight for both Williams and Mikaev, and the second for Kud-Sverchkov.",
-        "The mission is one of the routine crew rotations that keep the ISS staffed \u2014 a partnership that has kept running even as US-Russia relations have soured elsewhere."
+        "The Supreme Court ruled that **Section 38 of the BNSS** guarantees only the right to **meet** a lawyer, not their **constant physical presence**.",
+        "The bench of Justices **Vikram Nath** and **Sandeep Mehta** issued the ruling while deciding a **custodial-death case** against a suspended police inspector.",
+        "The Court said custody safeguards **cannot be so strict** that they make police investigation impractical.",
+        "**BNSS** (Bharatiya Nagarik Suraksha Sanhita) replaced India's colonial-era **CrPC** as the country's criminal procedure code in **2024**."
       ],
-      "background": "The International Space Station (ISS) has been continuously crewed by rotating teams of astronauts and cosmonauts since 2000, in a rare corner of US-Russia cooperation that has largely continued through wars and sanctions elsewhere. Crews typically fly up on Russia's Soyuz spacecraft or America's SpaceX Crew Dragon and stay for six months to a year, running science experiments in microgravity that can't be done on Earth. This mission, Soyuz MS-28, launched in late November 2025 and is one of many routine handovers that keep the station running.",
-      "what_happened": "NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev returned to Earth on Sunday, July 26, after **241 days** in space aboard the ISS. Their Soyuz MS-28 spacecraft undocked from the station at 2:03am and made a parachute-assisted landing in a remote area southeast of Zhezkazgan, Kazakhstan, at 5:27am CDT (3:27pm local Kazakhstan time). Over the mission, the crew circled the Earth **3,856 times** and travelled more than **102 million miles**. They had launched to the ISS on November 27, 2025. It was the first flight to space for both Williams and Mikaev, while Kud-Sverchkov was on his second mission.",
-      "why_it_matters": "Every safe crew rotation matters for keeping the ISS \u2014 humanity's only continuously crewed outpost in orbit \u2014 running, especially as the station ages toward its planned retirement later this decade. It's also a reminder that US-Russia space cooperation has kept functioning as one of the few steady bridges between the two countries amid broader geopolitical tension.",
-      "ripple_effects": "Williams and his crewmates now face weeks of medical monitoring to help doctors understand how long-duration spaceflight affects the human body \u2014 data that feeds directly into planning for future Moon and Mars missions. Their departure also means a new crew has already taken over ISS operations, keeping the research pipeline running without interruption.",
-      "why_now": "The landing was simply the scheduled end of a roughly eight-month rotation \u2014 these handovers happen several times a year to keep the station staffed and give each crew a manageable mission length.",
-      "watch_next": "NASA's post-flight health assessments of the returning crew, and the next scheduled crew rotation to the ISS.",
+      "background": "India replaced its 160-year-old criminal procedure code, the CrPC, with a new law called the **BNSS** in 2024, and courts are still working out exactly what several of its provisions mean in practice -- this is one of the first major Supreme Court rulings interpreting Section 38, which deals with an arrested person's access to a lawyer. The case arose from a lower court granting police custody of a suspended police inspector accused in a custodial-death investigation, where the trial court had tried to impose strict conditions -- including a lawyer's continuous presence -- on how police could conduct the interrogation. India's courts have long balanced two competing concerns in custody cases: protecting arrested people from abuse in police custody, and not tying investigators' hands so tightly that they can't actually investigate.",
+      "what_happened": "A two-judge Supreme Court bench of Justices Vikram Nath and Sandeep Mehta modified custody conditions that a trial court had imposed, and an Andhra Pradesh High Court had partly upheld, in the case of a suspended police inspector accused over a custodial death. Interpreting Section 38 of the BNSS, the bench held that the law guarantees an arrested person's right to **meet** an advocate of their choice during interrogation, but does not require that advocate to be **continuously physically present** through every moment of questioning. The Court reasoned that stretching the provision that far would make routine police investigation impractical, while still affirming that safeguards against custodial abuse must remain intact in some form.",
+      "why_it_matters": "This is one of the first significant Supreme Court interpretations of a core provision in India's new criminal procedure code, and it will guide how lower courts across the country handle custody conditions in every case going forward -- not just this one. It sits at the center of a real tension: protecting people from abuse in police custody versus letting police actually do their job.",
+      "ripple_effects": "Trial courts nationwide are likely to cite this ruling whenever defense lawyers argue for continuous presence during interrogation, effectively narrowing what conditions courts can impose on police custody. Human rights and legal-aid groups may push back publicly, given India's long history of concern over custodial abuse and deaths.",
+      "why_now": "The ruling, delivered this week, is one of the first Supreme Court clarifications of Section 38 since the BNSS came into force, arising directly from an active custodial-death case that forced the Court to define the provision's limits.",
+      "watch_next": "How trial and High Courts across India apply this precedent in future remand and custody hearings, and whether legal or civil-rights groups seek a larger-bench review.",
       "key_terms": [
         {
-          "term": "Soyuz",
-          "definition": "Russia's long-running spacecraft, in use since the 1960s, that ferries crews to and from the International Space Station."
+          "term": "BNSS",
+          "definition": "The Bharatiya Nagarik Suraksha Sanhita, India's new criminal procedure code that replaced the colonial-era Code of Criminal Procedure (CrPC) in 2024."
         }
       ],
-      "the_lesson": "Even when two countries are at odds elsewhere, narrow, high-value areas of cooperation \u2014 like keeping a shared space station running \u2014 can keep functioning, because mutual benefit can outlast political friction when both sides need the arrangement to work.",
-      "concepts": [],
+      "the_lesson": "New laws don't arrive with fully settled meanings -- courts fill in the gaps case by case, and those early rulings quietly set the boundaries everyone (police, lawyers, the accused) operates within afterward.",
+      "concepts": [
+        "supreme_court_india"
+      ],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "NASA",
-          "url": "https://www.nasa.gov/news-release/nasa-astronaut-chris-williams-crewmates-return-from-space-station/"
+          "name": "LiveLaw",
+          "url": "https://www.livelaw.in/supreme-court/s-38-bnss-advocate-of-accused-cannot-remain-present-throughout-police-interrogation-supreme-court-543081"
         },
         {
-          "name": "Space.com",
-          "url": "https://www.space.com/space-exploration/human-spaceflight/nasa-astronaut-two-cosmonauts-return-to-earth-soyuz-ms-28"
+          "name": "LawBeat",
+          "url": "https://lawbeat.in/supreme-court-judgments/section-38-bnss-supreme-court-says-lawyer-cannot-remain-present-throughout-police-interrogation-1616555"
         }
       ],
-      "region": "global",
-      "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 19
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "rank": 21
     },
     {
-      "category": "geopolitics",
-      "published_iso": "2026-07-27T04:00:00Z",
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-07-28T08:00:00+05:30",
       "regions": [
-        "Pakistan",
-        "South Asia",
-        "Kashmir"
+        "India"
       ],
-      "title": "Pakistan-administered Kashmir votes under heavy security after a summer of deadly protests",
+      "title": "RBI sells dollars for a third straight day to defend the rupee near its record low",
       "key_points": [
-        "Voting opened Monday in the first of **three rounds** of local elections in Pakistan-administered Kashmir (AJK), under heavy security.",
-        "Nearly **30 people have been killed** since June in protests and clashes over the vote \u2014 even before polling day.",
-        "The anger centers on **12 assembly seats** reserved for Kashmiri refugees who fled to Pakistan after **1947 Partition** but no longer live in the region.",
-        "A political worker died in scuffles between rival party supporters in Kotli district as voting got under way Monday.",
-        "About **3.8 million residents** are eligible to vote across the Pakistan-controlled part of the disputed Himalayan territory."
+        "The rupee weakened toward its **record low of 96.96 per dollar** last week as Middle East tensions pushed up oil prices.",
+        "The RBI reportedly sold an estimated **$8-9 billion** on Friday alone, according to bankers.",
+        "The central bank has now intervened for a **third straight day**, targeting off-peak trading hours to amplify its impact.",
+        "Softening **crude oil prices**, on hopes of a US-Iran deal, are also helping take pressure off the currency.",
+        "The rupee is expected to **hold above the 96/dollar mark** at Tuesday's open."
       ],
-      "background": "Kashmir has been split and disputed between India and Pakistan since Partition in 1947, with Pakistan administering one slice \u2014 Azad Jammu and Kashmir (AJK) \u2014 while India controls Jammu & Kashmir and Ladakh; both countries claim the whole region, and China holds a smaller sliver. AJK holds its own local legislative elections roughly every five years, separate from Pakistan's national polls, to choose a government responsible for local administration while Islamabad keeps control of defence and foreign affairs. Long-simmering anger over how power and representation are shared \u2014 especially the seats reserved for Kashmiri refugee-descendants who no longer live in AJK \u2014 boiled into open protest this summer.",
-      "what_happened": "Pakistan-administered Kashmir opened voting Monday in the first of three staggered rounds of local legislative elections, held under heavy security after a summer marked by violence. Protests demanding electoral reform escalated into deadly clashes, and even conservative counts put the death toll since early June at close to **30 people**, including protesters and law enforcement personnel. As polls opened, a political worker died in a scuffle between rival party supporters in the Kotli district's Nakyal area, and internet blackouts and roadblocks have periodically cut off parts of the region ahead of the vote. At the center of the unrest are **12 of the assembly's seats reserved for Kashmiri refugees** who resettled in Pakistan proper after the 1947 partition \u2014 protesters argue those seats should instead go to people who actually live in AJK today. Roughly 3.8 million residents are registered to vote in this first round, which covers the Mirpur division's 13 constituencies.",
-      "why_it_matters": "How this election plays out will shape who governs a territory that sits at the center of one of the world's longest-running territorial disputes, and a badly marred vote could deepen instability right on the India-Pakistan fault line. The refugee-seat dispute also raises a bigger question about who gets to decide Kashmir's future \u2014 those living there now, or a wider Pakistani-Kashmiri diaspora.",
-      "ripple_effects": "Continued unrest could strain Pakistan's already-stretched security forces and give India ammunition to question Pakistan's governance of the territory it claims. A contested or violent result could also fuel further protests and harder security crackdowns in the two remaining voting rounds.",
-      "why_now": "The vote was already scheduled for this summer, but the reform protests that erupted in June turned what would have been a routine local election into the most violent AJK vote in years, escalating right up to polling day.",
-      "watch_next": "Whether the remaining two rounds of voting go ahead peacefully, and whether the refugee-seat allocation becomes a flashpoint in the incoming assembly.",
+      "background": "India imports roughly **90% of the oil** it uses, so a weaker rupee makes fuel, and everything that depends on it, more expensive -- which is why the central bank cares so much about defending psychologically important levels like 97 to the dollar. The **Reserve Bank of India (RBI)** manages currency swings mainly by buying or selling dollars from its foreign-exchange reserves; heavy selling like this week's is a costly, limited tool, not something it can do indefinitely. The current pressure traces back to escalating Middle East tension around the Iran war, which pushed oil prices up and rattled global currency markets, compounded by elevated US Treasury yields pulling investment money toward the dollar.",
+      "what_happened": "The rupee hurtled toward its all-time low of **96.96 per dollar** last week as Middle East tensions spiked oil prices and global investors favored the dollar. Bankers estimate the RBI sold **$8 billion to $9 billion** across spot and forward markets on Friday alone to defend the currency, then followed up with further dollar sales on Monday and Tuesday -- a third consecutive day of intervention, deliberately timed around off-peak trading hours to get more impact per dollar spent. That sustained selling triggered stop-loss unwinding among traders who had bet on further rupee weakness, accelerating the currency's recovery. Combined with crude oil prices easing on hopes of a US-Iran diplomatic breakthrough, the rupee is now expected to hold above the 96/dollar level at Tuesday's market open, a level it had been in danger of breaching entirely.",
+      "why_it_matters": "A rupee that keeps sliding toward 97 or beyond would make imported oil, electronics, and other goods more expensive for ordinary Indians, adding to inflation pressure right as the RBI is also trying to manage growth. The scale of intervention -- multiple billions of dollars in a single day -- shows how seriously the central bank is treating this specific threshold.",
+      "ripple_effects": "A stabilized rupee is a relief for import-heavy sectors and helps keep a lid on inflation, which factors into the RBI's own future interest-rate decisions. It also affects Indian stocks with dollar-denominated costs or debt, and eases pressure on the Sensex and Nifty, which have been swinging on this exact tug-of-war between oil prices and Fed-related uncertainty this week.",
+      "why_now": "The intervention has intensified over the past three trading days precisely because the rupee came within a hair of a fresh record low, and it coincides with the Fed's own two-day policy meeting, which is adding extra volatility to global currency markets this week.",
+      "watch_next": "Whether the rupee holds above 96/dollar through the week, and how Wednesday's US Federal Reserve rate decision affects the dollar's broader strength.",
       "key_terms": [
         {
-          "term": "Azad Jammu and Kashmir (AJK)",
-          "definition": "The part of the disputed Kashmir region administered by Pakistan, with its own local government but no independent foreign or defence policy."
-        },
-        {
-          "term": "Line of Control",
-          "definition": "The de facto military border dividing Indian- and Pakistani-administered Kashmir since a 1972 ceasefire agreement."
+          "term": "Currency intervention",
+          "definition": "When a central bank buys or sells its own currency (or a foreign one) in the open market specifically to influence the exchange rate, rather than letting the market set it freely."
         }
       ],
-      "the_lesson": "When an election's rules about who gets to vote or hold a seat are seen as unfair, the fight over those rules can become more explosive than the outcome itself \u2014 process disputes are often the real trigger behind political violence, not just who wins.",
+      "the_lesson": "Central banks don't defend a currency by announcement -- they do it by actually buying and selling in the market, which quietly spends down a limited pool of foreign-exchange reserves, so the size of an intervention like this week's tells you how seriously officials are taking the threat.",
       "concepts": [
-        "refugee_asylum"
+        "usdinr",
+        "forex_reserves",
+        "crude_asset"
       ],
-      "market_link": null,
+      "market_link": "A steadier rupee and softer crude oil are two of the tailwinds behind this week's choppy but resilient trading in the Sensex and Nifty, alongside nervousness over the Fed's rate decision.",
       "importance": "high",
       "sources": [
         {
-          "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/7/27/pakistan-administered-kashmir-opens-polls-in-violence-wracked-vote"
+          "name": "Republic World",
+          "url": "https://www.republicworld.com/business/india-rupee-rupee-to-hold-its-rise-past-96-rbi-soft-oil-counter-dollar-strength-2026-07-28-133604"
         },
         {
-          "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/7/27/pakistans-kashmir-votes-why-the-election-hinges-on-12-disputed-seats"
+          "name": "Yahoo Finance / Reuters",
+          "url": "https://finance.yahoo.com/news/rbis-3-day-intervention-push-092110420.html"
         }
       ],
-      "region": "global",
-      "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 20
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "rank": 22
     },
     {
       "category": "india",
@@ -1157,7 +1254,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "category": "india",
@@ -1203,7 +1300,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 22
+      "rank": 24
     },
     {
       "category": "india",
@@ -1255,7 +1352,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "category": "india",
@@ -1307,7 +1404,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 24
+      "rank": 26
     },
     {
       "category": "india",
@@ -1352,7 +1449,7 @@
         }
       ],
       "added_at": "2026-07-28T15:59:53+05:30",
-      "rank": 25
+      "rank": 27
     },
     {
       "category": "india",
@@ -1397,7 +1494,7 @@
         }
       ],
       "added_at": "2026-07-28T15:59:53+05:30",
-      "rank": 26
+      "rank": 28
     },
     {
       "region": "india",
@@ -1455,7 +1552,7 @@
         "title": "IMD red alert: a deep depression is set to cross the Odisha-Bengal coast today, schools shut in three districts",
         "date": null
       },
-      "rank": 27
+      "rank": 29
     },
     {
       "region": "india",
@@ -1519,7 +1616,7 @@
         "title": "Opposition forces a showdown in Parliament over the July 20 police crackdown on NEET protesters",
         "date": null
       },
-      "rank": 28
+      "rank": 30
     },
     {
       "category": "india",
@@ -1562,7 +1659,7 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "category": "india",
@@ -1611,7 +1708,7 @@
         "title": "Sharmila Dhankar wins para-athletics gold as India close Commonwealth Games Day 4 with 5 medals, resolving the high-jump duel",
         "date": null
       },
-      "rank": 30
+      "rank": 32
     },
     {
       "category": "india",
@@ -1662,7 +1759,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "category": "india",
@@ -1720,7 +1817,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1778,7 +1875,7 @@
         "title": "Parliament is adjourned again as opposition presses the NEET-crackdown showdown into a new bill fight",
         "date": null
       },
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1824,7 +1921,7 @@
         }
       ],
       "added_at": "2026-07-28T07:58:50+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1875,7 +1972,7 @@
         }
       ],
       "added_at": "2026-07-28T06:00:06+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "category": "india",
@@ -1936,7 +2033,7 @@
         "title": "Opposition forces a showdown in Parliament over the July 20 police crackdown on NEET protesters",
         "date": null
       },
-      "rank": 36
+      "rank": 38
     },
     {
       "region": "india",
@@ -1976,7 +2073,7 @@
         }
       ],
       "added_at": "2026-07-28T04:02:53+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "region": "india",
@@ -2021,91 +2118,55 @@
         }
       ],
       "added_at": "2026-07-28T04:02:53+05:30",
-      "rank": 38
+      "rank": 40
     },
     {
-      "category": "india",
-      "published_iso": "2026-07-27T06:45:00Z",
+      "region": "cricket",
+      "category": "cricket",
+      "published_iso": "2026-07-28T15:30:00Z",
       "regions": [
-        "India"
+        "West Indies",
+        "Pakistan"
       ],
-      "title": "IDFC First Bank shares jump nearly 10% to a 52-week high after profit crosses \u20b91,000 crore for the first time",
+      "title": "West Indies set Pakistan 190 to win the Trinidad Test as Pakistan's chase gets off to a shaky start",
       "key_points": [
-        "IDFC First Bank's stock surged as much as **9-10%** Monday to a 52-week high, after posting its best-ever quarterly profit.",
-        "Net profit for the April-June quarter (Q1 FY27) more than doubled to **\u20b91,075 crore**, up **132%** from \u20b9463 crore a year earlier \u2014 crossing \u20b91,000 crore for the first time in the bank's history.",
-        "**Bad loans improved**: gross NPA (loans borrowers have stopped repaying) fell to **1.51%** from 1.97% a year ago.",
-        "Total loans plus deposits grew **18.6%** year-on-year to over **\u20b96 lakh crore**.",
-        "Brokerages raised their price targets on the stock following the results, fuelling the rally."
+        "West Indies' second innings closed, setting Pakistan a target of **190** to win the series-opening Test.",
+        "Pakistan lost opener **Azan Awais for just 3 runs** early in the chase, caught behind off Jayden Seales.",
+        "**Babar Azam (10\\*)** and captain **Salman Agha (0\\*)** were steadying the innings as play continued.",
+        "**Justin Greaves' career-best 5/27** had earlier bowled Pakistan out for 282, setting up West Indies' lead."
       ],
-      "background": "IDFC First Bank was formed in 2018 from the merger of infrastructure lender IDFC Bank and microfinance-focused Capital First, and has spent recent years building up its retail banking business \u2014 deposits and personal loans \u2014 after inheriting a legacy of stressed infrastructure loans. Indian banks report earnings every quarter, and a bank's net profit, loan growth, and bad-loan ratio are the numbers investors watch most closely to judge how healthy its lending book is.",
-      "what_happened": "IDFC First Bank's shares jumped as much as 9-10% on Monday to touch a 52-week high on the National Stock Exchange, a day after the bank reported its strongest-ever quarterly results. The stock opened at \u20b986.30, up from Friday's close of \u20b980.79, and touched an intraday high of \u20b988.76; by 12:15pm IST it was trading around \u20b985.47. The rally followed news that the bank's standalone net profit for the April-June quarter more than doubled year-on-year to **\u20b91,075 crore**, up 132.4% from \u20b9463 crore in the same quarter last year \u2014 the first time its quarterly profit has crossed the \u20b91,000 crore mark. Net interest income (the gap between what a bank earns on loans and pays on deposits) rose 21% to \u20b95,974 crore, while its gross bad-loan ratio improved to 1.51% from 1.97% a year earlier. Total customer business \u2014 loans plus deposits \u2014 grew 18.6% year-on-year to over \u20b96 lakh crore. Several brokerages raised their price targets on the stock after the results.",
-      "why_it_matters": "The results mark a turning point for a bank that has spent years working through a legacy of stressed loans inherited from its 2018 merger \u2014 crossing \u20b91,000 crore in quarterly profit for the first time signals the retail-banking bet the bank made is now paying off at scale.",
-      "ripple_effects": "A strong result from a mid-sized private bank often lifts sentiment across the wider banking sector on the exchange, and improving bad-loan ratios industry-wide feed into how comfortable the RBI stays keeping interest rates steady rather than raising them to cool lending.",
-      "why_now": "The results were announced on July 25, and Monday, July 27, was the first full trading session for investors to react, driving the stock rally.",
-      "watch_next": "Whether the bank can sustain this loan growth and asset-quality improvement in coming quarters, and whether the rally holds once the initial results reaction settles.",
-      "key_terms": [
-        {
-          "term": "Non-performing asset (NPA)",
-          "definition": "A loan where the borrower has stopped making the required interest or principal payments \u2014 the standard measure banks and regulators use to track bad loans."
-        },
-        {
-          "term": "Net interest income (NII)",
-          "definition": "The gap between what a bank earns from lending and what it pays out on deposits \u2014 its core profit engine before other costs."
-        }
-      ],
-      "the_lesson": "A single blockbuster quarter often reflects years of unglamorous work under the hood \u2014 cleaning up bad loans, building a deposit base \u2014 becoming visible all at once; markets reward the moment a turnaround becomes undeniable, not just when it began.",
-      "concepts": [],
-      "market_link": "IDFC First Bank (NSE: IDFCFIRSTB) stock, and sentiment for Indian private-sector banking stocks broadly.",
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Business Standard",
-          "url": "https://www.business-standard.com/markets/news/idfc-first-bank-jumps-9-to-hit-52-wk-high-as-q1-pat-doubles-time-to-buy-126072700228_1.html"
-        },
-        {
-          "name": "Republic World",
-          "url": "https://www.republicworld.com/business/idfc-first-bank-share-price-jumps-q1-fy27-results-net-profit-surges-2026-07-27-133566"
-        }
-      ],
-      "region": "india",
-      "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 39
-    },
-    {
-      "category": "india",
-      "published_iso": "2026-07-27T08:00:00Z",
-      "regions": [
-        "Maharashtra",
-        "India"
-      ],
-      "title": "A grabbed steering wheel sends an MSRTC bus crashing into two parked school buses in Maharashtra",
-      "key_points": [
-        "An MSRTC (Maharashtra State Road Transport Corporation) bus travelling from **Latur to Ausa** veered off the road and rammed two parked school buses around **1:30pm** on Monday.",
-        "Police are verifying eyewitness accounts that a passenger suddenly grabbed the steering wheel from behind the driver, causing him to lose control.",
-        "**Several passengers were injured** and taken to Vilasrao Deshmukh Government Medical College and Hospital in Latur.",
-        "The two school buses it hit were parked and empty at the time \u2014 no children were aboard them.",
-        "Witnesses say the driver's quick reaction \u2014 steering the bus nearly **100 feet** into open ground after the first impact \u2014 likely prevented a bigger pile-up."
-      ],
-      "background": "MSRTC is Maharashtra's state-run bus operator, running thousands of routes across the state including many rural stretches like the Latur-Ausa road in the Marathwada region. Bus safety has been a recurring concern in Maharashtra, with several fatal MSRTC crashes in recent years blamed on a mix of ageing vehicles, driver fatigue, and rash driving on rural highways.",
-      "what_happened": "An MSRTC bus belonging to the Nilanga depot was travelling from Latur to Ausa on Monday afternoon when, around 1:30pm, it crashed into two school buses parked near a school in the Peth area. Eyewitnesses told police that a passenger suddenly moved up behind the driver's seat and grabbed the steering wheel, causing the driver to lose control. The bus veered off the road and struck the two parked school buses, which were waiting to pick up students but had no children aboard at the time. Several passengers on the MSRTC bus were injured and rushed to Vilasrao Deshmukh Government Medical College and Hospital in Latur. Police are still verifying the steering-wheel-grab account before confirming the exact cause. Witnesses praised the driver, saying he kept enough control to steer the bus roughly 100 feet into an open area after the initial impact, which they believe stopped the crash from involving even more vehicles.",
-      "why_it_matters": "The incident is a reminder that a single unpredictable moment inside a vehicle \u2014 not just road conditions or driver error \u2014 can turn into a mass-casualty event, and it will likely reopen questions about passenger-cabin safety rules on Indian state buses, such as barriers near the driver's seat.",
-      "ripple_effects": "If confirmed, the steering-grab account could push MSRTC to consider physical separators between the driver's cabin and passengers, similar to rules already common on city buses. The incident also adds to a string of recent MSRTC crashes that have put pressure on the state government over ageing-fleet maintenance and driver working conditions.",
-      "why_now": "The crash happened Monday afternoon and remains an active local story as police investigate the cause and treat the injured.",
-      "watch_next": "Police confirmation of what caused the driver to lose control, and the condition of the injured passengers.",
+      "thread": {
+        "previously": "At the end of day three, West Indies led by 155 runs with three second-innings wickets in hand, after Justin Greaves' 5/27 bowled out Pakistan for 282 and a late Shamar Joseph counter-attack steadied West Indies' own collapse to 93/7.",
+        "changed": "West Indies' innings has now closed, setting Pakistan an exact target of 190 to win -- and Pakistan's chase is already under pressure after losing opener Azan Awais early."
+      },
+      "background": "This is the first Test of Pakistan's tour of the West Indies, being played at the Brian Lara Stadium in Tarouba, Trinidad, from July 25-29. The match has swung repeatedly: a rain-hit first day saw West Indies reach a solid start, Shan Masood's century then anchored Pakistan to 282 for a slender first-innings lead of 29 runs, before West Indies' own batting collapsed to 93 for 7 in their second innings, only for Shamar Joseph's aggressive 22 not out to drag them to a defendable position.",
+      "what_happened": "On day four, West Indies' remaining second-innings batters added a handful of runs before the innings closed, leaving Pakistan needing exactly **190 runs** to win the Test and take a 1-0 series lead. Pakistan's chase started shakily: opener Azan Awais fell for just 3 runs, caught by Hope off the bowling of Jayden Seales. At the point of this report, **Babar Azam** was unbeaten on 10 and captain **Salman Agha** on 0, both working to steady the innings against a West Indies attack that had earlier skittled Pakistan for 282 in the first innings, led by Justin Greaves' career-best figures of 5 for 27.",
+      "why_it_matters": "A target as low as 190 sounds gettable on paper, but on a pitch that has already produced two batting collapses in this match, it's genuinely up for grabs either way -- this sets up a tense finish on what could be the match's decisive final day.",
+      "ripple_effects": "The result of this opener will set the tone for the rest of Pakistan's tour of the West Indies, and another failure by Babar Azam specifically will intensify scrutiny on his recent Test form.",
+      "why_now": "This is day four of a five-day Test, with the match reaching its business end as Pakistan's run-chase gets underway.",
+      "watch_next": "Whether Pakistan completes the chase to 190 or West Indies bowl them out first to win the series opener.",
       "key_terms": [],
-      "the_lesson": "Safety systems designed around the \"normal\" risks \u2014 speed, road conditions, mechanical failure \u2014 can still be undone by a single unpredictable human action, which is why good safety design tries to plan for the unexpected, not just the likely.",
+      "the_lesson": "In Test cricket, a small fourth-innings target isn't automatically a safe one -- low chases have a long history of collapsing under pressure, because a small gap concentrates the pressure on both the batting and bowling side alike.",
       "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "The Pioneer",
-          "url": "https://dailypioneer.com/news/several-passengers-injured-as-msrtc-bus-crashes-into-two-parked-buses"
+          "name": "ESPNcricinfo",
+          "url": "https://www.cricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-1st-test-1538630/live-cricket-score"
+        },
+        {
+          "name": "Pakistan Today",
+          "url": "https://www.pakistantoday.com.pk/2026/07/28/west-indies-stretch-lead-to-155-after-pakistan-collapse-in-trinidad-test"
         }
       ],
-      "region": "india",
-      "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 40
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "West Indies rip through 14 wickets in a single day to seize control of the Trinidad Test",
+        "date": null
+      },
+      "rank": 41
     },
     {
       "category": "cricket",
@@ -2143,7 +2204,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 41
+      "rank": 42
     },
     {
       "category": "cricket",
@@ -2183,7 +2244,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 42
+      "rank": 43
     },
     {
       "category": "cricket",
@@ -2228,7 +2289,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 43
+      "rank": 44
     },
     {
       "region": "cricket",
@@ -2285,7 +2346,7 @@
         "title": "Sir Garfield Sobers lies in state at Barbados's Parliament as the island prepares to bid its cricket legend farewell",
         "date": null
       },
-      "rank": 44
+      "rank": 45
     },
     {
       "category": "cricket",
@@ -2324,7 +2385,7 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 45
+      "rank": 46
     },
     {
       "category": "cricket",
@@ -2378,7 +2439,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 46
+      "rank": 47
     },
     {
       "category": "cricket",
@@ -2435,7 +2496,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 47
+      "rank": 48
     },
     {
       "category": "cricket",
@@ -2490,7 +2551,7 @@
         "title": "Shan Masood's century in vain as West Indies bowl Pakistan out for 282, taking a 29-run lead in the Trinidad Test",
         "date": null
       },
-      "rank": 48
+      "rank": 49
     },
     {
       "region": "cricket",
@@ -2534,7 +2595,7 @@
         }
       ],
       "added_at": "2026-07-28T04:02:53+05:30",
-      "rank": 49
+      "rank": 50
     },
     {
       "region": "cricket",
@@ -2585,7 +2646,7 @@
         "title": "West Indies bowled out for 311 as Pakistan fight back to 60/1 at stumps on Day 2 in Trinidad",
         "date": null
       },
-      "rank": 50
+      "rank": 51
     },
     {
       "category": "cricket",
@@ -2639,7 +2700,7 @@
         "title": "India name Sri Lanka Test squad: Jadeja returns, Bumrah in but fitness-watched, Gill captains",
         "date": null
       },
-      "rank": 51
+      "rank": 52
     },
     {
       "category": "cricket",
@@ -2673,7 +2734,7 @@
         }
       ],
       "added_at": "2026-07-28T00:02:12+05:30",
-      "rank": 52
+      "rank": 53
     },
     {
       "category": "cricket",
@@ -2707,7 +2768,7 @@
         }
       ],
       "added_at": "2026-07-28T00:02:12+05:30",
-      "rank": 53
+      "rank": 54
     },
     {
       "category": "cricket",
@@ -2755,7 +2816,7 @@
         "title": "India's Test squad for Sri Lanka to be named by Tuesday \u2014 Jadeja set to return, Bumrah still under watch",
         "date": null
       },
-      "rank": 54
+      "rank": 55
     },
     {
       "category": "cricket",
@@ -2808,7 +2869,7 @@
         "title": "Barbados prepares mass tribute and state funeral for cricket legend Sir Garfield Sobers on July 29",
         "date": null
       },
-      "rank": 55
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2852,10 +2913,10 @@
         "title": "India's Test squad for Sri Lanka to be named by Tuesday \u2014 Jadeja set to return, Bumrah still under watch",
         "date": null
       },
-      "rank": 56
+      "rank": 57
     },
     {
-      "rank": 57,
+      "rank": 58,
       "category": "cricket",
       "published_iso": "2026-07-26T19:00:00+01:00",
       "regions": [
@@ -2889,7 +2950,7 @@
       "added_at": "2026-07-27T16:01:58+05:30"
     },
     {
-      "rank": 58,
+      "rank": 59,
       "category": "cricket",
       "published_iso": "2026-07-26T20:00:00+01:00",
       "regions": [
@@ -2932,7 +2993,7 @@
       "added_at": "2026-07-27T16:01:58+05:30"
     },
     {
-      "rank": 59,
+      "rank": 60,
       "category": "cricket",
       "published_iso": "2026-07-26T00:00:00-04:00",
       "regions": [
@@ -2981,38 +3042,95 @@
       }
     },
     {
-      "category": "cricket",
-      "published_iso": "2026-07-26T20:00:00Z",
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-07-28T09:00:00Z",
       "regions": [
-        "Guyana"
+        "Global"
       ],
-      "title": "San Francisco Unicorns edge Perth Scorchers XI by 5 runs in a tight Global Super League thriller",
+      "title": "Red Bull signals it will keep Isack Hadjar for 2027, its clearest hint yet on life after Verstappen",
       "key_points": [
-        "San Francisco Unicorns posted 152/8, then restricted Perth Scorchers XI to 147/9",
-        "The 5-run margin makes it one of the closest games of this GSL season",
-        "Played at Providence Stadium, Guyana, the tournament's single venue",
-        "Part of the fledgling Global Super League, running July 23-August 1"
+        "Team principal **Laurent Mekies** told De Telegraaf Red Bull will make a **'logical decision'** on its 2027 lineup.",
+        "His comments point toward retaining **Isack Hadjar**, who was promoted to the senior team this season.",
+        "Hadjar has scored points in **most races he's finished**, with a best result of **P7** at Monaco.",
+        "The signal comes while **Max Verstappen's** decision on his exit clause still isn't due until **October**."
       ],
-      "background": "The Global Super League is a young T20 franchise competition linking cricket boards and city-based teams across different domestic leagues \u2014 including Australia's Big Bash and new US-based sides \u2014 all played at one venue in Guyana over a short window.",
-      "what_happened": "San Francisco Unicorns scored 152 for 8 in their 20 overs, then bowled out \u2014 restricted \u2014 Perth Scorchers XI to 147 for 9, winning by 5 runs at Providence Stadium in Guyana on Sunday.",
-      "why_it_matters": "Every close win matters for playoff qualification in a short, round-robin-style tournament like this \u2014 a 5-run margin can be the difference between advancing and going home in a competition with only a handful of group games.",
-      "ripple_effects": "It's a confidence boost for the San Francisco Unicorns franchise, part of the broader push to grow T20 cricket's footprint in the US market ahead of further US-based domestic cricket investment.",
-      "why_now": "The match was one of two played on July 26 as the Global Super League's group stage runs through its short, condensed schedule before the early-August finals window.",
-      "watch_next": "How the win affects San Francisco Unicorns' position on the GSL points table as the group stage nears its end.",
+      "thread": {
+        "previously": "Verstappen's contract exit clause became mathematically active after the Hungarian GP left him 78 points behind second place at F1's summer break, with Red Bull offering a new deal through 2029 to keep him and McLaren emerging as his likeliest alternative seat.",
+        "changed": "Red Bull is now separately signalling, through team principal Laurent Mekies, that it intends to keep young driver Isack Hadjar for 2027 regardless of how the Verstappen situation resolves -- its clearest move yet toward planning for a lineup that might not include its four-time champion."
+      },
+      "background": "Isack Hadjar was promoted from Racing Bulls (Red Bull's junior team) to the senior Red Bull team this season, replacing Yuki Tsunoda, and has quietly built a solid rookie campaign. His future is one of the few concrete pieces Red Bull can control while the far bigger question -- whether Max Verstappen stays or leaves via his newly active exit clause -- remains unresolved until Verstappen's October deadline. Red Bull has already offered Verstappen a new contract through 2029 that would remove the exit clause entirely, but hasn't gotten an answer yet.",
+      "what_happened": "In an interview with Dutch outlet De Telegraaf, Red Bull team principal Laurent Mekies said the team hasn't formally discussed Hadjar's future yet, but that 'everyone can see Isack is doing an excellent job, so we will make a logical decision' -- language widely read as confirming Hadjar will keep his seat for 2027. Hadjar has scored points in every race he's finished bar one this season, with a best finish of P7 at Monaco, building a case for retention purely on results. The comments land in the middle of intensifying speculation that Verstappen could leave for McLaren, with reports of preliminary talks between Verstappen's camp and McLaren CEO Zak Brown during the Austrian Grand Prix weekend.",
+      "why_it_matters": "It shows Red Bull isn't just waiting passively on Verstappen's October decision -- it's quietly locking in the parts of its 2027 lineup it can control now, which is itself a signal about how seriously the team is taking the possibility of losing its four-time champion.",
+      "ripple_effects": "Confirming Hadjar creates a knock-on question for Racing Bulls, which would need to find his replacement there, adding another seat to the 17 driver contracts already expiring across the grid after 2026. It also narrows the field of teams positioning themselves as a landing spot if Verstappen does leave, since Red Bull's other senior seat effectively stays put.",
+      "why_now": "Mekies' comments came in a fresh interview this week, as speculation over a Verstappen-to-McLaren move keeps intensifying heading into F1's summer break.",
+      "watch_next": "Whether Red Bull formally confirms Hadjar's 2027 seat, and whether Verstappen responds -- either by signing Red Bull's retention offer or moving toward a rival.",
       "key_terms": [],
-      "the_lesson": "In short-format, small-table tournaments, single-digit-run wins carry outsized weight \u2014 always check the points table and net run rate, not just who won, to understand what a close result actually means.",
+      "the_lesson": "When a star's future is genuinely uncertain, teams don't just wait it out -- they quietly secure the pieces they can control, and that itself is a signal of how likely they think the worst case is.",
       "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "ESPNcricinfo",
-          "url": "https://www.cricinfo.com/series/global-super-league-2026-1533122/perth-scorchers-xi-vs-san-francisco-unicorns-5th-match-1533129/live-cricket-score"
+          "name": "RacingNews365",
+          "url": "https://racingnews365.com/red-bull-issue-major-hint-over-f1-driver-line-up-decision"
+        },
+        {
+          "name": "Motorsport Week",
+          "url": "https://www.motorsportweek.com/2026/07/28/red-bull-close-to-logical-f1-2027-line-up-decision/"
         }
       ],
-      "region": "cricket",
-      "added_at": "2026-07-27T08:04:16+05:30",
-      "rank": 60
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Verstappen's Red Bull exit clause is now officially active \u2014 and Red Bull is racing to stop him leaving",
+        "date": null
+      },
+      "rank": 61
+    },
+    {
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-07-28T12:00:00Z",
+      "regions": [
+        "Global"
+      ],
+      "title": "FIA scraps Qatar and Bahrain from its endurance series, deepening doubt over F1's own season finale",
+      "key_points": [
+        "The FIA's **World Endurance Championship (WEC)** confirmed Tuesday it has **cancelled its Qatar and Bahrain rounds**.",
+        "The move intensifies doubt that F1's own **Qatar** (Nov 29) and **Abu Dhabi** (Dec 6) season-finale races can go ahead.",
+        "Escalating **US-Iran tensions** already forced F1 to cancel its **Bahrain and Saudi Arabia** Grands Prix earlier this year.",
+        "Italy's **Imola** circuit has emerged as the leading backup to host F1's finale if needed.",
+        "F1 wants to **delay a final call** on Qatar and Abu Dhabi for as long as possible."
+      ],
+      "background": "F1's 2026 calendar has already been disrupted once this year: the Bahrain and Saudi Arabian Grands Prix were both cancelled earlier in the season because of the escalating Iran war, with Bahrain's slot later filled by a Malaysia race in October. The same conflict -- centered on tensions around the Strait of Hormuz, a critical shipping route -- creates real logistical problems for hosting a global sport in the Gulf: airspace closures, freight complications, and insurance costs all become issues. The FIA also governs the WEC, a separate global endurance-racing championship, and its decision to pull its own Qatar and Bahrain rounds is being read as a signal about how the same body may eventually treat F1's races in the same region.",
+      "what_happened": "The FIA confirmed on Tuesday that it has cancelled the World Endurance Championship's races in Qatar and Bahrain for the rest of the year, citing the same regional instability that already forced F1 to scrap its own Bahrain and Saudi Arabia rounds earlier in 2026. F1's Qatar Grand Prix (around November 29 at Lusail) and its traditional Abu Dhabi season finale (around December 6 at Yas Marina) both remain on the calendar for now, but the WEC decision has sharpened doubts that either can actually happen. Italy's Imola circuit -- which filled in during the Covid-disrupted 2020 and 2021 seasons -- has emerged as the frontrunner to host a replacement finale, ahead of Portimao (which is undergoing construction work) and a more speculative option in Istanbul. One complication: December temperatures in Imola average just 4\u00b0C, which could make it hard for cars to generate proper tyre temperature and create tricky racing conditions.",
+      "why_it_matters": "Reshuffling two of the last three races on the calendar this late in the season is highly unusual, expensive, and logistically difficult for teams, broadcasters and sponsors alike. It's also a clear sign of how far a regional conflict can reach into things that look completely unrelated to it, like a Grand Prix calendar.",
+      "ripple_effects": "Broadcasters and sponsors with deals tied to the Gulf races face disruption, and any replacement venue (Imola or otherwise) has only months to prepare for a full Grand Prix weekend on short notice. Other global sporting events scheduled in the Gulf region may face similar reconsideration if the conflict continues.",
+      "why_now": "The FIA's Tuesday announcement on its WEC calendar is the immediate trigger, arriving as F1 itself continues to delay a final decision on its own late-season Gulf races.",
+      "watch_next": "F1's own formal decision on whether Qatar and Abu Dhabi go ahead, which organizers are expected to make closer to November.",
+      "key_terms": [
+        {
+          "term": "WEC",
+          "definition": "The World Endurance Championship, a separate global sports-car racing series also governed by the FIA, motorsport's international governing body."
+        }
+      ],
+      "the_lesson": "When a region becomes a geopolitical flashpoint, the disruption doesn't stay contained to the conflict itself -- it spreads sideways into calendars, contracts and logistics for things, like a car race, that have nothing to do with the politics.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "The Race",
+          "url": "https://www.the-race.com/formula-1/new-contender-emerges-as-f1-2026-season-finale-back-up/"
+        },
+        {
+          "name": "PlanetF1",
+          "url": "https://www.planetf1.com/news/f1-qatar-grand-prix-abu-dhabi-races-doubt-wec-calendar-change"
+        }
+      ],
+      "added_at": "2026-07-28T22:04:03+05:30",
+      "rank": 62
     },
     {
       "category": "f1",
@@ -3056,7 +3174,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "category": "f1",
@@ -3105,7 +3223,7 @@
         }
       ],
       "added_at": "2026-07-28T15:59:53+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "region": "f1",
@@ -3162,7 +3280,7 @@
         "title": "F1 stewards rule Sainz 'wholly responsible' for the Piastri crash -- but only fine him half the usual penalty",
         "date": null
       },
-      "rank": 63
+      "rank": 65
     },
     {
       "region": "f1",
@@ -3206,7 +3324,7 @@
         }
       ],
       "added_at": "2026-07-28T14:02:10+05:30",
-      "rank": 64
+      "rank": 66
     },
     {
       "category": "f1",
@@ -3241,7 +3359,7 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 65
+      "rank": 67
     },
     {
       "category": "f1",
@@ -3281,7 +3399,7 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 66
+      "rank": 68
     },
     {
       "category": "f1",
@@ -3339,7 +3457,7 @@
       ],
       "region": "f1",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 67
+      "rank": 69
     },
     {
       "category": "f1",
@@ -3397,7 +3515,7 @@
       ],
       "region": "f1",
       "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 68
+      "rank": 70
     },
     {
       "category": "f1",
@@ -3442,7 +3560,7 @@
         }
       ],
       "added_at": "2026-07-28T07:58:50+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "category": "f1",
@@ -3483,7 +3601,7 @@
         }
       ],
       "added_at": "2026-07-28T07:58:50+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "category": "f1",
@@ -3531,7 +3649,7 @@
         }
       ],
       "added_at": "2026-07-28T06:00:06+05:30",
-      "rank": 71
+      "rank": 73
     },
     {
       "category": "f1",
@@ -3577,7 +3695,7 @@
         }
       ],
       "added_at": "2026-07-28T06:00:06+05:30",
-      "rank": 72
+      "rank": 74
     },
     {
       "region": "f1",
@@ -3624,7 +3742,7 @@
         "title": "Cadillac's rookie F1 season hits a new low: Perez and Bottas start last at Hungary",
         "date": null
       },
-      "rank": 73
+      "rank": 75
     },
     {
       "category": "f1",
@@ -3664,7 +3782,7 @@
       ],
       "region": "f1",
       "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 74
+      "rank": 76
     },
     {
       "category": "f1",
@@ -3700,7 +3818,7 @@
       ],
       "region": "f1",
       "added_at": "2026-07-28T02:04:48+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "category": "f1",
@@ -3744,7 +3862,7 @@
         }
       ],
       "added_at": "2026-07-28T00:02:12+05:30",
-      "rank": 76
+      "rank": 78
     },
     {
       "category": "f1",
@@ -3788,7 +3906,7 @@
         }
       ],
       "added_at": "2026-07-27T21:59:59+05:30",
-      "rank": 77
+      "rank": 79
     },
     {
       "category": "f1",
@@ -3827,93 +3945,6 @@
       ],
       "region": "f1",
       "added_at": "2026-07-27T20:02:21+05:30",
-      "rank": 78
-    },
-    {
-      "category": "f1",
-      "published_iso": "2026-07-27T09:00:00+00:00",
-      "regions": [
-        "Global",
-        "Formula 1"
-      ],
-      "title": "Lewis Hamilton admits he's \"left too many points on the table\" after a rough first season with Ferrari",
-      "key_points": [
-        "Hamilton said his recent races have been costly, admitting he's **\"left too many points on the table\"**",
-        "He said he **\"doesn't have a mindset into next year\"** yet, reflecting a difficult first Ferrari season",
-        "Despite the frustration, he's still **second in the championship**, with \"a long way to go\" left in the season",
-        "The comments come right after the Hungarian Grand Prix, as F1 heads into its summer break",
-        "Hamilton has separately said he still **\"loves racing\"** despite the struggles"
-      ],
-      "background": "Lewis Hamilton, a seven-time world champion, made a high-profile switch from Mercedes to Ferrari for this season \u2014 one of the biggest driver moves in modern F1 history, given Ferrari's status as the sport's most storied team and Hamilton's decade-plus rivalry with it. The move was billed as a shot at an eighth title with a fresh team, but his first season in red has been bumpier than expected, including recent penalties and inconsistent race pace, fuelling speculation about his mindset and long-term fit at Ferrari.",
-      "what_happened": "Speaking after the Hungarian Grand Prix, Hamilton candidly assessed his recent form, saying the last few races have been costly and that he's left too many points on the table. He added that he doesn't yet have a clear mindset heading into next year, reflecting the toll of a difficult debut season with Ferrari. He noted he's still second in the drivers' championship with plenty of the season left, and separately pushed back on suggestions he's lost his love for racing despite the frustrations.",
-      "why_it_matters": "Hamilton's tone matters beyond one race weekend \u2014 it's a signal of how the sport's biggest name is processing a high-stakes team switch that hasn't gone entirely to plan. How he resets over the summer break could shape both his championship push and the broader Hamilton-Ferrari narrative for the rest of his contract.",
-      "ripple_effects": "Continued underperformance could intensify scrutiny of Ferrari's car development and strategy calls, and keep alive speculation about Hamilton's long-term future at the team. It also affects the wider title picture, since points he's \"left on the table\" are points a rival could capitalize on.",
-      "why_now": "His comments come right as the sport enters its summer break \u2014 a natural moment for drivers and teams to reflect on the first half of the season before the second half begins.",
-      "watch_next": "Watch how Hamilton and Ferrari perform when F1 resumes at the Dutch Grand Prix in late August, and whether Ferrari makes any car or personnel changes over the break.",
-      "key_terms": [],
-      "the_lesson": "Even elite performers can take real time to adapt after a major change of environment \u2014 a champion's struggles with a new team aren't necessarily about declining skill, but about the friction of adapting to a new car, crew, and culture.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Formula1.com",
-          "url": "https://www.formula1.com/en/latest/article/hamilton-doesnt-have-a-mindset-into-next-year-after-difficult-first-season.5KFKbHnWCSksJdJRe6sYMg"
-        }
-      ],
-      "region": "f1",
-      "added_at": "2026-07-27T20:02:21+05:30",
-      "rank": 79
-    },
-    {
-      "category": "f1",
-      "published_iso": "2026-07-26T00:00:00+00:00",
-      "regions": [
-        "Global"
-      ],
-      "title": "Verstappen's Red Bull exit clause is now officially active \u2014 and Red Bull is racing to stop him leaving",
-      "key_points": [
-        "Verstappen's Red Bull contract (through **2028**) has an exit clause tied to being **top-2** in the standings at the summer break.",
-        "That break arrived after **Sunday's Hungarian GP**, and Verstappen is **78 points behind** 2nd-placed George Russell \u2014 mathematically unable to catch him.",
-        "The clause is now **mathematically active**; Verstappen has until **October** to decide whether to use it.",
-        "Red Bull has offered a **new contract through 2029** that would **remove the exit clause** entirely.",
-        "**Mercedes** has ruled out signing him for 2027, leaving **McLaren** as his only realistic alternative seat."
-      ],
-      "background": "Max Verstappen signed his current Red Bull deal, running through 2028, at the height of his dominance, but it included a protective clause for him: if he ever fell outside the top two positions in the championship by the summer break, he'd be free to leave at the end of that season. Red Bull's car under the 2026 rules has not been as competitive as in Verstappen's title-winning years, and after a season of underperformance relative to McLaren, that clause has now become relevant rather than theoretical. This is the same 'ownership stake' saga already swirling around Verstappen's future \u2014 Red Bull has previously tried creative ways, including offering him an equity stake in the team, to keep him from bolting to a rival.",
-      "what_happened": "Sunday's **Hungarian Grand Prix**, won by Lando Norris, marked the start of F1's summer break \u2014 and with it, the trigger point for Verstappen's exit clause. Verstappen sits third in the championship, **78 points behind** second-placed George Russell, with too few points left on the table for him to have caught Russell before the break \u2014 meaning it's now mathematically certain he finished the first half of the season outside the top two. That makes his contractual escape clause active: he doesn't have to tell Red Bull his decision until **October**, but he can now walk away at the end of the season if he chooses. Red Bull, keen to avoid losing its four-time champion, has put a new contract on the table that would extend his deal to **2029** and strip out the exit-clause language altogether. Complicating his options, Mercedes team boss Toto Wolff said this past weekend he's sticking with George Russell and Kimi Antonelli for 2027, closing off what many saw as Verstappen's most likely alternative seat. That leaves **McLaren** as close to Verstappen's only realistic landing spot if he does decide to leave Red Bull.",
-      "why_it_matters": "A four-time world champion becoming a free agent reshapes the driver market for every team, not just Red Bull \u2014 seats, salaries and other drivers' contracts all shift around a move this big. It's also a signal about Red Bull's competitiveness: exit clauses like this exist precisely so a star driver isn't trapped on a team that's fallen behind.",
-      "ripple_effects": "If Verstappen triggers the clause, expect a scramble among the handful of teams that could plausibly seat him \u2014 realistically just McLaren, given Mercedes' seats are now spoken for. It would also set off a chain reaction of driver moves as whoever loses a seat to accommodate him looks elsewhere. Red Bull's ability to keep Verstappen, or replace him credibly, will shape how seriously rivals and sponsors treat the team heading into 2027.",
-      "why_now": "The clause's trigger condition \u2014 being outside the top two at the summer break \u2014 became a mathematical certainty only after Sunday's Hungarian Grand Prix, the last race before the break.",
-      "watch_next": "Watch for any word from Verstappen or his manager on whether he'll sign Red Bull's new 2029 offer, and whether McLaren makes any concrete approach before his October deadline.",
-      "key_terms": [
-        {
-          "term": "exit clause",
-          "definition": "A condition written into a contract that lets one side leave early if a specific trigger happens \u2014 here, Verstappen falling outside the top two in the standings."
-        }
-      ],
-      "the_lesson": "Contracts with performance-linked escape clauses cut both ways: they protect a star from being stuck on a declining team, but they also force that team to renegotiate from a position of weakness the moment performance dips.",
-      "market_link": null,
-      "importance": "high",
-      "sources": [
-        {
-          "name": "GPFans",
-          "url": "https://www.gpfans.com/en/f1-news/1087343/max-verstappen-red-bull-f1-exit-clause-british-grand-prix-2026/"
-        },
-        {
-          "name": "RacingNews365",
-          "url": "https://racingnews365.com/max-verstappen-can-now-trigger-exit-clause-to-potentially-leave-red-bull"
-        }
-      ],
-      "region": "f1",
-      "thread": {
-        "previously": "We reported Red Bull was offering Verstappen an ownership stake in the team as a way to keep him from leaving for a rival.",
-        "changed": "Verstappen's contractual exit clause is now mathematically active after the Hungarian GP confirmed he's outside the top two at the summer break \u2014 meaning he can actually leave. Red Bull has countered with a new contract offer through 2029 that removes the clause, while Mercedes has closed the door on a 2027 seat, leaving McLaren as his main alternative."
-      },
-      "added_at": "2026-07-27T14:02:18+05:30",
-      "development": true,
-      "prev_ref": {
-        "title": "Red Bull dangles an ownership stake to stop Verstappen walking to a rival",
-        "date": null
-      },
       "rank": 80
     }
   ],
