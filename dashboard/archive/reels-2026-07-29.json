@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "generated_at": "2026-07-29T17:59:23+05:30",
+  "generated_at": "2026-07-29T19:59:20+05:30",
   "day_label": "Wednesday · 29 July 2026",
   "dashboard_url": "../",
   "cards": [
@@ -10,6 +10,134 @@
       "rank": 1,
       "category": "technology",
       "is_new": true,
+      "published_iso": "2026-07-28T16:00:00-07:00",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "Anthropic",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Anthropic says its Claude Mythos Preview AI model found new cracks in two encryption systems on its own",
+      "what_happened": "Anthropic published research on **July 28** describing how its unreleased **Claude Mythos Preview** model was used to find two new cryptographic weaknesses. First, working closely with a human researcher over about a week, Claude spotted a previously unexploited mathematical pattern in HAWK's underlying lattice structure, improving the best attack on its smallest parameter set (HAWK-256) so dramatically that the effective 'key strength' fell from roughly **2⁶⁴ operations to 2³⁸** — a difference of trillions of times less computing effort. Second, a separate researcher built a semi-automated system, or 'scaffold', that let Claude work largely **without human guidance** to improve the best-known attack on **7-round AES** by **200 to 800 times**. Anthropic stressed that neither discovery breaks anything currently in use: HAWK is only a research candidate, not a deployed standard, and the AES attack targets a deliberately weakened version with fewer rounds than the real algorithm.",
+      "key_points": [
+        "An unreleased Anthropic model, **Claude Mythos Preview**, found improved attacks on two cryptographic algorithms.",
+        "It cut the estimated cost of breaking a candidate **post-quantum** signature scheme called **HAWK** from about **2⁶⁴ operations to 2³⁸** — a huge reduction in the effort needed.",
+        "It also improved the best-known attack on a **reduced, 7-round version** of **AES** (the world's most-used encryption standard) by **200–800x**.",
+        "Anthropic says neither result threatens real-world systems today: **HAWK isn't deployed anywhere**, and the AES attack only works on a weakened lab version, not full AES.",
+        "One of the two attacks was found by Claude working **fully autonomously**, with a researcher only providing the tools, not the ideas."
+      ],
+      "moot": "A security system's real strength is what happens when a much smarter, tireless attacker examines it — human review time is limited, but AI-assisted analysis scales, so defenses that only survived because no one looked hard enough are the ones most at risk.",
+      "image_credit": "Anthropic",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Anthropic",
+          "CyberScoop"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "**Cryptography** is the math that keeps digital communication private — bank transfers, messaging apps, and government systems all rely on algorithms that are, in practice, too hard to 'crack' with existing computers. **AES** (Advanced Encryption Standard) is the default encryption used worldwide; **HAWK** is one of several new signature schemes being tested to replace current systems once powerful **quantum computers** arrive, since quantum computers are expected to break today's standards. Anthropic runs an internal 'Frontier Red Team' that stress-tests its own models for dangerous capabilities, including whether AI can find security flaws faster than human experts, who have studied these exact algorithms for years without finding what Claude found.",
+        "why_it_matters": "This is a concrete, published example of an AI model doing genuine, novel cryptography research — not just summarizing known attacks, but finding mathematical weaknesses that **years of expert human review had missed**. That matters because cryptographic security has always rested on the assumption that breaking these systems requires scarce, elite human expertise.",
+        "ripple_effects": "Standards bodies choosing the next generation of post-quantum cryptography (including HAWK's backers) will need to factor in that AI can now probe these designs faster and more thoroughly. It also sharpens a dual-use debate: the same capability that hardens defenses (finding flaws before attackers do) could, in less careful hands, be pointed at systems that matter.",
+        "why_now": "Anthropic published the research on July 28 as part of its ongoing capability-evaluation work ahead of any wider release of the Mythos model family.",
+        "watch_next": "Whether other AI labs report similar autonomous cryptanalysis results, and whether NIST or other standards bodies adjust their post-quantum candidate evaluations in response.",
+        "market_link": "Cybersecurity and cryptography vendors (identity, PKI, post-quantum migration providers) are a sector to watch as this kind of AI-assisted cryptanalysis becomes a live procurement consideration.",
+        "key_terms": [
+          {
+            "term": "Post-quantum cryptography",
+            "definition": "New encryption and signature methods designed to stay secure even against future quantum computers, which are expected to break most of today's encryption."
+          },
+          {
+            "term": "Cryptanalysis",
+            "definition": "The practice of studying a cryptographic system to find weaknesses that let you break or weaken it faster than a full brute-force attempt."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
+          },
+          {
+            "name": "CyberScoop",
+            "url": "https://cyberscoop.com/anthropic-claude-mythos-encryption-flaws-hawk-aes-pqc/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "climate",
+      "is_new": true,
+      "published_iso": "2026-07-28T10:00:00+02:00",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "France 24",
+      "importance": "notable",
+      "regions": [
+        "France",
+        "Europe"
+      ],
+      "title": "France evacuates 4,000 more people as heat returns to threaten the Bordeaux wildfire",
+      "what_happened": "On **Tuesday, July 28**, French authorities ordered a further **~4,000 people** evacuated from tourist sites and campsites on the Atlantic coast as forecast heat returned to the region. The fire has burned **42,000 hectares** since it began on July 22 — an area about **four times the size of Paris** — and had already forced roughly **220,000 people** to evacuate at its peak, sometimes turning into a self-feeding firestorm. Authorities said the blaze remained 'under control' after a calm night, but were worried the coming heatwave would fan the flames again. Sister fires across the border in **Spain** have pushed the regional evacuation total to around **330,000 people** since the fires began.",
+      "key_points": [
+        "French authorities ordered **~4,000 people** evacuated from tourist sites on the Atlantic coast near Lacanau.",
+        "The wildfire west of **Bordeaux** has already burned **42,000 hectares** — roughly four times the size of Paris.",
+        "It has forced about **220,000 people** to evacuate homes and holiday lets since it started on **July 22**.",
+        "Combined with fires across the border in Spain, **~330,000 people** have now been displaced in the region.",
+        "Firefighters had a 'calm night' but a forecast **heatwave** threatens to re-ignite the blaze's fragile containment."
+      ],
+      "moot": "A wildfire being 'under control' is a status, not a guarantee — heat and wind can undo days of firefighting progress in hours, which is why authorities evacuate pre-emptively rather than waiting for flames to return.",
+      "image_credit": "France 24",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "France 24",
+          "NBC News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "el_nino"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "A massive wildfire broke out in the **Gironde** department of southwestern France on **July 22, 2026**, in a pine-forest region that has burned before (a similar fire scorched the same area in 2022). Gironde is a major wine-growing and tourist region, packed with campsites and holiday villages around lakes like Lacanau in peak summer season. Firefighters had largely stabilized the blaze after a week of work, but France has been hit by successive **heatwaves** this summer, and hot, dry, windy conditions are exactly what turns a contained fire back into a fast-moving one.",
+        "why_it_matters": "This is one of the largest wildfire evacuations in France this decade, hitting a region that depends heavily on summer tourism and wine exports. Even a fire authorities call 'under control' can flare back up within hours once heat and wind return — which is exactly the risk playing out this week.",
+        "ripple_effects": "Local tourism revenue takes a direct hit as campsites and holiday lets empty out mid-season. Vineyards near the burn zone face smoke-taint risk to this year's grape harvest. Repeated summer wildfires also strain French and EU firefighting resources that are simultaneously being called on for fires in Spain, Portugal and Greece.",
+        "why_now": "A new heatwave is forecast to return to southwestern France this week, right as firefighters were gaining the upper hand — the same weather pattern that let the fire explode into a firestorm a week earlier.",
+        "watch_next": "Whether the forecast heatwave arrives as expected over the next few days and whether containment lines hold once temperatures spike again.",
+        "market_link": "European reinsurers and travel-insurance stocks can see claims pressure build during repeated multi-week wildfire summers; French wine producers in Gironde face harvest-risk headlines.",
+        "key_terms": [
+          {
+            "term": "Firestorm",
+            "definition": "A wildfire so intense it generates its own wind system, making it spread unpredictably and much faster than a normal fire."
+          }
+        ],
+        "sources": [
+          {
+            "name": "France 24",
+            "url": "https://www.france24.com/en/europe/20260728-live-massive-wildfires-near-bordeaux-still-under-control-after-calm-night-local-authorities-say"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com/world/europe/france-evacuates-4000-people-heat-threatens-wildfire-fight-southwester-rcna589584"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "technology",
       "published_iso": "2026-07-28T20:00:00Z",
       "added_at": "2026-07-29T17:59:22+05:30",
       "source": "The Washington Post",
@@ -70,10 +198,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "US and Iran keep an uneasy pause holding, but Tehran denies agreeing to any formal ceasefire",
@@ -146,8 +273,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "published_iso": "2026-07-28T20:00:00Z",
       "added_at": "2026-07-29T15:59:09+05:30",
@@ -205,8 +332,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -280,8 +407,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "geopolitics",
       "published_iso": "2026-07-29T05:00:00+00:00",
       "added_at": "2026-07-29T13:59:06+05:30",
@@ -336,8 +463,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "science",
       "published_iso": "2026-07-28T20:00:00+00:00",
       "added_at": "2026-07-29T13:59:06+05:30",
@@ -397,8 +524,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "technology",
       "published_iso": "2026-07-28T16:00:00+00:00",
       "added_at": "2026-07-29T12:06:11+05:30",
@@ -462,8 +589,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -543,8 +670,8 @@
     },
     {
       "type": "story",
-      "id": "story-9",
-      "rank": 9,
+      "id": "story-11",
+      "rank": 11,
       "category": "health",
       "published_iso": "2026-07-28T14:00:00Z",
       "added_at": "2026-07-29T08:00:27+05:30",
@@ -614,8 +741,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "technology",
       "published_iso": "2026-07-28T12:00:00Z",
       "added_at": "2026-07-29T08:00:27+05:30",
@@ -688,8 +815,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "economy",
       "published_iso": "2026-07-29T18:00:00+00:00",
       "added_at": "2026-07-29T06:02:39+05:30",
@@ -757,8 +884,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -838,8 +965,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "economy",
       "published_iso": "2026-07-28T14:00:00Z",
       "added_at": "2026-07-29T00:00:34+05:30",
@@ -908,8 +1035,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "published_iso": "2026-07-28T20:00:00Z",
       "added_at": "2026-07-29T00:00:34+05:30",
@@ -977,80 +1104,134 @@
     },
     {
       "type": "story",
-      "id": "story-18",
-      "rank": 18,
-      "category": "climate",
-      "published_iso": "2026-07-28T07:27:00Z",
-      "added_at": "2026-07-28T22:04:03+05:30",
-      "source": "NPR",
-      "importance": "critical",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-07-29T09:00:00+05:30",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "Business Standard",
+      "importance": "notable",
       "regions": [
-        "Japan",
-        "Asia"
+        "India",
+        "China"
       ],
-      "title": "Magnitude-7.1 earthquake hits southern Japan, mall collapse leaves at least 9 dead and 250 injured",
-      "what_happened": "A shallow **magnitude-7.1 earthquake** (Japan's Meteorological Agency measurement; the US Geological Survey initially logged 7.1 before revising toward 6.8) struck Kyushu at **4:27pm local time** on Tuesday, hitting the maximum **Shindo 7** intensity level in the hardest-hit areas. In Kashima Town, the second floor of an **Aeon Mall shopping center** collapsed, trapping an unknown number of shoppers and staff; fire officials said around **20 to 30 employees** were initially unaccounted for, with several people already pulled from the rubble and taken to hospital. Elsewhere in the Kumamoto region, the quake sparked several fires, damaged bridges, derailed a cargo train, and left a number of houses at risk of toppling over. A tsunami advisory covering the nearby Ariake and Yatsushiro Seas was issued and then lifted about two hours later after only minor sea-level changes were recorded. Japanese authorities have not yet given a final damage assessment, and rescue operations at the collapsed mall were still underway as of this report.",
+      "title": "India's Foreign Secretary wraps up a two-day Beijing visit aimed at steadying ties with China",
+      "what_happened": "Misri began his engagements on **July 28** with a meeting with **Sun Haiyan**, Vice Minister of the International Department of China's Communist Party, where the two discussed implementing guidance from both countries' leaderships to improve relations — including more political engagement, people-to-people contacts, and academic/think-tank exchanges. He then met **Hua Chunying**, China's Vice Foreign Minister, reviewing the full range of bilateral issues and exploring ways to advance the idea that India and China should see each other as **partners rather than rivals**, with a focus on mutually beneficial trade and economic cooperation. The visit concluded on **July 29**.",
       "key_points": [
-        "A **magnitude-7.1 earthquake** struck Kyushu, Japan's southern main island, at **4:27pm local time** on Tuesday.",
-        "The quake registered the highest level, **Shindo 7**, on Japan's shaking-intensity scale.",
-        "The second floor of an **Aeon Mall shopping center** in Kashima Town, Kumamoto, collapsed, trapping dozens of people.",
-        "At least **9 people have died** and **more than 250 are injured** so far, with rescue crews still searching the mall.",
-        "A tsunami advisory was issued for nearby coasts and **lifted within two hours**, with no major tsunami detected."
+        "Foreign Secretary **Vikram Misri** concluded a **two-day visit to Beijing** on July 29 after a series of high-level meetings.",
+        "He met **Sun Haiyan**, Vice Minister of the Chinese Communist Party's International Department, on July 28.",
+        "He also met **Hua Chunying**, China's Vice Foreign Minister, to review the 'entire spectrum' of bilateral relations.",
+        "Both sides discussed framing each other as **'partners and development opportunities rather than competitors.'**",
+        "The visit builds on a **gradual normalization** of ties following the prolonged **India-China border standoff**."
       ],
-      "moot": "A high magnitude doesn't automatically mean the worst possible damage -- how shallow the quake is, how intensely a specific spot shakes (Shindo, not just magnitude), and what kind of buildings sit on top of it determine whether a quake is merely alarming or genuinely deadly.",
-      "image_credit": "NPR",
+      "moot": "Countries can be strategic rivals and essential trade partners at the same time — diplomacy's job in that situation isn't to end the rivalry, it's to stop it from spilling into conflict.",
+      "image_credit": "Business Standard",
       "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
         "outlets": [
-          "France 24",
-          "Japan Times",
-          "NPR"
+          "Business Standard",
+          "Organiser"
         ],
         "corroboration": 0
       },
-      "concepts": [],
+      "concepts": [
+        "current_account_deficit"
+      ],
       "figures": [],
       "depth": {
-        "background": "Japan sits directly on the Pacific 'Ring of Fire,' a horseshoe-shaped belt of fault lines that makes it one of the most earthquake-prone countries on Earth, with strict building codes built around that reality. Kyushu, the island hit today, has a painful precedent: a pair of earthquakes in **2016** centered on Kumamoto killed **273 people** and reshaped how Japan thinks about aftershock risk in this exact region. Kumamoto is also a major hub for **advanced semiconductor manufacturing** -- Sony and TSMC both operate large chip plants there -- which is why an earthquake in this specific area draws global industrial attention, not just humanitarian concern.",
-        "why_it_matters": "This is one of the deadliest earthquakes to hit Japan in years, and the mall collapse in particular raises hard questions about how a modern, quake-resistant building failed the way it did. It's also a live test of Japan's disaster-response system, which the world watches closely given how much global manufacturing (especially chips) runs through this exact region.",
-        "ripple_effects": "Rescue and recovery work at the mall will dominate Japanese news for days, and the death toll is likely to rise as crews clear the rubble. Kumamoto's chip plants (including TSMC's) may face inspection-related slowdowns even if undamaged, which matters for global electronics supply chains already jittery over chip-sector volatility. Japanese insurers face a fresh claims event, and aftershocks in the coming days/weeks are a real risk in this fault zone.",
-        "why_now": "The quake struck this afternoon, Tuesday, July 28, triggering the tsunami advisory and mall-collapse rescue operation that are still unfolding as this is written.",
-        "watch_next": "Whether the death toll rises as searchers finish clearing the collapsed mall floor, and whether Japan's Meteorological Agency issues further aftershock warnings for Kyushu.",
-        "market_link": "Kumamoto is a hub for Sony and TSMC chip plants, so any confirmed damage or inspection-driven slowdown there could add to the same AI-chip-supply jitters already rattling Samsung and SK Hynix this week.",
+        "background": "India and China, the world's two most populous nations, fought a deadly border clash in the Galwan Valley in 2020 that froze high-level diplomatic and economic ties for years. Relations have been thawing gradually since then, with both sides restoring some direct flights, easing visa rules, and resuming senior-level talks — while the underlying border dispute in the Himalayas remains unresolved. **Vikram Misri**, India's top career diplomat as Foreign Secretary, has been a key figure managing this delicate reset.",
+        "why_it_matters": "High-level diplomatic visits like this are how India and China manage a relationship that is simultaneously competitive (border disputes, trade imbalances, regional rivalry) and interdependent (trade, supply chains, climate cooperation). A steady, 'mature' diplomatic channel reduces the risk of miscalculation between two nuclear-armed neighbors.",
+        "ripple_effects": "Warmer India-China engagement can translate into eased trade and investment restrictions (India has tightened Chinese FDI and app rules since 2020), more direct flights, and easier movement of Chinese technicians for Indian manufacturing projects that depend on Chinese equipment. It's also being watched closely in Washington, given India's simultaneous balancing act with the US.",
+        "why_now": "This is part of a broader normalization track both governments have pursued since border-disengagement talks progressed, and comes as India also manages trade tensions with the US, giving it incentive to stabilize its other major relationship.",
+        "watch_next": "Whether this visit produces any concrete follow-up — resumed direct flights, eased visa or investment rules, or a leader-level summit — in the coming months.",
+        "market_link": "Any easing of India's restrictions on Chinese investment or imports would matter for Indian electronics, solar and auto-component manufacturers that rely on Chinese components.",
         "key_terms": [
           {
-            "term": "Shindo scale",
-            "definition": "Japan's own scale for how strongly an earthquake was actually felt/shook a specific location, separate from magnitude (which measures the quake's total energy at its source)."
-          },
-          {
-            "term": "Tsunami advisory",
-            "definition": "A step below a full tsunami warning -- it means officials expect only minor sea-level changes, not the large destructive waves a 'warning' implies."
+            "term": "Border disengagement",
+            "definition": "The process of both militaries pulling back troops and equipment from disputed front-line positions to reduce the risk of accidental clashes."
           }
         ],
         "sources": [
           {
-            "name": "NPR",
-            "url": "https://www.npr.org/2026/07/28/nx-s1-5910498/japan-earthquake"
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/india-news/foreign-secy-meets-vice-minister-of-chinese-communist-party-in-beijing-126072701281_1.html"
           },
           {
-            "name": "France 24",
-            "url": "https://www.france24.com/en/asia-pacific/20260728-multiple-deaths-in-japan-mall-collapse-after-7-1-magnitude-earthquake"
-          },
-          {
-            "name": "Japan Times",
-            "url": "https://www.japantimes.co.jp/news/2026/07/28/japan/strong-earthquake-kyushu/"
+            "name": "Organiser",
+            "url": "https://organiser.org/2026/07/29/372344/bharat/foreign-secretary-vikram-misri-reviews-india-china-bilateral-ties-during-high-level-beijing-visit/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-07-29T06:00:00+05:30",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "Bloomberg",
+      "importance": "high",
+      "regions": [
+        "India"
+      ],
+      "title": "India's economy sends mixed signals as a weak monsoon and trade shocks offset falling oil prices",
+      "what_happened": "A Bloomberg review of India's economy published **July 29** found the picture is genuinely mixed: government capital spending has slowed and fewer new infrastructure projects are being announced, both of which usually signal softer near-term growth. At the same time, **June rainfall came in around 40% below normal**, and some forecasters now warn the eventual monsoon shortfall could be worse than the **10% deficit** currently built into official projections — a serious risk given how much of Indian agriculture depends on the rains. Set against that, falling **global oil prices** are helping India, a major crude importer, by lowering its import bill and easing some inflation pressure. The RBI has publicly maintained that the domestic economy remains resilient despite the Iran-war and tariff-related uncertainty.",
+      "key_points": [
+        "**Slow government spending** and fewer new project announcements are weighing on India's growth outlook.",
+        "**June rainfall ran ~40% below normal**, with forecasters warning the monsoon shortfall could beat the **10% deficit** currently projected.",
+        "A weak monsoon threatens to **curb crop output, push up food prices, and squeeze rural incomes** — a large share of India's population depends on farm income.",
+        "The **RBI** (India's central bank) says the economy has stayed **resilient** through the Iran war and tariff shocks so far.",
+        "Falling global **oil prices** are a rare tailwind, cutting India's import bill since it buys most of its crude abroad."
+      ],
+      "moot": "Emerging-market growth often depends on forces the government doesn't control — like rainfall — as much as on policy; that's why economists watch things as basic as monsoon data alongside spending and trade numbers.",
+      "image_credit": "Bloomberg",
+      "credibility": {
+        "level": "confirmed",
+        "count": 1,
+        "tier": 1,
+        "outlets": [
+          "Bloomberg"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "gdp",
+        "cpi_wpi",
+        "crude_asset",
+        "monetary_policy_committee"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "India's growth engine runs on a delicate balance: strong domestic demand and services growth on one side, and the **monsoon** (June–September rains that irrigate most Indian farmland) and global trade conditions on the other. This year, India is also absorbing the shock of new US tariffs and elevated oil-price volatility tied to the **Iran war**, both of which the **Reserve Bank of India (RBI)** has flagged as key risks to watch. A poor monsoon hits India differently than most economies because so much of rural income and food-price inflation depends directly on rainfall.",
+        "why_it_matters": "These signals point in different directions at once — weaker public investment and a bad monsoon would drag on growth and push up food prices, while cheaper oil cushions the blow. Whether India's growth holds up in the second half of 2026 depends on which of these forces wins out.",
+        "ripple_effects": "A weak monsoon and rising food prices squeeze rural consumers first, which matters for consumer-goods companies that sell heavily into rural India. Slower government project spending can delay the construction and infrastructure order books that many Indian industrial firms depend on. Cheaper oil, meanwhile, helps India's current account and could give the RBI more room on inflation.",
+        "why_now": "The mixed picture is crystallizing now because June-quarter rainfall data and government spending figures are both fresh, right in the middle of the monsoon season when the crop-output risk is still live.",
+        "watch_next": "July–August rainfall data, which will show whether the monsoon shortfall narrows or worsens, and the next round of government capex/project-announcement numbers.",
+        "market_link": "A weak monsoon is a watch-item for FMCG and tractor/rural-demand stocks, while falling crude helps India's oil marketing companies and the current account; RBI commentary here feeds directly into rate-cut expectations.",
+        "key_terms": [
+          {
+            "term": "Capital expenditure (capex)",
+            "definition": "Government or company spending on long-term physical assets like roads, railways and factories, rather than day-to-day running costs."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/newsletters/2026-07-29/india-s-economy-sends-mixed-signals-as-businesses-juggle-war-and-trade-shocks"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-07-29T06:00:00Z",
       "added_at": "2026-07-29T17:59:22+05:30",
       "source": "India TV News",
@@ -1110,10 +1291,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Parliament debates a tougher anti-paper-leak law — up to 10 years jail and ₹10 crore fines — after the NEET protests",
@@ -1190,8 +1370,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-07-29T10:00:00+01:00",
       "added_at": "2026-07-29T15:59:09+05:30",
@@ -1251,8 +1431,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1346,8 +1526,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1408,8 +1588,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-07-29T04:00:00+00:00",
       "added_at": "2026-07-29T13:59:06+05:30",
@@ -1469,8 +1649,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-07-29T03:45:00+00:00",
       "added_at": "2026-07-29T12:06:11+05:30",
@@ -1524,74 +1704,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-07-28T05:00:00+00:00",
-      "added_at": "2026-07-29T12:06:11+05:30",
-      "source": "LiveLaw",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Supreme Court calls the ₹8 lakh income cap for EWS quota 'prima facie reasonable'",
-      "what_happened": "A bench of **Justice PS Narasimha and Justice Alok Aradhe** on July 28 orally remarked that the ₹8 lakh income limit for EWS reservation is prima facie reasonable, while hearing petitions originally filed in 2021 challenging the National Testing Agency's use of a 27% OBC and 10% EWS quota in NEET's All India Quota for medical college admissions. The case traces back to the Supreme Court's January 2022 ruling, which upheld the EWS and OBC quotas for that year's admissions but said the validity of the ₹8 lakh criterion itself would be decided later. The government has told the court it intends to retain the ₹8 lakh norm. The bench also moved to consolidate several similar pending petitions so they can be heard together rather than piecemeal.",
-      "key_points": [
-        "A bench said the **₹8 lakh annual family income** cutoff for EWS reservation looks reasonable, for now",
-        "The remark came while hearing **petitions filed in 2021** challenging NEET's EWS and OBC quota rules",
-        "It is only an **oral, provisional observation** — the final written verdict is still pending",
-        "The court is working to **consolidate overlapping petitions** that challenge the same income limit",
-        "The EWS quota reserves **10% of seats** for economically weaker sections outside caste-based categories"
-      ],
-      "moot": "A Supreme Court 'oral observation' is not the same as a ruling — it signals which way a bench is leaning, but nothing is legally final until the written judgment is delivered.",
-      "image_credit": "LiveLaw",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "LiveLaw"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "supreme_court_india"
-      ],
-      "figures": [
-        {
-          "raw": "₹8 lakh",
-          "words": "₹800,000"
-        }
-      ],
-      "depth": {
-        "background": "India's **EWS (Economically Weaker Sections) quota** was introduced in 2019 as a 10% reservation for financially disadvantaged applicants who don't qualify for existing SC/ST/OBC reservations. The Supreme Court upheld the quota itself in January 2022, but explicitly left the ₹8 lakh income-eligibility threshold — recommended by a government-appointed committee — open to later challenge. Petitioners have long argued the figure is **arbitrary**, partly because it mirrors the separate 'creamy layer' income limit used to exclude better-off OBC applicants, even though EWS and OBC families face very different circumstances.",
-        "why_it_matters": "This threshold decides who actually qualifies for EWS reservation in medical college seats and government jobs nationwide — a shift either way would immediately change eligibility for large numbers of applicants.",
-        "ripple_effects": "A final ruling upholding ₹8 lakh would likely end years of litigation and give both the government and applicants certainty; a ruling against it could force a re-think of the criteria used across EWS reservations in education and employment, not just NEET.",
-        "why_now": "The case resumed as part of the court's ongoing docket, with petitioners pressing for a resolution years after the 2022 interim order left the income-limit question unresolved.",
-        "watch_next": "The final written judgment, and the date set for the consolidated hearing of similar petitions.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "EWS quota",
-            "definition": "A 10% reservation in education and government jobs for economically weaker applicants who don't already qualify for SC/ST/OBC reservations."
-          },
-          {
-            "term": "Creamy layer",
-            "definition": "An income/status threshold above which OBC members are excluded from reservation benefits, meant to target aid at the neediest within that category."
-          }
-        ],
-        "sources": [
-          {
-            "name": "LiveLaw",
-            "url": "https://www.livelaw.in/top-stories/rs-8-lakh-annual-income-limit-for-ews-quota-reasonable-supreme-court-543340"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-07-29T09:28:00+05:30",
       "added_at": "2026-07-29T09:58:47+05:30",
@@ -1667,8 +1781,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1737,8 +1851,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-07-28T20:00:00+05:30",
       "added_at": "2026-07-29T08:00:27+05:30",
@@ -1806,8 +1920,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1880,8 +1994,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1955,8 +2069,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-36",
+      "rank": 36,
       "category": "india",
       "published_iso": "2026-07-28T18:00:00+01:00",
       "added_at": "2026-07-29T05:10:52+05:30",
@@ -2011,8 +2125,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -2075,6 +2189,112 @@
       "rank": 61,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-07-29T07:00:00+01:00",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "GPFans",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Audi's Bortoleto says his 2027 future is 'already sorted' as Sainz's Williams seat stays in doubt",
+      "what_happened": "Bortoleto confirmed publicly that his position at Audi is locked in beyond 2027, closing off one seat some had speculated Sainz might target. That leaves Sainz weighing his limited options: staying at a struggling Williams, or a long-shot Audi move complicated by Hulkenberg's existing contract through 2027. Separately, reports note Fernando Alonso is likely to stay at Aston Martin through 2027 if the team's competitive form improves, while Franco Colapinto's seat is described as at risk in some team-reshuffle scenarios, with a return to Williams floated as one landing spot.",
+      "key_points": [
+        "Audi driver **Gabriel Bortoleto** says he's signed with the team **'for many years'** and his 2027 seat is settled.",
+        "That narrows the field just as **Carlos Sainz** weighs his own future amid **Williams' poor form** since the 2026 rules reset.",
+        "Sainz is still linked to **Audi**, but teammate-designate **Nico Hulkenberg** is contracted there through **2027**.",
+        "**Fernando Alonso** is likely to stay at Aston Martin through 2027 if the team's form holds up.",
+        "**Franco Colapinto** could lose his current seat in some scenarios, with a Williams return floated as a fallback."
+      ],
+      "moot": "In any competitive market with a fixed number of seats, one player locking in their position changes the calculus for everyone else — a market clears through chains of dependent decisions, not isolated ones.",
+      "image_credit": "GPFans",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "GPFans"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "F1's 2027 driver market is unusually fluid because several teams — Audi (the rebranded Sauber works team), Williams, and Aston Martin — are all still settling their long-term line-ups following the sport's 2026 rules reset, which reshuffled the competitive order. Carlos Sainz joined Williams for 2025 expecting the team to be competitive under new rules, but Williams has struggled, fueling speculation he could look elsewhere for 2027.",
+        "why_it_matters": "Every confirmed seat removes options for other drivers, so Bortoleto's statement is a real data point in the wider 2027 silly season — it effectively narrows Sainz's paths and adds pressure on Williams to either improve or risk losing its lead driver.",
+        "ripple_effects": "A Sainz exit from Williams would trigger a chain of seat moves across multiple teams, similar to how one domino (Alonso, Verstappen, or Hadjar decisions elsewhere) reshapes several grids at once each driver-market cycle.",
+        "why_now": "Teams are locking in 2027 plans over the summer break window, when contract decisions and public statements from drivers tend to cluster.",
+        "watch_next": "Whether Williams improves its form enough to keep Sainz, or whether he confirms a move elsewhere before the season resumes.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088207/audi-f1-gabriel-bortoleto-announces-future-carlos-sainz-williams-uncertain/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-07-29T08:00:00+01:00",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "Motorsport Week",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Lando Norris says McLaren hasn't 'fully clicked' with its car yet — despite his first win of 2026",
+      "what_happened": "Speaking after the Hungary win, Norris admitted the team 'doesn't feel like we have fully clicked with our understanding of this car just yet,' suggesting there's still untapped performance in the current chassis despite the dominant result. He praised the car as 'beautiful to drive' and said Sunday's pace was 'some of the best' he's experienced, while also acknowledging in a separate comment that he'd expected slightly more from the weekend given how the car felt. The remarks came as McLaren looks to build momentum in the second half of the championship.",
+      "key_points": [
+        "Norris says the team still hasn't got **close to the car's full potential**, even after winning at the Hungaroring.",
+        "The win came off the back of a **revised rear wing**, first shown in Austria but only raced in Hungary.",
+        "It was Norris and McLaren's **first win outside a Sprint since Sao Paulo last year**.",
+        "Norris called it 'some of the best pace I've ever had,' saying the **car was 'beautiful to drive.'**",
+        "He and the team believe there's meaningfully **more performance left to unlock** for the rest of 2026."
+      ],
+      "moot": "In any high-performance system, a win doesn't mean you've found the ceiling — the team that keeps asking 'what are we leaving on the table' after a victory is usually the one that keeps winning.",
+      "image_credit": "Motorsport Week",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Formula1.com",
+          "Motorsport Week"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Lando Norris took McLaren's **first win of the 2026 season outside of a sprint race** at the Hungarian Grand Prix on **July 26**, starting from his first pole of the year and converting it comfortably. The win followed a run of upgrades McLaren had been rolling out through the season, including a revised rear wing debuted in Austria weeks earlier but held back from racing until Hungary.",
+        "why_it_matters": "A driver saying his team hasn't maximized a car it just won comfortably with is a genuine competitive signal — it suggests McLaren believes it can extract more pace at upcoming tracks, which matters directly for the title fight.",
+        "ripple_effects": "If McLaren keeps unlocking pace, rival teams (Mercedes, Ferrari, Red Bull) will need matching upgrades to keep pace through the second half of the season, shaping the development spending race for the rest of 2026.",
+        "why_now": "The comments came in the days immediately following the Hungarian GP win, as team and driver reflect on what worked and plan upgrades for upcoming races.",
+        "watch_next": "Whether McLaren brings further upgrades to unlock the pace Norris is describing, and how that shows up in results at the next few rounds.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "Motorsport Week",
+            "url": "https://www.motorsportweek.com/2026/07/29/lando-norris-mclaren-excitement-f1-hungary/"
+          },
+          {
+            "name": "Formula1.com",
+            "url": "https://www.formula1.com/en/latest/article/the-car-was-beautiful-to-drive-norris-delighted-by-some-of-the-best-pace-ive-ever-had-in-hungary-win.QnY6fxZnQt7VKoeN1B22W"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-07-29T10:00:00Z",
       "added_at": "2026-07-29T17:59:22+05:30",
       "source": "RACER",
@@ -2128,8 +2348,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-07-28T14:00:00Z",
       "added_at": "2026-07-29T15:59:09+05:30",
@@ -2187,8 +2407,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2259,8 +2479,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-07-29T05:00:00+00:00",
       "added_at": "2026-07-29T13:59:06+05:30",
@@ -2315,8 +2535,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-07-29T06:00:00+00:00",
       "added_at": "2026-07-29T13:59:06+05:30",
@@ -2371,8 +2591,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-26T12:00:00+00:00",
       "added_at": "2026-07-29T12:06:11+05:30",
@@ -2421,178 +2641,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-07-27T10:00:00+00:00",
-      "added_at": "2026-07-29T12:06:11+05:30",
-      "source": "ESPN",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Red Bull poaches Mercedes' junior-driver chief Gwen Lagrue to succeed Helmut Marko",
-      "what_happened": "Red Bull officially confirmed on July 27 that it has hired **Gwen Lagrue** away from Mercedes to become Director of the Red Bull Junior Programme starting in 2027, effectively naming him Marko's successor. Lagrue took charge of Mercedes' junior driver programme in 2016 and, over more than a decade there, played a central role in identifying and developing prospects including **George Russell and Kimi Antonelli**, both of whom went on to full-time Mercedes race seats. He will report directly to Red Bull CEO and Team Principal **Laurent Mekies**, making this the first significant personnel move under Mekies' leadership of the team.",
-      "key_points": [
-        "Gwen Lagrue leaves Mercedes after **more than a decade** to become **Red Bull's Junior Programme director from 2027**",
-        "At Mercedes he helped develop **Kimi Antonelli and George Russell** into full-time F1 drivers",
-        "He replaces **Helmut Marko**, the scout who discovered Sebastian Vettel and Max Verstappen, who left Red Bull at the end of 2025",
-        "Lagrue will report directly to **CEO and Team Principal Laurent Mekies**",
-        "It's the **first major signing** of the Mekies era at Red Bull"
-      ],
-      "moot": "In any competitive industry, an organization's future results are shaped years in advance by who it recruits into talent pipelines today, not just by who's on the senior team right now.",
-      "image_credit": "ESPN",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "ESPN",
-          "Yahoo Sports"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Red Bull's junior driver programme has long been one of F1's most productive talent pipelines, historically run by **Helmut Marko**, whose eye for talent produced multiple world champions including Vettel and Verstappen. Marko departed his advisor role at the end of 2025, leaving Red Bull without a clear successor. Mercedes, meanwhile, built its own strong young-driver pipeline under Lagrue, most notably fast-tracking 19-year-old Kimi Antonelli straight into a race seat where he's now leading the championship.",
-        "why_it_matters": "Talent pipelines shape which drivers are available years down the line — this hire is a bet on Lagrue repeating his Mercedes track record for Red Bull's next generation of prospects.",
-        "ripple_effects": "Mercedes now needs a new head of its junior programme just as it navigates its own driver planning. Rival teams may see the move as a signal to invest more heavily in their own scouting operations rather than relying on the traditional Red Bull pipeline as the sport's benchmark.",
-        "why_now": "The move comes as Red Bull works through a broader leadership rebuild following Marko's 2025 departure and amid an unusually chaotic driver market, with 17 contracts across the grid expiring after 2026.",
-        "watch_next": "How Lagrue handles Red Bull's current junior prospects, including Isack Hadjar, once he formally takes over in 2027.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Junior Programme",
-            "definition": "A driver-development pipeline that major F1 teams run to identify, fund and train young racing talent through the lower categories before F1."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPN",
-            "url": "https://www.espn.com/f1/story/_/id/49431295/red-bull-hire-top-mercedes-scout-responsible-signing-kimi-antonelli-george-russell-formula-1"
-          },
-          {
-            "name": "Yahoo Sports",
-            "url": "https://sports.yahoo.com/articles/red-bull-appoint-mercedes-talent-074018887.html"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-07-27T10:00:00+01:00",
-      "added_at": "2026-07-29T08:00:27+05:30",
-      "source": "ESPN",
-      "importance": "notable",
-      "regions": [
-        "Hungary"
-      ],
-      "title": "Lewis Hamilton pushes Ferrari for answers over its Hungarian GP strategy call",
-      "what_happened": "Following the Hungarian Grand Prix, Hamilton said he intends to **seek a direct explanation from Ferrari** about the strategic decisions the team made during the race, calling the result a **'missed opportunity.'** He raised the concerns publicly in the days after the race, adding to a season in which questions about Ferrari's in-race decision-making have periodically surfaced. The comments came in the same week that Ferrari's car itself was drawing outside scrutiny, with rival design chief Adrian Newey inspecting the SF-26 on the grid.",
-      "key_points": [
-        "Hamilton said he will **seek an explanation from Ferrari** over its pit strategy at the Hungarian Grand Prix",
-        "He described the outcome as a **'missed opportunity'**",
-        "It's the latest sign of **friction over race-day decision-making** between Hamilton and his team since he joined Ferrari",
-        "The complaint comes in the same week Ferrari's SF-26 was drawing scrutiny from rival designer Adrian Newey"
-      ],
-      "moot": "In team sports built around split-second decisions, the disputes that linger longest are rarely about raw speed — they're about trust in the decisions made off the track.",
-      "image_credit": "ESPN",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "ESPN",
-          "GPFans"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Lewis Hamilton, a seven-time world champion, joined Ferrari for the 2026 season in one of the sport's most closely watched driver moves in years. Strategy calls — when to pit for fresh tyres, which tyre compound to choose, how to react to a rival's pit stop — can decide a race result even when a car has the pace to finish higher, and disagreements between a driver and their pit wall over these calls are a recurring flashpoint in F1.",
-        "why_it_matters": "Persistent strategy disputes between a star driver and their team can affect morale and trust heading into a title fight, and for Ferrari — a team under constant pressure to deliver results with Hamilton on board — public criticism from its highest-profile signing carries extra weight.",
-        "ripple_effects": "Continued friction could shape how Ferrari's pit wall approaches strategy calls in the remaining races before the summer break ends, and it feeds the broader narrative around Hamilton's first season at the team.",
-        "why_now": "Hamilton raised the issue in the days immediately following the Hungarian Grand Prix.",
-        "watch_next": "Watch how Ferrari responds and whether its strategy calls change in the next races after the summer break.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPN",
-            "url": "https://www.espn.com/f1/story/_/id/49456278/lewis-hamilton-questions-ferrari-strategy-missed-opportunity-hungary"
-          },
-          {
-            "name": "GPFans",
-            "url": "https://www.gpfans.com/en/f1-news/1088334/lewis-hamilton-f1-tells-ferrari-wrong-hungarian-grand-prix-strategy/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-72",
-      "rank": 72,
-      "category": "f1",
-      "published_iso": "2026-07-28T08:00:00Z",
-      "added_at": "2026-07-29T00:00:34+05:30",
-      "source": "Formula1.com",
-      "importance": "notable",
-      "regions": [
-        "F1",
-        "Belgium"
-      ],
-      "title": "F1 heads to Spa for the Belgian Grand Prix, where battery management could matter more than horsepower",
-      "what_happened": "Formula 1's 2026 season moves to **Spa-Francorchamps** for the Belgian Grand Prix, Round 10, a little over two weeks after the British Grand Prix at Silverstone. Teams and drivers face what officials are calling an **\"energy-poor\" circuit** — Spa's long flat-out sections mean cars must carefully balance harvesting and deploying battery power under the new 2026 hybrid rules, and getting that wrong could cost more time than a bad qualifying lap. **Ferrari** goes into the weekend with real momentum, having won two of its last three races, while **Mercedes** arrives under pressure to recapture the early-season form that once made it a title contender, all while its two drivers continue to push each other hard internally. The Ardennes region's famously changeable weather adds another layer of unpredictability, with the threat of scattered rain capable of scrambling strategy calls for any team.",
-      "key_points": [
-        "The **Belgian Grand Prix** is Round 10 of the 2026 season, held at **Spa-Francorchamps**, the longest lap on the calendar.",
-        "It's the first standard-format race weekend since the dramatic **British Grand Prix** at Silverstone.",
-        "**Energy management**, not just raw pace, is expected to decide the race under F1's new 2026 hybrid power units.",
-        "**Ferrari** arrives with momentum, having won **two of its last three races**.",
-        "**Mercedes'** internal driver battle keeps intensifying heading into the weekend."
-      ],
-      "moot": "New technical rules can change which tracks reward which skills — a circuit's raw pace advantage can be overridden entirely by a car's ability to manage a resource like battery energy, not just horsepower.",
-      "image_credit": "Formula1.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Formula1.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "2026 introduced a new generation of F1 hybrid power units that lean much more heavily on electrical energy than before, which makes circuits with long **full-throttle sections** — like Spa's famous straights — especially demanding, since cars can run low on stored battery power before a lap is done. Spa-Francorchamps, tucked into Belgium's Ardennes forest, is one of the most historic and longest circuits on the calendar, known for unpredictable weather that can turn a race on its head. Round 10 arrives with the season's competitive order still shifting: Ferrari has picked up form recently, while Mercedes has had a rockier stretch despite entering the year as an early favorite.",
-        "why_it_matters": "How teams handle Spa's unique energy-management demands could reshuffle the competitive order heading into the second half of the season, at a track that has decided championships before because of its length and weather swings.",
-        "ripple_effects": "A strong Ferrari result would add pressure on Mercedes and Red Bull heading into the summer's driver-market decisions (including Verstappen's), while a bad energy-management weekend for any front-runner could hand a surprise result to a team that gets its strategy right.",
-        "why_now": "The race weekend is imminent on the 2026 calendar, arriving right after the summer's driver-market storylines (Verstappen's contract situation among them) have dominated the news.",
-        "watch_next": "Watch qualifying and how teams manage battery deployment on Spa's long Kemmel Straight — that could decide the race before a single overtake happens.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "energy management",
-            "definition": "How an F1 car's hybrid system decides when to deploy stored electrical power for extra speed versus saving it, since the battery can run out before a lap ends."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/its-race-week-5-storylines-were-excited-about-ahead-of-the-2026-belgian-grand-prix.7MROwv6FGgwOA193ps2sRq"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-73",
-      "rank": 73,
+      "id": "story-75",
+      "rank": 75,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2656,8 +2706,8 @@
     },
     {
       "type": "story",
-      "id": "story-74",
-      "rank": 74,
+      "id": "story-76",
+      "rank": 76,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2719,8 +2769,8 @@
     },
     {
       "type": "story",
-      "id": "story-75",
-      "rank": 75,
+      "id": "story-77",
+      "rank": 77,
       "category": "f1",
       "published_iso": "2026-07-28T12:00:00Z",
       "added_at": "2026-07-28T22:04:03+05:30",
@@ -2783,6 +2833,152 @@
       "rank": 41,
       "category": "cricket",
       "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Mumbai Indians and Chennai Super Kings in advanced talks over a blockbuster Hardik Pandya trade",
+        "date": null
+      },
+      "published_iso": "2026-07-29T02:00:00+05:30",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "Sunday Guardian Live",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "Delhi Capitals gatecrash the Hardik Pandya trade talks, offering Axar Patel and Prithvi Shaw",
+      "what_happened": "The Pandya trade saga has taken a new turn: Mumbai Indians' initial ask of **Shivam Dube and Ayush Mhatre** from Chennai Super Kings hit a wall when CSK refused to part with Mhatre, a rising young batter, instead countering with **Dube, South African batter Dewald Brevis, and ₹10 crore in cash**. With that standoff unresolved, **Delhi Capitals** have stepped into the picture, reportedly willing to offer both **captain Axar Patel and opening batter Prithvi Shaw** to land Pandya. Should the MI-CSK talks collapse over valuation, **Kolkata Knight Riders** have also emerged as a potential destination for Pandya.",
+      "key_points": [
+        "**Delhi Capitals** have entered trade talks for Hardik Pandya, offering **Axar Patel and Prithvi Shaw**.",
+        "**Mumbai Indians** wanted Shivam Dube and Ayush Mhatre from CSK in return for Pandya; **CSK refused to include Mhatre**.",
+        "CSK's counter-offer: **Dube, Dewald Brevis, and ₹10 crore cash** instead.",
+        "**Kolkata Knight Riders** have emerged as a fallback destination if the MI-CSK deal collapses entirely.",
+        "Pandya is currently **Mumbai Indians' captain**, making any trade a major power shift in the IPL 2027 window."
+      ],
+      "moot": "When two negotiating parties can't agree on the last piece of a deal, a competing bidder often decides the outcome — the biggest risk in any negotiation is leaving the other side room to shop elsewhere.",
+      "image_credit": "Sunday Guardian Live",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "Sunday Guardian Live",
+          "Yahoo Sports"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "previously": "We reported Mumbai Indians and Chennai Super Kings were in advanced talks over a trade sending captain Hardik Pandya to CSK.",
+        "changed": "Talks between MI and CSK have stalled over valuation — MI want Shivam Dube and Ayush Mhatre, CSK will only offer Dube plus Dewald Brevis and cash — and Delhi Capitals have now entered the race, reportedly offering captain Axar Patel and opener Prithvi Shaw for Pandya, with Kolkata Knight Riders also circling as a backup option."
+      },
+      "concepts": [],
+      "figures": [
+        {
+          "raw": "₹10 crore",
+          "words": "₹10 crore",
+          "usd_approx": "≈ $1mn"
+        }
+      ],
+      "depth": {
+        "background": "Hardik Pandya has captained **Mumbai Indians** since returning to the franchise, but reports of trade talks with **Chennai Super Kings** first surfaced as CSK looks to rebuild around experienced leadership. IPL trade windows allow franchises to swap contracted players outside the annual auction, and a captain-level trade of Pandya's stature would be one of the biggest moves of the IPL 2027 cycle.",
+        "why_it_matters": "A three-way (now four-way) chase for a captain of Pandya's profile signals just how much IPL franchises value proven white-ball leadership and match-winning allrounders — and shows trade valuations breaking down over the inclusion of promising young players like Mhatre, not just star names.",
+        "ripple_effects": "Wherever Pandya lands, it reshapes that franchise's captaincy and batting order for IPL 2027, while the players sent the other way (Dube, Mhatre, Brevis, Axar Patel or Shaw) would each need new roles at their new franchises. A deal with Delhi Capitals would also cost DC its own captain, Axar Patel, forcing a fresh leadership decision there.",
+        "why_now": "Trade-window deals are typically finalized well ahead of the following IPL auction and season planning, so franchises are racing to resolve valuation gaps before the window narrows.",
+        "watch_next": "Whether Mumbai Indians and Chennai Super Kings settle their valuation gap, or whether Delhi Capitals' offer of Axar Patel and Prithvi Shaw proves more attractive to Mumbai Indians.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "IPL trade window",
+            "definition": "A period outside the annual player auction when IPL franchises can privately negotiate to swap already-contracted players between teams."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Sunday Guardian Live",
+            "url": "https://sundayguardianlive.com/sports/ipl-trade-news-mumbai-indians-demand-shivam-dube-and-ayush-mhatre-from-csk-in-exchange-for-hardik-pandya-more-detail-inside-244948/"
+          },
+          {
+            "name": "Yahoo Sports",
+            "url": "https://sports.yahoo.com/articles/hardik-pandya-trade-mi-want-080411790.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Bumrah's Sri Lanka Test fate now hinges on an August 7 practice match in Colombo",
+        "date": null
+      },
+      "published_iso": "2026-07-28T15:00:00+05:30",
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "source": "ESPNcricinfo",
+      "importance": "notable",
+      "regions": [
+        "India",
+        "Sri Lanka"
+      ],
+      "title": "India name 15-man Test squad for Sri Lanka: Saransh Jain gets maiden call-up, Bumrah included subject to fitness",
+      "what_happened": "The BCCI announced its **15-member squad** for the two-match Sri Lanka Test series, with **Bumrah** and opener **Sai Sudharsan** both included but subject to fitness assessments at the BCCI's Centre of Excellence before the squad departs. **Jadeja** has recovered from tennis elbow and is back in the squad. **Washington Sundar** was left out of contention for the first Test due to his ongoing hamstring rehab, opening the door for **Saransh Jain**, a 33-year-old offspin allrounder, to earn his first-ever India Test call-up after a decade of consistent domestic performances. The series is scheduled for Galle (August 15–19) and Colombo (August 23–27).",
+      "key_points": [
+        "**Saransh Jain**, 33, earns his **maiden India Test call-up** after a decade of domestic cricket.",
+        "**Jasprit Bumrah** and **Sai Sudharsan** are included **subject to fitness clearance** at the BCCI's Centre of Excellence.",
+        "**Washington Sundar** is ruled out of the first Test with a hamstring injury from the England ODIs.",
+        "**Ravindra Jadeja** returns to the squad after recovering from tennis elbow.",
+        "The series runs **Galle (Aug 15–19)** then **Colombo (Aug 23–27)**."
+      ],
+      "moot": "Fitness-contingent squad selections are a normal part of managing fast bowlers' workloads — teams often name a player 'subject to fitness' rather than leave a match-winner out entirely, keeping options open until the last responsible moment.",
+      "image_credit": "ESPNcricinfo",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "ESPNcricinfo",
+          "News Today"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "previously": "We reported Bumrah was resting until July 30 before a fresh fitness test, with his Sri Lanka Test spot hinging on an August 7 practice match in Colombo.",
+        "changed": "Selectors have now named the full 15-man squad: Bumrah and Sai Sudharsan are included subject to BCCI fitness clearance, Ravindra Jadeja is back after recovering from tennis elbow, Washington Sundar is ruled out of the first Test with a hamstring injury, and 33-year-old offspinner Saransh Jain earns a maiden call-up in his place."
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "India's Test squad for its August tour of Sri Lanka has been a moving target for weeks: **Jasprit Bumrah**, India's premier fast bowler, picked up a knee issue during the ODI series in England and was rested as a precaution, with selectors waiting on a fitness test before committing him to Tests. Meanwhile allrounder **Washington Sundar** and batter **Ravindra Jadeja** have both been managing injuries (a hamstring strain and tennis elbow respectively) that clouded their availability.",
+        "why_it_matters": "This is India's first full Test squad announcement since Bumrah's fitness scare, resolving weeks of uncertainty about who leads the bowling attack, while also handing a long-serving domestic cricketer his overdue India debut opportunity.",
+        "ripple_effects": "If Bumrah fails his fitness test, India's pace attack in Sri Lanka's spin-friendly conditions shifts significantly, likely leaning harder on spin options including Jain. A strong series for Jain could also reshape India's spin-bowling depth chart heading into the next home season.",
+        "why_now": "The squad had to be locked in ahead of the team's departure for the August 15 series opener, forcing selectors to make fitness-contingent calls on Bumrah and Sudharsan now rather than wait longer.",
+        "watch_next": "Bumrah and Sudharsan's fitness assessments at the BCCI Centre of Excellence, and the August 7 practice match in Colombo that will be a final check on match fitness.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Offspin allrounder",
+            "definition": "A player who bowls off-break spin (turning the ball into a right-handed batter) and also contributes meaningfully with the bat."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/story/saransh-jain-gets-maiden-india-call-up-for-test-series-in-sri-lanka-1547813"
+          },
+          {
+            "name": "News Today",
+            "url": "https://newstodaynet.com/2026/07/29/spinner-saransh-jain-gets-india-test-call-up/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-43",
+      "rank": 43,
+      "category": "cricket",
       "published_iso": "2026-07-29T04:34:00Z",
       "added_at": "2026-07-29T17:59:22+05:30",
       "source": "ANI",
@@ -2841,8 +3037,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-07-28T18:00:00+05:30",
       "added_at": "2026-07-29T15:59:09+05:30",
@@ -2897,8 +3093,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-07-29T05:00:00+05:30",
       "added_at": "2026-07-29T15:59:09+05:30",
@@ -2959,8 +3155,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3019,8 +3215,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-07-28T14:00:00+00:00",
       "added_at": "2026-07-29T12:06:11+05:30",
@@ -3085,8 +3281,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3149,8 +3345,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-07-28T21:00:00+01:00",
       "added_at": "2026-07-29T08:00:27+05:30",
@@ -3198,93 +3394,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
-      "category": "cricket",
-      "published_iso": "2026-07-28T12:00:00+05:30",
-      "added_at": "2026-07-29T06:02:39+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "IPL 2027: Rishabh Pant returns to Delhi Capitals, Kuldeep Yadav moves to Lucknow in a blockbuster swap",
-      "what_happened": "Delhi Capitals and Lucknow Super Giants completed a high-profile trade that sends wicketkeeper-batter Rishabh Pant back to Delhi and left-arm wrist-spinner Kuldeep Yadav to Lucknow. Pant, originally signed by LSG for ₹27 crore in the 2025 mega auction, returns to DC at a revised ₹15 crore fee. Kuldeep moves to LSG at his existing ₹13.5 crore price. Because Pant's new fee is lower than what LSG originally paid, the trade leaves Lucknow with an extra ₹13.5 crore of purse space heading into the next auction cycle, while Delhi Capitals has ₹1.5 crore deducted from its own purse.",
-      "key_points": [
-        "**Rishabh Pant** returns to Delhi Capitals, the franchise he played **111 games** for between 2016 and 2024",
-        "**Kuldeep Yadav** moves the other way to Lucknow Super Giants, after taking **72 wickets in 65 matches** for Delhi",
-        "Pant rejoins DC at a reduced **₹15 crore** fee, down from the **₹27 crore** LSG paid to sign him in 2025",
-        "The fee gap hands LSG an extra **₹13.5 crore** of purse space for the next auction; DC loses ₹1.5 crore",
-        "The trade lands ahead of the IPL 2027 retention window, which opens in **mid-September**"
-      ],
-      "moot": "Player trades in T20 leagues are as much about salary-cap arithmetic as cricketing fit — the money freed up in a deal often matters as much as the player gained.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Gujarat Samachar English"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [
-        {
-          "raw": "₹27 crore",
-          "words": "₹27 crore",
-          "usd_approx": "≈ $3mn"
-        },
-        {
-          "raw": "₹15 crore",
-          "words": "₹15 crore",
-          "usd_approx": "≈ $2mn"
-        },
-        {
-          "raw": "₹13.5 crore",
-          "words": "₹13.5 crore",
-          "usd_approx": "≈ $1mn"
-        },
-        {
-          "raw": "₹1.5 crore",
-          "words": "₹1.5 crore",
-          "usd_approx": "≈ $155,925"
-        }
-      ],
-      "depth": {
-        "background": "Pant had been a marquee ₹27 crore signing for Lucknow Super Giants at the 2025 mega auction, ending a nine-season run at Delhi Capitals during which he made more appearances (111) for the franchise than any other player. Kuldeep Yadav, meanwhile, had built a strong five-year spell as one of Delhi's key bowling threats. The IPL allows franchises to trade contracted players between auction cycles, which teams use to reshape their squads and manage their salary-cap \"purse\" ahead of each new season.",
-        "why_it_matters": "It reunites Pant with the franchise most associated with his rise, while resetting both teams' auction purses and squad-building plans well ahead of the 2027 season's retention and mega-auction cycle.",
-        "ripple_effects": "The trade will shape how Delhi Capitals and Lucknow Super Giants approach retentions and spending in the run-up to the 2027 mega auction, and could influence Pant's leadership and wicketkeeping role at DC.",
-        "why_now": "The move comes ahead of the IPL 2027 retention window, giving both franchises time to plan their squads before the formal auction process begins.",
-        "watch_next": "Whether Pant is given a leadership role at Delhi Capitals, and how Lucknow Super Giants deploys its extra purse space in the upcoming auction.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "purse",
-            "definition": "The fixed salary-cap budget each IPL franchise has to spend on player contracts and trades each season."
-          },
-          {
-            "term": "retention window",
-            "definition": "The period before an IPL mega auction when franchises decide which existing players to keep under contract."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/story/ipl-2027-lsg-and-dc-complete-high-profile-rishabh-pant-kuldeep-yadav-trade-1542519"
-          },
-          {
-            "name": "Gujarat Samachar English",
-            "url": "https://english.gujaratsamachar.com/news/mumbai/ipl-trade-2027-rishabh-pant-returns-to-delhi-capitals-kuldeep-yadav-joins-lucknow-super-giants-53727202058"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3353,8 +3464,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-52",
+      "rank": 52,
       "category": "cricket",
       "published_iso": "2026-07-28T17:00:00Z",
       "added_at": "2026-07-29T05:10:52+05:30",
@@ -3409,8 +3520,8 @@
     },
     {
       "type": "story",
-      "id": "story-51",
-      "rank": 51,
+      "id": "story-53",
+      "rank": 53,
       "category": "cricket",
       "published_iso": "2026-07-28T17:00:00+01:00",
       "added_at": "2026-07-29T00:00:34+05:30",
@@ -3458,8 +3569,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-07-28T20:00:00+01:00",
       "added_at": "2026-07-29T00:00:34+05:30",
@@ -3509,8 +3620,8 @@
     },
     {
       "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3573,8 +3684,8 @@
     },
     {
       "type": "story",
-      "id": "story-57",
-      "rank": 57,
+      "id": "story-59",
+      "rank": 59,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3651,28 +3762,28 @@
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 142
+      "older_count": 141
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 130
+      "older_count": 127
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 100
+      "older_count": 103
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 72
+      "older_count": 71
     },
     {
       "type": "outro",

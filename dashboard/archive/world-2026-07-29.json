@@ -1,9 +1,104 @@
 {
   "date": "2026-07-29",
-  "generated_at": "2026-07-29T17:59:22+05:30",
+  "generated_at": "2026-07-29T19:59:20+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "category": "technology",
+      "published_iso": "2026-07-28T16:00:00-07:00",
+      "regions": [
+        "Global"
+      ],
+      "title": "Anthropic says its Claude Mythos Preview AI model found new cracks in two encryption systems on its own",
+      "region": "global",
+      "key_points": [
+        "An unreleased Anthropic model, **Claude Mythos Preview**, found improved attacks on two cryptographic algorithms.",
+        "It cut the estimated cost of breaking a candidate **post-quantum** signature scheme called **HAWK** from about **2\u2076\u2074 operations to 2\u00b3\u2078** \u2014 a huge reduction in the effort needed.",
+        "It also improved the best-known attack on a **reduced, 7-round version** of **AES** (the world's most-used encryption standard) by **200\u2013800x**.",
+        "Anthropic says neither result threatens real-world systems today: **HAWK isn't deployed anywhere**, and the AES attack only works on a weakened lab version, not full AES.",
+        "One of the two attacks was found by Claude working **fully autonomously**, with a researcher only providing the tools, not the ideas."
+      ],
+      "background": "**Cryptography** is the math that keeps digital communication private \u2014 bank transfers, messaging apps, and government systems all rely on algorithms that are, in practice, too hard to 'crack' with existing computers. **AES** (Advanced Encryption Standard) is the default encryption used worldwide; **HAWK** is one of several new signature schemes being tested to replace current systems once powerful **quantum computers** arrive, since quantum computers are expected to break today's standards. Anthropic runs an internal 'Frontier Red Team' that stress-tests its own models for dangerous capabilities, including whether AI can find security flaws faster than human experts, who have studied these exact algorithms for years without finding what Claude found.",
+      "what_happened": "Anthropic published research on **July 28** describing how its unreleased **Claude Mythos Preview** model was used to find two new cryptographic weaknesses. First, working closely with a human researcher over about a week, Claude spotted a previously unexploited mathematical pattern in HAWK's underlying lattice structure, improving the best attack on its smallest parameter set (HAWK-256) so dramatically that the effective 'key strength' fell from roughly **2\u2076\u2074 operations to 2\u00b3\u2078** \u2014 a difference of trillions of times less computing effort. Second, a separate researcher built a semi-automated system, or 'scaffold', that let Claude work largely **without human guidance** to improve the best-known attack on **7-round AES** by **200 to 800 times**. Anthropic stressed that neither discovery breaks anything currently in use: HAWK is only a research candidate, not a deployed standard, and the AES attack targets a deliberately weakened version with fewer rounds than the real algorithm.",
+      "why_it_matters": "This is a concrete, published example of an AI model doing genuine, novel cryptography research \u2014 not just summarizing known attacks, but finding mathematical weaknesses that **years of expert human review had missed**. That matters because cryptographic security has always rested on the assumption that breaking these systems requires scarce, elite human expertise.",
+      "ripple_effects": "Standards bodies choosing the next generation of post-quantum cryptography (including HAWK's backers) will need to factor in that AI can now probe these designs faster and more thoroughly. It also sharpens a dual-use debate: the same capability that hardens defenses (finding flaws before attackers do) could, in less careful hands, be pointed at systems that matter.",
+      "why_now": "Anthropic published the research on July 28 as part of its ongoing capability-evaluation work ahead of any wider release of the Mythos model family.",
+      "watch_next": "Whether other AI labs report similar autonomous cryptanalysis results, and whether NIST or other standards bodies adjust their post-quantum candidate evaluations in response.",
+      "key_terms": [
+        {
+          "term": "Post-quantum cryptography",
+          "definition": "New encryption and signature methods designed to stay secure even against future quantum computers, which are expected to break most of today's encryption."
+        },
+        {
+          "term": "Cryptanalysis",
+          "definition": "The practice of studying a cryptographic system to find weaknesses that let you break or weaken it faster than a full brute-force attempt."
+        }
+      ],
+      "the_lesson": "A security system's real strength is what happens when a much smarter, tireless attacker examines it \u2014 human review time is limited, but AI-assisted analysis scales, so defenses that only survived because no one looked hard enough are the ones most at risk.",
+      "concepts": [],
+      "market_link": "Cybersecurity and cryptography vendors (identity, PKI, post-quantum migration providers) are a sector to watch as this kind of AI-assisted cryptanalysis becomes a live procurement consideration.",
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/anthropic-claude-mythos-encryption-flaws-hawk-aes-pqc/"
+        }
+      ],
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 1
+    },
+    {
+      "category": "climate",
+      "published_iso": "2026-07-28T10:00:00+02:00",
+      "regions": [
+        "France",
+        "Europe"
+      ],
+      "title": "France evacuates 4,000 more people as heat returns to threaten the Bordeaux wildfire",
+      "region": "global",
+      "key_points": [
+        "French authorities ordered **~4,000 people** evacuated from tourist sites on the Atlantic coast near Lacanau.",
+        "The wildfire west of **Bordeaux** has already burned **42,000 hectares** \u2014 roughly four times the size of Paris.",
+        "It has forced about **220,000 people** to evacuate homes and holiday lets since it started on **July 22**.",
+        "Combined with fires across the border in Spain, **~330,000 people** have now been displaced in the region.",
+        "Firefighters had a 'calm night' but a forecast **heatwave** threatens to re-ignite the blaze's fragile containment."
+      ],
+      "background": "A massive wildfire broke out in the **Gironde** department of southwestern France on **July 22, 2026**, in a pine-forest region that has burned before (a similar fire scorched the same area in 2022). Gironde is a major wine-growing and tourist region, packed with campsites and holiday villages around lakes like Lacanau in peak summer season. Firefighters had largely stabilized the blaze after a week of work, but France has been hit by successive **heatwaves** this summer, and hot, dry, windy conditions are exactly what turns a contained fire back into a fast-moving one.",
+      "what_happened": "On **Tuesday, July 28**, French authorities ordered a further **~4,000 people** evacuated from tourist sites and campsites on the Atlantic coast as forecast heat returned to the region. The fire has burned **42,000 hectares** since it began on July 22 \u2014 an area about **four times the size of Paris** \u2014 and had already forced roughly **220,000 people** to evacuate at its peak, sometimes turning into a self-feeding firestorm. Authorities said the blaze remained 'under control' after a calm night, but were worried the coming heatwave would fan the flames again. Sister fires across the border in **Spain** have pushed the regional evacuation total to around **330,000 people** since the fires began.",
+      "why_it_matters": "This is one of the largest wildfire evacuations in France this decade, hitting a region that depends heavily on summer tourism and wine exports. Even a fire authorities call 'under control' can flare back up within hours once heat and wind return \u2014 which is exactly the risk playing out this week.",
+      "ripple_effects": "Local tourism revenue takes a direct hit as campsites and holiday lets empty out mid-season. Vineyards near the burn zone face smoke-taint risk to this year's grape harvest. Repeated summer wildfires also strain French and EU firefighting resources that are simultaneously being called on for fires in Spain, Portugal and Greece.",
+      "why_now": "A new heatwave is forecast to return to southwestern France this week, right as firefighters were gaining the upper hand \u2014 the same weather pattern that let the fire explode into a firestorm a week earlier.",
+      "watch_next": "Whether the forecast heatwave arrives as expected over the next few days and whether containment lines hold once temperatures spike again.",
+      "key_terms": [
+        {
+          "term": "Firestorm",
+          "definition": "A wildfire so intense it generates its own wind system, making it spread unpredictably and much faster than a normal fire."
+        }
+      ],
+      "the_lesson": "A wildfire being 'under control' is a status, not a guarantee \u2014 heat and wind can undo days of firefighting progress in hours, which is why authorities evacuate pre-emptively rather than waiting for flames to return.",
+      "concepts": [
+        "el_nino"
+      ],
+      "market_link": "European reinsurers and travel-insurance stocks can see claims pressure build during repeated multi-week wildfire summers; French wine producers in Gironde face harvest-risk headlines.",
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "France 24",
+          "url": "https://www.france24.com/en/europe/20260728-live-massive-wildfires-near-bordeaux-still-under-control-after-calm-night-local-authorities-say"
+        },
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/world/europe/france-evacuates-4000-people-heat-threatens-wildfire-fight-southwester-rcna589584"
+        }
+      ],
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 2
+    },
     {
       "category": "technology",
       "published_iso": "2026-07-28T20:00:00Z",
@@ -49,7 +144,7 @@
         }
       ],
       "added_at": "2026-07-29T17:59:22+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "category": "geopolitics",
@@ -108,7 +203,7 @@
         "title": "US and Iran keep an uneasy pause holding, but Tehran denies agreeing to any formal ceasefire",
         "date": null
       },
-      "rank": 2
+      "rank": 4
     },
     {
       "category": "geopolitics",
@@ -152,7 +247,7 @@
         }
       ],
       "added_at": "2026-07-29T15:59:09+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "category": "geopolitics",
@@ -212,7 +307,7 @@
         "title": "Iran fires ballistic missiles at US forces in the Middle East, all intercepted \u2014 oil jumps 5%",
         "date": null
       },
-      "rank": 4
+      "rank": 6
     },
     {
       "category": "geopolitics",
@@ -252,7 +347,7 @@
         }
       ],
       "added_at": "2026-07-29T13:59:06+05:30",
-      "rank": 5
+      "rank": 7
     },
     {
       "category": "science",
@@ -296,7 +391,7 @@
         }
       ],
       "added_at": "2026-07-29T13:59:06+05:30",
-      "rank": 6
+      "rank": 8
     },
     {
       "region": "global",
@@ -344,7 +439,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 7
+      "rank": 9
     },
     {
       "region": "global",
@@ -409,7 +504,7 @@
         "title": "Iran fires ballistic missiles at US forces in the Middle East, all intercepted \u2014 oil jumps 5%",
         "date": null
       },
-      "rank": 8
+      "rank": 10
     },
     {
       "region": "global",
@@ -463,7 +558,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "region": "global",
@@ -520,7 +615,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 10
+      "rank": 12
     },
     {
       "category": "economy",
@@ -573,7 +668,7 @@
         }
       ],
       "added_at": "2026-07-29T06:02:39+05:30",
-      "rank": 11
+      "rank": 13
     },
     {
       "category": "geopolitics",
@@ -638,7 +733,7 @@
         "title": "Trump and Netanyahu finally sit down at the White House, with Iran the make-or-break topic",
         "date": null
       },
-      "rank": 12
+      "rank": 14
     },
     {
       "category": "economy",
@@ -692,7 +787,7 @@
         }
       ],
       "added_at": "2026-07-29T05:10:52+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "category": "climate",
@@ -736,7 +831,7 @@
         }
       ],
       "added_at": "2026-07-29T05:10:52+05:30",
-      "rank": 14
+      "rank": 16
     },
     {
       "category": "economy",
@@ -790,7 +885,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "category": "geopolitics",
@@ -843,7 +938,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 16
+      "rank": 18
     },
     {
       "region": "global",
@@ -892,7 +987,7 @@
         }
       ],
       "added_at": "2026-07-28T22:04:03+05:30",
-      "rank": 17
+      "rank": 19
     },
     {
       "region": "global",
@@ -945,103 +1040,99 @@
         }
       ],
       "added_at": "2026-07-28T22:04:03+05:30",
-      "rank": 18
+      "rank": 20
     },
     {
-      "category": "geopolitics",
-      "region": "global",
-      "published_iso": "2026-07-28T00:00:00Z",
+      "category": "india",
+      "published_iso": "2026-07-29T09:00:00+05:30",
       "regions": [
-        "Afghanistan",
-        "Pakistan",
-        "South Asia"
+        "India",
+        "China"
       ],
-      "title": "UN says nearly 500 Afghan civilians killed in Pakistan-Afghanistan border fighting since October",
+      "title": "India's Foreign Secretary wraps up a two-day Beijing visit aimed at steadying ties with China",
+      "region": "india",
       "key_points": [
-        "**499 civilians killed** and **1,216 wounded** in Afghanistan by cross-border fighting between **October and June**.",
-        "Pakistan blames Afghanistan for harboring the **Pakistani Taliban (TTP)**, a claim Kabul denies.",
-        "The deadliest single strike hit a **Kabul drug-treatment center** in March, killing hundreds.",
-        "Amnesty International says the Kabul strike should be investigated as a possible **war crime**.",
-        "The report documents cases of rescuers being hit by a **second strike** while pulling victims from rubble."
+        "Foreign Secretary **Vikram Misri** concluded a **two-day visit to Beijing** on July 29 after a series of high-level meetings.",
+        "He met **Sun Haiyan**, Vice Minister of the Chinese Communist Party's International Department, on July 28.",
+        "He also met **Hua Chunying**, China's Vice Foreign Minister, to review the 'entire spectrum' of bilateral relations.",
+        "Both sides discussed framing each other as **'partners and development opportunities rather than competitors.'**",
+        "The visit builds on a **gradual normalization** of ties following the prolonged **India-China border standoff**."
       ],
-      "background": "Since the Afghan Taliban retook power in 2021, Pakistan has accused it of sheltering the Tehrik-e-Taliban Pakistan (TTP), a separate militant group waging an insurgency inside Pakistan that is ideologically aligned with, but distinct from, the Afghan Taliban government. Kabul denies harboring the group. Tensions have hardened into open cross-border airstrikes and clashes over the past several months, tracked by the UN Assistance Mission in Afghanistan (UNAMA), the UN's human-rights monitoring body in the country.",
-      "what_happened": "UNAMA's latest human-rights report tallies casualties from cross-border fighting between October 2025 and the end of June 2026: 499 civilians killed and over 1,000 wounded on the Afghan side alone. The single deadliest incident was a Pakistani airstrike on a drug-treatment center in Kabul in March, which killed hundreds of civilians. The report also documents a pattern where rescuers digging through rubble after one strike were hit by a follow-up strike. Pakistan has not published its own civilian casualty count for fighting inside its territory.",
-      "why_it_matters": "This is a spiraling conflict between two unstable, nuclear-adjacent neighbors, driven partly by a militant group neither government fully controls, with a mounting civilian death toll on one side that so far has no accountability mechanism.",
-      "ripple_effects": "Continued fighting risks fresh waves of Afghan refugees toward Pakistan and Iran, further hardens Islamabad-Kabul relations at a moment both governments face internal instability, and complicates Pakistan's broader campaign against the TTP inside its own borders.",
-      "why_now": "This is the first comprehensive UN tally covering the fighting since it escalated last October, released as part of UNAMA's routine human-rights reporting.",
-      "watch_next": "Whether Pakistan releases its own casualty figures or disputes the UN count, and whether any ceasefire or diplomatic talks follow.",
+      "background": "India and China, the world's two most populous nations, fought a deadly border clash in the Galwan Valley in 2020 that froze high-level diplomatic and economic ties for years. Relations have been thawing gradually since then, with both sides restoring some direct flights, easing visa rules, and resuming senior-level talks \u2014 while the underlying border dispute in the Himalayas remains unresolved. **Vikram Misri**, India's top career diplomat as Foreign Secretary, has been a key figure managing this delicate reset.",
+      "what_happened": "Misri began his engagements on **July 28** with a meeting with **Sun Haiyan**, Vice Minister of the International Department of China's Communist Party, where the two discussed implementing guidance from both countries' leaderships to improve relations \u2014 including more political engagement, people-to-people contacts, and academic/think-tank exchanges. He then met **Hua Chunying**, China's Vice Foreign Minister, reviewing the full range of bilateral issues and exploring ways to advance the idea that India and China should see each other as **partners rather than rivals**, with a focus on mutually beneficial trade and economic cooperation. The visit concluded on **July 29**.",
+      "why_it_matters": "High-level diplomatic visits like this are how India and China manage a relationship that is simultaneously competitive (border disputes, trade imbalances, regional rivalry) and interdependent (trade, supply chains, climate cooperation). A steady, 'mature' diplomatic channel reduces the risk of miscalculation between two nuclear-armed neighbors.",
+      "ripple_effects": "Warmer India-China engagement can translate into eased trade and investment restrictions (India has tightened Chinese FDI and app rules since 2020), more direct flights, and easier movement of Chinese technicians for Indian manufacturing projects that depend on Chinese equipment. It's also being watched closely in Washington, given India's simultaneous balancing act with the US.",
+      "why_now": "This is part of a broader normalization track both governments have pursued since border-disengagement talks progressed, and comes as India also manages trade tensions with the US, giving it incentive to stabilize its other major relationship.",
+      "watch_next": "Whether this visit produces any concrete follow-up \u2014 resumed direct flights, eased visa or investment rules, or a leader-level summit \u2014 in the coming months.",
       "key_terms": [
         {
-          "term": "TTP",
-          "definition": "Tehrik-e-Taliban Pakistan \u2014 a militant group waging an insurgency against the Pakistani state, distinct from but ideologically linked to the Afghan Taliban government."
-        },
-        {
-          "term": "UNAMA",
-          "definition": "The UN Assistance Mission in Afghanistan, the UN body that monitors and reports on human rights and civilian harm inside the country."
+          "term": "Border disengagement",
+          "definition": "The process of both militaries pulling back troops and equipment from disputed front-line positions to reduce the risk of accidental clashes."
         }
       ],
-      "the_lesson": "In conflicts driven by non-state militant groups operating across a border, both governments can plausibly deny responsibility for civilian deaths \u2014 which is exactly why independent monitoring bodies like UNAMA matter.",
+      "the_lesson": "Countries can be strategic rivals and essential trade partners at the same time \u2014 diplomacy's job in that situation isn't to end the rivalry, it's to stop it from spilling into conflict.",
       "concepts": [
-        "insurgency_militancy"
+        "current_account_deficit"
       ],
-      "market_link": null,
+      "market_link": "Any easing of India's restrictions on Chinese investment or imports would matter for Indian electronics, solar and auto-component manufacturers that rely on Chinese components.",
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/india-news/foreign-secy-meets-vice-minister-of-chinese-communist-party-in-beijing-126072701281_1.html"
+        },
+        {
+          "name": "Organiser",
+          "url": "https://organiser.org/2026/07/29/372344/bharat/foreign-secretary-vikram-misri-reviews-india-china-bilateral-ties-during-high-level-beijing-visit/"
+        }
+      ],
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 21
+    },
+    {
+      "category": "india",
+      "published_iso": "2026-07-29T06:00:00+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "India's economy sends mixed signals as a weak monsoon and trade shocks offset falling oil prices",
+      "region": "india",
+      "key_points": [
+        "**Slow government spending** and fewer new project announcements are weighing on India's growth outlook.",
+        "**June rainfall ran ~40% below normal**, with forecasters warning the monsoon shortfall could beat the **10% deficit** currently projected.",
+        "A weak monsoon threatens to **curb crop output, push up food prices, and squeeze rural incomes** \u2014 a large share of India's population depends on farm income.",
+        "The **RBI** (India's central bank) says the economy has stayed **resilient** through the Iran war and tariff shocks so far.",
+        "Falling global **oil prices** are a rare tailwind, cutting India's import bill since it buys most of its crude abroad."
+      ],
+      "background": "India's growth engine runs on a delicate balance: strong domestic demand and services growth on one side, and the **monsoon** (June\u2013September rains that irrigate most Indian farmland) and global trade conditions on the other. This year, India is also absorbing the shock of new US tariffs and elevated oil-price volatility tied to the **Iran war**, both of which the **Reserve Bank of India (RBI)** has flagged as key risks to watch. A poor monsoon hits India differently than most economies because so much of rural income and food-price inflation depends directly on rainfall.",
+      "what_happened": "A Bloomberg review of India's economy published **July 29** found the picture is genuinely mixed: government capital spending has slowed and fewer new infrastructure projects are being announced, both of which usually signal softer near-term growth. At the same time, **June rainfall came in around 40% below normal**, and some forecasters now warn the eventual monsoon shortfall could be worse than the **10% deficit** currently built into official projections \u2014 a serious risk given how much of Indian agriculture depends on the rains. Set against that, falling **global oil prices** are helping India, a major crude importer, by lowering its import bill and easing some inflation pressure. The RBI has publicly maintained that the domestic economy remains resilient despite the Iran-war and tariff-related uncertainty.",
+      "why_it_matters": "These signals point in different directions at once \u2014 weaker public investment and a bad monsoon would drag on growth and push up food prices, while cheaper oil cushions the blow. Whether India's growth holds up in the second half of 2026 depends on which of these forces wins out.",
+      "ripple_effects": "A weak monsoon and rising food prices squeeze rural consumers first, which matters for consumer-goods companies that sell heavily into rural India. Slower government project spending can delay the construction and infrastructure order books that many Indian industrial firms depend on. Cheaper oil, meanwhile, helps India's current account and could give the RBI more room on inflation.",
+      "why_now": "The mixed picture is crystallizing now because June-quarter rainfall data and government spending figures are both fresh, right in the middle of the monsoon season when the crop-output risk is still live.",
+      "watch_next": "July\u2013August rainfall data, which will show whether the monsoon shortfall narrows or worsens, and the next round of government capex/project-announcement numbers.",
+      "key_terms": [
+        {
+          "term": "Capital expenditure (capex)",
+          "definition": "Government or company spending on long-term physical assets like roads, railways and factories, rather than day-to-day running costs."
+        }
+      ],
+      "the_lesson": "Emerging-market growth often depends on forces the government doesn't control \u2014 like rainfall \u2014 as much as on policy; that's why economists watch things as basic as monsoon data alongside spending and trade numbers.",
+      "concepts": [
+        "gdp",
+        "cpi_wpi",
+        "crude_asset",
+        "monetary_policy_committee"
+      ],
+      "market_link": "A weak monsoon is a watch-item for FMCG and tractor/rural-demand stocks, while falling crude helps India's oil marketing companies and the current account; RBI commentary here feeds directly into rate-cut expectations.",
       "importance": "high",
       "sources": [
         {
-          "name": "AP News (via The Republic)",
-          "url": "https://www.therepublic.com/2026/07/28/un-says-nearly-500-afghan-civilians-have-been-killed-in-pakistan-afghanistan-fighting-since-october/"
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-07-29/india-s-economy-sends-mixed-signals-as-businesses-juggle-war-and-trade-shocks"
         }
       ],
-      "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 19
-    },
-    {
-      "category": "health",
-      "region": "global",
-      "published_iso": "2026-07-27T00:00:00Z",
-      "regions": [
-        "Global",
-        "Sub-Saharan Africa"
-      ],
-      "title": "Global HIV funding drops 18%, UN agency warns of resurgence risk",
-      "key_points": [
-        "Global HIV funding fell **18%** to just **$7.3 billion** in 2025 \u2014 the lowest level in nearly two decades.",
-        "**PrEP** uptake, the daily pill that prevents HIV, dropped **38%** across 62 reporting countries in a single year.",
-        "Community-led services for gay men and sex workers were cut by **82-85%** in a 47-country study.",
-        "UNAIDS warns of **6 million** more new infections and **4 million** more AIDS deaths over the next four years without new funding.",
-        "The **US previously supplied 75%** of international HIV funding before the Trump administration's 2025 cuts."
-      ],
-      "background": "For two decades, US funding through programs like PEPFAR anchored the global fight against HIV, paying for prevention drugs, testing, and community outreach across dozens of low-income countries. In early 2025 the Trump administration briefly halted all HIV-related foreign aid before partially restoring it, but most prevention programs \u2014 as opposed to emergency treatment \u2014 stayed curtailed. UNAIDS, the UN's dedicated HIV agency, has now published its first full-year accounting of the damage, timed to the 26th International AIDS Conference.",
-      "what_happened": "UNAIDS released a special report titled 'United to End AIDS' showing total global HIV funding fell 18% to $7.3 billion in 2025, the lowest level since the mid-2000s. A separate 47-country study found community-led HIV services for high-risk groups \u2014 gay men, sex workers, survivors of gender-based violence \u2014 collapsed by 72-85%. Funding for condoms was cut by more than 90% in some countries, and PrEP uptake fell 38% year-on-year across 62 countries. UNAIDS projects an additional 6 million infections and 4 million deaths over the next four years if the funding gap isn't closed.",
-      "why_it_matters": "Decades of steady progress against HIV \u2014 falling infections, falling deaths, near-normal life expectancy for people on treatment \u2014 depended on sustained funding that is now unwinding fast. The effects of a funding cut don't show up immediately; they show up years later as a resurgence.",
-      "ripple_effects": "Health systems in Africa and parts of Asia, which leaned hardest on US-funded programs, face the most immediate strain. Governments will have to choose between filling the gap domestically or accepting rising infection rates; either way, the cost of treating a resurgence later is far higher than the cost of prevention now.",
-      "why_now": "The report was timed to the International AIDS Conference (AIDS2026) and is the first complete year-over-year data since the 2025 US funding halt, giving the first clear picture of the damage.",
-      "watch_next": "Whether donor governments or the Global Fund announce new pledges at upcoming replenishment talks, and whether early infection-rate data starts ticking up in the hardest-hit countries.",
-      "key_terms": [
-        {
-          "term": "PrEP",
-          "definition": "Pre-exposure prophylaxis \u2014 a daily pill that prevents HIV infection in people who don't yet have the virus."
-        },
-        {
-          "term": "PEPFAR",
-          "definition": "The US President's Emergency Plan for AIDS Relief, historically the largest single funder of global HIV programs."
-        }
-      ],
-      "the_lesson": "Cuts to prevention funding don't cause visible harm immediately \u2014 the damage shows up years later as new infections and deaths, which makes this kind of funding easy to cut and hard to defend in the moment.",
-      "market_link": null,
-      "importance": "critical",
-      "sources": [
-        {
-          "name": "STAT News",
-          "url": "https://www.statnews.com/pharmalot/2026/07/27/hiv-resurgence-is-feared-as-global-fund-to-combat-the-disease-falls-18-percent/"
-        },
-        {
-          "name": "UNAIDS",
-          "url": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/july/20260727_PR_UNAIDS_special_report_AIDS2026"
-        }
-      ],
-      "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 20
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 22
     },
     {
       "category": "india",
@@ -1087,7 +1178,7 @@
         }
       ],
       "added_at": "2026-07-29T17:59:22+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "category": "india",
@@ -1144,7 +1235,7 @@
         "title": "Parliament debates a tougher anti-paper-leak law \u2014 up to 10 years jail and \u20b910 crore fines \u2014 after the NEET protests",
         "date": null
       },
-      "rank": 22
+      "rank": 24
     },
     {
       "category": "india",
@@ -1189,7 +1280,7 @@
         }
       ],
       "added_at": "2026-07-29T15:59:09+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "category": "india",
@@ -1247,7 +1338,7 @@
         "title": "India Inc.'s biggest earnings day of the season: Asian Paints, Dabur and 100+ companies report today",
         "date": null
       },
-      "rank": 24
+      "rank": 26
     },
     {
       "category": "india",
@@ -1294,7 +1385,7 @@
         "title": "Sensex closes down 70 points, Nifty under 24,000 as IT stocks rally while PSU banks and FMCG drag",
         "date": null
       },
-      "rank": 25
+      "rank": 27
     },
     {
       "category": "india",
@@ -1333,7 +1424,7 @@
         }
       ],
       "added_at": "2026-07-29T13:59:06+05:30",
-      "rank": 26
+      "rank": 28
     },
     {
       "region": "india",
@@ -1372,7 +1463,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "region": "india",
@@ -1418,7 +1509,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "region": "india",
@@ -1473,7 +1564,7 @@
         }
       ],
       "added_at": "2026-07-29T09:58:47+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "region": "india",
@@ -1527,7 +1618,7 @@
         "title": "India's Commonwealth Games medal count hits 10 after an all-night session in Glasgow",
         "date": null
       },
-      "rank": 30
+      "rank": 32
     },
     {
       "region": "india",
@@ -1574,7 +1665,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "category": "india",
@@ -1632,7 +1723,7 @@
         "title": "Deep depression makes landfall near Haldia, triggering red alerts and evacuations across Odisha-Bengal",
         "date": null
       },
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1691,7 +1782,7 @@
         "title": "Supreme Court signals a special probe into RAF pellet-gun use on July 20 Parliament protesters",
         "date": null
       },
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1730,7 +1821,7 @@
         }
       ],
       "added_at": "2026-07-29T05:10:52+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1773,7 +1864,7 @@
         }
       ],
       "added_at": "2026-07-29T05:10:52+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "category": "india",
@@ -1819,7 +1910,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 36
+      "rank": 38
     },
     {
       "category": "india",
@@ -1864,7 +1955,7 @@
         "title": "Sharmila Dhankar wins para-athletics gold as India close Commonwealth Games Day 4 with 5 medals, resolving the high-jump duel",
         "date": null
       },
-      "rank": 37
+      "rank": 39
     },
     {
       "region": "india",
@@ -1909,106 +2000,114 @@
         }
       ],
       "added_at": "2026-07-28T22:04:03+05:30",
-      "rank": 38
-    },
-    {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-07-28T08:00:00+05:30",
-      "regions": [
-        "India"
-      ],
-      "title": "RBI sells dollars for a third straight day to defend the rupee near its record low",
-      "key_points": [
-        "The rupee weakened toward its **record low of 96.96 per dollar** last week as Middle East tensions pushed up oil prices.",
-        "The RBI reportedly sold an estimated **$8-9 billion** on Friday alone, according to bankers.",
-        "The central bank has now intervened for a **third straight day**, targeting off-peak trading hours to amplify its impact.",
-        "Softening **crude oil prices**, on hopes of a US-Iran deal, are also helping take pressure off the currency.",
-        "The rupee is expected to **hold above the 96/dollar mark** at Tuesday's open."
-      ],
-      "background": "India imports roughly **90% of the oil** it uses, so a weaker rupee makes fuel, and everything that depends on it, more expensive -- which is why the central bank cares so much about defending psychologically important levels like 97 to the dollar. The **Reserve Bank of India (RBI)** manages currency swings mainly by buying or selling dollars from its foreign-exchange reserves; heavy selling like this week's is a costly, limited tool, not something it can do indefinitely. The current pressure traces back to escalating Middle East tension around the Iran war, which pushed oil prices up and rattled global currency markets, compounded by elevated US Treasury yields pulling investment money toward the dollar.",
-      "what_happened": "The rupee hurtled toward its all-time low of **96.96 per dollar** last week as Middle East tensions spiked oil prices and global investors favored the dollar. Bankers estimate the RBI sold **$8 billion to $9 billion** across spot and forward markets on Friday alone to defend the currency, then followed up with further dollar sales on Monday and Tuesday -- a third consecutive day of intervention, deliberately timed around off-peak trading hours to get more impact per dollar spent. That sustained selling triggered stop-loss unwinding among traders who had bet on further rupee weakness, accelerating the currency's recovery. Combined with crude oil prices easing on hopes of a US-Iran diplomatic breakthrough, the rupee is now expected to hold above the 96/dollar level at Tuesday's market open, a level it had been in danger of breaching entirely.",
-      "why_it_matters": "A rupee that keeps sliding toward 97 or beyond would make imported oil, electronics, and other goods more expensive for ordinary Indians, adding to inflation pressure right as the RBI is also trying to manage growth. The scale of intervention -- multiple billions of dollars in a single day -- shows how seriously the central bank is treating this specific threshold.",
-      "ripple_effects": "A stabilized rupee is a relief for import-heavy sectors and helps keep a lid on inflation, which factors into the RBI's own future interest-rate decisions. It also affects Indian stocks with dollar-denominated costs or debt, and eases pressure on the Sensex and Nifty, which have been swinging on this exact tug-of-war between oil prices and Fed-related uncertainty this week.",
-      "why_now": "The intervention has intensified over the past three trading days precisely because the rupee came within a hair of a fresh record low, and it coincides with the Fed's own two-day policy meeting, which is adding extra volatility to global currency markets this week.",
-      "watch_next": "Whether the rupee holds above 96/dollar through the week, and how Wednesday's US Federal Reserve rate decision affects the dollar's broader strength.",
-      "key_terms": [
-        {
-          "term": "Currency intervention",
-          "definition": "When a central bank buys or sells its own currency (or a foreign one) in the open market specifically to influence the exchange rate, rather than letting the market set it freely."
-        }
-      ],
-      "the_lesson": "Central banks don't defend a currency by announcement -- they do it by actually buying and selling in the market, which quietly spends down a limited pool of foreign-exchange reserves, so the size of an intervention like this week's tells you how seriously officials are taking the threat.",
-      "concepts": [
-        "usdinr",
-        "forex_reserves",
-        "crude_asset"
-      ],
-      "market_link": "A steadier rupee and softer crude oil are two of the tailwinds behind this week's choppy but resilient trading in the Sensex and Nifty, alongside nervousness over the Fed's rate decision.",
-      "importance": "high",
-      "sources": [
-        {
-          "name": "Republic World",
-          "url": "https://www.republicworld.com/business/india-rupee-rupee-to-hold-its-rise-past-96-rbi-soft-oil-counter-dollar-strength-2026-07-28-133604"
-        },
-        {
-          "name": "Yahoo Finance / Reuters",
-          "url": "https://finance.yahoo.com/news/rbis-3-day-intervention-push-092110420.html"
-        }
-      ],
-      "added_at": "2026-07-28T22:04:03+05:30",
-      "rank": 39
-    },
-    {
-      "category": "india",
-      "region": "india",
-      "published_iso": "2026-07-27T00:00:00Z",
-      "regions": [
-        "India"
-      ],
-      "title": "Kapil Sibal's Supreme Court challenge could close India's 'mass defection' loophole",
-      "key_points": [
-        "Supreme Court called the anti-defection law's **Tenth Schedule** riddled with **'enormous issues'**.",
-        "Kapil Sibal, senior advocate and independent Rajya Sabha MP, is challenging the **'deemed merger'** rule in **Paragraph 4**.",
-        "That rule lets **two-thirds of a party's legislators** dodge disqualification by claiming a merger \u2014 even if the original party never agreed.",
-        "Recent **AAP, TMC and Shiv Sena (UBT)** legislators have used this route to join the **BJP** and other parties.",
-        "The Court issued notice to the Union government and tagged the case with a pending **Goa** defections matter."
-      ],
-      "background": "India's 1985 anti-defection law, the Tenth Schedule of the Constitution, was meant to stop lawmakers from switching parties for personal gain after being elected on one party's ticket \u2014 a practice long nicknamed 'Aaya Ram Gaya Ram.' But the law carves out an exception: if two-thirds of a party's legislators defect together and call it a 'merger,' they escape disqualification entirely, even without the original party's leadership agreeing to any merger.",
-      "what_happened": "A Supreme Court bench of Justices P.S. Narasimha and Alok Aradhe examined Sibal's plea challenging this 'deemed merger' interpretation of Paragraph 4, remarked that the law's current reading has 'enormous issues,' and issued notice to the Union government seeking its response. The Court tagged the matter with a related pending case on defections in Goa for a joint hearing. Sibal's petition comes after several recent instances of AAP, Trinamool Congress and Shiv Sena (UBT) legislators using the merger clause to switch to the BJP and other parties.",
-      "why_it_matters": "How this exception is interpreted determines whether large blocs of elected legislators can keep switching parties en masse without real consequence, which directly affects the stability of state governments and coalitions.",
-      "ripple_effects": "Parties across the political spectrum have both used and been hurt by this loophole in different states, so a narrower Supreme Court interpretation would reshape the incentives for engineered defections nationwide, not just for one party.",
-      "why_now": "The petition lands amid a fresh wave of legislators from opposition parties using the merger route to join the BJP, sharpening scrutiny of a decades-old provision.",
-      "watch_next": "The Union government's formal response, and whether the case proceeds to a full hearing alongside the pending Goa matter.",
-      "key_terms": [
-        {
-          "term": "Tenth Schedule",
-          "definition": "The part of the Indian Constitution containing the anti-defection law, which disqualifies lawmakers who defect from the party they were elected under."
-        },
-        {
-          "term": "Deemed merger",
-          "definition": "A legal exception letting two-thirds of a party's legislators avoid disqualification by claiming their move counts as a party merger, even without the original party formally merging."
-        }
-      ],
-      "the_lesson": "A law written to stop one specific abuse can create a new abuse through its own exceptions \u2014 the carve-out becomes the workaround, which is why courts periodically have to revisit how old exceptions get used.",
-      "concepts": [
-        "supreme_court_india",
-        "coalition_government"
-      ],
-      "market_link": null,
-      "importance": "high",
-      "sources": [
-        {
-          "name": "Free Press Journal",
-          "url": "https://www.freepressjournal.in/india/supreme-court-flags-enormous-issues-in-anti-defection-law-seeks-centres-response-on-kapil-sibals-plea"
-        },
-        {
-          "name": "LawBeat",
-          "url": "https://lawbeat.in/top-stories/political-mergers-or-defection-kapil-sibal-moves-supreme-court-over-interpretation-of-constitutions-tenth-schedule-1614822"
-        }
-      ],
-      "added_at": "2026-07-28T19:59:24+05:30",
       "rank": 40
+    },
+    {
+      "category": "cricket",
+      "published_iso": "2026-07-29T02:00:00+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "Delhi Capitals gatecrash the Hardik Pandya trade talks, offering Axar Patel and Prithvi Shaw",
+      "region": "cricket",
+      "thread": {
+        "previously": "We reported Mumbai Indians and Chennai Super Kings were in advanced talks over a trade sending captain Hardik Pandya to CSK.",
+        "changed": "Talks between MI and CSK have stalled over valuation \u2014 MI want Shivam Dube and Ayush Mhatre, CSK will only offer Dube plus Dewald Brevis and cash \u2014 and Delhi Capitals have now entered the race, reportedly offering captain Axar Patel and opener Prithvi Shaw for Pandya, with Kolkata Knight Riders also circling as a backup option."
+      },
+      "key_points": [
+        "**Delhi Capitals** have entered trade talks for Hardik Pandya, offering **Axar Patel and Prithvi Shaw**.",
+        "**Mumbai Indians** wanted Shivam Dube and Ayush Mhatre from CSK in return for Pandya; **CSK refused to include Mhatre**.",
+        "CSK's counter-offer: **Dube, Dewald Brevis, and \u20b910 crore cash** instead.",
+        "**Kolkata Knight Riders** have emerged as a fallback destination if the MI-CSK deal collapses entirely.",
+        "Pandya is currently **Mumbai Indians' captain**, making any trade a major power shift in the IPL 2027 window."
+      ],
+      "background": "Hardik Pandya has captained **Mumbai Indians** since returning to the franchise, but reports of trade talks with **Chennai Super Kings** first surfaced as CSK looks to rebuild around experienced leadership. IPL trade windows allow franchises to swap contracted players outside the annual auction, and a captain-level trade of Pandya's stature would be one of the biggest moves of the IPL 2027 cycle.",
+      "what_happened": "The Pandya trade saga has taken a new turn: Mumbai Indians' initial ask of **Shivam Dube and Ayush Mhatre** from Chennai Super Kings hit a wall when CSK refused to part with Mhatre, a rising young batter, instead countering with **Dube, South African batter Dewald Brevis, and \u20b910 crore in cash**. With that standoff unresolved, **Delhi Capitals** have stepped into the picture, reportedly willing to offer both **captain Axar Patel and opening batter Prithvi Shaw** to land Pandya. Should the MI-CSK talks collapse over valuation, **Kolkata Knight Riders** have also emerged as a potential destination for Pandya.",
+      "why_it_matters": "A three-way (now four-way) chase for a captain of Pandya's profile signals just how much IPL franchises value proven white-ball leadership and match-winning allrounders \u2014 and shows trade valuations breaking down over the inclusion of promising young players like Mhatre, not just star names.",
+      "ripple_effects": "Wherever Pandya lands, it reshapes that franchise's captaincy and batting order for IPL 2027, while the players sent the other way (Dube, Mhatre, Brevis, Axar Patel or Shaw) would each need new roles at their new franchises. A deal with Delhi Capitals would also cost DC its own captain, Axar Patel, forcing a fresh leadership decision there.",
+      "why_now": "Trade-window deals are typically finalized well ahead of the following IPL auction and season planning, so franchises are racing to resolve valuation gaps before the window narrows.",
+      "watch_next": "Whether Mumbai Indians and Chennai Super Kings settle their valuation gap, or whether Delhi Capitals' offer of Axar Patel and Prithvi Shaw proves more attractive to Mumbai Indians.",
+      "key_terms": [
+        {
+          "term": "IPL trade window",
+          "definition": "A period outside the annual player auction when IPL franchises can privately negotiate to swap already-contracted players between teams."
+        }
+      ],
+      "the_lesson": "When two negotiating parties can't agree on the last piece of a deal, a competing bidder often decides the outcome \u2014 the biggest risk in any negotiation is leaving the other side room to shop elsewhere.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Sunday Guardian Live",
+          "url": "https://sundayguardianlive.com/sports/ipl-trade-news-mumbai-indians-demand-shivam-dube-and-ayush-mhatre-from-csk-in-exchange-for-hardik-pandya-more-detail-inside-244948/"
+        },
+        {
+          "name": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/hardik-pandya-trade-mi-want-080411790.html"
+        }
+      ],
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Mumbai Indians and Chennai Super Kings in advanced talks over a blockbuster Hardik Pandya trade",
+        "date": null
+      },
+      "rank": 41
+    },
+    {
+      "category": "cricket",
+      "published_iso": "2026-07-28T15:00:00+05:30",
+      "regions": [
+        "India",
+        "Sri Lanka"
+      ],
+      "title": "India name 15-man Test squad for Sri Lanka: Saransh Jain gets maiden call-up, Bumrah included subject to fitness",
+      "region": "cricket",
+      "thread": {
+        "previously": "We reported Bumrah was resting until July 30 before a fresh fitness test, with his Sri Lanka Test spot hinging on an August 7 practice match in Colombo.",
+        "changed": "Selectors have now named the full 15-man squad: Bumrah and Sai Sudharsan are included subject to BCCI fitness clearance, Ravindra Jadeja is back after recovering from tennis elbow, Washington Sundar is ruled out of the first Test with a hamstring injury, and 33-year-old offspinner Saransh Jain earns a maiden call-up in his place."
+      },
+      "key_points": [
+        "**Saransh Jain**, 33, earns his **maiden India Test call-up** after a decade of domestic cricket.",
+        "**Jasprit Bumrah** and **Sai Sudharsan** are included **subject to fitness clearance** at the BCCI's Centre of Excellence.",
+        "**Washington Sundar** is ruled out of the first Test with a hamstring injury from the England ODIs.",
+        "**Ravindra Jadeja** returns to the squad after recovering from tennis elbow.",
+        "The series runs **Galle (Aug 15\u201319)** then **Colombo (Aug 23\u201327)**."
+      ],
+      "background": "India's Test squad for its August tour of Sri Lanka has been a moving target for weeks: **Jasprit Bumrah**, India's premier fast bowler, picked up a knee issue during the ODI series in England and was rested as a precaution, with selectors waiting on a fitness test before committing him to Tests. Meanwhile allrounder **Washington Sundar** and batter **Ravindra Jadeja** have both been managing injuries (a hamstring strain and tennis elbow respectively) that clouded their availability.",
+      "what_happened": "The BCCI announced its **15-member squad** for the two-match Sri Lanka Test series, with **Bumrah** and opener **Sai Sudharsan** both included but subject to fitness assessments at the BCCI's Centre of Excellence before the squad departs. **Jadeja** has recovered from tennis elbow and is back in the squad. **Washington Sundar** was left out of contention for the first Test due to his ongoing hamstring rehab, opening the door for **Saransh Jain**, a 33-year-old offspin allrounder, to earn his first-ever India Test call-up after a decade of consistent domestic performances. The series is scheduled for Galle (August 15\u201319) and Colombo (August 23\u201327).",
+      "why_it_matters": "This is India's first full Test squad announcement since Bumrah's fitness scare, resolving weeks of uncertainty about who leads the bowling attack, while also handing a long-serving domestic cricketer his overdue India debut opportunity.",
+      "ripple_effects": "If Bumrah fails his fitness test, India's pace attack in Sri Lanka's spin-friendly conditions shifts significantly, likely leaning harder on spin options including Jain. A strong series for Jain could also reshape India's spin-bowling depth chart heading into the next home season.",
+      "why_now": "The squad had to be locked in ahead of the team's departure for the August 15 series opener, forcing selectors to make fitness-contingent calls on Bumrah and Sudharsan now rather than wait longer.",
+      "watch_next": "Bumrah and Sudharsan's fitness assessments at the BCCI Centre of Excellence, and the August 7 practice match in Colombo that will be a final check on match fitness.",
+      "key_terms": [
+        {
+          "term": "Offspin allrounder",
+          "definition": "A player who bowls off-break spin (turning the ball into a right-handed batter) and also contributes meaningfully with the bat."
+        }
+      ],
+      "the_lesson": "Fitness-contingent squad selections are a normal part of managing fast bowlers' workloads \u2014 teams often name a player 'subject to fitness' rather than leave a match-winner out entirely, keeping options open until the last responsible moment.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "ESPNcricinfo",
+          "url": "https://www.cricinfo.com/story/saransh-jain-gets-maiden-india-call-up-for-test-series-in-sri-lanka-1547813"
+        },
+        {
+          "name": "News Today",
+          "url": "https://newstodaynet.com/2026/07/29/spinner-saransh-jain-gets-india-test-call-up/"
+        }
+      ],
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Bumrah's Sri Lanka Test fate now hinges on an August 7 practice match in Colombo",
+        "date": null
+      },
+      "rank": 42
     },
     {
       "category": "cricket",
@@ -2053,7 +2152,7 @@
         }
       ],
       "added_at": "2026-07-29T17:59:22+05:30",
-      "rank": 41
+      "rank": 43
     },
     {
       "category": "cricket",
@@ -2094,7 +2193,7 @@
         }
       ],
       "added_at": "2026-07-29T15:59:09+05:30",
-      "rank": 42
+      "rank": 44
     },
     {
       "category": "cricket",
@@ -2140,7 +2239,7 @@
         }
       ],
       "added_at": "2026-07-29T15:59:09+05:30",
-      "rank": 43
+      "rank": 45
     },
     {
       "category": "cricket",
@@ -2184,7 +2283,7 @@
         "title": "Jasprit Bumrah's Sri Lanka Test spot slips further into doubt as India's squad picture firms up",
         "date": null
       },
-      "rank": 44
+      "rank": 46
     },
     {
       "region": "cricket",
@@ -2227,7 +2326,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 45
+      "rank": 47
     },
     {
       "region": "cricket",
@@ -2276,7 +2375,7 @@
         "title": "India name Sri Lanka Test squad: Jadeja returns, Bumrah in but fitness-watched, Gill captains",
         "date": null
       },
-      "rank": 46
+      "rank": 48
     },
     {
       "region": "cricket",
@@ -2310,7 +2409,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 47
+      "rank": 49
     },
     {
       "category": "cricket",
@@ -2358,7 +2457,7 @@
         }
       ],
       "added_at": "2026-07-29T06:02:39+05:30",
-      "rank": 48
+      "rank": 50
     },
     {
       "category": "cricket",
@@ -2412,7 +2511,7 @@
         "title": "Sir Garfield Sobers now lies in state at Kensington Oval, with his state funeral confirmed for Wednesday",
         "date": null
       },
-      "rank": 49
+      "rank": 51
     },
     {
       "category": "cricket",
@@ -2451,7 +2550,7 @@
         }
       ],
       "added_at": "2026-07-29T05:10:52+05:30",
-      "rank": 50
+      "rank": 52
     },
     {
       "category": "cricket",
@@ -2485,7 +2584,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 51
+      "rank": 53
     },
     {
       "category": "cricket",
@@ -2521,7 +2620,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 52
+      "rank": 54
     },
     {
       "region": "cricket",
@@ -2569,7 +2668,7 @@
         "title": "West Indies rip through 14 wickets in a single day to seize control of the Trinidad Test",
         "date": null
       },
-      "rank": 53
+      "rank": 55
     },
     {
       "category": "cricket",
@@ -2607,7 +2706,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 54
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2647,7 +2746,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 55
+      "rank": 57
     },
     {
       "category": "cricket",
@@ -2692,7 +2791,7 @@
         }
       ],
       "added_at": "2026-07-28T18:00:54+05:30",
-      "rank": 56
+      "rank": 58
     },
     {
       "region": "cricket",
@@ -2749,7 +2848,7 @@
         "title": "Sir Garfield Sobers lies in state at Barbados's Parliament as the island prepares to bid its cricket legend farewell",
         "date": null
       },
-      "rank": 57
+      "rank": 59
     },
     {
       "category": "cricket",
@@ -2788,118 +2887,81 @@
         }
       ],
       "added_at": "2026-07-28T12:06:40+05:30",
-      "rank": 58
+      "rank": 60
     },
     {
-      "category": "cricket",
-      "published_iso": "2026-07-28T02:00:00Z",
+      "category": "f1",
+      "published_iso": "2026-07-29T07:00:00+01:00",
       "regions": [
-        "Guyana",
-        "UAE",
-        "USA"
+        "Global"
       ],
-      "title": "Desert Vipers Thrash San Francisco Unicorns by 9 Wickets in Global Super League",
+      "title": "Audi's Bortoleto says his 2027 future is 'already sorted' as Sainz's Williams seat stays in doubt",
+      "region": "f1",
       "key_points": [
-        "**San Francisco Unicorns** were held to **151/7** batting first at Providence Stadium in Guyana",
-        "**Desert Vipers** chased the target down for the loss of just **one wicket**, finishing on **152/1 in 16.1 overs**",
-        "West Indies all-rounder **Zachary Carter** starred with an unbeaten-paced **55 off 29 balls** plus **1/9** with the ball to win Player of the Match",
-        "It was **Match 7** of the 2026 Global Super League, a five-team T20 tournament running **July 23 to August 1**",
-        "The dominant win strengthens Desert Vipers' position as the competition heads into its final week before the August 1 final"
+        "Audi driver **Gabriel Bortoleto** says he's signed with the team **'for many years'** and his 2027 seat is settled.",
+        "That narrows the field just as **Carlos Sainz** weighs his own future amid **Williams' poor form** since the 2026 rules reset.",
+        "Sainz is still linked to **Audi**, but teammate-designate **Nico Hulkenberg** is contracted there through **2027**.",
+        "**Fernando Alonso** is likely to stay at Aston Martin through 2027 if the team's form holds up.",
+        "**Franco Colapinto** could lose his current seat in some scenarios, with a Williams return floated as a fallback."
       ],
-      "background": "The Global Super League is a T20 franchise tournament now in its third edition, bringing together five club sides from different countries and leagues \u2014 Desert Vipers (UAE's ILT20), Lahore Qalandars (Pakistan Super League), Perth Scorchers (Australia's Big Bash), Guyana Amazon Warriors (Caribbean Premier League) and San Francisco Unicorns (USA's Major League Cricket) \u2014 to play a round-robin plus playoffs, all hosted at Providence Stadium in Guyana. Desert Vipers, champions of the UAE's ILT20 in 2026, came into this match looking to build on an already useful position in the group table.",
-      "what_happened": "San Francisco Unicorns won the toss, batted first, and could only post 151 for 7 in their 20 overs. In reply, Desert Vipers made light work of the chase, racing to 152 for 1 in just 16.1 overs to win by nine wickets with 23 balls unused. Zachary Carter led the chase with a rapid 55 off 29 balls and also chipped in with the ball, taking 1 for 9, earning him the Player of the Match award.",
-      "why_it_matters": "The result is one of the most one-sided of the tournament so far and pushes Desert Vipers firmly into contention for a top-two finish, which matters because only the two best teams after the round-robin advance directly to (or through) the knockouts. A big net-run-rate boost from a nine-wicket win with overs to spare can be decisive in a short, five-team league table.",
-      "ripple_effects": "The win tightens the race for the qualifier spot on July 31 and increases pressure on San Francisco Unicorns, who must now win their remaining group games to stay in playoff contention. It also raises Desert Vipers' profile as a cross-format outfit heading into the tournament's business end.",
-      "why_now": "The match was played and completed in the early hours of July 28 as the Global Super League group stage nears its climax ahead of the August 1 final.",
-      "watch_next": "The qualifier between the second and third-placed teams is set for July 31, with the final on August 1 at Providence Stadium.",
-      "key_terms": [
-        {
-          "term": "Global Super League",
-          "definition": "A T20 tournament that pits club teams from different countries' domestic leagues against each other, all played in Guyana."
-        },
-        {
-          "term": "Net Run Rate (NRR)",
-          "definition": "A tiebreaker stat measuring how much faster a team scores runs than it concedes them across a tournament; bigger, faster wins boost it."
-        },
-        {
-          "term": "Qualifier",
-          "definition": "A knockout-style match used in some T20 tournaments to decide the second finalist, giving lower-ranked group-stage teams a second chance."
-        }
-      ],
-      "the_lesson": "In short round-robin tournaments, how you win can matter almost as much as whether you win \u2014 a lopsided victory with overs and wickets in hand builds a net-run-rate cushion that can decide who reaches the knockouts.",
+      "background": "F1's 2027 driver market is unusually fluid because several teams \u2014 Audi (the rebranded Sauber works team), Williams, and Aston Martin \u2014 are all still settling their long-term line-ups following the sport's 2026 rules reset, which reshuffled the competitive order. Carlos Sainz joined Williams for 2025 expecting the team to be competitive under new rules, but Williams has struggled, fueling speculation he could look elsewhere for 2027.",
+      "what_happened": "Bortoleto confirmed publicly that his position at Audi is locked in beyond 2027, closing off one seat some had speculated Sainz might target. That leaves Sainz weighing his limited options: staying at a struggling Williams, or a long-shot Audi move complicated by Hulkenberg's existing contract through 2027. Separately, reports note Fernando Alonso is likely to stay at Aston Martin through 2027 if the team's competitive form improves, while Franco Colapinto's seat is described as at risk in some team-reshuffle scenarios, with a return to Williams floated as one landing spot.",
+      "why_it_matters": "Every confirmed seat removes options for other drivers, so Bortoleto's statement is a real data point in the wider 2027 silly season \u2014 it effectively narrows Sainz's paths and adds pressure on Williams to either improve or risk losing its lead driver.",
+      "ripple_effects": "A Sainz exit from Williams would trigger a chain of seat moves across multiple teams, similar to how one domino (Alonso, Verstappen, or Hadjar decisions elsewhere) reshapes several grids at once each driver-market cycle.",
+      "why_now": "Teams are locking in 2027 plans over the summer break window, when contract decisions and public statements from drivers tend to cluster.",
+      "watch_next": "Whether Williams improves its form enough to keep Sainz, or whether he confirms a move elsewhere before the season resumes.",
+      "key_terms": [],
+      "the_lesson": "In any competitive market with a fixed number of seats, one player locking in their position changes the calculus for everyone else \u2014 a market clears through chains of dependent decisions, not isolated ones.",
       "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "BDCricTime",
-          "url": "https://bdcrictime.com/match/97676/san-francisco-unicorns-vs-desert-vipers"
-        },
-        {
-          "name": "CricketWorld",
-          "url": "https://www.cricketworld.com/cricket/san-francisco-unicorns-vs-desert-vipers/match/live/97676"
+          "name": "GPFans",
+          "url": "https://www.gpfans.com/en/f1-news/1088207/audi-f1-gabriel-bortoleto-announces-future-carlos-sainz-williams-uncertain/"
         }
       ],
-      "region": "cricket",
-      "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 59
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 61
     },
     {
-      "category": "cricket",
-      "published_iso": "2026-07-27T10:00:00+05:30",
+      "category": "f1",
+      "published_iso": "2026-07-29T08:00:00+01:00",
       "regions": [
-        "Sri Lanka",
-        "India"
+        "Global"
       ],
-      "title": "Sri Lankan Court Denies Bail to Jaffna Kings Co-Owner Manjot Kalra in Match-Fixing Probe",
+      "title": "Lando Norris says McLaren hasn't 'fully clicked' with its car yet \u2014 despite his first win of 2026",
+      "region": "f1",
       "key_points": [
-        "Colombo's Chief Magistrate **Asanga S. Bodaragama** rejected bail pleas from Jaffna Kings co-owner **Manjot Kalra** and fellow Indian national **Yuvraj Pushpa** on Monday",
-        "Investigators told the court Kalra allegedly offered players **more than $30,000** to influence match outcomes, backed by recorded calls and video evidence",
-        "Three Sri Lanka internationals \u2014 **Bhanuka Rajapaksa, Avishka Fernando and Dunith Wellalage** \u2014 are the players who reported the approach to authorities",
-        "Kalra, a **former India Under-19 World Cup-winning centurion**, was arrested on **July 17**, just hours before the 2026 LPL season began, and stays in custody until **July 31**",
-        "Kalra denies all wrongdoing and says he is cooperating fully with the investigation"
+        "Norris says the team still hasn't got **close to the car's full potential**, even after winning at the Hungaroring.",
+        "The win came off the back of a **revised rear wing**, first shown in Austria but only raced in Hungary.",
+        "It was Norris and McLaren's **first win outside a Sprint since Sao Paulo last year**.",
+        "Norris called it 'some of the best pace I've ever had,' saying the **car was 'beautiful to drive.'**",
+        "He and the team believe there's meaningfully **more performance left to unlock** for the rest of 2026."
       ],
-      "background": "Manjot Kalra scored the century that won India the 2018 Under-19 World Cup final and later co-owned the Lanka Premier League franchise Jaffna Kings through his company Sports Commune. Days before this year's LPL began, he was arrested at a Colombo hotel over an alleged approach to a player; the resulting financial chaos (sponsors unpaid, players covering jersey logos with black tape) led Sri Lanka Cricket and tournament operator IPG to strip Sports Commune of the franchise entirely and take over Jaffna Kings' operations directly. Kalra has remained in custody since, and Monday's court appearance was his first bid for release.",
-      "what_happened": "Kalra and co-accused Yuvraj Pushpa applied for bail on medical grounds, with their lawyers arguing both men were unwell. Prosecutors from Sri Lanka's Special Investigation Unit for the Prevention of Offences Relating to Sports opposed the application, telling the Colombo Chief Magistrate's Court that their probe was still active and that they held recorded phone conversations and video evidence showing Kalra had offered a player upwards of $30,000 to fix a match outcome. The complaint that triggered the arrest was originally lodged by three capped Sri Lankan internationals \u2014 Bhanuka Rajapaksa, Avishka Fernando and Dunith Wellalage \u2014 after Kalra allegedly approached one of them. The magistrate sided with the prosecution and refused bail, meaning both men remain remanded in judicial custody at least until their next scheduled court date on July 31.",
-      "why_it_matters": "This is one of the most serious corruption cases to hit a major T20 league in years, involving a franchise co-owner rather than a player, and it has already forced a league to seize control of one of its own teams mid-season. How Sri Lankan authorities handle it will signal whether T20 leagues can police the investors who bankroll them, not just the players on the field.",
-      "ripple_effects": "With Kalra and Pushpa's custody extended to July 31, the case will likely run well beyond the LPL final on August 8, keeping a legal cloud over the tournament's business side. It may also prompt other T20 leagues to tighten vetting of franchise owners, and puts pressure on Sri Lanka Cricket and IPG to show the league can still be trusted by sponsors and broadcasters despite the scandal.",
-      "why_now": "The bail ruling came down Monday, July 27, the first court decision since Kalra's mid-July arrest, and keeps the case in the news as the LPL season continues.",
-      "watch_next": "The next remand hearing is scheduled for July 31, when prosecutors must show fresh progress or risk having to release the accused.",
-      "key_terms": [
-        {
-          "term": "Match-fixing",
-          "definition": "Illegally arranging for a match, or moments within it, to go a certain way in exchange for money, undermining fair competition."
-        },
-        {
-          "term": "Remand",
-          "definition": "Being held in custody by court order while a criminal investigation continues, rather than being free on bail."
-        },
-        {
-          "term": "Bail",
-          "definition": "A court's conditional release of an accused person before trial, usually on the promise they will return for hearings."
-        }
-      ],
-      "the_lesson": "Sports leagues are only as clean as the people who own and finance the teams, not just the players who take the field \u2014 corruption controls need to reach investors and executives too.",
+      "background": "Lando Norris took McLaren's **first win of the 2026 season outside of a sprint race** at the Hungarian Grand Prix on **July 26**, starting from his first pole of the year and converting it comfortably. The win followed a run of upgrades McLaren had been rolling out through the season, including a revised rear wing debuted in Austria weeks earlier but held back from racing until Hungary.",
+      "what_happened": "Speaking after the Hungary win, Norris admitted the team 'doesn't feel like we have fully clicked with our understanding of this car just yet,' suggesting there's still untapped performance in the current chassis despite the dominant result. He praised the car as 'beautiful to drive' and said Sunday's pace was 'some of the best' he's experienced, while also acknowledging in a separate comment that he'd expected slightly more from the weekend given how the car felt. The remarks came as McLaren looks to build momentum in the second half of the championship.",
+      "why_it_matters": "A driver saying his team hasn't maximized a car it just won comfortably with is a genuine competitive signal \u2014 it suggests McLaren believes it can extract more pace at upcoming tracks, which matters directly for the title fight.",
+      "ripple_effects": "If McLaren keeps unlocking pace, rival teams (Mercedes, Ferrari, Red Bull) will need matching upgrades to keep pace through the second half of the season, shaping the development spending race for the rest of 2026.",
+      "why_now": "The comments came in the days immediately following the Hungarian GP win, as team and driver reflect on what worked and plan upgrades for upcoming races.",
+      "watch_next": "Whether McLaren brings further upgrades to unlock the pace Norris is describing, and how that shows up in results at the next few rounds.",
+      "key_terms": [],
+      "the_lesson": "In any high-performance system, a win doesn't mean you've found the ceiling \u2014 the team that keeps asking 'what are we leaving on the table' after a victory is usually the one that keeps winning.",
       "concepts": [],
       "market_link": null,
-      "importance": "high",
+      "importance": "notable",
       "sources": [
         {
-          "name": "The Tribune",
-          "url": "https://www.tribuneindia.com/news/diaspora/sri-lankan-court-denies-bail-to-jaffna-kings-co-owner-manjot-kalra/"
+          "name": "Motorsport Week",
+          "url": "https://www.motorsportweek.com/2026/07/29/lando-norris-mclaren-excitement-f1-hungary/"
         },
         {
-          "name": "ESPNcricinfo",
-          "url": "https://www.espncricinfo.com/story/former-india-under-19-player-manjot-kalra-denies-fixing-allegations-in-lpl-2026-1546194"
-        },
-        {
-          "name": "Cricket Country",
-          "url": "https://www.cricketcountry.com/news/sri-lanka-court-rejects-manjot-kalras-bail-plea-in-match-fixing-case-1357403/"
+          "name": "Formula1.com",
+          "url": "https://www.formula1.com/en/latest/article/the-car-was-beautiful-to-drive-norris-delighted-by-some-of-the-best-pace-ive-ever-had-in-hungary-win.QnY6fxZnQt7VKoeN1B22W"
         }
       ],
-      "region": "cricket",
-      "added_at": "2026-07-28T10:02:13+05:30",
-      "rank": 60
+      "added_at": "2026-07-29T19:59:20+05:30",
+      "rank": 62
     },
     {
       "category": "f1",
@@ -2939,7 +3001,7 @@
         }
       ],
       "added_at": "2026-07-29T17:59:22+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "category": "f1",
@@ -2983,7 +3045,7 @@
         }
       ],
       "added_at": "2026-07-29T15:59:09+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "category": "f1",
@@ -3039,7 +3101,7 @@
         "title": "New Hungary footage undercuts Sainz's 'blue flags' excuse for the Piastri collision",
         "date": null
       },
-      "rank": 63
+      "rank": 65
     },
     {
       "category": "f1",
@@ -3078,7 +3140,7 @@
         }
       ],
       "added_at": "2026-07-29T13:59:06+05:30",
-      "rank": 64
+      "rank": 66
     },
     {
       "category": "f1",
@@ -3117,7 +3179,7 @@
         }
       ],
       "added_at": "2026-07-29T13:59:06+05:30",
-      "rank": 65
+      "rank": 67
     },
     {
       "region": "f1",
@@ -3151,7 +3213,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 66
+      "rank": 68
     },
     {
       "region": "f1",
@@ -3194,7 +3256,7 @@
         }
       ],
       "added_at": "2026-07-29T12:06:11+05:30",
-      "rank": 67
+      "rank": 69
     },
     {
       "region": "f1",
@@ -3232,7 +3294,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 68
+      "rank": 70
     },
     {
       "region": "f1",
@@ -3272,7 +3334,7 @@
         }
       ],
       "added_at": "2026-07-29T08:00:27+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "category": "f1",
@@ -3311,7 +3373,7 @@
         }
       ],
       "added_at": "2026-07-29T06:02:39+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "category": "f1",
@@ -3359,7 +3421,7 @@
         "title": "Championship leader Antonelli gets a triple penalty at the Hungarian GP and drops from pole pace to P7",
         "date": null
       },
-      "rank": 71
+      "rank": 73
     },
     {
       "category": "f1",
@@ -3400,7 +3462,7 @@
         }
       ],
       "added_at": "2026-07-29T00:00:34+05:30",
-      "rank": 72
+      "rank": 74
     },
     {
       "category": "f1",
@@ -3450,7 +3512,7 @@
         "title": "Verstappen's camp demands a record ~$100 million a year to commit to Red Bull through 2032",
         "date": null
       },
-      "rank": 73
+      "rank": 75
     },
     {
       "region": "f1",
@@ -3497,7 +3559,7 @@
         "title": "Verstappen's Red Bull exit clause is now officially active \u2014 and Red Bull is racing to stop him leaving",
         "date": null
       },
-      "rank": 74
+      "rank": 76
     },
     {
       "region": "f1",
@@ -3541,7 +3603,7 @@
         }
       ],
       "added_at": "2026-07-28T22:04:03+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "category": "f1",
@@ -3585,7 +3647,7 @@
         }
       ],
       "added_at": "2026-07-28T19:59:24+05:30",
-      "rank": 76
+      "rank": 78
     },
     {
       "category": "f1",
@@ -3634,7 +3696,7 @@
         }
       ],
       "added_at": "2026-07-28T15:59:53+05:30",
-      "rank": 77
+      "rank": 79
     },
     {
       "region": "f1",
@@ -3691,85 +3753,6 @@
         "title": "F1 stewards rule Sainz 'wholly responsible' for the Piastri crash -- but only fine him half the usual penalty",
         "date": null
       },
-      "rank": 78
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-07-27T12:00:00+00:00",
-      "regions": [
-        "Formula 1",
-        "Austria"
-      ],
-      "title": "Verstappen's camp demands a record ~$100 million a year to commit to Red Bull through 2032",
-      "key_points": [
-        "Verstappen's management is reportedly seeking around **$100 million a year** to sign a new long-term deal.",
-        "The ask would tie him to Red Bull through **2032** \u2014 an unusually long commitment in F1.",
-        "Red Bull bosses **Mintzlaff and Mateschitz reportedly 'baulked'** at the number.",
-        "Red Bull also wants to **remove the exit clause** in Verstappen's current contract and extend it to 2029.",
-        "Verstappen's exit clause is **already active**, since he's currently outside the top two in the standings."
-      ],
-      "background": "Max Verstappen, F1's dominant driver for much of the past several seasons, is contracted to Red Bull until the end of 2028 \u2014 but that contract has an exit clause letting him leave early if the team isn't competitive enough, measured by his position in the championship standings. With Red Bull struggling for form this season, that clause has already been triggered, giving Verstappen a real route out. Red Bull has spent weeks trying to lock him down with a new, restructured deal instead.",
-      "what_happened": "Reports indicate Verstappen's camp \u2014 his father Jos Verstappen and agent Raymond Vermeulen \u2014 is pushing for a record salary package of roughly $100 million a year in exchange for Verstappen committing to Red Bull all the way through 2032. Red Bull's leadership, team principal-level executives Mintzlaff and co-owner Mark Mateschitz, are reported to have balked at the size of the ask. Separately, Red Bull is trying to restructure Verstappen's existing contract to extend it by a further year to 2029 and strip out the exit clause that currently lets him walk. Verstappen himself has given no public timeline, and has until October to decide whether to trigger his exit.",
-      "why_it_matters": "This is a genuine crossroads for Formula 1's biggest current star \u2014 if the numbers can't be agreed, one of the sport's most dominant drivers in decades could leave the team that built his career, reshaping the driver market and the balance of power on the grid.",
-      "ripple_effects": "A protracted stand-off keeps rival teams (McLaren has been floated as his most realistic option) circling, and keeps Red Bull's other driver and sponsorship decisions on hold until the Verstappen question resolves. It also affects Red Bull's leverage with its other contracted drivers and sponsors, who are watching to see whether the team can hold onto its headline name.",
-      "why_now": "Verstappen's exit clause became active because of Red Bull's underwhelming season, and with an October deadline to use it, both sides are under real time pressure to either strike a deal or plan for a split.",
-      "watch_next": "Whether Verstappen makes any public comment on the reported salary figure, and whether Red Bull moves closer to or further from a deal before the October decision deadline.",
-      "key_terms": [
-        {
-          "term": "Exit clause",
-          "definition": "A condition written into a driver's contract that lets them leave early if the team fails to meet an agreed performance bar, such as a standings position."
-        }
-      ],
-      "the_lesson": "In sports and business alike, a performance-linked exit clause changes the negotiating power balance the moment results dip \u2014 it turns 'we'd like to keep you' into 'we now have to pay to keep you,' often at a premium.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "AutoRacing1",
-          "url": "https://www.autoracing1.com/pl/498202/formula-1-rumor-verstappen-wants-100-million-yr-to-extend-with-red-bull"
-        },
-        {
-          "name": "F1oversteer",
-          "url": "https://www.f1oversteer.com/news/red-bull-bosses-baulked-at-what-max-verstappen-just-demanded-despite-refusing-to-commit-for-2027/"
-        }
-      ],
-      "added_at": "2026-07-28T14:02:10+05:30",
-      "rank": 79
-    },
-    {
-      "category": "f1",
-      "published_iso": "2026-07-26T12:00:00+00:00",
-      "regions": [
-        "Global",
-        "F1"
-      ],
-      "title": "Cadillac holds the cards on Perez and Bottas as F1's newest team plots its 2027 lineup",
-      "region": "f1",
-      "key_points": [
-        "Both **Sergio Perez and Valtteri Bottas** are understood to have options to continue at Cadillac for 2027",
-        "Neither driver's **2027 seat is officially confirmed** yet",
-        "Cadillac is F1's **newest team**, having joined the grid in 2026",
-        "Junior drivers **Liam Lawson and Arvid Lindblad** are among those who could push for seats elsewhere if the pair are retained"
-      ],
-      "background": "Cadillac became Formula 1's newest constructor when it joined the grid for the 2026 season, adding an 11th team to the championship. It signed Sergio Perez -- dropped by Red Bull after four seasons alongside Verstappen -- and veteran Valtteri Bottas to lead its debut campaign. As a new team, Cadillac's driver lineup decisions for 2027 carry extra weight, since they'll shape how the team builds its identity and competitiveness in only its second season.",
-      "what_happened": "As Formula 1's driver market heats up ahead of the summer break, reports indicate that **both Sergio Perez and Valtteri Bottas hold options with Cadillac to continue into the 2027 season**, though neither has been officially confirmed yet. Perez returned to the grid in 2026 after sitting out 2025 following his Red Bull exit, while Bottas brings experience from his years at Mercedes and Sauber/Audi. Cadillac's decision matters beyond its own garage: if the team exercises its options and keeps both drivers, it would **close off two of the grid's most senior seats** to the wave of younger drivers -- including Red Bull juniors like Liam Lawson and Arvid Lindblad -- who are hoping to move up in 2027.",
-      "why_it_matters": "Cadillac's choice will shape how the driver market's dominoes fall -- if Perez and Bottas stay, it removes two possible landing spots for other established drivers or rising juniors caught up in this year's unusually large wave of expiring contracts.",
-      "ripple_effects": "A Cadillac decision to retain both drivers would push some junior prospects toward reserve or development roles for another year, while a decision to swap in a junior could open a seat that experienced drivers displaced elsewhere, like Sainz or Perez if he moves, might target.",
-      "why_now": "Cadillac, like every other team, is expected to finalize its 2027 driver plans during the summer break, making this a live decision point right now.",
-      "watch_next": "Whether Cadillac confirms Perez and Bottas for 2027, or opts to blood a junior driver in one of the seats.",
-      "key_terms": [],
-      "the_lesson": "New entrants in a competitive field, like Cadillac in F1, often value experience over inexperience in their early seasons, since stability can matter more than upside while a team is still finding its feet.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "PlanetF1",
-          "url": "https://www.planetf1.com/news/f1-2027-driver-line-up-confirmed-grid"
-        }
-      ],
-      "added_at": "2026-07-28T12:06:40+05:30",
       "rank": 80
     }
   ],
