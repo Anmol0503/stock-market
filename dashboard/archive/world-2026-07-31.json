@@ -1,9 +1,116 @@
 {
   "date": "2026-07-31",
-  "generated_at": "2026-07-31T11:58:17+05:30",
+  "generated_at": "2026-07-31T14:00:39+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "region": "global",
+      "category": "technology",
+      "published_iso": "2026-07-30T00:00:00Z",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "title": "Google DeepMind's new AI can control a robot's entire body \u2014 not just its hands",
+      "key_points": [
+        "**Gemini Robotics 2** lets a humanoid robot walk, crouch and manipulate objects while reasoning through multi-step tasks",
+        "Earlier robot-AI models mostly controlled the **upper body**; this one directs the whole robot, top to bottom",
+        "It ships as **three separate models** \u2014 one for full-body control, one for step-by-step planning across multiple robots, and a lightweight version that runs **on-device**",
+        "In testing, it hit a **92% success rate** unscrewing a lightbulb, a task that needs precise full-body coordination",
+        "Builds on Google's original **Gemini Robotics**, released in 2025"
+      ],
+      "background": "For the last two years, the giants of AI \u2014 Google, OpenAI, and a wave of humanoid-robot startups like Figure AI and Tesla's Optimus team \u2014 have been racing to solve the same problem: a chatbot that's brilliant with language is often clumsy with a body. Getting an AI to plan *and* physically execute a task (reasoning about what to do, then translating that into precise motor commands) is a much harder problem than text generation, because the real world doesn't forgive small errors the way a sentence does. Google's first Gemini Robotics model in 2025 was a meaningful step \u2014 it could see, understand instructions, and act \u2014 but it mostly handled arms and hands, not full-body movement.",
+      "what_happened": "Google DeepMind announced **Gemini Robotics 2** on July 30, a system that converts camera input and plain-language instructions into motor commands for a robot's entire body \u2014 legs and torso included, not just arms. The release actually bundles **three models**: a vision-language-action (VLA) model for whole-body control, an embodied-reasoning model that can plan multi-step tasks and coordinate multiple robots working together, and a lightweight on-device version that can adapt to a new robot's physical shape within hours instead of weeks. In demonstrations, the system directed a humanoid robot to walk, crouch, and perform fine motor tasks \u2014 including unscrewing a lightbulb successfully **92% of the time**, a benchmark that requires the kind of coordinated full-body balance and dexterity that's historically been very hard for robots to pull off reliably.",
+      "why_it_matters": "This is a real step toward general-purpose robots that can work in ordinary human spaces \u2014 homes, warehouses, hospitals \u2014 rather than robots hard-coded for one repetitive factory task. The multi-robot coordination piece matters too: it points toward fleets of robots that can divide up a job (like cleaning a room) without a human directing each one individually.",
+      "ripple_effects": "Expect competitive pressure on rivals building humanoid robots and robot-control AI \u2014 Tesla's Optimus program, Figure AI, and China's fast-moving humanoid robotics sector will all be measured against this benchmark. Longer term, if full-body robot AI keeps improving at this pace, it accelerates conversations about automation in warehousing, eldercare, and domestic labor \u2014 with all the job-displacement and safety questions that come with it.",
+      "why_now": "This is the direct successor to Google's 2025 Gemini Robotics model, released as the broader AI industry pivots hard toward 'physical AI' \u2014 teaching AI models to act in the real world, not just talk about it \u2014 as the next major competitive frontier after chatbots and coding assistants.",
+      "watch_next": "Watch which robotics companies license or integrate Gemini Robotics 2 into real hardware over the coming months \u2014 that's what will show whether this becomes an industry standard or stays a Google-only demo.",
+      "key_terms": [
+        {
+          "term": "vision-language-action (VLA) model",
+          "definition": "An AI model that takes in what it sees and is told, and outputs physical actions \u2014 the core technology behind robots that can follow instructions in the real world."
+        }
+      ],
+      "the_lesson": "The hardest part of AI isn't always the thinking \u2014 it's turning thought into precise, reliable physical action in an unpredictable world. Progress there tends to be slower and more incremental than progress in pure language AI.",
+      "concepts": [],
+      "market_link": "Feeds into the AI-capex and humanoid-robotics investment theme; watch Alphabet, and humanoid-robot-adjacent names like Tesla, for market reaction to Google's progress in physical AI.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/07/30/google-deepmind-gemini-robotics-2-whole-body-control-dexterity-multi-robot-collaboration/"
+        },
+        {
+          "name": "The Star",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/07/31/google-unveils-gemini-ai-for-robots-struggling-with-dexterity"
+        }
+      ],
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "rank": 1
+    },
+    {
+      "region": "global",
+      "category": "geopolitics",
+      "published_iso": "2026-07-31T00:00:00Z",
+      "regions": [
+        "Middle East",
+        "Israel",
+        "Gaza",
+        "US"
+      ],
+      "title": "Trump says Hamas has agreed to disarm \u2014 but Israel and Hamas both stop short of confirming it",
+      "thread": {
+        "previously": "Yesterday we reported that Cairo talks between Hamas and mediators had made 'rare progress' on phase two of the US-brokered Gaza peace plan, with Hamas said to be discussing handing over its heavy weapons if Israel withdrew and stopped strikes.",
+        "changed": "Trump has now gone further, publicly declaring a 'historic agreement' for Hamas's complete disarmament \u2014 but neither Hamas nor Israel has confirmed they've actually accepted it, and Israeli officials say the terms fall short of their demands."
+      },
+      "key_points": [
+        "Trump announced a **'historic agreement'** for the complete disarmament of Hamas and all armed groups in Gaza, to happen **in phases**",
+        "**Neither Hamas nor Israel** has publicly confirmed accepting the deal Trump described",
+        "An Israeli official said before the announcement that Israel had **rejected** the proposal, demanding full demilitarization as a precondition",
+        "Under the plan, Hamas would **store** its heavy weapons rather than destroy them \u2014 a distinction critics call insufficient",
+        "A Board of Peace official estimated the process could take **200 to 320 days**"
+      ],
+      "background": "The current Gaza ceasefire was signed roughly **nine months ago** under a US-brokered framework, ending the acute phase of the war but leaving the harder questions \u2014 who governs Gaza, who rebuilds it, and what happens to Hamas's weapons \u2014 for a second phase. Trump set up a body he calls the **'Board of Peace'** to oversee that second phase, and mediators from **Egypt, Qatar and Turkey** have been shuttling between Hamas and Israeli officials in Cairo to close the gap. Every previous attempt to get Hamas to give up its arsenal has stalled, because disarmament is existential for the group \u2014 it's the one thing that guarantees it still matters politically once the guns go quiet.",
+      "what_happened": "President Trump said Thursday that talks in Cairo had produced a deal for Hamas and other armed groups in Gaza to **fully disarm**, describing it as a historic breakthrough for his broader peace plan. He said the disarmament would happen **in phases** rather than all at once. But the announcement came with a catch: a Board of Peace official said the specific document on the table has Hamas placing its heavy weapons into **storage**, not destroying them \u2014 and an unnamed Israeli official said, just before Trump spoke, that Israel had rejected an earlier version of the proposal because it didn't guarantee weapons actually leave Gaza. Hamas's own written response, seen by Reuters, notably **did not say** whether it agrees to disarm and demilitarize. So as of today, the US side is describing a deal that the two parties who'd have to live with it haven't yet confirmed.",
+      "why_it_matters": "Whether Gaza's war is truly over hinges on this one unresolved question \u2014 a ceasefire that leaves Hamas armed is a pause, not peace, in Israel's eyes; but Hamas giving up its weapons unilaterally, with no guaranteed political future, is close to asking it to disband. Trump's announcement creates pressure on both sides to either confirm or publicly reject terms they've been negotiating privately, which could accelerate a resolution or expose how far apart the two sides still are.",
+      "ripple_effects": "If the deal genuinely holds, it opens the door to Gaza reconstruction funding, an Israeli troop drawdown, and calmer regional oil-shipping routes. If it collapses under the weight of unmet preconditions, expect renewed strikes, more pressure on Israeli PM Netanyahu (who faces reelection amid a strained relationship with Trump), and continued uncertainty for mediators Egypt, Qatar and Turkey, who've staked credibility on brokering this.",
+      "why_now": "Trump is under domestic and international pressure to show a concrete deliverable from his Gaza peace plan nine months after the ceasefire was signed, and Thursday's Cairo session was the highest-stakes round of phase-two talks yet.",
+      "watch_next": "Watch for Hamas and Israel to issue their own formal statements in the coming days \u2014 that's what will show whether Trump's 'historic agreement' is real or aspirational.",
+      "key_terms": [
+        {
+          "term": "Board of Peace",
+          "definition": "The oversight body Trump set up to manage the second phase of his Gaza peace plan, including disarmament and reconstruction."
+        },
+        {
+          "term": "demilitarization",
+          "definition": "Removing weapons and armed forces from a territory \u2014 in this case, stripping Gaza of Hamas's arsenal."
+        }
+      ],
+      "the_lesson": "A leader announcing a deal is not the same as a deal existing \u2014 real agreements need both sides to confirm the same terms publicly. Watch for confirmation from all parties, not just the one with the microphone.",
+      "concepts": [
+        "ceasefire_vs_truce"
+      ],
+      "market_link": "A durable Gaza disarmament deal would ease the Middle East risk premium baked into oil prices and could lift regional and defense-adjacent equities on reduced escalation risk.",
+      "importance": "critical",
+      "sources": [
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/world/gaza/trump-says-peace-plan-will-lead-hamas-disarmament-israel-support-uncer-rcna590151"
+        },
+        {
+          "name": "Newsweek",
+          "url": "https://www.newsweek.com/trump-claims-board-of-peace-reaches-deal-to-disarm-hamas-and-rebuild-gaza-12267508"
+        }
+      ],
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Gaza ceasefire talks in Cairo see 'rare progress' as Hamas discusses giving up weapons",
+        "date": null
+      },
+      "rank": 2
+    },
     {
       "region": "global",
       "category": "geopolitics",
@@ -50,7 +157,7 @@
         }
       ],
       "added_at": "2026-07-31T11:58:17+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "region": "global",
@@ -98,7 +205,7 @@
         }
       ],
       "added_at": "2026-07-31T11:58:17+05:30",
-      "rank": 2
+      "rank": 4
     },
     {
       "region": "global",
@@ -146,7 +253,7 @@
         }
       ],
       "added_at": "2026-07-31T09:58:46+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "region": "global",
@@ -199,7 +306,7 @@
         }
       ],
       "added_at": "2026-07-31T09:58:46+05:30",
-      "rank": 4
+      "rank": 6
     },
     {
       "region": "global",
@@ -252,7 +359,7 @@
         }
       ],
       "added_at": "2026-07-31T07:58:23+05:30",
-      "rank": 5
+      "rank": 7
     },
     {
       "region": "global",
@@ -301,7 +408,7 @@
         }
       ],
       "added_at": "2026-07-31T07:58:23+05:30",
-      "rank": 6
+      "rank": 8
     },
     {
       "category": "technology",
@@ -345,7 +452,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-31T05:59:24+05:30",
-      "rank": 7
+      "rank": 9
     },
     {
       "category": "economy",
@@ -399,7 +506,7 @@
       ],
       "region": "global",
       "added_at": "2026-07-31T05:59:24+05:30",
-      "rank": 8
+      "rank": 10
     },
     {
       "region": "global",
@@ -447,7 +554,7 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "region": "global",
@@ -499,10 +606,10 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 10
+      "rank": 12
     },
     {
-      "rank": 11,
+      "rank": 13,
       "category": "health",
       "published_iso": "2026-07-29T14:00:00Z",
       "regions": [
@@ -599,7 +706,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 12
+      "rank": 14
     },
     {
       "region": "global",
@@ -656,7 +763,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "region": "global",
@@ -705,7 +812,7 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 14
+      "rank": 16
     },
     {
       "region": "global",
@@ -758,10 +865,10 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
-      "rank": 16,
+      "rank": 18,
       "category": "climate",
       "published_iso": "2026-07-29T00:00:00Z",
       "regions": [
@@ -817,7 +924,7 @@
       }
     },
     {
-      "rank": 17,
+      "rank": 19,
       "category": "economy",
       "published_iso": "2026-07-30T00:00:00Z",
       "regions": [
@@ -932,112 +1039,93 @@
         }
       ],
       "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 18
+      "rank": 20
     },
     {
-      "category": "geopolitics",
-      "region": "global",
-      "published_iso": "2026-07-30T01:00:00+03:00",
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-07-31T00:00:00Z",
       "regions": [
-        "Ukraine",
-        "Poland",
-        "Russia",
-        "NATO"
+        "India",
+        "United Kingdom"
       ],
-      "title": "A Russian missile crosses into Poland during a huge overnight strike on Ukraine that kills at least 8",
+      "title": "India's boxers guarantee their best-ever Commonwealth Games haul \u2014 six fight for gold today, ten medals already banked",
       "key_points": [
-        "Russia fired a **massive wave of missiles and drones** at Ukraine overnight, killing **at least 8 people** (some reports say 13) and hitting as far west as Lviv.",
-        "A Russian **Kh-101 cruise missile crossed into Poland**, a NATO country, landing **90 km (55 miles)** inside Polish territory and blasting a crater in a field.",
-        "Poland scrambled **F-16 fighter jets** and activated NATO air-defence radar after tracking the object flying across its border.",
-        "Polish PM Donald Tusk said forces were **ready to shoot the missile down** had it kept heading toward a populated area.",
-        "It came the day after Zelenskyy **publicly warned** a 'massive' Russian attack was imminent."
+        "**Six Indian boxers** reached the semi-finals this week, guaranteeing India at least **10 boxing medals** at Glasgow 2026",
+        "That beats India's **previous best of 9 boxing medals**, set at Gold Coast 2018",
+        "**Lovlina Borgohain**, an Olympic medallist, is already through to the semis after a bye in the quarter-finals",
+        "Ten Indian boxers total contest semi-final bouts today, each already assured of at least a bronze"
       ],
-      "background": "Russia's war on Ukraine is now in its **fifth year**, and Russia has increasingly relied on long-range missile and drone barrages to hit Ukrainian cities and infrastructure, especially as ceasefire talks (elsewhere, in Gaza) have shown that Western-brokered peace deals can work \u2014 raising pressure on Moscow and Kyiv alike. NATO is a **military alliance of the US, Canada, and European countries** built on the idea that an attack on one member is an attack on all (Article 5); Poland is a member, and its border with Ukraine has already seen stray Russian ordnance land before. Because Poland is protected by NATO, any missile \u2014 even an unintentional stray \u2014 that lands there raises the stakes enormously: it's the difference between a war Russia is fighting against a non-NATO country and one that could pull in the alliance directly.",
-      "what_happened": "Ukrainian air-defence radars tracked **more than a dozen missiles** heading toward western Ukraine overnight into Thursday, part of a broad Russian strike that also used drones. At least **8 people were killed** across Ukraine, with strikes reported as far west as Lviv, near the Polish border. One missile came within about **3 miles of the Polish border** before turning back east \u2014 but minutes later, Polish military radar picked up a **separate unidentified object moving west into Polish airspace**. Poland scrambled an F-16 to investigate, and the object \u2014 a Russian **Kh-101 cruise missile** \u2014 came down roughly **90 km inside Poland**, exploding in an open field and leaving a large crater; no one was hurt. Polish PM Donald Tusk said 'all the indications are it was a Russian Kh-101' and that Polish forces were prepared to shoot it down if it had continued toward populated areas. NATO's military headquarters activated additional air-defence assets in response, and the US said it wants to join the investigation into how the missile ended up there.",
-      "why_it_matters": "This is exactly the kind of incident that risks turning a war between two countries into a NATO-Russia confrontation: a Russian weapon landing on the territory of a nuclear-armed military alliance, even if unintentionally. It also shows Russia's overnight strikes on Ukraine are intensifying, not slowing, even as diplomatic energy is going into ceasefires elsewhere.",
-      "ripple_effects": "Expect NATO members to tighten air-policing along the Polish-Ukrainian border and possibly deploy more air-defence systems there. Poland and other frontline states will likely press allies harder for Patriot missile batteries (echoing Zelenskyy's own request to the US days earlier). Markets could see a modest 'fear bid' into safe havens (gold, the dollar, US Treasuries) if the incident escalates diplomatically, and European defence stocks often react to this kind of headline.",
-      "why_now": "The strike came the day after Zelenskyy publicly warned that a large-scale Russian attack was imminent \u2014 suggesting Ukrainian intelligence had picked up signs of a build-up, which Russia then acted on overnight.",
-      "watch_next": "Whether NATO's formal investigation confirms Russian intent or error, and whether Poland or NATO take any further defensive or diplomatic steps in response.",
-      "key_terms": [
-        {
-          "term": "NATO",
-          "definition": "A military alliance of the US, Canada, and mostly-European countries whose founding principle is that an attack on one member is treated as an attack on all."
-        },
-        {
-          "term": "Kh-101",
-          "definition": "A long-range Russian cruise missile designed to hit ground targets from hundreds of kilometers away."
-        }
-      ],
-      "the_lesson": "In a war fought with long-range missiles, 'collateral' damage doesn't stay neatly inside a country's borders \u2014 a single stray weapon landing in the wrong place can turn a bilateral war into a multi-country crisis overnight.",
-      "concepts": [
-        "nato"
-      ],
-      "market_link": "Headline risk like this can lift oil, gold, and the dollar on safe-haven demand and pressure European equities; European defence stocks (e.g., Rheinmetall, Leonardo) often rally on escalation news.",
-      "importance": "critical",
+      "background": "Boxing has quietly become one of India's most reliable medal sports at multi-nation events like the Commonwealth Games, built on a pipeline of Olympic and Asian Games medallists training together in a well-funded national program. At Gold Coast 2018, India's boxing contingent won 9 medals \u2014 the previous high-water mark the team has been chasing ever since. This year's Glasgow Games squad includes Olympic medallist **Lovlina Borgohain**, alongside a mix of experienced campaigners and rising talent across the men's and women's divisions.",
+      "what_happened": "Six Indian boxers \u2014 **Sakshi Chaudhary, Arundhati Choudhary, Sachin Siwach, Ankush Yadav, Narender Berwal and Jaismine Lamboria** \u2014 advanced to the semi-finals this week, joining four who'd already booked their spots earlier: **Lovlina Borgohain** (who got a bye), **Priya Ghanghas, Preeti Pawar** and **Jadumani Singh Mandengbam**. Because every Commonwealth Games boxing semi-finalist is guaranteed at least a bronze medal, that combination locks in **10 medals for India** \u2014 a new national record for the sport at this event, beating the 9 won at Gold Coast 2018. Today, all ten fight their semi-final bouts, each with a shot at upgrading their guaranteed bronze to silver or gold.",
+      "why_it_matters": "This is India's most successful Commonwealth Games boxing campaign ever, and it comes from a squad blending an Olympic medallist with several boxers making their first major senior splash \u2014 a sign the talent pipeline behind India's boxing success isn't just one or two stars, but genuine depth across weight classes and both men's and women's divisions.",
+      "ripple_effects": "A strong showing here builds momentum and funding confidence heading toward the next Olympic cycle, and gives selectors a clearer picture of who's ready to step up to Olympic qualification events. It also raises the profile of boxing in India relative to the sports that usually dominate headlines, like cricket.",
+      "why_now": "The semi-final round at Glasgow 2026 falls today, July 31 \u2014 the results from these bouts determine who fights for gold versus who settles for a guaranteed bronze.",
+      "watch_next": "Today's semi-final results will show how many of India's ten guaranteed medals turn into finals appearances \u2014 golds are decided in the coming days.",
+      "key_terms": [],
+      "the_lesson": "Depth matters as much as star power \u2014 a team with one superstar can have a good day, but a team with ten athletes reaching the final four builds a record.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
       "sources": [
         {
-          "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/7/30/russia-ballistic-missile-strikes-on-kyiv-come-after-zelenskyys-warning"
-        },
-        {
-          "name": "Fox News",
-          "url": "https://www.foxnews.com/world/nato-member-scrambles-fighter-jets-russian-attack-ukraine-kills-8"
-        },
-        {
-          "name": "Stars and Stripes",
-          "url": "https://www.stripes.com/theaters/europe/2026-07-30/poland-airspace-russia-missile-22406297.html"
+          "name": "Olympics.com",
+          "url": "https://www.olympics.com/en/news/commonwealth-games-2026-boxing-india-day-6-report"
         }
       ],
-      "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 19
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "rank": 21
     },
     {
-      "category": "geopolitics",
-      "region": "global",
-      "published_iso": "2026-07-30T00:00:00Z",
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-07-31T00:00:00Z",
       "regions": [
-        "Gaza",
-        "Middle East",
-        "US"
+        "India"
       ],
-      "title": "Israeli strikes kill children in Gaza even as mediators push to finalize Trump's peace plan in Cairo",
+      "title": "Lok Sabha passes birth-and-death registration bill without debate as Parliament stays gridlocked over the July 20 student crackdown",
+      "thread": {
+        "previously": "Yesterday, the Rajya Sabha passed the anti-paper-leak bill amid an opposition walkout, with MPs protesting both the NEET paper-leak scandal and a police crackdown on students during a Delhi march.",
+        "changed": "Today the standoff widened: the Lok Sabha passed a second, unrelated bill \u2014 on birth and death registration \u2014 by voice vote with **no debate at all**, as the Opposition kept up its protest over the July 20 crackdown, and both Houses have now been **adjourned till August 3**."
+      },
       "key_points": [
-        "Israeli strikes killed at least **four people, including two children**, in Gaza on Thursday",
-        "A strike on a **tent camp in Khan Younis** killed a man and an **8-year-old girl**",
-        "An **18-month-old child died** and 8 more were wounded in a separate strike on a house in Bureij camp",
-        "**More than 1,200 Palestinians** have been killed by Israeli strikes since the ceasefire took effect",
-        "Hamas and mediators from **Egypt, Qatar, and Turkey** are meeting in Cairo to push the peace plan's next phase"
+        "Lok Sabha passed the **Registration of Births and Deaths (Amendment) Bill, 2026** by voice vote with zero debate",
+        "Opposition MPs trooped into the **Well of the House**, demanding Home Minister **Amit Shah** appear over the July 20 crackdown",
+        "The bill requires **judicial (magistrate) approval** for any birth/death registration filed **more than two years late**",
+        "Both the Lok Sabha and Rajya Sabha have now been **adjourned until August 3**, extending the Monsoon Session logjam"
       ],
-      "background": "A US-brokered ceasefire has been in place in Gaza for months, but it halted only full-scale fighting \u2014 near-daily Israeli strikes have continued, and mediators are still trying to move to the plan's next phase: disarming Hamas, withdrawing Israeli forces, standing up a civilian Palestinian administration, and deploying an international security force. Trump's Board of Peace has been overseeing the process, but implementation has repeatedly stalled over the months since the truce began.",
-      "what_happened": "On Thursday, Israeli strikes killed at least **four people in Gaza, including two children**. An airstrike on a tent encampment in **Khan Younis** killed a man and an **8-year-old girl**; a separate strike on a house in the **Bureij refugee camp** in central Gaza killed an **18-month-old child** and wounded at least eight others; and a strike near a displacement camp in Gaza City killed one more person and wounded ten. Meanwhile in **Cairo**, Hamas leaders held fresh talks with mediators from Egypt, Qatar, and Turkey over implementing the second phase of the US-brokered plan. Rights groups and Gaza officials say more than **1,200 Palestinians** have been killed by Israeli strikes since the ceasefire technically began, despite the truce.",
-      "why_it_matters": "The gap between a declared 'ceasefire' and the reality of near-daily strikes shows how fragile the truce is, and how far the peace plan's actual disarmament-and-withdrawal phase remains from happening. Every strike that kills civilians makes the political path to full implementation harder for both sides.",
-      "ripple_effects": "Continued civilian deaths strain the credibility of the US-brokered process and could harden Hamas's negotiating position in Cairo. It also keeps pressure on Egypt, Qatar, and Turkey as mediators, and on the Trump administration's Board of Peace to show the plan is more than paper.",
-      "why_now": "Talks in Cairo this week are specifically aimed at moving to the plan's next phase, so today's strikes are landing in the middle of an active diplomatic push \u2014 making the contradiction between 'ceasefire' and continued deaths especially visible right now.",
-      "watch_next": "Whether the Cairo talks produce any concrete steps on Hamas disarmament or an Israeli withdrawal timeline in the coming days.",
-      "key_terms": [
-        {
-          "term": "ceasefire vs. truce",
-          "definition": "A ceasefire formally halts large-scale fighting, but \u2014 as in Gaza \u2014 it doesn't always stop smaller strikes or fully resolve the underlying conflict, which is why a 'truce' can still involve regular casualties."
-        }
-      ],
-      "the_lesson": "A ceasefire is a step, not an ending \u2014 the gap between the declared status of a conflict and what's happening on the ground is where the real story usually is.",
+      "background": "India's Monsoon Session of Parliament has been derailed for days by Opposition anger over a police crackdown on students during a **'Sansad Chalo' march to Parliament on July 20**, layered on top of ongoing anger over the **NEET (medical entrance exam) paper-leak scandal**. The government has been pushing through a backlog of routine legislation \u2014 bills that in a calmer session would get full floor debate \u2014 largely **unopposed procedurally but unheard substantively**, because Opposition MPs are boycotting debate and instead protesting in the Well of the House. This bill was cleared by the Union Cabinet on July 20, the same day as the crackdown that triggered the current standoff.",
+      "what_happened": "On Friday, the Lok Sabha passed the **Registration of Births and Deaths (Amendment) Bill, 2026** by voice vote, with Minister of State for Home Affairs Nityanand Rai piloting it \u2014 but with no actual debate, because Opposition members were occupied protesting in the Well of the House and demanding Home Minister Amit Shah answer for the July 20 crackdown on student protesters. The bill itself tightens the rules for **delayed registration**: if a birth or death is reported more than two years after it happened, a magistrate must now approve the registration, rather than it being a routine bureaucratic process. With this bill through and the earlier anti-paper-leak bill passed a day earlier under similar walkout conditions, both Houses of Parliament have now been adjourned until **August 3**.",
+      "why_it_matters": "A functioning Parliament is supposed to debate laws before passing them \u2014 when bills clear both Houses **by voice vote with no discussion**, it means legislation with real consequences for ordinary citizens (like this one, which changes how millions of routine birth/death records get corrected) becomes law without the scrutiny it's designed to get. It also signals that the political relationship between the government and Opposition has broken down badly enough that basic legislative business is happening almost by accident, alongside the protest, not because of it.",
+      "ripple_effects": "Anyone needing to register a birth or death more than two years after the fact will now face a magistrate approval step \u2014 a small bureaucratic change but a real one for citizens in rural areas with limited access to courts. Politically, an extended Parliament logjam through August 3 delays other pending legislation and keeps the Delhi crackdown and NEET leak story in the news cycle, adding pressure on the government to address both.",
+      "why_now": "The Opposition's protest has hardened since the July 20 'Sansad Chalo' march crackdown, and each new bill introduced in Parliament since then has become another flashpoint rather than being debated on its own merits.",
+      "watch_next": "Watch whether Amit Shah addresses the House when Parliament resumes on August 3 \u2014 that's the Opposition's core demand, and it's what would actually break the logjam.",
+      "key_terms": [],
+      "the_lesson": "When a legislature is gridlocked over one grievance, unrelated bills can quietly become collateral \u2014 passed without debate not because they're uncontroversial, but because no one in the room is available to debate them.",
       "concepts": [
-        "ceasefire_vs_truce"
+        "lok_sabha",
+        "rajya_sabha",
+        "parliament_india"
       ],
       "market_link": null,
-      "importance": "high",
+      "importance": "notable",
       "sources": [
         {
-          "name": "Al-Monitor",
-          "url": "https://www.al-monitor.com/originals/2026/07/israeli-strikes-kill-three-gaza-including-two-children-amid-new-ceasefire-push"
+          "name": "India TV News",
+          "url": "https://www.indiatvnews.com/news/india/parliament-monsoon-session-live-updates-2026-07-31-1049938"
         },
         {
-          "name": "Yahoo News",
-          "url": "https://www.yahoo.com/news/world/articles/israeli-strikes-kill-three-gaza-072438717.html"
+          "name": "Siasat",
+          "url": "https://www.siasat.com/ls-passes-births-and-deaths-amendment-bill-amid-protests-3516484/"
         }
       ],
-      "added_at": "2026-07-30T15:57:39+05:30",
-      "rank": 20
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Rajya Sabha passes the anti-paper-leak bill amid an opposition walkout over the NEET leaks and Delhi crackdown",
+        "date": null
+      },
+      "rank": 22
     },
     {
       "region": "india",
@@ -1085,7 +1173,7 @@
         }
       ],
       "added_at": "2026-07-31T11:58:17+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "region": "india",
@@ -1134,7 +1222,7 @@
         "title": "Neeraj Chopra opens his Commonwealth Games javelin title defense in Glasgow qualifying",
         "date": null
       },
-      "rank": 22
+      "rank": 24
     },
     {
       "region": "india",
@@ -1179,7 +1267,7 @@
         }
       ],
       "added_at": "2026-07-31T09:58:46+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "region": "india",
@@ -1234,7 +1322,7 @@
         "title": "Supreme Court won't ban pellet guns outright, but orders Delhi to treat protesters injured by them",
         "date": null
       },
-      "rank": 24
+      "rank": 26
     },
     {
       "region": "india",
@@ -1286,7 +1374,7 @@
         }
       ],
       "added_at": "2026-07-31T07:58:23+05:30",
-      "rank": 25
+      "rank": 27
     },
     {
       "region": "india",
@@ -1340,7 +1428,7 @@
         "title": "India adds a weightlifting silver and an athletics bronze on Commonwealth Games Day 7 in Glasgow",
         "date": null
       },
-      "rank": 26
+      "rank": 28
     },
     {
       "category": "india",
@@ -1380,7 +1468,7 @@
       ],
       "region": "india",
       "added_at": "2026-07-31T05:59:24+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "region": "india",
@@ -1419,7 +1507,7 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "region": "india",
@@ -1463,10 +1551,10 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
-      "rank": 30,
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-07-30T15:30:00+05:30",
       "regions": [
@@ -1514,7 +1602,7 @@
       "added_at": "2026-07-31T02:00:54+05:30"
     },
     {
-      "rank": 31,
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-07-30T17:50:52+05:30",
       "regions": [
@@ -1624,7 +1712,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "region": "india",
@@ -1675,7 +1763,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 33
+      "rank": 35
     },
     {
       "region": "india",
@@ -1725,7 +1813,7 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "region": "india",
@@ -1777,10 +1865,10 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
-      "rank": 36,
+      "rank": 38,
       "category": "india",
       "published_iso": "2026-07-30T11:30:00+05:30",
       "regions": [
@@ -1824,7 +1912,7 @@
       "added_at": "2026-07-30T20:02:50+05:30"
     },
     {
-      "rank": 37,
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-07-29T00:00:00+05:30",
       "regions": [
@@ -1916,103 +2004,51 @@
         }
       ],
       "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 38
-    },
-    {
-      "category": "india",
-      "region": "india",
-      "published_iso": "2026-07-29T15:30:00+05:30",
-      "regions": [
-        "India"
-      ],
-      "title": "Sensex jumps 889 points and Nifty IT surges as Infosys results and the Fed's rate hold lift sentiment",
-      "key_points": [
-        "The Sensex climbed **888.68 points (1.16%)** to close at **77,654.60**; the Nifty 50 rose **264.85 points (1.10%)** to **24,250.20**.",
-        "**Nifty IT jumped over 2.3%** in a single session and is up **nearly 16% for the month of July** \u2014 one of the sector's sharpest rallies in years.",
-        "**Infosys** led the charge after strong Q1 FY27 results: consolidated net profit rose **9% year-on-year to \u20b96,921 crore**, revenue rose **8% to \u20b942,279 crore**.",
-        "A weaker **rupee-driven currency tailwind** and **FII short-covering** (foreign investors closing bearish bets) added extra fuel to the rally.",
-        "The rally came right after the **US Federal Reserve held interest rates steady**, which investors read as reducing near-term global risk."
-      ],
-      "background": "India's stock market runs on two headline indices: the **Sensex** (30 large companies on the Bombay Stock Exchange) and the **Nifty 50** (50 large companies on the National Stock Exchange) \u2014 both are 'scoreboards' for how big Indian companies are doing as a group. IT services (companies like Infosys, TCS, and Wipro that sell software and outsourcing services mostly to Western clients) is one of India's largest and most export-driven sectors, so it's highly sensitive to the **rupee's exchange rate** (a weaker rupee means the dollar revenue these firms earn abroad converts into more rupees at home) and to US economic health, since America is their biggest client base. The sector had been in a slump for much of 2026 after a slower spending environment among Western clients, hitting a 52-week low as recently as **July 1**.",
-      "what_happened": "The **BSE Sensex gained 888.68 points, or 1.16%,** to close at **77,654.60** on Wednesday, July 29, while the **Nifty 50 advanced 264.85 points, or 1.10%,** to **24,250.20**. The rally was led by technology stocks: the **Nifty IT index jumped roughly 2.3% in the session** and has now climbed **nearly 16% in July alone**, recovering more than 21% from its 52-week low touched on July 1. **Infosys** was the standout, gaining after it posted **9% year-on-year growth in consolidated net profit to \u20b96,921 crore** and **8% revenue growth to \u20b942,279 crore** for the quarter ended June, with investors also cheering its forward earnings commentary. Banking stocks also firmed, with the Bank Nifty index up 0.79% to 57,205.90. Analysts pointed to a combination of factors: a stronger rupee, foreign institutional investors covering short positions (buying back stock they had bet against), and calmer global sentiment after the **US Federal Reserve's decision a day earlier to hold interest rates steady** rather than signal further tightening.",
-      "why_it_matters": "This rally matters beyond one trading day because it shows India's IT sector \u2014 a huge employer and export earner \u2014 potentially turning a corner after a rough stretch, and because it shows how directly global central-bank decisions (in this case the Fed's) ripple into Indian portfolios within 24 hours.",
-      "ripple_effects": "A sustained IT rally would help the rupee (more dollar export earnings), support employment in India's biggest white-collar export industry, and could pull in more foreign investment if the trend holds through the rest of earnings season (TCS, Wipro, HCLTech results still to come). If global rate-cut hopes fade, though, this kind of rally can reverse quickly.",
-      "why_now": "Q1 FY27 earnings season for India's biggest IT firms is underway, and Infosys's better-than-expected numbers landed the same week global markets got reassurance from the Fed's decision to hold rates \u2014 a rare alignment of a strong local catalyst and a calmer global backdrop.",
-      "watch_next": "TCS, Wipro, and HCLTech's remaining Q1 FY27 results in the coming days, to see if Infosys's strength is sector-wide or company-specific.",
-      "key_terms": [
-        {
-          "term": "FII short-covering",
-          "definition": "When foreign investors who had bet a stock or index would fall are forced to buy it back to close those bets, which itself pushes the price up further."
-        }
-      ],
-      "the_lesson": "A single earnings beat from a sector bellwether (like Infosys for Indian IT) can trigger a rally across an entire sector, because investors read one company's results as a signal about the health of all its peers.",
-      "concepts": [
-        "fii_flows",
-        "index"
-      ],
-      "market_link": "Nifty IT names (Infosys, TCS, Coforge, LTIMindtree) and the broader Nifty 50/Sensex indices are the direct plays here; a stronger rupee is the other side of the same trade.",
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Goodreturns",
-          "url": "https://www.goodreturns.in/news/stock-market-outlook-today-30-july-2026-sensex-nifty-likely-to-trade-positive-after-fed-holds-rates-1525181.html"
-        },
-        {
-          "name": "India Infoline",
-          "url": "https://www.indiainfoline.com/news/companies/nifty-it-jumps-for-fourth-straight-session-gains-nearly-16-in-july-infosys-tcs-ofss-lead-the-rally"
-        }
-      ],
-      "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 39
-    },
-    {
-      "category": "india",
-      "region": "india",
-      "published_iso": "2026-07-30T00:00:00Z",
-      "regions": [
-        "India"
-      ],
-      "title": "RBI's July bulletin shows India's economy holding steady on stronger FDI, FPI, and a surprise current-account surplus",
-      "key_points": [
-        "RBI's July bulletin says **strong industrial activity and exports** are keeping India's economy on a steady path",
-        "**Foreign Direct Investment (FDI)** in April\u2013May 2026 was higher than the same period last year",
-        "**Foreign Portfolio Investment (FPI)** turned positive in June and stayed positive through July",
-        "India posted a **$4.7 billion current-account surplus** in April, reversing a **$4.8 billion deficit** a year earlier",
-        "RBI temporarily lifted the interest-rate ceiling on 3\u20135 year **NRI foreign-currency deposits** through September 30"
-      ],
-      "background": "India's economy has been sending mixed signals lately \u2014 a weak monsoon and global trade shocks (including new US tariffs) have weighed on some indicators even as underlying growth held up. The Reserve Bank of India, the country's central bank, publishes a monthly bulletin assessing the state of the economy, and its July edition paints a notably more resilient picture: rising investment inflows and a swing back to a current-account surplus, a sign the country is earning more from trade, services, and remittances than it's spending abroad.",
-      "what_happened": "The RBI's July 2026 bulletin reported that **strong industrial activity, a healthy services sector, rising exports, and improving foreign investment** have kept India's economy resilient even as many other countries face headwinds. **FDI in April\u2013May 2026 came in higher** than the same two months last year, and **FPI \u2014 money foreign investors put into Indian stocks and bonds \u2014 turned positive in June and stayed positive in July**, reversing earlier outflows. India's **current account recorded a $4.7 billion surplus in April 2026**, a sharp reversal from a $4.8 billion deficit a year earlier, driven by **net services exports strengthening to $18.6 billion** and **remittances surging to $16 billion** from $9.4 billion. Separately, the RBI **temporarily removed the interest-rate ceiling on foreign-currency (FCNR-B) deposits** with 3\u20135 year tenors, effective through September 30, giving banks more room to attract NRI deposits.",
-      "why_it_matters": "These numbers matter because they're the clearest sign yet that foreign investors are coming back to India after a period of caution, and that India is earning a genuine surplus on its trade and services with the rest of the world rather than relying on borrowing to cover a deficit.",
-      "ripple_effects": "A stronger current account and rising FPI typically support the rupee and give the RBI more room on interest-rate policy. It could also make it easier for Indian companies and banks to raise foreign capital, and gives the government a stronger hand heading into ongoing India-US trade negotiations.",
-      "why_now": "The RBI publishes this bulletin monthly, and July's edition is the first to fully capture the June\u2013July rebound in foreign portfolio flows after a rockier first half of the year.",
-      "watch_next": "Whether FPI inflows and the current-account surplus hold up through the next quarter, especially once new US tariffs on Indian goods take fuller effect.",
-      "key_terms": [
-        {
-          "term": "current account",
-          "definition": "A country's overall balance of trade, services, and income with the rest of the world; a surplus means it earns more from abroad than it spends, a deficit means the opposite."
-        }
-      ],
-      "the_lesson": "Headline growth numbers can look 'mixed' while the underlying balance of payments quietly improves \u2014 it pays to look past the loudest indicator (like a weak monsoon) to the ones that actually move a currency and interest rates.",
-      "concepts": [
-        "rbi",
-        "current_account_deficit",
-        "fii_flows",
-        "forex_reserves"
-      ],
-      "market_link": "A stronger current account and returning FPI flows are typically supportive of the Indian rupee and Indian equities.",
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Banking & Finance",
-          "url": "https://www.bankingfinance.in/rbi-news-for-july-2026.html"
-        },
-        {
-          "name": "News Track",
-          "url": "https://english.newstrack.com/amp/tech-automobile/rbis-new-economic-update-brings-big-relief-as-india-holds-growth-momentum-617120"
-        }
-      ],
-      "added_at": "2026-07-30T15:57:39+05:30",
       "rank": 40
+    },
+    {
+      "region": "cricket",
+      "category": "cricket",
+      "published_iso": "2026-07-29T10:04:00Z",
+      "regions": [
+        "India"
+      ],
+      "title": "Ryan ten Doeschate quits as India's assistant coach \u2014 and resurfaces at Knight Riders a day later",
+      "key_points": [
+        "Ten Doeschate has been named **Head of Cricket Strategy** at Knight Riders Sports, the group behind KKR and other T20 franchises",
+        "The move came just **one day** after he stepped down as **assistant coach of the India men's team**, a post he held for two years",
+        "His new role spans **talent acquisition, squad planning and development** across the group's leagues \u2014 IPL, CPL, ILT20 and MLC",
+        "He'll also work as **assistant coach** for some of the group's individual franchise teams",
+        "Ten Doeschate previously helped **KKR win IPL titles in 2012 and 2014** as a player"
+      ],
+      "background": "Ryan ten Doeschate, a former Netherlands international, built a second cricket career in India's coaching setup \u2014 first as a title-winning player for Kolkata Knight Riders, then in India's national coaching staff for two years alongside head coach Gautam Gambhir, who has publicly credited him as someone he trusts completely. Knight Riders Sports isn't just one team anymore; it now owns or is invested in franchises across multiple global T20 leagues (KKR in the IPL, plus sides in the Caribbean, UAE and US leagues), and has been building out a centralized strategy function to coordinate scouting and squad-building across all of them.",
+      "what_happened": "Ten Doeschate stepped down as **assistant coach of the Indian men's cricket team** after two years in the role. Just one day later, Knight Riders Sports announced he'd been appointed **Head of Cricket Strategy**, a new global position overseeing talent acquisition, squad planning and player development across the entire Knight Riders franchise network \u2014 spanning the **IPL (KKR), the Caribbean Premier League, the ILT20 in the UAE, and Major League Cricket in the US**. He'll additionally take on assistant-coaching duties for some of those individual teams. It's a return to the organization where he made his name as a player, winning two IPL titles with Kolkata in 2012 and 2014.",
+      "why_it_matters": "This is a sign of where cricket's power and money are increasingly concentrating: not just in national teams, but in multi-league franchise groups that now compete with national boards for top coaching and strategy talent. A national team assistant coach leaving for a franchise-group strategy role \u2014 rather than a rival board \u2014 reflects how much influence and resource these global franchise networks now carry.",
+      "ripple_effects": "India's coaching setup now has a vacancy to fill in a senior support role; Knight Riders Sports gains a well-networked cricket mind to sharpen recruitment and strategy across four leagues at once, potentially giving KKR and its sister franchises a scouting edge; and it adds to a broader trend of coaches and support staff moving fluidly between international and franchise cricket.",
+      "why_now": "The timing \u2014 an exit and a new appointment just a day apart \u2014 suggests this move was arranged in advance, with ten Doeschate's departure from the India setup and his Knight Riders return coordinated rather than coincidental.",
+      "watch_next": "Watch for who India names to fill the vacated assistant coach role, and whether ten Doeschate's new remit translates into KKR making early, strategy-driven moves ahead of the next auction window.",
+      "key_terms": [
+        {
+          "term": "franchise group",
+          "definition": "A company that owns or invests in cricket teams across multiple international T20 leagues, sharing scouting, strategy and sometimes players across them."
+        }
+      ],
+      "the_lesson": "Talent doesn't just move between rival employers \u2014 in modern sport, it increasingly moves between entirely different kinds of organizations (a national federation versus a private franchise network), which says a lot about where resources and opportunity are concentrating.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "ESPNcricinfo",
+          "url": "https://www.espncricinfo.com/story/india-news-ryan-ten-doeschate-appointed-knight-riders-head-of-cricket-strategy-1547954"
+        },
+        {
+          "name": "ANI",
+          "url": "https://www.aninews.in/news/sports/cricket/ryan-ten-doeschate-appointed-head-of-cricket-strategy-at-knight-riders-sports20260729100454/"
+        }
+      ],
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "rank": 41
     },
     {
       "region": "cricket",
@@ -2065,7 +2101,7 @@
         "title": "CSK re-emerges as front-runner for Hardik Pandya as IPL's biggest trade saga drags on",
         "date": null
       },
-      "rank": 41
+      "rank": 42
     },
     {
       "region": "cricket",
@@ -2114,7 +2150,7 @@
         "title": "Bumrah's rest period ends today \u2014 he reports to the BCCI's Centre of Excellence for the next fitness check",
         "date": null
       },
-      "rank": 42
+      "rank": 43
     },
     {
       "region": "cricket",
@@ -2153,7 +2189,7 @@
         }
       ],
       "added_at": "2026-07-31T09:58:46+05:30",
-      "rank": 43
+      "rank": 44
     },
     {
       "region": "cricket",
@@ -2202,7 +2238,7 @@
         "title": "West Indies crush Pakistan by 90 runs in first Test \u2014 Babar's team suffers a fourth straight Test loss",
         "date": null
       },
-      "rank": 44
+      "rank": 45
     },
     {
       "region": "cricket",
@@ -2255,7 +2291,7 @@
         "title": "CSK re-emerges as front-runner for Hardik Pandya as IPL's biggest trade saga drags on",
         "date": null
       },
-      "rank": 45
+      "rank": 46
     },
     {
       "category": "cricket",
@@ -2291,7 +2327,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-07-31T05:59:24+05:30",
-      "rank": 46
+      "rank": 47
     },
     {
       "region": "cricket",
@@ -2332,7 +2368,7 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 47
+      "rank": 48
     },
     {
       "region": "cricket",
@@ -2376,10 +2412,10 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 48
+      "rank": 49
     },
     {
-      "rank": 49,
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-07-28T12:00:00+05:30",
       "regions": [
@@ -2471,7 +2507,7 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 50
+      "rank": 51
     },
     {
       "region": "cricket",
@@ -2516,10 +2552,10 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 51
+      "rank": 52
     },
     {
-      "rank": 52,
+      "rank": 53,
       "category": "cricket",
       "published_iso": "2026-07-30T00:00:00Z",
       "regions": [
@@ -2605,7 +2641,7 @@
         }
       ],
       "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 53
+      "rank": 54
     },
     {
       "category": "cricket",
@@ -2645,7 +2681,7 @@
         }
       ],
       "added_at": "2026-07-30T15:57:39+05:30",
-      "rank": 54
+      "rank": 55
     },
     {
       "category": "cricket",
@@ -2701,7 +2737,7 @@
         "title": "Delhi Capitals gatecrash the Hardik Pandya trade talks, offering Axar Patel and Prithvi Shaw",
         "date": null
       },
-      "rank": 55
+      "rank": 56
     },
     {
       "region": "cricket",
@@ -2745,7 +2781,7 @@
         }
       ],
       "added_at": "2026-07-30T14:03:04+05:30",
-      "rank": 56
+      "rank": 57
     },
     {
       "region": "cricket",
@@ -2789,7 +2825,7 @@
         }
       ],
       "added_at": "2026-07-30T11:59:07+05:30",
-      "rank": 57
+      "rank": 58
     },
     {
       "category": "cricket",
@@ -2832,7 +2868,7 @@
         }
       ],
       "added_at": "2026-07-30T10:03:12+05:30",
-      "rank": 58
+      "rank": 59
     },
     {
       "category": "cricket",
@@ -2872,43 +2908,91 @@
         }
       ],
       "added_at": "2026-07-30T10:03:12+05:30",
-      "rank": 59
+      "rank": 60
     },
     {
-      "category": "cricket",
-      "published_iso": "2026-07-30T06:00:00+05:30",
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-07-29T00:00:00Z",
       "regions": [
-        "India",
-        "Sri Lanka"
+        "Middle East",
+        "Europe"
       ],
-      "title": "Bumrah's rest period ends today \u2014 he reports to the BCCI's Centre of Excellence for the next fitness check",
-      "region": "cricket",
+      "title": "F1 sets a September deadline to decide if its season finale moves out of the Middle East",
       "key_points": [
-        "**Jasprit Bumrah's** rest period for a torn left knee ligament ends **today, July 30** \u2014 he now reports to the BCCI's Centre of Excellence in Bengaluru.",
-        "The injury happened during the **2nd ODI vs England at Cardiff**, and forced him to miss the series-deciding Lord's ODI.",
-        "His fitness determines whether he plays the **Sri Lanka Test series** \u2014 1st Test in Galle from August 15, 2nd in Colombo from August 23.",
-        "A practice match in Colombo on **August 7** is the real checkpoint that will decide his availability.",
-        "If he isn't ready, **Mohammed Siraj, Gurnoor Brar and Prasidh Krishna** are the fallback pace options."
+        "F1 has set a **mid-September deadline** to decide the fate of the season-ending **Qatar and Abu Dhabi** Grands Prix",
+        "If those races can't safely go ahead, F1 will end the 2026 season with a **European race instead**",
+        "**Imola**, dropped from this year's calendar, is the leading candidate to host a replacement finale",
+        "The uncertainty follows the earlier cancellation of the **Bahrain and Saudi Arabian** Grands Prix this season over the **US-Iran conflict**",
+        "Both Qatar and Abu Dhabi remain on the calendar and are **already sold out**"
       ],
-      "background": "Bumrah is India's premier fast bowler and has a long history of carefully managed workload and injuries, including a back stress fracture that sidelined him for the better part of a year in 2023. He suffered a knee injury during India's tour of England this July, forcing selectors to plan around his possible absence for the upcoming tour of Sri Lanka. Given his central role in India's bowling attack, his fitness status has been one of the most closely tracked storylines on the Indian cricket calendar this month.",
-      "what_happened": "Bumrah tore a ligament in his left knee during a collision in the second ODI against England at Cardiff, causing reactive swelling that ruled him out of the series-deciding third ODI at Lord's. He has been in a structured rehabilitation program and was scheduled to rest until **July 30 \u2014 today** \u2014 after which he reports to the BCCI's Centre of Excellence in Bengaluru for the next phase of assessment. His participation in the Sri Lanka Test series remains conditional on fitness: the first Test starts in Galle on **August 15** and the second in Colombo on **August 23**. The real test of his readiness comes at a practice match in Colombo on **August 7**, which selectors are treating as the deciding checkpoint. Should Bumrah not be ready, India's fallback pace options are Mohammed Siraj, uncapped left-armer Gurnoor Brar, and Prasidh Krishna.",
-      "why_it_matters": "Bumrah is widely regarded as one of the best fast bowlers in the world and a central figure in India's attack in all conditions; his absence would significantly reshape team strategy for a Test series in Sri Lanka, where conditions can still assist quick, skiddy bowling.",
-      "ripple_effects": "If Bumrah is ruled out, India's team balance shifts toward the other seamers and possibly extra spin options given Sri Lankan conditions, while selectors will also be managing his workload with an eye on the busier cricket calendar later in the year. His injury management is being watched closely given his history of back issues, reinforcing India's cautious, load-managed approach with its premier bowlers.",
-      "why_now": "Today, July 30, is the exact date Bumrah's rest period was scheduled to end, making it the specific checkpoint fans and selectors have been counting down to.",
-      "watch_next": "Watch the August 7 practice match in Colombo \u2014 the real fitness test that decides whether Bumrah plays the Sri Lanka Tests.",
+      "background": "F1's calendar has leaned increasingly on Middle East races in recent years \u2014 Bahrain, Saudi Arabia, Qatar and Abu Dhabi have all hosted rounds, drawn by state investment and glamorous season-finale slots. That bet has run into trouble in 2026: escalating regional tension tied to the **US-Iran conflict** already forced F1 to scrap the Bahrain and Saudi Arabian rounds earlier this season. Qatar and Abu Dhabi, scheduled to close out the year, are now the ones in question, and F1 has been monitoring the security situation rather than committing to a call either way.",
+      "what_happened": "Formula 1 has told teams it will make a final decision on the Qatar and Abu Dhabi Grands Prix by **mid-September**, based on how the regional security situation develops. If the races are judged unsafe to hold, F1 has said it will shift its season finale to **Europe** rather than find another venue further afield \u2014 partly because a like-for-like replacement is hard to source on short notice, and partly to avoid clashing with the NFL season in the US, which rules out adding an extra American round. **Imola**, the Italian circuit that lost its slot on the 2026 calendar, has emerged as the leading candidate to host a replacement European finale despite it being an unusual time of year, weather-wise, for the track.",
+      "why_it_matters": "F1 has spent years building its business model around lucrative, spectacle-heavy Middle East races \u2014 this is the clearest sign yet that geopolitical instability can force the sport to unwind that bet on short notice, with real financial and logistical consequences for teams, broadcasters and host cities.",
+      "ripple_effects": "Teams have to plan car development and logistics around two very different possible calendars; Qatar and Abu Dhabi face reputational and financial hits if their races are pulled after selling out tickets; and a shift to Imola would be a boost for European fans even as it underscores how fragile the current calendar's Middle East expansion has become.",
+      "why_now": "The decision window is opening now because F1 needs lead time to finalize logistics either way, and the regional security picture tied to the US-Iran conflict remains unresolved enough that F1 isn't ready to commit yet.",
+      "watch_next": "Watch for F1's mid-September announcement \u2014 that's the hard deadline by which the sport says it will confirm whether the season ends in the Middle East or in Europe.",
       "key_terms": [],
-      "the_lesson": "Athletes managing a recurring injury risk are often brought back through graduated checkpoints \u2014 rest, reassessment, a low-stakes match \u2014 rather than a single yes/no fitness call, because it spreads the risk of re-injury across several smaller decisions.",
+      "the_lesson": "Sports calendars built around geopolitically sensitive regions carry a hidden fragility \u2014 the more a business depends on stability it doesn't control, the more exposed it is when that stability breaks.",
       "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "SportsCafe",
-          "url": "https://sportscafe.in/cricket/articles/2026/jul/26/fitness-update-of-team-india-ahead-of-sri-lanka-test-series"
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/7/29/f1-season-to-end-in-europe-if-qatar-abu-dhabi-unable-to-host-due-to-us-iran-war"
+        },
+        {
+          "name": "RACER",
+          "url": "https://racer.com/2026/07/29/f1-to-make-final-26-calendar-call-in-september-rules-out-u-s-race-due-to-nfl"
         }
       ],
-      "added_at": "2026-07-30T08:03:07+05:30",
-      "rank": 60
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "rank": 61
+    },
+    {
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-07-30T00:00:00Z",
+      "regions": [
+        "Global"
+      ],
+      "title": "Red Bull offers Max Verstappen $80 million a year to stay through 2029 \u2014 and to give up his escape hatch",
+      "key_points": [
+        "Red Bull has offered Verstappen roughly **$80 million a year** to extend through **2029**, up from his current deal running to 2028",
+        "The catch: the new contract would **remove his exit clause**, the performance trigger that currently lets him leave",
+        "That clause lets Verstappen quit Red Bull if he's **outside the top two** in the standings at the summer break \u2014 he's currently **P6**",
+        "Verstappen has had the offer for **several weeks** and hasn't responded; he has until **mid-October** to decide",
+        "Both **Mercedes and McLaren** are reportedly watching the situation closely"
+      ],
+      "background": "Max Verstappen has won **four consecutive F1 drivers' championships** with Red Bull, but the team's competitiveness has dipped in 2026 relative to McLaren and others, feeding a season-long storyline about whether the four-time champion might leave. His current contract, signed during Red Bull's dominant years, contains an unusual **performance-based exit clause**: if he's not running P1 or P2 in the championship by the summer break, he can walk. That clause exists precisely because Red Bull wanted to reassure Verstappen it would keep the car competitive \u2014 and now that the car isn't, the clause has become live leverage.",
+      "what_happened": "Red Bull has put a new contract offer in front of Verstappen's management: roughly **$80 million per year**, extending his stay through the end of **2029** (a season beyond his current 2028 deal), with a pay rise attached. The trade-off is that the new deal would **strip out the exit clause** entirely \u2014 meaning if he signs, Verstappen gives up his current right to leave based on where the team sits in the standings. He's currently **sixth** in the drivers' championship, which under his existing contract already qualifies him to trigger an exit if he wanted to. Verstappen's camp has reportedly held the offer for weeks without a formal response, and he says he's focused on getting the car faster rather than being distracted by contract talk. He has until **mid-October** to make a call.",
+      "why_it_matters": "This is the single biggest storyline in F1's driver market: a four-time champion, sitting on leverage to leave a struggling team, being offered a lot of money to give that leverage up voluntarily. Whichever way Verstappen goes reshapes the 2027 driver market \u2014 a Verstappen exit would open the sport's most coveted seat and trigger a chain reaction across multiple teams.",
+      "ripple_effects": "If Verstappen stays, Red Bull locks in stability and starts a car-development push to justify the faith he's shown; if he leaves, expect a scramble at Mercedes or McLaren to fit him in, likely displacing another driver, and Red Bull would need to find a replacement capable of anchoring the team. Sponsors, F1 broadcasters and betting markets are all watching this play out given how much of F1's audience is built around Verstappen's dominance.",
+      "why_now": "The clock is genuinely ticking \u2014 Verstappen's exit-clause window is open right now because he's below the top-two threshold, and Red Bull wants a decision before the driver market's other dominoes (Alonso, and the remaining out-of-contract half of the grid) fall into place.",
+      "watch_next": "Watch for any signal from Verstappen's camp before mid-October \u2014 a signed extension, a public commitment to a rival, or continued silence that lets speculation keep building.",
+      "key_terms": [
+        {
+          "term": "exit clause",
+          "definition": "A contract term letting a driver leave a team early if a specific condition \u2014 often a performance threshold \u2014 isn't met."
+        }
+      ],
+      "the_lesson": "Contracts encode leverage, not just salary \u2014 a clause tied to performance only matters when performance actually dips, and that's exactly when it becomes the most contested clause in the document.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "high",
+      "sources": [
+        {
+          "name": "GPFans",
+          "url": "https://www.gpfans.com/en/f1-news/1088415/max-verstappen-f1-future-new-red-bull-2029-contract-pay-rise-offer-performance-clause/"
+        },
+        {
+          "name": "TheJudge13",
+          "url": "https://thejudge13.com/2026/07/28/no-response-from-verstappen-after-red-bulls-fresh-contract-offer-ahead-of-crucial-exit-clause-deadline/"
+        }
+      ],
+      "added_at": "2026-07-31T14:00:39+05:30",
+      "rank": 62
     },
     {
       "region": "f1",
@@ -2953,7 +3037,7 @@
         }
       ],
       "added_at": "2026-07-31T11:58:17+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "region": "f1",
@@ -2989,7 +3073,7 @@
         }
       ],
       "added_at": "2026-07-31T11:58:17+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "region": "f1",
@@ -3029,7 +3113,7 @@
         }
       ],
       "added_at": "2026-07-31T07:58:23+05:30",
-      "rank": 63
+      "rank": 65
     },
     {
       "region": "f1",
@@ -3074,7 +3158,7 @@
         }
       ],
       "added_at": "2026-07-31T07:58:23+05:30",
-      "rank": 64
+      "rank": 66
     },
     {
       "region": "f1",
@@ -3113,7 +3197,7 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 65
+      "rank": 67
     },
     {
       "region": "f1",
@@ -3153,10 +3237,10 @@
         }
       ],
       "added_at": "2026-07-31T03:57:23+05:30",
-      "rank": 66
+      "rank": 68
     },
     {
-      "rank": 67,
+      "rank": 69,
       "category": "f1",
       "published_iso": "2026-07-30T08:00:00Z",
       "regions": [
@@ -3196,7 +3280,7 @@
       "added_at": "2026-07-31T02:00:54+05:30"
     },
     {
-      "rank": 68,
+      "rank": 70,
       "category": "f1",
       "published_iso": "2026-07-30T09:00:00Z",
       "regions": [
@@ -3268,7 +3352,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "region": "f1",
@@ -3308,7 +3392,7 @@
         }
       ],
       "added_at": "2026-07-31T00:01:23+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "region": "f1",
@@ -3348,7 +3432,7 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 71
+      "rank": 73
     },
     {
       "region": "f1",
@@ -3389,10 +3473,10 @@
         }
       ],
       "added_at": "2026-07-30T22:04:14+05:30",
-      "rank": 72
+      "rank": 74
     },
     {
-      "rank": 73,
+      "rank": 75,
       "category": "f1",
       "published_iso": "2026-07-30T00:00:00Z",
       "regions": [
@@ -3471,7 +3555,7 @@
         }
       ],
       "added_at": "2026-07-30T19:09:46+05:30",
-      "rank": 74
+      "rank": 76
     },
     {
       "category": "f1",
@@ -3511,7 +3595,7 @@
         }
       ],
       "added_at": "2026-07-30T15:57:39+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "category": "f1",
@@ -3567,7 +3651,7 @@
         "title": "Red Bull wants to lock down Max Verstappen through 2029 \u2014 right as his contract's exit door swings open",
         "date": null
       },
-      "rank": 76
+      "rank": 78
     },
     {
       "region": "f1",
@@ -3617,7 +3701,7 @@
         "title": "F1 sets mid-September deadline to decide fate of Qatar and Abu Dhabi season finales",
         "date": null
       },
-      "rank": 77
+      "rank": 79
     },
     {
       "region": "f1",
@@ -3661,89 +3745,6 @@
         }
       ],
       "added_at": "2026-07-30T11:59:07+05:30",
-      "rank": 78
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-07-29T14:00:00Z",
-      "regions": [
-        "Hungary"
-      ],
-      "title": "Colapinto and Bortoleto grind through a 2,892km Pirelli tyre test in Budapest ahead of F1's 2027 rule reset",
-      "key_points": [
-        "Alpine's **Franco Colapinto** and Audi's **Gabriele Bortoleto** completed a punishing **2,892km combined test** in Budapest.",
-        "Track temperatures hit a brutal **59\u00b0C** during the two-day session.",
-        "Bortoleto's best lap of **1:19.917** edged out Colapinto's **1:20.139**.",
-        "The test targeted Pirelli's proposed **C3, C4 and C5 compounds** being developed for the **2027 season** \u2014 F1's next major rules reset.",
-        "Audi, Alpine and Aston Martin combined for **660 laps** across the two days of testing."
-      ],
-      "background": "F1 is preparing a major regulation overhaul for **2027**, covering engines, aerodynamics and tyres. Before any new rules go live, teams and tyre supplier **Pirelli** run extensive private tests to make sure new tyre compounds behave predictably under real race conditions. This kind of testing rarely makes headlines, but it directly shapes how competitive and how safe the 2027 grid will be.",
-      "what_happened": "On Wednesday, Bortoleto and Colapinto took turns in specially prepared test cars at the **Hungaroring** in Budapest, each logging over 500km, for a combined **2,892km** across Audi, Alpine and Aston Martin's entries over two days. The session ran in extreme heat, with track temperatures reaching **59\u00b0C**, deliberately stress-testing Pirelli's proposed **C3, C4 and C5** tyre compounds for the 2027 rules for durability and degradation under punishing conditions. Bortoleto set the faster benchmark lap of **1:19.917** versus Colapinto's **1:20.139**, though outright lap time wasn't the point of the exercise \u2014 tyre data was.",
-      "why_it_matters": "Tyres are one of the most consequential, least glamorous variables in F1. Poor compound choices can produce boring, one-stop races or unpredictable, unsafe ones \u2014 so this groundwork quietly determines what 2027 racing actually looks like.",
-      "ripple_effects": "The data feeds directly into Pirelli's final compound selection for 2027, gives young drivers like Colapinto and Bortoleto valuable mileage and visibility while their team futures are still being decided, and sets the template for the wider pre-season testing schedule.",
-      "why_now": "This was one of the first large-scale, multi-team tyre tests for the 2027 ruleset, run this week during F1's mid-season gap after the Hungarian Grand Prix.",
-      "watch_next": "Further multi-team Pirelli tests before the tyre supplier locks in its final 2027 compound range.",
-      "key_terms": [
-        {
-          "term": "Tyre compound",
-          "definition": "The specific rubber formula used in a tyre \u2014 softer compounds grip better but wear faster, harder compounds last longer but grip less."
-        }
-      ],
-      "the_lesson": "Big rule changes in any competitive system rarely arrive fully formed \u2014 they're the product of unglamorous, unseen testing work carried out months or years in advance.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "GrandPrix247",
-          "url": "https://www.grandprix247.com/f1-testing-news/gabriele-bortoleto-and-franco-colapinto-do-punishing-2892km-pirelli-tyre-test-in-budapest"
-        }
-      ],
-      "added_at": "2026-07-30T11:59:07+05:30",
-      "rank": 79
-    },
-    {
-      "category": "f1",
-      "published_iso": "2026-07-29T00:00:00Z",
-      "regions": [
-        "Hungary",
-        "F1"
-      ],
-      "title": "Mercedes told points leader Antonelli 'don't waste time racing' Norris \u2014 and it may have cost him the Hungarian GP win",
-      "region": "f1",
-      "key_points": [
-        "Radio transcripts show Mercedes engineer **Peter Bonnington** telling Antonelli **'we don't want to waste time racing'** Norris with two laps left.",
-        "Antonelli was told **not to defend the lead** from Norris on older tyres.",
-        "**Norris lunged** at Turn 1, ran wide, and Antonelli briefly re-passed \u2014 but Norris won moments later anyway.",
-        "Antonelli has since cited a **'safety concern'** behind Mercedes' call; Norris says the **title fight is 'alive'**."
-      ],
-      "background": "**Kimi Antonelli** leads the F1 drivers' championship for Mercedes, with **Lando Norris** and McLaren his closest rival \u2014 a title fight that has swung on strategy calls and late-race incidents all season. At the **Hungarian Grand Prix**, Antonelli was leading in the closing laps but running on older, more worn tyres than Norris, who had made a later pit stop. Team radio \u2014 the constant communication between driver and engineers during a race \u2014 often reveals in-the-moment strategic calls that only become public well after the race, once broadcasters or journalists obtain the untelevised portions.",
-      "what_happened": "Newly surfaced radio transcripts from the **Hungarian Grand Prix** show Mercedes race engineer **Peter Bonnington** telling leader Antonelli, with two laps remaining, **'Norris at 1.8, we don't want to waste time racing him'** \u2014 effectively instructing Antonelli not to fight for the position on his older tyres. Norris then attacked into **Turn 1**, ran wide under pressure, and Antonelli briefly re-passed him \u2014 but Norris won the position back moments later and went on to take the win. Antonelli has since said a **'safety concern'** was behind Mercedes' call to stand down rather than defend hard. Norris says the title fight is **'alive'**, pointing to Mercedes' in-race decision-making as Antonelli's biggest weakness heading into the second half of the season.",
-      "why_it_matters": "In a tight championship, a single strategy call that concedes a win instead of defending it can swing the title fight over a season \u2014 losing points here compounds over many races. It also raises real questions about whether Mercedes' caution is protecting its driver or costing him the championship.",
-      "ripple_effects": "If Mercedes keeps making conservative calls under pressure, Norris and McLaren gain a psychological and points edge for the rest of the season. It puts more scrutiny on every future radio call Mercedes makes in a close fight, and gives Norris's camp a talking point to build title-fight momentum on.",
-      "why_now": "The transcripts only became public this week, well after the Hungarian race weekend, once outlets obtained the untelevised portion of team radio.",
-      "watch_next": "Watch how Mercedes handles race-ending strategy calls at the upcoming Belgian Grand Prix, with the title fight now firmly a live storyline.",
-      "key_terms": [
-        {
-          "term": "Team radio",
-          "definition": "The live audio channel between a driver and their race engineers during a Grand Prix, used for strategy calls, tyre and gap information."
-        }
-      ],
-      "the_lesson": "In any close competition, the decisions made under pressure \u2014 not just raw speed or skill \u2014 often decide who wins over a season, because a single conservative call can hand an opponent the position.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "RaceFans",
-          "url": "https://www.racefans.net/2026/07/29/dont-waste-time-racing-him-mercedes-told-antonelli-not-to-defend-lead-from-norris/"
-        },
-        {
-          "name": "RacingNews365",
-          "url": "https://racingnews365.com/kimi-antonelli-reveals-safety-concern-behind-mercedes-change-of-heart"
-        }
-      ],
-      "added_at": "2026-07-30T10:03:12+05:30",
       "rank": 80
     }
   ],
