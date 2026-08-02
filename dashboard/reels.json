@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "generated_at": "2026-08-02T22:04:03+05:30",
+  "generated_at": "2026-08-02T23:59:32+05:30",
   "day_label": "Sunday · 2 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,141 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "climate",
+      "category": "health",
       "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "ScienceDaily",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "A review of 350+ studies suggests the protein craze may be overselling what most people actually need",
+      "what_happened": "The review, released July 31 and covered widely on August 1, concludes that reducing protein intake improves metabolic function, lowers inflammation and cellular damage, and activates pathways linked to healthier aging. A central mechanism is **FGF21 (fibroblast growth factor 21)**, a hormone that rises when protein intake falls; mice with elevated FGF21 levels lived longer than typical mice in prior studies. The researchers point to three amino acids in particular — methionine, isoleucine and valine — as likely drivers of protein's downside, since overloading these can switch on growth-signaling pathways associated with obesity and age-related disease. The authors are careful to caveat that this isn't a blanket recommendation: older adults, athletes, and people recovering from illness or surgery generally still need more protein, not less.",
+      "key_points": [
+        "A review spanning **more than 350 studies** finds many people — especially sedentary adults — eat **more protein than they need**, and that eating less may slow aging.",
+        "The effect runs through a hormone called **FGF21**, which rises when protein intake drops and is linked to **longer lifespans in mouse studies**.",
+        "Three amino acids — **methionine, isoleucine and valine** — appear to drive much of protein's downside, over-activating growth pathways tied to inflammation and disease risk.",
+        "The finding mainly targets **sedentary people**; older adults, athletes and those with certain medical conditions may still need higher protein intake.",
+        "It runs against the grain of the booming **high-protein diet and supplement industry**, built on the premise that more protein is almost always better."
+      ],
+      "moot": "More of a nutrient that's good for you isn't automatically better — biology usually has a sweet spot, and pushing past it can flip a benefit into a risk. That applies well beyond protein.",
+      "image_credit": "ScienceDaily",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "News-Medical.Net",
+          "ScienceDaily"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Protein has been marketed for years as the nutrient you can't get enough of — protein bars, shakes and high-protein diet plans have turned into a multi-billion-dollar industry on that promise. But nutrition science works on dose-response curves: past a certain point, more of a 'good' nutrient can start working against you. Researchers, including scientists like **Dudley Lamming** who study aging and metabolism, pooled findings from over 350 individual studies — a method called a systematic review — to see what the overall evidence on protein and aging actually shows once you look past marketing claims.",
+        "why_it_matters": "It challenges a dietary assumption baked into a lot of modern wellness culture and product marketing — that piling on protein is close to risk-free. For the average sedentary adult, the evidence suggests the opposite may be true.",
+        "ripple_effects": "Expect pushback from the protein-supplement industry and some nutrition influencers, plus renewed debate over official dietary guidelines. It could also shift how doctors counsel patients who aren't athletes but have adopted high-protein diets for weight loss.",
+        "why_now": "It surfaces amid a multi-year boom in high-protein diets, protein-fortified snacks and supplement sales, giving the review's contrarian finding extra news value.",
+        "watch_next": "Whether major dietary-guideline bodies (like the WHO or national nutrition agencies) reference this review when they next update protein intake recommendations.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "FGF21",
+            "definition": "A hormone the body produces more of when protein intake is lower; it's linked in animal studies to better blood sugar control and longer lifespan."
+          },
+          {
+            "term": "Systematic review",
+            "definition": "A study that combines and analyzes the results of many previous studies together, rather than presenting one new experiment, to find patterns across the whole body of evidence."
+          }
+        ],
+        "sources": [
+          {
+            "name": "ScienceDaily",
+            "url": "https://www.sciencedaily.com/releases/2026/08/260801042811.htm"
+          },
+          {
+            "name": "News-Medical.Net",
+            "url": "https://www.news-medical.net/news/20260731/Consuming-less-protein-could-have-greater-health-benefits-and-extend-lifespan.aspx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "The Next Web",
+      "importance": "high",
+      "regions": [
+        "Global"
+      ],
+      "title": "OpenAI's unreleased 'Astra' model solves 10 math problems that stumped humans for decades",
+      "what_happened": "OpenAI announced on August 1 that Astra, a model not yet publicly released, produced verified solutions to ten open problems spanning group theory, coding theory, geometry, complexity theory and quantum game theory. Standout results include constructing the **first non-sofic group** (disproving the Connes rigidity conjecture), proving Ehrhart's volume conjecture, and improving the best-known bound on high-dimensional sphere-packing density for the first time since 1978. Astra also proved a parallel repetition theorem for two-player quantum games and set new lower bounds on how hard it is to compute a mathematical object called the permanent. Every proof shipped with a **Lean 4** certificate — a format that lets a separate, simple computer program mechanically verify the logic is airtight, rather than requiring a human referee to trust it. OpenAI says generating all ten proofs cost **under $2,000** in compute.",
+      "key_points": [
+        "OpenAI's unreleased **Astra** model solved **10 long-standing open problems** in math and theoretical computer science that had resisted progress for **at least a decade**.",
+        "It disproved the **Connes rigidity conjecture** and built the first known **non-sofic group** — a counterexample mathematicians had chased for years.",
+        "Astra delivered the **first improvement since 1978** to a key upper bound on how densely spheres can be packed in high dimensions.",
+        "OpenAI published a **249-page manuscript** with machine-checked proofs (Lean 4 certificates) for every result, and says the compute cost was **under $2,000**.",
+        "The haul includes three problems from mathematician **Paul Erdős's** famous open-problem list — a sign AI may now do genuine, independently checkable research, not just pattern-matching."
+      ],
+      "moot": "A bold claim is only as good as how easily others can check it. What makes this milestone credible isn't that an AI lab said so — it's that the proofs are independently, mechanically verifiable by anyone, which is the real bar for trusting AI-generated knowledge.",
+      "image_credit": "The Next Web",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "ForkLog",
+          "The Next Web"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "For years, AI models have been good at mimicking known math — solving textbook problems or summarizing proofs others already found. Genuinely *new* mathematics, the kind that extends human knowledge, has been a much higher bar, because a wrong proof is worse than no proof at all. OpenAI says its next-generation model, internally called **Astra**, has cleared that bar on ten problems that professional mathematicians had failed to crack for **a decade or more**, including a famous conjecture by mathematician Alain Connes and a sphere-packing bound untouched since **1978**. The company avoided a 'trust us' problem by publishing formally verified proofs anyone can independently check.",
+        "why_it_matters": "This is a test case for whether AI can extend the frontier of human knowledge, not just retrieve it. Machine-checked verification means the claims don't depend on trusting OpenAI's word — mathematicians can independently confirm or challenge every step.",
+        "ripple_effects": "Expect competing AI labs (Google DeepMind, Anthropic, Chinese labs) to publish their own 'AI does real science' claims to keep pace in the credibility race. Universities and journals will likely have to develop norms for how AI-assisted proofs get credited and peer-reviewed. If verified, it also strengthens the broader investment case for AI infrastructure spend, since 'AI accelerates R&D' has mostly been a promise until now.",
+        "why_now": "It lands amid an intensifying race between AI labs to demonstrate 'scientific discovery' capability, not just chatbot fluency, as a way to justify enormous training and compute budgets.",
+        "watch_next": "Whether independent mathematicians who review the published Lean 4 certificates confirm all ten results hold up, and whether OpenAI gives Astra a public release date.",
+        "market_link": "No direct listed-stock move, but it feeds the AI-infrastructure investment narrative behind Nvidia, Microsoft and other AI-capex-linked stocks by giving 'AI accelerates real research' a concrete, checkable example.",
+        "key_terms": [
+          {
+            "term": "Sofic group",
+            "definition": "A technical category in group theory (an area of abstract math); whether every group is 'sofic' was a long-standing open question, and Astra found a group that is not."
+          },
+          {
+            "term": "Lean 4",
+            "definition": "Software that mechanically checks whether a mathematical proof's logic is valid, step by step, without needing a human to verify it by hand."
+          },
+          {
+            "term": "Sphere packing",
+            "definition": "The math problem of how densely you can pack spheres together in a given number of dimensions without overlapping — relevant to error-correcting codes and data storage."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Next Web",
+            "url": "https://thenextweb.com/news/openai-astra-model-ten-math-proofs-non-sofic-groups"
+          },
+          {
+            "name": "ForkLog",
+            "url": "https://forklog.com/en/openai-model-solves-ten-unresolved-mathematical-problems/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "climate",
       "published_iso": "2026-08-02T00:22:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
       "source": "NBC News",
@@ -67,10 +200,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "climate",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Japan's Kumamoto earthquake death toll climbs to 34 as rescuers enter a fourth day searching a collapsed mall",
@@ -137,8 +269,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -202,8 +334,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "technology",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -266,8 +398,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -343,8 +475,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -417,8 +549,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -493,78 +625,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "German prosecutors confirm the Berlin Pride attack was Islamist terrorism and lay out the attacker's fuller radicalization timeline",
-        "date": null
-      },
-      "published_iso": "2026-08-01T00:00:00Z",
-      "added_at": "2026-08-02T14:00:41+05:30",
-      "source": "The Washington Post",
-      "importance": "high",
-      "regions": [
-        "Germany",
-        "Europe"
-      ],
-      "title": "Hamburg's Pride parade draws 300,000 under doubled security, a week after the deadly Berlin attack",
-      "what_happened": "Hamburg's Pride parade — one of Germany's largest — went ahead on Saturday, August 1, exactly a week after the Berlin attack, with police roughly doubling the officer presence compared to last year. Around **300,000 people** turned out, more than the 260,000 who attended in 2025, suggesting the attack did not deter attendance. The event's motto was 'Queer in solidarity — take a stand for a future without fear,' and organizers added a truck representing the Berlin Pride event to the parade as a show of solidarity. This came as German authorities continue to face scrutiny over how Ballout — twice flagged for extremism, including a 2025 conviction tied to ISIS — remained free to carry out the attack.",
-      "key_points": [
-        "Around **300,000 people** attended Hamburg Pride, up from 260,000 last year, despite the recent attack.",
-        "Police roughly **doubled the number of officers** protecting the event compared to last year.",
-        "It came exactly **one week** after a van-and-blade attack killed one person and injured 29 at Berlin's Pride festival.",
-        "A truck representing **Berlin's Pride event** was added to the Hamburg parade as a gesture of solidarity.",
-        "Investigators say the Berlin attacker had pledged allegiance to **ISIS** in a video found after his death."
-      ],
-      "moot": "After an attack aimed at intimidating a community, a large, visible turnout at the next similar event is itself a form of public response — attendance numbers become a signal of whether fear achieved its goal.",
-      "image_credit": "The Washington Post",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Euronews",
-          "The Washington Post"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported that German prosecutors confirmed the Berlin Pride van-and-blade attack was Islamist terrorism, detailing attacker Abdul Ballout's history of ISIS-linked convictions despite being known to authorities.",
-        "changed": "A week later, Hamburg held its own Pride parade under doubled security and drew a bigger crowd than last year, in a visible show that the community would not be intimidated out of public events."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "On July 25, a 21-year-old German-Lebanese man, Abdul Ballout, drove a van into pedestrians near Berlin's Christopher Street Day festival, killing one woman and injuring 29 before being shot dead by police the next day. German prosecutors later confirmed it as **Islamist terrorism** and revealed Ballout had two prior convictions tied to extremism — including a suspended sentence — despite being known to authorities. The attack triggered a national debate over how Germany monitors people already flagged as security risks, and put pressure on the government to overhaul event security nationwide.",
-        "why_it_matters": "The large, well-attended turnout under heavy security is being read as a deliberate, visible response to an attack meant to intimidate LGBTQ+ communities — showing the event could not be shut down by fear. It also keeps pressure on German Chancellor Friedrich Merz's government, which has promised a security overhaul after criticism over how the attacker was handled.",
-        "ripple_effects": "Expect tighter security and possibly new legislation around public gatherings across Germany and Europe more broadly, alongside renewed debate over how EU countries track people already convicted of extremism-linked offenses. Other European Pride and public events may see similar security increases in coming weeks.",
-        "why_now": "Hamburg Pride was already scheduled for August 1, but it became a national test of whether Germany's LGBTQ+ community and the public would show up despite the fresh trauma of the Berlin attack just seven days earlier.",
-        "watch_next": "Germany's promised security overhaul — what concrete legal or policing changes the Merz government proposes for monitoring people already flagged as extremism risks.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Christopher Street Day",
-            "definition": "The German name for Pride festivals, marking the 1969 Stonewall uprising in New York's Christopher Street, celebrated across German cities each summer."
-          }
-        ],
-        "sources": [
-          {
-            "name": "The Washington Post",
-            "url": "https://www.washingtonpost.com/world/2026/08/01/germany-hamburg-pride-parade-berlin-attack-security/0a9f7666-8d9e-11f1-8912-d71e69d679d7_story.html"
-          },
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/my-europe/2026/08/01/hamburg-celebrates-pride-with-increased-security-one-week-after-deadly-berlin-attack"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -644,8 +706,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "technology",
       "published_iso": "2026-08-02T00:00:00+02:00",
       "added_at": "2026-08-02T10:04:56+05:30",
@@ -722,8 +784,8 @@
     },
     {
       "type": "story",
-      "id": "story-18",
-      "rank": 18,
+      "id": "story-20",
+      "rank": 20,
       "category": "science",
       "published_iso": "2026-08-01T09:00:00-04:00",
       "added_at": "2026-08-02T04:00:00+05:30",
@@ -787,6 +849,140 @@
       "rank": 21,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-02T00:00:00Z",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "PM India (official release)",
+      "importance": "high",
+      "regions": [
+        "India"
+      ],
+      "title": "India's Cabinet approves ₹84,084 crore 'Samudra Manthan' plan to unlock offshore oil and gas",
+      "what_happened": "The Cabinet, chaired by PM Modi, approved the scheme with an outlay of **₹84,084 crore** for implementation through FY 2030-31. Unlike earlier exploration-only schemes, Samudra Manthan integrates geological surveys, deep-sea drilling, scientific research, production infrastructure, digital monitoring, domestic manufacturing support and workforce skilling under a single framework. The government projects it will catalyse reserve additions of more than **600 million metric tons of oil equivalent (MMTOE)**, substantially increase offshore exploration activity, and generate large-scale employment, while building a globally competitive domestic offshore-technology and services industry.",
+      "key_points": [
+        "India's Union Cabinet approved **'Samudra Manthan'**, a **₹84,084 crore (~$10 billion)** National Offshore Exploration Scheme to boost domestic oil and gas output.",
+        "The scheme runs through **FY 2030-31** and targets unlocking more than **600 million tonnes of oil equivalent** in new reserves.",
+        "It bundles deep-sea drilling, geological surveys, digital monitoring and domestic manufacturing support into **one national framework**, not just exploration funding alone.",
+        "The core goal is cutting India's heavy reliance on **imported crude oil**, which leaves the economy exposed to global price shocks and shipping-route disruptions.",
+        "It also aims to build a domestic offshore-technology industry under the **'Make in India'** push, rather than relying on foreign drilling and survey firms."
+      ],
+      "moot": "Countries tend to invest seriously in domestic supply capacity right after a shock exposes how exposed they are — energy security policy usually follows a crisis rather than getting ahead of one.",
+      "image_credit": "PM India (official release)",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "PM India (official release)",
+          "Upstox News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "crude_geopolitics",
+        "union_cabinet"
+      ],
+      "figures": [
+        {
+          "raw": "₹84,084 crore",
+          "words": "₹840.84 billion",
+          "usd_approx": "≈ $8.7bn"
+        }
+      ],
+      "depth": {
+        "background": "India imports the large majority of the crude oil it consumes, which means global oil-price swings and shipping disruptions hit the economy directly — a vulnerability already on display today with the ongoing Strait of Hormuz shipping crisis. 'Samudra Manthan' takes its name from an ancient Indian legend about churning the ocean to reveal hidden treasures, used here as a metaphor for extracting value from India's offshore waters. Previous Indian offshore exploration efforts have been criticized as underfunded and fragmented across agencies; this scheme is designed to consolidate exploration, production infrastructure and skill-building under one Ministry of Petroleum & Natural Gas program.",
+        "why_it_matters": "Energy security has moved from an abstract policy goal to an urgent one as the Strait of Hormuz — a chokepoint for roughly a fifth of the world's oil and gas trade — remains effectively disrupted by the Iran conflict. This scheme is a direct, long-term policy response to that kind of vulnerability, aiming to grow supply India controls domestically.",
+        "ripple_effects": "State-run explorers like ONGC and Oil India, along with private offshore-services firms, stand to benefit as exploration blocks and tenders roll out. Faster domestic production could gradually reduce India's oil import bill and its exposure to global crude-price spikes, though the payoff is likely years away given exploration and development timelines.",
+        "why_now": "It lands the same week global shipping through the Strait of Hormuz remains disrupted by the Iran war, a live reminder of how exposed import-dependent economies are to a single chokepoint going offline.",
+        "watch_next": "Which offshore blocks and companies get exploration rights first, and how quickly early-stage surveys convert into confirmed new reserves.",
+        "market_link": "Could benefit India's upstream energy PSUs — ONGC and Oil India — and offshore services firms as exploration tenders under the scheme are awarded.",
+        "key_terms": [
+          {
+            "term": "MMTOE",
+            "definition": "Million metric tons of oil equivalent — a standard unit used to measure oil and gas reserves or production on a common energy scale."
+          }
+        ],
+        "sources": [
+          {
+            "name": "PM India (official release)",
+            "url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-samudra-manthan-national-offshore-exploration-scheme-with-an-outlay-of-rs-84084-crore/"
+          },
+          {
+            "name": "Upstox News",
+            "url": "https://upstox.com/news/business-news/latest-updates/cabinet-approves-84-084-crore-samudra-manthan-scheme-to-boost-offshore-oil-gas-exploration/article-197927/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-02T11:00:00+05:30",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "India TV News",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "Modi launches a 100-week nationwide drive to pledge India's youth against drug abuse",
+      "what_happened": "Modi launched the campaign at 11 AM on August 2 via video conference, with Union ministers Mansukh Mandaviya and Piyush Goyal among those publicly backing it. The stated goal is to get more than **1 crore youth** to take a formal pledge against substance abuse, organized through MY Bharat volunteers. Unlike a single pledge-and-forget event, the plan runs for **100 weeks**, with recurring Sunday activities — sports, walkathons, meditation sessions, cultural programs, nukkad nataks (street plays), art competitions and community discussion forums — intended to sustain public participation. Goyal described it as laying 'the foundation for a Viksit Bharat,' tying the anti-drug message directly to the government's 2047 developed-nation goal.",
+      "key_points": [
+        "PM Modi launched the **'Nasha Mukt Yuva for Viksit Bharat Sankalp Abhiyan'** (Drug-Free Youth for a Developed India pledge campaign) on **August 2** via video conference.",
+        "The campaign aims to unite over **1 crore (10 million) youth** in a pledge against substance abuse, coordinated through **MY Bharat** volunteers nationwide.",
+        "It kicks off a **100-week** 'Jan Bhagidari' (people's-participation) drive, not a one-day event.",
+        "Weekly Sunday activities — sports, walkathons, meditation, street plays, art contests — are meant to keep the campaign active rather than symbolic.",
+        "The push is framed as part of the government's **'Viksit Bharat 2047'** vision — reaching developed-nation status by India's 100th year of independence."
+      ],
+      "moot": "Awareness campaigns that rely on a single pledge or event rarely change behavior on their own; the ones designed around recurring, weekly engagement have a better shot at building lasting habits.",
+      "image_credit": "India TV News",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "India TV News",
+          "Republic World"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "India has one of the world's youngest populations, often called its **'demographic dividend'** — the idea that a large working-age youth cohort can drive decades of economic growth. Officials have grown increasingly vocal about drug abuse, including synthetic drugs, as a threat to that advantage, particularly in border and northeastern states. **MY Bharat** is the government's existing youth-volunteer platform, used here as the delivery mechanism for the pledge drive. The launch fits a pattern of large, symbolic national campaigns (similar in style to past sanitation or digital-literacy drives) meant to shift public behavior through sustained, repeated engagement rather than a single announcement.",
+        "why_it_matters": "A large youth population only pays off economically if that generation stays healthy and productive; substance abuse is one of the clearest ways that advantage erodes. The 100-week structure also signals the government is betting on repetition and habit-forming, not a single announcement, to actually change behavior.",
+        "ripple_effects": "State governments, schools, and NGOs are likely to be pulled into hosting local versions of the weekly activities. It could also become a recurring feature of government messaging around elections and youth outreach going forward.",
+        "why_now": "August 2 was chosen as a symbolic launch date; it follows a string of government campaigns aimed at India's youth and comes amid rising official concern over synthetic-drug trafficking into border states.",
+        "watch_next": "Whether concrete funding, treatment infrastructure, or enforcement measures follow the pledge drive, beyond the symbolic weekly activities.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Viksit Bharat",
+            "definition": "The Indian government's stated goal of India becoming a 'developed nation' by 2047, the 100th anniversary of independence."
+          },
+          {
+            "term": "MY Bharat",
+            "definition": "A government-run national youth volunteer platform used to mobilize young people for campaigns like this one."
+          }
+        ],
+        "sources": [
+          {
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/news/india/pm-modi-launches-nasha-mukt-yuva-for-viksit-bharat-sankalp-abhiyan-2026-08-02-1050130"
+          },
+          {
+            "name": "Republic World",
+            "url": "https://www.republicworld.com/india/pm-modi-launches-nasha-mukt-yuva-for-viksit-bharat-sankalp-abhiyan-emphasises-role-of-youth-in-viksit-bharat-journey-2026-08-02-133868"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
       "source": "Tradebrains",
@@ -868,10 +1064,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
       "source": "The Week",
@@ -930,8 +1125,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -1002,8 +1197,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -1066,8 +1261,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-07-31T14:00:00+05:30",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -1134,8 +1329,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-01T15:00:00+05:30",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -1197,8 +1392,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-08-02T10:56:00+05:30",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1261,77 +1456,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-07-31T00:00:00Z",
-      "added_at": "2026-08-02T14:00:41+05:30",
-      "source": "The Print",
-      "importance": "notable",
-      "regions": [
-        "India",
-        "Delhi"
-      ],
-      "title": "Lok Sabha passes a births-and-deaths registration bill 'without discussion' as opposition uproar over a student crackdown paralyses Parliament",
-      "what_happened": "Amid continuing opposition protests over the July 20 police crackdown on student demonstrators, the Lok Sabha passed the **Registration of Births and Deaths (Amendment) Bill, 2026** by voice vote, with no meaningful debate as opposition MPs shouted slogans in the well of the House. The bill tightens rules for late registration of births and deaths: a report filed **one to two years late** now needs approval from a District or Sub-Divisional Magistrate after verification, while anything registered **more than two years late** requires an order from a judicial magistrate. Separately, Congress MPs moved adjournment motions in both Houses seeking a discussion on what they call the 'disproportionate and excessive' use of force — including lathi-charges, tear gas, pellet guns and shock batons — against students during the July 20 march, citing specific injuries including a protester who allegedly suffered serious eye injuries from pellets. The Rajya Sabha has been adjourned until August 3 as the impasse continues.",
-      "key_points": [
-        "The **Registration of Births and Deaths (Amendment) Bill, 2026** was passed by the Lok Sabha by voice vote, amid ruckus and with no debate.",
-        "The bill makes registering a birth or death **more than a year late** require magistrate approval, and **beyond two years** require a judicial magistrate's order.",
-        "Opposition MPs are demanding Home Minister Amit Shah answer for **police action against student protesters** on July 20.",
-        "Protesters allege **lathi-charges, tear gas and pellet guns** were used, with some student injuries described as severe.",
-        "The Rajya Sabha has been **adjourned until August 3** as the standoff continues."
-      ],
-      "moot": "When a legislature is gridlocked over a political controversy, unrelated bills can still pass quickly with little scrutiny — a reminder that parliamentary disruption doesn't just block laws, it can also let others through with less debate than usual.",
-      "image_credit": "The Print",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "India TV News",
-          "The Print"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "lok_sabha",
-        "rajya_sabha",
-        "parliament_india"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "On July 20, thousands of students marched on Parliament in a 'Chalo Sansad' protest demanding accountability over the NEET-UG medical entrance exam paper leak. Delhi Police and Rapid Action Force personnel used force to disperse the crowd, and the opposition — led by Congress — says the response was disproportionate, citing named students who suffered serious injuries. Since Parliament's monsoon session resumed, opposition MPs have repeatedly disrupted proceedings demanding Home Minister Amit Shah explain the police action and that criminal cases against protesting students be withdrawn.",
-        "why_it_matters": "This shows Parliament's monsoon session being consumed by a political standoff over alleged police excess against students, which is slowing down — though not stopping — the government's legislative agenda. It also raises accountability questions about how security forces handle protests near Parliament, and whether criminal cases against student demonstrators will be withdrawn.",
-        "ripple_effects": "Families needing to register a birth or death after long delays will face a more bureaucratic process requiring magistrate sign-off, which particularly affects rural and undocumented households. The political standoff could also delay other bills queued for this session, and keeps the NEET-UG paper leak — and public trust in exam integrity — in the news.",
-        "why_now": "Opposition anger has been building since the July 20 march, and with the Rajya Sabha now adjourned until August 3, the fight over accountability for the police response looks set to continue disrupting the rest of the monsoon session, which runs until August 13.",
-        "watch_next": "Whether Home Minister Amit Shah addresses the opposition's demands when the Rajya Sabha resumes on August 3, and whether cases against student protesters are withdrawn.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "voice vote",
-            "definition": "A vote where the presiding officer judges 'ayes' versus 'noes' by volume of voices rather than a counted ballot — faster, but harder to scrutinise than a recorded vote."
-          },
-          {
-            "term": "adjournment motion",
-            "definition": "A parliamentary tool used to interrupt normal business and force an urgent discussion on a specific issue — here, the opposition wants one on the student crackdown."
-          }
-        ],
-        "sources": [
-          {
-            "name": "The Print",
-            "url": "https://theprint.in/india/lok-sabha-adjourned-till-12-noon-as-oppn-seeks-govt-response-on-police-crackdown-on-cjp-protest/2997654/"
-          },
-          {
-            "name": "India TV News",
-            "url": "https://www.indiatvnews.com/explainers/lok-sabha-clears-registration-of-births-and-deaths-amendment-bill-how-it-will-amend-the-existing-law-2026-07-31-1050011"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": null,
       "added_at": "2026-08-02T10:04:56+05:30",
@@ -1408,8 +1534,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-08-02T20:00:00+01:00",
       "added_at": "2026-08-02T06:00:13+05:30",
@@ -1464,71 +1590,131 @@
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-08-01T18:00:00Z",
-      "added_at": "2026-08-02T02:01:28+05:30",
-      "source": "IANS Live",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "RacingNews365",
       "importance": "notable",
       "regions": [
-        "India",
-        "Scotland"
+        "Europe"
       ],
-      "title": "India's boxing golden run continues at the Commonwealth Games: Arundhati Choudhary wins gold, Lovlina Borgohain takes silver",
-      "what_happened": "On the boxing finals day at Glasgow 2026, **Arundhati Choudhary defeated England's Chantelle Reid — an Olympic and World Championships bronze medallist — by a unanimous 5-0 verdict** to win the women's 70kg gold medal, taking India's tally to **five golds** in the ring. In the marquee women's 75kg final, **Lovlina Borgohain lost a tight 4-1 split decision to Australia's Emma-Sue Greentree**, who did enough across the bout to convince a majority of judges despite Lovlina's composed, technical performance. The silver adds to Lovlina's collection, giving her podium finishes at the Olympics, World Championships, Asian Games, and now the Commonwealth Games. Across the Games, **all 10 Indian boxers who reached finals medalled**, a clean sweep that officials are calling the country's best-ever Commonwealth Games boxing campaign.",
+      "title": "Lando Norris says driving better than his title year but sitting fifth 'hurts' — but he's not giving up",
+      "what_happened": "Norris won the Hungarian Grand Prix, his first win of the season, but still sits fifth in the drivers' standings on 128 points, well behind leader Kimi Antonelli (219) and second-placed Lewis Hamilton. He said his personal driving this season has been stronger than during his title-winning 2025 campaign, which makes trailing in the standings more frustrating — in his words, it 'hurts.' He added he would 'believe for as long as possible' rather than write off the season, even as McLaren's technical team has reportedly been up to three months behind rivals in adapting to 2026's new rules.",
       "key_points": [
-        "**Arundhati Choudhary** beat Olympic and World Championships bronze medallist Chantelle Reid **5-0** to win women's 70kg gold.",
-        "It's India's **fifth boxing gold** of the Glasgow 2026 Games, extending the country's best-ever CWG boxing showing.",
-        "**Lovlina Borgohain** lost a close **4-1 split decision** to Australia's Emma-Sue Greentree in the women's 75kg final, settling for silver.",
-        "Lovlina's silver completes a **full medal set** — she now has medals from the Olympics, Worlds, Asian Games, and Commonwealth Games.",
-        "All **10 Indian boxers** who entered the finals this Games have now medalled, a historic sweep for the contingent."
+        "Lando Norris says it 'hurts' to be driving **better than during his 2025 title-winning season**, yet not have the car to show for it in 2026.",
+        "Despite winning the **Hungarian Grand Prix**, Norris sits **fifth in the standings on 128 points** — **91 points behind** championship leader Kimi Antonelli's 219.",
+        "Norris insists he'll 'believe for as long as possible' that defending his title is still mathematically alive, refusing to concede the season early.",
+        "McLaren has been as much as **three months behind rivals** in developing to F1's all-new 2026 technical rules.",
+        "His comments add to a wider grumble among senior drivers this season that F1 is prioritizing '**entertainment**' over pure racing authenticity."
       ],
-      "moot": "A country's strength in a sport is best measured not by one star medallist but by how deep the podium finishes go — India's 10-for-10 boxing final record shows a genuine talent pipeline, not a fluke.",
-      "image_credit": "IANS Live",
+      "moot": "In team-based competitions governed by a rules reset, individual excellence can't fully offset an organization falling behind on execution — the team's collective performance, not just its star performer, ultimately decides outcomes.",
+      "image_credit": "RacingNews365",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "IANS Live",
-          "Olympics.com"
+          "RacingNews365",
+          "Yahoo Sports"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "India sent an unusually large and talented boxing squad to the Glasgow 2026 Commonwealth Games, and **all 10 boxers who reached the finals won at least a medal** — the best Commonwealth Games boxing performance in the country's history. Lovlina Borgohain, a Tokyo Olympic bronze medallist, is one of India's most decorated boxers, while 70kg gold medallist Arundhati Choudhary has been rising through the ranks against senior international opposition. Boxing has become one of India's most reliable medal sports at multi-discipline events, alongside wrestling and shooting.",
-        "why_it_matters": "This cements boxing as a genuine Indian medal powerhouse alongside wrestling and shooting, with depth beyond individual stars — 10 finalists all medalling is a squad-wide achievement, not a one-off. It also builds momentum and funding case for Indian boxing heading toward the next Olympic cycle.",
-        "ripple_effects": "Expect increased sports-ministry funding attention and sponsorship interest in boxing following this campaign, echoed by the Cabinet's recent ₹36,441 crore Khelo India scheme expansion aimed at building on exactly this kind of results. Young boxers, especially women, are likely to see a bump in grassroots interest off the back of this coverage.",
-        "why_now": "The Glasgow 2026 boxing finals concluded today, the culmination of India's ring campaign at these Games.",
-        "watch_next": "India's overall medal tally and finishing position on the Commonwealth Games table as the event wraps up, and whether this boxing generation carries form into the 2028 Olympic qualification cycle.",
+        "background": "Norris won the 2025 Formula 1 drivers' championship with McLaren. A sweeping rules reset for 2026 — new engines and car regulations — reshuffled the competitive order, and McLaren has struggled to adapt as quickly as rivals like Mercedes and Ferrari, leaving the reigning champion team well off the pace for much of the first half of the season. 'Mathematically alive' means Norris's points deficit, while large, still isn't so big that a title defence is technically impossible with races remaining — though in practice it requires him to significantly outperform the championship leader from here.",
+        "why_it_matters": "It illustrates how a full regulation reset can dethrone even a reigning champion team if the car-development side falls behind, no matter how well the driver performs individually. It also sets up the narrative for the second half of the season: can McLaren's upgrades close the gap before the title is mathematically out of reach.",
+        "ripple_effects": "Continued McLaren underperformance could fuel driver-market speculation and internal pressure on the team's technical leadership. It also reinforces Antonelli's rookie-year dominance as the season's defining storyline heading into the break.",
+        "why_now": "The comments come right at F1's summer break, the traditional moment when teams and drivers publicly reflect on the season's first half before development resumes.",
+        "watch_next": "Whether McLaren's post-break upgrades — competing with Mercedes' and Ferrari's own plans — meaningfully close the points gap once racing resumes at the Dutch Grand Prix.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "split decision",
-            "definition": "A boxing judging result where the judges don't agree unanimously — here, 4 of 5 judges scored the bout for Greentree, one for Lovlina."
+            "term": "Mathematically alive",
+            "definition": "In a championship, a competitor is 'mathematically alive' if the maximum points still available in remaining races is large enough that they could theoretically still win, even if it's very unlikely in practice."
           }
         ],
         "sources": [
           {
-            "name": "IANS Live",
-            "url": "https://ianslive.in/cwg-2026-lovlina-borgohain-wins-silver-after-narrow-loss-to-aussie-in-womens-75kg-final--20260801224017"
+            "name": "RacingNews365",
+            "url": "https://racingnews365.com/lando-norris-issues-declaration-over-f1-form-with-reality-that-hurts"
           },
           {
-            "name": "Olympics.com",
-            "url": "https://www.olympics.com/en/news/commonwealth-games-2026-boxing-india-day-7-report"
+            "name": "Yahoo Sports",
+            "url": "https://sports.yahoo.com/articles/hurts-believe-long-possible-lando-162200382.html"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-02T23:59:32+05:30",
+      "source": "Formula1.com",
+      "importance": "notable",
+      "regions": [
+        "Europe"
+      ],
+      "title": "Mercedes plots a 'more sizeable' F1 upgrade for after the summer break to fend off Ferrari",
+      "what_happened": "Mercedes deputy technical director Simone Resta said the team is 'clearly focused on trying to develop the car at every event, but also trying to think bigger with bringing another step on the car' after the summer shutdown. The team has already brought incremental upgrades earlier in the season, including at Silverstone, but Resta signaled the post-break package will be a genuine step change rather than another small tweak, timed for F1's return at the Dutch Grand Prix in late August.",
+      "key_points": [
+        "Mercedes says it's targeting a **bigger upgrade package** after F1's summer break, aiming to have it ready for the **Dutch Grand Prix** in late August.",
+        "Deputy technical director **Simone Resta** said the team wants something 'more sizeable' on the car, not just incremental tweaks race to race.",
+        "The push is aimed at fending off championship rival **Ferrari**, whose faster in-season upgrade pace has worried Mercedes engineers.",
+        "It comes despite Mercedes driver **Kimi Antonelli leading the 2026 drivers' championship** with a commanding points lead heading into the break.",
+        "Under F1's all-new 2026 technical rules, teams are still chasing performance — a big midseason step can meaningfully swing the title fight either way."
+      ],
+      "moot": "In any fast-moving competitive field, being ahead on the current scoreboard doesn't mean staying ahead — a lead built early can be eroded fast if a rival's underlying pace of improvement is simply faster.",
+      "image_credit": "Formula1.com",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Formula1.com",
+          "RacingNews365"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "2026 brought a **major regulation reset** for Formula 1 — new engine rules and car design constraints that reshuffled which teams are fast, similar to past rule-change years that flipped the competitive order overnight. That reset is why Mercedes, despite leading the championship through rookie-ish standout Kimi Antonelli, isn't resting: an early-season points lead built partly on rivals' slow starts can evaporate if a competitor's car simply gets faster as the season goes on. Ferrari has been bringing upgrades at a quicker pace this year, which is what's driving Mercedes' urgency.",
+        "why_it_matters": "A big points lead in Formula 1 doesn't guarantee anything if a rival's car development curve is steeper — races later in the season are won on updated cars, not the form teams showed in spring. Mercedes' urgency, despite leading, shows how seriously top teams treat the risk of a rival catching up.",
+        "ripple_effects": "A strong Mercedes upgrade would pressure Ferrari to respond with upgrades of its own, intensifying the development arms race through the second half of the season. It also feeds ongoing speculation about driver contracts, since a car that suddenly gets faster (or doesn't) shapes which drivers want to stay or leave.",
+        "why_now": "F1's roughly three-week summer break is when factories can pause race-to-race firefighting and commit resources to a bigger design step, which is why any major upgrade tends to land right after it.",
+        "watch_next": "Whether the promised upgrade actually appears at the Dutch Grand Prix and how much lap time it's worth relative to Ferrari's own post-break package.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Upgrade package",
+            "definition": "A set of new aerodynamic, mechanical or engine parts a team brings to a car, usually introduced at a specific race, aimed at making it faster."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Formula1.com",
+            "url": "https://www.formula1.com/en/latest/article/something-more-sizeable-mercedes-target-major-upgrade-after-f1-summer-break.4dxqU3SkbY2BFaecTvbTsR"
+          },
+          {
+            "name": "RacingNews365",
+            "url": "https://racingnews365.com/toto-wolff-outlines-mercedes-f1-upgrade-plan-as-rivals-threaten"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
       "source": "Motorsport.com",
@@ -1585,8 +1771,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-08-01T12:00:00+00:00",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -1645,8 +1831,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-01T10:00:00Z",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1695,8 +1881,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-01T09:00:00Z",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1751,8 +1937,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T14:00:41+05:30",
@@ -1802,8 +1988,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-07-30T08:00:00+00:00",
       "added_at": "2026-08-02T12:01:53+05:30",
@@ -1863,188 +2049,9 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-07-30T10:00:00+00:00",
-      "added_at": "2026-08-02T12:01:53+05:30",
-      "source": "PlanetF1",
-      "importance": "notable",
-      "regions": [
-        "United Kingdom"
-      ],
-      "title": "F1 paddock mourns Aston Martin's long-serving tyre technician Mick 'Biscuit' Fern, dead after 35 years in the sport",
-      "what_happened": "**Aston Martin** confirmed that **Mick Fern**, the team's long-serving tyre technician known as **'Biscuit'**, died after privately battling an off-track illness. Fern had spent **35 years in the Formula 1 paddock**, first joining in 1999 when the Silverstone-based team competed as **Jordan**, before rejoining in **2015** in his most recent stint. For the past **seven seasons** he had been responsible for **Lance Stroll's tyres** on every race weekend. Fern was notably absent from the recent **Hungarian Grand Prix** due to his illness, prompting the team to display a sign outside their garage reading **'Biscuit. Thinking of you'** in support. Following his death, Aston Martin described him as **'a true stalwart'** who was **'respected by all who worked with him.'** Stroll posted an emotional personal tribute, thanking him for **'7 years of getting my tyres race-ready,'** and other drivers including **Esteban Ocon and Fernando Alonso** also shared condolences.",
-      "key_points": [
-        "**Mick Fern**, known throughout the paddock as **'Biscuit'**, died after what Aston Martin described as a private off-track battle with illness.",
-        "He spent **35 years in Formula 1**, joining the team's predecessor **Jordan back in 1999** before rejoining the Silverstone-based squad (now Aston Martin) in 2015.",
-        "As **Lance Stroll's tyre technician for the past 7 seasons**, he was a fixture in the garage every race weekend.",
-        "Fern **missed the Hungarian Grand Prix** due to illness; the team had placed a sign outside the garage reading **'Biscuit. Thinking of you.'**",
-        "Tributes poured in from across the paddock, including **Lance Stroll, Esteban Ocon and Fernando Alonso**."
-      ],
-      "moot": "The public face of any high-performance team — the drivers — depends entirely on a much larger, less visible crew whose long, consistent service is often what actually makes excellence possible.",
-      "image_credit": "PlanetF1",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "PlanetF1",
-          "RacingNews365"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Behind every F1 driver is a small army of mechanics and technicians who travel the world race weekend after race weekend, largely out of the spotlight — tyre technicians in particular are responsible for the split-second tyre changes that decide pit-stop times and races. Mick Fern was one of the longest-serving members of this crew, having worked in the paddock since 1999 under the team's various guises: Jordan, then later incarnations through to today's **Aston Martin**. His nickname 'Biscuit' and decades of continuity made him a familiar, well-liked figure across rival teams, not just his own.",
-        "why_it_matters": "It's a reminder that Formula 1's spectacle rests on hundreds of largely anonymous crew members whose decades of expertise and reliability make the sport possible — and a moment of genuine, shared grief across a paddock that is normally defined by fierce competition between rival teams.",
-        "ripple_effects": "Expect tributes to continue at the next race weekend after the summer break, likely including a moment of reflection from Aston Martin and possibly rival teams; F1's tight-knit garage culture means personnel losses like this are felt well beyond the team directly affected.",
-        "why_now": "News of Fern's death broke this week, shortly after his absence from the Hungarian Grand Prix had already drawn attention and support messages from the team.",
-        "watch_next": "Any tribute Aston Martin plans for Fern when the season resumes after F1's summer break.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "PlanetF1",
-            "url": "https://www.planetf1.com/news/lance-stroll-leads-tributes-after-death-of-aston-martin-tyre-technician-mick-biscuit-fern"
-          },
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/aston-martin-pay-tribute-to-much-loved-team-member-biscuit-who-has-passed-away"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-01T11:00:00+01:00",
-      "added_at": "2026-08-02T06:00:13+05:30",
-      "source": "GPFans",
-      "importance": "notable",
-      "regions": [
-        "Formula 1",
-        "United States",
-        "France"
-      ],
-      "title": "Esteban Ocon's Haas seat is in real jeopardy for 2027 as three replacements circle",
-      "what_happened": "With his Haas contract running out at the end of the year, Ocon's position for **2027** has come under growing scrutiny after a difficult season: he has managed just **3 points** through the first 10 rounds, while rookie teammate **Oliver Bearman** has already built a **15-point** lead over him. Haas is reported to be actively weighing replacements, with three names in the frame — **Leonardo Fornaroli**, McLaren's reserve driver; **Rafael Câmara**, a Ferrari junior driver; and **Yuki Tsunoda**, who lost his Red Bull seat earlier this year. Haas holds a contractual option to extend Ocon for a third season but is reportedly in no rush to exercise it, with the broader 2027 driver market still unsettled. Bearman, notably, also isn't yet contracted to Haas beyond 2026, though he's considered likely to stay unless a seat opens up at Ferrari itself. Asked about his own future, Ocon said simply he has **'nothing to announce.'**",
-      "key_points": [
-        "Ocon has scored just **3 points across the first 10 rounds** of 2026, while rookie teammate **Oliver Bearman is already 15 points clear**.",
-        "Ocon's Haas contract **expires at the end of 2026**, and the team holds an option to extend him for a third year but isn't rushing to use it.",
-        "Three names have emerged as candidates to replace him: **Leonardo Fornaroli** (McLaren reserve), **Rafael Câmara** (Ferrari junior), and **Yuki Tsunoda** (former Red Bull driver).",
-        "**Bearman himself isn't contracted to Haas for 2027**, but is considered likely to stay barring a Ferrari seat opening up.",
-        "Ocon told reporters he has **'nothing to announce'** on his own future."
-      ],
-      "moot": "In competitive team environments, relative performance against a direct peer often matters more than absolute results — Ocon's 3 points might look survivable in isolation, but a 15-point gap to a rookie teammate is what actually puts a seat at risk.",
-      "image_credit": "GPFans",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "GPFans",
-          "The Race"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Ocon joined Haas for 2025 after a rocky final season at Alpine, pairing with rookie Oliver Bearman for 2026. Haas has generally been a midfield team competing for minor points, and a driver's seat there hinges on outscoring — or at least keeping pace with — the teammate, since results are the team's clearest currency for sponsorship and prize money.",
-        "why_it_matters": "A struggling veteran losing ground to a rookie teammate is one of the clearest signals in F1's driver market — teams use exactly this kind of point gap to justify a change, and Ocon's is now stark enough to put his seat genuinely at risk rather than just under routine speculation.",
-        "ripple_effects": "If Ocon is replaced, it opens a knock-on chain: wherever Fornaroli, Câmara or Tsunoda currently sit (reserve roles, junior programmes, or out of a seat entirely) shifts too, and Ocon himself would be searching for a seat in an already-crowded 2027 market.",
-        "why_now": "The points gap and replacement names became public as the sport heads into its summer break, the traditional window when driver-market decisions for the following year start crystallizing.",
-        "watch_next": "Whether Haas exercises its option on Ocon before or after the break, and whether Bearman's own contract situation resolves alongside it.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "GPFans",
-            "url": "https://www.gpfans.com/en/f1-news/1088486/f1-esteban-ocon-no-future-haas-2027-seat-under-threat/"
-          },
-          {
-            "name": "The Race",
-            "url": "https://www.the-race.com/formula-1/what-you-need-to-know-about-the-growing-battle-for-a-2027-f1-seat/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-69",
-      "rank": 69,
-      "category": "f1",
-      "development": true,
-      "prev_ref": {
-        "title": "Fernando Alonso says he'll decide his F1 future during the summer break — and shoots down Alpine return talk",
-        "date": null
-      },
-      "published_iso": "2026-08-01T14:00:00+02:00",
-      "added_at": "2026-08-02T06:00:13+05:30",
-      "source": "Yahoo Sports",
-      "importance": "notable",
-      "regions": [
-        "Formula 1",
-        "Spain",
-        "France"
-      ],
-      "title": "Alonso shuts the door on Alpine again at the Hungarian GP — but Briatore and Gucci are reportedly still pushing hard for 2027",
-      "what_happened": "Speaking at the **Hungarian Grand Prix**, Alonso moved to firmly shut down the Alpine speculation, saying **'I have a contract, I'm not going to change teams,'** a notably more direct denial than his earlier comment that he was **'open to many scenarios.'** Despite that, multiple outlets reported that **Flavio Briatore** — who is both Alonso's personal manager and an Alpine advisor to Renault's board — and incoming Alpine title sponsor **Gucci** are actively pushing to bring Alonso back to the team for 2027. The connection: Gucci's parent company **Kering** is run by **Luca de Meo**, the former Renault CEO who originally brought Briatore into his Alpine advisory role — giving Briatore relationships and leverage on both sides of a potential deal. Aston Martin's team quickly and formally denied the rumours were true, calling them **'just a paddock rumour.'**",
-      "key_points": [
-        "At the **Hungarian Grand Prix**, Alonso said flatly: **'I have a contract, I'm not going to change teams.'**",
-        "Multiple outlets report **Flavio Briatore** — Alonso's personal manager and an Alpine advisor — and incoming Alpine title sponsor **Gucci** are pushing hard to bring him back for **2027**.",
-        "**Gucci** is confirmed as Alpine's title sponsor from 2027, with the team set to race as **'Gucci Racing Alpine.'**",
-        "The Gucci connection runs through **Luca de Meo**, the former Renault (Alpine's parent) boss who is now CEO of Gucci's parent company **Kering** — and who originally brought Briatore into Alpine.",
-        "**Aston Martin** issued a formal denial, calling the rumours **'just a paddock rumour.'**"
-      ],
-      "moot": "In sports and business alike, a firm public denial doesn't always end speculation — when the people with genuine leverage to make a deal happen (here, a manager who advises both sides) stay quiet or keep pushing behind the scenes, the rumour often outlives the denial.",
-      "image_credit": "Yahoo Sports",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "PlanetF1",
-          "Yahoo Sports"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported Alonso said he'd decide his F1 future during the summer break and had shot down talk of an Alpine return.",
-        "changed": "At the Hungarian GP he denied it even more directly ('I have a contract'), but reports now name exactly who is pushing the move — Briatore and incoming sponsor Gucci — and Aston Martin has issued its own formal denial."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Alonso is in the final year of his Aston Martin contract and said in May he'd decide his F1 future during the summer break, a decision made more urgent by Aston Martin's disappointing start to the 2026 season. Briatore returned to Alpine as a consultant to parent company Renault's board and remains Alonso's long-time personal manager — giving him unusual leverage to broker a deal on both sides if he wanted to. Alpine's cockpit alongside Pierre Gasly (signed through at least 2028) is open for 2027.",
-        "why_it_matters": "Alonso, a two-time world champion, remains one of F1's most bankable names even at 45 — where he lands for 2027 shapes both Aston Martin's and Alpine's driver market strategy, and Gucci's arrival as title sponsor adds a genuine commercial motive (star power) behind the rumours, not just paddock chatter.",
-        "ripple_effects": "If Alonso does eventually move, it reopens Aston Martin's seat next to Newey's car rebuild and forces a cascade of other driver decisions across multiple teams (Alpine's second seat, and whoever Aston Martin recruits in his place). For now, his denial keeps the market frozen on this specific question.",
-        "why_now": "This is Alonso's most direct denial yet, delivered specifically at the Hungarian GP as the paddock heads into the summer break — the moment he'd previously said he'd make a decision by.",
-        "watch_next": "Whether Alonso makes any contract announcement before the summer break ends, and whether Gucci's sponsorship arrival in 2027 comes with any visible influence over Alpine's driver picks.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Yahoo Sports",
-            "url": "https://sports.yahoo.com/articles/briatore-gucci-pushing-hard-bring-145007119.html"
-          },
-          {
-            "name": "PlanetF1",
-            "url": "https://www.planetf1.com/news/fernando-alonso-alpine-return-rumours-aston-martin-future"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
       "source": "The Sports Tak",
