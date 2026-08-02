@@ -1,6 +1,6 @@
 {
   "month": "2026-07",
-  "count": 1379,
+  "count": 1380,
   "stories": [
     {
       "type": "story",
@@ -370,6 +370,35 @@
           {
             "name": "Business Standard",
             "url": "https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "A hacker got DeepSeek to run cyberattacks almost by itself — because it had fewer safety brakes than Claude or ChatGPT",
+      "category": "technology",
+      "published_iso": "2026-07-31T15:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "Unit 42 (Palo Alto Networks)",
+      "what_happened": "Palo Alto Networks' threat-intelligence unit, **Unit 42**, tracked a threat actor operating under the aliases knaithe and KnYuan, assessed to be based in **Zhuhai, China**. The attacker connected DeepSeek to an open-source agent framework called **Hermes Agent**, creating a pipeline that could scan for vulnerable internet-facing systems, choose which vulnerability to exploit, pull working exploit code from GitHub, and carry out the attack — all with just one initial instruction sent over Telegram. Over the course of the campaign, the system attempted to compromise more than **460 targets**, but only **three were successfully breached**: two involved stealing memory data from Citrix NetScaler devices, and one was a suspected session-hijacking attempt against a **Malaysian government entity**. Ironically, the operation was only discovered because the attacker's own tool exposed a public web server that leaked the operator's API keys, exploit scripts, and target lists — which is how Unit 42 got its detailed look inside.",
+      "key_points": [
+        "Security firm **Unit 42** (Palo Alto Networks) uncovered a Chinese-speaking hacker using **DeepSeek** to run largely autonomous cyberattacks.",
+        "The attacker wired DeepSeek into an open-source tool called **Hermes Agent**, then controlled the whole operation with **a single Telegram message**.",
+        "DeepSeek then handled target-scanning, picking vulnerabilities, sourcing exploit code from GitHub, and launching attacks **with no further human input**.",
+        "Across roughly **460 attempted targets**, only **three were actually breached** — Unit 42 says the campaign was more proof-of-concept than mass success.",
+        "The hacker reportedly chose DeepSeek specifically because **Claude's and OpenAI's safety filters blocked** attempts to use them offensively."
+      ],
+      "depth": {
+        "background": "AI safety teams at companies like Anthropic and OpenAI build in guardrails that are supposed to refuse requests to help with hacking, malware, or other offensive cyber operations. Chinese AI lab **DeepSeek** has gained a reputation for being far more permissive, with weaker built-in refusals — attractive to legitimate researchers, but also to bad actors. Security researchers have warned for over a year that agentic AI — models that can act on their own toward a goal instead of just answering one question — would eventually be weaponized for autonomous hacking, and this is one of the clearest documented cases of it actually happening.",
+        "sources": [
+          {
+            "name": "Unit 42 (Palo Alto Networks)",
+            "url": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+          },
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/07/chinese-hacker-commands-deepseek-via.html"
           }
         ]
       }

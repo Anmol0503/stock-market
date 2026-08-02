@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "generated_at": "2026-08-02T23:59:32+05:30",
+  "generated_at": "2026-08-03T02:02:35+05:30",
   "day_label": "Sunday · 2 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,138 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "health",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-07-31T15:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "Unit 42 (Palo Alto Networks)",
+      "importance": "high",
+      "regions": [
+        "Global",
+        "China"
+      ],
+      "title": "A hacker got DeepSeek to run cyberattacks almost by itself — because it had fewer safety brakes than Claude or ChatGPT",
+      "what_happened": "Palo Alto Networks' threat-intelligence unit, **Unit 42**, tracked a threat actor operating under the aliases knaithe and KnYuan, assessed to be based in **Zhuhai, China**. The attacker connected DeepSeek to an open-source agent framework called **Hermes Agent**, creating a pipeline that could scan for vulnerable internet-facing systems, choose which vulnerability to exploit, pull working exploit code from GitHub, and carry out the attack — all with just one initial instruction sent over Telegram. Over the course of the campaign, the system attempted to compromise more than **460 targets**, but only **three were successfully breached**: two involved stealing memory data from Citrix NetScaler devices, and one was a suspected session-hijacking attempt against a **Malaysian government entity**. Ironically, the operation was only discovered because the attacker's own tool exposed a public web server that leaked the operator's API keys, exploit scripts, and target lists — which is how Unit 42 got its detailed look inside.",
+      "key_points": [
+        "Security firm **Unit 42** (Palo Alto Networks) uncovered a Chinese-speaking hacker using **DeepSeek** to run largely autonomous cyberattacks.",
+        "The attacker wired DeepSeek into an open-source tool called **Hermes Agent**, then controlled the whole operation with **a single Telegram message**.",
+        "DeepSeek then handled target-scanning, picking vulnerabilities, sourcing exploit code from GitHub, and launching attacks **with no further human input**.",
+        "Across roughly **460 attempted targets**, only **three were actually breached** — Unit 42 says the campaign was more proof-of-concept than mass success.",
+        "The hacker reportedly chose DeepSeek specifically because **Claude's and OpenAI's safety filters blocked** attempts to use them offensively."
+      ],
+      "moot": "A safety system is only as strong as its weakest competitor — if any widely available AI model refuses to enforce guardrails, attackers will simply route around the safer ones, so AI safety is a collective problem, not a company-by-company one.",
+      "image_credit": "Unit 42 (Palo Alto Networks)",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "The Hacker News",
+          "Unit 42 (Palo Alto Networks)"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "AI safety teams at companies like Anthropic and OpenAI build in guardrails that are supposed to refuse requests to help with hacking, malware, or other offensive cyber operations. Chinese AI lab **DeepSeek** has gained a reputation for being far more permissive, with weaker built-in refusals — attractive to legitimate researchers, but also to bad actors. Security researchers have warned for over a year that agentic AI — models that can act on their own toward a goal instead of just answering one question — would eventually be weaponized for autonomous hacking, and this is one of the clearest documented cases of it actually happening.",
+        "why_it_matters": "This is real-world evidence that AI models can already run large portions of a hacking campaign with minimal human guidance, and that attackers are actively shopping for whichever AI model has the weakest safety restrictions. It puts pressure on AI labs everywhere — including outside China — to think about how their safety filters compare to less-restricted competitors.",
+        "ripple_effects": "Expect Western AI labs and governments to cite this case in debates over export controls and safety standards for foreign AI models. Companies running internet-facing systems (especially VPN and remote-access devices like Citrix NetScaler) should expect a rise in automated, AI-driven scanning for vulnerabilities. It also strengthens the argument that a weakest-link AI model can undermine the whole industry's safety efforts.",
+        "why_now": "The report was published by Unit 42 this week after completing its investigation into the campaign it discovered via the attacker's own security mistake.",
+        "watch_next": "Watch for whether DeepSeek's operators respond by tightening safety controls, and whether other security firms report copycat campaigns using the same Hermes Agent approach.",
+        "market_link": "Raises the profile of AI-security vendors (Palo Alto Networks, CrowdStrike) and adds to scrutiny of DeepSeek and other low-cost, low-guardrail AI models competing with US labs.",
+        "key_terms": [
+          {
+            "term": "Agentic AI",
+            "definition": "An AI system that can take a series of actions on its own toward a goal, rather than just answering a single question."
+          },
+          {
+            "term": "Guardrails",
+            "definition": "Built-in rules an AI company adds to stop its model from helping with harmful requests, like writing malware."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Unit 42 (Palo Alto Networks)",
+            "url": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+          },
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/07/chinese-hacker-commands-deepseek-via.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-08-02T00:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "California Legislative Information (SB 942 bill text)",
+      "importance": "high",
+      "regions": [
+        "United States"
+      ],
+      "title": "California's AI Transparency Act kicks in today, forcing ChatGPT-scale AI tools to watermark what they generate",
+      "what_happened": "As of today, any generative-AI provider serving more than **one million monthly users in California** is legally required to embed a **latent (hidden) watermark** in every AI-generated image, video, and audio clip it produces, carrying machine-readable metadata about its origin. Providers must also let users add a **visible on-screen label** flagging content as AI-made, and must publish a **free tool** the public can use to check whether a piece of content was AI-generated. The law's scope was widened last year to also apply to **large online platforms that host AI content** and to **camera/device manufacturers**. Non-compliant companies face financial penalties under California law. The effective date, August 2, 2026, was chosen specifically to coincide with the **EU AI Act's** own deadline for high-risk AI systems, signaling regulators on both sides of the Atlantic are converging on the same rulebook.",
+      "key_points": [
+        "California's **SB 942** becomes legally enforceable today, hitting any generative-AI provider with **over 1 million California users**.",
+        "Covered companies must embed a **hidden, machine-readable watermark** in AI-made images, video and audio, plus a visible label users can toggle on.",
+        "They must also offer a **free public detection tool** so anyone can check if a file was AI-generated.",
+        "The law's effective date was deliberately timed to **line up with the EU AI Act's** own high-risk enforcement date, a coordinated global push.",
+        "It followed years of delay: signed in **2024**, then amended in **October 2025** to widen its scope before finally taking effect."
+      ],
+      "moot": "When a technology becomes cheap enough for anyone to use convincingly, trust has to be engineered back in with technical rules, not left to honesty — watermarking AI content is the digital equivalent of a currency's anti-counterfeiting ink.",
+      "image_credit": "California Legislative Information (SB 942 bill text)",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "California Legislative Information (SB 942 bill text)",
+          "Hintze Law"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Generative AI tools that create photorealistic images, cloned voices and deepfake video have become cheap and widespread, and there has been no reliable, standardized way for an ordinary person to tell if something they're looking at is real. California's legislature passed the **AI Transparency Act (SB 942)** in 2024 to close that gap for the world's biggest AI makers, since California is home to most major AI labs. Regulators expanded the bill in 2025 (via a companion law, AB 853) to also cover **large platforms that host AI content** and even **device manufacturers**, not just the AI companies themselves. The rollout was delayed multiple times as companies lobbied over technical feasibility.",
+        "why_it_matters": "This is one of the first hard legal mandates forcing AI companies to make their output identifiable, rather than leaving detection to volunteer researchers or the AI companies' own goodwill. Because California hosts most major AI labs, the practical effect is closer to a **national rule** than a state one — companies rarely build separate products just for other states.",
+        "ripple_effects": "Expect AI image/video/audio tools used by ordinary consumers (chatbots, editing apps, voice assistants) to start showing visible “AI-generated” tags by default. Publishers, platforms and courts will lean on the new detection tools to verify suspicious viral content. Because the EU is enforcing similar rules the same week, global AI companies now face a de facto worldwide standard, raising compliance costs that could squeeze smaller AI startups more than big labs.",
+        "why_now": "The law's effective date was fixed by the legislature years in advance, but it's surfacing today because it was deliberately synced to the EU AI Act's own enforcement milestone this week.",
+        "watch_next": "Watch whether major labs like OpenAI, Google and Meta publicly confirm compliance in the coming days, and whether any company is fined for missing the deadline.",
+        "market_link": "Adds compliance costs for major AI labs (OpenAI, Google, Meta, Adobe) and content platforms operating in California; smaller AI startups may face proportionally heavier burdens.",
+        "key_terms": [
+          {
+            "term": "Content provenance",
+            "definition": "A record of where a piece of digital content came from and how it was made — here, whether an AI generated it."
+          },
+          {
+            "term": "Latent watermark",
+            "definition": "A hidden marker embedded in a file's data that isn't visible to the eye but can be detected by software."
+          }
+        ],
+        "sources": [
+          {
+            "name": "California Legislative Information (SB 942 bill text)",
+            "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942"
+          },
+          {
+            "name": "Hintze Law",
+            "url": "https://hintzelaw.com/blog/2025/10/19/california-amends-artificial-intelligence-transparency-act-and-passes-ai-defenses-act"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "health",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "ScienceDaily",
@@ -71,10 +201,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "technology",
-      "is_new": true,
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "The Next Web",
@@ -140,8 +269,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "climate",
       "published_iso": "2026-08-02T00:22:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
@@ -200,8 +329,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -269,8 +398,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "geopolitics",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -334,8 +463,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "technology",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -398,8 +527,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -475,82 +604,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Sudan's RSF leader orders his fighters to 'seize Khartoum' as a UN probe finds his campaign in Darfur amounts to genocide",
-        "date": null
-      },
-      "published_iso": "2026-08-01T12:00:00Z",
-      "added_at": "2026-08-02T16:02:24+05:30",
-      "source": "Mada Masr",
-      "importance": "high",
-      "regions": [
-        "Sudan",
-        "Africa"
-      ],
-      "title": "Sudan's army carries out its largest offensive since retaking Khartoum, cutting a key RSF supply corridor",
-      "what_happened": "Over two days of fighting across a **300-square-kilometer** stretch of North Kordofan state, Sudan's army, the Joint Force and allied militias recaptured **five towns** — Al-Baraka, Um Sayala, Um Qurfa, Jabrat Al-Sheikh and Bara. The offensive dismantled one of the RSF's most important logistics corridors, the route the paramilitary had used to move fighters, weapons and supplies between **Darfur and central Sudan**. Military officials called it the **largest ground offensive** since the army retook Khartoum last year. The gains also reopened a direct supply line to North Kordofan's capital, El Obeid, and secured a road linking the region to Omdurman, removing what officials described as one of the army's biggest vulnerabilities in central Sudan.",
-      "key_points": [
-        "The army recaptured **five towns** in North Kordofan in two days of fighting",
-        "It's the **largest ground offensive** since the military retook Khartoum last year",
-        "The gains cut a **vital RSF corridor** used to move fighters and weapons between Darfur and central Sudan",
-        "It directly answers RSF leader Hemedti's **vow days earlier** to 'seize Khartoum'",
-        "Sudan's war has killed an estimated **40,000 people** and displaced 14 million"
-      ],
-      "moot": "In a civil war, controlling supply corridors — not just cities — often decides who can keep fighting; cutting a logistics route can matter more than a symbolic vow to attack.",
-      "image_credit": "Mada Masr",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Mada Masr",
-          "Sudan Tribune"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "status": "developing",
-        "day": 4,
-        "previously": "We reported that RSF leader Hemedti had released a video ordering his fighters to 'seize Khartoum,' as a UN probe found his campaign in Darfur amounted to genocide.",
-        "changed": "Sudan's army answered with its largest ground offensive since retaking Khartoum, capturing five North Kordofan towns and severing a key RSF supply corridor between Darfur and central Sudan."
-      },
-      "concepts": [
-        "insurgency_militancy"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "Sudan has been at war since April 2023 between the national army and the paramilitary **Rapid Support Forces (RSF)**, led by Mohamed Hamdan Dagalo — known as **Hemedti**. The army recaptured the capital, Khartoum, from the RSF last year, but the RSF still controls large parts of Darfur and has kept fighting in central Sudan. A UN Fact-Finding Mission recently found that the RSF's campaign in Darfur, including mass killings and gang rapes, meets the legal definition of **genocide**. Just days ago, Hemedti released a video vowing to 'seize Khartoum' again, after his forces suffered setbacks on a key supply highway.",
-        "why_it_matters": "Severing this corridor makes it much harder for the RSF to resupply and reinforce fighters in central Sudan, potentially undercutting Hemedti's vow to retake Khartoum. It's a real battlefield shift, not just rhetoric, in a war that has ground on for over two years.",
-        "ripple_effects": "A weakened RSF logistics network could slow the group's ability to mount fresh offensives, but retreating RSF fighters have reportedly launched reprisal attacks on civilians in the area — meaning the immediate human cost may rise even as the military balance shifts. It could also feed into UN debates over humanitarian access and pressure on the RSF's external backers.",
-        "why_now": "This follows directly from Hemedti's public vow days ago to seize Khartoum — the army's offensive appears timed to blunt that threat before it can materialize.",
-        "watch_next": "Watch whether the RSF attempts to reopen an alternate supply route, and whether reprisal attacks on civilians in the recaptured towns escalate.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Rapid Support Forces (RSF)",
-            "definition": "A paramilitary force, originally a government-backed militia, that has been fighting Sudan's army for control of the country since 2023."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Mada Masr",
-            "url": "https://www.madamasr.com/en/2026/08/01/news/u/sudan-nashra-militarys-largest-offensive-since-khartoum-brings-major-rsf-logistics-corridor-in-north-kordofan-under-its-control-military-rsf-prepare-detainee-records-in-response-to-un-exc/"
-          },
-          {
-            "name": "Sudan Tribune",
-            "url": "https://sudantribune.com/article/316601"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-9",
-      "rank": 9,
+      "id": "story-11",
+      "rank": 11,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -625,8 +680,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -706,8 +761,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "technology",
       "published_iso": "2026-08-02T00:00:00+02:00",
       "added_at": "2026-08-02T10:04:56+05:30",
@@ -784,71 +839,81 @@
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "science",
-      "published_iso": "2026-08-01T09:00:00-04:00",
-      "added_at": "2026-08-02T04:00:00+05:30",
-      "source": "NBC News",
-      "importance": "notable",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "Indian Defence News",
+      "importance": "high",
       "regions": [
-        "Moon",
-        "US"
+        "India",
+        "Germany"
       ],
-      "title": "A dead SpaceX rocket stage is about to crash into the Moon at 5,400 mph",
-      "what_happened": "The spent Falcon 9 upper stage is projected to strike the Moon on **Wednesday, August 5, at roughly 2:34 a.m. ET**, hitting the surface at about **5,400 mph** — seven times the speed of sound. Space-tracking expert Bill Gray calculates the impact point will be near **Einstein Crater**, on the Moon's sunlit, Earth-facing side. The collision is expected to gouge out a fresh crater roughly **16 feet deep and 89 feet across**, and could throw up a multi-kilometer plume of dust visible through amateur telescopes from the eastern US, Canada, and much of South America. A team of planetary scientists is coordinating a public campaign asking astronomers to watch and record the impact, since an object of known mass and speed hitting a known spot offers a rare, precisely-measured data point for studying the Moon's subsurface. SpaceX has since improved its practices for newer missions, steering at least one more recent upper stage into a long-term solar orbit instead of leaving it adrift.",
+      "title": "India's ₹90,000 crore submarine deal with Germany comes down to how long a boat can hide underwater",
+      "what_happened": "India and Germany are in the final stages of negotiating a roughly **₹90,000 crore** deal for **six Type-214-derivative submarines**, to be built in India by **Mazagon Dock Shipbuilders Limited** in partnership with Germany's **ThyssenKrupp Marine Systems**. The headline technical detail driving the current coverage is endurance: these submarines can remain continuously submerged for about **three weeks** using AIP fuel cells, and have an overall endurance window of around **84 days** at sea — a major tactical advantage for stealth patrols in the Indian Ocean, where detection risk rises every time a submarine has to surface. The deal would be Germany's first transfer of full submarine-production technology to a non-European partner. German ambassador **Philipp Ackermann** has said the agreement could be finalized within the next month, though as of now **no contract has been signed**.",
       "key_points": [
-        "The Falcon 9 upper stage will slam into the Moon on **August 5** near Einstein Crater, moving at **5,400 mph**",
-        "It's the leftover stage from a **January 2025** launch that carried two lunar landers and drifted for 19 months",
-        "Scientists expect it to carve a crater roughly **16 feet deep and 89 feet wide**",
-        "The crash was **never planned** — a nudge into solar orbit could have avoided it",
-        "Astronomers across the **eastern US, Canada and South America** may spot the debris plume through a telescope"
+        "India and Germany are closing in on a **₹90,000 crore (about €8 billion)** deal to build **six next-generation submarines** for the Navy.",
+        "The submarines use **Air-Independent Propulsion (AIP)**, letting them stay submerged and undetected for **up to three weeks straight**.",
+        "Germany's **ThyssenKrupp Marine Systems (TKMS)** will partner with India's state-run **Mazagon Dock Shipbuilders (MDL)** to build them in India.",
+        "It marks Germany's **first-ever transfer** of submarine production technology to a country outside Europe.",
+        "German ambassador Philipp Ackermann has said the pact could be **signed within weeks**, though no contract is inked yet."
       ],
-      "moot": "When companies don't plan a rocket stage's afterlife, physics eventually decides for them — gravity and light pressure alone were enough to steer 19-month-old space junk into the Moon. 'Harmless' leftover hardware in orbit can quietly become a hazard, or in rarer cases, an accidental science opportunity.",
-      "image_credit": "NBC News",
+      "moot": "In modern naval warfare, staying hidden is often as valuable as firepower — a fleet's stealth endurance can matter more than its size when it comes to controlling contested waters.",
+      "image_credit": "Indian Defence News",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "Fortune",
-          "NBC News"
+          "Indian Defence News",
+          "Indian Defence News (Ambassador Ackermann)"
         ],
         "corroboration": 0
       },
       "concepts": [],
-      "figures": [],
+      "figures": [
+        {
+          "raw": "₹90,000 crore",
+          "words": "₹900 billion",
+          "usd_approx": "≈ $9.4bn"
+        }
+      ],
       "depth": {
-        "background": "SpaceX regularly sends its Falcon 9 rocket's upper stage into deep space on missions bound for the Moon or beyond, and once the stage releases its payload it becomes space junk with no further use. On January 15, 2025, one such stage helped launch two private Moon landers — Firefly Aerospace's **Blue Ghost** and ispace's **Resilience** — toward the Moon. Because no rule required a safe disposal plan for the leftover stage, it was left drifting through space, slowly pulled off course by the gravity of Earth, the Moon and the Sun. Nineteen months later, that drift has put it on a direct collision course with the lunar surface.",
-        "why_it_matters": "This is unplanned space junk, not a mission, but it becomes a genuine science opportunity: researchers rarely get to watch a known object hit the Moon at a known speed, which helps them learn how the lunar surface actually responds to an impact — data useful for future landers and bases.",
-        "ripple_effects": "The event adds to a growing conversation about space debris management — as more private companies send hardware toward the Moon, leftover rocket stages that aren't safely disposed of could keep piling up in the space between Earth and the Moon, raising collision risks for future missions and pressuring launch providers to plan disposal orbits for every stage, not just the newest ones.",
-        "why_now": "The impact is calculated to happen on August 5, and the story is surfacing now because trackers have only recently pinned down the exact time and location with enough confidence to organize an observation campaign.",
-        "watch_next": "Watch for confirmed telescope observations and orbiter images of the new crater in the days after the August 5 impact.",
-        "market_link": null,
+        "background": "India's submarine fleet is aging, and the Navy has spent years trying to fast-track next-generation boats under **Project-75I**, a program to build advanced diesel-electric submarines domestically under the 'Make in India' push. Modern conventional submarines are judged heavily on how long they can operate without surfacing (which exposes them to detection) — a capability that traditionally required nuclear propulsion. **AIP (Air-Independent Propulsion)** systems let diesel-electric submarines generate power without surfacing for air, closing much of that gap at a fraction of the cost of a nuclear boat. Germany has held informal talks with India on this deal for years, competing against Spain's Navantia for the contract.",
+        "why_it_matters": "The Indian Ocean has become a zone of intensifying naval competition, especially with China's expanding submarine and port presence in the region. A stealthier, longer-endurance submarine fleet directly strengthens India's ability to monitor and, if needed, contest those waters without being easily detected.",
+        "ripple_effects": "A signed deal would be a major win for India's domestic defense-manufacturing push and for Mazagon Dock's order book. It would also deepen India-Germany strategic ties at a time when Germany is looking to expand defense-export partnerships beyond Europe. Regionally, it adds to the underwater capability gap India is trying to close with China and Pakistan's submarine fleets.",
+        "why_now": "Coverage intensified this week as German officials signaled the deal could be signed within weeks, and new detail emerged on the submarines' AIP endurance specifications, which had not been widely reported before.",
+        "watch_next": "Watch for a formal signing announcement, expected as early as within the next month per the German ambassador's timeline.",
+        "market_link": "Mazagon Dock Shipbuilders (listed on the NSE/BSE) stands to gain a major multi-year order if the deal is signed.",
         "key_terms": [
           {
-            "term": "cislunar space",
-            "definition": "The region of space between Earth and the Moon's orbit, increasingly crowded as more countries and companies send missions there."
+            "term": "Air-Independent Propulsion (AIP)",
+            "definition": "Technology that lets a diesel-electric submarine generate power without surfacing for air, letting it stay hidden underwater far longer than a normal diesel sub."
+          },
+          {
+            "term": "Make in India",
+            "definition": "A government initiative to have foreign technology manufactured domestically instead of imported, to build local industrial capacity."
           }
         ],
         "sources": [
           {
-            "name": "NBC News",
-            "url": "https://www.nbcnews.com/science/space/spacex-rocket-part-crash-moon-rcna589108"
+            "name": "Indian Defence News",
+            "url": "https://www.indiandefensenews.in/2026/08/indias-90000crore-submarine-deal-with.html"
           },
           {
-            "name": "Fortune",
-            "url": "https://fortune.com/2026/08/01/dead-spacex-rocket-adrift-moon-collision-new-crater/"
+            "name": "Indian Defence News (Ambassador Ackermann)",
+            "url": "https://www.indiandefensenews.in/2026/07/india-and-germany-to-finalise-90000.html"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "PM India (official release)",
@@ -915,10 +980,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-02T11:00:00+05:30",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "India TV News",
@@ -980,8 +1044,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
@@ -1064,8 +1128,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
@@ -1125,8 +1189,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -1197,8 +1261,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -1261,8 +1325,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-07-31T14:00:00+05:30",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -1329,71 +1393,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-08-01T15:00:00+05:30",
-      "added_at": "2026-08-02T17:59:54+05:30",
-      "source": "Business Standard",
-      "importance": "notable",
-      "regions": [
-        "India",
-        "Odisha"
-      ],
-      "title": "Odisha's Cabinet clears a plan to run its biggest cities as single economic zones, starting with Bhubaneswar-Cuttack-Puri-Paradeep",
-      "what_happened": "Odisha's Cabinet approved amendments to the state's **Odisha Development Authorities (ODA) Act** on Friday, creating a new legal category called an **Economic Region Development Authority (ERDA)** — a single planning and governing body for a cluster of cities and districts that together form one economic region. The **Bhubaneswar-Cuttack-Puri-Paradeep** cluster will become the state's first ERDA. The amendment inserts a new chapter into the ODA Act that lets the state government designate future ERDAs simply by government notification, rather than passing a new law each time. Three more regions have already been identified for eventual ERDA status: **Bargarh-Jharsuguda-Sambalpur**, **Berhampur-Chhatrapur-Gopalpur**, and **Jeypore-Koraput-Sunabeda**. The government says the goal is integrated infrastructure planning, easier investment approval and coordinated public services across what are currently separate municipal jurisdictions.",
-      "key_points": [
-        "Odisha's Cabinet approved a bill creating **Economic Region Development Authorities (ERDAs)** — single bodies planning across city and district lines.",
-        "The first ERDA covers **Bhubaneswar, Cuttack, Puri and Paradeep**, a cluster of cities that today are each planned separately.",
-        "Three more regions are already earmarked: **Bargarh-Jharsuguda-Sambalpur**, **Berhampur-Chhatrapur-Gopalpur**, and **Jeypore-Koraput-Sunabeda**.",
-        "The law lets the state government create future ERDAs **by notification**, without needing a fresh act of the legislature each time.",
-        "The stated goal is **coordinated infrastructure, investment and jobs** across city clusters that currently compete rather than cooperate."
-      ],
-      "moot": "Cities that function as one economic unit but are governed as separate municipalities often under-invest in the shared infrastructure that would benefit all of them — merging planning authority across a cluster is one way governments try to fix that coordination gap.",
-      "image_credit": "Business Standard",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Business Standard",
-          "OdishaTV"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "state_vs_centre"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "Indian cities have historically been planned one municipality at a time, even when they function as a single economic unit — commuters, industry and infrastructure all cross city and district lines that planning bodies don't. Odisha's government has been trying to position clusters like Bhubaneswar-Cuttack-Puri-Paradeep as an integrated growth engine rather than four separate towns competing for the same investment. The **Odisha Development Authorities (Amendment) Bill, 2026** is the legal vehicle for that shift, moved by the state's Housing and Urban Development Department.",
-        "why_it_matters": "How a state plans its cities directly shapes where jobs, factories and infrastructure money go. Merging planning across Bhubaneswar, Cuttack, Puri and Paradeep — rather than leaving each to plan alone — could unlock investment in an eastern Indian region that has historically lagged the country's bigger metro clusters.",
-        "ripple_effects": "Land use, transport and industrial-zone decisions across the four cities will now go through one body instead of four, which could speed up approvals for developers and investors but may also centralize power away from individual municipal governments. If the model works, expect other states to copy the structure for their own multi-city clusters.",
-        "why_now": "The Cabinet clearance comes as Odisha pushes several big-ticket economic moves at once — this follows the state's recent approvals for a ₹36,441-crore sports push and a ₹5,070-crore floating solar scheme, part of a broader effort to position the state as an investment destination.",
-        "watch_next": "Whether the Bhubaneswar-Cuttack-Puri-Paradeep ERDA is formally notified and staffed, and whether the next three earmarked regions get notified without needing separate legislation.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Development authority",
-            "definition": "A government body with legal power to plan land use, approve construction and build infrastructure within a defined area — normally one per city."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/odisha-govt-clears-bill-to-create-economic-region-development-authorities-126080101257_1.html"
-          },
-          {
-            "name": "OdishaTV",
-            "url": "https://odishatv.in/national/odisha-cabinet-clears-major-urban-reform-paves-way-for-economic-region-development-authorities-12220193"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-08-02T10:56:00+05:30",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1456,8 +1457,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": null,
       "added_at": "2026-08-02T10:04:56+05:30",
@@ -1534,8 +1535,8 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-08-02T20:00:00+01:00",
       "added_at": "2026-08-02T06:00:13+05:30",
@@ -1594,6 +1595,127 @@
       "rank": 61,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-08-02T00:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "RacingNews365",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "F1 has gone dark for two weeks — here's the rule that forces every team to down tools at the same time",
+      "what_happened": "Every F1 team is currently in the middle of its **mandatory 14-day shutdown**, during which no work related to car performance is allowed to happen at all — that covers design, development, manufacturing of parts, and simulator running, and even extends to banning emails, calls, or meetings about performance topics. Teams must log their activity during the period, and those logs can be requested by the FIA at any time; the governing body also uses factory access-control systems to track who enters and exits team facilities, and can run random checks if it suspects a team is secretly working. The rule is designed to ensure no team gains a development advantage by simply outworking its rivals during the break, and to give F1's notoriously overworked staff two guaranteed weeks off.",
+      "key_points": [
+        "F1's **mandatory summer shutdown** is underway: a **14 consecutive-day** period where all teams must stop performance-related work.",
+        "For 2026, the shutdown falls between the **Hungarian Grand Prix** (July 24-26) and the **Dutch Grand Prix** (August 21-23).",
+        "Banned activities include **car design, development, part production, and even simulator use** — plus emails or meetings about performance.",
+        "The **FIA enforces it** using factory access-control logs and can conduct **random checks** if it suspects a team cheated the rule.",
+        "The rule exists to **control costs** and give burned-out team staff a genuine break from F1's relentless calendar."
+      ],
+      "moot": "Sometimes the fairest way to prevent an arms race isn't to cap the budget, but to cap the clock — forcing everyone to stop at the same time can level a playing field that money alone can't.",
+      "image_credit": "RacingNews365",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "GPFans",
+          "RacingNews365"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "F1 teams work on a punishing schedule — most of the grid runs **24 races a year** plus constant car development in between, which used to mean near year-round work for engineering staff. The FIA introduced the mandatory shutdown period years ago as both a cost-control measure (stopping wealthier teams from just working through the summer to gain an advantage) and a wellbeing measure for overworked staff. Each team picks its own two-week window, but it must fall within July and/or August, and the 2026 calendar naturally slots it into the gap between Hungary and the Netherlands.",
+        "why_it_matters": "It's one of F1's more unusual competitive-fairness rules — instead of just capping spending, it caps time itself, recognizing that a wealthier or larger team could otherwise buy an advantage simply by working through the summer while smaller rivals can't afford to. It also puts a hard reset on the championship battle heading into the second half of the season.",
+        "ripple_effects": "Teams chasing upgrades — like Mercedes, which has signaled a 'more sizeable' package for after the break — will only be able to resume that work once the shutdown ends, meaning any major car changes won't appear until the Dutch Grand Prix at the earliest. It also gives driver-market negotiations (Verstappen's future, Alonso's decision, Sainz's next move) a quiet window to develop away from race-week distractions.",
+        "why_now": "The shutdown is happening right now, in the gap between the Hungarian and Dutch Grands Prix on the 2026 calendar.",
+        "watch_next": "Watch for which upgrades teams unveil once work resumes and cars return to track for the Dutch Grand Prix weekend of August 21-23.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "FIA",
+            "definition": "The Federation Internationale de l'Automobile, motorsport's global governing body, which writes and enforces F1's rules."
+          }
+        ],
+        "sources": [
+          {
+            "name": "RacingNews365",
+            "url": "https://racingnews365.com/f1-is-in-shutdown-why-and-how-does-it-work"
+          },
+          {
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088546/f1-enters-the-summer-break-shutdown-and-this-is-how-the-fia-enforce-it/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-01T00:00:00Z",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "Motorsport.com",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Haas boss admits his own team is 'fighting with both hands tied' — because it still won't spend up to F1's budget cap",
+      "what_happened": "Speaking this week, Komatsu confirmed that Haas is still not operating at the full F1 budget cap, despite the cap existing specifically to help smaller teams compete. He pointed to the team's roughly **400-person headcount**, dwarfed by rivals with over 1,000 staff, and to less sophisticated simulator and development equipment. Haas started the 2026 season reasonably well, scoring **18 points** in its first three grands prix, but has managed only **3 points** since and been shut out entirely across the last three races, leaving it seventh in the constructors' championship as midfield rivals like Racing Bulls bring bigger upgrades. Komatsu said raising the funding to properly resource the team is now one of his top personal priorities, framing the issue as a business problem, not a talent problem: \"It's not a reflection of our guys; it's more a reflection on my side.\"",
+      "key_points": [
+        "Haas team principal **Ayao Komatsu** admitted the team still isn't spending up to F1's **budget cap**, unlike its rivals.",
+        "Haas runs with roughly **400 staff**, compared to over **1,000** at some bigger midfield teams.",
+        "The team scored **18 points in its first three races** this year but just **3 points since**, and none in the last three events.",
+        "Komatsu says funding the team properly — not driver or engineer talent — is now 'one of the top priorities' on his job list.",
+        "He described the situation bluntly: Haas is **'fighting with both hands tied'** against better-resourced rivals."
+      ],
+      "moot": "A rule designed to create fairness only works if everyone can actually afford to use it fully — a spending cap helps the underdog only up to the point where the underdog can actually raise the money to reach it.",
+      "image_credit": "Motorsport.com",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Last Word on Sports",
+          "Motorsport.com"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Formula 1 introduced a **budget cap** in 2021 to level the financial playing field between giant manufacturer-backed teams and smaller independents — every team is allowed to spend up to the same ceiling on car development each year. In theory, this should let a smaller team like **Haas** compete evenly with bigger-budget rivals. In practice, a team still has to actually raise enough sponsorship and revenue to spend up to that cap — the rule sets a ceiling, not a floor. Haas has historically run leaner than almost any other team on the grid, which helped it survive financially but has increasingly left it out-developed as rivals pour resources into new-regulation cars.",
+        "why_it_matters": "It's a reminder that F1's budget cap, often described as a great equalizer, doesn't actually guarantee a level playing field — teams still need the commercial revenue to spend up to that ceiling, and not every team can. Haas's slump shows how quickly a smaller operation can fall behind once bigger-budget rivals start aggressively developing under new technical rules.",
+        "ripple_effects": "Continued underperformance makes it harder for Haas to attract the sponsorship it needs to close the funding gap — a vicious cycle. It also affects driver and staff decisions: a team seen as under-resourced struggles to retain or attract top talent, compounding the on-track slide.",
+        "why_now": "Komatsu's comments came this week as Haas's form has visibly worsened over the past three races, prompting fresh scrutiny of the team's finances during the sport's summer break.",
+        "watch_next": "Watch whether Haas announces new sponsorship or investment before the season resumes at the Dutch Grand Prix (August 21-23).",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Budget cap",
+            "definition": "A rule limiting how much money an F1 team can spend on car performance each season, meant to stop the richest teams from simply outspending everyone else."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Motorsport.com",
+            "url": "https://www.motorsport.com/f1/news/haas-fighting-with-both-hands-tied-as-it-fails-to-match-budget-cap/10842889/"
+          },
+          {
+            "name": "Last Word on Sports",
+            "url": "https://lastwordonsports.com/motorsports/2026/08/01/komatsu-haas-budget-cap/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "RacingNews365",
@@ -1651,10 +1773,9 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T23:59:32+05:30",
       "source": "Formula1.com",
@@ -1712,8 +1833,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
@@ -1771,8 +1892,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-01T12:00:00+00:00",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -1831,8 +1952,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-01T10:00:00Z",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1881,8 +2002,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-01T09:00:00Z",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -1937,120 +2058,69 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-08-01T00:00:00Z",
-      "added_at": "2026-08-02T14:00:41+05:30",
-      "source": "F1 Oversteer",
+      "id": "story-41",
+      "rank": 41,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-08-02T14:00:00+01:00",
+      "added_at": "2026-08-03T02:02:35+05:30",
+      "source": "ESPNcricinfo",
       "importance": "notable",
       "regions": [
-        "UK",
-        "Global"
+        "United Kingdom"
       ],
-      "title": "Aston Martin's Lawrence Stroll names Carlos Sainz his 'top target' to replace Alonso — with design chief Adrian Newey reportedly pushing the move",
-      "what_happened": "Multiple reports say Lawrence Stroll has now specifically named **Carlos Sainz** as Aston Martin's 'top' target to replace Fernando Alonso, should the two-time champion leave the team. Crucially, the push reportedly has three layers of internal backing: Newey has **personally recommended** prioritising Sainz over other options, the move has Stroll's own support, and Alonso himself is said to have encouraged Aston Martin to go after Sainz before stepping back from the succession decision. Sainz's own contract situation makes this live now — he is due to be out of contract with Williams at the end of 2026 unless he takes up an option for 2027 or 2028, and he has said he intends to decide his plans during the summer break. Much of that decision, Sainz says, will depend on how much Williams' upgrade package — due at the Azerbaijan Grand Prix — improves the car's competitiveness.",
+      "title": "Sophie Ecclestone rips through MI London's top order as Manchester Super Giants Women keep winless MI London bottom of The Hundred",
+      "what_happened": "At **The Oval** in London, MI London Women won the toss, chose to bat, and collapsed to just **92 all out**, playing without regular player Danni Wyatt-Hodge. **Sophie Ecclestone**, bowling the opening spell of the innings for the first time this season, struck twice early — dismissing both Alice Davidson-Richards and Hayley Matthews — to leave MI London reeling at 1 for 2, before finishing a tight spell conceding just **7 runs off 20 balls**. In reply, **Manchester Super Giants Women** chased the target down comfortably, reaching **95/4** with 28 balls remaining to win by **6 wickets**. Ecclestone was named Player of the Match for her spell.",
       "key_points": [
-        "Aston Martin owner **Lawrence Stroll** has identified Williams driver **Carlos Sainz** as his top target if Fernando Alonso leaves.",
-        "Design chief **Adrian Newey** has reportedly personally recommended Aston Martin prioritise signing Sainz.",
-        "Alonso himself is said to have **encouraged** the move before stepping back from team decisions.",
-        "Sainz is out of contract with Williams at the **end of 2026** unless he exercises an option for 2027/2028.",
-        "Sainz says his decision partly hinges on gains from Williams' **upgrade package** due at the Azerbaijan Grand Prix."
+        "**Manchester Super Giants Women** beat **MI London Women** by **6 wickets**, with 28 balls to spare, at The Oval.",
+        "England spinner **Sophie Ecclestone**, opening the bowling for the first time this season, took out both openers cheaply and was named **Player of the Match**.",
+        "MI London were bowled out for just **92**, having also been without star player **Danni Wyatt-Hodge**.",
+        "Manchester chased the target down comfortably, reaching **95/4**.",
+        "The result leaves **MI London still winless** and rooted to the **bottom of the table** in this year's Hundred Women's Competition."
       ],
-      "moot": "In competitive team environments, an endorsement from the person actually responsible for the product — here, the car's designer — often signals a decision more reliably than statements from ownership alone.",
-      "image_credit": "F1 Oversteer",
+      "moot": "In short-format cricket, one devastating opening spell can decide a match before it's even a third of the way through — early wickets compound fast because there are so few balls left to recover.",
+      "image_credit": "ESPNcricinfo",
       "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "F1 Oversteer"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Aston Martin has struggled through a nearly winless start to the 2026 season despite bringing in Newey — F1's most decorated car designer — and Honda power, prompting Stroll to put a deadline on the team's rebuild. Fernando Alonso has repeatedly said he'll decide his own F1 future during the summer break, while shutting down suggestions he could return to Alpine. Carlos Sainz, who lost his Ferrari seat to Hamilton for 2025 and moved to Williams, has been the subject of driver-market speculation for over a year, with rivals like Aston Martin long circling him as a potential signing.",
-        "why_it_matters": "This is the clearest signal yet of who Aston Martin actually wants as their next star driver, and having Newey's explicit endorsement carries real weight given his role in designing the car Sainz would drive. It also puts pressure on Williams, since losing Sainz would be a blow to a team that has been rebuilding around him.",
-        "ripple_effects": "If Sainz leaves Williams, it opens a high-profile seat there for the 2027 driver market, triggering a chain of moves across multiple teams. It also raises the stakes on Alonso's summer-break decision — his exit timeline directly determines when Aston Martin can move on Sainz.",
-        "why_now": "This surfaces during F1's summer break, the traditional window when driver contracts for the following season get finalised, and just as both Alonso and Sainz have said they'll use this break to decide their own futures.",
-        "watch_next": "Whether Fernando Alonso confirms his 2027 plans during the summer break, and how much Williams' Azerbaijan Grand Prix upgrade influences Sainz's decision.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "F1 Oversteer",
-            "url": "https://www.f1oversteer.com/news/lawrence-stroll-has-now-identified-aston-martins-top-target-if-fernando-alonso-leaves/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-07-30T08:00:00+00:00",
-      "added_at": "2026-08-02T12:01:53+05:30",
-      "source": "GPFans",
-      "importance": "notable",
-      "regions": [
-        "United Kingdom",
-        "Japan"
-      ],
-      "title": "Aston Martin's Adrian Newey lays out the Honda-powered comeback plan — and what it means for Alonso's future",
-      "what_happened": "Aston Martin brought a substantial package of car upgrades to the **Hungarian Grand Prix**, its last race before F1's summer break, and Fernando Alonso reached **Q2 on pure pace for the first time this season** as a result. Team principal **Adrian Newey** confirmed that further upgrades to the **AMR26** are planned for the **Netherlands Grand Prix at Zandvoort**, with additional developments layered in at **Monza and Baku** later in the year — effectively a staged recovery plan through the back half of the season. On the engine side, Aston Martin and power-unit partner **Honda** have held a series of direct, admittedly **'tough' conversations** after it emerged Honda had reassigned many of its Formula 1 specialists to other projects while ramping up its return to the sport — a key reason the power unit underperformed early on. Both sides say the talks have improved their working relationship, with a **major power-unit upgrade** due once the summer break ends. Newey also addressed what **Alonso's future** at the team means for Aston Martin's trajectory, as the two-time champion — contracted through the end of 2026 — is expected to announce a decision on his future during the break.",
-      "key_points": [
-        "Aston Martin brought a **major package of upgrades** to the Hungarian Grand Prix, and **Fernando Alonso reached Q2 on pace for the first time all season**.",
-        "Team boss **Adrian Newey** confirmed **further upgrades are coming at Zandvoort, then more at Monza and Baku** — a staged comeback plan through the second half of 2026.",
-        "The team's **Honda power unit** was the season's biggest weak point after Aston discovered Honda had reassigned many of its F1 specialists elsewhere while ramping up its return to the sport.",
-        "Aston Martin and Honda have since held **'tough' but relationship-repairing meetings**, with a major power-unit upgrade due after the summer break.",
-        "Two-time champion **Alonso is contracted through the end of 2026** and is expected to decide his future during the summer break — Newey has now spoken publicly about what his eventual departure would mean for the team."
-      ],
-      "moot": "Even a team with elite designers and heavy investment can be held back by a single weak link in the supply chain — Aston Martin's chassis ambitions were capped by an underperforming engine partner, a reminder that a system is only as strong as its weakest component.",
-      "image_credit": "GPFans",
-      "credibility": {
-        "level": "developing",
+        "level": "confirmed",
         "count": 2,
-        "tier": 2,
+        "tier": 1,
         "outlets": [
-          "Formula1.com",
-          "GPFans"
+          "CricketWorld",
+          "ESPNcricinfo"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Aston Martin entered the 2026 season with sky-high expectations after hiring legendary designer **Adrian Newey** — architect of multiple championship-winning cars at Red Bull and elsewhere — and forming a new partnership with engine-maker **Honda**, which returned to Formula 1 this year. Early results badly lagged expectations, largely because Honda's power unit underperformed; it later emerged that Honda had spread its F1 engineering talent thin while managing its comeback. **Fernando Alonso**, a two-time world champion, joined Aston Martin partly on the promise that Newey's arrival would eventually deliver a genuinely competitive car — a promise that, halfway through 2026, hadn't yet materialized on track.",
-        "why_it_matters": "Aston Martin's Newey-led project has been F1's most closely watched underperformer of 2026, given the scale of investment and expectations; genuine on-track progress and a clearer Honda roadmap are the first real evidence the rebuild is on track rather than stalled.",
-        "ripple_effects": "A credible recovery plan makes it more likely Alonso commits to staying rather than seeking a seat elsewhere for 2027, which in turn affects the wider driver market since several teams are watching his decision before finalizing their own lineups. It also matters for Honda, whose F1 comeback reputation is tied to how quickly Aston Martin's results improve.",
-        "why_now": "The upgrades and Newey's comments came right after the Hungarian Grand Prix — the last race before the summer break — a natural moment for teams to lay out plans for the second half of the season.",
-        "watch_next": "Whether Alonso announces a contract decision during the summer break, and how much of a step forward the Zandvoort upgrade package delivers when racing resumes.",
+        "background": "The Hundred is England's 100-ball cricket franchise competition, running men's and women's tournaments in parallel each summer since 2021, and has become a key summer showcase for both international and domestic women's talent. **Sophie Ecclestone** is one of the world's best left-arm spin bowlers and a regular fixture for England, making her performances a headline draw whenever she plays. MI London have struggled all season and came into this match already at the bottom of the points table, still searching for their first win.",
+        "why_it_matters": "The win boosts Manchester Super Giants' net run rate and playoff positioning, while MI London's continued winless run leaves them facing an increasingly difficult path back into contention this season.",
+        "ripple_effects": "MI London will likely make squad or tactical changes ahead of their remaining fixtures to try to arrest the slide, while Manchester's bowling depth — now spearheaded by an in-form Ecclestone — makes them a tougher out for the rest of the competition.",
+        "why_now": "The match was played and completed today as part of the ongoing 2026 Hundred Women's Competition season, which runs until mid-August.",
+        "watch_next": "Watch MI London's next fixture for signs of a lineup change as they continue searching for their first win of the season.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "power unit",
-            "definition": "F1's term for the complete hybrid engine package — combustion engine plus electric motors and battery — that a team like Aston Martin buys from a supplier like Honda."
+            "term": "The Hundred",
+            "definition": "A shortened cricket format where each team bats for 100 balls instead of the usual 120 (20 six-ball overs), designed to be quicker and more TV-friendly."
           }
         ],
         "sources": [
           {
-            "name": "GPFans",
-            "url": "https://www.gpfans.com/en/f1-news/1088533/f1-news-today-adrian-newey-fernando-alonso-future-aston-martin-honda-timeline/"
+            "name": "ESPNcricinfo",
+            "url": "https://www.espncricinfo.com/series/the-hundred-women-s-competition-2026-1521193/mi-london-women-vs-manchester-super-giants-women-18th-match-1521214/match-report"
           },
           {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/alonso-on-aston-martin-updates-zero-doubt-newey-can-deliver-the-best-car.5E9b9dih57mPkAUkaJU2W7"
+            "name": "CricketWorld",
+            "url": "https://www.cricketworld.com/manchester-super-giants-women-beat-mi-london-by-six-wickets-in-the-hundred-live-streaming-match-report/112347.htm"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-41",
-      "rank": 41,
+      "id": "story-42",
+      "rank": 42,
       "category": "cricket",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-02T22:04:03+05:30",
@@ -2110,8 +2180,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-02T19:58:44+05:30",
@@ -2164,8 +2234,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2229,8 +2299,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-08-01T10:00:00+01:00",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -2279,8 +2349,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-08-02T09:00:00+05:30",
       "added_at": "2026-08-02T17:59:54+05:30",
@@ -2335,8 +2405,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-02T14:00:00+05:30",
       "added_at": "2026-08-02T16:02:24+05:30",
@@ -2391,8 +2461,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-08-01T20:30:00Z",
       "added_at": "2026-08-02T14:00:41+05:30",
@@ -2446,74 +2516,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Hardik Pandya trade war escalates as CSK and Mumbai Indians haggle over a two-for-one deal",
-        "date": null
-      },
-      "published_iso": "2026-08-01T12:00:00+05:30",
-      "added_at": "2026-08-02T12:01:53+05:30",
-      "source": "Crictoday",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Mumbai Indians shut the door on Hardik Pandya trade talks with CSK, as the saga stalls",
-      "what_happened": "**Mumbai Indians** have reportedly stepped back from active trade discussions with **Chennai Super Kings** over their captain **Hardik Pandya**, effectively shutting down that particular negotiating track — at least for now. The deal had stalled over MI's insistence on receiving **both Shivam Dube and Ayush Mhatre** in any swap, a package CSK were not willing to offer given how highly they rate Mhatre. Mumbai's official spokesperson has publicly **denied** that Pandya is being actively shopped to any franchise, pushing back on the wave of trade reports that had built up over recent days. That denial sits alongside continuing reports of separate interest from **Delhi Capitals, Kolkata Knight Riders and Rajasthan Royals**, none of which have been confirmed. As of now, **no trade involving Pandya has been finalized**, and his status for the coming IPL season remains an open question.",
-      "key_points": [
-        "**Mumbai Indians** have reportedly pulled back from active negotiations with **Chennai Super Kings (CSK)** over a Hardik Pandya trade, with no deal currently being pursued.",
-        "The sticking point had been MI's demand for **both Shivam Dube and young opener Ayush Mhatre** in exchange for their captain — CSK were unwilling to part with Mhatre.",
-        "MI's official line: they have **denied** reports that Pandya is being actively shopped, even as talks with multiple franchises had been ongoing.",
-        "**Delhi Capitals, Kolkata Knight Riders and Rajasthan Royals** had all separately been reported as interested parties before this pullback.",
-        "As things stand, **no trade has been completed** and Pandya's franchise future for the next season remains unresolved."
-      ],
-      "moot": "In any negotiation, a deal collapses when one side's minimum ask exceeds what the other side is willing to give up — here, MI's insistence on a rising young talent (Mhatre), not just an established player, was the sticking point.",
-      "image_credit": "Crictoday",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Crictoday",
-          "Yahoo Sports"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "status": "cooling",
-        "day": 3,
-        "previously": "We reported CSK had offered Shivam Dube for Pandya, with MI countering by asking for Dube plus Ayush Mhatre, while Delhi Capitals, KKR and Rajasthan Royals were also said to be circling — with nothing officially confirmed.",
-        "changed": "Mumbai Indians have now reportedly pulled back from the CSK negotiating track specifically, and publicly denied that Pandya is being actively shopped — though interest from other franchises reportedly continues."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "**Hardik Pandya**, Mumbai Indians' captain and one of Indian cricket's premier all-rounders, has been at the center of an escalating trade saga this off-season, with multiple IPL franchises reportedly circling. CSK had proposed swapping all-rounder **Shivam Dube** for Pandya, while MI countered by asking for Dube plus rising opener **Ayush Mhatre** — a demand CSK were unwilling to meet given Mhatre's rising value. Delhi Capitals had separately floated a package built around Axar Patel and Prithvi Shaw (or Sameer Rizvi), while Kolkata Knight Riders and Rajasthan Royals had also made informal contact with MI. None of these discussions had been officially confirmed by any franchise before this latest development.",
-        "why_it_matters": "Hardik Pandya is one of the IPL's most valuable and marketable all-rounders, and his franchise future affects team-building strategy, ticket sales and broadcast interest well beyond just Mumbai Indians and CSK — this kind of high-profile trade saga is a genuine off-season storyline that shapes fan expectations for the next season.",
-        "ripple_effects": "Other franchises reportedly interested (Delhi, Kolkata, Rajasthan) may now step up their own approaches to MI now that the CSK track has cooled, and Mumbai Indians' public denial adds uncertainty about whether Pandya stays captain or moves at all before the next auction cycle.",
-        "why_now": "The story is a direct continuation of an escalating trade saga that's been building over recent days, with MI's pullback from CSK talks marking the first concrete setback in the negotiations.",
-        "watch_next": "Whether any of the other reportedly interested franchises — Delhi Capitals, KKR or Rajasthan Royals — step forward with a formal offer now that the CSK track has stalled.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Crictoday",
-            "url": "https://crictoday.com/news/mumbai-indians-shut-the-door-on-hardik-pandya-talks-no-negotiations-with-csk-or-others-12220094"
-          },
-          {
-            "name": "Yahoo Sports",
-            "url": "https://sports.yahoo.com/articles/hardik-pandya-trade-mi-want-080411790.html"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-50",
+      "rank": 50,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2574,8 +2578,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "published_iso": null,
       "added_at": "2026-08-02T10:04:56+05:30",
@@ -2638,8 +2642,8 @@
     },
     {
       "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2704,111 +2708,8 @@
     },
     {
       "type": "story",
-      "id": "story-55",
-      "rank": 55,
-      "category": "cricket",
-      "published_iso": "2026-08-01T12:30:00Z",
-      "added_at": "2026-08-02T02:01:28+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "England"
-      ],
-      "title": "Birmingham Phoenix chase down Warwickshire Fire with a ball to spare in The Hundred",
-      "what_happened": "Warwickshire Fire posted **144 for 3** from their 100 balls at Birmingham. In reply, **Birmingham Phoenix got over the line with 145 for 3**, winning by **7 wickets** but needing every ball bar one of their innings to complete the chase — finishing with just a single ball to spare. The tight finish reflects a competitive Women's Hundred season so far, with several matches decided in the closing stages.",
-      "key_points": [
-        "Birmingham Phoenix chased **144/3** to beat Warwickshire Fire, finishing **145/3** with just **1 ball remaining**.",
-        "The win came in a tight run-chase that went down to the **final over** of the 100-ball innings.",
-        "It's another close finish in a **Women's Hundred** season already marked by tight group-stage matches.",
-        "The result affects the group standings as teams jostle for **knockout qualification**."
-      ],
-      "moot": "In short-format cricket, chasing a total is often more about controlling nerves in the final overs than raw power — Phoenix's win came down to the very last ball available.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred's Women's Competition runs alongside the men's tournament each English summer, with eight franchise teams playing a round-robin group stage before the top sides advance to knockouts. Birmingham Phoenix and Warwickshire Fire (based at Edgbaston) are regular rivals in the tournament given their shared home region, and close finishes between mid-table sides can be decisive for who ultimately reaches the playoffs.",
-        "why_it_matters": "Every close win matters for net run rate and group-stage seeding in a short tournament with limited games before knockouts. For Birmingham Phoenix specifically, converting a tense chase into a win is a confidence boost heading into the business end of the competition.",
-        "ripple_effects": "The result tightens the group table, putting more pressure on other mid-table teams to deliver strong performances in their remaining matches to secure a knockout spot.",
-        "why_now": "The match was played today as part of the ongoing 2026 Women's Hundred group stage, on the same day as several other fixtures across the tournament.",
-        "watch_next": "How the group standings shape up as the Women's Hundred group stage nears its conclusion and knockout qualification is decided.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/series/the-hundred-women-s-competition-2026-1521193"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-56",
-      "rank": 56,
-      "category": "cricket",
-      "published_iso": "2026-08-01T13:00:00Z",
-      "added_at": "2026-08-02T02:01:28+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "England"
-      ],
-      "title": "Sophie Molineux spins Southern Brave to a perfect start in The Hundred, beating London Spirit by 5 wickets",
-      "what_happened": "At Lord's, **London Spirit Women were restricted to 114 for 8** off their 100 balls, unable to find the boundaries needed to post a match-winning total. **Sophie Molineux was the difference**, taking **3 wickets for just 7 runs** to choke Spirit's innings and earn player of the match. In reply, **Southern Brave chased the target down comfortably, finishing 115 for 5**, sealing a **5-wicket win** and extending their unbeaten start to the Women's Hundred season.",
-      "key_points": [
-        "Southern Brave chased down London Spirit's **114/8** with **115/5**, winning by **5 wickets** at Lord's.",
-        "**Sophie Molineux took 3 for 7**, strangling London Spirit's innings with spin and earning player of the match.",
-        "The result keeps Southern Brave **unbeaten** in the Women's Hundred competition this season.",
-        "London Spirit struggled to build partnerships, unable to push their total past **114** in their 100 balls."
-      ],
-      "moot": "In short-format cricket, tight, wicket-taking bowling spells can be just as decisive as big-hitting batting — restricting a team below par often wins the match before the chase even begins.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred is England's short-format, 100-ball domestic cricket competition, running men's and women's tournaments in parallel each August with eight city-based franchise teams. Southern Brave's women's side have been one of the tournament's strongest teams in recent seasons, and a perfect start to 2026 keeps them firmly in contention as the group stage progresses toward the knockouts. Left-arm spinner **Sophie Molineux**, an Australian international, is known for tying up batters with tight, disciplined bowling in the middle overs.",
-        "why_it_matters": "A perfect start in a short, high-intensity tournament like The Hundred matters disproportionately — with only a handful of group games before playoffs, early wins bank crucial net-run-rate and momentum. Molineux's spell is also a reminder of how disciplined spin bowling, not just power-hitting, wins matches in the 100-ball format.",
-        "ripple_effects": "Southern Brave move clear of the chasing pack in the Women's Hundred standings, putting pressure on rivals to match their pace over the remaining group games. A strong campaign also boosts Molineux's profile ahead of Australia's international commitments.",
-        "why_now": "The match was played today as part of the ongoing 2026 Women's Hundred group stage.",
-        "watch_next": "Whether Southern Brave can maintain their unbeaten run through the rest of the group stage and secure a top spot heading into the knockouts.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "The Hundred",
-            "definition": "An English cricket competition where each team faces 100 balls per innings (instead of the usual 120 in T20), designed to be a shorter, faster spectacle."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/series/the-hundred-women-s-competition-2026-1521193/london-spirit-women-vs-southern-brave-women-16th-match-1521212/match-report"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-57",
-      "rank": 57,
+      "id": "story-58",
+      "rank": 58,
       "category": "cricket",
       "published_iso": "2026-08-01T17:30:00+00:00",
       "added_at": "2026-08-02T00:02:22+05:30",
@@ -2866,70 +2767,11 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-58",
-      "rank": 58,
-      "category": "cricket",
-      "published_iso": "2026-08-01T13:30:00+00:00",
-      "added_at": "2026-08-02T00:02:22+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Rajat Patidar to lead Central Zone's Duleep Trophy title defence, with Rinku Singh and two uncapped India quicks in the squad",
-      "what_happened": "Central Zone announced their squad for the 2026 season-opening Duleep Trophy, naming Rajat Patidar as captain to lead the team's title defence. The squad includes three other India internationals — Rinku Singh, left-arm spinner-allrounder Harsh Dubey, and fast bowler Yash Thakur — giving the side considerable top-level experience. Saransh Jain, Patidar's Madhya Pradesh teammate who recently earned a maiden India Test call-up for the Sri Lanka tour, will anchor the spin attack alongside Dubey and Uttar Pradesh leg-spinner Zeeshan Ansari, making his red-ball comeback after five years away following a recent India A tour of Sri Lanka. Vidarbha opener Aman Mokhade earns a spot after a standout 2025-26 Ranji Trophy season, scoring 760 runs in 11 innings at an average of 76, form that also earned him an India A call-up.",
-      "key_points": [
-        "**Rajat Patidar** will captain Central Zone as they defend their **2025-26 Duleep Trophy** title.",
-        "The squad includes three other India internationals: **Rinku Singh**, Harsh Dubey and Yash Thakur.",
-        "Patidar's Madhya Pradesh teammate **Saransh Jain** — fresh off a maiden India Test call-up — leads the spin attack.",
-        "Vidarbha opener **Aman Mokhade** is picked after a breakout Ranji season: **760 runs in 11 innings** at an average of 76.",
-        "The Duleep Trophy is India's marquee **zonal first-class tournament**, historically a proving ground for Test selection."
-      ],
-      "moot": "Talent pipelines in sport are rarely built through the headline national team alone — the feeder tournaments below it are where selectors actually go looking for the next player, so performances there can matter as much as anything seen on television.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Duleep Trophy is a first-class tournament contested between India's regional zones (North, South, East, West, Central), and has long served as a selection shop window — a strong run has historically helped uncapped players force their way into India's Test squad. Central Zone are the defending champions from the 2025-26 edition. Patidar, an established India international batter, captained Madhya Pradesh domestically and now leads Central Zone's title defence with a squad blending internationals and in-form domestic performers.",
-        "why_it_matters": "Squad announcements for domestic tournaments like the Duleep Trophy matter because they're where India's next wave of Test players gets identified — several current India internationals were fast-tracked into the national side on the back of standout zonal performances.",
-        "ripple_effects": "A strong Central Zone campaign would boost Patidar's captaincy credentials at a higher level and give players like Mokhade and Ansari a real shot at national selectors' attention ahead of India's home Test season.",
-        "why_now": "The Duleep Trophy is the traditional season-opener for India's first-class calendar, with squads being finalised now ahead of the tournament's start.",
-        "watch_next": "Watch Aman Mokhade's opening performances closely — a good Duleep Trophy could fast-track a maiden India call-up.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "First-class cricket",
-            "definition": "The traditional, multi-day format of domestic cricket that Test cricket is modelled on — as opposed to the shorter T20 or one-day formats."
-          },
-          {
-            "term": "Zonal cricket",
-            "definition": "Indian domestic cricket organized around five geographic zones (North, South, East, West, Central), each fielding a representative team drawn from state sides."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/story/duleep-trophy-rajat-patidar-to-lead-central-zone-rinku-singh-also-picked-1548351"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 135
+      "older_count": 136
     },
     {
       "type": "archive",
@@ -2943,14 +2785,14 @@
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 95
+      "older_count": 94
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 87
+      "older_count": 90
     },
     {
       "type": "outro",
