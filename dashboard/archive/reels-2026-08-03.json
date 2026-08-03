@@ -1,6 +1,6 @@
 {
   "date": "2026-08-03",
-  "generated_at": "2026-08-04T00:03:23+05:30",
+  "generated_at": "2026-08-04T02:02:24+05:30",
   "day_label": "Monday · 3 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,142 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "health",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-08-01T17:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "SiliconANGLE",
+      "importance": "high",
+      "regions": [
+        "United States",
+        "Global"
+      ],
+      "title": "OpenAI says an unreleased model just solved 10 unsolved math problems — for about $2,000",
+      "what_happened": "OpenAI announced on **August 1, 2026** that an internal version of its next major model, Astra, had solved **ten open problems** spanning group theory, von Neumann algebras, high-dimensional geometry, quantum complexity, lattice cryptography, and extremal combinatorics. The company published every proof as a **Lean 4 certificate** — a machine-verifiable format — on its GitHub repository under an Apache 2.0 license, alongside a **249-page technical manuscript** and a **62-page account** of how the arguments were constructed. The standout result is a concrete, explicit **non-sofic group**, resolving a question that has been open since mathematician Mikhail Gromov introduced the concept of soficity in 1999. OpenAI says the entire set of ten proofs cost about **$2,000** in compute. Fields Medalist Timothy Gowers reviewed at least one of the proofs and said he would recommend it for publication in a top journal without hesitation.",
+      "key_points": [
+        "OpenAI says an internal, not-yet-released model called **Astra** solved **ten long-standing open problems** in mathematics and theoretical computer science.",
+        "The headline result is the **first-ever explicit construction of a \"non-sofic\" group** — closing a question in group theory that has stood open since **1999**.",
+        "OpenAI published the full **machine-checked Lean proofs** on GitHub under an open license, so any mathematician can verify them line by line.",
+        "The total compute cost for all ten proofs was roughly **$2,000**.",
+        "**Fields Medal winner Timothy Gowers** said he'd recommend one of the proofs for a top journal **without hesitation**."
+      ],
+      "moot": "AI output becomes genuinely trustworthy not when it sounds convincing, but when it comes with a way to mechanically check it — verifiability, not fluency, is what turns a claim into knowledge.",
+      "image_credit": "SiliconANGLE",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Forbes",
+          "SiliconANGLE"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "AI models have been getting better at math competitions for a couple of years, but competition problems have known answers — the hard, more meaningful test is whether a model can produce genuinely **new** mathematics that nobody has proven before. A \"Lean proof\" is written in a formal computer language that a separate program can mechanically check step-by-step, so unlike a normal written proof, there's no room for a subtle logical gap to slip past a human reviewer. **Soficity** is a property mathematicians have studied in group theory since 1999; whether every group is \"sofic\" (has a certain approximable structure) was an open question, and constructing a definite non-sofic example had eluded mathematicians for over two decades.",
+        "why_it_matters": "This is a different kind of AI milestone than a chatbot demo: it's a claim that a model produced **verifiable, previously-unknown mathematical knowledge**, not just a fluent-sounding answer. Because the proofs are machine-checkable, the usual worry about AI \"hallucinating\" a convincing-but-wrong argument is much easier to rule out here.",
+        "ripple_effects": "If the results hold up under peer review, it raises the ceiling on what AI-assisted research can contribute across fields that rely on rigorous proof — physics, cryptography, computer science theory — and adds pressure on rival labs (Google DeepMind, Anthropic, and fast-improving Chinese open-weight labs) to show similar research-grade capability, not just benchmark scores.",
+        "why_now": "OpenAI released this ahead of Astra's public launch, at a moment when it's also cutting prices on other models in response to competition from cheaper Chinese open-weight alternatives — using a splashy research result to make the case that its frontier models are still ahead on raw capability.",
+        "watch_next": "Whether independent mathematicians formally verify and publish the non-sofic group proof, and when Astra itself becomes publicly available.",
+        "market_link": "OpenAI is privately held, but the result raises the bar for publicly traded AI infrastructure and chip plays (Nvidia, Microsoft, Google) that investors use as proxies for frontier AI progress.",
+        "key_terms": [
+          {
+            "term": "Lean proof",
+            "definition": "A mathematical proof written in a formal language that a computer program can automatically check for logical correctness, leaving no room for a hidden error."
+          },
+          {
+            "term": "non-sofic group",
+            "definition": "A mathematical group that lacks a certain approximation property called soficity — mathematicians had been trying to explicitly construct one since the concept was defined in 1999."
+          }
+        ],
+        "sources": [
+          {
+            "name": "SiliconANGLE",
+            "url": "https://siliconangle.com/2026/08/02/openais-astra-solves-10-long-open-math-problems-publishes-proofs/"
+          },
+          {
+            "name": "Forbes",
+            "url": "https://www.forbes.com/sites/jonmarkman/2026/08/03/openais-astra-solved-10-decades-old-math-problems-for-just-2000/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "geopolitics",
+      "is_new": true,
+      "published_iso": "2026-08-03T06:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "U.S. News & World Report (AP)",
+      "importance": "high",
+      "regions": [
+        "Russia",
+        "Ukraine",
+        "Europe"
+      ],
+      "title": "A bomb rips through a Moscow restaurant, killing 5 — Russia blames Ukraine",
+      "what_happened": "An explosive device detonated inside Balzi Rossi, an Italian restaurant in central Moscow, on the night of **Saturday, August 1, 2026**, killing **5 people** and injuring **19** others. Several Russian media outlets reported — without official confirmation — that the bombing targeted a Russian general who was celebrating his birthday at the restaurant, with some naming **Col.-Gen. Alexander Chaiko**, who recently took over as chief of Russia's aerospace forces. On **August 3**, the Russian Embassy in Rome issued a statement blaming **\"Kyiv terrorists\"** for the attack, saying it was meant to intimidate the Italian community working in Russia by showing they \"too are in the crosshairs.\" Ukrainian authorities have not responded publicly to the accusation. No group has claimed responsibility, and the identity of the intended target — if there was one — remains unconfirmed.",
+      "key_points": [
+        "An improvised explosive device tore through **Balzi Rossi**, an Italian restaurant in central Moscow, on **Saturday night**, killing **5 people** and wounding **19**.",
+        "Russian media claim the real target was a senior military officer — some outlets name **Col.-Gen. Alexander Chaiko**, newly appointed chief of Russia's aerospace forces, who was reportedly celebrating his birthday there.",
+        "Russia's embassy in Rome accused **\"Kyiv terrorists\"** of trying to scare Italians working in Russia into thinking they too could become targets.",
+        "**Ukraine has not commented**, and no independent source has confirmed who planted the device or who — if anyone — was the intended target.",
+        "The blast fits a **recurring pattern** of unexplained explosions and fires inside Russia that Moscow routinely, and often without hard proof, blames on Ukrainian sabotage."
+      ],
+      "moot": "In an active war, unexplained explosions on either side's home soil get instantly folded into the propaganda contest — whoever assigns blame first often shapes the story, regardless of whether an investigation has actually confirmed anything.",
+      "image_credit": "U.S. News & World Report (AP)",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "U.S. News & World Report (AP)",
+          "Washington Post (AP)"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "proxy_war"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Russia and Ukraine have been at war since **February 2022**, and since then Russian territory has periodically been hit by explosions, fires, and drone strikes that Moscow attributes to Ukrainian intelligence operations — a form of sabotage warfare that runs alongside the front-line fighting. Foreign nationals, including Italians, still live and work in Russia despite Western sanctions and the diplomatic rupture between Moscow and most of Europe. The restaurant, Balzi Rossi, is an upscale Italian venue in central Moscow, and Saturday's bombing happened while it was full of weekend diners. Russian officials have a long history of publicly blaming Kyiv for domestic incidents within hours, often before any investigation is complete.",
+        "why_it_matters": "A deadly bombing in the heart of Moscow, striking a restaurant frequented by foreigners, signals that the war's violence keeps finding ways to spill beyond the battlefield and into ordinary civilian life. Russia's quick, unproven accusation against Ukraine is also a reminder that in wartime information environments, blame gets assigned long before facts are established.",
+        "ripple_effects": "If the bombing is confirmed as a targeted sabotage or assassination attempt, it could escalate the shadow war of strikes and reprisals both sides have waged on each other's territory. It may also unsettle the small community of foreign nationals — Italian and otherwise — still doing business in Russia, and give Moscow a fresh talking point to justify domestic security crackdowns.",
+        "why_now": "The bombing happened over the weekend and the Russian government's formal accusation, issued through its Rome embassy, is what pushed the story into international headlines on August 3.",
+        "watch_next": "Whether Russian investigators release forensic evidence connecting the blast to Ukraine, and whether Kyiv issues any response to the accusation.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "improvised explosive device (IED)",
+            "definition": "A homemade bomb, assembled outside a formal military supply chain, often used in sabotage or terror attacks because it's hard to trace."
+          },
+          {
+            "term": "sabotage warfare",
+            "definition": "Covert attacks — bombings, arson, drone strikes — carried out behind enemy lines rather than on a declared battlefield, often deniable by the side responsible."
+          }
+        ],
+        "sources": [
+          {
+            "name": "U.S. News & World Report (AP)",
+            "url": "https://www.usnews.com/news/world/articles/2026-08-03/russian-embassy-in-rome-blames-ukraine-for-deadly-italian-restaurant-bombing-in-moscow"
+          },
+          {
+            "name": "Washington Post (AP)",
+            "url": "https://www.washingtonpost.com/world/2026/08/03/russia-bomb-ukraine-war-italian-restaurant-moscow/61e624aa-8f3e-11f1-9fdc-0a725c989a7b_story.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "health",
       "published_iso": "2026-08-03T00:00:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "Al Jazeera",
@@ -72,10 +206,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-08-02T11:00:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "Al Jazeera",
@@ -141,8 +274,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "climate",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T22:00:08+05:30",
@@ -203,8 +336,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T22:00:08+05:30",
@@ -272,8 +405,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "economy",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T20:01:42+05:30",
@@ -331,8 +464,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "health",
       "published_iso": "2026-08-01T00:00:00Z",
       "added_at": "2026-08-03T20:01:42+05:30",
@@ -397,82 +530,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "climate",
-      "published_iso": "2026-08-02T00:00:00Z",
-      "added_at": "2026-08-03T18:09:25+05:30",
-      "source": "Al Jazeera",
-      "importance": "high",
-      "regions": [
-        "Europe",
-        "Greece"
-      ],
-      "title": "Two firefighting helicopter crew killed in mid-air collision as Greece's wildfires spiral",
-      "what_happened": "On Sunday, August 2, two Bell helicopters dropping water on a fast-spreading wildfire near Psatha, in Greece's Boeotia region, collided in mid-air. Video showed the lower helicopter's rotor striking the underside of the aircraft above it before it crashed and caught fire. The Greek and Danish crew of one helicopter died; the Greek and British crew of the second aircraft survived after an emergency landing. The fire they were fighting had ignited the previous day and spread rapidly in gale-force winds, destroying more than **100 homes** and triggering evacuations across the Boeotia and Attica regions. Greek authorities deployed nearly **500 firefighters**, with reinforcements flown in from France and Romania, but officials said high winds meant aircraft in many cases cannot draw water or carry out drops due to turbulence.",
-      "key_points": [
-        "Two water-dropping helicopters collided mid-air over **Psatha**, in the Boeotia/Attica region about **45 miles** northwest of Athens, on Sunday",
-        "**2 of 4** crew died — a Greek and a Danish national; a British and a Greek crew member on the other aircraft survived",
-        "The wildfire they were fighting has already destroyed more than **100 homes** and forced evacuations across two regions",
-        "Nearly **500 firefighters**, backed by reinforcements from France and Romania, are battling the blaze amid gale-force winds",
-        "It's part of a wider European wildfire season already burning close to **half a million hectares** since January, ahead of 2025's record pace"
-      ],
-      "moot": "Extreme weather doesn't just destroy property — it raises the real, physical risk faced by the people sent in to fight it, and stretched emergency systems eventually show their limits when multiple disasters hit at once.",
-      "image_credit": "Al Jazeera",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
-        "outlets": [
-          "Al Jazeera",
-          "CBS News",
-          "Euronews"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Southern Europe has faced a brutal heatwave-driven wildfire season through July and August 2026, with France, Spain and Greece all fighting major blazes that have collectively burned close to **half a million hectares** since January — already outpacing 2025, itself the worst year on record. The EU's shared rescEU firefighting fleet, made up of planes, helicopters and pre-positioned crews from member states, has been stretched thin fighting fires in multiple countries at once. Aerial firefighting — using aircraft to scoop up water and drop it on flames — is inherently risky, especially amid the high winds and smoke that accompany major fires.",
-        "why_it_matters": "The deaths underscore the human cost, including among responders themselves, of a wildfire season already outpacing last year's record-breaking destruction across southern Europe, as climate-driven heat and drought make fires larger, faster-moving and more dangerous to fight.",
-        "ripple_effects": "The loss of firefighting aircraft and crew strains an already-stretched European response, with France, Spain and Greece all fighting major fires simultaneously; expect renewed pressure on the EU to expand its shared rescEU fleet. Insurance losses, agricultural damage and tourism disruption are mounting across the Mediterranean, and the incident may trigger a safety review of aerial firefighting protocols in high-wind conditions.",
-        "why_now": "The collision happened as fires that ignited a day earlier exploded in size under gale-force winds, forcing crews into the extreme flying conditions officials say make water drops nearly impossible.",
-        "watch_next": "Whether Greek investigators identify a specific cause for the collision — reduced visibility, radio coordination, or wind shear — and whether the Boeotia/Attica fires are brought under control before winds pick up again.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "aerial firefighting",
-            "definition": "using helicopters or planes to scoop up and drop water or fire retardant on wildfires from the air, especially in terrain ground crews can't reach quickly."
-          },
-          {
-            "term": "rescEU",
-            "definition": "the European Union's shared emergency reserve of firefighting planes, helicopters, and crews that member states can call on when a wildfire outpaces their own resources."
-          },
-          {
-            "term": "hectare",
-            "definition": "a metric unit of area equal to about 2.47 acres, commonly used to measure the size of burned wildfire land."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/2/firefighting-helicopters-collide-near-athens-as-greece-battles-wildfires"
-          },
-          {
-            "name": "CBS News",
-            "url": "https://www.cbsnews.com/news/europe-wildfire-crisis-helicopter-collision-greece-athens/"
-          },
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/my-europe/2026/08/02/europes-wildfires-update-greece-still-battling-outbreaks-in-spain"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "technology",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -554,8 +613,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -630,8 +689,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "economy",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T14:07:01+05:30",
@@ -695,8 +754,8 @@
     },
     {
       "type": "story",
-      "id": "story-18",
-      "rank": 18,
+      "id": "story-20",
+      "rank": 20,
       "category": "economy",
       "development": true,
       "prev_ref": {
@@ -769,83 +828,176 @@
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Israeli strikes kill nine in Gaza for a second straight day as a top minister says there's 'no deal' to stop the attacks",
-        "date": null
-      },
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T05:59:33+05:30",
-      "source": "Al Jazeera",
-      "importance": "critical",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-03T04:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "Free Press Journal",
+      "importance": "notable",
       "regions": [
-        "Middle East",
-        "Gaza",
-        "Israel"
+        "India"
       ],
-      "title": "Israel's Gaza strikes kill 17 in the deadliest day in weeks, even as a US-brokered disarmament plan is supposed to be taking hold",
-      "what_happened": "Israeli forces carried out strikes across multiple Gaza locations on August 3, killing at least **17 Palestinians** — the deadliest single day in the enclave in several weeks, according to Palestinian health officials. In Deir al-Balah, an air raid killed a married couple, 68-year-old Kamal Abu Muailiq and his 59-year-old wife Huda. In Gaza City's Remal neighbourhood, a drone strike hit a tent sheltering displaced people, killing two, including a child. Separately, four people were killed when a strike hit a vehicle in Gaza City, and a person was directly targeted and killed in the Jabalia refugee camp in the north. **Nickolay Mladenov**, the Board of Peace's Gaza envoy, said the past two days of strikes had killed civilians and destroyed medical supplies people depend on.",
+      "title": "ITC's profit falls 15.6% even as revenue jumps 27% — cigarettes-to-hotels giant flags West Asia disruption",
+      "what_happened": "ITC reported **consolidated revenue of ₹29,523.30 crore** and **net profit of ₹4,508.79 crore** for the quarter ended June 2026 (Q1 FY27), a **15.61% decline** in profit from ₹5,343.41 crore in the same quarter last year, even as gross revenue from products and services climbed nearly **28%** to ₹29,409.82 crore. Total income for the quarter came in at ₹30,179.01 crore. ITC attributed the profit squeeze to a combination of factors: the impact of its Sproutlife Foods acquisition affecting year-on-year comparability, and heightened uncertainty from the ongoing **conflict in West Asia**, which triggered a sharp rise and volatility in crude oil and crude-linked input prices along with broader trade and supply-chain disruptions. The results were released as part of India's heaviest earnings week of the quarter, with more than 600 companies reporting results between August 3 and 8.",
       "key_points": [
-        "**17 Palestinians killed** across Gaza on August 3 — the highest single-day toll in weeks.",
-        "An elderly couple, **Kamal and Huda Abu Muailiq**, died in an air raid on their home in Deir al-Balah.",
-        "A child was among two people killed in a **drone strike on a displaced-persons tent** in Gaza City's Remal area.",
-        "The strikes come despite Hamas reportedly agreeing to **disarm** under a US-drafted peace framework.",
-        "The UN-linked Gaza peace envoy says the strikes have **destroyed medical supplies** civilians depend on."
+        "ITC's **consolidated net profit fell 15.6%** to **₹4,508.79 crore** for the June quarter (Q1 FY27), down from ₹5,343.41 crore a year earlier.",
+        "Revenue rose sharply to **₹29,523.30 crore**, with gross revenue from sale of products and services at ₹29,409.82 crore — up nearly **28%** year-on-year.",
+        "The **revenue-up, profit-down** mismatch signals margins got squeezed even as sales grew.",
+        "ITC pointed to **volatile, higher crude oil prices** and **supply-chain disruption** linked to the ongoing conflict in **West Asia**, plus one-off effects from its Sproutlife Foods acquisition.",
+        "The results land in the middle of India's **busiest earnings week**, with over 600 companies — including LIC, SBI and Bharti Airtel — reporting through August 8."
       ],
-      "moot": "A diplomatic announcement is not the same as a ceasefire — when a deal is reported in headlines but fighting continues on the ground, the on-the-ground casualty count is the more reliable signal of whether anything has actually changed.",
-      "image_credit": "Al Jazeera",
+      "moot": "Revenue growth doesn't automatically mean profit growth — when costs rise faster than sales, a company can post record revenue and still deliver a profit decline, which is exactly what makes reading past the headline number matter.",
+      "image_credit": "Free Press Journal",
       "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
         "outlets": [
-          "Al Jazeera"
+          "EquityBulls",
+          "Free Press Journal"
         ],
         "corroboration": 0
       },
-      "thread": {
-        "previously": "We reported that Israeli strikes had killed nine people in Gaza for a second straight day, with an Israeli minister publicly denying any deal was in place to stop the attacks, even as Hamas had reportedly agreed to disarm under a US-backed plan.",
-        "changed": "The death toll jumped sharply: at least **17 Palestinians were killed** on August 3, the worst single day in weeks, including a married couple in their 60s and a child, showing the 'no deal to stop attacks' stance from two days ago has held even as the wider disarmament plan is meant to be moving forward."
-      },
-      "concepts": [
-        "ceasefire_vs_truce",
-        "un_security_council"
+      "concepts": [],
+      "figures": [
+        {
+          "raw": "₹29,523.30 crore",
+          "words": "₹295.23 billion",
+          "usd_approx": "≈ $3.1bn"
+        },
+        {
+          "raw": "₹4,508.79 crore",
+          "words": "₹45.09 billion",
+          "usd_approx": "≈ $469mn"
+        },
+        {
+          "raw": "₹5,343.41 crore",
+          "words": "₹53.43 billion",
+          "usd_approx": "≈ $555mn"
+        },
+        {
+          "raw": "₹29,409.82 crore",
+          "words": "₹294.1 billion",
+          "usd_approx": "≈ $3.1bn"
+        }
       ],
-      "figures": [],
       "depth": {
-        "background": "In late July, US President **Donald Trump** announced Hamas had agreed to hand over its weapons as part of a broader plan to end the two-year Gaza war. That plan also calls for Israel to gradually **withdraw from Gaza** and transfer administrative power to a Palestinian authority — terms Israeli politicians and much of the Israeli press have received coolly. Two days ago we reported Israeli strikes had already killed nine people despite the supposed disarmament breakthrough, with a senior Israeli minister flatly denying any deal existed to stop the attacks. The gap between the diplomatic announcement in Washington and the reality on the ground in Gaza has only widened since.",
-        "why_it_matters": "The strikes are happening in the exact window when a US-announced disarmament and withdrawal plan is supposed to be taking effect, which raises real doubts about whether that plan is actually being implemented on the ground. For Gaza's roughly 2 million residents, each new day of strikes means more deaths and destroyed infrastructure — including medical supplies — regardless of what is being negotiated on paper elsewhere.",
-        "ripple_effects": "Continued Israeli strikes despite the announced Hamas disarmament could undermine the credibility of the US-brokered process and complicate any handover of power to a Palestinian administration. It also keeps pressure on the **Trump administration**, which has publicly framed the disarmament deal as a diplomatic win, to show Israel is actually easing off. Humanitarian groups warn destroyed medical infrastructure will worsen an already dire health crisis for Gaza's population.",
-        "why_now": "The strikes are surfacing today because they directly contradict the narrative of de-escalation that followed Hamas's reported agreement to disarm — the gap between announced diplomacy and battlefield reality is the story.",
-        "watch_next": "Watch for whether Israel begins any actual troop withdrawal or transfer of administrative control, the next concrete test of whether the disarmament plan is real.",
-        "market_link": "Continued Gaza escalation keeps Middle East geopolitical risk elevated, which tends to support oil prices and safe-haven assets like gold.",
+        "background": "ITC is one of India's largest conglomerates, built originally on cigarettes but now spanning hotels, packaged foods, paperboard/packaging, and agri-business — its cigarette division has historically been a cash-generating anchor that funds expansion into these other, lower-margin businesses. As a heavyweight Sensex and Nifty constituent, ITC's quarterly results are watched as a bellwether for consumer demand and cost pressures across India's FMCG (fast-moving consumer goods) sector. This quarter's numbers are also harder to compare cleanly with last year because ITC recently folded in its acquisition of Sproutlife Foods, and because global crude markets have been unusually volatile due to the West Asia conflict.",
+        "why_it_matters": "When a company's sales rise nearly 28% but profit falls 16%, it's a clear sign that **costs grew faster than revenue** — in this case linked to volatile global oil prices spilling into input costs. For a bellwether stock like ITC, that's a signal worth watching for whether cost pressure is company-specific or a broader problem for India's consumer-goods sector this earnings season.",
+        "ripple_effects": "A profit miss at a heavyweight index constituent can weigh on the FMCG segment of the Sensex/Nifty even while the broader market rallies on falling crude prices elsewhere (as it did earlier today on Iran-related news). Investors will be watching other consumer-goods results this week — Hindustan Unilever, Nestlé India, and others — to see whether ITC's margin squeeze is an isolated story or a sector-wide trend.",
+        "why_now": "This is ITC's scheduled quarterly earnings release, landing in the busiest stretch of India's Q1 FY27 corporate reporting season.",
+        "watch_next": "Whether other large consumer and FMCG companies reporting this week show the same cost-margin squeeze, which would confirm a sector-wide trend rather than a one-off for ITC.",
+        "market_link": "ITC is a heavyweight Sensex/Nifty constituent; a profit miss in its results could weigh on the FMCG basket even as the broader index rallies on falling crude prices.",
         "key_terms": [
           {
-            "term": "Disarmament plan",
-            "definition": "A US-drafted proposal under which Hamas would hand over its weapons in exchange for a phased Israeli withdrawal from Gaza and a transfer of power to a Palestinian administration."
-          },
-          {
-            "term": "Board of Peace",
-            "definition": "An international body set up to oversee and report on the Gaza peace process and humanitarian conditions."
+            "term": "consolidated profit",
+            "definition": "A company's total profit including all its subsidiaries and majority-owned businesses combined, not just the parent company alone."
           }
         ],
         "sources": [
           {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/2/israel-kills-five-in-gaza-despite-trumps-hamas-disarmament-plan"
+            "name": "Free Press Journal",
+            "url": "https://www.freepressjournal.in/business/itc-ltds-q1-fy27-consolidated-net-profit-declines-1561-to-450879-crore"
+          },
+          {
+            "name": "EquityBulls",
+            "url": "https://www.equitybulls.com/category.php?id=373779"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-02T12:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "The Statesman",
+      "importance": "high",
+      "regions": [
+        "India",
+        "Assam"
+      ],
+      "title": "Assam's flood death toll passes 80 as over 2 lakh people remain displaced",
+      "what_happened": "As of the latest official figures from Assam's Disaster Reporting and Information Management System, the flood death toll in the state has reached **80**, with **2,12,441 people** affected across **eight districts** — Golaghat, Sivasagar, Biswanath, Charaideo, Kamrup Metropolitan, Jorhat, Dhemaji and Nagaon. The flood emergency now covers **437 villages** across **21 revenue circles**, and floodwaters have submerged roughly **17,198 hectares** of agricultural land, wiping out standing crops in some of the state's most fertile farming belts. The Centre has sanctioned **₹379.35 crore** in disaster relief funds specifically for Assam, as part of a broader relief package that also allocated ₹500 crore each to Gujarat, Maharashtra and Odisha, ₹193.95 crore to Himachal Pradesh, and ₹44.55 crore to Arunachal Pradesh. Separately, **Gautam Adani** contributed ₹11 crore to the state's Chief Minister's Relief Fund. Rescue and relief operations remain active, with floodwaters receding in some areas but localized flooding and riverbank erosion persisting elsewhere.",
+      "key_points": [
+        "Assam's flood death toll has climbed to at least **80**, with more than **2.12 lakh people** (212,000) affected across **eight districts**.",
+        "The worst-hit districts include **Golaghat, Sivasagar, Jorhat, Dhemaji and Nagaon**, spanning **437 villages** in 21 revenue circles.",
+        "Nearly **17,200 hectares of cropland** are underwater, threatening farmers already squeezed by an uneven monsoon.",
+        "The central government has sanctioned **₹379.35 crore** in relief funds for Assam, part of a wider package that also covers Gujarat, Maharashtra, Odisha, Himachal Pradesh and Arunachal Pradesh.",
+        "Industrialist **Gautam Adani** donated **₹11 crore** to the Assam Chief Minister's Relief Fund as rescue and rehabilitation work continues."
+      ],
+      "moot": "Recurring seasonal disasters like Assam's floods rarely make it to the top of the news cycle the way a single dramatic event does, even when the death toll and displacement are larger — sustained, slow-moving crises compete poorly for attention against sudden ones.",
+      "image_credit": "The Statesman",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "ANI News",
+          "The Statesman"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "crore_lakh"
+      ],
+      "figures": [
+        {
+          "raw": "₹379.35 crore",
+          "words": "₹3.79 billion",
+          "usd_approx": "≈ $39mn"
+        },
+        {
+          "raw": "₹500 crore",
+          "words": "₹5 billion",
+          "usd_approx": "≈ $52mn"
+        },
+        {
+          "raw": "₹193.95 crore",
+          "words": "₹1.94 billion",
+          "usd_approx": "≈ $20mn"
+        },
+        {
+          "raw": "₹44.55 crore",
+          "words": "₹44.55 crore",
+          "usd_approx": "≈ $5mn"
+        }
+      ],
+      "depth": {
+        "background": "Assam sits on the floodplain of the **Brahmaputra river** and its tributaries, and severe monsoon flooding hits the state most years between June and September as the river swells with rainwater from Assam itself and upstream in the Himalayas. This year's floods have been unusually deadly and prolonged, coming on top of separate flood and landslide emergencies already hitting Kerala and Himachal Pradesh this monsoon season. Assam Chief Minister **Himanta Biswa Sarma** has been personally coordinating relief and rehabilitation operations, including door-to-door outreach by state ministers in the worst-affected districts.",
+        "why_it_matters": "Eighty deaths and over 200,000 displaced people is a large-scale humanitarian emergency happening largely outside the national spotlight, which has been dominated by Parliament's Monsoon Session and Kerala's separate landslide crisis. The crop damage also has knock-on effects for local food supply and farmer incomes in a state that's already among India's poorer regions.",
+        "ripple_effects": "Lost cropland means reduced local harvests and income for farmers already dealing with an uneven monsoon, which can push up local food prices and increase migration pressure toward Assam's cities. The scale of displacement also puts political pressure on both the state and central government to speed up relief disbursement and longer-term flood-control infrastructure.",
+        "why_now": "Assam's flood situation has been building since late July and the toll has continued climbing through the first days of August as relief agencies update casualty figures from newly reached areas.",
+        "watch_next": "Whether the death toll keeps rising as rescue teams reach cut-off villages, and whether fresh rainfall — as IMD alerts have warned for the wider region — worsens the situation again.",
+        "market_link": "Crop losses across Assam add to broader food-inflation worries the RBI is weighing at its rate-setting meeting this week.",
+        "key_terms": [
+          {
+            "term": "lakh",
+            "definition": "An Indian numbering unit equal to 100,000 — so \"2.12 lakh\" means 212,000."
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/assam-floods-2026-death-toll-hits-80-over-2-12-lakh-people-affected-in-eight-districts-1503622822.html"
+          },
+          {
+            "name": "ANI News",
+            "url": "https://www.aninews.in/news/national/general-news/monsoon-mayhem-across-india-assam-flood-toll-rises-to-82-kerala-reports-8-deaths-imd-warns-of-more-heavy-rain20260802220219/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-03T16:50:44+05:30",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "ANI",
@@ -919,10 +1071,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-03T17:00:00+05:30",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "ANI",
@@ -996,8 +1147,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T22:00:08+05:30",
@@ -1060,8 +1211,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T20:01:42+05:30",
@@ -1122,8 +1273,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T20:01:42+05:30",
@@ -1183,8 +1334,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-03T10:30:00+05:30",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -1259,8 +1410,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-08-03T03:25:00+05:30",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -1333,8 +1484,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-08-03T05:00:00Z",
       "added_at": "2026-08-03T16:03:49+05:30",
@@ -1397,8 +1548,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-08-03T08:00:00+05:30",
       "added_at": "2026-08-03T14:07:01+05:30",
@@ -1462,8 +1613,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": "2026-08-03T11:00:00+05:30",
       "added_at": "2026-08-03T12:10:52+05:30",
@@ -1533,8 +1684,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": "2026-08-03T06:00:00+05:30",
       "added_at": "2026-08-03T12:10:52+05:30",
@@ -1593,8 +1744,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-08-03T09:18:00+05:30",
       "added_at": "2026-08-03T09:57:24+05:30",
@@ -1669,8 +1820,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T08:00:49+05:30",
@@ -1726,8 +1877,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1800,74 +1951,131 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
-      "category": "india",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T05:59:33+05:30",
-      "source": "Business Standard",
-      "importance": "high",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-01T09:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "F1oversteer",
+      "importance": "notable",
       "regions": [
-        "India"
+        "Global"
       ],
-      "title": "RBI's rate-setting committee begins its 3-day meeting today, with markets betting on a hold at 5.25%",
-      "what_happened": "The RBI's Monetary Policy Committee began its three-day rate-setting meeting today, August 3, with Governor Sanjay Malhotra due to announce the decision on August 5. A Reuters survey of 72 economists found overwhelming consensus for a hold: 68 expect the repo rate to remain unchanged at **5.25%**, four expect a 25-basis-point hike, and none expect a cut. The committee is weighing elevated crude oil prices — worsened by the ongoing Strait of Hormuz shipping disruptions — and monsoon-driven food-price risk against recent strong growth data, with SBI Research raising its Q1 growth estimate to roughly 7% just a day before the meeting began.",
+      "title": "Esteban Ocon's Haas seat for 2027 is now a 'distant prospect' as his rookie teammate outpaces him",
+      "what_happened": "Esteban Ocon has scored just **3 points** through Haas's first 10 races of the 2026 season, trailing his rookie teammate Oliver Bearman, who has generally out-qualified him through the year. Haas holds a **team-controlled option** on Ocon's contract for 2027, meaning the decision to retain him rests with the team rather than the driver. A growing list of potential replacements is reportedly under consideration, including McLaren reserve driver Leonardo Fornaroli — regarded as a serious contender after impressing in recent testing — as well as Ferrari junior Rafael Camara, Toyota-backed Ryo Hirakawa, Yuki Tsunoda, and Haas reserve Jack Doohan. Ocon has said he has \"nothing to announce yet\" regarding his future, a statement made as speculation intensified heading into F1's summer break.",
       "key_points": [
-        "The RBI's **Monetary Policy Committee (MPC)** meets August 3–5; Governor **Sanjay Malhotra** announces the decision on August 5.",
-        "A Reuters poll of 72 economists found **68 expect the repo rate to stay at 5.25%**, only 4 expect a hike, none expect a cut.",
-        "The repo rate was last cut by **25 basis points to 5.25%** in December 2025.",
-        "The committee is balancing **rising inflation risk** from Gulf oil prices and an uneven monsoon against **strong growth** — SBI Research just raised its Q1 growth estimate to around 7%.",
-        "Expect the RBI to keep its policy stance **'neutral'** but strike a more hawkish tone in its commentary."
+        "**Esteban Ocon** has scored just **3 points** across Haas's first 10 races of 2026, sitting well behind rookie teammate **Oliver Bearman**.",
+        "Haas holds a **team-controlled option** on Ocon for **2027** — meaning the team, not Ocon, decides whether he stays.",
+        "A growing list of names — including **McLaren reserve Leonardo Fornaroli** and **Ferrari junior Rafael Camara** — are reportedly in the frame to replace him.",
+        "Ocon says he has **\"nothing to announce yet\"** about his future as speculation builds heading into the summer break.",
+        "It's part of a wider driver-market shuffle, with several 2027 seats — including Fernando Alonso's own — still unresolved."
       ],
-      "moot": "Central banks don't just react to inflation and growth numbers — they react to risk, so an oil-price shock happening on the other side of the world can shape an interest-rate decision that affects loan payments in India, even before it shows up in official inflation data.",
-      "image_credit": "Business Standard",
+      "moot": "A contract \"option\" is only as strong as the performance behind it — when results dip, an option that was meant to protect a driver's job security can just as easily become the team's exit ramp.",
+      "image_credit": "F1oversteer",
       "credibility": {
         "level": "developing",
-        "count": 1,
+        "count": 2,
         "tier": 2,
         "outlets": [
-          "Business Standard"
+          "F1oversteer",
+          "Motorsport.com"
         ],
         "corroboration": 0
       },
-      "concepts": [
-        "rbi",
-        "repo_rate",
-        "monetary_policy_committee",
-        "cpi_wpi"
-      ],
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "India's central bank, the **Reserve Bank of India (RBI)**, sets the country's benchmark interest rate — the **repo rate**, the rate at which it lends to commercial banks — through a six-member Monetary Policy Committee that meets roughly every two months. The RBI's job is to balance keeping inflation in check with supporting economic growth; it cut rates in December 2025 to help growth, and has held steady since. This meeting lands at an unusually complicated moment: the Strait of Hormuz crisis (see our linked story) has kept crude oil prices elevated for months, directly feeding into India's import bill and inflation, while heavy monsoon flooding in Assam, Kerala, and Gujarat adds further uncertainty to food prices and growth.",
-        "why_it_matters": "The repo rate influences borrowing costs across the Indian economy — from home loans and business credit to how much the government pays to borrow — so the RBI's decision affects millions of Indians with loans or savings tied to bank interest rates. A hawkish tone alongside a hold would signal the RBI sees inflation risk as serious enough to keep future rate cuts off the table for now.",
-        "ripple_effects": "If the RBI holds as expected but flags inflation risk from oil prices, banks are likely to keep loan and deposit rates roughly steady in the near term, and equity markets may react more to the tone of the accompanying statement than to the decision itself. A resolution of the Strait of Hormuz crisis (see our linked global story) would ease the oil-price pressure that is the biggest swing factor in this decision.",
-        "why_now": "The MPC meets on a fixed roughly-bi-monthly schedule, and this cycle happens to fall right as global oil-price risk from the Hormuz crisis and domestic monsoon flooding are both peaking, making this a more closely watched meeting than usual.",
-        "watch_next": "Watch for Governor Malhotra's policy statement on August 5, especially any change in language around inflation risk and the outlook for future rate moves.",
-        "market_link": "A hold at 5.25% is largely priced in; a hawkish tone could weigh on rate-sensitive sectors like banking, real estate, and autos, while a surprise hike would be more clearly negative for equities and bond prices.",
+        "background": "Ocon joined Haas for the 2026 season after a difficult, publicly strained exit from Alpine, where he'd raced since 2020. Haas operates on one of the smaller budgets on the grid, making consistent point-scoring especially important for a driver's leverage in contract talks. His teammate, Oliver Bearman, is a rookie promoted through Ferrari's junior program and has generally been quicker across qualifying sessions this season, a gap that reflects poorly on Ocon given his far greater experience.",
+        "why_it_matters": "An underperforming season is turning what should be a routine contract renewal into leverage the team can use against the driver — a reminder that in F1, a driver's on-track results directly determine their negotiating power, regardless of experience or reputation.",
+        "ripple_effects": "If Ocon loses his seat, it opens another entry point in an already crowded 2027 driver market, competing for attention with bigger storylines like Alonso's retirement decision and Sainz's future — all feeding into a broader reshuffle across multiple teams.",
+        "why_now": "The story is surfacing heading into F1's summer break, the same natural pause point when several other driver-future stories (Alonso, Sainz) are also coming to a head.",
+        "watch_next": "Whether Haas exercises or drops its 2027 option on Ocon, likely to become clearer once racing resumes at the Dutch Grand Prix in late August.",
+        "market_link": null,
         "key_terms": [
           {
-            "term": "Repo rate",
-            "definition": "The interest rate at which the RBI lends money to commercial banks — the RBI's main tool for controlling how expensive or cheap borrowing is across the economy."
-          },
-          {
-            "term": "Monetary Policy Committee (MPC)",
-            "definition": "The six-member RBI committee that meets periodically to set India's benchmark interest rate."
+            "term": "team option",
+            "definition": "A contract clause giving the team, rather than the driver, the right to decide whether to extend the deal for another season."
           }
         ],
         "sources": [
           {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/rbi-likely-to-keep-rates-unchanged-in-august-as-inflation-risks-persist-126080200286_1.html"
+            "name": "F1oversteer",
+            "url": "https://www.f1oversteer.com/news/esteban-ocon-earning-a-new-haas-contract-now-a-distant-prospect-if-ollie-bearman-beats-him-in-2026/"
+          },
+          {
+            "name": "Motorsport.com",
+            "url": "https://www.motorsport.com/f1/news/esteban-ocon-nothing-to-announce-on-f1-future-amid-tough-2026/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-08-02T12:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "Motorsport Week",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Fernando Alonso's F1 retirement call is coming — he says he'll decide this summer break",
+      "what_happened": "Fernando Alonso has said he intends to make a decision about his Formula 1 future during the sport's two-week **summer shutdown**, which began July 31, with a call expected around **mid-August** — before the season resumes at the Dutch Grand Prix on August 21-23. Alonso's current Aston Martin contract runs through the end of **2026**, by which point he will be 45. He has said the team's forthcoming car upgrades are \"not really connected\" to his decision, implying the choice hinges more on his own appetite to keep racing than on the car's competitiveness. Sky Sports F1 pit-lane reporter Ted Kravitz has predicted Alonso will retire at season's end, framing it as a desire to pursue other pursuits rather than dissatisfaction with results. Alonso himself has given conflicting signals in recent months, at times suggesting he isn't ready to stop and hopes to race on beyond this year.",
+      "key_points": [
+        "**Fernando Alonso**, F1's two-time world champion, says he will decide on his racing future during the sport's mandatory **summer break**, with a call expected around **mid-August**.",
+        "Alonso is contracted to **Aston Martin through the end of 2026**, when he will be **45 years old**.",
+        "He insists Aston Martin's upcoming car upgrade package is **\"not really connected\"** to his decision — suggesting motivation, not results, is the deciding factor.",
+        "Sky Sports pit-lane reporter **Ted Kravitz** predicts Alonso will retire at season's end, saying it's about wanting to do \"other stuff,\" not frustration with the car.",
+        "Alonso has sent mixed signals himself, at other times saying he isn't ready to walk away and hopes to keep racing beyond 2026."
+      ],
+      "moot": "In sport, career-ending decisions at the highest level often hinge as much on a competitor's own motivation and appetite as on how competitive their equipment still is.",
+      "image_credit": "Motorsport Week",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "GPFans",
+          "Motorsport Week"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Alonso made his F1 debut in **2001** and won back-to-back world titles in **2005 and 2006**, making him one of the sport's most decorated active drivers. He has raced on and off at the sport's front and back of the grid for over two decades, including a mid-career detour into other racing series before returning to F1. His current team, Aston Martin, has been investing heavily to build a championship-capable car, and design chief Adrian Newey has been working on future models — all while Aston Martin is simultaneously reported to be chasing other drivers, including Williams's Carlos Sainz, adding extra intrigue to what Alonso decides.",
+        "why_it_matters": "Alonso's decision will shape Aston Martin's driver lineup and broader strategy for 2027, at a moment when the team is also reportedly pursuing other established drivers — meaning his choice has ripple effects well beyond his own seat.",
+        "ripple_effects": "If Alonso retires, it opens a seat at a team investing heavily in future competitiveness, likely accelerating any move for a driver like Carlos Sainz and reshuffling several other contracts down the grid as teams react. It would also mark the end of an era for one of the sport's last remaining early-2000s-era champions still racing.",
+        "why_now": "F1's mandatory summer factory shutdown is the natural pause point Alonso has set for making — and likely announcing — this decision.",
+        "watch_next": "A formal announcement from Alonso or Aston Martin around mid-August, before the season resumes at Zandvoort.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "F1 summer break",
+            "definition": "A mandatory two-week shutdown when every F1 team must stop all car development work, giving staff and drivers a fixed off-season-style break mid-season."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Motorsport Week",
+            "url": "https://www.motorsportweek.com/2026/04/29/fernando-alonso-drops-strongest-retirement-hint-yet-amid-aston-martin-struggles/"
+          },
+          {
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088382/fernando-alonso-f1-retirement-2026-aston-martin-ted-kravitz-sky-sports/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-08-03T07:00:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "Motorsport Week",
@@ -1929,10 +2137,9 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-03T10:30:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "Motorsport.com",
@@ -1994,8 +2201,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T22:00:08+05:30",
@@ -2043,8 +2250,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T22:00:08+05:30",
@@ -2098,8 +2305,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -2162,8 +2369,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -2234,114 +2441,66 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-08-01T00:00:00Z",
-      "added_at": "2026-08-03T16:03:49+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Formula 1"
-      ],
-      "title": "Carlos Sainz reveals he wants to race at Le Mans once his Formula 1 career ends",
-      "what_happened": "Speaking about life after Formula 1, Sainz said racing in the Hypercar class at Le Mans remains a major ambition, while also mentioning the idea of a lower-pressure GT3 campaign with friends. He explained he wants to eventually 'enjoy motorsport from a different position' than the one he's in today, where he carries the responsibility and pressure of delivering results for a team, versus racing purely 'for enjoyment,' which he called 'the coolest sport to do.'",
-      "key_points": [
-        "Sainz says competing in the **24 Hours of Le Mans'** top **Hypercar class** is a major post-F1 ambition",
-        "He's also floated a **GT3 campaign with friends**, done for enjoyment rather than results",
-        "He joins **Fernando Alonso and Max Verstappen** in openly eyeing endurance racing after F1",
-        "The 31-year-old says future racing would be about **enjoyment**, without today's team pressure and expectations"
-      ],
-      "moot": "Top athletes increasingly treat the end of their primary career as a transition rather than a finish line — planning a lower-pressure 'second act' in the same sport, done for its own sake rather than for results.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Le Mans is endurance racing's most famous event, a 24-hour test of speed and reliability that has increasingly attracted current and former Formula 1 drivers once their single-seater careers wind down. Verstappen has already made high-profile endurance-racing appearances, including at the Nürburgring, and Alonso has long spoken about a Le Mans return, making this a growing trend among F1's biggest names rather than an isolated case.",
-        "why_it_matters": "It reflects a broader shift where top F1 drivers increasingly plan a second motorsport chapter rather than retiring outright, which keeps big names — and F1-level star power — visible in other categories like endurance racing.",
-        "ripple_effects": "Manufacturers running Hypercar or GT3 programs (Ferrari, Toyota, and others) may factor Sainz's interest into future driver-signing plans, and it raises the profile of endurance racing among fans who follow F1 stars.",
-        "why_now": "The comments came during summer-break interviews and podcast appearances, when drivers have more time to discuss career plans beyond the current season.",
-        "watch_next": "Whether a manufacturer's endurance program moves to sign Sainz once his current Formula 1 contract situation is resolved.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Hypercar class",
-            "definition": "The top prototype category at Le Mans and the World Endurance Championship, currently the sport's most prestigious class below Formula 1."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/carlos-sainz-reveals-le-mans-ambition-for-life-after-f1/10843535/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-01T00:00:00Z",
-      "added_at": "2026-08-03T16:03:49+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Formula 1",
-        "United Kingdom"
-      ],
-      "title": "Carlos Sainz and Alex Albon concede Williams won't hit its 2026 targets despite a recovery plan",
-      "what_happened": "Speaking on Williams' own **Team Torque** podcast, Sainz and Albon gave a sober midseason assessment: the team is making progress behind the scenes, but neither expects a dramatic turnaround once racing resumes at Zandvoort later this month. Sainz was blunt that Williams 'shouldn't expect to suddenly be at the level we want to be' in the second half of the year. With just 11 points and ninth place in the standings at the summer break, the team's priority has shifted from chasing 2026 targets to making sure this season's struggles don't become a recurring pattern into 2027 and beyond.",
-      "key_points": [
-        "Williams sits **ninth in the Constructors' Championship** with just **11 points** heading into the summer break",
-        "Drivers **Sainz and Albon** admit the team won't reach its 2026 ambitions in the second half of the season",
-        "Sweeping **new 2026 technical regulations** exposed weaknesses that a promising 2025 had papered over",
-        "The team is now focused on **not letting the slump become permanent** rather than an in-season turnaround"
-      ],
-      "moot": "In sports governed by periodic rule resets, a strong prior season can mask underlying weaknesses that resurface the moment the rules change — real competitiveness is tested across regulation eras, not within one.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Williams, one of Formula 1's most storied constructors, had been on a genuine upward curve under team principal James Vowles, capped by a strong 2025 season that raised hopes of a real title challenge. Formula 1 reset its technical rulebook for 2026 — new power units and chassis regulations — which shuffles the competitive order and can undo a team's hard-won progress overnight if its car concept doesn't suit the new rules.",
-        "why_it_matters": "It's a signal of which teams have genuinely adapted to F1's new rules and which haven't — Williams' 2025 promise made it a team many expected to kick on, and this admission tempers those expectations heading into the second half of the season.",
-        "ripple_effects": "A prolonged slump could reignite driver-market speculation around Sainz's future and dent sponsor and investor confidence in Williams' rebuild; it also affects the competitive picture other midfield teams are measuring themselves against.",
-        "why_now": "The comments came as the team reflects at F1's mandatory summer shutdown, a natural checkpoint before racing resumes.",
-        "watch_next": "Whether Williams shows any tangible improvement when the season restarts at the Dutch Grand Prix in Zandvoort later in August.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/carlos-sainz-and-alex-albon-admit-williams-is-unlikely-to-meet-2026-targets-despite-recovery-plan/10843517/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
       "is_new": true,
+      "published_iso": "2026-08-01T05:00:00+00:00",
+      "added_at": "2026-08-04T02:02:24+05:30",
+      "source": "BSS News",
+      "importance": "notable",
+      "regions": [
+        "Bangladesh",
+        "Australia"
+      ],
+      "title": "Bangladesh's first Test tour of Australia in 23 years begins — without its fastest bowler",
+      "what_happened": "Bangladesh's Test squad departed for Australia on **August 1, 2026**, beginning what is the team's first Test tour of the country in **23 years**. The tour will not feature strike pacer **Nahid Rana**, who suffered a **Grade 2 side strain** during Bangladesh's second T20I against Zimbabwe on July 17 and has been ruled out of the entire two-match series. Wicketkeeper-batter **Liton Das** will also miss the opening Test, though he's expected to recover in time for the second. Uncapped quick **Musfik Hasan** has been named in the squad as cover. The tour schedule opens with a three-day warm-up match against a Cricket Australia XI at Darwin's DXC Arena from August 6-8, followed by the first Test in Darwin from August 13 and the second, and final, Test in Mackay from August 22.",
+      "key_points": [
+        "Bangladesh departed for Australia on **August 1**, starting its **first Test tour of Australia in 23 years**.",
+        "Strike pacer **Nahid Rana** is ruled out of the **entire two-Test series** with a Grade 2 side strain suffered against Zimbabwe.",
+        "Wicketkeeper-batter **Liton Das** will miss the **first Test** but is expected to be fit for the second.",
+        "The tour opens with a **three-day warm-up match** in Darwin (Aug 6-8), before the **first Test in Darwin from August 13** and the second in **Mackay from August 22**.",
+        "Uncapped fast bowler **Musfik Hasan** has been added to the squad in Rana's absence."
+      ],
+      "moot": "A team's biggest test often arrives right when it's missing its most important player — depth in a squad matters as much as the star performers at the top of it.",
+      "image_credit": "BSS News",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "BSS News",
+          "India TV News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Bangladesh has toured Australia for Test cricket only rarely, and this trip marks the team's **first Test tour there in 23 years** — a landmark for a side still building credibility in the format's toughest conditions. Australian pitches, with their extra pace and bounce, are traditionally the hardest challenge for subcontinent teams, making a fit, in-form fast-bowling attack especially important. Nahid Rana, Bangladesh's quickest bowler, sustained his injury during the second T20I against Zimbabwe on **July 17**, and the Bangladesh Cricket Board (BCB) confirmed on **July 25** that he would miss the tour entirely.",
+        "why_it_matters": "A historic first tour in over two decades is a meaningful test of how far Bangladesh's Test team has progressed, but losing its best fast bowler before a ball is bowled significantly weakens its chances against Australia's traditionally pace-heavy home conditions.",
+        "ripple_effects": "Bangladesh will likely lean more heavily on its remaining seam and swing bowlers, and results here could shape selection and confidence heading into the team's next assignments in the World Test Championship cycle.",
+        "why_now": "The squad's departure and tour schedule are unfolding this week, with the warm-up match starting within days.",
+        "watch_next": "How Bangladesh's depleted pace attack performs in the Darwin warm-up match ahead of the first Test on August 13.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "BSS News",
+            "url": "https://www.bssnews.net/sports/409122"
+          },
+          {
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/sports/cricket/star-bangladesh-pacer-ruled-out-of-test-series-vs-australia-bcb-statement-confirms-2026-07-25-1049420"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
       "published_iso": "2026-08-03T02:00:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "ICC",
@@ -2404,10 +2563,9 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-03T04:30:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
       "source": "ESPNcricinfo",
@@ -2469,8 +2627,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2534,8 +2692,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2597,8 +2755,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -2665,8 +2823,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -2737,8 +2895,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-08-02T00:00:00Z",
       "added_at": "2026-08-03T16:03:49+05:30",
@@ -2786,64 +2944,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
-      "category": "cricket",
-      "published_iso": "2026-08-02T00:00:00Z",
-      "added_at": "2026-08-03T14:07:01+05:30",
-      "source": "Daily Excelsior",
-      "importance": "notable",
-      "regions": [
-        "India",
-        "Sri Lanka"
-      ],
-      "title": "India shakes up its coaching staff for the Sri Lanka Tests, naming a new fielding coach and losing an assistant to the IPL",
-      "what_happened": "The BCCI announced on Monday that **Subhadeep Ghosh**, a 57-year-old former Assam and Railways cricketer from Digboi, has been appointed India men's new fielding coach, replacing **T Dilip**, ahead of the upcoming two-Test tour of Sri Lanka. Ghosh previously spent two years coaching the **India women's team**, and was part of the support staff during the **2022 Women's ODI World Cup** and the **2023 Women's T20 World Cup**. As a player, he represented Assam and Railways in 17 first-class and 17 List A matches. Separately, assistant coach **Ryan ten Doeschate** has left the India setup to join the **Kolkata Knight Riders** as Head of Cricket Strategy, an IPL role.",
-      "key_points": [
-        "BCCI appointed **Subhadeep Ghosh** as India men's new fielding coach ahead of the Sri Lanka Tests.",
-        "Ghosh, 57, from **Assam**, replaces **T Dilip** in the role.",
-        "He previously coached the **India women's team** for two years, including at two World Cups.",
-        "Assistant coach **Ryan ten Doeschate** has left to join **Kolkata Knight Riders** as Head of Cricket Strategy.",
-        "The changes land just before India's **two-Test series in Sri Lanka**, starting August 15 in Galle."
-      ],
-      "moot": "Behind every playing XI is a coaching staff whose changes rarely make headlines but can matter just as much — continuity and specialist expertise in areas like fielding compound over a long tour.",
-      "image_credit": "Daily Excelsior",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Daily Excelsior",
-          "Sentinel Assam"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "India's tour of Sri Lanka is an important early assignment for **Shubman Gill's** side in the current World Test Championship cycle, and it comes as the team is already dealing with a personnel setback — pace spearhead Jasprit Bumrah was ruled out of the series with a knee injury. Coaching staff changes like this one are less visible than playing XI news but shape how the team prepares and performs, and India's franchise T20 league, the IPL, regularly recruits national-team support staff — as it has here with ten Doeschate.",
-        "why_it_matters": "Fielding standards and support-staff continuity directly affect on-field results, and this reshuffle happens right before a significant overseas Test series where India is already missing its premier fast bowler — making the new coaching team's first assignment a high-stakes one.",
-        "ripple_effects": "Ghosh's appointment also signals a pathway from the women's team setup into the men's senior team's coaching staff, while ten Doeschate's move to KKR is another example of IPL franchises drawing experienced staff away from national team roles.",
-        "why_now": "The appointment comes just ahead of the squad's departure for Sri Lanka, timed to have the new fielding coach in place before the series begins on August 15.",
-        "watch_next": "How the new-look coaching staff performs when the two-Test series against Sri Lanka begins in Galle on August 15.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Daily Excelsior",
-            "url": "https://www.dailyexcelsior.com/assams-subhadeep-ghosh-appointed-indias-new-fielding-coach/"
-          },
-          {
-            "name": "Sentinel Assam",
-            "url": "https://www.sentinelassam.com/sports-news/oil-towns-pride-reaches-team-india-digbois-subhadeep-appointed-national-fielding-coach"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "published_iso": "2026-08-02T14:00:00-04:00",
       "added_at": "2026-08-03T09:57:24+05:30",
@@ -2899,8 +3001,8 @@
     },
     {
       "type": "story",
-      "id": "story-51",
-      "rank": 51,
+      "id": "story-52",
+      "rank": 52,
       "category": "cricket",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-03T08:00:49+05:30",
@@ -2954,8 +3056,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3018,157 +3120,32 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-57",
-      "rank": 57,
-      "category": "cricket",
-      "published_iso": "2026-08-02T14:00:00+01:00",
-      "added_at": "2026-08-03T02:02:35+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "United Kingdom"
-      ],
-      "title": "Sophie Ecclestone rips through MI London's top order as Manchester Super Giants Women keep winless MI London bottom of The Hundred",
-      "what_happened": "At **The Oval** in London, MI London Women won the toss, chose to bat, and collapsed to just **92 all out**, playing without regular player Danni Wyatt-Hodge. **Sophie Ecclestone**, bowling the opening spell of the innings for the first time this season, struck twice early — dismissing both Alice Davidson-Richards and Hayley Matthews — to leave MI London reeling at 1 for 2, before finishing a tight spell conceding just **7 runs off 20 balls**. In reply, **Manchester Super Giants Women** chased the target down comfortably, reaching **95/4** with 28 balls remaining to win by **6 wickets**. Ecclestone was named Player of the Match for her spell.",
-      "key_points": [
-        "**Manchester Super Giants Women** beat **MI London Women** by **6 wickets**, with 28 balls to spare, at The Oval.",
-        "England spinner **Sophie Ecclestone**, opening the bowling for the first time this season, took out both openers cheaply and was named **Player of the Match**.",
-        "MI London were bowled out for just **92**, having also been without star player **Danni Wyatt-Hodge**.",
-        "Manchester chased the target down comfortably, reaching **95/4**.",
-        "The result leaves **MI London still winless** and rooted to the **bottom of the table** in this year's Hundred Women's Competition."
-      ],
-      "moot": "In short-format cricket, one devastating opening spell can decide a match before it's even a third of the way through — early wickets compound fast because there are so few balls left to recover.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "CricketWorld",
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred is England's 100-ball cricket franchise competition, running men's and women's tournaments in parallel each summer since 2021, and has become a key summer showcase for both international and domestic women's talent. **Sophie Ecclestone** is one of the world's best left-arm spin bowlers and a regular fixture for England, making her performances a headline draw whenever she plays. MI London have struggled all season and came into this match already at the bottom of the points table, still searching for their first win.",
-        "why_it_matters": "The win boosts Manchester Super Giants' net run rate and playoff positioning, while MI London's continued winless run leaves them facing an increasingly difficult path back into contention this season.",
-        "ripple_effects": "MI London will likely make squad or tactical changes ahead of their remaining fixtures to try to arrest the slide, while Manchester's bowling depth — now spearheaded by an in-form Ecclestone — makes them a tougher out for the rest of the competition.",
-        "why_now": "The match was played and completed today as part of the ongoing 2026 Hundred Women's Competition season, which runs until mid-August.",
-        "watch_next": "Watch MI London's next fixture for signs of a lineup change as they continue searching for their first win of the season.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "The Hundred",
-            "definition": "A shortened cricket format where each team bats for 100 balls instead of the usual 120 (20 six-ball overs), designed to be quicker and more TV-friendly."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/series/the-hundred-women-s-competition-2026-1521193/mi-london-women-vs-manchester-super-giants-women-18th-match-1521214/match-report"
-          },
-          {
-            "name": "CricketWorld",
-            "url": "https://www.cricketworld.com/manchester-super-giants-women-beat-mi-london-by-six-wickets-in-the-hundred-live-streaming-match-report/112347.htm"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-60",
-      "rank": 60,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Babar Azam — not Shan Masood — leads Pakistan into today's must-win second Test as Shafique and Shakeel fight for a spot",
-        "date": null
-      },
-      "published_iso": "2026-08-02T10:00:00-04:00",
-      "added_at": "2026-08-02T19:58:44+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "Caribbean",
-        "Pakistan"
-      ],
-      "title": "West Indies win the toss and bat first in the series-deciding 2nd Test against Pakistan",
-      "what_happened": "At the toss for the second and final Test in Port of Spain, Pakistan's Babar Azam lost the call and West Indies opted to **bat first** — a decision that puts early pressure on Pakistan's bowling attack, led by Mohammad Ali and Sajid Khan, against a home side already 1-0 up. Pakistan's batting order shows Azan Awais opening alongside Imam-ul-Haq, with Abdullah Shafique also in the XI, reflecting the uncertainty in Pakistan's top order after the first-Test loss. West Indies field their settled top order of Tagenarine Chanderpaul, Brandon King, and Kavem Hodge in front of captain Roston Chase.",
-      "key_points": [
-        "West Indies won the toss and **chose to bat first** at Queen's Park Oval, Port of Spain.",
-        "West Indies lead the two-match series **1-0** after winning the first Test by **90 runs**.",
-        "Pakistan, missing usual captain Shan Masood from the leadership role, are led by **Babar Azam** for this series decider.",
-        "Pakistan's XI includes **Azan Awais** and **Abdullah Shafique** both in the top order as the batting group is reshuffled.",
-        "A West Indies win completes a **series sweep**; Pakistan must win outright to level it."
-      ],
-      "moot": "In multi-match series, losing the opening game doesn't just cost points — it can cost the losing captain their job for the very next match, since selectors often read a defeat as a referendum on leadership, not just form.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported Pakistan, trailing 0-1 in the series, had handed the captaincy to Babar Azam instead of Shan Masood for this must-win Test, with Abdullah Shafique and Kamran Shakeel competing for the final specialist-batting spot.",
-        "changed": "Play has now started: West Indies won the toss and chose to bat first, meaning Pakistan must bowl first in the match they need to win to level the series, and the confirmed XI shows both Azan Awais and Abdullah Shafique in the top order."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Pakistan arrived in the Caribbean already under pressure, having lost the first Test of this two-match series by **90 runs** on July 25 — a defeat built on a five-wicket haul from West Indies quick **Jayden Seales** and a lone fighting fifty from Babar Azam that wasn't enough. That defeat saw the captaincy handed to **Babar Azam** instead of Shan Masood for this decider. West Indies, under **Roston Chase**, sense a rare chance to complete a clean sweep of Pakistan at home.",
-        "why_it_matters": "This is a **series decider**: lose it, and Pakistan suffer a Test series defeat in the Caribbean; win it, and West Indies complete a rare clean sweep over a major touring side. For Babar Azam, leading the side in place of Masood, the result will shape the conversation about Pakistan's Test captaincy going forward.",
-        "ripple_effects": "A West Indies win would be a significant confidence boost for a side that has struggled for consistency in Test cricket in recent years, and would sharpen scrutiny on Pakistan's batting depth and captaincy choices ahead of their next assignments. A Pakistan win would keep the series alive and validate the Babar-over-Masood captaincy call.",
-        "why_now": "This is simply the start of play in the day-by-day Test, following directly from the first Test's result on July 25.",
-        "watch_next": "Watch how West Indies' innings unfolds on Day 1 — a big total puts Pakistan under serious pressure to save the series.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "toss",
-            "definition": "A coin flip before a cricket match where the winning captain decides whether their team bats or bowls first — a decision that can shape the whole match depending on pitch and weather conditions."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-2nd-test-1538631/live-cricket-score"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 135
+      "older_count": 136
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 138
+      "older_count": 137
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 92
+      "older_count": 90
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 87
+      "older_count": 90
     },
     {
       "type": "outro",
