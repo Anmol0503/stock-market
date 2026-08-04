@@ -1,6 +1,6 @@
 {
   "month": "2026-08",
-  "count": 192,
+  "count": 197,
   "stories": [
     {
       "type": "story",
@@ -275,6 +275,35 @@
     },
     {
       "type": "story",
+      "title": "The largest cyclospora outbreak on record just claimed its first two US deaths, in Michigan",
+      "category": "health",
+      "published_iso": "2026-08-03T15:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "NPR",
+      "what_happened": "Michigan health officials announced on **Monday, August 3** that two people died after becoming ill with cyclosporiasis, marking the **first US deaths** confirmed in this year's outbreak; officials said both had serious pre-existing health conditions that dehydration from the illness likely worsened. The CDC says it has received **6,707 laboratory-confirmed, domestically acquired cases** since May 1, with more than **11,500 additional cases** reported but not yet confirmed — spread across **45 states**. Michigan has been hit hardest, logging **11,234 cases and 193 hospitalizations**; Ohio has reported over 4,000 cases and Indiana nearly 1,349. A related but separate cluster tied to **recalled Taylor Farms iceberg lettuce**, pulled from shelves in mid-July after being traced to a Mexican grower, has sickened at least **1,947 people** with **98 hospitalizations**, including illnesses linked to bagged salads and fast-food chains like Taco Bell.",
+      "key_points": [
+        "Michigan confirmed the **first two US deaths** tied to this year's cyclospora outbreak, both patients with **significant underlying health conditions**.",
+        "The CDC has logged **6,707 confirmed cases** since May 1, plus over **11,500 more** still unconfirmed or under investigation — already the **largest cyclosporiasis outbreak on record**.",
+        "Cases have turned up in **45 US states**, with Michigan alone reporting **11,234 cases and 193 hospitalizations**.",
+        "A separate, related outbreak tied to **recalled iceberg lettuce** from a Taylor Farms supplier in Mexico has sickened at least **1,947 people**, including cases served at **Taco Bell**.",
+        "Cyclospora is a **microscopic parasite** spread through contaminated produce and water — not through person-to-person contact."
+      ],
+      "depth": {
+        "background": "**Cyclosporiasis** is an intestinal infection caused by the parasite *Cyclospora cayetanensis*, typically picked up from fresh produce — herbs, berries and leafy greens are common culprits — that was grown, washed, or handled with contaminated water. US cases normally ramp up every summer as imported fresh produce increases, but usually stay under **4,000 cases a year**; this year's case count has already blown past that. In mid-July, **Taylor Farms recalled iceberg lettuce** sourced from central Mexico after it was linked to illnesses, but health officials say that recall doesn't account for the full scope of this year's much larger, multi-state outbreak.",
+        "sources": [
+          {
+            "name": "NPR",
+            "url": "https://www.npr.org/2026/08/03/g-s1-137048/michigan-cyclosporiasis-deaths-cyclospora-outbreak"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/03/cyclospora-outbreak-first-two-deaths-reported-in-michigan.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
       "title": "A Kuki-Zo civil body gives Manipur's government 48 hours before threatening a total shutdown",
       "category": "india",
       "published_iso": "2026-08-03T15:00:00+05:30",
@@ -319,6 +348,35 @@
           {
             "name": "ESPNcricinfo",
             "url": "https://www.espncricinfo.com/story/duleep-trophy-2026-27-tilak-varma-to-lead-south-zone-ricky-bhui-named-vice-captain-1548492"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "IBM says it has finally proven 'quantum advantage' — and is daring rivals to disprove it",
+      "category": "technology",
+      "published_iso": "2026-08-03T13:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "Dataconomy",
+      "what_happened": "IBM, working with the **University of Chicago**, **RIKEN** in Japan, and quantum-software firms **Qedma, BlueQubit and Algorithmiq**, published three papers this week describing experiments it says clear the bar for genuine **'quantum advantage'** — the point where a quantum computer is confirmed to outperform classical computers on a trusted, checkable task. In the headline experiment, IBM's hardware completed a calculation in **about 15 minutes** using **70 error-corrected logical qubits**, executing **2,415 logical two-qubit operations**, at an error rate roughly **ten times lower** than the raw physical hardware — a result IBM says no classical simulation method could reproduce in a practical timeframe. In a second experiment, IBM combined a **77-qubit Heron chip** with **all 152,064 nodes of Japan's Fugaku supercomputer** to calculate the electronic structure of iron-sulfur clusters, a notoriously hard materials-chemistry problem, working alongside the Cleveland Clinic on a related 300-atom molecular simulation. IBM has submitted every circuit and result to a public tracker so outside scientists can attempt to beat the quantum result classically — a direct invitation to have the claim stress-tested rather than taken on faith.",
+      "key_points": [
+        "IBM and the **University of Chicago** ran a computation on a quantum computer in about **15 minutes** that would take leading classical supercomputers **prohibitively long** to match.",
+        "The team encoded **70 logical qubits** using a new error-correction method — one of the **largest logical-qubit demonstrations** ever run.",
+        "A separate IBM experiment paired a **77-qubit Heron processor** with Japan's **Fugaku supercomputer** (all 152,064 of its nodes) to model a hard materials-science problem.",
+        "Unlike past 'quantum supremacy' claims, IBM has published the full circuits and **invited outside researchers to try to refute the results**.",
+        "IBM still says a **large-scale, fully fault-tolerant** quantum computer — one that could break real-world encryption — is not expected until **2029**."
+      ],
+      "depth": {
+        "background": "For over a decade, quantum computers have been a research curiosity: physically real, but not yet able to beat an ordinary supercomputer at anything useful, because quantum bits ('qubits') are extremely error-prone and lose their state (\"decohere\") almost instantly. Google and others have previously claimed narrow, lab-only 'quantum supremacy' wins on contrived math problems with little practical value, and those claims were sometimes later matched by improved classical algorithms. IBM's new claim is different in kind: it says the results are on a **useful, verifiable** class of problem, backed by a public 'Quantum Advantage Tracker' where any team can try to reproduce the result classically and prove IBM wrong.",
+        "sources": [
+          {
+            "name": "Dataconomy",
+            "url": "https://dataconomy.com/2026/08/03/ibm-reaches-verified-quantum-advantage-milestone/"
+          },
+          {
+            "name": "University of Chicago News",
+            "url": "https://news.uchicago.edu/story/ibm-uchicago-demonstrate-quantum-advantage-outperforming-traditional-computers-quantum"
           }
         ]
       }
@@ -528,6 +586,44 @@
     },
     {
       "type": "story",
+      "title": "Sensex and Nifty close up for a 4th straight session as falling crude oil keeps lifting Indian markets",
+      "category": "india",
+      "published_iso": "2026-08-03T10:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "Business Standard",
+      "what_happened": "India's benchmark stock indices extended their rally through the close of trading on **Monday, August 3**: the **Sensex ended up 544.39 points (0.7%) at 78,639.03**, and the **Nifty 50 climbed 390.70 points (1.60%) to close at 24,774.30**, giving both indices their **fourth consecutive day of gains**. The rally moderated somewhat from the morning's sharper 788-point Sensex jump, but held up through the session on continued **crude oil price weakness**. **IT stocks led the advance**, with the sector index up more than 3% on the day, while investors also positioned ahead of the **RBI's rate decision**, due Wednesday, August 5, where a Reuters poll of 72 economists found 68 expect the repo rate to stay unchanged at **5.25%**.",
+      "key_points": [
+        "The **Sensex closed up 544.39 points (0.7%)** at **78,639.03**; the **Nifty 50 gained 390.70 points (1.60%)** to close at **24,774.30**.",
+        "It's the **4th straight winning session** for both benchmark indices.",
+        "**Falling crude oil prices** remained the single biggest driver, since India imports over 80% of its oil.",
+        "The **IT sector led gains**, with the Nifty IT index up over **3%** on the day.",
+        "Markets are now positioning ahead of the **RBI's rate decision on August 5**, where most economists expect the repo rate to stay unchanged at **5.25%**."
+      ],
+      "depth": {
+        "background": "India imports more than **80% of the crude oil** it uses, so global oil prices move Indian markets almost as directly as domestic company news — cheaper oil lowers the country's import bill, eases inflation, and boosts margins for oil-consuming businesses like airlines and paint makers. Oil prices have been falling as fears of a Middle East supply shock from the Iran conflict have eased in recent days. Meanwhile, India's central bank, the **RBI**, is in the middle of a **3-day Monetary Policy Committee meeting** (August 3–5) that will decide whether to change the **repo rate** — the interest rate at which it lends to banks, which ripples through to loan and deposit rates across the economy.",
+        "sources": [
+          {
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/markets/capital-market-news/sensex-settles-544-pts-higher-nifty-ends-above-24-750-126080300768_1.html"
+          },
+          {
+            "name": "HDFC Sky",
+            "url": "https://hdfcsky.com/news/market-close-report-today-august-3-2026-nifty-sensex-rise-fourth-day-it-stocks-lead-rally"
+          }
+        ]
+      },
+      "thread": {
+        "previously": "We reported that the Sensex opened up 788.7 points and the Nifty added 189 points to cross 24,550 on the morning of August 3, driven by falling crude oil prices after the US held off on new Iran strikes, with markets also positioning ahead of the RBI's August 5 rate decision.",
+        "changed": "By the close of trading on August 3, some of that morning surge had faded, but the Sensex still finished up 544 points at 78,639.03 and the Nifty closed above 24,750 (up 390.70 points) — marking a 4th consecutive winning session, still powered by the same falling crude oil tailwind."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Sensex jumps 788 points as falling crude oil prices and RBI rate-decision hopes lift Indian markets",
+        "date": null
+      }
+    },
+    {
+      "type": "story",
       "title": "Pierre Gasly says Alpine's upgrades at the Dutch Grand Prix are 'critical' to save its F1 season",
       "category": "f1",
       "published_iso": "2026-08-03T10:00:00Z",
@@ -605,6 +701,35 @@
           {
             "name": "India TV News",
             "url": "https://www.indiatvnews.com/business/markets/3-august-2026-stock-market-updates-sensex-surges-788-points-nifty-above-24-550-as-crude-oil-falls-2026-08-03-1050188"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Aston Martin begins locking in its 2027 car's architecture as Adrian Newey bets big on F1's new rules",
+      "category": "f1",
+      "published_iso": "2026-08-03T09:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "GPblog",
+      "what_happened": "Adrian Newey confirmed that Aston Martin is now making the **'big architectural decisions'** — engine position in the wheelbase, chassis layout, and other long-lead-time choices — for its **2027 car**, internally named the **AMR27**. He highlighted the front **'tea tray'** (the leading edge of the car's underbody floor) as the single most important rule change for 2027: it moves forward by roughly **300 millimetres**, allowing teams to run the front of the car lower to the ground for more downforce. Other 2027 changes include a **shallower rear wing** to cut overall downforce, a reduction in the floor's **'bear claw' vents from five to three**, the banning of various exhaust and rear-wing aerodynamic tricks teams currently exploit, and power-unit tweaks including **5% more fuel allowance** and adjusted energy storage and deployment rules. Newey said Aston Martin is now a **'much more mature'** team than six months ago and is well placed to capitalize on the regulation reset.",
+      "key_points": [
+        "Aston Martin design chief **Adrian Newey** says the team is now making the **'big architectural decisions'** for its **2027 car, the AMR27**.",
+        "Those decisions — engine placement, chassis layout — are **long-lead-time choices** that are hard to reverse once locked in.",
+        "F1's 2027 rules move the floor's front edge (the **'tea tray'**) forward by about **300mm**, letting cars run lower at the front.",
+        "The rear wing shrinks and the floor's **'bear claw' vents drop from five to three**, while engines get **5% more fuel** and tweaked energy deployment.",
+        "Newey says Aston Martin is now a **'much more mature'** organisation than it was six months ago, positioning the team to exploit the new rules."
+      ],
+      "depth": {
+        "background": "**Adrian Newey** is widely regarded as the most successful car designer in Formula 1 history, having designed championship-winning cars for Williams, McLaren and Red Bull before joining **Aston Martin** in 2025 specifically to lead its push for competitiveness. F1 periodically rewrites its technical rulebook — the last major reset was in 2022 — and a new set of changes lands in **2027**, which teams are already designing around more than a year in advance because chassis and engine architecture decisions can't easily be changed once committed. Aston Martin has struggled to match the sport's front-runners since Newey's arrival, making how well it reads and exploits the 2027 rules a major test of his tenure.",
+        "sources": [
+          {
+            "name": "GPblog",
+            "url": "https://www.gpblog.com/en/news/newey-backs-more-mature-aston-martin-to-seize-f1-2027-opportunity"
+          },
+          {
+            "name": "F1technical.net",
+            "url": "https://www.f1technical.net/news/28812"
           }
         ]
       }
@@ -2176,6 +2301,35 @@
       "prev_ref": {
         "title": "Israeli strikes kill seven across Gaza and destroy a hospital's medicine stockpile as the 'Board of Peace' spells out how Hamas must actually disarm",
         "date": null
+      }
+    },
+    {
+      "type": "story",
+      "title": "Kerala floods and landslides kill at least 11, with a Karnataka landslide adding 3 more",
+      "category": "india",
+      "published_iso": "2026-08-02T07:30:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "The Watchers",
+      "what_happened": "Intense monsoon rainfall from the night of **July 31 into August 1** triggered flash floods and landslides across Kerala, killing at least **8 people** with **8 more missing** and **13 injured**, according to figures confirmed by Kerala's Chief Minister. A separate landslide across the border in **Karnataka** killed at least **3 more people**. Kerala's State Disaster Management Authority placed **12 districts** — including Idukki, Kottayam, Pathanamthitta, Wayanad and Kozhikode — under an **orange rainfall alert**. Nearly **5,792 people** were evacuated to **209 relief camps**, and officials reported **27 houses destroyed** and **196 more partially damaged**, with rescue teams still working through hill villages in the Western Ghats.",
+      "key_points": [
+        "Heavy rain triggered **floods and landslides across Kerala**, killing at least **8 people confirmed dead**, with **8 more missing** and **13 injured**.",
+        "A separate landslide in neighbouring **Karnataka killed at least 3 people**.",
+        "Kerala's disaster authority placed **12 districts under an orange alert**, including Idukki, Kottayam, Wayanad and Kozhikode.",
+        "Nearly **5,792 people were moved to 209 relief camps**; **27 houses were destroyed** and 196 more damaged.",
+        "The worst-hit districts sit in the **Western Ghats**, a steep hill range that turns intense rain into fast landslides."
+      ],
+      "depth": {
+        "background": "Kerala's hilly **Western Ghats** districts — Idukki, Wayanad, Kottayam among them — flood almost every monsoon because steep, deforested slopes can't absorb heavy rain fast enough, sending water and loosened earth downhill in landslides that can bury homes with little warning. The state has suffered major flood disasters before, most notably in **2018**, when the worst floods in nearly a century killed hundreds and displaced over a million people. This year's rain arrived in an intense burst overnight from **July 31 into August 1**, catching several hill villages off guard.",
+        "sources": [
+          {
+            "name": "The Watchers",
+            "url": "https://watchers.news/2026/08/02/16-dead-and-missing-as-floods-and-landslides-hit-kerala-india/"
+          },
+          {
+            "name": "The Quint",
+            "url": "https://www.thequint.com/news/breaking-news/kerala-heavy-rains-landslides-floods-fatalities-rescue-operations"
+          }
+        ]
       }
     },
     {

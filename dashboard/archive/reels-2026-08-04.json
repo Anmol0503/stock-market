@@ -1,6 +1,6 @@
 {
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T10:01:28+05:30",
+  "generated_at": "2026-08-04T12:05:14+05:30",
   "day_label": "Tuesday · 4 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,139 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "geopolitics",
+      "category": "health",
       "is_new": true,
+      "published_iso": "2026-08-03T15:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "NPR",
+      "importance": "notable",
+      "regions": [
+        "US"
+      ],
+      "title": "The largest cyclospora outbreak on record just claimed its first two US deaths, in Michigan",
+      "what_happened": "Michigan health officials announced on **Monday, August 3** that two people died after becoming ill with cyclosporiasis, marking the **first US deaths** confirmed in this year's outbreak; officials said both had serious pre-existing health conditions that dehydration from the illness likely worsened. The CDC says it has received **6,707 laboratory-confirmed, domestically acquired cases** since May 1, with more than **11,500 additional cases** reported but not yet confirmed — spread across **45 states**. Michigan has been hit hardest, logging **11,234 cases and 193 hospitalizations**; Ohio has reported over 4,000 cases and Indiana nearly 1,349. A related but separate cluster tied to **recalled Taylor Farms iceberg lettuce**, pulled from shelves in mid-July after being traced to a Mexican grower, has sickened at least **1,947 people** with **98 hospitalizations**, including illnesses linked to bagged salads and fast-food chains like Taco Bell.",
+      "key_points": [
+        "Michigan confirmed the **first two US deaths** tied to this year's cyclospora outbreak, both patients with **significant underlying health conditions**.",
+        "The CDC has logged **6,707 confirmed cases** since May 1, plus over **11,500 more** still unconfirmed or under investigation — already the **largest cyclosporiasis outbreak on record**.",
+        "Cases have turned up in **45 US states**, with Michigan alone reporting **11,234 cases and 193 hospitalizations**.",
+        "A separate, related outbreak tied to **recalled iceberg lettuce** from a Taylor Farms supplier in Mexico has sickened at least **1,947 people**, including cases served at **Taco Bell**.",
+        "Cyclospora is a **microscopic parasite** spread through contaminated produce and water — not through person-to-person contact."
+      ],
+      "moot": "A food-safety outbreak can quietly become the worst on record well before it makes national news — case counts often lag real-world spread by weeks, so the headline moment (like a first death) usually arrives after the outbreak has already peaked in scale.",
+      "image_credit": "NPR",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNBC",
+          "NPR"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "**Cyclosporiasis** is an intestinal infection caused by the parasite *Cyclospora cayetanensis*, typically picked up from fresh produce — herbs, berries and leafy greens are common culprits — that was grown, washed, or handled with contaminated water. US cases normally ramp up every summer as imported fresh produce increases, but usually stay under **4,000 cases a year**; this year's case count has already blown past that. In mid-July, **Taylor Farms recalled iceberg lettuce** sourced from central Mexico after it was linked to illnesses, but health officials say that recall doesn't account for the full scope of this year's much larger, multi-state outbreak.",
+        "why_it_matters": "This is now the **largest cyclosporiasis outbreak in US history**, and the first with confirmed deaths, which raises the stakes for how aggressively health authorities trace and pull contaminated produce from the food supply. It's also a reminder that imported fresh produce — a staple of the modern diet — carries a supply-chain risk that's hard for any individual shopper to see or control.",
+        "ripple_effects": "Expect tighter scrutiny and possibly further recalls of imported leafy greens and herbs, especially from the supplier network linked to the Taylor Farms lettuce; grocery chains and fast-food brands that used the recalled product may face reputational and legal fallout. Public-health messaging will likely shift toward washing produce and awareness of symptoms (watery diarrhea, fatigue, cramping) in the coming weeks as case counts are still climbing.",
+        "why_now": "The two Michigan deaths, announced Monday, are the first fatalities of the season and the reason this outbreak — already unusually large — is making national headlines today.",
+        "watch_next": "Whether the CDC traces the broader 45-state outbreak (beyond the Taylor Farms lettuce recall) to a specific source, and whether the case count keeps climbing before the summer produce season ends.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "cyclosporiasis",
+            "definition": "An intestinal infection caused by the Cyclospora parasite, usually picked up from fresh produce contaminated during growing or handling."
+          }
+        ],
+        "sources": [
+          {
+            "name": "NPR",
+            "url": "https://www.npr.org/2026/08/03/g-s1-137048/michigan-cyclosporiasis-deaths-cyclospora-outbreak"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/03/cyclospora-outbreak-first-two-deaths-reported-in-michigan.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-08-03T13:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "Dataconomy",
+      "importance": "high",
+      "regions": [
+        "Global",
+        "US",
+        "Japan"
+      ],
+      "title": "IBM says it has finally proven 'quantum advantage' — and is daring rivals to disprove it",
+      "what_happened": "IBM, working with the **University of Chicago**, **RIKEN** in Japan, and quantum-software firms **Qedma, BlueQubit and Algorithmiq**, published three papers this week describing experiments it says clear the bar for genuine **'quantum advantage'** — the point where a quantum computer is confirmed to outperform classical computers on a trusted, checkable task. In the headline experiment, IBM's hardware completed a calculation in **about 15 minutes** using **70 error-corrected logical qubits**, executing **2,415 logical two-qubit operations**, at an error rate roughly **ten times lower** than the raw physical hardware — a result IBM says no classical simulation method could reproduce in a practical timeframe. In a second experiment, IBM combined a **77-qubit Heron chip** with **all 152,064 nodes of Japan's Fugaku supercomputer** to calculate the electronic structure of iron-sulfur clusters, a notoriously hard materials-chemistry problem, working alongside the Cleveland Clinic on a related 300-atom molecular simulation. IBM has submitted every circuit and result to a public tracker so outside scientists can attempt to beat the quantum result classically — a direct invitation to have the claim stress-tested rather than taken on faith.",
+      "key_points": [
+        "IBM and the **University of Chicago** ran a computation on a quantum computer in about **15 minutes** that would take leading classical supercomputers **prohibitively long** to match.",
+        "The team encoded **70 logical qubits** using a new error-correction method — one of the **largest logical-qubit demonstrations** ever run.",
+        "A separate IBM experiment paired a **77-qubit Heron processor** with Japan's **Fugaku supercomputer** (all 152,064 of its nodes) to model a hard materials-science problem.",
+        "Unlike past 'quantum supremacy' claims, IBM has published the full circuits and **invited outside researchers to try to refute the results**.",
+        "IBM still says a **large-scale, fully fault-tolerant** quantum computer — one that could break real-world encryption — is not expected until **2029**."
+      ],
+      "moot": "In a fast-moving technical field, a claim is only as strong as the ability of outsiders to try to break it — publishing raw results and inviting refutation is a stronger signal of confidence than any press release.",
+      "image_credit": "Dataconomy",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Dataconomy",
+          "University of Chicago News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "For over a decade, quantum computers have been a research curiosity: physically real, but not yet able to beat an ordinary supercomputer at anything useful, because quantum bits ('qubits') are extremely error-prone and lose their state (\"decohere\") almost instantly. Google and others have previously claimed narrow, lab-only 'quantum supremacy' wins on contrived math problems with little practical value, and those claims were sometimes later matched by improved classical algorithms. IBM's new claim is different in kind: it says the results are on a **useful, verifiable** class of problem, backed by a public 'Quantum Advantage Tracker' where any team can try to reproduce the result classically and prove IBM wrong.",
+        "why_it_matters": "If the claim survives outside scrutiny, it marks the first time quantum computers have been shown to beat classical machines on a problem with **real scientific value** (drug and materials design), not just a made-up math puzzle. It also reframes the quantum computing timeline for investors and governments who've poured billions into the technology on a promise that has, until now, stayed mostly theoretical.",
+        "ripple_effects": "Materials science and drug discovery are the most immediate beneficiaries — simulating molecules is exactly the kind of problem quantum computers are theoretically suited for. It also intensifies competitive pressure on Google, Microsoft and Chinese quantum labs to match or refute IBM's claim, and feeds into long-running anxiety about quantum computers eventually being powerful enough to break the encryption that secures the internet and cryptocurrencies like Bitcoin — though IBM itself says that capability is still years away.",
+        "why_now": "The three papers were released together this week as part of a coordinated IBM push to show quantum computing has crossed from lab novelty into verifiable, useful territory, ahead of IBM's own 2029 target for a fault-tolerant machine.",
+        "watch_next": "Whether independent researchers, using classical supercomputers, can reproduce or beat IBM's results on the public Quantum Advantage Tracker in the coming weeks.",
+        "market_link": "IBM shares have been sensitive to quantum-computing headlines this year; a validated advantage claim could also lift quantum-focused peers and pressure Google/Alphabet's competing quantum program.",
+        "key_terms": [
+          {
+            "term": "quantum advantage",
+            "definition": "The point at which a quantum computer is proven to solve a useful, checkable problem faster than any classical computer can."
+          },
+          {
+            "term": "logical qubit",
+            "definition": "A qubit built from many physical qubits working together with error-correction, so it's far more reliable than any single physical qubit."
+          },
+          {
+            "term": "decoherence",
+            "definition": "The tendency of a qubit's fragile quantum state to collapse or degrade almost instantly, which is the central engineering problem in quantum computing."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Dataconomy",
+            "url": "https://dataconomy.com/2026/08/03/ibm-reaches-verified-quantum-advantage-milestone/"
+          },
+          {
+            "name": "University of Chicago News",
+            "url": "https://news.uchicago.edu/story/ibm-uchicago-demonstrate-quantum-advantage-outperforming-traditional-computers-quantum"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "geopolitics",
       "published_iso": "2026-08-03T02:00:00Z",
       "added_at": "2026-08-04T10:01:28+05:30",
       "source": "CNN",
@@ -73,10 +204,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "economy",
-      "is_new": true,
       "published_iso": "2026-08-03T20:00:00Z",
       "added_at": "2026-08-04T10:01:28+05:30",
       "source": "CNBC",
@@ -144,8 +274,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "technology",
       "published_iso": "2026-08-03T20:00:00Z",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -206,8 +336,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-08-03T12:00:00Z",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -269,8 +399,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "climate",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-04T05:59:45+05:30",
@@ -330,8 +460,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -404,8 +534,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -477,73 +607,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "science",
-      "published_iso": "2026-08-03T03:00:00+03:00",
-      "added_at": "2026-08-04T03:58:38+05:30",
-      "source": "Bloomberg",
-      "importance": "notable",
-      "regions": [
-        "Egypt",
-        "Middle East"
-      ],
-      "title": "A magnitude-5.3 earthquake rattles Egypt, shaking felt from Suez to Cairo and across five countries",
-      "what_happened": "The USGS recorded a **magnitude-5.3 earthquake** at roughly **3:00am local time on Monday, August 3**, centered about **41 kilometers north-northeast of Suez** at a shallow depth of **10 kilometers**. The shallow depth meant the shaking was felt more strongly at the surface than a deeper quake of the same magnitude would produce. Residents reported feeling tremors not just in nearby Cairo but as far away as **Cyprus, Jordan, Lebanon, Syria, and Saudi Arabia** — a sign of how shallow Mediterranean-region quakes can radiate over long distances. As of the latest reports, **no injuries, deaths, or structural damage** have been confirmed. Magnitude estimates varied slightly across monitoring agencies (from 5.0 to 5.7), which is typical in the first hours before readings are fully calibrated.",
-      "key_points": [
-        "A **magnitude-5.3 earthquake** struck **41km northeast of Suez, Egypt** at around **3am local time** on Monday.",
-        "The quake had a shallow depth of just **10km** — shallow quakes shake the surface harder than deep ones of the same size.",
-        "Tremors were felt as far as **Cairo, Cyprus, Jordan, Lebanon, Syria and Saudi Arabia**.",
-        "No casualties or structural damage have been reported so far, per the **US Geological Survey (USGS)**.",
-        "Different agencies reported slightly different magnitudes (5.0 to 5.7) — normal in the first hours after a quake."
-      ],
-      "moot": "A moderate earthquake can feel alarming over a huge area if it's shallow — depth, not just magnitude, determines how hard the ground actually shakes where people live.",
-      "image_credit": "Bloomberg",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Bloomberg",
-          "Gulf News"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Egypt sits near the boundary where the **African and Arabian tectonic plates** are slowly pulling apart, a zone that includes the Gulf of Suez and the Red Sea. This makes the region seismically active, though damaging earthquakes are relatively rare in Egypt compared to neighbors like Turkey or Iran. The Gulf of Suez area has a history of moderate quakes, including a similarly sized one in 2020, but Cairo's dense, older building stock makes even a distant, moderate quake a source of public anxiety.",
-        "why_it_matters": "A quake this size rarely causes major destruction, but it's a reminder that the Suez region — home to the **Suez Canal**, a chokepoint for roughly 12% of global trade — sits on active fault lines. A larger quake here could threaten both a critical shipping artery and a densely populated capital city.",
-        "ripple_effects": "No immediate economic disruption is expected since the Suez Canal itself reported no impact. But the event is likely to renew scrutiny of building codes in Cairo, where much of the housing stock predates modern seismic standards, and add to regional nervousness given Egypt's history of periodic moderate quakes.",
-        "why_now": "Earthquakes are inherently sudden, but this one is drawing attention because of how widely the shaking was felt — across five countries — rather than its size alone.",
-        "watch_next": "Whether aftershocks follow in the coming days, and whether Egyptian authorities report any delayed damage assessments from older buildings near the epicenter.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Magnitude",
-            "definition": "A logarithmic scale for earthquake size — each whole number up is about 32 times more energy released, so a 5.3 is far weaker than a 7.0."
-          },
-          {
-            "term": "Epicenter depth",
-            "definition": "How far below the surface a quake originates; shallow quakes (like this one, at 10km) shake the ground above them harder than deep ones of equal magnitude."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-08-03/magnitude-5-3-earthquake-reported-near-suez-egypt-usgs"
-          },
-          {
-            "name": "Gulf News",
-            "url": "https://gulfnews.com/world/mena/magnitude-53-earthquake-strikes-near-egypts-suez-1.500628715"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "geopolitics",
       "published_iso": "2026-08-03T06:00:00+00:00",
       "added_at": "2026-08-04T02:02:24+05:30",
@@ -610,217 +675,146 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
-      "category": "health",
-      "published_iso": "2026-08-03T00:00:00+00:00",
-      "added_at": "2026-08-04T00:03:23+05:30",
-      "source": "Al Jazeera",
-      "importance": "high",
-      "regions": [
-        "Australia",
-        "Global"
-      ],
-      "title": "Australia confirms its first mass bird-flu die-off, warns worse spread is coming",
-      "what_happened": "Australian authorities said on **Monday** that helicopter surveillance teams found **49 dead and 35 sick greater crested terns** on rocks off Cape Jaffa, about **250km (155 miles) from Adelaide**, on the preceding Friday. Testing confirmed these were infected with **H5N1**, making it the **first confirmed mass mortality event** linked to the virus in Australian wildlife. Agriculture Minister Julie Collins told reporters in Canberra that **'Australians should expect to see more spread and larger numbers now of wildlife being affected,'** adding that once the virus is circulating in the wild, **'it is not possible to avoid significant losses.'** The national tally has now reached **74 confirmed cases**, roughly **tripling within about a week**, spread across South Australia (54), Western Australia (10), Victoria (7), New South Wales (2) and Queensland (1). Officials stressed there is still **no evidence of the virus on Australian poultry farms**, many of which locked down biosecurity measures after the first detection in June.",
-      "key_points": [
-        "Australia recorded its **first-ever mass mortality event** from H5N1 bird flu: **49 dead and 35 sick** greater crested terns found off Cape Jaffa, South Australia.",
-        "The country's confirmed case count has now hit **74**, nearly **tripling in about a week**.",
-        "Agriculture Minister Julie Collins warned **'significant losses' can no longer be avoided** once the virus spreads through wildlife.",
-        "Cases span **five states** — South Australia, Western Australia, Victoria, New South Wales and Queensland — but **no poultry farms are infected yet**.",
-        "Scientists warn the outbreak also threatens **endangered Australian sea lions**, which feed near infected seabird colonies."
-      ],
-      "moot": "Once a virus starts spreading locally within a wild animal population rather than just arriving from outside, it usually can't be stamped out — it becomes a permanent background risk that occasionally spills into farms, other species, or humans, which is why early containment matters so much more than late crackdowns.",
-      "image_credit": "Al Jazeera",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Al Jazeera",
-          "The Poultry Site"
-        ],
-        "corroboration": 0
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Sensex jumps 788 points as falling crude oil prices and RBI rate-decision hopes lift Indian markets",
+        "date": null
       },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "**H5N1 bird flu** is a highly contagious strain of avian influenza that has been sweeping through wild birds and mammals worldwide since **2021**, killing millions of birds and infecting poultry farms, dairy cattle, and even some farmworkers across the Americas and Europe. Australia had largely been spared until this year, in part due to its geographic isolation from major bird migration routes, but the virus was first detected in the country in **June 2026**. Since then, authorities confirmed the virus was spreading **locally between wild birds themselves** — not just arriving from outside — which experts say makes containment far harder because it can now take root permanently in Australia's native wildlife.",
-        "why_it_matters": "This is the moment H5N1 stopped being a contained, isolated detection in Australia and became an established wildlife outbreak — the same pattern that, in the Americas and Europe, went on to devastate poultry flocks, spike egg prices, and occasionally infect farm workers. Australia was one of the last major landmasses without a foothold of this virus, so its arrival closes one of the world's last H5N1-free gaps.",
-        "ripple_effects": "Conservationists warn the virus could hit vulnerable native species hard, including **endangered Australian sea lions** that feed near infected seabird colonies and have no immunity to the strain. If the virus reaches commercial poultry farms, Australia could face flock culls and higher egg and chicken prices, echoing outbreaks that have driven up food costs elsewhere. A sustained wildlife reservoir of the virus also raises the background risk — still considered low today — of new mutations that spread more easily to mammals, including humans.",
-        "why_now": "The jump from isolated detections to a confirmed mass mortality event marks a new phase where the virus is killing wild birds in large numbers rather than just showing up in scattered tests, prompting the government's more urgent public warning this week.",
-        "watch_next": "Whether H5N1 is detected in any commercial poultry flock in the coming weeks, which would trigger culls and a formal outbreak response.",
-        "market_link": "If H5N1 reaches Australian poultry farms, flock culls could tighten local egg and chicken supply and lift prices, echoing past bird-flu-driven price spikes in US and European poultry and egg markets.",
-        "key_terms": [
-          {
-            "term": "H5N1",
-            "definition": "A strain of avian influenza (bird flu) that can kill birds in large numbers and, in rare cases, infect mammals including humans."
-          },
-          {
-            "term": "Zoonotic spillover",
-            "definition": "When a virus that normally infects animals jumps into a new species, including humans — the risk scientists watch for as H5N1 spreads more widely."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/3/australia-warns-h5n1-likely-to-spread-after-first-mass-mortality-episode"
-          },
-          {
-            "name": "The Poultry Site",
-            "url": "https://www.thepoultrysite.com/news/2026/08/australia-records-first-h5n1-mass-mortality-in-seabirds"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-15",
-      "rank": 15,
-      "category": "economy",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T20:01:42+05:30",
-      "source": "Barchart",
-      "importance": "high",
+      "published_iso": "2026-08-03T10:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "Business Standard",
+      "importance": "notable",
       "regions": [
-        "United States"
+        "India"
       ],
-      "title": "Palantir reports Q2 earnings today, testing whether its AI-fueled rally can survive a 40% stock pullback",
-      "what_happened": "Palantir is due to report **second-quarter 2026 earnings today**, with analysts expecting roughly **$1.81 billion in revenue** and **$0.34 earnings per share**. It enters the report on an eight-quarter streak of beating Wall Street's estimates — most recently topping Q1 2026 expectations of $0.27 EPS with an actual $0.33. That first-quarter report showed **85% year-over-year revenue growth**, powered by **133% growth in US commercial revenue** and 84% growth in government revenue. Yet even with that growth, Palantir shares have fallen roughly **40% from their peak**, and options markets are pricing in a swing of about **12%** in either direction once results land — a sign investors are deeply split on whether the valuation still makes sense.",
+      "title": "Sensex and Nifty close up for a 4th straight session as falling crude oil keeps lifting Indian markets",
+      "what_happened": "India's benchmark stock indices extended their rally through the close of trading on **Monday, August 3**: the **Sensex ended up 544.39 points (0.7%) at 78,639.03**, and the **Nifty 50 climbed 390.70 points (1.60%) to close at 24,774.30**, giving both indices their **fourth consecutive day of gains**. The rally moderated somewhat from the morning's sharper 788-point Sensex jump, but held up through the session on continued **crude oil price weakness**. **IT stocks led the advance**, with the sector index up more than 3% on the day, while investors also positioned ahead of the **RBI's rate decision**, due Wednesday, August 5, where a Reuters poll of 72 economists found 68 expect the repo rate to stay unchanged at **5.25%**.",
       "key_points": [
-        "Palantir reports **Q2 2026 results today**, with Wall Street expecting **$1.81 billion revenue** and **$0.34 EPS**",
-        "The company has beaten earnings estimates for **eight straight quarters**",
-        "Q1 2026 revenue grew **85% year-over-year**, with **US commercial revenue up 133%**",
-        "The stock is still down **~40% from its all-time high**, and options markets price in a **12% swing** on today's results"
+        "The **Sensex closed up 544.39 points (0.7%)** at **78,639.03**; the **Nifty 50 gained 390.70 points (1.60%)** to close at **24,774.30**.",
+        "It's the **4th straight winning session** for both benchmark indices.",
+        "**Falling crude oil prices** remained the single biggest driver, since India imports over 80% of its oil.",
+        "The **IT sector led gains**, with the Nifty IT index up over **3%** on the day.",
+        "Markets are now positioning ahead of the **RBI's rate decision on August 5**, where most economists expect the repo rate to stay unchanged at **5.25%**."
       ],
-      "moot": "A company can keep growing very fast and still see its stock fall — when a stock's price already assumes huge future growth, even strong results can disappoint if they aren't strong enough.",
-      "image_credit": "Barchart",
+      "moot": "Stock market gains built on falling oil prices can fade as the trading day goes on — the morning's headline jump is often bigger than what actually survives to the closing bell, so the close, not the open, is the number that matters.",
+      "image_credit": "Business Standard",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "Barchart",
-          "TradingKey"
+          "Business Standard",
+          "HDFC Sky"
         ],
         "corroboration": 0
       },
-      "concepts": [],
+      "thread": {
+        "previously": "We reported that the Sensex opened up 788.7 points and the Nifty added 189 points to cross 24,550 on the morning of August 3, driven by falling crude oil prices after the US held off on new Iran strikes, with markets also positioning ahead of the RBI's August 5 rate decision.",
+        "changed": "By the close of trading on August 3, some of that morning surge had faded, but the Sensex still finished up 544 points at 78,639.03 and the Nifty closed above 24,750 (up 390.70 points) — marking a 4th consecutive winning session, still powered by the same falling crude oil tailwind."
+      },
+      "concepts": [
+        "repo_rate",
+        "rbi",
+        "monetary_policy_committee"
+      ],
       "figures": [],
       "depth": {
-        "background": "Palantir builds data-analysis and AI software used heavily by **US government and defense agencies**, and increasingly by large commercial clients. It became one of the most-watched **AI-boom stocks** of the past two years, with its share price climbing far faster than its revenue — which made it a lightning rod in the debate over whether AI stocks are overvalued. The stock has since pulled back sharply from its highs even as the underlying business kept growing fast, reflecting investor nervousness about **how much future growth is already priced in**.",
-        "why_it_matters": "Palantir has become a bellwether for the broader **AI trade** — today's results will shape sentiment on whether AI-linked software stocks can keep growing into their valuations, or whether the sector's recent pullback has further to run.",
-        "ripple_effects": "A strong beat could lift sentiment across AI and defense-tech stocks broadly; a miss or soft guidance could deepen the recent pullback in high-multiple tech names and add to pressure on the Nasdaq, which is already bracing for Friday's US jobs report.",
-        "why_now": "The report lands today, in the middle of the busiest week of the current US corporate earnings season.",
-        "watch_next": "Palantir's forward guidance for Q3 and full-year 2026 will likely move the stock more than the headline beat or miss itself.",
-        "market_link": "Directly moves PLTR and could ripple into broader AI/defense-tech and Nasdaq sentiment.",
+        "background": "India imports more than **80% of the crude oil** it uses, so global oil prices move Indian markets almost as directly as domestic company news — cheaper oil lowers the country's import bill, eases inflation, and boosts margins for oil-consuming businesses like airlines and paint makers. Oil prices have been falling as fears of a Middle East supply shock from the Iran conflict have eased in recent days. Meanwhile, India's central bank, the **RBI**, is in the middle of a **3-day Monetary Policy Committee meeting** (August 3–5) that will decide whether to change the **repo rate** — the interest rate at which it lends to banks, which ripples through to loan and deposit rates across the economy.",
+        "why_it_matters": "A four-day winning streak, on top of a >500-point single-day gain, signals that foreign and domestic investors are growing more confident that the worst of the Middle East-driven oil price spike is behind markets — a meaningful sentiment shift after weeks of tariff- and oil-driven selling pressure on Indian equities.",
+        "ripple_effects": "A sustained rally tends to draw more foreign institutional investment back into Indian equities, and cheaper oil helps the rupee and eases inflation — both of which factor into the RBI's rate decision on Wednesday. IT stocks' outperformance also reflects renewed optimism about the sector heading into the back half of the year.",
+        "why_now": "The rally is riding continued declines in crude oil prices tied to de-escalating Middle East tensions, right as markets look ahead to the RBI's closely watched rate decision in two days.",
+        "watch_next": "The RBI's Monetary Policy Committee decision on August 5, where the repo rate is widely expected to hold at 5.25% for a fourth straight time.",
+        "market_link": "Nifty IT stocks and oil-import-sensitive sectors (aviation, paints, tyres) were the biggest beneficiaries of the rally.",
         "key_terms": [
           {
-            "term": "EPS (earnings per share)",
-            "definition": "A company's profit divided by its number of shares — the standard yardstick analysts use to judge a quarter's results."
+            "term": "repo rate",
+            "definition": "The interest rate at which India's central bank (the RBI) lends money to commercial banks — a key lever that influences loan and deposit rates across the economy."
           }
         ],
         "sources": [
           {
-            "name": "Barchart",
-            "url": "https://www.barchart.com/story/news/3486229/palantir-reports-earnings-august-3-trade-the-volatility-with-leveraged-and-inverse-etfs"
+            "name": "Business Standard",
+            "url": "https://www.business-standard.com/markets/capital-market-news/sensex-settles-544-pts-higher-nifty-ends-above-24-750-126080300768_1.html"
           },
           {
-            "name": "TradingKey",
-            "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262068882-palantir-pltr-earnings-preview-august-3-2026-options-swing-triangle-tradingkey"
+            "name": "HDFC Sky",
+            "url": "https://hdfcsky.com/news/market-close-report-today-august-3-2026-nifty-sensex-rise-fourth-day-it-stocks-lead-rally"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-18",
-      "rank": 18,
-      "category": "technology",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T18:09:25+05:30",
-      "source": "CNBC",
-      "importance": "high",
-      "regions": [
-        "China",
-        "US",
-        "Global"
-      ],
-      "title": "Alibaba's new Qwen3.8-Max AI model claims to match Anthropic's Claude — and its stock jumps 7%",
-      "what_happened": "Alibaba unveiled **Qwen3.8-Max** on August 3, a multimodal model that reads text, images and video, built on **2.4 trillion** total parameters with only around 95 billion activated per request. On benchmark tests it scored competitively with or ahead of Anthropic's Claude Opus 4.8 and Claude Fable 5 on coding-heavy tests like Terminal-Bench 2.1 and PaperBench, though it lagged on some broader reasoning tests and OpenAI's top model. The model supports a **1-million-token** context window, letting it process roughly a 750,000-word document in a single pass. Alibaba priced access at $2 per million input tokens and $6 per million output tokens — undercutting many Western rivals — and said full weights would be open-sourced on Hugging Face and ModelScope within a week. Investors reacted immediately, sending Alibaba's shares up as much as **7%**.",
-      "key_points": [
-        "Alibaba released Qwen3.8-Max, its biggest-ever AI model, built on **2.4 trillion** parameters, with only about **95 billion** active per question",
-        "On coding and engineering benchmarks it beat Anthropic's Claude Opus 4.8 and Claude Fable 5 on several tests, though it trailed on some general reasoning benchmarks",
-        "Alibaba's Hong Kong and New York-listed shares jumped as much as **7%** on the announcement",
-        "Priced well below Western rivals at **$2** per million input tokens and **$6** per million output tokens, with a **1-million-token** context window",
-        "Full model weights will be open-sourced on Hugging Face and ModelScope **next week**, letting any developer download and run it"
-      ],
-      "moot": "In fast-moving technology races, being closed and expensive is not a permanent advantage — a rival can match your capability while undercutting you on price and openness, and that is exactly what shifts market share.",
-      "image_credit": "CNBC",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
-        "outlets": [
-          "Bloomberg",
-          "CNBC",
-          "MarkTechPost"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Chinese tech giants have been racing to close the AI capability gap with US labs like Anthropic and OpenAI since ChatGPT's 2022 debut. Alibaba's Qwen family and Moonshot's Kimi K3, released just weeks earlier, represent the leading edge of that push, competing on both raw capability and price. **Mixture-of-experts** architecture — where a huge model only activates a fraction of its parameters per question — has become the industry's preferred way to build powerful yet affordable models. US export controls on advanced AI chips have pushed Chinese firms like Alibaba to squeeze more performance out of less computing power.",
-        "why_it_matters": "This is one of the clearest signals yet that Chinese AI labs are closing the gap with leading US labs on capability, not just price, intensifying a technology race with implications for chip supply chains, national security, and who sets global AI rules.",
-        "ripple_effects": "Cheaper, near-frontier open-weight models from China could pressure US AI companies to cut prices or ship faster, and give developers worldwide a lower-cost alternative to Western APIs. It also feeds a US policy debate over whether chip export controls are actually slowing China down, and it moves Alibaba's stock and broader Chinese tech valuations.",
-        "why_now": "The release lands just weeks after Moonshot's rival Kimi K3 model, as Chinese AI firms rush to ship flagship releases ahead of each other and match Western labs' rapid pace of new model launches.",
-        "watch_next": "Whether Qwen3.8-Max's open-source weights, due next week on Hugging Face, see wide developer adoption outside China, and how Anthropic and OpenAI respond on pricing or capability.",
-        "market_link": "Alibaba (BABA) shares jumped as much as 7% in Hong Kong and New York trading on the announcement, and the release adds competitive pressure to AI-sector valuations tied to US chip and software leaders.",
-        "key_terms": [
-          {
-            "term": "mixture-of-experts (MoE)",
-            "definition": "an AI architecture that splits a huge model into specialized sub-networks and activates only a few per question, cutting compute costs while preserving capability."
-          },
-          {
-            "term": "parameters",
-            "definition": "the internal numerical values an AI model learns during training; more parameters generally mean more capacity to learn patterns, at higher computing cost."
-          },
-          {
-            "term": "context window",
-            "definition": "the maximum amount of text, measured in tokens, an AI model can consider at once — a bigger window lets it read longer documents or conversations."
-          },
-          {
-            "term": "open-weight model",
-            "definition": "an AI model whose trained parameters are published publicly so anyone can download, run, and modify it, unlike closed models accessible only through a paid API."
-          },
-          {
-            "term": "benchmark",
-            "definition": "a standardized test used to compare AI models' performance on tasks like coding, math, or reasoning."
-          }
-        ],
-        "sources": [
-          {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html"
-          },
-          {
-            "name": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance"
-          },
-          {
-            "name": "MarkTechPost",
-            "url": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-02T07:30:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "The Watchers",
+      "importance": "high",
+      "regions": [
+        "Kerala",
+        "Karnataka",
+        "India"
+      ],
+      "title": "Kerala floods and landslides kill at least 11, with a Karnataka landslide adding 3 more",
+      "what_happened": "Intense monsoon rainfall from the night of **July 31 into August 1** triggered flash floods and landslides across Kerala, killing at least **8 people** with **8 more missing** and **13 injured**, according to figures confirmed by Kerala's Chief Minister. A separate landslide across the border in **Karnataka** killed at least **3 more people**. Kerala's State Disaster Management Authority placed **12 districts** — including Idukki, Kottayam, Pathanamthitta, Wayanad and Kozhikode — under an **orange rainfall alert**. Nearly **5,792 people** were evacuated to **209 relief camps**, and officials reported **27 houses destroyed** and **196 more partially damaged**, with rescue teams still working through hill villages in the Western Ghats.",
+      "key_points": [
+        "Heavy rain triggered **floods and landslides across Kerala**, killing at least **8 people confirmed dead**, with **8 more missing** and **13 injured**.",
+        "A separate landslide in neighbouring **Karnataka killed at least 3 people**.",
+        "Kerala's disaster authority placed **12 districts under an orange alert**, including Idukki, Kottayam, Wayanad and Kozhikode.",
+        "Nearly **5,792 people were moved to 209 relief camps**; **27 houses were destroyed** and 196 more damaged.",
+        "The worst-hit districts sit in the **Western Ghats**, a steep hill range that turns intense rain into fast landslides."
+      ],
+      "moot": "In steep, deforested terrain, the danger from heavy rain isn't the water itself but the loosened earth it carries — landslide risk can turn a routine monsoon downpour into a fatal disaster within hours.",
+      "image_credit": "The Watchers",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "The Quint",
+          "The Watchers"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Kerala's hilly **Western Ghats** districts — Idukki, Wayanad, Kottayam among them — flood almost every monsoon because steep, deforested slopes can't absorb heavy rain fast enough, sending water and loosened earth downhill in landslides that can bury homes with little warning. The state has suffered major flood disasters before, most notably in **2018**, when the worst floods in nearly a century killed hundreds and displaced over a million people. This year's rain arrived in an intense burst overnight from **July 31 into August 1**, catching several hill villages off guard.",
+        "why_it_matters": "Kerala's monsoon floods are becoming a near-annual test of India's disaster response in exactly the terrain — steep, densely populated hill districts — where landslides give people the least warning to escape. Every flood season here reopens the debate over unchecked construction and deforestation in ecologically fragile hill zones.",
+        "ripple_effects": "Relief operations, road and rail disruption, and crop damage in Kerala's hill-district plantations (tea, spice, rubber) are likely in the immediate term. It adds to an already brutal 2026 monsoon that has separately battered Assam, Manipur and Rajasthan, straining the National Disaster Response Force's capacity across multiple simultaneous flood zones.",
+        "why_now": "The rain intensified sharply overnight from July 31 into August 1, and the death toll and evacuation figures were still being updated as of the past two days.",
+        "watch_next": "Whether the India Meteorological Department's rainfall alerts are downgraded in the coming days, and whether the confirmed death toll rises as rescue teams reach cut-off villages.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "orange alert",
+            "definition": "India's second-highest weather warning level, signalling that authorities should 'be prepared' for potentially disruptive heavy rain — one step below the most severe 'red alert.'"
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Watchers",
+            "url": "https://watchers.news/2026/08/02/16-dead-and-missing-as-floods-and-landslides-hit-kerala-india/"
+          },
+          {
+            "name": "The Quint",
+            "url": "https://www.thequint.com/news/breaking-news/kerala-heavy-rains-landslides-floods-fatalities-rescue-operations"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-04T04:00:00Z",
       "added_at": "2026-08-04T10:01:28+05:30",
       "source": "Down To Earth",
@@ -877,8 +871,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-08-03T15:00:00+05:30",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -936,8 +930,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-04T09:00:00+05:30",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -1004,8 +998,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-03T09:00:00+05:30",
       "added_at": "2026-08-04T05:59:45+05:30",
@@ -1066,8 +1060,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1141,8 +1135,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-03T12:07:10+05:30",
       "added_at": "2026-08-04T03:58:38+05:30",
@@ -1209,8 +1203,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-08-03T10:00:00+05:30",
       "added_at": "2026-08-04T03:58:38+05:30",
@@ -1278,8 +1272,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-08-03T04:00:00+00:00",
       "added_at": "2026-08-04T02:02:24+05:30",
@@ -1359,8 +1353,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-08-03T16:50:44+05:30",
       "added_at": "2026-08-04T00:03:23+05:30",
@@ -1435,8 +1429,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-08-03T17:00:00+05:30",
       "added_at": "2026-08-04T00:03:23+05:30",
@@ -1511,195 +1505,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
-      "category": "india",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T22:00:08+05:30",
-      "source": "The Shillong Times",
-      "importance": "high",
-      "regions": [
-        "India",
-        "Tamil Nadu"
-      ],
-      "title": "Rahul Gandhi calls delimitation a 'BJP conspiracy' to strip Tamil Nadu of power — Congress backs him, BJP hits back",
-      "what_happened": "Speaking in **Chennai on Saturday**, Congress's Leader of the Opposition in the Lok Sabha, **Rahul Gandhi**, said the BJP-led Centre's planned delimitation exercise was **'designed to disenfranchise people and take away the political power of the people of Tamil Nadu,'** calling it a **'BJP conspiracy.'** He called on political parties nationwide — especially in Tamil Nadu — to unite in opposition, warning that anyone who backs delimitation would be 'betraying Tamil Nadu.' By Monday, **Congress had formally thrown its weight behind Gandhi's position**, while the **BJP hit back**, rejecting the characterization and defending the government's approach. The dispute centers on the fact that Lok Sabha seat numbers have been **frozen since the 1971 Census** specifically to stop faster-growing northern states gaining seats at the expense of southern states that slowed population growth — a freeze due to lift after the next census.",
-      "key_points": [
-        "Gandhi calls the planned delimitation **'designed to disenfranchise'** Tamil Nadu",
-        "He urges **all parties**, especially in Tamil Nadu, to unite against it",
-        "Congress has now **officially backed** Gandhi's stand; BJP has hit back",
-        "Lok Sabha seat numbers have been **frozen since the 1971 Census**",
-        "Southern states fear losing **relative seat share** once the freeze lifts after the next census"
-      ],
-      "moot": "When a country freezes political representation to protect a policy goal — like rewarding states for slowing population growth — the freeze itself becomes a political fight once it's due to end, because unwinding it always creates winners and losers.",
-      "image_credit": "The Shillong Times",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "IANS",
-          "The Shillong Times"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "lok_sabha",
-        "state_vs_centre"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "India's Lok Sabha (the lower house of Parliament) allocates seats to states roughly by population. Because southern states like Tamil Nadu succeeded early at slowing population growth — largely through better health and education outcomes — while northern states grew faster, a straight population-based reallocation would shrink the South's seat share and grow the North's. To avoid punishing states for good policy, Parliament **froze seat numbers based on the 1971 Census**, and that freeze has been extended repeatedly, currently due to lift after the first census conducted post-2026. 'Delimitation' is the technical term for this seat-redrawing exercise, and it has been a live political fear in the South for years, since losing seats means losing a say in national policy and funding.",
-        "why_it_matters": "This isn't abstract — losing Lok Sabha seats means losing votes in Parliament, cabinet berths, and influence over national budgets and policy. A fight over delimitation touches the core bargain of Indian federalism: how much power the states, especially the more economically developed South, retain against the Centre.",
-        "ripple_effects": "Expect southern chief ministers (Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, Telangana) to increasingly coordinate opposition to delimitation, potentially forming a bloc ahead of the next general election. It could also become a flashpoint in Centre-state relations more broadly, feeding into existing north-south tensions over tax devolution and language policy.",
-        "why_now": "Gandhi's remarks came as he wrapped up a Congress training camp in Tamil Nadu, and the issue is gaining urgency because delimitation is constitutionally due to happen after the first census conducted post-2026 — meaning the political fight over the rules starts now, well before the actual redrawing.",
-        "watch_next": "Watch for whether Tamil Nadu's ruling DMK and other southern parties formally join Congress's opposition, and whether the Centre clarifies its delimitation timeline in Parliament's ongoing Monsoon Session.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "delimitation",
-            "definition": "The process of redrawing electoral constituency boundaries and reallocating the number of seats each state gets in Parliament, usually based on updated population data."
-          }
-        ],
-        "sources": [
-          {
-            "name": "The Shillong Times",
-            "url": "https://theshillongtimes.com/2026/08/03/cong-supports-rahul-gandhis-delimitation-stand-bjp-hits-back/"
-          },
-          {
-            "name": "IANS",
-            "url": "https://ianslive.in/rahul-gandhi-urges-parties-to-unite-against-delimitation-warns-of-threat-to-tamil-nadu--20260801214157"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-33",
-      "rank": 33,
-      "category": "india",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T20:01:42+05:30",
-      "source": "Blitz India Media",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Lok Sabha passes bill to expand the Supreme Court from 34 to 38 judges",
-      "what_happened": "The Lok Sabha (India's lower house of Parliament) passed the **Supreme Court (Number of Judges) Amendment Bill, 2026** by voice vote today, formally raising the court's **sanctioned judge strength from 33 to 37**, excluding the Chief Justice of India — taking the court's total possible complement from **34 to 38 judges**. The bill converts into permanent law an ordinance the President had already promulgated in May 2026, under which the additional judges may already have begun functioning. The bill still needs to clear the Rajya Sabha (upper house) to complete its passage through Parliament. Government ministers framed the move as necessary to help the court clear its backlog faster.",
-      "key_points": [
-        "The **Supreme Court (Number of Judges) Amendment Bill, 2026** passed the Lok Sabha by voice vote today",
-        "It raises the sanctioned strength of judges from **33 to 37**, excluding the Chief Justice — taking the full court from **34 to 38**",
-        "The change follows an **ordinance the President promulgated in May 2026**, which this bill now formally enacts into law",
-        "More sanctioned judges means **more benches can sit at once**, not that any single case gets more judges"
-      ],
-      "moot": "Expanding a court doesn't mean any single case gets decided by more judges — it means more cases can be heard in parallel, which is a capacity fix for backlogs rather than a change to how individual cases are judged.",
-      "image_credit": "Blitz India Media",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Blitz India Media"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "supreme_court_india",
-        "lok_sabha",
-        "ordinance"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "India's Supreme Court has repeatedly had its judge count raised over the decades as its case backlog has grown — the court now hears an enormous volume of appeals and constitutional matters each year. This particular expansion was first put into effect quickly via a **presidential ordinance in May 2026** (a temporary law the government can issue between parliamentary sessions), and the Monsoon Session's job was to formally convert that ordinance into a lasting **Act of Parliament**. The bill amends the original **Supreme Court (Number of Judges) Act, 1956**.",
-        "why_it_matters": "Sanctioned strength determines how many benches the Supreme Court can run simultaneously on any given day — not how many judges hear a single case — so this is fundamentally about **increasing the court's total hearing capacity** to work through its backlog faster.",
-        "ripple_effects": "A larger bench capacity could mean faster listing and disposal of pending cases across constitutional, civil, and criminal matters, though the real-world effect depends on how quickly the new judgeships are actually filled. It also renews attention on the judicial appointments process (the collegium system) that will select who fills the new seats.",
-        "why_now": "This is happening now because Parliament's Monsoon Session, which resumed today, needed to formally ratify the ordinance the President issued in May before it lapses.",
-        "watch_next": "Watch for the bill's passage through the Rajya Sabha to complete its journey into law, and for announcements on who is appointed to the new judgeships.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Ordinance",
-            "definition": "A law the Indian President can issue when Parliament isn't in session, which must later be formally passed by Parliament to remain in effect."
-          },
-          {
-            "term": "Sanctioned strength",
-            "definition": "The maximum number of judges a court is legally allowed to have — distinct from how many are actually appointed at any given time."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Blitz India Media",
-            "url": "https://blitzindiamedia.com/news/supreme-court-judges-strength-2026/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-34",
-      "rank": 34,
-      "category": "india",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T20:01:42+05:30",
-      "source": "Outlook Business",
-      "importance": "high",
-      "regions": [
-        "India"
-      ],
-      "title": "India's official industrial output grows 7.3% in June — the fastest pace in nearly two years",
-      "what_happened": "India's **Index of Industrial Production (IIP)** rose **7.3% year-on-year in June 2026**, accelerating sharply from **5.0% growth in May** and marking the **fastest pace of industrial growth in nearly two years**. Within the index, **manufacturing output grew 7.8%** and **electricity and gas supply grew 10.6%**, while mining lagged. Of the 23 manufacturing industry groups tracked, **19 posted positive growth**, with **electrical equipment (+34%)**, **motor vehicles and trailers (+17.5%)**, and **food products (+10.8%)** the top contributors. The IIP's index level stood at **123.1**, up from 114.7 a year earlier.",
-      "key_points": [
-        "The **Index of Industrial Production (IIP)** grew **7.3% year-on-year in June**, up from 5.0% in May",
-        "**Manufacturing grew 7.8%** and **electricity & gas supply grew 10.6%**",
-        "**19 of 23 manufacturing industry groups** posted positive growth",
-        "Electrical equipment (**+34%**), motor vehicles (**+17.5%**) and food products (**+10.8%**) led the gains"
-      ],
-      "moot": "Two economic indicators measuring similar things (like PMI and IIP) can look contradictory but often aren't — they frequently cover different months or measure sentiment versus actual output, so it pays to check exactly what each one is measuring before assuming a conflict.",
-      "image_credit": "Outlook Business",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Millennium Post",
-          "Outlook Business"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "gdp"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "The **IIP** is India's official, government-compiled measure of actual factory, mining, and utility output — different from (and more backward-looking than) the private **PMI survey** the market already saw for July, which showed manufacturing sentiment cooling. The two aren't contradictory: IIP measures hard output data for **June**, a month earlier than the PMI's forward-looking July survey. Industrial output growth had been soft through much of the year, so June's jump is a notable acceleration.",
-        "why_it_matters": "Industrial output is one of the clearest real-economy signals of how India's factories and manufacturers are actually performing, separate from stock-market sentiment or survey-based indicators — a strong reading supports the case that India's growth engine is still running hot even as global trade faces tariff pressure.",
-        "ripple_effects": "A strong IIP reading feeds into GDP growth estimates and could reinforce the RBI's case for holding interest rates steady at this week's policy meeting (results due August 5). It's also a positive signal for industrial and manufacturing-linked stocks on Dalal Street.",
-        "why_now": "The June IIP data was released by India's statistics ministry today, as part of the routine monthly data cycle.",
-        "watch_next": "The RBI's rate decision on August 5 will show whether this strong industrial data shifts the central bank's tone on growth versus inflation.",
-        "market_link": "Positive for Indian manufacturing and industrial stocks; feeds into RBI rate-decision expectations and GDP growth estimates.",
-        "key_terms": [
-          {
-            "term": "Index of Industrial Production (IIP)",
-            "definition": "India's official monthly measure of actual output from factories, mines, and utilities — a hard-data gauge of industrial activity, as opposed to survey-based indicators like PMI."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Outlook Business",
-            "url": "https://www.outlookbusiness.com/economy-and-policy/indias-june-industrial-production-rises-to-73-pc-led-by-manufacturing-capital-goods"
-          },
-          {
-            "name": "Millennium Post",
-            "url": "https://www.millenniumpost.in/business/indias-industrial-production-growth-accelerates-to-73-in-june-govt-data-670064"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-08-03T10:30:00+05:30",
       "added_at": "2026-08-03T18:09:25+05:30",
@@ -1774,8 +1581,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-08-03T05:00:00Z",
       "added_at": "2026-08-03T16:03:49+05:30",
@@ -1838,75 +1645,71 @@
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-08-03T08:00:00+05:30",
-      "added_at": "2026-08-03T14:07:01+05:30",
-      "source": "India TV News",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-03T09:00:00Z",
+      "added_at": "2026-08-04T12:05:14+05:30",
+      "source": "GPblog",
       "importance": "notable",
       "regions": [
-        "India",
-        "Bihar",
-        "Gujarat",
-        "Madhya Pradesh"
+        "Global",
+        "UK"
       ],
-      "title": "Bihar, Gujarat and Madhya Pradesh count votes in three assembly bypolls, with Prashant Kishor's Jan Suraaj chasing its first big win in Bankipur",
-      "what_happened": "Vote counting began at **8am on Monday** under tight security for three assembly bypolls: **Bankipur** in Bihar, **Manjalpur** in Gujarat, and **Datia** in Madhya Pradesh. In Bankipur, Jan Suraaj founder **Prashant Kishor** was ahead of BJP candidate **Neeraj Kumar Sinha**, with his lead widening to **6,011 votes** as counting progressed through multiple rounds — the seat has 31 total rounds scheduled before a final result. In Manjalpur, BJP's **Satish Patel** built an **8,373-vote lead** over Congress's Bhikhabhai Rabari after the fourth round, with Patel polling 12,941 votes to Rabari's 4,568. In Datia, BJP's **Ashutosh Tiwari** led a three-cornered contest after the first round, ahead of Congress's Ghanshyam Singh and the Aazad Samaj Party (Kanshi Ram)'s Damodar Yadav 'Mandal'.",
+      "title": "Aston Martin begins locking in its 2027 car's architecture as Adrian Newey bets big on F1's new rules",
+      "what_happened": "Adrian Newey confirmed that Aston Martin is now making the **'big architectural decisions'** — engine position in the wheelbase, chassis layout, and other long-lead-time choices — for its **2027 car**, internally named the **AMR27**. He highlighted the front **'tea tray'** (the leading edge of the car's underbody floor) as the single most important rule change for 2027: it moves forward by roughly **300 millimetres**, allowing teams to run the front of the car lower to the ground for more downforce. Other 2027 changes include a **shallower rear wing** to cut overall downforce, a reduction in the floor's **'bear claw' vents from five to three**, the banning of various exhaust and rear-wing aerodynamic tricks teams currently exploit, and power-unit tweaks including **5% more fuel allowance** and adjusted energy storage and deployment rules. Newey said Aston Martin is now a **'much more mature'** team than six months ago and is well placed to capitalize on the regulation reset.",
       "key_points": [
-        "Counting began at **8am today** for bypolls in Bankipur (Bihar), Manjalpur (Gujarat) and Datia (Madhya Pradesh).",
-        "In **Bankipur**, Jan Suraaj founder **Prashant Kishor** widened his lead over BJP's Neeraj Kumar Sinha to **6,011 votes**.",
-        "In **Manjalpur**, BJP's Satish Patel led Congress by **8,373 votes** after the fourth round of counting.",
-        "In **Datia**, BJP's Ashutosh Tiwari led a three-way contest with Congress and the Aazad Samaj Party after round one.",
-        "Bankipur is the first real electoral test for Kishor's **Jan Suraaj party**, launched after he built his name as a political strategist."
+        "Aston Martin design chief **Adrian Newey** says the team is now making the **'big architectural decisions'** for its **2027 car, the AMR27**.",
+        "Those decisions — engine placement, chassis layout — are **long-lead-time choices** that are hard to reverse once locked in.",
+        "F1's 2027 rules move the floor's front edge (the **'tea tray'**) forward by about **300mm**, letting cars run lower at the front.",
+        "The rear wing shrinks and the floor's **'bear claw' vents drop from five to three**, while engines get **5% more fuel** and tweaked energy deployment.",
+        "Newey says Aston Martin is now a **'much more mature'** organisation than it was six months ago, positioning the team to exploit the new rules."
       ],
-      "moot": "A strategist's reputation for winning elections for others doesn't automatically transfer into winning elections for himself — voters evaluate a new party on its own candidates and message, not just its founder's résumé.",
-      "image_credit": "India TV News",
+      "moot": "In any field with periodic rule resets — sports, regulation, technology standards — the teams that win the next cycle are often the ones making foundational architecture bets more than a year before the rules even take effect.",
+      "image_credit": "GPblog",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "ETV Bharat",
-          "India TV News"
+          "F1technical.net",
+          "GPblog"
         ],
         "corroboration": 0
       },
-      "concepts": [
-        "eci"
-      ],
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Prashant Kishor is a political strategist who ran high-profile election campaigns for parties including the BJP, Congress and several regional outfits before launching his own party, **Jan Suraaj** ('good governance'), to contest elections in Bihar directly rather than advise others. An assembly bypoll (by-election) is held to fill a seat that falls vacant between general elections, and results are watched closely as an early signal of voter mood. Bankipur is a Patna constituency where Kishor is personally contesting, making this the clearest test yet of whether his years advising other parties translate into votes for his own.",
-        "why_it_matters": "Bankipur is being watched nationally because it's a direct test of whether Prashant Kishor's Jan Suraaj — built on his reputation as an election strategist rather than a traditional political base — can actually win votes on its own. A win would be read as validation of a new political entrant in Bihar; a loss would raise doubts about his party's ability to convert strategy into support.",
-        "ripple_effects": "A Jan Suraaj win in Bankipur would likely accelerate the party's plans to field more candidates across Bihar ahead of future elections, while BJP and Congress performances in Gujarat and Madhya Pradesh feed into each party's read on its state-level standing heading into the next round of state elections.",
-        "why_now": "Counting for all three bypolls was scheduled for today, giving a same-day readout on three separate state political contests.",
-        "watch_next": "The final declared results as counting concludes through the remaining rounds, especially the closely watched Bankipur margin.",
+        "background": "**Adrian Newey** is widely regarded as the most successful car designer in Formula 1 history, having designed championship-winning cars for Williams, McLaren and Red Bull before joining **Aston Martin** in 2025 specifically to lead its push for competitiveness. F1 periodically rewrites its technical rulebook — the last major reset was in 2022 — and a new set of changes lands in **2027**, which teams are already designing around more than a year in advance because chassis and engine architecture decisions can't easily be changed once committed. Aston Martin has struggled to match the sport's front-runners since Newey's arrival, making how well it reads and exploits the 2027 rules a major test of his tenure.",
+        "why_it_matters": "F1 rule resets routinely reshuffle the competitive order — teams that read the new regulations correctly can leap from the midfield to the front (as Red Bull and Mercedes have both done after past resets), while teams that misjudge them can fall backward for years. Newey's track record makes Aston Martin's 2027 bet one of the most closely watched storylines heading into the rule change.",
+        "ripple_effects": "Rival teams will be racing to match Aston Martin's early architectural commitments, and driver market decisions (including Fernando Alonso's looming retirement call) may hinge partly on how promising the team's 2027 project looks. A strong Aston Martin in 2027 could also reshape sponsorship and investment interest in the team.",
+        "why_now": "Teams must lock in fundamental chassis and engine architecture choices more than a year ahead of a new rules cycle, which is why Newey is discussing 2027 decisions now, in the middle of the 2026 season.",
+        "watch_next": "Whether rival teams' technical directors echo Newey's read of the 'tea tray' change as the single biggest swing factor for 2027 car performance.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "Assembly bypoll",
-            "definition": "An election held to fill a single state legislature seat that falls vacant between general elections — often used as an early read on voter sentiment."
+            "term": "tea tray",
+            "definition": "F1 slang for the leading edge of a car's underbody floor at the front, whose shape and height strongly affect how much downforce the car generates."
           }
         ],
         "sources": [
           {
-            "name": "India TV News",
-            "url": "https://www.indiatvnews.com/news/india/bankipur-datia-manjalpur-bypoll-results-live-updates-vote-counting-in-bihar-madhya-pradesh-gujarat-prashant-kishor-neeraj-kumar-sinha-visuals-2026-08-03-1050181"
+            "name": "GPblog",
+            "url": "https://www.gpblog.com/en/news/newey-backs-more-mature-aston-martin-to-seize-f1-2027-opportunity"
           },
           {
-            "name": "ETV Bharat",
-            "url": "https://www.etvbharat.com/en/bharat/bypoll-results-2026-assembly-constituencies-bihar-bankipur-gujarat-manjalpur-madhya-pradesh-datia-enn26080300880"
+            "name": "F1technical.net",
+            "url": "https://www.f1technical.net/news/28812"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-03T12:00:00Z",
       "added_at": "2026-08-04T10:01:28+05:30",
       "source": "The Race",
@@ -1968,8 +1771,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
       "published_iso": "2026-08-03T09:00:00Z",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -2023,8 +1826,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-08-03T10:00:00Z",
       "added_at": "2026-08-04T08:00:08+05:30",
@@ -2083,8 +1886,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-03T00:00:00Z",
       "added_at": "2026-08-04T05:59:45+05:30",
@@ -2146,8 +1949,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-03T08:00:00+01:00",
       "added_at": "2026-08-04T03:58:38+05:30",
@@ -2206,8 +2009,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-03T09:00:00+01:00",
       "added_at": "2026-08-04T03:58:38+05:30",
@@ -2266,8 +2069,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-01T09:00:00+00:00",
       "added_at": "2026-08-04T02:02:24+05:30",
@@ -2326,68 +2129,8 @@
     },
     {
       "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-02T12:00:00+00:00",
-      "added_at": "2026-08-04T02:02:24+05:30",
-      "source": "Motorsport Week",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Fernando Alonso's F1 retirement call is coming — he says he'll decide this summer break",
-      "what_happened": "Fernando Alonso has said he intends to make a decision about his Formula 1 future during the sport's two-week **summer shutdown**, which began July 31, with a call expected around **mid-August** — before the season resumes at the Dutch Grand Prix on August 21-23. Alonso's current Aston Martin contract runs through the end of **2026**, by which point he will be 45. He has said the team's forthcoming car upgrades are \"not really connected\" to his decision, implying the choice hinges more on his own appetite to keep racing than on the car's competitiveness. Sky Sports F1 pit-lane reporter Ted Kravitz has predicted Alonso will retire at season's end, framing it as a desire to pursue other pursuits rather than dissatisfaction with results. Alonso himself has given conflicting signals in recent months, at times suggesting he isn't ready to stop and hopes to race on beyond this year.",
-      "key_points": [
-        "**Fernando Alonso**, F1's two-time world champion, says he will decide on his racing future during the sport's mandatory **summer break**, with a call expected around **mid-August**.",
-        "Alonso is contracted to **Aston Martin through the end of 2026**, when he will be **45 years old**.",
-        "He insists Aston Martin's upcoming car upgrade package is **\"not really connected\"** to his decision — suggesting motivation, not results, is the deciding factor.",
-        "Sky Sports pit-lane reporter **Ted Kravitz** predicts Alonso will retire at season's end, saying it's about wanting to do \"other stuff,\" not frustration with the car.",
-        "Alonso has sent mixed signals himself, at other times saying he isn't ready to walk away and hopes to keep racing beyond 2026."
-      ],
-      "moot": "In sport, career-ending decisions at the highest level often hinge as much on a competitor's own motivation and appetite as on how competitive their equipment still is.",
-      "image_credit": "Motorsport Week",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "GPFans",
-          "Motorsport Week"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Alonso made his F1 debut in **2001** and won back-to-back world titles in **2005 and 2006**, making him one of the sport's most decorated active drivers. He has raced on and off at the sport's front and back of the grid for over two decades, including a mid-career detour into other racing series before returning to F1. His current team, Aston Martin, has been investing heavily to build a championship-capable car, and design chief Adrian Newey has been working on future models — all while Aston Martin is simultaneously reported to be chasing other drivers, including Williams's Carlos Sainz, adding extra intrigue to what Alonso decides.",
-        "why_it_matters": "Alonso's decision will shape Aston Martin's driver lineup and broader strategy for 2027, at a moment when the team is also reportedly pursuing other established drivers — meaning his choice has ripple effects well beyond his own seat.",
-        "ripple_effects": "If Alonso retires, it opens a seat at a team investing heavily in future competitiveness, likely accelerating any move for a driver like Carlos Sainz and reshuffling several other contracts down the grid as teams react. It would also mark the end of an era for one of the sport's last remaining early-2000s-era champions still racing.",
-        "why_now": "F1's mandatory summer factory shutdown is the natural pause point Alonso has set for making — and likely announcing — this decision.",
-        "watch_next": "A formal announcement from Alonso or Aston Martin around mid-August, before the season resumes at Zandvoort.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "F1 summer break",
-            "definition": "A mandatory two-week shutdown when every F1 team must stop all car development work, giving staff and drivers a fixed off-season-style break mid-season."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Motorsport Week",
-            "url": "https://www.motorsportweek.com/2026/04/29/fernando-alonso-drops-strongest-retirement-hint-yet-amid-aston-martin-struggles/"
-          },
-          {
-            "name": "GPFans",
-            "url": "https://www.gpfans.com/en/f1-news/1088382/fernando-alonso-f1-retirement-2026-aston-martin-ted-kravitz-sky-sports/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-69",
-      "rank": 69,
+      "id": "story-70",
+      "rank": 70,
       "category": "f1",
       "published_iso": "2026-08-03T07:00:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
@@ -2450,8 +2193,8 @@
     },
     {
       "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-71",
+      "rank": 71,
       "category": "f1",
       "published_iso": "2026-08-03T10:30:00+00:00",
       "added_at": "2026-08-04T00:03:23+05:30",
@@ -2514,129 +2257,9 @@
     },
     {
       "type": "story",
-      "id": "story-72",
-      "rank": 72,
-      "category": "f1",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T22:00:08+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "The FIA reveals why it couldn't fix F1's messy 2026 engine rules before the season started",
-      "what_happened": "The FIA has publicly explained why it couldn't fix known problems with F1's 2026 engine rules before the season began, despite seeing the issues coming. Under the **Power Unit Advisory Committee framework**, any substantial rule change requires support from the FIA, Formula One Management, and **at least four of the five power-unit manufacturers** — and when the FIA proposed adjustments, **four manufacturers rejected them**. The FIA says it tried: at a 2025 meeting in Bahrain, it proposed moving to a **60/40 power split** between combustion and electric power, but the plan was voted down. After pre-season testing exposed further problems, the FIA did push through one fix — cutting maximum energy deployment during races from **350kW to 200kW** — but broader concerns about how predictable and exciting the racing is have persisted through the season.",
-      "key_points": [
-        "A rule change needed sign-off from the **FIA, F1, and at least 4 of 5** engine manufacturers",
-        "Four manufacturers **rejected** a proposed **60/40 power split** fix floated in 2025",
-        "The FIA did push through one change: cutting max deployment from **350kW to 200kW**",
-        "The governance deal locks in engine rules the way the **Concorde Agreement** locks in team rules",
-        "Drivers have complained all season about **energy management and safety** under the new rules"
-      ],
-      "moot": "Giving major stakeholders a veto over changes protects their investment, but it also means a sport, company, or institution can get stuck with rules almost everyone dislikes if even a few stakeholders benefit from the status quo.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Formula 1 introduced a major new engine (power unit) rulebook for **2026**, aimed at cutting costs and increasing electric power, but the change has been rocky — drivers have spent the season complaining about how the cars manage energy deployment and about safety in certain conditions. When a manufacturer signs up to build F1 engines, it agrees to a binding **governance agreement** with the FIA (motorsport's regulator) and Formula One Management — similar to how the **Concorde Agreement** binds the teams. That agreement sets a high bar for changing rules once set, which is exactly what tied the FIA's hands here.",
-        "why_it_matters": "This shows how F1's own governance can trap it: rules meant to give manufacturers a stable, predictable environment to invest in also mean a small group of carmakers can block fixes even when almost everyone agrees something is broken. It's a case study in how the same voting structure that attracts big manufacturers to a sport can also make that sport slower to fix itself.",
-        "ripple_effects": "Expect continued driver and fan frustration through the rest of the 2026 season, since fundamental rule changes now likely have to wait for the next scheduled rules reset rather than an in-season fix. It also raises the stakes for whatever rules are set for **2027**, since manufacturers now know they can block changes they don't like.",
-        "why_now": "This explanation is surfacing now because driver complaints about the 2026 rules have built up over a full season, putting pressure on the FIA to publicly account for why nothing more was done.",
-        "watch_next": "Watch how much manufacturer buy-in the FIA can secure for the next rules cycle — reporting already suggests fears of a bigger blow-up if this year's frustrations aren't addressed for 2027.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Concorde Agreement",
-            "definition": "The commercial contract binding F1 teams, the FIA, and Formula One Management on revenue splits and rule-making — the team-side equivalent of the engine manufacturers' governance deal."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/fia-opens-up-on-f1s-2026-rule-issues-heres-why-it-couldnt-intervene-sooner/10843811/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-73",
-      "rank": 73,
-      "category": "f1",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T18:09:25+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Lewis Hamilton welcomes new puppy Halo during F1's summer break",
-      "what_happened": "Hamilton has welcomed a golden retriever puppy named **Halo** into his home, sourced from US-based breeder Goldiva Goldens. It's his first dog since the loss of his beloved English bulldog **Roscoe**, who died of pneumonia last September at 13 years old. To help raise Halo, Hamilton hired **Kirstin McMillian**, a Los Angeles-based, three-generation animal trainer who previously worked with both Roscoe and his other dog, Coco. McMillian reportedly flew to Maine to begin preparing Halo before bringing her back to Los Angeles. The news went viral after Hamilton's partner, Kim Kardashian, posted the first photo of the puppy online, drawing heavy attention during F1's quiet summer break.",
-      "key_points": [
-        "Hamilton has adopted a **golden retriever** puppy named Halo from US breeder Goldiva Goldens",
-        "It's his first dog since English bulldog **Roscoe** died of pneumonia last September at age **13**",
-        "Trainer **Kirstin McMillian**, who also worked with Roscoe, flew to Maine to prepare Halo before bringing her to Los Angeles",
-        "Partner **Kim Kardashian** shared the first public photo of Halo, sending the story viral",
-        "News broke during F1's mandatory **summer shutdown**, when the paddock and factories go quiet"
-      ],
-      "moot": "Even in a sport built on speed and technology, personal stories about its stars can dominate headlines when there's no racing to report, showing how much of sports media is about the people, not just the competition.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "GPblog",
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Hamilton, a seven-time world champion now driving for Ferrari, is known for his close bond with his pets, especially Roscoe, who traveled with him to races for years and became an unofficial F1 mascot before dying last September. Hamilton is dating media personality **Kim Kardashian**, and the couple's public life draws attention well beyond racing. F1's calendar includes a mandatory summer break after the Hungarian Grand Prix, when the paddock goes quiet and personal stories fill the news gap.",
-        "why_it_matters": "It's a human-interest story rather than a competitive one, but it matters to F1's huge fanbase because Hamilton's pets — especially Roscoe — have long been part of his public persona, and it shows how the sport's biggest star fills the news vacuum during the mandated summer shutdown.",
-        "ripple_effects": "Expect continued fan and media coverage of Halo similar to Roscoe's paddock celebrity status, possibly including future appearances at race weekends once the season resumes. It also keeps Hamilton and Kardashian in headlines together, extending their public profile beyond their respective sport and entertainment circles.",
-        "why_now": "The story broke today, during F1's summer shutdown, when there's no on-track action and personal news about drivers fills the coverage gap.",
-        "watch_next": "Whether Halo makes her first paddock appearance when F1 resumes at the Dutch Grand Prix on August 21.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "summer shutdown",
-            "definition": "A mandatory two-week period in F1's calendar when every team must fully close its factories and stop nearly all car development, so almost no on-track or technical news happens."
-          },
-          {
-            "term": "paddock",
-            "definition": "The behind-the-scenes area at a race track where teams, drivers and their guests — including pets — are based over a race weekend."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/lewis-hamilton-welcomes-new-puppy-halo-during-f1-summer-break/10843395/"
-          },
-          {
-            "name": "GPblog",
-            "url": "https://www.gpblog.com/en/lifestyle/hamilton-gets-new-puppy-as-kim-kardashian-shares-first-photo"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-03T20:30:00Z",
       "added_at": "2026-08-04T10:01:28+05:30",
       "source": "ESPNcricinfo",
@@ -3114,289 +2737,32 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-49",
-      "rank": 49,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Rain and Mohammad Abbas's shock axing shape Day 1 as West Indies close on 165/3 in the series-deciding 2nd Test",
-        "date": null
-      },
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T22:00:08+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "West Indies",
-        "Pakistan"
-      ],
-      "title": "Justin Greaves steadies West Indies to 239/5 as spin bowling dominates Day 2 in Trinidad",
-      "what_happened": "On **Day 2**, West Indies extended their overnight position to **239 for 5** by the time bad light stopped play, taking the upper hand on a spin-dominated day. **Justin Greaves** batted through the innings unbeaten for a fighting half-century, combining with **Roston Chase** for an unbroken **66-run partnership** that pushed the total past 200 with five wickets still in hand. Pakistan's spin duo, **Usman and Sajid**, bowled in tandem for long stretches and kept West Indies pinned down, but couldn't find the breakthroughs they needed — every West Indies batter in the lineup reached double figures, denying Pakistan the cheap dismissals needed to build pressure. Day 1 had already been disrupted by rain, during which Pakistan dropped seasoned pacer Mohammad Abbas from the XI, a call that drew scrutiny given his experience.",
-      "key_points": [
-        "West Indies reach **239/5** with **5 wickets in hand** after Day 2",
-        "**Justin Greaves** unbeaten on a fighting half-century, an unbroken **66-run stand** with Roston Chase",
-        "Pakistan's spin pair **Usman and Sajid** stifled West Indies for long periods",
-        "Every West Indies batter reached **double figures** — no cheap wickets for Pakistan",
-        "This is the **series-deciding 2nd Test** at Trinidad's Queen's Park Oval"
-      ],
-      "moot": "In cricket, disciplined batting that avoids cheap dismissals — even without big, quick scoring — is often what wins low-scoring, series-deciding matches, since it denies the bowling side the wicket clusters that create momentum.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Express Tribune"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "Day 1 was disrupted by rain, and Pakistan's decision to drop experienced seamer Mohammad Abbas drew scrutiny; West Indies closed on 165 for 3.",
-        "changed": "West Indies extended their position to 239 for 5, with Justin Greaves batting through for an unbeaten half-century and every batter reaching double figures against tight Pakistan spin."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Pakistan is touring the West Indies for a **two-match Test series**, with the second and final Test at Trinidad's Queen's Park Oval running **August 2-6**. Day 1 was disrupted by rain and marked by Pakistan's decision to drop veteran fast bowler **Mohammad Abbas**, with West Indies closing on **165 for 3**. Because this is the series decider, every session carries extra weight for both sides.",
-        "why_it_matters": "This is the decider in a two-match series, so the runs West Indies are banking now directly shape who wins the series. A modest, grinding total built on 'no cheap wickets' is often more valuable on a tricky, spin-friendly pitch than a flashy but fragile one.",
-        "ripple_effects": "A strong West Indies total puts pressure on Pakistan's own batting line-up, especially after the selection call to leave out an experienced bowler like Abbas. It also feeds into the ICC World Test Championship standings both sides are trying to climb.",
-        "why_now": "This is simply the natural progression of the match — Day 2 news follows Day 1, with the series-deciding stakes raising the profile of every session.",
-        "watch_next": "Watch whether West Indies can extend their lead further on Day 3, and how Pakistan's bowling attack — missing Abbas — copes without their most experienced seamer.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-2nd-test-1538631/match-report"
-          },
-          {
-            "name": "Express Tribune",
-            "url": "https://tribune.com.pk/story/2621790/greaves-steadies-west-indies-in-second-test-against-pakistan"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-52",
-      "rank": 52,
-      "category": "cricket",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T18:09:25+05:30",
-      "source": "Female Cricket",
-      "importance": "notable",
-      "regions": [
-        "England"
-      ],
-      "title": "England's Danni Wyatt-Hodge ruled out of the rest of The Hundred with a calf tear",
-      "what_happened": "Wyatt-Hodge picked up the injury while playing through discomfort during MI London's narrow loss to Southern Brave, where she still top-scored with an unbeaten **52**. Scans have since confirmed a **left calf tear**, ruling her out for the rest of the tournament. The Hundred has confirmed **Ella Claridge**, a 23-year-old batter who plays for the USA internationally and for The Blaze domestically, as her replacement in the MI London squad. The news follows fellow captain **Sophie Devine's** calf injury elsewhere in the competition, meaning two teams have lost key top-order batters to the same type of injury within days of each other. Wyatt-Hodge's 93 runs this season, at an average of 46.50, had made her one of the few bright spots in an otherwise winless campaign for MI London.",
-      "key_points": [
-        "MI London's **Danni Wyatt-Hodge** ruled out of the remainder of the **Women's Hundred 2026** with a torn left calf.",
-        "The injury happened while she batted through pain for an unbeaten **52** against Southern Brave on July 27.",
-        "**Ella Claridge**, a 23-year-old USA international, has been signed as her replacement.",
-        "Wyatt-Hodge was MI London's joint-top run-scorer this season with **93 runs** at a strike rate of **132.85**.",
-        "MI London remain **winless** at the bottom of the table, now without one of their most in-form batters."
-      ],
-      "moot": "In fast-paced modern cricket calendars, even short tournaments can lose key players to injury mid-stream — squad depth, not just star power, often decides how a struggling team's season plays out.",
-      "image_credit": "Female Cricket",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Female Cricket"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred is England's short-format cricket competition where each team faces 100 balls per innings instead of the usual 120 in a T20. Danni Wyatt-Hodge is a veteran England international opening batter with over a decade of white-ball experience for her country. She plays for **MI London**, one of eight teams in the competition, who have struggled all season and sit **last** in the standings without a win. Losing an experienced international mid-season is a significant blow for a side already searching for answers.",
-        "why_it_matters": "Losing a proven international batter mid-tournament forces a struggling team to rebuild its top order on the fly, right when it most needs experienced runs. It also underlines how the packed modern cricket calendar — leagues stacked back-to-back with international duty — is producing a steady stream of soft-tissue injuries like calf and hamstring tears.",
-        "ripple_effects": "MI London, already winless, must now find fresh runs at the top of the order from Ella Claridge, a new face in the competition, while chasing their first win of the season. For Claridge, it's a high-profile opportunity in one of the world's most-watched T20 leagues. The injury also adds to a growing list of niggles this Hundred season.",
-        "why_now": "The Hundred confirmed the scan results and Claridge's signing on August 3, making this the freshest team-news development in the tournament.",
-        "watch_next": "Watch how Ella Claridge performs on her MI London debut and whether the team can find its first win of the season without Wyatt-Hodge.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "The Hundred",
-            "definition": "An English short-format cricket competition where each team bats for 100 balls, instead of the 120 balls in a standard T20 innings."
-          },
-          {
-            "term": "Calf tear",
-            "definition": "A muscle injury in the lower leg caused by overstretching, common in sports requiring sprinting, that typically sidelines a player for weeks."
-          },
-          {
-            "term": "Strike rate",
-            "definition": "In cricket, the number of runs a batter scores per 100 balls faced — a measure of scoring speed."
-          },
-          {
-            "term": "Top-order batter",
-            "definition": "A batter who comes in early in the innings, usually relied upon to score the bulk of the team's runs."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Female Cricket",
-            "url": "https://femalecricket.com/women-cricket-news/94976-danni-wyatt-hodge-ruled-out-of-womens-hundred-2026-with-calf-injury.html"
-          },
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/live-blog/the-hundred-2026-news-and-updates-matt-roller-notebook-1525949"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-57",
-      "rank": 57,
-      "category": "cricket",
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T08:00:49+05:30",
-      "source": "Sky Sports",
-      "importance": "notable",
-      "regions": [
-        "UK"
-      ],
-      "title": "Beth Mooney powers Trent Rockets Women past Welsh Fire in Cardiff for a second Hundred win",
-      "what_happened": "At Cardiff, **Trent Rockets Women** chased down Welsh Fire Women's total of **129 for 3** with 17 balls to spare, winning by 8 wickets. **Beth Mooney** led the chase with a rapid 57 off 35 balls, laying the foundation before **Nat Sciver-Brunt (37 not out off 23 balls)** and **Ash Gardner (10 not out off 9 balls)** finished the job together at the crease. The win was Trent Rockets Women's second of the season, marking a positive turn in form after an inconsistent start to their Hundred campaign.",
-      "key_points": [
-        "Trent Rockets Women beat Welsh Fire Women by **8 wickets** in Cardiff.",
-        "**Beth Mooney** top-scored with **57 off 35 balls**, setting up the chase.",
-        "Welsh Fire were restricted to **129 for 3** from their 100 balls.",
-        "Trent Rockets chased the target down with **17 balls to spare**.",
-        "**Nat Sciver-Brunt (37 not out)** and **Ash Gardner (10 not out)** finished the innings together."
-      ],
-      "moot": "In short-format cricket, a single fast start from one batter — like Mooney's 57 off 35 — can set up an entire chase, showing how disproportionately early momentum matters when there are only 100 balls to work with.",
-      "image_credit": "Sky Sports",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "Sky Sports"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred is England's short-format cricket competition, played over 100 balls per side rather than the more familiar 20-over T20 format, and features both men's and women's franchise teams competing in parallel tournaments each summer. Welsh Fire Women had been in strong form this season, making this result a notable upset for Trent Rockets Women, who picked up just their second win of the competition.",
-        "why_it_matters": "Results like this shape the Hundred's group standings heading toward the business end of the tournament, and strong individual performances from players like Mooney and Sciver-Brunt reinforce their standing among the world's top white-ball batters.",
-        "ripple_effects": "The win lifts Trent Rockets Women in the table and adds momentum heading into their remaining fixtures, while Welsh Fire Women will need to regroup after a rare defeat this season.",
-        "why_now": "This is today's completed fixture in the ongoing 2026 Hundred season, which runs through August.",
-        "watch_next": "Both teams' next fixtures as the group stage of the 2026 Hundred season heads toward its playoff positions.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "The Hundred",
-            "definition": "An English cricket competition where each team faces 100 balls per innings (instead of the 120 balls in a standard T20), run alongside separate men's and women's tournaments."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Sky Sports",
-            "url": "https://www.skysports.com/cricket/news/12123/13568099/the-hundred-trent-rockets-coast-past-welsh-fire-as-beth-mooney-leads-run-chase-in-cardiff"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-60",
-      "rank": 60,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Chennai Super Kings join the race for Hardik Pandya as reports say seven IPL franchises now want him",
-        "date": null
-      },
-      "published_iso": "2026-08-03T00:00:00Z",
-      "added_at": "2026-08-03T05:59:33+05:30",
-      "source": "News9live",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Mumbai Indians publicly deny CSK trade talks over Hardik Pandya, calling reports 'contrary' to fact",
-      "what_happened": "A Mumbai Indians spokesperson pushed back directly on days of trade speculation, saying: 'Contrary to reports, we are not engaged in conversations regarding player trades; any trade would only be possible once the review is complete.' This contradicts specific reports from earlier this week claiming MI wanted CSK's Shivam Dube and Ayush Mhatre in exchange for handing over Pandya, with CSK reportedly offering Dube, Dewald Brevis, and roughly ₹10 crore in cash as an alternative package. The speculation had been fueled by Pandya's weak IPL 2026 numbers — just 206 runs at an average of 22.89 with no half-centuries, and an economy rate of 11.43 with the ball — alongside Mumbai Indians' failure to make the playoffs.",
-      "key_points": [
-        "A Mumbai Indians spokesperson said: **'we are not engaged in conversations regarding player trades.'**",
-        "MI says any trade decision can only happen **after its post-season review is complete**.",
-        "Reports had claimed MI wanted **Shivam Dube and Ayush Mhatre** from CSK in exchange for Hardik Pandya.",
-        "Pandya's IPL 2026 season was poor: **206 runs at 22.89**, no fifties, and an economy rate of 11.43 with the ball.",
-        "Mumbai Indians **missed the IPL 2026 playoffs**, fueling scrutiny of Pandya's captaincy."
-      ],
-      "moot": "In sports transfer sagas, specific-sounding details (named players, exact cash figures) can spread through media reports well before either party confirms anything — an official denial from one side is a reminder that 'reports say' is not the same as a real deal.",
-      "image_credit": "News9live",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "News9live"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported that Chennai Super Kings had joined the race for Hardik Pandya, with reports saying up to seven IPL franchises now wanted him, and that CSK were reportedly prepared to offer cash plus a player swap.",
-        "changed": "Mumbai Indians has now **officially denied** being in trade talks with CSK or anyone else, saying its post-season review isn't even finished yet — directly contradicting the specific swap terms (Shivam Dube, Ayush Mhatre, and cash) that had been widely reported."
-      },
-      "concepts": [],
-      "figures": [
-        {
-          "raw": "₹10 crore",
-          "words": "₹10 crore",
-          "usd_approx": "≈ $1mn"
-        }
-      ],
-      "depth": {
-        "background": "Hardik Pandya has captained Mumbai Indians since returning to the franchise in 2024, but the team has struggled since, missing the IPL 2026 playoffs entirely — a poor result that has put his captaincy and place in the squad under public scrutiny. Speculation about a trade to Chennai Super Kings (CSK), the franchise he started his career away from, built through late July and into this week, with multiple reports naming specific players CSK might offer in exchange, even though neither franchise had confirmed anything officially.",
-        "why_it_matters": "This is a real check on a trade story that had built significant momentum in the press — MI's direct denial means fans and other franchises (Delhi Capitals, KKR, and Rajasthan Royals were reportedly also watching) should treat the specific swap terms reported so far as unconfirmed rumor rather than an imminent deal.",
-        "ripple_effects": "If MI genuinely hasn't started trade talks, CSK and other interested franchises may need to wait for Mumbai's official post-season review before any real negotiation can happen, likely pushing any potential move closer to the IPL 2027 auction window. It also keeps Pandya's captaincy status at Mumbai Indians an open question heading into the off-season.",
-        "why_now": "The denial comes today, directly responding to a wave of trade reports that had built up over the past two days, making this the latest concrete data point in an active, fast-moving transfer saga.",
-        "watch_next": "Watch for whether Mumbai Indians completes its post-season review and whether any official trade talks are confirmed by either franchise afterward.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "News9live",
-            "url": "https://www.news9live.com/sports/cricket-news/hardik-pandya-heading-to-csk-mumbai-indians-break-silence-on-trade-rumours-2995904"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 140
+      "older_count": 143
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 133
+      "older_count": 135
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 85
+      "older_count": 88
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 90
+      "older_count": 92
     },
     {
       "type": "outro",
