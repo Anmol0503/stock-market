@@ -1,6 +1,6 @@
 {
   "date": "2026-08-06",
-  "generated_at": "2026-08-06T12:03:19+05:30",
+  "generated_at": "2026-08-06T14:02:14+05:30",
   "day_label": "Thursday · 6 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,133 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-08-04T00:00:00Z",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "Tom's Hardware",
+      "importance": "high",
+      "regions": [
+        "United States",
+        "China"
+      ],
+      "title": "The US is drafting a ban on Chinese-made AI data-center parts that Nvidia and Broadcom quietly depend on",
+      "what_happened": "Reuters reported on August 4 that the **FCC** is drafting a rule that would ban new-model imports of Chinese-made optical transceivers used in AI and cloud data centers. The two companies most exposed are **Zhongji Innolight** and **Eoptolink**, which together control more than 60% of the global market for the high-bandwidth 800G-and-above transceivers that power modern AI clusters, and which supply a majority of Nvidia's 800G module demand. Analysts at Counterpoint Research estimate Western manufacturers would need **12 to 24 months** to build enough capacity to replace that volume. Complicating any pivot, the leading Western alternative depends on **indium phosphide**, a substrate already under Chinese export licensing controls that pushed its price up roughly 250% in 2025. The rule remains in draft form, with the White House aiming to impose it sometime in 2026 and China saying it will respond if the ban proceeds; it would only affect new imports, leaving already-installed hardware untouched.",
+      "key_points": [
+        "The **FCC** is drafting a rule to ban new imports of **Chinese-made optical transceivers** — the parts that shuttle data between AI servers at light speed.",
+        "Two Chinese firms, **Innolight and Eoptolink**, together supply over **60%** of the high-speed (800G+) transceivers used in AI data centers, including most of Nvidia's own module needs.",
+        "Western suppliers need an estimated **12 to 24 months** to ramp up replacement capacity, according to Counterpoint Research.",
+        "The alternative parts depend on **indium phosphide**, a material China already restricts — its price has jumped roughly **250%** since 2025.",
+        "The ban is still a draft with no set effective date, and wouldn't touch transceivers already installed in US data centers."
+      ],
+      "moot": "Supply chains for cutting-edge technology often run through unglamorous, unnoticed components — securing the headline product (AI chips) doesn't matter much if a small part almost nobody tracks can still bottleneck the whole system.",
+      "image_credit": "Tom's Hardware",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Tech Times",
+          "Tom's Hardware"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supply_chain",
+        "tariffs"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Optical transceivers are the unglamorous plumbing of the AI boom — small modules that convert electrical signals to light so data can move between the tens of thousands of servers inside an AI data center fast enough to keep GPUs fed. As Washington has restricted the sale of advanced Nvidia chips *to* China, China's own suppliers have simultaneously become the dominant, low-cost source for this specific component *inside* American data centers — a dependency few outside the industry had noticed. The move fits a broader pattern of the Trump administration using national-security tools to squeeze Chinese suppliers out of the AI supply chain, following earlier restrictions on chipmaking equipment and rare-earth materials.",
+        "why_it_matters": "This is a supply-chain choke point almost nobody was watching: a ban could genuinely slow how fast US companies can build new AI data centers, even though the AI chips involved are all American-designed. It shows how deep — and how fragile — the US-China tech decoupling has become, deep enough that even a niche component market is now a national-security fight.",
+        "ripple_effects": "If the ban proceeds, expect near-term price spikes and possible delays for hyperscalers like Amazon, Google and Microsoft building out AI infrastructure, plus a scramble by Broadcom, Marvell and Credo to scale up US-made alternatives. China has signaled it could retaliate, adding another front to the tit-for-tat tech restrictions already hitting chipmaking tools and rare earths.",
+        "why_now": "The draft surfaced this week via a Reuters exclusive, as the administration continues rolling out a string of China-focused tech restrictions ahead of a possible Xi-Trump summit.",
+        "watch_next": "Watch for the FCC to formally open a public rulemaking process — that's the next concrete step before any ban could actually take effect.",
+        "market_link": "Nvidia (NVDA), Broadcom (AVGO), Marvell (MRVL) and Credo face supply-chain risk; Chinese suppliers Innolight and Eoptolink face lost US market access.",
+        "key_terms": [
+          {
+            "term": "optical transceiver",
+            "definition": "A small module that converts data between electrical and light signals, letting information move at high speed between servers inside a data center."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Tom's Hardware",
+            "url": "https://www.tomshardware.com/tech-industry/data-centers/us-mulling-ban-on-key-chinese-networking-tech-in-data-center-component-crackdown-white-house-wants-to-impose-restrictions-in-2026-china-says-it-will-respond-if-necessary"
+          },
+          {
+            "name": "Tech Times",
+            "url": "https://www.techtimes.com/articles/323104/20260805/fcc-transceiver-ban-would-cut-60-ai-data-center-supply-western-replacements-need-chinese-indium.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
       "category": "geopolitics",
       "is_new": true,
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "CNBC",
+      "importance": "high",
+      "regions": [
+        "United States"
+      ],
+      "title": "Trump's Marine One helicopter came within a mile of colliding with a passenger jet at Reagan National",
+      "what_happened": "On August 4, Marine One departed the Ellipse near the White House carrying President Trump toward Joint Base Andrews. Standard protocol requires air traffic controllers to halt other departures for **three minutes** before and during a Marine One flight — but the helicopter's radio notification wasn't heard because another transmission overlapped it on the same frequency. As a result, American Airlines flight 3742, an Envoy Air-operated regional jet bound for **Pensacola, Florida**, took off from Reagan National around the same time. The two aircraft closed to within **0.8 miles laterally and 700 feet vertically** of each other before separating safely. The FAA confirmed on August 5 that it is investigating alongside the NTSB, while the White House said the President was never in danger and praised Marine One's pilots as 'some of the best in the world.'",
+      "key_points": [
+        "Marine One, carrying **President Trump**, took off from the Ellipse near the White House on **August 4** en route to Joint Base Andrews.",
+        "A standard **3-minute pause** on other air traffic at nearby Reagan National didn't happen — a controller missed Marine One's radio call because someone else was transmitting at the same moment.",
+        "An American Airlines regional jet bound for Pensacola took off almost simultaneously, closing to within **0.8 miles laterally** and **700 feet vertically** of the helicopter.",
+        "The **FAA and NTSB** are now investigating; the White House says the President was never in danger.",
+        "It's the latest close call at the country's most tightly-controlled airspace since a deadly 2025 collision nearby."
+      ],
+      "moot": "Safety protocols are only as strong as the humans and radios executing them in real time — a single missed radio call, even in a system built with a dedicated safety buffer, can erase that margin in seconds.",
+      "image_credit": "CNBC",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNBC",
+          "Washington Post"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Reagan National sits barely **3 miles** from the White House, so every Marine One departure requires air traffic control to briefly clear all other aircraft around it — a protocol built precisely to prevent an accident like this. The airport has been under intense scrutiny since a **January 2025 mid-air collision** between an Army helicopter and a passenger jet near Reagan National killed 67 people, the deadliest US air disaster in over two decades. Since then, regulators have tightened helicopter routes around the airport, but near-misses involving military and VIP flights have kept surfacing.",
+        "why_it_matters": "A near-miss involving the sitting president's own helicopter exposes a gap in exactly the safety protocol designed to prevent the kind of catastrophe Reagan National saw in January 2025. It raises fresh questions about whether the fixes made after that disaster are actually holding up in practice.",
+        "ripple_effects": "Expect renewed political pressure on the FAA over staffing and communication protocols at one of America's busiest and most security-sensitive airports. It could also reignite debate over whether military and VIP helicopter traffic should be routed further from commercial flight paths near Reagan National.",
+        "why_now": "This surfaces today because the FAA only confirmed its investigation on August 5, a day after the incident, once reporting by several US outlets made the near-miss public.",
+        "watch_next": "Watch for the FAA/NTSB's preliminary findings on why the 3-minute traffic hold failed, and whether Reagan National sees new helicopter-routing restrictions as a result.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "NTSB",
+            "definition": "The National Transportation Safety Board, the US federal agency that investigates civil aviation accidents and near-misses to figure out what went wrong."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/05/faa-says-it-is-investigating-trump-helicopter-safety-incident-in-washington.html"
+          },
+          {
+            "name": "Washington Post",
+            "url": "https://www.washingtonpost.com/dc-md-va/2026/08/05/faa-investigating-incident-involving-trumps-helicopter-reagan-national/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "geopolitics",
       "published_iso": "2026-08-06T00:00:00Z",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "Kyiv Post",
@@ -69,10 +194,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-08-05T00:00:00Z",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "CBS News",
@@ -134,8 +258,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "technology",
       "published_iso": "2026-08-04T20:05:00+00:00",
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -201,8 +325,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "climate",
       "published_iso": "2026-08-04T00:00:00Z",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -261,8 +385,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "health",
       "published_iso": "2026-08-05T00:00:00Z",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -324,8 +448,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "economy",
       "published_iso": "2026-08-05T19:18:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -393,128 +517,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "science",
-      "published_iso": "2026-08-03T13:00:00+00:00",
-      "added_at": "2026-08-06T05:59:08+05:30",
-      "source": "ScienceDaily",
-      "importance": "notable",
-      "regions": [
-        "United States",
-        "Global"
-      ],
-      "title": "Stanford scientists discover immune cells that explode like tiny bombs to kill threats",
-      "what_happened": "Stanford scientists identified a new class of immune cell in planarian flatworms that they named **ruptoblasts**, after the way they operate: on encountering a threat, the cell physically ruptures, exploding within seconds to minutes and spraying its contents onto whatever is nearby. That toxic burst kills **bacteria and foreign cells in the immediate vicinity**, after which the ruptoblast itself disappears, leaving no trace. The team documented this happening repeatedly and rapidly under the microscope, distinguishing it from slower immune responses like engulfing (phagocytosis) seen in most other immune cells. Because the explosion is so tightly localized, it destroys the threat without damaging the flatworm's own healthy tissue nearby. The findings were published via Stanford Medicine and covered by ScienceDaily in early August 2026.",
-      "key_points": [
-        "Researchers found a brand-new immune cell type, called **ruptoblasts**, in flatworms",
-        "The cells burst apart within **seconds to minutes**, releasing toxic contents that kill nearby bacteria and foreign cells",
-        "The attack is **highly localized** — only cells right next to the threat are destroyed, then the ruptoblast is gone",
-        "Discovered in **planarian flatworms**, tiny aquatic animals famous for regrowing their entire body from a fragment",
-        "Scientists say the self-destructing attack mechanism could inspire **new targeted cancer and infection therapies**"
-      ],
-      "moot": "Biology keeps surprising researchers even in well-studied lab animals — a genuinely new defense mechanism can hide in plain sight until someone looks closely enough. Nature has already solved many precision-targeting problems that medicine is still trying to solve artificially, which is why basic research into 'simple' organisms keeps paying off for human medicine.",
-      "image_credit": "ScienceDaily",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ScienceDaily"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Every animal needs some way to fight off bacteria and foreign invaders, and biologists have only ever catalogued a handful of fundamentally distinct immune-cell strategies — cells that engulf germs, cells that release chemical alarms, cells that mark invaders for destruction. **Planarian flatworms** have been a favorite lab animal for over a century because they can regenerate a whole new body from a tiny cut fragment, which has made them a go-to model for studying regeneration. Stanford researchers were mapping the flatworm's immune system in fine detail when they found cells behaving in a way never documented before in any animal.",
-        "why_it_matters": "Discovering a genuinely new immune-cell type is rare — most textbook categories were established decades ago. A defense mechanism this precise and fast, if its underlying biology translates to mammals, could point toward **highly targeted ways to kill cancer cells or infected cells** without harming surrounding healthy tissue, which is one of the biggest challenges in current cancer therapy.",
-        "ripple_effects": "Cancer and infectious-disease researchers are likely to study whether a similar 'explosive' immune mechanism exists, in a modified form, in more complex animals including humans. If so, it could open a new line of drug or cell-therapy research distinct from existing approaches like CAR-T cell therapy. It's very early-stage — the finding is in flatworms, not humans — so any real-world treatment is still years away.",
-        "why_now": "The research was published in early August 2026 after Stanford's immunology group completed detailed imaging of the flatworm immune system, a project that had been building on the lab's earlier work tracking how flatworms fight infection.",
-        "watch_next": "Watch for follow-up studies testing whether a comparable rapid-rupture immune mechanism exists in mice or human cells.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Planarian flatworm",
-            "definition": "A small aquatic worm studied by scientists because it can regrow its entire body from a small cut piece."
-          },
-          {
-            "term": "Phagocytosis",
-            "definition": "The more common immune-cell strategy of engulfing and digesting a threat whole, rather than exploding."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ScienceDaily",
-            "url": "https://www.sciencedaily.com/releases/2026/08/260803080914.htm"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "health",
-      "published_iso": "2026-08-05T00:00:00Z",
-      "added_at": "2026-08-06T04:01:18+05:30",
-      "source": "NPR",
-      "importance": "high",
-      "regions": [
-        "US"
-      ],
-      "title": "The Senate confirms Dr. Erica Schwartz as CDC director, ending a nearly year-long vacancy",
-      "what_happened": "The US Senate voted **51-44** on Wednesday to confirm **Dr. Erica Schwartz** as director of the Centers for Disease Control and Prevention, ending a leadership vacuum that lasted almost a year. Schwartz, 54, is a former deputy surgeon general and a retired US Coast Guard officer; she becomes the CDC's **22nd director** and the **first Black woman** to hold the role. She was nominated in April, making her the **third person** Trump has put forward for the job in 18 months — after David Weldon's nomination stalled and successor Susan Monarez was pushed out within a month of her own confirmation. Schwartz now leads an agency that has lost thousands of employees to layoffs and resignations and faced sustained criticism over political interference in its scientific work.",
-      "key_points": [
-        "The **Senate confirmed Dr. Erica Schwartz**, 54, as CDC director in a **51-44 vote**.",
-        "She's the CDC's **22nd director** and its **first confirmed leader in nearly a year**.",
-        "Schwartz is a **former deputy surgeon general** and retired **US Coast Guard officer** — and the **first Black woman** to lead the CDC.",
-        "She's the **third Trump nominee** for the job in 18 months; predecessor **Susan Monarez was ousted within a month** of her own confirmation.",
-        "She inherits an agency **beleaguered by layoffs, resignations, and leadership turmoil**."
-      ],
-      "moot": "A government agency functions only as well as its leadership is stable — repeated churn at the top erodes institutional capacity faster than any single policy decision.",
-      "image_credit": "NPR",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "CNN",
-          "NPR"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The CDC (Centers for Disease Control and Prevention) is the US government's main public-health agency, tracking and responding to disease outbreaks, vaccination policy, and health emergencies. It has gone without a permanent, Senate-confirmed director for almost a year amid political turnover: first nominee David Weldon never got a vote, and Susan Monarez — who took over as acting director — was confirmed but then abruptly ousted after less than a month. That turmoil has coincided with deep staff cuts and resignations, raising concern among public-health experts about the agency's capacity to respond to emerging threats.",
-        "why_it_matters": "The CDC director sets the tone for how the US tracks and responds to disease outbreaks, vaccine policy, and public-health emergencies — a leadership vacuum at the top left the agency rudderless during an unusual stretch of turnover and low morale. Schwartz's confirmation gives it a permanent leader for the first time in nearly a year, though she inherits a workforce hollowed out by cuts.",
-        "ripple_effects": "Her early decisions — on vaccine guidance, outbreak-response staffing, and how she navigates political pressure from the White House — will be closely watched by state health departments, hospitals, and international health bodies that rely on CDC data and guidance. A stable director could help rebuild agency morale, but continued political interference could deepen the exodus of scientific staff.",
-        "why_now": "The vacancy had become increasingly untenable given the CDC's central role in tracking active health threats, including the world's second-largest-ever Ebola outbreak in DR Congo, building pressure on the Senate to fill the post.",
-        "watch_next": "Schwartz's first major policy moves, and whether she faces the same political pressures that led to Monarez's ouster.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Senate confirmation",
-            "definition": "The US Senate's constitutional role of voting to approve the President's nominees for senior federal positions before they can take office."
-          }
-        ],
-        "sources": [
-          {
-            "name": "NPR",
-            "url": "https://www.npr.org/2026/08/05/nx-s1-5920379/cdc-director-confirmed-erica-schwartz"
-          },
-          {
-            "name": "CNN",
-            "url": "https://www.cnn.com/2026/08/05/health/erica-schwartz-senate-vote"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-9",
-      "rank": 9,
+      "id": "story-11",
+      "rank": 11,
       "category": "geopolitics",
       "published_iso": "2026-08-05T09:00:00+00:00",
       "added_at": "2026-08-06T04:01:18+05:30",
@@ -579,8 +583,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "geopolitics",
       "published_iso": "2026-08-05T10:00:00+00:00",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -639,8 +643,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "technology",
       "published_iso": "2026-08-05T15:00:00+00:00",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -705,8 +709,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -780,8 +784,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -853,8 +857,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "economy",
       "published_iso": "2026-08-05T16:14:00+08:00",
       "added_at": "2026-08-05T20:08:45+05:30",
@@ -917,75 +921,147 @@
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "economy",
-      "published_iso": null,
-      "added_at": "2026-08-05T16:02:34+05:30",
-      "source": "CNBC",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-05T00:00:00+05:30",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "Meta-Defense",
       "importance": "high",
       "regions": [
-        "Europe",
-        "United States"
+        "India",
+        "France"
       ],
-      "title": "Novo Nordisk raises its 2026 outlook — and investors punish the stock anyway, over a Wegovy pill miss and a failed obesity-drug trial",
-      "what_happened": "Novo Nordisk reported **second-quarter 2026 earnings** on August 5, with sales of **78.49 billion kroner (about $12.09 billion)**, up 3% in constant currency and 7% on an adjusted basis. Management raised its full-year 2026 guidance to roughly flat-to-down-6% adjusted sales, an improvement on its earlier forecast of a decline of up to 12%. Despite that upgrade, the **Wegovy pill** — a needle-free version of the drug — brought in 3.22 billion kroner, narrowly missing the 3.27 billion kroner analysts expected, and the company disclosed a **setback in a clinical trial** for CagriSema, its next-generation obesity treatment meant to succeed Wegovy. Novo also flagged a coming **decline in US sales**, citing intensifying competition from Eli Lilly, changing prescription patterns, and reduced Medicaid coverage for obesity drugs. Shares fell about 6% in US trading and 4.2% in Copenhagen as CEO Mike Doustdar faced investor questions on the earnings call.",
+      "title": "India moves a step closer to building its own fighter-jet engine, in a joint deal with France's Safran",
+      "what_happened": "Safran and GTRE (India's DRDO-run Gas Turbine Research Establishment) formally submitted their joint proposal for a co-developed fighter engine to India's Cabinet Committee on Security, according to reporting on August 5. The engine targets **110–130 kN of thrust** (roughly 120 kN as a baseline, with room to grow to 140 kN), enough to power the AMCA Mk2. CCS approval, expected before **August 15**, would clear the way for Safran and GTRE to begin final contract negotiations and eventually sign a formal cooperation agreement. The most significant detail: India would hold full intellectual property rights to the resulting engine design, something no previous foreign engine partnership has given it.",
       "key_points": [
-        "Novo Nordisk **raised** its full-year 2026 sales guidance to down 6% to flat, from a prior forecast of down 4-12%",
-        "Shares still fell **about 6%** in the US and **4.2%** in Copenhagen as investors focused on the misses",
-        "The new Wegovy **pill** brought in **3.22 billion kroner**, just short of the 3.27 billion analysts expected",
-        "Its next-generation obesity drug **CagriSema** hit a **clinical trial setback**, clouding the pipeline",
-        "Q2 sales rose to **78.49 billion kroner (~$12.09B)**, up 3% in constant currency, as US competition and Medicaid cuts weigh on the outlook"
+        "France's **Safran** and India's **GTRE** (the DRDO's engine research arm) have submitted their joint fighter-engine proposal to India's **Cabinet Committee on Security (CCS)** for final approval.",
+        "Approval is expected **before August 15**, after which the two sides can begin formal contract negotiations.",
+        "The engine is being built to power the **AMCA Mark-2**, the stealthier, more advanced version of India's homegrown fifth-generation fighter jet.",
+        "It will deliver **110–130 kN of thrust**, with a growth path toward 140 kN — comparable to engines powering top-tier fighters like the F-35.",
+        "Crucially, India would own **full intellectual property** over the engine design — a first for the country in advanced jet propulsion."
       ],
-      "moot": "A raised forecast doesn't guarantee a stock goes up — markets trade on the details behind the headline number, and a miss in the part of the business investors care most about can outweigh good news everywhere else.",
-      "image_credit": "CNBC",
+      "moot": "For a country building advanced weapons systems, owning the intellectual property behind critical components matters as much as owning the finished product — licensing or buying tech leaves you dependent on the supplier in a crisis.",
+      "image_credit": "Meta-Defense",
       "credibility": {
-        "level": "confirmed",
+        "level": "developing",
         "count": 2,
-        "tier": 1,
+        "tier": 2,
         "outlets": [
-          "CNBC",
-          "Investing.com"
+          "IDRW",
+          "Meta-Defense"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Novo Nordisk is the Danish pharmaceutical giant behind **Ozempic** and **Wegovy**, the GLP-1 drugs that created the modern weight-loss and diabetes-treatment boom and made Novo one of Europe's most valuable companies. It has spent the past two years locked in an intensifying race with US rival **Eli Lilly** for the fast-growing obesity-drug market, while rolling out an oral (pill) version of Wegovy to widen access beyond injections. New CEO **Mike Doustdar** has been under pressure since taking over to prove Novo can defend its lead as rivals catch up and US reimbursement gets tighter.",
-        "why_it_matters": "This is a case study in how a company can beat its own prior forecast and still get punished — investors are pricing in the **future** of the obesity-drug race, not just this quarter's numbers, and both the pill miss and the CagriSema setback raise doubts about whether Novo can keep its lead over Eli Lilly.",
-        "ripple_effects": "A weaker Novo outlook ripples through European stock indices, since Novo is one of the continent's largest listed companies, and affects Eli Lilly's competitive position and share price. It also matters to millions of patients on GLP-1 drugs whose price and availability depend on this competitive race, and reinforces investor nervousness about how far US insurers and Medicaid will keep paying for expensive obesity treatment.",
-        "why_now": "Q2 earnings season across pharma; Novo reported today alongside Eli Lilly and other major names on a heavy Wednesday earnings slate.",
-        "watch_next": "CagriSema's next clinical trial readout and whether Novo's pill sales reaccelerate in Q3.",
-        "market_link": "Novo Nordisk (NVO) and European pharma indices fall; read-through for competitor Eli Lilly (LLY) and the broader GLP-1/obesity-drug trade.",
+        "background": "India has never built a fighter-jet engine of its own from scratch — every Indian fighter, including the Tejas, flies on an imported or foreign-licensed engine, most often from the US or Russia. That gap has long been considered the single biggest weakness in India's push for defence self-reliance (what officials call **Atmanirbhar Bharat**), since an engine supplier can effectively hold a country's air force hostage during a crisis by withholding spares or support. The **AMCA** (Advanced Medium Combat Aircraft) is India's flagship stealth-fighter program, developed in two versions — the AMCA Mk1, using an existing imported engine, and the more advanced Mk2, which this new Safran-GTRE partnership is meant to power.",
+        "why_it_matters": "Owning the IP to a fighter engine — not just building it under license — would be a genuine first for India's defence industry, ending decades of dependence on foreign suppliers for the single most strategically sensitive part of a fighter jet.",
+        "ripple_effects": "A successful deal would deepen India-France defence ties (already strong via the Rafale jet purchase) and could position Indian firms like HAL to eventually export engine components. It also reduces India's exposure to US or Russian leverage over future fighter programs, at a time when both those relationships carry their own frictions.",
+        "why_now": "The CCS approval deadline of mid-August has pushed this from a long-running negotiation into a concrete news event this week, as the two sides prepare to move from proposal to contract.",
+        "watch_next": "Watch for the CCS's formal approval before August 15, followed by the start of contract negotiations between Safran and GTRE.",
+        "market_link": "Defence and aerospace names like HAL, and engine-linked private suppliers, tend to move on AMCA program milestones.",
         "key_terms": [
           {
-            "term": "GLP-1 drugs",
-            "definition": "A class of medicines (like Ozempic and Wegovy) that mimic a gut hormone to control blood sugar and appetite — the basis of the current weight-loss drug boom."
-          },
-          {
-            "term": "Guidance",
-            "definition": "A company's own forecast for future sales or profit; markets react to whether results beat or miss it, and whether it's raised or cut."
+            "term": "Cabinet Committee on Security (CCS)",
+            "definition": "The top Indian government body, chaired by the Prime Minister, that approves major defence and national-security decisions."
           }
         ],
         "sources": [
           {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/novo-nordisk-stock-guidance-earnings-wegovy-ozempic-eli-lilly.html"
+            "name": "Meta-Defense",
+            "url": "https://meta-defense.fr/en/2026/08/05/safran-gtre-amca-mk2-engine-project-india/"
           },
           {
-            "name": "Investing.com",
-            "url": "https://www.investing.com/news/earnings/novo-nordisk-falls-as-wegovy-sales-miss-trial-setback-overshadow-raised-outlook-4836461"
+            "name": "IDRW",
+            "url": "https://idrw.org/india-safran-jet-engine-deal-nears-ccs-approval-marking-strategic-break-from-foreign-dependency-for-amca/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-05T00:00:00+05:30",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "Upstox",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "PB Fintech's profit nearly doubles as more Indians buy insurance online through PolicyBazaar",
+      "what_happened": "PB Fintech reported its **April–June 2026 (Q1 FY27)** results on **August 5**, showing consolidated net profit of **₹163 crore**, up 92% from ₹85 crore in the same quarter last year. Revenue from operations rose 40% year-on-year to **₹1,888.28 crore**, from ₹1,347.99 crore. Adjusted EBITDA — operating profit before interest, tax, depreciation and amortization — advanced 109% to ₹186 crore from ₹89 crore, with the company citing sharply higher insurance premiums sold through its platform during the quarter.",
+      "key_points": [
+        "**PB Fintech**, parent of PolicyBazaar and Paisabazaar, posted **Q1 FY27** (April–June 2026) consolidated net profit of **₹163 crore**, up **92%** year-on-year.",
+        "Revenue from operations jumped **40%** to **₹1,888 crore**, driven by rising online insurance premiums.",
+        "Adjusted **EBITDA** (a measure of core operating profit) more than doubled, up **109%** to ₹186 crore.",
+        "The results reflect a broader shift of Indian insurance-buying from agents and branches to online platforms."
+      ],
+      "moot": "A company's revenue growing is only half the story — margins expanding *faster* than revenue (like PB Fintech's EBITDA here) is usually the stronger signal that a business is becoming durably profitable, not just bigger.",
+      "image_credit": "Upstox",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "Upstox"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [
+        {
+          "raw": "₹163 crore",
+          "words": "₹1.63 billion",
+          "usd_approx": "≈ $17mn"
+        },
+        {
+          "raw": "₹85 crore",
+          "words": "₹85 crore",
+          "usd_approx": "≈ $9mn"
+        },
+        {
+          "raw": "₹1,888.28 crore",
+          "words": "₹18.88 billion",
+          "usd_approx": "≈ $196mn"
+        },
+        {
+          "raw": "₹1,347.99 crore",
+          "words": "₹13.48 billion",
+          "usd_approx": "≈ $140mn"
+        }
+      ],
+      "depth": {
+        "background": "PB Fintech runs **PolicyBazaar**, India's largest online insurance marketplace, and **Paisabazaar**, a loan comparison platform. For years the company burned cash to acquire customers before turning consistently profitable only in the last couple of years, so each quarter's results are watched closely as a proxy for how fast India's insurance market is digitizing. The company has increasingly leaned on its own **PolicyBazaar-branded insurance underwriting arm** to boost margins, rather than just earning commissions for referring customers to other insurers.",
+        "why_it_matters": "PB Fintech is one of the clearest bellwethers for how fast India's insurance industry is moving online, and profit nearly doubling shows that shift is not just growing revenue but genuinely improving margins — a sign the business model has matured past its cash-burning growth phase.",
+        "ripple_effects": "Strong results here tend to lift sentiment across India's listed new-age internet/fintech stocks, and put pressure on traditional insurance agents and legacy insurers to accelerate their own digital push to compete on price and convenience.",
+        "why_now": "Indian companies report quarterly earnings on a fixed cycle, and this is PB Fintech's first results release of the July-September earnings season.",
+        "watch_next": "Watch management's commentary on the earnings call for guidance on the newer PolicyBazaar-underwritten insurance business, which carries thinner near-term margins but higher long-term profit potential.",
+        "market_link": "PB Fintech (NSE: POLICYBZR) shares typically react to quarterly results; strength here is watched across India's listed internet/fintech names.",
+        "key_terms": [
+          {
+            "term": "EBITDA",
+            "definition": "Earnings before interest, tax, depreciation and amortization — a way to measure how profitable a company's core business is before accounting and financing effects."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Upstox",
+            "url": "https://upstox.com/news/market-news/earnings/pb-fintech-q1-results-net-profit-soars-92-yo-y-to-163-crore-insurance-premium-surges-40/article-198183/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-06T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "Free Press Journal",
@@ -1043,10 +1119,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-06T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "Bar and Bench",
@@ -1106,8 +1181,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-06T05:30:00+00:00",
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -1178,8 +1253,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-05T17:43:00+05:30",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -1242,8 +1317,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-05T00:00:00+05:30",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -1311,8 +1386,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-04T12:00:00+05:30",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -1379,137 +1454,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
-      "category": "india",
-      "published_iso": "2026-08-03T10:00:00+05:30",
-      "added_at": "2026-08-06T05:59:08+05:30",
-      "source": "Business Standard",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "New tax bill offers foreign investors sweeping relief on offshore funds, electronics, and diamond trading",
-      "what_happened": "The government has proposed the Taxation and Other Laws (Amendment) Bill, 2026, bundling tax relief across offshore fund management, electronics manufacturing, and diamond trading. Under the draft, overseas investment funds can appoint **India-based fund managers** without automatically becoming liable for Indian tax, provided they meet safeguards — and the Central Board of Direct Taxes (CBDT) is cutting the number of qualifying conditions from 13 to 5 to make this easier to satisfy. Separately, foreign companies that supply capital goods, equipment, or tooling to Indian contract electronics manufacturers get their existing tax exemption extended by another **10 tax years, through 2040-41**, and foreign firms storing and selling electronic components via customs-bonded warehouses for Indian manufacturers also get exemptions. A brand-new exemption covers foreign companies trading **rough diamonds** through the Special Notified Zones in Mumbai and Surat, available for 15 years through 2040-41.",
-      "key_points": [
-        "The Taxation and Other Laws (Amendment) Bill, 2026 cuts red tape for **offshore fund managers** operating from India",
-        "Qualifying conditions for offshore funds drop from **13 to just 5**, making it far easier to base fund managers in India without triggering Indian tax",
-        "Foreign firms supplying capital goods to Indian **electronics manufacturers** get their tax exemption extended by **10 more years**, to 2040-41",
-        "A new tax break covers foreign companies trading **rough diamonds** through Mumbai and Surat's Special Notified Zones, also through 2040-41",
-        "India's data-centre power capacity is projected to **double to over 2 gigawatts** in 2026, and the bill supports that build-out too"
-      ],
-      "moot": "Countries compete for the SAME pool of global capital and skilled business activity — tax rules are one of the few levers a government can pull quickly to shift where multinational firms choose to locate people and money, which is why tax bills that sound technical can matter as much as headline economic policy.",
-      "image_credit": "Business Standard",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Business Standard",
-          "Business Today"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "fii_flows",
-        "union_budget"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "India has spent the last decade trying to convince global fund managers, manufacturers, and traders to set up operations onshore rather than routing business through hubs like Singapore or Dubai, arguing this creates jobs and tax revenue at home. A recurring obstacle has been India's tax code: foreign entities often avoided basing staff in India because doing so risked being treated as having a taxable **'permanent establishment'** there, triggering full Indian tax liability. The **Taxation Laws Amendment Bill, 2026** is the latest in a series of reforms — following similar moves for GIFT City and electronics manufacturing — meant to remove that disincentive across several sectors at once.",
-        "why_it_matters": "Each of these sectors — fund management, electronics manufacturing, diamond trading — is one where India competes directly against other countries for the same global capital and business. Lowering the tax friction is a direct bid to pull financial-services jobs, electronics supply chains, and diamond-trading volume away from rival hubs and into India.",
-        "ripple_effects": "If it works, expect more global asset managers to open India offices, more foreign suppliers willing to base staff alongside India's electronics contract manufacturers (a segment the government has separately been boosting via PLI subsidies), and Mumbai/Surat's diamond trade to compete harder for volume currently handled via Belgium or the UAE. It also reinforces India's push to grow as a data-centre hub as AI-driven demand for computing capacity rises globally.",
-        "why_now": "The bill follows India's broader 2025-26 push to position itself as an alternative investment and manufacturing base amid global supply-chain reshuffling, and builds on earlier incentives for GIFT City and electronics manufacturing that officials say need widening to keep pace with competitor jurisdictions.",
-        "watch_next": "Watch for the bill's passage through Parliament and the CBDT's detailed rules on what qualifies as a safe-harbour fund-manager arrangement.",
-        "market_link": "Positive for India-based asset management, GIFT City-linked financial services, electronics contract manufacturers, and Mumbai/Surat diamond-trading firms.",
-        "key_terms": [
-          {
-            "term": "Permanent establishment",
-            "definition": "A tax concept where a foreign company having a fixed base or staff in a country can make it liable to pay tax there on its global income."
-          },
-          {
-            "term": "Special Notified Zone",
-            "definition": "A designated area, like the diamond-trading hubs in Mumbai and Surat, where specific customs and tax rules apply to encourage a particular industry."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/tax-bill-to-widen-steps-to-attract-foreign-investment-ease-rules-126080301629_1.html"
-          },
-          {
-            "name": "Business Today",
-            "url": "https://www.businesstoday.in/latest/economy/story/tax-amendment-bill-2026-faqs-cbdt-explains-proposed-tax-relief-for-electronics-manufacturing-547203-2026-08-05"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-08-04T14:36:00+05:30",
-      "added_at": "2026-08-06T04:01:18+05:30",
-      "source": "ANI News",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Government bill would permanently exempt foreign investors from tax on Indian government bonds",
-      "what_happened": "The Indian government introduced the **Taxation and Other Laws (Amendment) Bill, 2026** in the Lok Sabha (Parliament's lower house) on Tuesday, proposing tax changes meant to boost investment, support manufacturing, and give investors more certainty. Its central provision exempts interest income and capital gains from the sale, exchange, or transfer of **government securities** for eligible Foreign Portfolio Investors and the Bank for International Settlements — turning into permanent law the relief that has applied since a **June 5 ordinance**. The bill also extends tax incentives for electronics manufacturing out to **2041** and widens their coverage to laptops and wearables, and it simplifies eligibility conditions for offshore investment funds and India-based fund managers to qualify for tax exemption on their global income. It must still pass both houses of Parliament and get presidential assent before formally replacing the ordinance.",
-      "key_points": [
-        "The **Taxation and Other Laws (Amendment) Bill, 2026** was introduced in the **Lok Sabha** on Tuesday.",
-        "It exempts **interest income and capital gains** for eligible **Foreign Portfolio Investors** and the **Bank for International Settlements** on India's **government securities (G-Secs)**.",
-        "It **replaces a June 5 ordinance** that had granted the same relief on a temporary basis.",
-        "The bill also **extends electronics-manufacturing tax incentives to 2041**, widening them to cover **laptops and wearables**.",
-        "It **simplifies eligibility rules** for offshore investment funds and India-based fund managers."
-      ],
-      "moot": "Tax certainty is itself a form of infrastructure for financial markets — countries compete for global capital partly on how reliable their rules are, not just on interest rates or growth prospects.",
-      "image_credit": "ANI News",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "ANI News"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "fii_flows",
-        "ordinance"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "The government had already given foreign investors relief from tax on interest and capital gains from India's government bonds through an ordinance — a temporary executive order used to make a law effective immediately — issued on June 5, 2026. This bill converts that relief into permanent law by having Parliament formally pass it, while adding further incentives for electronics manufacturers and offshore fund managers. The moves are part of a broader push to make Indian government debt more attractive to foreign capital and to keep India's electronics-manufacturing incentives competitive as global supply chains diversify.",
-        "why_it_matters": "Clear, permanent tax treatment for foreign investment in Indian government bonds removes a layer of uncertainty that had rested on a temporary ordinance, making it easier for large foreign funds to commit money to India's debt market. The extended manufacturing incentives also signal the government's continued push to make India a bigger link in global electronics supply chains.",
-        "ripple_effects": "More certainty on tax treatment could encourage greater foreign portfolio inflows into Indian government bonds, helping fund the government's borrowing needs and potentially supporting the rupee. The manufacturing incentives could influence where global electronics companies choose to set up laptop and wearable-device production over the next 15 years.",
-        "why_now": "The bill needs parliamentary passage before the June 5 ordinance's effect lapses, and the government is using the ongoing Monsoon Session to formalize it into permanent law.",
-        "watch_next": "Whether the bill clears both the Lok Sabha and Rajya Sabha before the Monsoon Session ends, and how much fresh FPI money flows into G-Secs once the tax certainty is locked in.",
-        "market_link": "Indian government bonds (G-Secs) and the rupee — greater tax certainty could support foreign inflows into Indian debt markets.",
-        "key_terms": [
-          {
-            "term": "Ordinance",
-            "definition": "A temporary law India's President can issue when Parliament isn't in session, which must later be approved by Parliament or it lapses."
-          },
-          {
-            "term": "Foreign Portfolio Investor (FPI)",
-            "definition": "An overseas investor who buys financial assets like stocks and bonds in another country without taking a controlling stake in a company."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ANI News",
-            "url": "https://www.aninews.in/news/business/centre-introduces-taxation-and-other-laws-amendment-bill-in-lok-sabha-proposes-fresh-tax-exemptions-investment-friendly-reforms20260804143617/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-08-05T09:15:00+05:30",
       "added_at": "2026-08-06T04:01:18+05:30",
@@ -1588,8 +1534,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-08-05T23:40:26+05:30",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -1644,8 +1590,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-08-05T12:00:00+05:30",
       "added_at": "2026-08-06T00:03:17+05:30",
@@ -1701,8 +1647,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-36",
+      "rank": 36,
       "category": "india",
       "published_iso": "2026-08-05T11:00:00+05:30",
       "added_at": "2026-08-05T22:02:36+05:30",
@@ -1767,8 +1713,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-08-05T13:00:00+05:30",
       "added_at": "2026-08-05T20:08:45+05:30",
@@ -1828,8 +1774,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "published_iso": "2026-08-05T10:00:00+05:30",
       "added_at": "2026-08-05T20:08:45+05:30",
@@ -1887,8 +1833,8 @@
     },
     {
       "type": "story",
-      "id": "story-37",
-      "rank": 37,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-08-05T12:00:00+05:30",
       "added_at": "2026-08-05T18:09:54+05:30",
@@ -1952,8 +1898,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-08-05T09:58:51+05:30",
       "added_at": "2026-08-05T18:09:54+05:30",
@@ -2013,146 +1959,135 @@
     },
     {
       "type": "story",
-      "id": "story-39",
-      "rank": 39,
-      "category": "india",
-      "published_iso": null,
-      "added_at": "2026-08-05T16:02:34+05:30",
-      "source": "Business Standard",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "TheJudge13",
       "importance": "notable",
       "regions": [
-        "India"
+        "Formula 1"
       ],
-      "title": "India's government summons Meta's global team over the brief blocking of PM Modi's Facebook post, plans to press on CSAM lapses",
-      "what_happened": "India's Ministry of Electronics and Information Technology (**MeitY**) summoned Meta's global executive team for meetings in New Delhi on **August 5 and 6**, after a Facebook post by Prime Minister Narendra Modi was temporarily restricted on the platform. Meta attributed the restriction to a technical glitch and apologised, but MeitY deemed that explanation **inadequate** and escalated the matter to a formal summons. Beyond the Modi-post incident, officials plan to use the meetings to press Meta on lapses in curbing **child sexual abuse material (CSAM)** — including CSAM reportedly appearing in **paid Instagram ads** — as well as wrongful action against prominent accounts, algorithmic bias in content ranking and moderation, and safeguards around **WhatsApp usernames** and user privacy.",
+      "title": "Nico Hulkenberg says he's staying at Audi 'for as long as they want him,' ending seat doubts",
+      "what_happened": "Speaking to reporters, Hulkenberg said there are **no question marks over his future** at Audi and dismissed the transfer speculation as the usual noise of F1's summer break. His comments follow **team principal Mattia Binotto** confirming days earlier that Audi will keep both Hulkenberg and Bortoleto for the **2027 season**, ending speculation the team might swap in a higher-profile name like Carlos Sainz once his current Williams contract situation resolves. Hulkenberg's existing deal, signed in 2024, already runs for three seasons through the end of 2027.",
       "key_points": [
-        "Meta's **global team** meets Indian officials on **August 5-6** in New Delhi",
-        "The trigger: a Facebook post by **PM Narendra Modi** was briefly restricted; Meta called it a **technical glitch**",
-        "India's IT ministry (MeitY) called that explanation **inadequate**",
-        "Officials will also raise **child sexual abuse material (CSAM)** lapses and **algorithmic bias**",
-        "WhatsApp **usernames and privacy** safeguards are also on the agenda"
+        "**Nico Hulkenberg** says he's prepared to keep racing for **Audi** for 'as long as the team wants him,' pushing back on recent transfer speculation.",
+        "Audi team boss **Mattia Binotto** had already confirmed days earlier that both Hulkenberg and teammate **Gabriel Bortoleto** would stay on for **2027**.",
+        "Hulkenberg's current contract already runs through the end of **2027**; the comments settle lingering doubts about whether he'd be replaced early.",
+        "It comes as Audi, in its **debut F1 season** as a full works team, has struggled to match the midfield pace many expected."
       ],
-      "moot": "Platform-accountability fights tend to escalate fastest when the harm becomes personal to the people with power to regulate — a policy complaint about content moderation moves much faster once it happens to a head of government.",
-      "image_credit": "Business Standard",
+      "moot": "In any organization going through a rocky start, publicly locking in experienced leadership is often as much about signaling stability to the outside world as it is about the specific personnel decision.",
+      "image_credit": "TheJudge13",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "Business Standard",
-          "India TV News"
+          "MotorcycleSports",
+          "TheJudge13"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "India is Meta's largest market by users, giving New Delhi significant leverage over how the company runs Facebook, Instagram and WhatsApp there. The government has for years pushed platforms to be more accountable for harmful content and to respond faster to takedown and account-verification requests under India's IT Rules. Tensions escalated after a Facebook post from the Prime Minister's own account was briefly restricted — an unusually high-profile trigger, since India's government rarely finds its own top leader's content affected by platform moderation.",
-        "why_it_matters": "This is a rare instance of a government's own top leader being personally affected by platform moderation, giving New Delhi unusually strong political motivation to extract concessions — and the CSAM and algorithmic-bias issues raised alongside it could lead to binding commitments or penalties that reshape how Meta operates in its biggest market.",
-        "ripple_effects": "Any commitments Meta makes to India often become templates other governments cite when making their own demands. Stricter CSAM enforcement or verification rules could change how Instagram ads are reviewed globally, and disputes over 'wrongful account action' could affect how aggressively platforms police political content in India ahead of future elections.",
-        "why_now": "The meetings are scheduled for today and tomorrow (August 5-6), directly following the unresolved fallout from the PM's restricted post.",
-        "watch_next": "Whether MeitY announces any binding commitments, penalties, or new compliance rules for Meta after the August 5-6 meetings conclude.",
+        "background": "Audi entered Formula 1 as a full **works team** (an engine and chassis manufacturer, not just a customer) for the 2026 season, taking over the former Sauber operation — one of the most-watched debuts in years given the German manufacturer's resources. Hulkenberg, a respected veteran who went years without a race win before finally taking his first F1 podium in 2025, was signed as the senior driver to anchor the new project alongside rookie Gabriel Bortoleto. A rocky start to Audi's first season had fueled rumors the team might shake up its lineup, including links to bigger names like Carlos Sainz.",
+        "why_it_matters": "Audi's F1 project is a marquee bet by a major manufacturer, and locking in an experienced, well-regarded driver removes one variable while the team works through its difficult debut season — stability at the top of the driver lineup matters for a new team trying to build long-term technical continuity.",
+        "ripple_effects": "This closes off one of the seats other displaced or unsettled drivers (like Carlos Sainz, still weighing his Williams talks) might have eyed for 2027, tightening an already crowded driver market.",
+        "why_now": "It surfaces now because Binotto's confirmation days ago sparked a fresh round of questions, prompting Hulkenberg to directly address it during summer-break media availability.",
+        "watch_next": "Watch whether Audi's competitiveness improves through the second half of the season — that, more than driver announcements, will determine whether this rebuild is on track.",
         "market_link": null,
-        "key_terms": [
-          {
-            "term": "CSAM",
-            "definition": "Child Sexual Abuse Material — illegal content platforms are legally required to detect and remove; 'lapses' means failures to catch or remove it."
-          },
-          {
-            "term": "Algorithmic bias",
-            "definition": "When an automated content-ranking or moderation system produces skewed or unfair outcomes for certain groups, topics, or viewpoints, often unintentionally."
-          }
-        ],
+        "key_terms": [],
         "sources": [
           {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/india-news/govt-to-raise-csam-lapses-account-action-issues-with-meta-team-on-aug-5-6-126080400707_1.html"
+            "name": "TheJudge13",
+            "url": "https://thejudge13.com/2026/08/05/nico-hulkenberg-opens-up-on-audi-future-as-contract-extension-possibility-emerges/"
           },
           {
-            "name": "India TV News",
-            "url": "https://www.indiatvnews.com/technology/news/meta-under-government-scanner-it-ministry-to-raise-csam-platform-accountability-concerns-on-august-5-6-2026-08-04-1050308"
+            "name": "MotorcycleSports",
+            "url": "https://motorcyclesports.net/mattia-binotto-confirms-audi-f1-will-keep-hulkenberg-and-bortoleto-for-2027/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
       "development": true,
       "prev_ref": {
-        "title": "Kerala floods and landslides kill at least 11, with a Karnataka landslide adding 3 more",
+        "title": "Max Verstappen's Red Bull exit clause is now mathematically guaranteed to activate",
         "date": null
       },
-      "published_iso": null,
-      "added_at": "2026-08-05T16:02:34+05:30",
-      "source": "Dynamite News",
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T14:02:14+05:30",
+      "source": "GPFans",
       "importance": "notable",
       "regions": [
-        "Kerala",
-        "Karnataka",
-        "Andhra Pradesh",
-        "Telangana",
-        "Tamil Nadu"
+        "Formula 1",
+        "Austria"
       ],
-      "title": "IMD issues fresh heavy-rain alerts across Kerala, Karnataka and the south as an active monsoon trough intensifies",
-      "what_happened": "The IMD forecast another active monsoon day on **August 5**, warning of heavy to very heavy rainfall — between 6cm and 20cm depending on the district — across North, East, West and South India, with the Northeast expecting the heaviest totals. In Kerala, ten districts (Alappuzha, Kottayam, Ernakulam, Idukki, Thrissur, Malappuram, Kozhikode, Wayanad, Kannur and Kasaragod) were placed under a **yellow alert**, with forecasters also warning of lightning, thunderstorms and gale-force winds across Kerala, Karnataka, Andhra Pradesh, Telangana and Tamil Nadu. The IMD attributes the intensity to a monsoon trough over northern India combined with multiple cyclonic circulations elsewhere in the country, both pulling in extra moisture. This follows a deadly stretch: Kerala and Karnataka floods and landslides killed at least 14 people over the prior week, while South Gujarat separately recorded roughly a **metre of rain in 24 hours**.",
+      "title": "Red Bull offers Verstappen a bigger, longer contract — but only if he gives up his eject button",
+      "what_happened": "According to a Bild report picked up widely across F1 media, **Red Bull has offered Verstappen a new contract worth roughly €65 million per season, running through 2029** — a longer term and higher salary than his current deal. In exchange, the offer would strip out the performance-linked exit clauses that currently make him free to leave. Those clauses were triggered because Verstappen — reigning champion for four straight years — now sits well outside the top two in this year's standings, far behind season-long leader Kimi Antonelli. Verstappen has reportedly not formally responded to the offer despite receiving it several weeks ago, though people close to the situation say discussions between his camp and Red Bull are ongoing and that he is currently leaning toward staying.",
       "key_points": [
-        "IMD forecasts **heavy to very heavy rain** — 6cm to 20cm — across parts of the south through August 5",
-        "**Ten Kerala districts** including Idukki, Wayanad, Kozhikode and Ernakulam are under a **yellow alert**",
-        "Lightning, thunderstorms and **gale-force winds** forecast for Kerala, Karnataka, Andhra Pradesh, Telangana and Tamil Nadu",
-        "The trigger is a **monsoon trough** over north India plus several **cyclonic circulations** pulling in moisture",
-        "This follows a week in which **Kerala and Karnataka floods/landslides killed at least 14 people**"
+        "**Red Bull** has offered Max Verstappen a new contract running through **2029**, reportedly worth around **€65 million a season**, according to German outlet Bild.",
+        "The catch: the new deal would **remove the exit clauses** that currently let Verstappen leave early if he's not competitive.",
+        "His current contract lets him walk if he isn't in the **top two** of the drivers' standings by the summer break — a threshold he's now missed.",
+        "Verstappen has reportedly sat on the offer for **several weeks without responding**.",
+        "Team insiders say he's leaning toward staying, with 'constant' behind-the-scenes talks between all parties."
       ],
-      "moot": "Monsoon risk isn't just about total rainfall — it's about how concentrated it is: the same season can deliver a healthy harvest nationally while specific districts get hit hard enough, repeatedly, to turn deadly.",
-      "image_credit": "Dynamite News",
+      "moot": "A contract's real value often isn't just the money — it's the optionality. Red Bull's offer illustrates how teams (and companies generally) will pay a premium to remove a counterparty's ability to walk away, because that flexibility has real value on its own.",
+      "image_credit": "GPFans",
       "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
         "outlets": [
-          "Dynamite News"
+          "GPFans",
+          "Sunday Guardian Live"
         ],
         "corroboration": 0
       },
       "thread": {
-        "previously": "We reported Kerala and Karnataka floods and landslides had killed at least 14 people combined, with a red alert issued for Rajasthan amid a deep depression triggering major flood risk across central and western India.",
-        "changed": "The IMD has now issued fresh heavy-to-very-heavy rain and yellow alerts for ten Kerala districts plus Karnataka, Andhra Pradesh, Telangana and Tamil Nadu, driven by a monsoon trough and multiple cyclonic circulations — the wet, high-risk stretch is continuing rather than easing."
+        "previously": "We reported that Verstappen's exit clause — letting him leave if he fell outside the top two in the standings by the summer break — had become mathematically certain to activate, given his position in the 2026 championship.",
+        "changed": "Red Bull has now countered with a concrete offer: a new contract through 2029 worth roughly €65 million a season, but only if Verstappen agrees to give up that exit clause. He has not yet responded."
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "India's June-to-September southwest monsoon delivers roughly 70% of the country's annual rainfall and directly drives farm output, hydropower and drinking-water supply for over a billion people. This season has been unusually intense in the south: Kerala has already seen deadly flooding and landslides in the past week, with authorities repeatedly issuing red and orange alerts. A **monsoon trough** is a low-pressure band that channels moist air inland and tends to produce the heaviest, most sustained rain when it sits over or near a state.",
-        "why_it_matters": "Repeated, overlapping heavy-rain warnings mean disaster-response agencies (NDRF, state authorities) are stretched across multiple states at once, and the ground is already saturated from the past week — raising the risk that even moderate additional rain now triggers landslides in the hilly districts already hit this month.",
-        "ripple_effects": "Waterlogging and landslide risk can disrupt transport, damage crops ahead of the harvest season, and strain state disaster-relief budgets. Sustained heavy monsoon rain is also a double-edged economic signal — good for reservoir levels and farm output nationally, but locally destructive where it is most intense.",
-        "why_now": "A monsoon trough over north India combined with fresh cyclonic circulations is actively pulling moisture into the south today, right after the region absorbed a deadly bout of flooding and landslides.",
-        "watch_next": "Whether the yellow alerts in Kerala get upgraded to orange or red over the next 24-48 hours as the trough and cyclonic circulations evolve.",
+        "background": "Verstappen has won four straight drivers' titles with Red Bull, but the team has struggled with a difficult 2026 car and the departure of several senior technical staff, fueling a season of speculation about whether F1's dominant driver of the last half-decade might finally leave. His contract contains rare **performance-linked exit clauses** — unusual protections that let him walk away if the team stops being competitive, rather than being locked in no matter what. Those clauses became a live issue once his championship position slipped outside the threshold that would let him activate them.",
+        "why_it_matters": "Verstappen is the biggest name in the sport, and his decision will shape Red Bull's competitiveness, driver-market dominoes across multiple teams, and how F1's next few seasons are marketed — all riding on whether he trades away the freedom his current contract gives him.",
+        "ripple_effects": "If Verstappen commits through 2029, it locks in stability for Red Bull and removes him from the 2027 driver market that teams like Aston Martin and Mercedes have been eyeing. If he instead keeps his exit clause and later leaves, it would trigger one of the biggest driver moves in F1 history and reshuffle multiple grid seats.",
+        "why_now": "This surfaces now because Red Bull's offer has been sitting unanswered for weeks, and Verstappen is expected to clarify his plans around the summer break, keeping the story live heading into the Dutch Grand Prix at Zandvoort.",
+        "watch_next": "Watch for any statement from Verstappen around the Dutch Grand Prix weekend, where he's been tipped to reveal his decision.",
         "market_link": null,
         "key_terms": [
           {
-            "term": "Monsoon trough",
-            "definition": "A band of low pressure that channels moist air inland; when it sits over or near a region, it tends to produce the heaviest and most sustained monsoon rain there."
-          },
-          {
-            "term": "IMD colour alerts",
-            "definition": "India's weather warning scale — yellow means 'be aware', orange means 'be prepared', red means 'take action' — based on expected severity."
+            "term": "exit clause",
+            "definition": "A condition written into a driver's contract that lets them leave a team early — usually if the team falls below a specific competitive benchmark, like finishing outside the top two in the standings."
           }
         ],
         "sources": [
           {
-            "name": "Dynamite News",
-            "url": "https://www.dynamitenews.com/national/imd-rain-alert-heavy-rain-north-south-india-assam-up-kerala-weather-today"
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088659/red-bull-max-verstappen-f1-exit-clause-removal-offer-jos-verstappen-reaction/"
+          },
+          {
+            "name": "Sunday Guardian Live",
+            "url": "https://sundayguardianlive.com/sports/max-verstappen-red-bull-future-80-million-contract-offer-until-2029-exit-clause-twist-and-dutch-legend-decision-explained-248187/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-04T00:00:00Z",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "GPFans",
@@ -2210,10 +2145,9 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Max Verstappen's father shuts down reports of a new exit-clause-free Red Bull contract",
@@ -2280,8 +2214,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": null,
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -2335,8 +2269,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-05T09:00:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2390,8 +2324,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-05T10:00:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2440,8 +2374,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2509,123 +2443,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-08-04T10:00:00+00:00",
-      "added_at": "2026-08-06T01:59:32+05:30",
-      "source": "PlanetF1",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "F1 boss Flavio Briatore wants a sprint race at all 24 Grands Prix — and Verstappen isn't happy",
-      "what_happened": "Speaking on The Race podcast, Alpine's Flavio Briatore proposed expanding Formula 1's Sprint race format from the current six Sprint weekends to all **24** rounds on the calendar, effectively creating a 48-event competitive season with both a Sprint and a Grand Prix at every venue. Briatore argued Friday practice sessions currently offer little value to spectators — 'you got two laps, you come back, and people are not here' — and that a genuine second competitive session each weekend would deliver far more for fans and broadcasters. The proposal directly clashes with drivers like Max Verstappen, who has repeatedly criticized the existing Sprint format as compressing practice time too much and adding unnecessary risk and strain on teams. F1 has already locked in six Sprint races for 2026, including new venues in Canada, the Netherlands, and Singapore, but Briatore's 'all 24' idea goes far beyond that.",
-      "key_points": [
-        "Alpine executive **Flavio Briatore** has proposed adding a Sprint race to **all 24** F1 Grand Prix weekends, up from the current **six**.",
-        "His argument: Friday practice sessions are 'only technical' and give fans nothing to watch, so a second competitive race each weekend would add value.",
-        "The idea would effectively create a **48-event** competitive calendar across the season.",
-        "**Max Verstappen** has repeatedly criticized the sprint format as bad for racing and team operations, setting up a clash with Briatore's plan.",
-        "F1 has already confirmed **six** sprint races for 2026, including new sprint venues in **Canada, the Netherlands, and Singapore**."
-      ],
-      "moot": "When an industry's power players talk about giving audiences 'more,' it's worth asking who actually benefits — more content can mean more revenue for organizers while quietly pushing more cost and risk onto the workers who have to deliver it.",
-      "image_credit": "PlanetF1",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "GPblog",
-          "PlanetF1"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "A 'Sprint' in F1 is a shorter, standalone race (about 100km, roughly a third the length of a normal Grand Prix) held on Saturday that awards its own points and helps set part of Sunday's grid — introduced in 2021 to add more competitive action to race weekends beyond a single Sunday race. Currently only six of F1's 24 weekends include a Sprint; the rest still follow the traditional format of two practice sessions, qualifying, and one race. Briatore, a longtime, high-profile F1 figure now a senior Alpine executive, has a history of pushing bold format changes, arguing F1 needs to keep evolving to hold fans' attention.",
-        "why_it_matters": "This is a direct fight over what kind of sport F1 wants to be — a traditionalist, engineering-heavy competition where practice matters, or a made-for-TV entertainment product optimized for maximum action every weekend. Briatore's seniority within Alpine and F1's ownership structure means his proposals often carry real weight in shaping future rule changes.",
-        "ripple_effects": "If adopted, an all-Sprint calendar would sharply increase costs and physical strain on teams and drivers (more racing, less practice to fine-tune cars safely), likely triggering pushback from driver groups and smaller teams with tighter budgets. It would also change how broadcasters and sponsors value race weekends, since every weekend would carry two 'must-watch' sessions instead of one.",
-        "why_now": "The proposal surfaces as F1 heads into its summer break, traditionally when the sport's power brokers debate future-season format and calendar changes before locking in the next year's rules.",
-        "watch_next": "Watch for the FIA and F1's commercial rights holder's response, and whether driver groups formally push back on the idea.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Sprint race",
-            "definition": "A shorter, standalone F1 race (about a third the distance of the main Grand Prix) held on Saturday that awards its own championship points, introduced to add extra competitive racing to a weekend."
-          }
-        ],
-        "sources": [
-          {
-            "name": "PlanetF1",
-            "url": "https://www.planetf1.com/news/f1-sprint-races-flavio-briatore-wants-sprint-all-24-formula-1-grands-prix"
-          },
-          {
-            "name": "GPblog",
-            "url": "https://www.gpblog.com/en/news/formula-1-urged-to-introduce-sprint-races-at-all-24-grands-prix"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-03T12:00:00+00:00",
-      "added_at": "2026-08-06T01:59:32+05:30",
-      "source": "RACER",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Kimi Antonelli heads into F1's summer break with a commanding 50-point championship lead",
-      "what_happened": "Formula 1 entered its mandated summer break this week with Mercedes' Kimi Antonelli holding a commanding **219-point** lead in the drivers' championship, **50 points** clear of Ferrari's Lewis Hamilton on 169. Antonelli has won **six of the season's 11 races** so far. At the final race before the break, the Hungarian Grand Prix on July 26, Antonelli started seventh but fought back to finish third, behind race winner Lando Norris and Max Verstappen, extending his championship cushion. His Mercedes teammate George Russell sits third in the standings on 160 points, 59 points off Antonelli's pace, while Ferrari's Charles Leclerc is fourth (81 points back) and reigning champion Lando Norris — despite winning in Hungary — is 91 points behind Antonelli after a season hampered by inconsistency.",
-      "key_points": [
-        "Mercedes rookie **Kimi Antonelli**, 19, leads the F1 drivers' championship with **219 points**, a **50-point lead** over second-placed **Lewis Hamilton** (169 points).",
-        "Antonelli has taken **six wins in 11 rounds** so far in the 2026 season.",
-        "At the last race before the break, the **Hungarian Grand Prix**, Antonelli recovered from a **seventh-place start** to finish third.",
-        "His own Mercedes teammate **George Russell** sits third overall with 160 points, **59 points behind** Antonelli.",
-        "**Lando Norris**, despite winning the Hungarian GP itself, remains **91 points adrift** of Antonelli in the standings."
-      ],
-      "moot": "In any long competitive season, a big lead built steadily over many rounds is far more valuable — and harder to overturn — than a single standout result, since consistency compounds over a season in a way one great race can't match.",
-      "image_credit": "RACER",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "News.GP",
-          "RACER"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Kimi Antonelli is a 19-year-old Mercedes driver who stepped into Formula 1's top tier this season and has quickly established himself as a genuine title contender, surprising many who expected a longer adjustment period for a rookie. F1 traditionally pauses for a two-to-three-week 'summer break' in August before the second half of the season resumes — this year, racing returns with the Dutch Grand Prix on August 21–23. Antonelli's rivals for the title include seven-time champion Lewis Hamilton (now at Ferrari), his own Mercedes teammate George Russell, and reigning champion Lando Norris of McLaren.",
-        "why_it_matters": "A 19-year-old rookie holding a 50-point championship lead at the summer break is a genuinely rare feat in modern F1, where established multiple-time champions usually dominate; it signals a potential changing of the guard just as Hamilton (at Ferrari) and Norris (the defending champion) are both being outpaced.",
-        "ripple_effects": "A commanding points lead going into the break gives Mercedes and Antonelli's camp real leverage in contract and strategy discussions for the second half of the season, while rivals like Ferrari and McLaren will use the break to find performance gains to close the gap. It also raises Antonelli's commercial profile heading into F1's biggest markets in the season's back half.",
-        "why_now": "The standings snapshot comes right as F1 pauses for its summer break, the traditional moment for a mid-season audit of who's actually leading the title fight.",
-        "watch_next": "Watch the Dutch Grand Prix on August 21–23, the first race back from the break, for signs of whether rivals have closed the gap.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "RACER",
-            "url": "https://racer.com/2026/08/03/antonelli-s-already-on-top-but-he-s-still-not-the-finished-article"
-          },
-          {
-            "name": "News.GP",
-            "url": "https://www.news.gp/en/f1-standings-after-the-hungarian-gp-antonelli-heads-into-summer-break-with-50-point-lead"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-08-05T05:00:00Z",
       "added_at": "2026-08-05T22:02:36+05:30",
@@ -2683,8 +2502,8 @@
     },
     {
       "type": "story",
-      "id": "story-72",
-      "rank": 72,
+      "id": "story-74",
+      "rank": 74,
       "category": "f1",
       "published_iso": "2026-08-05T10:00:00+01:00",
       "added_at": "2026-08-05T20:08:45+05:30",
@@ -2732,8 +2551,8 @@
     },
     {
       "type": "story",
-      "id": "story-75",
-      "rank": 75,
+      "id": "story-77",
+      "rank": 77,
       "category": "f1",
       "published_iso": null,
       "added_at": "2026-08-05T16:02:34+05:30",
@@ -2783,8 +2602,8 @@
     },
     {
       "type": "story",
-      "id": "story-76",
-      "rank": 76,
+      "id": "story-78",
+      "rank": 78,
       "category": "f1",
       "published_iso": null,
       "added_at": "2026-08-05T16:02:34+05:30",
@@ -2846,7 +2665,6 @@
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-06T00:00:00+09:30",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "Cricket.com.au",
@@ -2908,7 +2726,6 @@
       "id": "story-42",
       "rank": 42,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-05T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
       "source": "Outlook India",
@@ -3564,61 +3381,6 @@
     },
     {
       "type": "story",
-      "id": "story-57",
-      "rank": 57,
-      "category": "cricket",
-      "published_iso": "2026-08-05T08:00:00+05:30",
-      "added_at": "2026-08-05T18:09:54+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "high",
-      "regions": [
-        "India"
-      ],
-      "title": "Ajinkya Rahane retires from all cricket, closing a 17-year career that included India's historic 2020-21 Australia series win",
-      "what_happened": "Rahane announced his retirement from all forms of cricket via an emotional video message posted on social media, ending a career that spanned **85 Tests, 90 ODIs and 20 T20Is** for India over 17 years. He said the time had come to move on, comparing timing in life to timing in batting. The defining moment of his career came as stand-in captain during India's 2020-21 tour of Australia: after India was bowled out for just **36 runs** in the first Test at Adelaide — its lowest-ever Test total — Rahane led the team to a stunning **2-1 series win**, widely regarded as one of Indian cricket's greatest achievements. His last India appearance came in a Test in the West Indies in July 2023. He continued playing domestic and franchise cricket afterward, most recently captaining Kolkata Knight Riders in IPL 2026, where he scored 335 runs in 14 matches.",
-      "key_points": [
-        "Former India vice-captain **Ajinkya Rahane**, 38, has retired from **all formats of cricket** with immediate effect.",
-        "He played **85 Tests, 90 ODIs, and 20 T20Is** for India across a **17-year career**.",
-        "His career highlight: leading India to a **historic 2-1 Test series win in Australia (2020-21)** — after India was bowled out for **36 runs** in the first Test.",
-        "He last played competitively in **IPL 2026**, captaining Kolkata Knight Riders to **335 runs in 14 matches**.",
-        "His last India appearance was a **Test in the West Indies in July 2023**."
-      ],
-      "moot": "Even a modest-looking start can end in history — India's most humiliating Test total (36 all out) was followed almost immediately by one of its greatest series wins, a reminder that comebacks rarely move in a straight line.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Sentinel Assam"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Rahane made his India Test debut in 2013 and became one of the team's most reliable middle-order batters, known for his composure in tough overseas conditions. He briefly captained India in Virat Kohli's absence, most memorably during the 2020-21 tour of Australia. His international career effectively wound down after 2023, though he continued playing franchise cricket, most recently captaining Kolkata Knight Riders in IPL 2026.",
-        "why_it_matters": "Rahane's retirement closes the book on one of the players most associated with Indian cricket's greatest overseas triumph, and marks another step in the generational turnover of India's post-Kohli-era batting lineup. It also removes an experienced leadership option from the franchise circuit as IPL teams plan for the next season.",
-        "ripple_effects": "Expect tributes from current and former teammates, and renewed retrospectives on the 2020-21 Australia tour. Kolkata Knight Riders will need a new leadership plan heading into the next IPL auction cycle. It adds to a wave of recent retirements reshaping India's senior playing pool.",
-        "why_now": "Rahane chose to announce his retirement now, after the 2026 IPL season concluded, rather than mid-season.",
-        "watch_next": "Whether Rahane moves into coaching, commentary, or a franchise leadership role next.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/story/ajinkya-rahane-announces-retirement-from-international-cricket-1548072"
-          },
-          {
-            "name": "Sentinel Assam",
-            "url": "https://www.sentinelassam.com/breakingnews/ajinkya-rahane-announces-retirement-from-all-formats-of-cricket"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
       "id": "story-58",
       "rank": 58,
       "category": "cricket",
@@ -3673,63 +3435,6 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-59",
-      "rank": 59,
-      "category": "cricket",
-      "published_iso": "2026-08-04T22:00:00-04:00",
-      "added_at": "2026-08-05T14:02:24+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "Trinidad",
-        "Pakistan",
-        "West Indies"
-      ],
-      "title": "West Indies fight back to lead by 60 but slip to 103 for 6 as Pakistan's bowlers seize control of the series-deciding Trinidad Test",
-      "what_happened": "Pakistan were bowled out for **387** in their first innings, a lead of **43 runs** over West Indies' 344, built on **Abdullah Shafique's unbeaten 160** and a fighting **88 from captain Babar Azam**, who was run out just short of what would have been his first Test century in four years. West Indies then batted again in their second innings and slipped to **103 for 6** by the close of day three, with **Sajid Khan taking 4 for 32** and Ali Usman claiming two more wickets to spark a late-session collapse. That leaves West Indies **60 runs ahead** overall but with only four second-innings wickets standing, putting Pakistan in a strong position to wrap up the match and the series on day four.",
-      "key_points": [
-        "West Indies closed **day three at 103 for 6**, leading Pakistan's first-innings **387** by just **60 runs** with only **4 wickets in hand**.",
-        "**Sajid Khan took 4 for 32** in the second innings to trigger the collapse after West Indies looked set to build a big lead.",
-        "Pakistan's first innings finished on **387**, built on **Abdullah Shafique's unbeaten 160** and **Babar Azam's 88**.",
-        "**Babar Azam was run out for 88**, denying him his first Test century in four years.",
-        "A win would give Pakistan their **first away Test victory since 2023** and decide this series."
-      ],
-      "moot": "In Test cricket, taking quick wickets late in a session can swing a match far more than the raw run total suggests — a team can be \"ahead\" on runs and still be in deep trouble if too few wickets remain.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Associated Press (via WRAL)",
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Pakistan and West Indies are locked in a **series-deciding 2nd Test** in Port of Spain, Trinidad, after West Indies won the first Test. West Indies had batted first and posted **344**, before Pakistan's reply — anchored by Abdullah Shafique's marathon innings — pulled them into the lead. With the series on the line, every session has swung the momentum, and Pakistan chasing their first Test win away from home since 2023 raises the stakes further.",
-        "why_it_matters": "With the series tied at one Test each, this result will decide the series outright — and a Pakistan win would be their first Test victory away from home since 2023, a rare positive result for a team that has struggled on overseas pitches.",
-        "ripple_effects": "A Pakistan win would be a confidence boost heading into their upcoming home season and ease pressure on captain Babar Azam, whose form and leadership have faced scrutiny. For West Indies, a series loss on home soil would raise fresh questions about their batting depth after several recent middle-order collapses.",
-        "why_now": "The match is in its final stages, with day four on Wednesday likely to decide the outcome given West Indies' precarious position with only four wickets left.",
-        "watch_next": "Watch whether Pakistan can bowl out West Indies quickly on day four and chase down a small target to seal both the Test and the series.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/series/pakistan-in-west-indies-2026-1538621/west-indies-vs-pakistan-2nd-test-1538631/match-report"
-          },
-          {
-            "name": "Associated Press (via WRAL)",
-            "url": "https://www.wral.com/news/ap/f854e-pakistan-takes-control-on-day-3-of-the-2nd-test-as-west-indies-60-ahead-but-only-4-wickets-in-hand/"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
@@ -3741,7 +3446,7 @@
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 130
+      "older_count": 131
     },
     {
       "type": "archive",
@@ -3755,7 +3460,7 @@
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 85
+      "older_count": 86
     },
     {
       "type": "outro",
