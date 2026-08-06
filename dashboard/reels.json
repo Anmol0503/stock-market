@@ -1,6 +1,6 @@
 {
   "date": "2026-08-06",
-  "generated_at": "2026-08-06T18:14:24+05:30",
+  "generated_at": "2026-08-06T20:11:27+05:30",
   "day_label": "Thursday · 6 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,149 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "economy",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "TechCrunch",
+      "importance": "high",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "title": "Anthropic starts building its own AI chips to make Claude cheaper to run",
+      "what_happened": "On August 5, Anthropic confirmed it is building an internal chip-design team, led technically by Clive Chan, who joined Anthropic in June 2026 after previously working on OpenAI's chip team and, before that, Tesla's Dojo supercomputer program. The company is hiring semiconductor engineers — offering salaries between **$320,000 and $485,000** — who have taken chip designs from architecture through to actual production. The plan is to **co-design the chips and Claude's models together**, tailoring the hardware specifically to Claude's attention mechanisms (the part of the model that decides what information to focus on), targeting roughly a **50% cut in per-token inference costs**. Samsung has reportedly been explored as a manufacturing partner. Anthropic says it isn't abandoning its existing suppliers — Nvidia, AMD, AWS, and Google — the custom chips would simply add another layer to its infrastructure.",
+      "key_points": [
+        "Anthropic is assembling an **in-house silicon team** to design custom chips tailored to Claude.",
+        "The goal: cut Claude's **per-token inference costs roughly in half** by co-designing hardware and software together.",
+        "It's hiring chip engineers with **production semiconductor experience**, paying up to **$485,000**.",
+        "**Samsung** has reportedly been explored as a manufacturing partner.",
+        "Anthropic says it will **keep buying** from Nvidia, AMD, AWS, and Google — the custom chips add a layer, not a replacement."
+      ],
+      "moot": "As AI companies scale, the computing layer underneath a model becomes almost as strategically important as the model itself — controlling your own chips can be as valuable as controlling your own algorithms.",
+      "image_credit": "TechCrunch",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Tech Times",
+          "TechCrunch"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supply_chain"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "Running a large AI model isn't just about training it once — every single reply it gives (called **inference**) costs computing power, and that ongoing cost is a huge and growing expense for AI companies as usage scales. Major AI labs increasingly design their own chips instead of relying only on off-the-shelf hardware: Google has its TPUs, Amazon has Trainium, and OpenAI has its own chip-design effort. Custom silicon lets a company tailor the chip's architecture to exactly how its own model works, which can meaningfully cut costs and reduce dependence on Nvidia, whose GPUs currently dominate — and are expensive and supply-constrained.",
+        "why_it_matters": "If Anthropic controls part of its own chip supply chain, it reduces reliance on Nvidia and could substantially lower the cost of running Claude at scale — which affects what Anthropic can charge for its API, how much compute it can afford to offer, and its competitiveness against OpenAI and Google.",
+        "ripple_effects": "This makes Anthropic a potential new customer for major chip manufacturers like Samsung or TSMC. It also adds another challenger to Nvidia's dominance in AI hardware, joining Google, Amazon, and OpenAI, who are all pursuing custom silicon. Over time, cheaper inference could translate into lower prices for developers and businesses using Claude.",
+        "why_now": "Anthropic faces surging demand for Claude and rising inference costs, and 2026 has seen an accelerating trend of major AI labs building their own chip-design teams as compute costs come to dominate their expenses.",
+        "watch_next": "Whether Anthropic names a confirmed manufacturing partner and a timeline for its first custom chip.",
+        "market_link": "Relevant to Nvidia, AMD, Samsung, and TSMC — a major AI lab reducing reliance on off-the-shelf GPUs is a long-term signal for chip-sector investors to watch.",
+        "key_terms": [
+          {
+            "term": "inference",
+            "definition": "The process of an AI model actually generating an answer once it's already trained — as opposed to training, which happens once, inference happens every single time someone uses the model, making it an ongoing, scale-driven cost."
+          }
+        ],
+        "sources": [
+          {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/"
+          },
+          {
+            "name": "Tech Times",
+            "url": "https://www.techtimes.com/articles/323238/20260805/anthropic-confirms-house-chip-team-co-design-bet-could-cut-claude-inference-costs-half.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "geopolitics",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Iran and Oman say they've reached a Hormuz shipping-route deal, with a US announcement possible this week",
+        "date": null
+      },
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "CNBC",
+      "importance": "critical",
+      "regions": [
+        "Middle East",
+        "US",
+        "Iran",
+        "Oman"
+      ],
+      "title": "Iran and Oman edge toward a Hormuz shipping deal, but Trump warns of new strikes if talks collapse",
+      "what_happened": "On Wednesday, Trump said negotiations with Iran would resume, while Tehran said its agreement with Oman on a new Hormuz shipping route was nearing completion — Iran called it the **'final stage'** of drafting. Trump said the eventual deal would include the **'immediate, complete and total'** reopening of the strait and address Iran's nuclear program, but stressed that immediate reopening wasn't guaranteed since navigation-control disputes remain unresolved: Washington wants free international navigation, Tehran wants a role in managing passage. Trump warned that if Iran backs out, he'll return to strikes. Iran's Foreign Ministry, meanwhile, denies any direct US talks, saying it's negotiating only with Oman. The arrangement is reportedly contingent on the US lifting its blockade on Iranian ports.",
+      "key_points": [
+        "Iran says it's in the **'final stage'** of drafting a shipping-route agreement with Oman over the **Strait of Hormuz**.",
+        "Trump says a deal covering the strait **and** Iran's nuclear program could be announced **this week**.",
+        "Trump warned: **'The Strait's going to be open very soon or they are going to get hit very hard.'**",
+        "Iran's Foreign Ministry denies **direct talks with Washington**, insisting it's negotiating only with Oman.",
+        "A previously planned **US strike** on Iran remains on hold while the talks continue."
+      ],
+      "moot": "In geopolitics, 'a deal is close' announcements from multiple sides don't guarantee an agreement — chokepoint diplomacy often drags on because both sides need concessions they can defend at home.",
+      "image_credit": "CNBC",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNBC",
+          "NBC News"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "status": "developing",
+        "day": 2,
+        "previously": "Yesterday we reported Iran and Oman said they'd reached a shipping-route deal for the Strait of Hormuz, with a US announcement possible this week.",
+        "changed": "Trump now says there's been no breakthrough yet — Iran insists it's negotiating only with Oman, not the US directly — and Trump is threatening renewed strikes if the deal collapses, even as Iran calls the Oman agreement's drafting the 'final stage'."
+      },
+      "concepts": [
+        "strait_chokepoint",
+        "crude_geopolitics"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "The **Strait of Hormuz** is a narrow sea passage between Iran and Oman that roughly **one-fifth of the world's oil** passes through — whoever controls access to it can squeeze global energy supply. Tensions have simmered for months between the US and Iran, including a period earlier this year when Washington threatened and then paused military strikes on Iranian targets. Trump has repeatedly claimed a Hormuz deal is close, only for talks to stall, while Tehran has consistently said it's negotiating shipping arrangements with neighboring **Oman**, not with the US directly.",
+        "why_it_matters": "A real reopening of the Strait of Hormuz would ease one of the biggest standing risks to global oil supply and shipping costs. A collapse, on the other hand, keeps alive the threat of renewed US military strikes on Iran — a scenario that could spike oil prices overnight.",
+        "ripple_effects": "Oil prices, tanker insurance rates, and energy stocks would all react to a confirmed deal or a confirmed strike. India, which imports over 80% of its oil, is directly exposed to any Hormuz disruption or resolution. Gulf shipping and global supply chains stay on edge until this resolves either way.",
+        "why_now": "This builds directly on weeks of on-off negotiations and Trump's repeated deadline threats — Iran's 'final stage' language today raises the stakes for an announcement, which Trump says could come this week.",
+        "watch_next": "Whether the US and Iran announce a finalized deal this week, or Trump orders the previously-paused strike.",
+        "market_link": "Crude oil prices, oil & gas and tanker/shipping stocks, and oil-importer currencies like the Indian rupee would all move on a confirmed Hormuz deal or a confirmed US strike.",
+        "key_terms": [
+          {
+            "term": "Strait of Hormuz",
+            "definition": "A narrow sea passage between Iran and Oman that roughly a fifth of the world's oil shipments pass through — a chokepoint that gives whoever can threaten it real leverage over global energy supply."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/05/us-iran-war-trump-hormuz-bessent-iran-deal-close.html"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com/world/iran/trump-iran-war-deal-strait-hormuz-deal-oman-rcna590920"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "economy",
       "published_iso": "2026-08-06T09:30:00-04:00",
       "added_at": "2026-08-06T18:14:23+05:30",
       "source": "Forbes",
@@ -86,10 +227,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "technology",
-      "is_new": true,
       "published_iso": "2026-08-05T16:00:00-07:00",
       "added_at": "2026-08-06T18:14:23+05:30",
       "source": "Axios",
@@ -166,8 +306,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "published_iso": "2026-08-06T02:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -235,8 +375,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-08-05T02:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -306,8 +446,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "technology",
       "published_iso": "2026-08-04T00:00:00Z",
       "added_at": "2026-08-06T14:02:14+05:30",
@@ -370,8 +510,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "published_iso": "2026-08-05T00:00:00Z",
       "added_at": "2026-08-06T14:02:14+05:30",
@@ -430,8 +570,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
+      "id": "story-9",
+      "rank": 9,
       "category": "geopolitics",
       "published_iso": "2026-08-06T00:00:00Z",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -492,72 +632,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 8,
-      "category": "geopolitics",
-      "published_iso": "2026-08-05T00:00:00Z",
-      "added_at": "2026-08-06T12:03:19+05:30",
-      "source": "CBS News",
-      "importance": "high",
-      "regions": [
-        "US"
-      ],
-      "title": "Hackers breach water systems in a dozen US states, and officials suspect Iran",
-      "what_happened": "Starting in late July, cybersecurity teams and the FBI began tracking a cluster of intrusions into municipal water systems across at least a dozen states, including Michigan, Minnesota, Georgia, New Jersey and South Dakota. In Minnesota, more than **30 separate community water systems** were compromised in one coordinated wave. In Georgia, hackers caused a real physical effect: a water-pressure drop at the Clayton County Water Authority, which serves roughly **300,000 people** outside Atlanta, forcing officials to issue a boil-water advisory as a precaution. In some of the breaches, attackers didn't just steal data — they gained remote access to the physical equipment that controls water pressure and treatment. The FBI and EPA have jointly warned utilities nationwide to tighten their defenses. Investigators say Iran-linked groups are a leading suspect given the timing and technique, but no US agency has made a formal, on-the-record attribution — officials say they are also watching for **false-flag** operations designed to look like Iran's work.",
-      "key_points": [
-        "At least **12 states** have reported cyberattacks on municipal water systems since late July.",
-        "In **Minnesota** alone, more than **30 community water systems** were hit in a single wave.",
-        "In several cases hackers got remote access to **pumps, valves and pressure controls**, not just office computers.",
-        "A pressure drop at Georgia's Clayton County Water Authority forced a **boil-water advisory** for **300,000** customers near Atlanta.",
-        "The FBI and EPA say drinking water has **stayed safe so far**, and no agency has formally pinned the blame on Iran yet."
-      ],
-      "moot": "Critical infrastructure is often run on old, exposed industrial control systems, which makes it a soft target during geopolitical conflict even without a shooting war — a hacker doesn't need a missile to threaten a city's water supply.",
-      "image_credit": "CBS News",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "CBS News",
-          "Tech Times"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Water utilities in the US are often small, cash-strapped, and still run on decades-old industrial control systems (the computers that physically open valves and run pumps) that were never designed with hacking in mind. That makes them one of the softest targets in the country's critical infrastructure, compared to the power grid, which faces stricter federal security rules. Tensions between Washington and Tehran have been rising for months over the **Strait of Hormuz** and Iran's nuclear program, and US officials had already warned publicly that Iran-linked hackers were probing American infrastructure. This wave of intrusions follows that warning almost immediately.",
-        "why_it_matters": "This is a rare case of a foreign-linked hacking campaign reaching past computer screens and into the physical machinery that keeps water flowing to hundreds of thousands of homes. It's a live test of how prepared ordinary American infrastructure — not just banks or the power grid — is for state-linked cyber conflict.",
-        "ripple_effects": "Expect a scramble among small water utilities to patch old systems and disconnect them from the open internet, likely with emergency federal funding or guidance attached. It also raises the odds that Congress or regulators push new mandatory cybersecurity rules for water utilities, similar to what already exists for the power grid, and puts other sectors — hospitals, gas pipelines — on higher alert for copycat intrusions.",
-        "why_now": "The breaches are surfacing just weeks after US officials publicly warned that Iran-backed hackers were targeting American critical infrastructure amid the broader US-Iran standoff, suggesting the warning and the attacks are directly connected.",
-        "watch_next": "Whether US intelligence agencies make a formal attribution naming Iran (or another actor), and whether any utility reports an actual water-safety failure rather than just a pressure or access scare.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Industrial control system (ICS)",
-            "definition": "The specialized computers and software that physically operate machinery like water pumps and valves — different from, and often less protected than, ordinary office IT systems."
-          },
-          {
-            "term": "False flag",
-            "definition": "An attack deliberately disguised to look like it came from a different attacker, used to mislead investigators or provoke a response against the wrong party."
-          }
-        ],
-        "sources": [
-          {
-            "name": "CBS News",
-            "url": "https://www.cbsnews.com/news/more-states-water-systems-cyberattacks-iran-backed-hackers/"
-          },
-          {
-            "name": "Tech Times",
-            "url": "https://www.techtimes.com/articles/323097/20260805/iran-hackers-breach-12-states-water-systems-while-power-grid-stays-protected-law.htm"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-12",
-      "rank": 12,
+      "id": "story-14",
+      "rank": 14,
       "category": "economy",
       "published_iso": "2026-08-05T19:18:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -625,8 +701,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "geopolitics",
       "published_iso": "2026-08-05T09:00:00+00:00",
       "added_at": "2026-08-06T04:01:18+05:30",
@@ -691,8 +767,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "published_iso": "2026-08-05T10:00:00+00:00",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -751,8 +827,8 @@
     },
     {
       "type": "story",
-      "id": "story-17",
-      "rank": 17,
+      "id": "story-19",
+      "rank": 19,
       "category": "technology",
       "published_iso": "2026-08-05T15:00:00+00:00",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -817,85 +893,148 @@
     },
     {
       "type": "story",
-      "id": "story-19",
-      "rank": 19,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Trump gives Iran a 'last chance' to sign a deal — or face strikes aimed at 'decapitating' its leadership",
-        "date": null
-      },
-      "published_iso": "2026-08-05T09:00:00+00:00",
-      "added_at": "2026-08-06T00:03:17+05:30",
-      "source": "Bloomberg",
-      "importance": "critical",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-06T00:00:00+05:30",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "The Statesman",
+      "importance": "high",
       "regions": [
-        "Middle East",
-        "US",
-        "Iran",
-        "Oman"
+        "India"
       ],
-      "title": "Iran and Oman say they've reached a Hormuz shipping-route deal, with a US announcement possible this week",
-      "what_happened": "Iran's foreign ministry spokesman **Esmail Baghaei** said Wednesday that Tehran and Muscat have reached an agreement on a proposed shipping route through the Strait of Hormuz, with a joint statement now in its 'final drafting' stage. Under the emerging arrangement, commercial ships would enter the Persian Gulf through a route controlled by **Iran** and exit through a separate route controlled by **Oman**, with fees charged for security and environmental protection along the way. President Trump said the wider, US-brokered deal to fully reopen the strait 'could come as early as Wednesday,' a day after his Treasury Secretary said an agreement was possible 'within days.' Baghaei described the Oman talks as 'professional' and 'forward-moving,' but repeated that Iran is not negotiating directly with the United States — even as US officials describe the negotiations as active. The announcement comes just two days after Trump warned Iran it had a **'last chance'** to sign a deal before facing renewed strikes aimed at its leadership.",
+      "title": "Opposition MPs stage donation-box protests in Parliament over alleged Ram Mandir theft",
+      "what_happened": "During Parliament's ongoing Monsoon Session, Samajwadi Party MPs escalated their protest by carrying physical donation boxes into the House, accusing the government of failing to properly investigate the alleged theft and of 'deceiving' devotees. Independent MP Rajesh Ranjan performed a satirical skit dressed as a priest, mock-stealing a donation box before being theatrically 'caught' — Leader of the Opposition Rahul Gandhi joined by placing cash into the box. BJP leaders called the protest 'highly condemnable' and accused the SP of politicizing a religious issue. The protests also referenced Home Minister Amit Shah's absence from the House. Outside Parliament, the Samajwadi Party has continued keeping the donation-theft issue in public view.",
       "key_points": [
-        "Iran's foreign ministry says a **shipping-route agreement** with Oman has been reached, with a joint statement now in **final drafting**",
-        "Under the emerging plan, ships would enter the Gulf via an **Iranian-controlled route** and exit via an **Oman-controlled route**, with security fees charged",
-        "Trump says the wider deal could be announced '**today or tomorrow**' — just a day after threatening to resume strikes on Iran's leadership",
-        "This is Iran's **second straight day** of denying it is negotiating directly with Washington, even as the US insists talks are active",
-        "Oil prices have already fallen on hopes the world's most important oil chokepoint fully reopens"
+        "**Samajwadi Party MPs** carried donation boxes into Parliament, accusing the BJP of **'deceiving Lord Ram'** over alleged temple-fund embezzlement.",
+        "An independent MP staged a **satirical skit** in priestly robes, mock-stealing a donation box — **Rahul Gandhi** joined by placing cash in it.",
+        "The core allegation: a former SP MLA claims **₹7–7.5 crore** in Ram Mandir donations were misappropriated.",
+        "**Eight people are in custody** after Uttar Pradesh police filed an FIR following a state government probe.",
+        "The **Supreme Court** is separately hearing pleas seeking a **CBI-monitored investigation** into the temple trust's finances."
       ],
-      "moot": "When a strategic chokepoint like a shipping strait is disputed, the resulting 'deal' often has to be brokered indirectly through a neutral third party, because the two main antagonists won't admit to talking to each other directly.",
-      "image_credit": "Bloomberg",
+      "moot": "When a religious or charitable institution handles large public donations without strong outside audit oversight, allegations of misuse can escalate quickly into major political controversies — transparency in fund management is what prevents that.",
+      "image_credit": "The Statesman",
       "credibility": {
-        "level": "confirmed",
+        "level": "developing",
         "count": 2,
-        "tier": 1,
+        "tier": 2,
         "outlets": [
-          "Bloomberg",
-          "CNBC"
+          "LiveLaw",
+          "The Statesman"
         ],
         "corroboration": 0
       },
-      "thread": {
-        "previously": "Yesterday we reported Trump had given Iran a 'last chance' to sign a Hormuz deal or face renewed strikes explicitly aimed at Iran's leadership, while Tehran kept denying it was negotiating directly with Washington.",
-        "changed": "Iran's foreign ministry now says it has reached an actual shipping-route agreement with Oman, with a joint statement in final drafting and Trump saying a full announcement could land within a day or two."
-      },
       "concepts": [
-        "strait_chokepoint",
-        "crude_geopolitics"
+        "supreme_court_india",
+        "cbi",
+        "parliament_india"
       ],
       "figures": [],
       "depth": {
-        "background": "The Strait of Hormuz is the narrow waterway between Iran and Oman through which roughly **a fifth of the world's oil** passes, and it has been the center of a months-long crisis since strikes disrupted shipping there and Iran's Supreme Leader was killed in a February strike that triggered open war. The US and Iran agreed to a ceasefire earlier this year, but the strait has stayed a flashpoint — a Greek-owned tanker was hit by an unknown projectile only yesterday. Trump has oscillated between threatening renewed 'leadership-targeting' strikes and touting an imminent reopening deal, while Tehran has consistently denied talking directly to Washington, saying it negotiates only with Oman on how ships pass through.",
-        "why_it_matters": "If finalized, this would be the clearest sign yet that the acute phase of the Iran war crisis is easing, restoring a shipping route that carries roughly a fifth of the world's oil. It would also remove one of the biggest tail risks hanging over global energy markets and shipping insurance costs.",
-        "ripple_effects": "A confirmed reopening would likely extend the recent slide in oil prices — a relief for consumers worldwide — and lift shipping and insurance markets that have priced in disruption risk. It would also ease pressure on Gulf allies like the UAE and Saudi Arabia, who have pushed Washington to give diplomacy more room.",
-        "why_now": "The push follows Trump's ultimatum two days ago threatening renewed leadership-targeting strikes, which appears to have accelerated back-channel progress between Iran and Oman even as Tehran keeps the US at arm's length publicly.",
-        "watch_next": "Whether Tehran and Washington issue the promised joint announcement in the next day or two, or whether Iran's public denial of direct US talks derails it again.",
-        "market_link": "Oil prices (Brent/WTI) and tanker insurance costs are the most direct market movers here — a confirmed reopening would likely extend the recent oil price slide.",
+        "background": "The Ram Janmabhoomi temple in Ayodhya, built after decades of religious and legal dispute, is run by the **Shri Ram Janmabhoomi Teerth Kshetra Trust** and has received massive public donations — reportedly over ₹5,400 crore. Earlier this year, allegations surfaced that a portion of those donations were siphoned off, prompting a Uttar Pradesh Special Investigation Team probe, an FIR naming several individuals, and Supreme Court petitions demanding an independent CBI-monitored investigation. Because the temple is central to the BJP's political identity, the controversy has become a recurring flashpoint between the opposition and the government.",
+        "why_it_matters": "This turns a religious-institution financial scandal into a live political flashpoint in Parliament, testing how the BJP handles an issue tied to its core Ram Mandir identity, while raising genuine accountability questions about how a public trust manages crores of rupees in devotee donations.",
+        "ripple_effects": "Expect continued pressure for a court-monitored CBI probe, possible embarrassment for the temple trust and the Uttar Pradesh government, and the controversy feeding into broader political messaging. Devotees and donors may also grow more cautious about how their contributions are tracked and audited.",
+        "why_now": "The protests intensified today as the Monsoon Session continues, and the Supreme Court's pending CBI-probe petitions keep giving the opposition a fresh news hook to escalate pressure inside Parliament.",
+        "watch_next": "The Supreme Court's next hearing date on the CBI-probe petitions, and whether the government responds directly on the floor of the House.",
+        "market_link": null,
         "key_terms": [
           {
-            "term": "Strait of Hormuz",
-            "definition": "A narrow sea passage between Iran and Oman through which a large share of the world's traded oil and gas must pass, making it one of the most strategically important chokepoints on Earth."
+            "term": "CBI-monitored probe",
+            "definition": "When the Supreme Court orders and directly supervises an investigation by India's Central Bureau of Investigation, rather than leaving it to a state police force — typically sought when petitioners don't trust a state government to investigate itself fairly."
           }
         ],
         "sources": [
           {
-            "name": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-08-05/iran-says-agreement-on-hormuz-shipping-route-reached-with-oman"
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/opposition-keeps-up-pressure-on-govt-over-shah-ram-mandir-donation-theft-in-parliament-1503623005.html"
           },
           {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/us-iran-war-trump-hormuz-bessent-iran-deal-close.html"
+            "name": "LiveLaw",
+            "url": "https://www.livelaw.in/top-stories/supreme-court-ayodhya-ram-mandir-trust-donation-theft-plea-for-court-monitored-cbi-probe-540931"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "SEBI says its new closing-auction system has 'no design flaws' after wild Nifty swings on options-expiry day",
+        "date": null
+      },
+      "published_iso": "2026-08-06T15:30:00+05:30",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "IANS",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "India's new stock-closing system passes its first big test, calming fears after last week's wild Nifty swings",
+      "what_happened": "Today was the Sensex's first weekly derivatives (F&O) expiry priced entirely under the new CAS. Under this system, buy and sell orders placed near the close are matched in a single-price auction, and that auction price becomes the official closing price — instead of an average of the last 30 minutes of regular trading. The session held steady: the Sensex closed at 78,954.75, up 0.48%, only marginally above where it stood just before the auction began. The Nifty 50 moved a mere 0.03% during the auction itself — a sharp contrast to the volatility seen on the system's chaotic debut day.",
+      "key_points": [
+        "The **Sensex's first weekly expiry** under the new Closing Auction System (CAS) passed **largely without disruption** today.",
+        "The Sensex closed **0.48% higher** at 78,954.75, just **0.2% above** its pre-auction 3:15pm level.",
+        "The Nifty 50 moved just **0.03%** during the closing auction itself, easing fears of another chaotic swing.",
+        "**SEBI's CAS**, live since Monday, replaced the old method of averaging trades over the final 30 minutes.",
+        "Analysts say the earlier turbulence should be **temporary** as traders adjust to the new mechanism."
+      ],
+      "moot": "When regulators change core market plumbing, the real test isn't the announcement — it's whether the system holds up under real trading pressure days later.",
+      "image_credit": "IANS",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Business Recorder",
+          "IANS"
+        ],
+        "corroboration": 0
+      },
+      "thread": {
+        "status": "cooling",
+        "day": 2,
+        "previously": "Yesterday, SEBI defended its new Closing Auction System after it caused wild, unexplained Nifty swings on its first options-expiry day, saying it found no design flaws.",
+        "changed": "Today's first full weekly Sensex expiry under the same system passed smoothly — Sensex and Nifty barely moved during the auction — easing fears the chaos would repeat."
+      },
+      "concepts": [
+        "sebi"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "**SEBI**, India's markets regulator, introduced the Closing Auction Session (CAS) this week to fix how closing/settlement prices are calculated on options-expiry days, after the system's debut caused wild, unexplained swings in the Nifty that traders blamed on the old method being exploitable near the close. SEBI initially said it found **'no design flaws'** in the new system but promised close monitoring as it rolled out further.",
+        "why_it_matters": "A smooth expiry restores confidence in India's market infrastructure right after a change that had just caused turbulence, reassuring investors, brokers, and options traders who feared a repeat of mispriced settlements affecting large numbers of contracts.",
+        "ripple_effects": "Options traders and index-fund investors who depend on predictable closing prices benefit directly; brokers processing expiry-day settlements see less operational risk; and SEBI's credibility on market-structure reforms gets a boost heading into bigger tests.",
+        "why_now": "This was the first weekly test since CAS went live on Monday and the first since last week's chaotic debut, making today's calm outcome the key data point the market was watching.",
+        "watch_next": "Whether the next monthly expiry — a much bigger, more heavily-traded event — also passes smoothly under CAS.",
+        "market_link": "Directly about Nifty/Sensex F&O settlement mechanics — relevant to anyone trading Indian index options or holding index funds.",
+        "key_terms": [
+          {
+            "term": "closing auction",
+            "definition": "A short window at the end of the trading day where buy and sell orders are matched at a single price, which becomes that day's official closing price — designed to reduce last-minute price manipulation."
+          }
+        ],
+        "sources": [
+          {
+            "name": "IANS",
+            "url": "https://ianslive.in/sensex-weekly-expiry-to-debut-under-closing-auction-system-amid-volatility-concerns--20260806103034"
+          },
+          {
+            "name": "Business Recorder",
+            "url": "https://www.brecorder.com/news/40433104/indias-nifty-and-sensex-diverge-following-launch-of-new-auction-mechanism"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-05T14:19:03+05:30",
       "added_at": "2026-08-06T18:14:23+05:30",
       "source": "Business Standard",
@@ -965,8 +1104,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-08-05T00:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -1038,8 +1177,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-05T00:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -1108,8 +1247,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-05T00:00:00+05:30",
       "added_at": "2026-08-06T14:02:14+05:30",
@@ -1169,8 +1308,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-05T00:00:00+05:30",
       "added_at": "2026-08-06T14:02:14+05:30",
@@ -1244,8 +1383,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-06T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -1304,8 +1443,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-08-06T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -1366,8 +1505,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-08-06T05:30:00+00:00",
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -1438,8 +1577,8 @@
     },
     {
       "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-08-05T17:43:00+05:30",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -1502,8 +1641,8 @@
     },
     {
       "type": "story",
-      "id": "story-35",
-      "rank": 35,
+      "id": "story-37",
+      "rank": 37,
       "category": "india",
       "published_iso": "2026-08-05T23:40:26+05:30",
       "added_at": "2026-08-06T01:59:32+05:30",
@@ -1558,71 +1697,131 @@
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-08-05T13:00:00+05:30",
-      "added_at": "2026-08-05T20:08:45+05:30",
-      "source": "Business Standard",
-      "importance": "notable",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "development": true,
+      "prev_ref": {
+        "title": "Kimi Antonelli heads into F1's summer break with a commanding 50-point championship lead",
+        "date": null
+      },
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "SportBible",
+      "importance": "high",
       "regions": [
-        "India"
+        "Global"
       ],
-      "title": "SEBI says its new closing-auction system has 'no design flaws' after wild Nifty swings on options-expiry day",
-      "what_happened": "On a recent weekly derivatives-expiry day, the Nifty 50 index swung sharply during the new 20-minute closing-auction window, catching traders off guard and triggering unexpected gains and losses on options contracts that settle against that closing price. Some market participants complained the mechanism effectively blinds traders during the window since regular cash-market trading pauses. SEBI responded that it sees no structural design flaws in the CAS and does not plan an immediate review, characterizing the early volatility as a normal adjustment period as the market adapts to the new system.",
+      "title": "Mercedes boss Toto Wolff threatens to bench a driver if the Antonelli-Russell title fight turns toxic",
+      "what_happened": "Wolff revealed that Mercedes has been strategically timing which upgrades go on which car, holding back a chunk of planned upgrades for the second half of 2026 specifically to manage the championship fight between Antonelli and Russell. Antonelli currently leads the drivers' standings with 219 points, 50 clear of Ferrari's Hamilton in second and 59 ahead of Russell, who has struggled with what he describes as power-unit reliability issues. Wolff stated plainly that if the two teammates' rivalry escalates beyond what he considers reasonable — echoing the team's bruising Hamilton-Rosberg years — he is willing to bench or drop one of them to protect the team.",
       "key_points": [
-        "SEBI finds **no design flaws** in the new **Closing Auction Session (CAS)** and plans no immediate review",
-        "The **20-minute window (3:15–3:35 pm)** triggered sharp **Nifty 50** swings on a weekly derivatives-expiry day",
-        "Wild closing-price moves affect the **settlement value** of options contracts worth crores of rupees",
-        "Regulator calls early sessions an **adjustment period**, not a system flaw, as the market gets used to it"
+        "Mercedes rookie **Kimi Antonelli** leads the drivers' standings on **219 points**.",
+        "Antonelli is **50 points clear** of Ferrari's Lewis Hamilton in 2nd, and **59 points** ahead of his own teammate **George Russell**.",
+        "Team boss **Toto Wolff** says Mercedes has deliberately **held back upgrades** for the second half of the season to manage the title fight.",
+        "Wolff has explicitly warned he's prepared to **bench or drop a driver** if the Antonelli-Russell rivalry crosses reasonable limits.",
+        "Russell says his slump is partly down to **power-unit issues**, not just being outpaced by his 18-year-old teammate."
       ],
-      "moot": "Even well-intentioned market-structure reforms can create short-term turbulence — regulators have to weigh the benefits of a more manipulation-resistant system against the real cost of an adjustment period where prices behave unpredictably.",
-      "image_credit": "Business Standard",
+      "moot": "Even the most talented rivals can cost a team more through infighting than they gain through competition — strong leadership sometimes means being willing to bench your own stars for the sake of the bigger prize.",
+      "image_credit": "SportBible",
       "credibility": {
         "level": "developing",
-        "count": 2,
+        "count": 1,
         "tier": 2,
         "outlets": [
-          "Business Recorder",
-          "Business Standard"
+          "SportBible"
         ],
         "corroboration": 0
       },
-      "concepts": [
-        "sebi"
-      ],
+      "thread": {
+        "status": "developing",
+        "day": 2,
+        "previously": "On August 3 we reported Antonelli held a commanding 50-point championship lead heading into the summer break.",
+        "changed": "Today, Mercedes boss Toto Wolff revealed the team has deliberately held back upgrades to manage the title fight, and explicitly threatened to bench either Antonelli or Russell if their rivalry turns toxic — echoing the team's bitter Hamilton-Rosberg era."
+      },
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "SEBI, India's securities regulator, recently rolled out a new **Closing Auction Session (CAS)** for highly liquid derivative stocks to set official closing prices — replacing the old method, which was vulnerable to last-minute price manipulation sometimes called 'banging the close.' Because index options settle based on the closing value, how that closing price is calculated has direct financial consequences for millions of rupees in options positions, many held by retail traders.",
-        "why_it_matters": "Because index closing prices directly determine options settlement values, any instability in how that price is set can mean sudden, unexplained profit or loss for options traders — a large share of whom are retail investors — even when nothing about the underlying stocks has changed.",
-        "ripple_effects": "Brokerages and algorithmic traders are having to adjust strategies around the new closing window; if volatility persists through more expiry cycles, pressure could build on SEBI to revisit the design despite its current stance, and retail investor confidence in index-linked products could take a hit.",
-        "why_now": "The volatility coincided with a weekly derivatives-expiry session — the day each week when the closing-price mechanism has the most financial consequence, since options settle against it.",
-        "watch_next": "Whether Nifty volatility during the closing auction persists through the next few expiry cycles, which would test SEBI's 'no review needed' stance.",
-        "market_link": "Nifty 50 options traders and brokerages face redesigned closing-price risk each expiry day; index and derivatives-heavy funds should watch expiry-session volatility going forward.",
-        "key_terms": [
-          {
-            "term": "Closing Auction Session (CAS)",
-            "definition": "A short window at the end of the trading day where buy and sell orders are matched to set a stock's official closing price, meant to prevent manipulation compared to using the last traded price."
-          }
-        ],
+        "background": "Mercedes has two drivers — 18-year-old rookie sensation Kimi Antonelli and experienced George Russell — both realistically in contention for the 2026 title, an unusual position for a team to be in. Team principal Toto Wolff has publicly referenced Mercedes' painful Hamilton-Rosberg rivalry from the mid-2010s, which turned bitter and cost the team on-track incidents, as the reason he wants to manage this year's intra-team dynamic more carefully.",
+        "why_it_matters": "A team publicly threatening to discipline its own title contender is a rare and serious signal — it shows Mercedes prioritizes team unity and results over letting the rivalry play out freely, which could shape how aggressively Antonelli and Russell race each other for the rest of the season.",
+        "ripple_effects": "Rival teams like Ferrari and Red Bull could benefit if Mercedes' driver management creates internal friction or slows their pace; Antonelli's push for a maiden title as an 18-year-old becomes a bigger storyline; Russell's standing within the team could be affected if he keeps falling behind.",
+        "why_now": "This builds on the 50-point Antonelli lead we reported on August 3, but Wolff's new threat to bench a driver, and the revealed upgrade-timing strategy, are fresh details showing how seriously the team is managing the situation heading into the second half.",
+        "watch_next": "How Mercedes allocates upgrades between the two cars at the first race back from the break, and whether on-track tension between Antonelli and Russell resurfaces.",
+        "market_link": null,
+        "key_terms": [],
         "sources": [
           {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/sebi-sees-no-need-to-review-new-stock-closing-auction-immediately-126080500400_1.html"
-          },
-          {
-            "name": "Business Recorder",
-            "url": "https://www.brecorder.com/news/40433266/indias-new-closing-auction-stokes-sharp-nifty-swings-options-volatility-on-weekly-expiry"
+            "name": "SportBible",
+            "url": "https://www.sportbible.com/formula-1/mercedes/toto-wolff-mercedes-f1-update-russell-antonelli-775427-20260805"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-08-05T00:00:00Z",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "GPFans",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "Ferrari poaches two chassis engineers from Mercedes and Aston Martin to reinforce its title push",
+      "what_happened": "Ferrari confirmed two significant engineering signings from rival teams this month. Carlos Sánchez Martínez, who spent eight years at Aston Martin, departed to join Ferrari as a chassis stress engineering specialist, starting in July 2026. About a week later, Mercedes' Luciano Nicomede — a composite design engineer who had been with the Brackley-based team since 2020 — also announced his move to Ferrari, taking a role as senior chassis composite designer. Both hires reinforce Ferrari's chassis department under technical director Loïc Serra.",
+      "key_points": [
+        "Ferrari has hired **two senior chassis engineers** away from rival teams within weeks of each other.",
+        "**Carlos Sánchez Martínez** left Aston Martin after **eight years** to become Ferrari's chassis stress engineering specialist.",
+        "**Luciano Nicomede**, a Mercedes composite design engineer since **2020**, has now also moved to Ferrari.",
+        "The hires strengthen technical director **Loïc Serra's** chassis department under team boss **Fred Vasseur**.",
+        "Ferrari currently sits **2nd in the constructors' championship**, 72 points behind leaders Mercedes."
+      ],
+      "moot": "In highly technical competitive fields, who you hire away from a rival can matter as much as any single result — talent movement is a leading indicator of future performance.",
+      "image_credit": "GPFans",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "GPFans"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "F1 team performance depends as much on engineering depth as on drivers — chassis design (the structural and aerodynamic core of the car) is one of the most competitive technical battlegrounds under F1's all-new 2026 rules. Personnel moves between rival teams are common and closely watched as signals of who's investing where. Ferrari, under team principal Fred Vasseur, has been rebuilding its technical department to close the gap on championship leaders Mercedes.",
+        "why_it_matters": "Engineering talent moves are a leading indicator of a team's competitive trajectory — poaching from both a midfield rival (Aston Martin) and the championship-leading team (Mercedes) signals Ferrari's ambition to close the gap for 2027 and beyond, while weakening two competitors' technical depth at once.",
+        "ripple_effects": "Aston Martin and Mercedes lose experienced chassis specialists mid-season, a blow to continuity on their car-development programs; Ferrari's chassis and aerodynamic development could accelerate; expect further personnel movement during the summer break, a traditional window for such moves.",
+        "why_now": "Summer break is when F1 teams typically finalize off-track personnel moves since there's no immediate race-week disruption, and both hires became public within the past week.",
+        "watch_next": "Whether Ferrari makes further technical hires before the season resumes, and whether Aston Martin or Mercedes respond with signings of their own.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "chassis",
+            "definition": "The structural body/frame of an F1 car that everything else — engine, aerodynamics, suspension — is built around; a well-designed chassis affects how efficiently a car handles and how safe it is in a crash."
+          }
+        ],
+        "sources": [
+          {
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088704/ferrari-poach-mercedes-f1-engineer-luciano-nicomede-double-signing-aston-martin/"
+          },
+          {
+            "name": "GPFans",
+            "url": "https://www.gpfans.com/en/f1-news/1088591/ferrari-poach-f1-staff-member-aston-martin-carlos-sanchez-martinez/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-08-04T10:00:00+01:00",
       "added_at": "2026-08-06T18:14:23+05:30",
       "source": "Motorsport Week",
@@ -1686,8 +1885,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -1755,8 +1954,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-05T00:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -1810,8 +2009,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-05T00:00:00Z",
       "added_at": "2026-08-06T14:02:14+05:30",
@@ -1864,8 +2063,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -1934,8 +2133,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-04T00:00:00Z",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -1994,77 +2193,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "development": true,
-      "prev_ref": {
-        "title": "Max Verstappen's father shuts down reports of a new exit-clause-free Red Bull contract",
-        "date": null
-      },
-      "published_iso": "2026-08-05T00:00:00Z",
-      "added_at": "2026-08-06T12:03:19+05:30",
-      "source": "RacingNews365",
-      "importance": "high",
-      "regions": [
-        "Global"
-      ],
-      "title": "Max Verstappen's Red Bull exit clause is now mathematically guaranteed to activate",
-      "what_happened": "Verstappen's retirement (DNF) at the British Grand Prix at Silverstone made it mathematically impossible for him to finish the first half of the 2026 season inside the top two of the drivers' championship — the threshold his contract's exit clause is tied to. That means the clause, often described as a 'failsafe,' has now tripped regardless of any separate contract negotiations. He currently sits 7th in the standings, well behind championship leader Kimi Antonelli. Under the terms reported, Verstappen can formally invoke the clause around October 2026, which would let him open talks with rival teams for a 2027 seat even though his base contract with Red Bull runs through the end of 2028.",
-      "key_points": [
-        "His contract lets him leave Red Bull if he's outside the **top two** in the championship by the summer break.",
-        "A **DNF at the British Grand Prix** made it mathematically impossible for him to reach the top two in time.",
-        "He currently sits **7th** in the drivers' standings, well off leader Kimi Antonelli.",
-        "The clause can be formally triggered around **October 2026**, opening the door to talks with rival teams for 2027.",
-        "His underlying Red Bull deal runs to the end of **2028** — the clause simply gives him an opt-out from it."
-      ],
-      "moot": "Sports contracts increasingly build in performance-based opt-outs, so a team's poor season can trigger a star's exit clock automatically through results alone, even without either side wanting a split.",
-      "image_credit": "RacingNews365",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "RacingNews365",
-          "Yahoo Sports"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "Verstappen's father denied reports that Red Bull was negotiating a new contract that would remove his exit clause entirely, amid speculation the team wanted to lock him in without an opt-out.",
-        "changed": "Separate from any new-contract talk, Verstappen's existing exit clause has now been mathematically triggered by his British Grand Prix retirement, since he can no longer finish the season's first half in the championship's top two — making a 2027 move to a rival team a real, contractually-backed possibility."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Verstappen, a four-time world champion, signed a Red Bull contract extension designed to keep him through F1's 2026 rules reset — a major regulation change that has made cars far more dependent on battery power and drawn heavy criticism from drivers across the grid, including Verstappen himself, who has compared racing under the new rules to 'Formula E on steroids.' To protect himself against a bad season under an unproven new car, his deal reportedly included a performance-based exit clause tied to where he stands in the championship at the summer break. Only days before this news, his father had publicly denied reports that Red Bull was negotiating a separate, new contract that would remove that clause entirely.",
-        "why_it_matters": "One of Formula 1's biggest stars now has a contractual, mathematically confirmed route out of Red Bull heading into 2027 — a season already shaping up as a major driver-market shake-up.",
-        "ripple_effects": "Rival teams — Mercedes, Ferrari and Aston Martin have all been linked to him in speculation — will be watching closely, and Red Bull now has to plan for the possibility of building its future without its most decorated driver. It also adds fresh uncertainty for sponsors, fans and Red Bull's junior-driver pipeline, which would need to produce or buy a replacement.",
-        "why_now": "The British Grand Prix DNF was the specific, decisive result that mathematically tripped the clause's top-two threshold — it wasn't triggered by an announcement, but by results on the track.",
-        "watch_next": "Whether Verstappen signals his intentions at his home race, the Dutch Grand Prix at Zandvoort (August 21-23) — some in the paddock expect an announcement there.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Performance exit clause",
-            "definition": "A clause in a driver's contract letting them leave a team early if it fails to hit an agreed competitive target, such as a top-two championship position by a set date."
-          }
-        ],
-        "sources": [
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/max-verstappen-can-now-trigger-exit-clause-to-potentially-leave-red-bull"
-          },
-          {
-            "name": "Yahoo Sports",
-            "url": "https://sports.yahoo.com/articles/max-verstappen-red-bull-exit-110000138.html"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
+      "id": "story-70",
+      "rank": 70,
       "category": "f1",
       "published_iso": null,
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -2118,8 +2248,8 @@
     },
     {
       "type": "story",
-      "id": "story-69",
-      "rank": 69,
+      "id": "story-71",
+      "rank": 71,
       "category": "f1",
       "published_iso": "2026-08-05T09:00:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2173,8 +2303,8 @@
     },
     {
       "type": "story",
-      "id": "story-70",
-      "rank": 70,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-08-05T10:00:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2223,8 +2353,8 @@
     },
     {
       "type": "story",
-      "id": "story-71",
-      "rank": 71,
+      "id": "story-73",
+      "rank": 73,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -2292,8 +2422,8 @@
     },
     {
       "type": "story",
-      "id": "story-77",
-      "rank": 77,
+      "id": "story-79",
+      "rank": 79,
       "category": "f1",
       "published_iso": "2026-08-05T10:00:00+01:00",
       "added_at": "2026-08-05T20:08:45+05:30",
@@ -2341,61 +2471,65 @@
     },
     {
       "type": "story",
-      "id": "story-80",
-      "rank": 80,
-      "category": "f1",
-      "published_iso": null,
-      "added_at": "2026-08-05T16:02:34+05:30",
-      "source": "ESPN",
+      "id": "story-41",
+      "rank": 41,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-08-05T00:00:00+01:00",
+      "added_at": "2026-08-06T20:11:26+05:30",
+      "source": "ESPNcricinfo",
       "importance": "notable",
       "regions": [
-        "Formula 1",
-        "United Kingdom"
+        "England",
+        "Global"
       ],
-      "title": "Adrian Newey reveals he battled health issues through his rocky first year running Aston Martin",
-      "what_happened": "Newey confirmed publicly for the first time that he was dealing with **health issues** during his first year in charge at Aston Martin, calling it a 'difficult period' and saying 'I was not 100 per cent last year. I had to balance health and work much more carefully.' He attended the season-opening race in Australia but then skipped four consecutive rounds — China, Japan, Miami and Canada — with Aston Martin's own website attributing part of his absence to 'a brief spell of illness.' Newey said he has now recovered and praised his engineers for handling the gap well: 'The team handled it incredibly well. I kept a very good relationship with the engineers and I don't feel it caused too much of a blip.'",
+      "title": "Jos Buttler becomes T20 cricket's all-time leading run-scorer as Manchester Super Giants end a losing streak",
+      "what_happened": "Chasing Welsh Fire's total of 155/4, Manchester Super Giants — powered by explosive half-centuries from Tim Seifert and Jos Buttler — raced to 161/1 off just 69 balls to win by 9 wickets. Buttler's innings, which included six sixes, pushed his career T20 run tally past Kieron Pollard's previous all-time record, making him the format's leading run-scorer across all T20 cricket globally. The win also snapped a three-match losing streak for Manchester Super Giants in the 2026 Hundred season.",
       "key_points": [
-        "Newey says it's been a **'difficult period'** and he was **'not 100 per cent'** during his first year at Aston Martin",
-        "He skipped **four races** in 2026 — China, Japan, Miami and Canada — partly due to a **'brief spell of illness'**",
-        "He says he has now **recovered** from the unspecified health issues",
-        "Newey holds the **dual role** of team principal and managing technical partner",
-        "He joined Aston Martin in **March 2025** after leaving Red Bull, where he was the sport's most decorated car designer"
+        "**Jos Buttler** passed **Kieron Pollard** to become T20 cricket's **all-time leading run-scorer**.",
+        "He smashed **six sixes** in an explosive innings for Manchester Super Giants against Welsh Fire.",
+        "Buttler and **Tim Seifert** chased down **156** in just **69 balls**, winning by **9 wickets**.",
+        "The win **snapped a 3-match losing streak** for Manchester Super Giants in this year's Hundred."
       ],
-      "moot": "In organizations built around one indispensable expert, that person's personal capacity — health, time, focus — becomes a genuine strategic risk, not just a personal matter.",
-      "image_credit": "ESPN",
+      "moot": "Records in fast-scoring formats like T20 keep resetting as the game evolves — the 'greatest ever' tag is always temporary in a sport getting more explosive by the year.",
+      "image_credit": "ESPNcricinfo",
       "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
         "outlets": [
-          "ESPN"
+          "Cricket World",
+          "ESPNcricinfo"
         ],
         "corroboration": 0
       },
       "concepts": [],
       "figures": [],
       "depth": {
-        "background": "Adrian Newey is widely regarded as the most successful car designer in Formula 1 history, having built championship-winning cars for Williams, McLaren and Red Bull across three decades. His move to Aston Martin in 2025 — taking the unusual dual role of team principal and 'managing technical partner' — was seen as a huge bet by the team's ownership that his design genius could turn a midfield outfit into a future title contender, especially with F1's all-new technical rules landing in 2026.",
-        "why_it_matters": "Aston Martin's entire 2026-27 strategy is built around Newey's design leadership, so any period where he wasn't fully engaged raises real questions about how much of the team's underwhelming 2026 form is attributable to his reduced involvement versus the broader challenge of adapting to F1's new rules.",
-        "ripple_effects": "It affects investor and driver confidence in Aston Martin's project — reportedly a factor in speculation about driver market moves for 2027 — and puts more scrutiny on the team's next car (the AMR27) as the first campaign where Newey is expected to be fully involved throughout.",
-        "why_now": "Newey addressed the issue directly around the British Grand Prix at Silverstone after months of reporting and speculation about his repeated absences.",
-        "watch_next": "Newey's involvement and Aston Martin's competitiveness through the rest of the season as he builds the AMR27 for 2027's rules cycle.",
+        "background": "The Hundred is England's fast-format domestic cricket competition, played each August alongside international commitments, and has become a proving ground and record-setting stage for global T20 stars. Jos Buttler, England's white-ball talisman, has built his reputation over more than a decade as one of the format's most destructive hitters; West Indian all-rounder Kieron Pollard had held the all-time T20 run-scoring record from his own long white-ball career.",
+        "why_it_matters": "Buttler's record cements his status as one of the format's greatest-ever hitters at a time when England is assessing its white-ball depth ahead of major tournaments — a timely reminder of his continued value.",
+        "ripple_effects": "It boosts Manchester Super Giants' form and morale after a rough patch, adds to the wider conversation about T20 batting records in an era of ever-higher scoring, and keeps Buttler firmly in selection conversations for England's white-ball sides.",
+        "why_now": "The record fell live in today's match as Buttler crossed the milestone, giving it its news hook.",
+        "watch_next": "Whether Buttler extends his lead further as the Hundred season continues, and how Manchester Super Giants' form holds up.",
         "market_link": null,
         "key_terms": [],
         "sources": [
           {
-            "name": "ESPN",
-            "url": "https://www.espn.com/f1/story/_/id/49235441/aston-martin-f1-formula-one-adrian-newey-silverstone-british-grand-prix"
+            "name": "ESPNcricinfo",
+            "url": "https://www.espncricinfo.com/series/the-hundred-men-s-competition-2026-1521176/manchester-super-giants-men-vs-welsh-fire-men-21st-match-1521251/match-report"
+          },
+          {
+            "name": "Cricket World",
+            "url": "https://www.cricketworld.com/the-hundred-mens-seifert-and-buttler-power-manchester-super-giants-to-dominant-win-over-welsh-fire/112412.htm"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-41",
-      "rank": 41,
+      "id": "story-42",
+      "rank": 42,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-05T14:30:00+00:00",
       "added_at": "2026-08-06T18:14:23+05:30",
       "source": "Business Standard",
@@ -2462,8 +2596,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
       "published_iso": "2026-08-05T00:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -2517,8 +2651,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-08-05T00:00:00+00:00",
       "added_at": "2026-08-06T16:00:22+05:30",
@@ -2575,8 +2709,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-08-06T00:00:00+09:30",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -2636,8 +2770,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-08-05T00:00:00+05:30",
       "added_at": "2026-08-06T12:03:19+05:30",
@@ -2696,8 +2830,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-05T12:00:00+00:00",
       "added_at": "2026-08-06T10:01:47+05:30",
@@ -2756,8 +2890,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-08-04T00:00:00+05:30",
       "added_at": "2026-08-06T07:59:12+05:30",
@@ -2806,8 +2940,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-08-06T08:00:00+12:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2862,8 +2996,8 @@
     },
     {
       "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-50",
+      "rank": 50,
       "category": "cricket",
       "published_iso": "2026-08-05T15:30:00+00:00",
       "added_at": "2026-08-06T05:59:08+05:30",
@@ -2918,8 +3052,8 @@
     },
     {
       "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-08-05T19:30:00+05:30",
       "added_at": "2026-08-06T00:03:17+05:30",
@@ -2973,8 +3107,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3037,71 +3171,11 @@
       }
     },
     {
-      "type": "story",
-      "id": "story-55",
-      "rank": 55,
-      "category": "cricket",
-      "published_iso": "2026-08-05T09:00:00+01:00",
-      "added_at": "2026-08-05T22:02:36+05:30",
-      "source": "ESPN Cricinfo",
-      "importance": "notable",
-      "regions": [
-        "England",
-        "South Africa"
-      ],
-      "title": "Aiden Markram quits The Hundred midway and flies home to South Africa for personal reasons; Jos Buttler takes over as Manchester captain",
-      "what_happened": "Manchester Super Giants confirmed that captain Aiden Markram is leaving The Hundred 2026 immediately and returning to South Africa for personal reasons, missing the rest of the tournament. Markram had played five matches for Manchester this season, scoring 117 runs, before his departure at a crucial stage of the competition. The franchise has handed the captaincy to **Jos Buttler**, who has been in outstanding form with **226 runs in five matches at an average of 112**, marking his first time leading a franchise side since England's 2025 Champions Trophy campaign. New Zealand all-rounder **Michael Bracewell** has been signed as a straight replacement for Markram in the squad.",
-      "key_points": [
-        "Markram leaves Manchester Super Giants after **5 matches and 117 runs** this season",
-        "**Jos Buttler**, in career-best form with **226 runs at an average of 112**, becomes the new captain",
-        "New Zealand all-rounder **Michael Bracewell** signs as Markram's like-for-like replacement",
-        "It's Buttler's first franchise captaincy since the **2025 Champions Trophy**"
-      ],
-      "moot": "Franchise sports squads build in tactical depth for injuries, but a sudden personal-reasons departure tests a team's leadership depth in a way results-based planning often doesn't anticipate.",
-      "image_credit": "ESPN Cricinfo",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "CricketAddictor",
-          "ESPN Cricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Hundred is an English short-format cricket competition, shorter than T20, played by eight city-based franchise teams over a few weeks each August. Aiden Markram, the South African batter, was named Manchester Super Giants' captain for the 2026 competition and had been in decent form before his sudden departure. Jos Buttler is a former England white-ball captain and one of the most experienced leaders in franchise cricket globally, giving Manchester an experienced deputy to step straight into the role.",
-        "why_it_matters": "A mid-tournament captaincy change disrupts team leadership and tactics right when playoff qualification is being decided, and handing it to an in-form senior player like Buttler is Manchester's way of minimizing that disruption.",
-        "ripple_effects": "Buttler's own scoring output could dip slightly if added captaincy duties affect his batting focus, something franchises watch closely. Bracewell's arrival gives Manchester fresh all-round balance for the run-in to the playoffs. Markram's abrupt exit will also fuel questions about how The Hundred and other T20 leagues handle player welfare and personal-leave situations mid-tournament.",
-        "why_now": "The announcement came Wednesday, with Manchester needing to firm up its leadership and squad immediately given matches continuing through the tournament's business end.",
-        "watch_next": "Watch how Manchester Super Giants perform under Buttler's captaincy in their remaining group games as they push for a playoff spot.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "The Hundred",
-            "definition": "An English short-form cricket competition where each team faces 100 balls per innings, shorter than the more common 20-over format."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPN Cricinfo",
-            "url": "https://www.espncricinfo.com/story/aiden-markram-to-miss-the-remainder-of-the-hundred-due-to-personal-reasons-1548750"
-          },
-          {
-            "name": "CricketAddictor",
-            "url": "https://cricketaddictor.com/cricket-news/aiden-markram-quits-the-hundred-2026-jos-buttler-named-msg-captain-michael-bracewell-replaces-him-462210/"
-          }
-        ]
-      }
-    },
-    {
       "type": "archive",
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 137
+      "older_count": 136
     },
     {
       "type": "archive",
@@ -3115,7 +3189,7 @@
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 95
+      "older_count": 94
     },
     {
       "type": "archive",
