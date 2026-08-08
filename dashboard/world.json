@@ -1,9 +1,131 @@
 {
   "date": "2026-08-08",
-  "generated_at": "2026-08-08T06:00:37+05:30",
+  "generated_at": "2026-08-08T08:03:37+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "rank": 1,
+      "category": "science",
+      "published_iso": "2026-08-06T14:00:00+00:00",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "title": "Stanford scientists used AI to design working viruses from scratch for the first time",
+      "key_points": [
+        "Researchers at **Stanford and the Arc Institute** used an AI model called **Evo 2** to design **16 fully functional viral genomes** that had never existed in nature.",
+        "The AI-designed viruses are **bacteriophages** \u2014 viruses that infect only bacteria, not humans \u2014 and successfully killed **antibiotic-resistant E. coli** in lab tests.",
+        "Evo 2 was trained on **9.3 trillion letters of DNA** drawn from over **128,000 genomes** spanning bacteria, viruses, plants and animals, similar to how chatbots are trained on text.",
+        "The findings were published in the journal **Science**, marking the first peer-reviewed proof that generative AI can design an entire working genome, not just a protein or fragment.",
+        "Biosecurity experts at **Johns Hopkins** published a companion warning that the same method could eventually be misused to design **dangerous pathogens**."
+      ],
+      "background": "As bacteria increasingly evolve resistance to antibiotics, scientists have revived interest in **phage therapy** \u2014 using viruses called bacteriophages that hunt and kill specific bacteria, a treatment approach that predates antibiotics but fell out of favor in the West for decades. Separately, a new class of AI tools called **genome language models** has emerged that treats DNA the way large language models treat text: learning the patterns of genetic code well enough to predict, and now generate, plausible new sequences. Evo 2, built by Stanford and the nonprofit Arc Institute, is one of the largest such models. Until this study, AI systems had designed individual proteins or DNA snippets, but never an entire genome complex enough to become a real, self-replicating, functioning virus.",
+      "what_happened": "Researchers Brian Hie and colleagues fine-tuned **Evo 2**, a 40-billion-parameter model, on roughly **14,000 genomes** from the Microviridae family of viruses, which includes \u03a6X174, a well-studied phage that naturally infects E. coli. The model generated hundreds of candidate genome designs; the team synthesized nearly **300** of them in the lab and tested which ones actually worked. **16 designs** turned out to be fully functional, replicating bacteriophages capable of infecting and killing E. coli. Crucially, when combined into a cocktail, the 16 AI-designed phages were able to rapidly kill E. coli strains that had already evolved resistance to the natural \u03a6X174 phage, something a single natural phage often cannot do alone. The team and outside reviewers describe this as the first time generative AI has designed a complete, functional viral genome from scratch, rather than editing or recombining existing genetic material. Alongside the paper, biosecurity specialists Thomas Inglesby and Moritz Hanke of Johns Hopkins' Center for Health Security published a commentary calling the result an \"urgent\" prompt to strengthen biosafety and biosecurity screening before more capable tools follow.",
+      "why_it_matters": "This is a real medical advance against antibiotic resistance, one of the World Health Organization's top global health threats, because it shows AI can rapidly custom-design phages to beat bacteria that have outsmarted natural viruses and drugs alike. But the same technique that designs a helpful virus could, in principle, be pointed at designing a harmful one, which is why biosecurity researchers are treating this as a warning shot rather than just a win.",
+      "ripple_effects": "Expect renewed investment and research into AI-assisted phage therapy as a real alternative to antibiotics, alongside a fast-moving policy debate over whether AI genome-design tools need mandatory safety screening \u2014 similar to existing checks on ordering dangerous DNA sequences \u2014 before they become more widely available.",
+      "why_now": "The result lands amid two converging trends: a worsening global antibiotic-resistance crisis with few new drugs in the pipeline, and a wave of increasingly capable AI-biology tools that have already raised alarms this year over their potential to design toxins or other harmful agents.",
+      "watch_next": "Whether journals, AI developers and regulators move to require biosecurity screening for genome-design AI models before the next, more capable version is released.",
+      "key_terms": [
+        {
+          "term": "Bacteriophage",
+          "definition": "A virus that infects and kills bacteria but is harmless to human cells, used as a potential alternative to antibiotics."
+        },
+        {
+          "term": "Genome language model",
+          "definition": "An AI system trained on DNA sequences the way chatbots are trained on text, allowing it to predict and generate new genetic code."
+        },
+        {
+          "term": "Antibiotic resistance",
+          "definition": "When bacteria evolve to survive the drugs designed to kill them, making common infections progressively harder to treat."
+        },
+        {
+          "term": "Dual-use research",
+          "definition": "Scientific work that has legitimate beneficial uses but could also be misapplied to cause harm."
+        }
+      ],
+      "the_lesson": "A tool powerful enough to design a cure is, by the same underlying mechanism, powerful enough to design harm \u2014 which is why new scientific capabilities need safety guardrails built in from the start, not added after the first headline-making result.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "high",
+      "sources": [
+        {
+          "name": "Stanford Report",
+          "url": "https://news.stanford.edu/stories/2026/08/evo-2-ai-tool-e-coli-killer-bacteriophages"
+        },
+        {
+          "name": "Nature",
+          "url": "https://www.nature.com/articles/d41586-026-01476-x"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/08/06/ai-virus-designed-bacteria-viruses"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-08-08T08:03:37+05:30"
+    },
+    {
+      "rank": 2,
+      "category": "geopolitics",
+      "published_iso": "2026-08-07T10:00:00+00:00",
+      "regions": [
+        "Africa",
+        "Sudan"
+      ],
+      "title": "UN warns of 'mass atrocities' as drone siege and cholera engulf Sudan's El Obeid",
+      "key_points": [
+        "The paramilitary **Rapid Support Forces (RSF)** are besieging El Obeid, a city of roughly **500,000 people**, with residents reporting as many as **40 drones** in the sky at once.",
+        "UN experts warn the city could see a repeat of **El Fasher**, the Darfur city where the RSF killed an estimated **6,000 civilians** after it fell in 2025.",
+        "Drone strikes have hit **water points, a market, fuel stations, schools and the main power station**, crippling the city's ability to function.",
+        "A cholera outbreak that has already killed over **120 people** in neighboring West Kordofan has now crossed into North Kordofan, where El Obeid sits.",
+        "Nearly **100,000 people** already displaced by earlier fighting are trapped inside the city alongside residents, with water prices roughly **doubling**."
+      ],
+      "background": "Sudan has been at war since **April 2023**, when the regular army (SAF) and the paramilitary **RSF** \u2014 a force descended from the Janjaweed militias notorious from the 2000s Darfur genocide \u2014 turned on each other after jointly ruling the country following a coup. The conflict has since split Sudan roughly in two, with the RSF dominant across Darfur and pushing into central Sudan. In late 2025 the RSF seized the Darfur city of **El Fasher** after a long siege, and international investigators say its fighters then carried out mass killings, rape and ethnic-targeted violence against civilians who could not flee. El Obeid, the capital of North Kordofan state, sits on the main road between Darfur and the capital Khartoum, making it the next major prize \u2014 and, aid groups fear, the next El Fasher.",
+      "what_happened": "Aid groups including **Doctors Without Borders (MSF)** and UN officials say the RSF has spent recent months tightening a siege around El Obeid, using swarms of drones to strike the infrastructure civilians depend on to survive rather than just military targets. Water pumping stations, wells and the city's main power station have all been hit, and residents describe drone attacks happening even on routine daytime errands. With safe routes to water cut, women and girls say they increasingly wait until dark to fetch it, when attacks are thought less likely \u2014 but aid workers report a corresponding rise in sexual violence carried out under cover of that same darkness. Meanwhile a **cholera** outbreak that began in neighboring West Kordofan state in May, and has already killed more than 120 people there, has now spread into North Kordofan, with cases confirmed in and around El Obeid where crippled water and health systems make treatment far harder. UN humanitarian officials briefed the Security Council this week that roughly **500,000 residents plus close to 100,000 people already displaced by earlier fighting** are effectively encircled, and formally warned of a \"serious risk of mass atrocities\" if the city falls the way El Fasher did.",
+      "why_it_matters": "El Obeid would be the RSF's biggest territorial prize since El Fasher, and the same siege-and-starve playbook has already produced what investigators call ethnically targeted mass killings once this year. A city of half a million people \u2014 plus 100,000 already-displaced residents with nowhere left to run \u2014 now sits on that same knife-edge, largely outside the world's attention.",
+      "ripple_effects": "A fall of El Obeid would likely trigger another wave of mass displacement toward Chad and South Sudan, both already straining under refugees from Sudan's war, and would hand the RSF control of a key crossroads linking Darfur to central Sudan, shifting the war's momentum. It would also further starve aid agencies of access at the exact moment cholera is spreading, risking a much larger regional outbreak.",
+      "why_now": "The siege has intensified through late July and early August as the RSF, fresh off its capture of El Fasher, applies the same tactics \u2014 cutting water and power, then squeezing with drones \u2014 to its next target, while seasonal rains help cholera spread faster through a population with no reliable clean water.",
+      "watch_next": "Whether the UN Security Council or regional mediators can secure a humanitarian corridor or ceasefire before El Obeid falls, given the Council has been unable to agree on binding action throughout the war.",
+      "key_terms": [
+        {
+          "term": "Rapid Support Forces (RSF)",
+          "definition": "A paramilitary force descended from the Janjaweed militias, now fighting Sudan's regular army for control of the country."
+        },
+        {
+          "term": "Siege",
+          "definition": "A military tactic of surrounding a location and cutting off its food, water, power and supply routes to force surrender."
+        },
+        {
+          "term": "Cholera",
+          "definition": "An acute intestinal infection spread through contaminated water that causes severe diarrhea and can kill within hours if untreated."
+        }
+      ],
+      "the_lesson": "When a siege targets water points and power stations instead of just fighters, it turns a military standoff into a public-health catastrophe \u2014 disease and thirst can end up killing more people than the fighting itself.",
+      "concepts": [
+        "insurgency_militancy",
+        "un_security_council",
+        "refugee_asylum"
+      ],
+      "market_link": null,
+      "importance": "critical",
+      "sources": [
+        {
+          "name": "NPR",
+          "url": "https://www.npr.org/2026/08/07/nx-s1-5921212/el-obeid-sudan-war"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/7/6/el-obeid-under-siege-by-rsf-could-this-be-sudans-next-el-fasher"
+        },
+        {
+          "name": "Doctors Without Borders (MSF)",
+          "url": "https://www.doctorswithoutborders.org/latest/sudan-drone-attacks-are-worsening-water-and-fuel-crisis-el-obeid"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-08-08T08:03:37+05:30"
+    },
     {
       "category": "geopolitics",
       "published_iso": "2026-08-06T14:00:00+03:00",
@@ -50,7 +172,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "category": "geopolitics",
@@ -98,7 +220,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 2
+      "rank": 4
     },
     {
       "category": "geopolitics",
@@ -142,7 +264,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "category": "geopolitics",
@@ -188,7 +310,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 4
+      "rank": 6
     },
     {
       "category": "geopolitics",
@@ -242,7 +364,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 5
+      "rank": 7
     },
     {
       "category": "geopolitics",
@@ -300,7 +422,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 6
+      "rank": 8
     },
     {
       "category": "climate",
@@ -364,7 +486,7 @@
         "title": "Europe's heatwave is now an energy crisis too \u2014 Hungary's only nuclear plant is nearing a forced shutdown",
         "date": null
       },
-      "rank": 7
+      "rank": 9
     },
     {
       "category": "geopolitics",
@@ -416,7 +538,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-08T00:03:00+05:30",
-      "rank": 8
+      "rank": 10
     },
     {
       "region": "global",
@@ -467,7 +589,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "region": "global",
@@ -518,7 +640,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 10
+      "rank": 12
     },
     {
       "region": "global",
@@ -562,7 +684,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 11
+      "rank": 13
     },
     {
       "region": "global",
@@ -613,7 +735,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 12
+      "rank": 14
     },
     {
       "region": "global",
@@ -663,7 +785,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "region": "global",
@@ -717,7 +839,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 14
+      "rank": 16
     },
     {
       "region": "global",
@@ -764,7 +886,7 @@
         }
       ],
       "added_at": "2026-08-07T14:01:01+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "region": "global",
@@ -817,7 +939,7 @@
         }
       ],
       "added_at": "2026-08-07T14:01:01+05:30",
-      "rank": 16
+      "rank": 18
     },
     {
       "region": "global",
@@ -869,7 +991,7 @@
         }
       ],
       "added_at": "2026-08-07T12:06:29+05:30",
-      "rank": 17
+      "rank": 19
     },
     {
       "region": "global",
@@ -924,112 +1046,141 @@
         }
       ],
       "added_at": "2026-08-07T12:06:29+05:30",
-      "rank": 18
-    },
-    {
-      "region": "global",
-      "category": "geopolitics",
-      "published_iso": "2026-08-06T00:00:00Z",
-      "regions": [
-        "Iran",
-        "Oman",
-        "US",
-        "Middle East"
-      ],
-      "title": "Iran says it has a Hormuz shipping deal with Oman \u2014 but Washington won't accept Iran's price for it",
-      "key_points": [
-        "Iran's deputy foreign minister said Tehran and Oman have **agreed on the coordinates** of a safe shipping route through the **Strait of Hormuz**.",
-        "The deal would set up a **joint coordination center** with Oman to manage traffic, with routes running through both countries' waters.",
-        "Iran wants to **collect fees** from ships using the new route and reportedly wants to **restrict access for US and Israeli vessels** \u2014 both of which the US rejects.",
-        "The agreement alone does **not reopen the strait** \u2014 Washington says Iran must still meet unspecified US conditions first.",
-        "This builds on Wednesday's earlier signal that a deal was in its 'final stage,' but the core dispute over who controls navigation is still unresolved."
-      ],
-      "background": "The **Strait of Hormuz** is a narrow waterway between Iran and Oman that roughly a fifth of the world's oil and gas shipments pass through \u2014 it's one of the most important chokepoints in global energy trade. Iran has periodically threatened to close or restrict the strait during tensions with the US and Israel, most recently amid the current standoff that has included the threat of renewed American military strikes on Iran. Oman, a neutral Gulf state with good relations with both Iran and the West, has stepped in as the broker trying to negotiate terms both Tehran and Washington can live with.",
-      "what_happened": "Iran's deputy foreign minister said Tehran and Oman have **agreed on the geographical coordinates** of a proposed safe shipping route through the Strait of Hormuz, with the arrangement covering technical details, security, and a **joint coordination center** to manage maritime traffic \u2014 routes would run through both Iran's and Oman's territorial waters. But the agreement does not automatically reopen the strait to normal traffic: Iran says it intends to **charge fees** for maritime services along the route and, according to reporting, wants the plan to **restrict passage for US and Israeli-linked ships** specifically. The US has rejected any such restrictions, with the White House saying it won't accept 'impediments' to free navigation. Iran's foreign ministry maintains it is negotiating only with Oman, not the US directly, even as Trump has said Washington and Tehran would resume separate talks and reiterated he wants the 'immediate, complete and total' reopening of the strait.",
-      "why_it_matters": "This is the clearest sign yet that a technical framework for reopening Hormuz exists on paper \u2014 but the gap between 'a route has been mapped' and 'oil tankers and warships can move freely' is still wide, because Iran's fee-collection and access-restriction demands are exactly what the US has said it won't accept.",
-      "ripple_effects": "Oil markets are watching closely: a genuine reopening would ease supply-risk premiums baked into crude prices, while a breakdown over the access disputes keeps alive the risk of renewed US strikes on Iran, which could send oil prices sharply higher overnight. Gulf shipping insurers and global trade routes remain in limbo until the access terms are actually settled.",
-      "why_now": "This is a direct continuation of Wednesday's news that a deal was in its 'final stage' \u2014 the coordinates agreement is the concrete detail that emerged as both sides tried to move from principle to a workable plan this week.",
-      "watch_next": "Whether the US formally rejects Iran's fee and access-restriction terms this week, which would signal the deal is stalling despite the coordinates agreement.",
-      "key_terms": [
-        {
-          "term": "Strait of Hormuz",
-          "definition": "A narrow strait between Iran and Oman that roughly a fifth of the world's oil and gas shipments pass through \u2014 one of the most important chokepoints in global energy trade."
-        }
-      ],
-      "the_lesson": "In high-stakes diplomacy, agreeing on the technical mechanics of a deal (like a shipping route) is often the easy part \u2014 the real sticking points are usually about control and money, and those can stall an agreement even after the hard technical work is done.",
-      "concepts": [
-        "strait_chokepoint",
-        "crude_geopolitics"
-      ],
-      "market_link": "Crude oil prices and Gulf shipping/insurance costs move directly on Hormuz headlines \u2014 a real reopening would ease the risk premium currently priced into oil.",
-      "importance": "high",
-      "thread": {
-        "previously": "On Wednesday, Iran said its deal with Oman on a new Hormuz shipping route was nearing completion \u2014 the 'final stage' of drafting \u2014 while Trump said any eventual deal would need to include 'immediate, complete and total' reopening of the strait and stressed that wasn't guaranteed since navigation-control disputes remained unresolved.",
-        "changed": "Iran and Oman have now actually agreed on the shipping route's coordinates and a joint coordination center, but Iran's push to charge fees and restrict US/Israeli ship access has drawn a firm US rejection \u2014 the deal has a concrete shape now, but the same core dispute over control is still blocking it."
-      },
-      "sources": [
-        {
-          "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html"
-        },
-        {
-          "name": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-05/iran-says-agreement-on-hormuz-shipping-route-reached-with-oman"
-        }
-      ],
-      "added_at": "2026-08-07T06:01:27+05:30",
-      "development": true,
-      "prev_ref": {
-        "title": "Iran and Oman edge toward a Hormuz shipping deal, but Trump warns of new strikes if talks collapse",
-        "date": null
-      },
-      "rank": 19
-    },
-    {
-      "region": "global",
-      "category": "economy",
-      "published_iso": "2026-08-06T00:00:00Z",
-      "regions": [
-        "Global",
-        "Morocco",
-        "Europe"
-      ],
-      "title": "FIFA's Infantino apologizes and gets his board's 'full support' after a $4.2 billion World Cup sell-off blows up",
-      "key_points": [
-        "FIFA president **Gianni Infantino** called a crisis meeting of senior staff in **Rabat, Morocco**, after abandoning a plan to sell a stake in World Cup commercial rights.",
-        "The scrapped deal would have sold a **20% stake** in a new commercial-rights entity to private investors for about **$4.2 billion**.",
-        "FIFA sent a letter to its Council and member associations **apologizing for errors** and admitting the 'process should have been handled differently.'",
-        "FIFA's secretary-general and management board **reaffirmed full support** for Infantino, even as a UEFA vice-president called the episode a 'crisis point' for his leadership.",
-        "The World Cup is FIFA's single biggest source of income, so how its commercial rights are sold affects funding for football worldwide, not just the tournament itself."
-      ],
-      "background": "**FIFA** is world football's global governing body \u2014 it runs the men's and women's World Cups and redistributes the billions those tournaments generate to national football associations everywhere, including the funding that trickles down to grassroots football. **Gianni Infantino** has been FIFA president since 2016 and has increasingly centralized power and cultivated close ties with political leaders, including a widely-noted closeness to Donald Trump during the 2026 World Cup buildup. FIFA had quietly worked up a plan to sell a slice of its future World Cup commercial income to outside investors \u2014 similar to how sports leagues have sold stakes in themselves to private equity in recent years \u2014 to raise cash upfront.",
-      "what_happened": "FIFA's leadership held a crisis meeting in **Rabat, Morocco** on Wednesday after a fierce backlash forced it to abandon a proposal to sell a **20% stake** in a new commercial-rights vehicle, a deal that would have raised roughly **$4.2 billion** from private investors. In a letter to FIFA's Council and member associations, the organization **apologized for errors**, acknowledging the 'process should have been handled differently' and pledging changes so it 'does not happen again.' FIFA secretary-general Mattias Grafstr\u00f6m and the management board members present at the Rabat meeting **reaffirmed their full support** for Infantino remaining president. The apology did not fully quiet the criticism: UEFA vice-president Laura McAllister told Reuters the controversy has brought Infantino's leadership 'to a crisis point,' and opposition has come from multiple football confederations and political figures.",
-      "why_it_matters": "FIFA controls how the enormous revenue generated by football's biggest event gets shared with national federations worldwide, so a botched attempt to sell off a piece of that revenue stream \u2014 reversed only after backlash \u2014 raises real questions about oversight at the top of the sport. It's also a live test of whether Infantino, who has increasingly consolidated authority since 2016, can keep the confidence of member federations after a serious misstep.",
-      "ripple_effects": "Expect continued pressure from national federations and confederations for more transparency in how FIFA manages its commercial deals, and possibly new internal rules requiring wider consultation before major financial moves. If confidence in Infantino keeps eroding, it could complicate FIFA's ability to line up sponsors and investors for future tournaments.",
-      "why_now": "The stake-sale plan was only withdrawn last Friday after the backlash became public, and this week's Rabat meeting was FIFA leadership's first organized response \u2014 the apology and show of support are the immediate aftermath playing out in real time.",
-      "watch_next": "Whether UEFA and other confederations escalate their criticism into a formal push for leadership changes, or whether the apology is enough to close the episode.",
-      "key_terms": [
-        {
-          "term": "commercial rights",
-          "definition": "The right to sell sponsorships, broadcast deals, and licensing tied to an event \u2014 for the World Cup, this is FIFA's biggest source of income."
-        }
-      ],
-      "the_lesson": "Even organizations that look unshakeable can be forced into public reversals when they try to monetize their core assets without buy-in from the members who depend on them \u2014 governance failures at the top ripple down to everyone the institution is supposed to serve.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "high",
-      "sources": [
-        {
-          "name": "ESPN",
-          "url": "https://www.espn.com/soccer/story/_/id/49540626/gianni-infantino-fifa-president-meeting-morocco-support"
-        },
-        {
-          "name": "NPR",
-          "url": "https://www.npr.org/2026/08/06/nx-s1-5923233/infantino-crisis-meeting-fifa"
-        }
-      ],
-      "added_at": "2026-08-07T06:01:27+05:30",
       "rank": 20
+    },
+    {
+      "rank": 21,
+      "category": "india",
+      "published_iso": "2026-08-08T10:30:00+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "India's forex reserves jump a record $10.5 billion in a week to $692.9 billion, as the RBI leans harder on NRI deposits to defend the rupee",
+      "key_points": [
+        "Reserves rose **$10.512 billion in a single week** (ended July 31) to **$692.866 billion** \u2014 the **biggest weekly jump since January 30** and a near-**three-month high**.",
+        "Most of the gain came from **foreign currency assets**, up **$8.75 billion to $564.68 billion**; **gold reserves** added another **$1.685 billion**, reaching **$104.743 billion**.",
+        "The surge is largely traced to Indian banks mobilising **$36.7 billion** through **FCNR(B) deposits** \u2014 a scheme that pays Non-Resident Indians attractive dollar-deposit rates, pulling those dollars into the country.",
+        "It comes as the **rupee** has fallen roughly **12% over the past year** and hit a **record low near \u20b996/$** in May 2026, forcing the RBI to keep intervening to slow the slide.",
+        "Governor **Sanjay Malhotra** says reserves remain adequate by standard measures: over **10 months of import cover** and **90.8% external-debt cover**."
+      ],
+      "background": "Foreign exchange reserves are the stockpile of US dollars, gold, and other hard assets a country's central bank holds \u2014 used to pay for imports, service foreign debt, and step in to support the local currency when it's under pressure. India's rupee has been under sustained pressure through 2026 from global dollar strength and persistent capital outflows, and it touched a record low against the dollar in May. To defend the currency without simply burning through its existing dollar stockpile, the RBI has been running a scheme to pull in fresh foreign currency: a swap facility that makes it cheaper for banks to offer high-interest FCNR(B) deposit accounts to Non-Resident Indians, in exchange for their dollars flowing into India's reserves.",
+      "what_happened": "RBI data released on Friday, August 7, showed India's foreign exchange reserves rose by $10.512 billion in the week ended July 31, taking the total to $692.866 billion \u2014 the sharpest one-week increase since the week ended January 30, and the highest reserve level in nearly three months. Foreign currency assets, the dollar, euro and other hard-currency holdings that make up the bulk of reserves, rose $8.75 billion to $564.68 billion, while gold reserves climbed $1.685 billion to $104.743 billion, reflecting both fresh accumulation and higher gold prices. Special Drawing Rights (a reserve asset allotted by the IMF) and India's reserve position with the IMF each ticked up slightly as well. Much of the jump traces back to the RBI's FCNR(B) swap scheme, through which Indian banks had pulled in $36.7 billion in NRI dollar deposits by July 31, drawn in by the RBI absorbing banks' currency-hedging costs so they can offer NRIs better returns than they'd get elsewhere. Analysts expect reserves to cross the $700 billion mark in the coming weeks if the pace of inflows holds, though some caution the rupee itself may see only limited relief from the buffer alone.",
+      "why_it_matters": "A bigger reserve cushion gives the RBI more room to sell dollars and smooth out sharp swings in the rupee without running down its safety buffer \u2014 which matters for anyone holding rupee-priced assets, importing goods, or planning travel or study abroad. It's also a confidence signal: reserves climbing even as the rupee struggles shows foreign capital is still willing to flow into India, just via a different channel (bank deposits) than the usual portfolio or FDI routes.",
+      "ripple_effects": "A stronger reserve position could let the RBI tolerate gradual rupee depreciation rather than react with emergency measures, reducing the odds of a sudden import-price shock (relevant for fuel, electronics and gold prices). It may also modestly reassure foreign lenders to Indian companies and the government that borrow in dollars. But the scheme driving the inflow \u2014 high-rate NRI deposits with RBI-subsidised hedging costs \u2014 is itself a cost being absorbed by the RBI and banks, making it more of a temporary bridge than a permanent fix for the rupee's underlying weakness.",
+      "why_now": "The data, released this Friday for the week ended July 31, lands while the rupee remains close to its record lows, making the size and source of this particular reserve build-up unusually newsworthy.",
+      "watch_next": "Whether reserves cross $700 billion in the coming weeks, and whether the rupee stabilises or keeps sliding despite the larger buffer.",
+      "key_terms": [
+        {
+          "term": "Foreign exchange reserves",
+          "definition": "A country's stockpile of foreign currency, gold and other reserve assets, held by its central bank to pay for imports, service foreign debt, and support the local currency when needed."
+        },
+        {
+          "term": "FCNR(B) deposit",
+          "definition": "A special bank account that lets Non-Resident Indians deposit foreign currency (like US dollars) in India and earn interest, without taking on rupee exchange-rate risk."
+        },
+        {
+          "term": "Import cover",
+          "definition": "How many months of a country's imports its foreign exchange reserves could pay for if all other funding dried up \u2014 a standard measure of how adequate a reserve cushion is."
+        },
+        {
+          "term": "Special Drawing Rights (SDR)",
+          "definition": "A reserve asset created by the IMF, valued as a basket of major currencies, which member countries can count toward their own reserves."
+        }
+      ],
+      "the_lesson": "A currency defence isn't just about how much ammunition (reserves) a central bank has \u2014 it also matters how that ammunition was acquired. Reserves built by attracting deposits are a different, more fragile kind of strength than reserves built from a trade surplus or genuine long-term investment.",
+      "concepts": [
+        "rbi",
+        "forex_reserves"
+      ],
+      "market_link": "Rupee-sensitive sectors are directly affected by whether this build-up succeeds in stabilising the currency: IT and pharma exporters who earn in dollars benefit from a weaker rupee, while oil, electronics and gold importers who pay in dollars are hurt by it.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/economy/news/india-s-forex-reserves-rise-10-51-billion-to-692-87-billion-rbi-data-126080701893_1.html"
+        },
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/economy/news/india-s-forex-reserves-jump-to-near-three-month-high-of-692-9-billion-126080500500_1.html"
+        },
+        {
+          "name": "Business Recorder",
+          "url": "https://www.brecorder.com/news/40433420/indias-forex-reserves-hit-three-month-peak-see-biggest-weekly-rise-in-six-months"
+        },
+        {
+          "name": "The Hans India",
+          "url": "https://www.thehansindia.com/mumbai/indias-forex-reserves-surge-by-10512-billion-to-692866-billion-rbi-1106467"
+        },
+        {
+          "name": "Business Today",
+          "url": "https://www.businesstoday.in/nri/invest/story/the-70-billion-nri-bet-can-fcnrb-deposits-buy-india-enough-time-to-defend-the-rupee-545306-2026-07-27"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-08-08T08:03:37+05:30"
+    },
+    {
+      "rank": 22,
+      "category": "india",
+      "published_iso": "2026-08-08T10:00:00+05:30",
+      "regions": [
+        "India"
+      ],
+      "title": "Jharkhand's exam-scam protest escalates: a hunger striker is hospitalised as students prepare to gherao the state Assembly",
+      "key_points": [
+        "The protest has entered its **14th day**, with student leader **Devendra Nath Mahto** on hunger strike since **August 3** demanding Chief Minister **Hemant Soren's** resignation.",
+        "Protester **Rahul Kranti** was **hospitalised on August 7** after his health deteriorated during the fast; five other students remain on hunger strike.",
+        "Students want the **14th JPSC exam** cancelled and re-held, plus an **independent CBI or judicial probe** \u2014 they've rejected the state's own **CID investigation** as untrustworthy.",
+        "Jharkhand's **CID** has already arrested **11 people**, including alleged 'mastermind' Suman Saurav, but that hasn't satisfied protesters.",
+        "Students plan to **gherao (surround and blockade) the state Assembly on August 10** if demands aren't met; CM Soren has now offered talks and formed a 4-minister panel to monitor the crisis."
+      ],
+      "background": "In July, aspirants preparing for Jharkhand's 14th Public Service Commission (JPSC) civil-services exam and the JSSC-CGL recruitment test alleged the papers had been leaked and results rigged, after screenshots of an answer sheet went viral appearing to show candidates who had failed still making the merit list. Under the banner of the 'JPSC-JSSC Reforms Manch,' job aspirants began an indefinite sit-in at Ranchi's Jaipal Singh Munda Stadium in late July. The movement has drawn direct inspiration from Delhi's recent 'Cockroach Janta Party' protests over the leaked NEET-UG medical entrance exam, which forced the Union Education Minister to resign \u2014 activist Sonam Wangchuk, who fasted 26 days over that issue, has personally called Jharkhand's hunger strikers. In a state where a government exam can be a once-in-a-generation shot at economic security, allegations that the process itself was rigged cut especially deep.",
+      "what_happened": "The protest, which began around July 25-29, hit its 13th and 14th days on August 6 and 7 with the situation intensifying rather than cooling. Six protesters had been on hunger strike, and on August 7 one of them, Rahul Kranti \u2014 fasting since the night of August 4 \u2014 was rushed to Ranchi Sadar Hospital after his health worsened; Leader of Opposition Babulal Marandi visited him there. The same day, Chief Minister Hemant Soren publicly reached out to the agitating students for the first time, saying the government was ready for dialogue and committed to reforms, while Parliamentary Affairs Minister Radhakrishna Kishore announced a four-minister committee to monitor the protests. Students, in turn, finalised an 11-member delegation \u2014 eight student representatives, a lawyer and two technical experts \u2014 to negotiate with the government. Despite Jharkhand's CID arresting 11 people connected to the alleged leak, including a suspected 'mastermind,' protesters say they don't trust a state-run investigation and are holding firm on their demand for an outside CBI or retired-judges probe. With no resolution reached, students have announced they will gherao the Jharkhand Legislative Assembly on August 10 if their demands remain unmet.",
+      "why_it_matters": "This is now one of the largest student-led movements in Jharkhand in years, and it's testing whether a state government can survive a full-blown exam-integrity crisis after the NEET-UG leak already claimed a Union minister's job nationally. A hunger striker's hospitalisation raises the stakes further \u2014 health emergencies during protests have, in India, repeatedly forced governments' hands.",
+      "ripple_effects": "If Jharkhand ends up cancelling the 14th JPSC exam, tens of thousands of candidates will have to re-apply and re-sit it, pushing back recruitment into state government roles by months. The standoff also hands the opposition BJP a ready-made cudgel against the ruling coalition ahead of future elections, and adds Jharkhand to a growing list of states (after the national NEET-UG episode) where exam scandals have become full-blown political crises rather than administrative embarrassments.",
+      "why_now": "The crisis reached a tipping point this week: CID arrests failed to satisfy students, a hunger striker was hospitalised, and the state government publicly offered talks for the first time \u2014 all against a self-imposed August 10 deadline that is forcing both sides to move before the weekend is out.",
+      "watch_next": "Whether the government's talks with the 11-member student delegation defuse the standoff before August 10, or whether the planned Assembly gherao goes ahead.",
+      "key_terms": [
+        {
+          "term": "JPSC",
+          "definition": "The Jharkhand Public Service Commission \u2014 the state body that conducts competitive exams for civil-service jobs like Deputy Collector."
+        },
+        {
+          "term": "JSSC-CGL",
+          "definition": "The Jharkhand Staff Selection Commission's Combined Graduate Level exam, used to recruit for junior state government posts."
+        },
+        {
+          "term": "CID vs CBI",
+          "definition": "The CID is a state police investigative wing (here, Jharkhand's own police); the CBI is India's federal investigating agency, seen by protesters as more independent since it isn't controlled by the state government being accused."
+        },
+        {
+          "term": "Gherao",
+          "definition": "A Hindi-origin protest tactic of surrounding and blockading a building or official until demands are heard \u2014 used across India in labour and student movements."
+        }
+      ],
+      "the_lesson": "When people stop trusting an institution that's supposed to be neutral \u2014 like an exam board \u2014 the fight rarely stays about the exam itself; it becomes a referendum on who holds power and whether they can be held accountable.",
+      "market_link": "No direct market impact expected, but prolonged unrest in a state that supplies a large share of India's coal, iron ore and steel is a factor investors in Jharkhand's mining and industrial sector would watch if the standoff drags on.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "The Week",
+          "url": "https://www.theweek.in/news/india/2026/08/07/jharkhand-jpsc-jssc-protest-recruitment-irregularities-student-talks-exam-reforms-demand.html"
+        },
+        {
+          "name": "Deccan Herald",
+          "url": "https://www.deccanherald.com/india/jharkhand/13-days-six-on-hunger-strike-jharkhand-exam-protest-set-to-rock-state-assembly-4101151"
+        },
+        {
+          "name": "ThePrint",
+          "url": "https://theprint.in/india/jkhand-job-exam-stir-protester-on-hunger-strike-taken-to-hospital-after-his-health-deteriorates/3008640/"
+        },
+        {
+          "name": "Telangana Today",
+          "url": "https://telanganatoday.com/jharkhand-exam-protest-protesters-form-panel-for-govt-talks-on-day-13"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-08-08T08:03:37+05:30"
     },
     {
       "category": "india",
@@ -1071,7 +1222,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "category": "india",
@@ -1114,7 +1265,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 22
+      "rank": 24
     },
     {
       "category": "india",
@@ -1158,7 +1309,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "category": "india",
@@ -1204,7 +1355,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 24
+      "rank": 26
     },
     {
       "category": "india",
@@ -1256,7 +1407,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 25
+      "rank": 27
     },
     {
       "category": "india",
@@ -1307,7 +1458,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 26
+      "rank": 28
     },
     {
       "category": "india",
@@ -1371,7 +1522,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T00:03:00+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "category": "india",
@@ -1434,7 +1585,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-08T00:03:00+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "region": "india",
@@ -1481,7 +1632,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "region": "india",
@@ -1529,7 +1680,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 30
+      "rank": 32
     },
     {
       "region": "india",
@@ -1575,7 +1726,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "region": "india",
@@ -1625,7 +1776,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "region": "india",
@@ -1673,7 +1824,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 33
+      "rank": 35
     },
     {
       "region": "india",
@@ -1721,7 +1872,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "region": "india",
@@ -1765,7 +1916,7 @@
         }
       ],
       "added_at": "2026-08-07T14:01:01+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "region": "india",
@@ -1808,7 +1959,7 @@
         }
       ],
       "added_at": "2026-08-07T14:01:01+05:30",
-      "rank": 36
+      "rank": 38
     },
     {
       "region": "india",
@@ -1848,7 +1999,7 @@
         }
       ],
       "added_at": "2026-08-07T12:06:29+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "region": "india",
@@ -1895,98 +2046,6 @@
         }
       ],
       "added_at": "2026-08-07T12:06:29+05:30",
-      "rank": 38
-    },
-    {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-08-05T00:00:00+05:30",
-      "regions": [
-        "India"
-      ],
-      "title": "RBI to start rolling out plastic currency notes, beginning with \u20b910 and \u20b920",
-      "key_points": [
-        "RBI Governor **Sanjay Malhotra** announced the central bank aims to put **polymer (plastic) banknotes** into circulation starting **next financial year**, pending successful trials.",
-        "The first notes will be low-denomination **\u20b910 and \u20b920** bills \u2014 the ones that wear out fastest from heavy daily handling.",
-        "The **government has already approved** RBI's proposal to introduce polymer currency, and field trials are underway.",
-        "Polymer notes are **more durable** than paper ones, designed to survive years of circulation without tearing or fading.",
-        "The announcement came during the **same press briefing** where RBI held interest rates steady, but is a separate initiative about how currency is physically made."
-      ],
-      "background": "Indian banknotes today are made from a cotton-fiber paper blend that wears out relatively quickly, especially at the \u20b910 and \u20b920 level that changes hands constantly for small transactions. Countries like Australia, the UK, Canada, and Singapore have already switched some or all of their currency to **polymer** \u2014 a thin, durable plastic film \u2014 because it lasts far longer, resists moisture and dirt better, and is harder to counterfeit. India has studied and piloted polymer notes on and off for over a decade without a full rollout; this is the first time the RBI has attached a concrete near-term timeline and confirmed government sign-off.",
-      "what_happened": "RBI Governor **Sanjay Malhotra**, speaking at the media briefing after this month's Monetary Policy Committee meeting, said polymer-based currency notes are expected to enter circulation from the start of **next financial year**, contingent on ongoing field trials succeeding. The rollout will begin with the **\u20b910 and \u20b920 denominations** \u2014 the smallest, most heavily circulated notes, which suffer the most physical wear. The **central government has already approved** RBI's formal proposal to introduce polymer notes, and pilot testing is currently underway to confirm the material holds up under real-world conditions before a nationwide switch.",
-      "why_it_matters": "This is the most concrete step India has taken toward modernizing its physical currency in years \u2014 a durability upgrade that could reduce how often the RBI has to print and replace worn-out low-denomination notes, which is a real, recurring cost for the central bank.",
-      "ripple_effects": "Expect gradual public exposure to the new notes as pilots expand, likely starting in select cities or regions before a full national rollout. Vending machines, ATMs, and cash-counting equipment calibrated for paper notes may need updates to handle the different feel and dimensions of polymer notes.",
-      "why_now": "The announcement follows years of on-and-off piloting, and Malhotra's comments at this week's MPC briefing are the first time RBI has attached a specific 'next financial year' timeline rather than an open-ended study.",
-      "watch_next": "Results from the ongoing field trials, and whether RBI names a specific city or region for the first real-world circulation of the new \u20b910 and \u20b920 polymer notes.",
-      "key_terms": [
-        {
-          "term": "polymer note",
-          "definition": "A banknote made from a thin, durable plastic film instead of paper \u2014 it resists tearing, moisture, and dirt far better, and typically lasts several times longer in circulation."
-        }
-      ],
-      "the_lesson": "Even something as basic as the physical material money is printed on gets re-engineered over time for cost and durability reasons \u2014 infrastructure upgrades like this often take a decade of piloting before governments commit to a real rollout.",
-      "concepts": [
-        "rbi"
-      ],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "India.com",
-          "url": "https://www.india.com/business/wait-for-plastic-currency-notes-over-as-rbi-makes-new-announcement-heres-when-you-can-have-your-currency-note-8493739/"
-        },
-        {
-          "name": "OpIndia",
-          "url": "https://www.opindia.com/2026/08/why-is-india-rbi-printing-plastic-currency-notes-polymer-currency-explained/"
-        }
-      ],
-      "added_at": "2026-08-07T06:01:27+05:30",
-      "rank": 39
-    },
-    {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-08-06T00:00:00+05:30",
-      "regions": [
-        "India",
-        "Gujarat",
-        "Rajasthan"
-      ],
-      "title": "Centre sends a national outbreak-response team to Gujarat and Rajasthan as Chandipura virus kills 22 children",
-      "key_points": [
-        "Gujarat has confirmed **35 Chandipura virus cases** out of 184 suspected patients tested, with **22 deaths**, almost all children under 15.",
-        "Rajasthan has confirmed **3 cases** from border districts Dungarpur and Sirohi, showing the outbreak is spreading beyond Gujarat.",
-        "The Centre deployed a **National Joint Outbreak Response Team (NJORT)** \u2014 experts from NCDC, ICMR, and animal husbandry agencies \u2014 to both states.",
-        "The virus can rapidly cause **Acute Encephalitis Syndrome (AES)**, a dangerous brain inflammation, which is why child deaths have been so fast and severe.",
-        "Sandflies are the known carrier, but investigators are also checking whether **mosquitoes, ticks, or mites** play a role in spreading it."
-      ],
-      "background": "**Chandipura virus** is a rare but severe virus, first identified in India in 1965, that mainly strikes children and can progress within days from fever to fatal brain inflammation. It tends to flare up in monsoon season in parts of western and central India, particularly Gujarat, and past outbreaks (including a serious one in 2024) have proven hard to contain quickly because the disease moves so fast and diagnosis can be delayed. India's health system has a standing rapid-response mechanism \u2014 NJORT \u2014 that brings together the National Centre for Disease Control (NCDC), the Indian Council of Medical Research (ICMR), and animal-health specialists (since insect and animal vectors are often involved) to investigate and contain fast-moving outbreaks like this one.",
-      "what_happened": "Gujarat's health minister confirmed **35 laboratory-confirmed Chandipura virus cases** out of 184 suspected patients tested statewide, with **22 deaths**, almost all of them children under 15. Rajasthan has now confirmed **3 cases** from its border districts of Dungarpur and Sirohi, showing the outbreak is not contained to Gujarat alone. In response, the Union Health Ministry deployed a **National Joint Outbreak Response Team (NJORT)** \u2014 a multidisciplinary group of experts from the NCDC, ICMR, and the Department of Animal Husbandry and Dairying \u2014 to both states to intensify surveillance, investigate the source, and strengthen vector-control measures (killing off the insects that spread the virus). The team's job is to submit findings and recommendations back to the Health Ministry on clinical management and public health measures. Investigators are also examining whether carriers beyond the known sandfly vector \u2014 including mosquitoes, ticks, and mites \u2014 may be involved, which would change how containment efforts are targeted.",
-      "why_it_matters": "This is a fast-moving, high-fatality outbreak concentrated almost entirely among young children, and its spread from Gujarat into neighboring Rajasthan shows containment hasn't yet worked \u2014 the national-level deployment signals the government sees this as serious enough to need federal expertise beyond what the states can manage alone.",
-      "ripple_effects": "Expect intensified vector-control operations (spraying, sandfly-breeding-site clearance) across both states, closer monitoring of child fever cases in the affected districts, and possible travel or gathering advisories if case counts keep climbing. A confirmed new vector (like mosquitoes) would force health authorities to widen containment efforts well beyond current hotspots.",
-      "why_now": "Chandipura virus outbreaks typically emerge during monsoon season when its insect vectors breed most actively, and the case count has been rising quickly enough over the past two weeks to trigger the national team's deployment now.",
-      "watch_next": "Whether NJORT's investigation confirms a new transmission vector, and whether the case count keeps climbing beyond Gujarat and Rajasthan into neighboring states.",
-      "key_terms": [
-        {
-          "term": "Acute Encephalitis Syndrome (AES)",
-          "definition": "A medical term for dangerous swelling of the brain that can be caused by several different viruses \u2014 it's the actual life-threatening condition Chandipura virus triggers, not the virus itself."
-        }
-      ],
-      "the_lesson": "Vector-borne disease outbreaks can escalate from a local cluster to a multi-state public health emergency within weeks when the carrying insect isn't fully identified or controlled \u2014 fast, coordinated response matters more than the size of the initial outbreak.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "high",
-      "sources": [
-        {
-          "name": "Business Standard",
-          "url": "https://www.business-standard.com/health/chandipura-outbreak-govt-sends-joint-response-team-to-gujarat-rajasthan-126080601160_1.html"
-        },
-        {
-          "name": "Public TV",
-          "url": "https://english.publictv.in/gujarat-reports-35-chandipura-virus-cases-22-deaths-health-minister-praful-pansheriya/"
-        }
-      ],
-      "added_at": "2026-08-07T06:01:27+05:30",
       "rank": 40
     },
     {
@@ -2836,6 +2895,112 @@
       "rank": 60
     },
     {
+      "rank": 61,
+      "category": "f1",
+      "published_iso": "2026-08-07T10:00:00+00:00",
+      "regions": [
+        "Global"
+      ],
+      "title": "FIA's next big target for F1 cars: another 80kg off the scales",
+      "key_points": [
+        "FIA single-seater director **Nikolas Tombazis** says he wants F1 cars to shed **another 80kg** under the sport's next major rules overhaul.",
+        "The 2026 cars already dropped **32kg** to a new minimum weight of **768kg** \u2014 the first time in decades F1 cars got lighter instead of heavier.",
+        "The bigger 80kg cut is targeted for the next full regulation reset, due in **2031**, or **2030** if enough teams back an earlier switch.",
+        "Tombazis also wants **simpler power units** and possibly a **shorter, smaller** car alongside the extra weight loss."
+      ],
+      "background": "F1 cars ballooned in size and weight for roughly three decades as hybrid power units, crash-safety structures, and wider tyres piled on mass, hurting overtaking and increasing tyre wear and the physical toll on drivers. For 2026, the FIA (F1's regulator) forced through the sport's first-ever weight reduction, alongside smaller car dimensions, specifically to make racing more agile. That 2026 reset was seen as a hard-fought first step, not a finish line.",
+      "what_happened": "Speaking about how the 2026 cars have turned out, Tombazis said: 'The cars are a bit lighter and a bit smaller, which the drivers have appreciated. Now, is that where I would like us to be? No. I would like us to be another 80 kilos lighter, and maybe still a bit shorter and a bit smaller.' That would be well over double the 32kg the sport just fought to remove this year. He tied the ambition to the next full regulation cycle, which is currently pencilled in for 2031 (or 2030 if teams agree to move faster), and said the FIA also wants **simpler, cheaper power units** in that next generation of rules, plus tighter policing so clever team loopholes cannot undermine the intent of the regulations the way they have in the past.",
+      "why_it_matters": "Lighter cars generally mean better racing \u2014 less tyre degradation, easier overtaking, and lower braking and cornering loads \u2014 while also easing the physical strain on drivers, who have complained for years about spinal compression and fatigue from ever-heavier, more G-force-intensive cars. It's also a major engineering and cost challenge: making a car lighter while keeping it crash-safe and structurally strong is one of the hardest problems in motorsport design.",
+      "ripple_effects": "The target sets an early marker for the rules working group that will design F1's post-2030 formula, and it puts pressure on engine manufacturers \u2014 Honda, Ferrari, Mercedes, Audi, and Red Bull Ford among them \u2014 to think about simpler, lighter power units well before the current hybrid engine rules even finish their run. It could also factor into manufacturers' long-term commitment decisions, since several have only just signed on for the current engine formula.",
+      "why_now": "The FIA is airing its wishlist for the next rules cycle during the August break, when teams have downtime to digest and start giving feedback before formal technical working-group talks ramp up.",
+      "watch_next": "Whether teams' technical working groups embrace the 80kg target once formal 2030/2031 rules discussions begin, given how hard the much smaller 32kg cut for 2026 already proved to hit.",
+      "key_terms": [
+        {
+          "term": "Minimum weight",
+          "definition": "The lowest total weight (car plus driver) F1 rules allow; it exists to stop teams building unsafe, ultra-light cars and to keep competition fair."
+        },
+        {
+          "term": "Power unit",
+          "definition": "F1's modern hybrid engine, combining a turbocharged combustion engine with electric motors and energy-recovery systems."
+        },
+        {
+          "term": "Regulation cycle",
+          "definition": "A multi-year era of fixed technical rules; F1 periodically resets these rules to reshape how the cars are designed and how racing plays out."
+        }
+      ],
+      "the_lesson": "Big rule changes in F1 are floated years ahead of time as ambitions, not promises \u2014 today's wishlist only becomes tomorrow's car once teams, manufacturers, and regulators haggle it down to something everyone can actually build.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Autosport",
+          "url": "https://www.autosport.com/f1/news/fia-wants-f1-cars-to-lose-another-80-kilos/10844769/"
+        },
+        {
+          "name": "Motorsport.com",
+          "url": "https://www.motorsport.com/f1/news/fia-reveals-ambitious-target-to-make-f1-cars-another-80kg-lighter/10844708/"
+        }
+      ],
+      "region": "f1",
+      "added_at": "2026-08-08T08:03:37+05:30"
+    },
+    {
+      "rank": 62,
+      "category": "f1",
+      "published_iso": "2026-08-07T14:30:00+00:00",
+      "regions": [
+        "Global"
+      ],
+      "title": "Red Bull blocks a Williams move to keep Verstappen's next race engineer in-house",
+      "key_points": [
+        "**Tom Hart**, currently Max Verstappen's performance engineer at Red Bull, will become his full **race engineer from 2027**, replacing Gianpiero Lambiase.",
+        "Hart had already provisionally agreed to leave for **Williams**, to become Alex Albon's race engineer \u2014 Red Bull stepped in and asked Williams to **reverse the transfer**.",
+        "Hart, a Red Bull employee since **2012**, will start filling in on the pit-wall radio for **select race weekends in the second half of 2026** ahead of the full 2027 handover.",
+        "Verstappen has personally confirmed the choice, saying he and the team had been discussing it since around the **Miami race**."
+      ],
+      "background": "Gianpiero Lambiase has been the voice in Max Verstappen's ear since **2016**, one of the most recognisable driver-engineer pairings in modern F1 and a big part of Verstappen's four world titles. In April 2026, Lambiase announced he is leaving Red Bull to join **McLaren** in 2028 as a senior race-office figure, forcing Red Bull to plan a successor well in advance. Tom Hart was already inside the team as Verstappen's performance engineer \u2014 the person who pores over car data between sessions \u2014 making him the obvious internal candidate, but he had nearly slipped away to a rival team first.",
+      "what_happened": "Red Bull has confirmed that Tom Hart, not an outside hire, will take over as Max Verstappen's race engineer once Lambiase departs. The twist is that Hart had already accepted an offer to move to Williams next season, where he would have engineered Alex Albon's car. When Red Bull realized its own succession plan was about to walk out the door to a direct rival, it asked Williams to release Hart from that agreement \u2014 and Williams agreed to unwind the deal. Verstappen said the conversations about Hart taking over began informally around the Miami Grand Prix, and that his main criterion for a race engineer is racing instinct over pure data-nerdery: 'You need to understand racing itself... you need to have the insight to read things properly, the way GP obviously does.' Hart is expected to sit in on the radio for parts of the second half of the 2026 season before officially taking the headset full-time in 2027. Lambiase, meanwhile, remains on track to join McLaren no later than 2028.",
+      "why_it_matters": "The relationship between a driver and their race engineer is one of the most trust-dependent jobs in F1 \u2014 split-second strategy calls and tyre reads during a race live or die on that rapport, and a shaky handover could cost Verstappen championship points during a season where his own long-term future is already under scrutiny. It also shows Red Bull is willing to actively unpick a rival team's completed hire to protect its own succession plan, a rare and aggressive move even by F1's cutthroat personnel standards.",
+      "ripple_effects": "Williams now has to find a new race engineer plan for Alex Albon after losing a hire it thought was locked in, adding to a difficult year for the team. It also signals that engineer poaching, not just driver poaching, is becoming a genuine battleground between rival teams, and it removes one item of uncertainty from Red Bull's 2027 rebuild as Lambiase's own exit approaches.",
+      "why_now": "The confirmation lands during the August break, when teams typically firm up personnel plans for the following season while there's no race weekend to distract from the announcement.",
+      "watch_next": "Whether Hart takes over live radio duties for Verstappen at more races before the 2027 season, and who Williams turns to instead for Albon's side of the garage.",
+      "key_terms": [
+        {
+          "term": "Race engineer",
+          "definition": "The engineer who talks directly to the driver over team radio during sessions, making real-time calls on strategy, tyres, and car setup."
+        },
+        {
+          "term": "Performance engineer",
+          "definition": "An engineer who analyzes detailed car and driver data (lap times, tyre wear, setup) between sessions to find performance gains, usually working just behind the race engineer."
+        },
+        {
+          "term": "Gardening leave",
+          "definition": "A period where an employee who has resigned is kept away from active work (often barred from a rival) before formally starting at their new employer, to protect sensitive know-how."
+        }
+      ],
+      "the_lesson": "In F1, the people behind the driver matter almost as much as the driver \u2014 teams will fight to keep a trusted engineer just as hard as they fight to keep a star driver.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "Motorsport.com",
+          "url": "https://www.motorsport.com/f1/news/red-bull-reportedly-finds-gianpiero-lambiase-f1-replacement/10844808/"
+        },
+        {
+          "name": "RacingNews365",
+          "url": "https://racingnews365.com/max-verstappen-confirms-gianpiero-lambiase-successor-at-red-bull"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com/f1/story/_/id/49313924/belgian-grand-prix-formula-1-spa-francorchamps-red-bull-decide-max-verstappens-race-engineer-gianpiero-lambiase-mclaren-move-sources"
+        }
+      ],
+      "region": "f1",
+      "added_at": "2026-08-08T08:03:37+05:30"
+    },
+    {
       "category": "f1",
       "published_iso": "2026-08-06T08:00:00+01:00",
       "regions": [
@@ -2873,7 +3038,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "category": "f1",
@@ -2907,7 +3072,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T06:00:37+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "category": "f1",
@@ -2947,7 +3112,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 63
+      "rank": 65
     },
     {
       "category": "f1",
@@ -2981,7 +3146,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T04:00:50+05:30",
-      "rank": 64
+      "rank": 66
     },
     {
       "category": "f1",
@@ -3022,7 +3187,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 65
+      "rank": 67
     },
     {
       "category": "f1",
@@ -3062,7 +3227,7 @@
         }
       ],
       "added_at": "2026-08-08T02:03:37+05:30",
-      "rank": 66
+      "rank": 68
     },
     {
       "category": "f1",
@@ -3114,7 +3279,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T00:03:00+05:30",
-      "rank": 67
+      "rank": 69
     },
     {
       "category": "f1",
@@ -3166,7 +3331,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-08T00:03:00+05:30",
-      "rank": 68
+      "rank": 70
     },
     {
       "region": "f1",
@@ -3209,7 +3374,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "region": "f1",
@@ -3253,7 +3418,7 @@
         }
       ],
       "added_at": "2026-08-07T22:02:36+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "region": "f1",
@@ -3291,7 +3456,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 71
+      "rank": 73
     },
     {
       "region": "f1",
@@ -3329,7 +3494,7 @@
         }
       ],
       "added_at": "2026-08-07T20:07:43+05:30",
-      "rank": 72
+      "rank": 74
     },
     {
       "region": "f1",
@@ -3369,7 +3534,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 73
+      "rank": 75
     },
     {
       "region": "f1",
@@ -3413,7 +3578,7 @@
         }
       ],
       "added_at": "2026-08-07T15:58:25+05:30",
-      "rank": 74
+      "rank": 76
     },
     {
       "region": "f1",
@@ -3448,7 +3613,7 @@
         }
       ],
       "added_at": "2026-08-07T03:58:16+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "region": "f1",
@@ -3492,7 +3657,7 @@
         }
       ],
       "added_at": "2026-08-07T03:58:16+05:30",
-      "rank": 76
+      "rank": 78
     },
     {
       "category": "f1",
@@ -3539,7 +3704,7 @@
         }
       ],
       "added_at": "2026-08-06T23:59:52+05:30",
-      "rank": 77
+      "rank": 79
     },
     {
       "category": "f1",
@@ -3577,87 +3742,6 @@
         }
       ],
       "added_at": "2026-08-06T23:59:52+05:30",
-      "rank": 78
-    },
-    {
-      "category": "f1",
-      "region": "f1",
-      "published_iso": null,
-      "regions": [
-        "Global"
-      ],
-      "title": "NASCAR team owner confirms Verstappen talks are real, as his F1 future is set to be decided at his home Dutch Grand Prix",
-      "key_points": [
-        "Trackhouse Racing owner **Justin Marks** confirmed his team has held talks with **Max Verstappen** about a NASCAR appearance.",
-        "Marks said it's **\"definitely on his radar\"** and that discussions have happened through Red Bull's network.",
-        "A deal faces real obstacles: Trackhouse has an **exclusive Chevrolet deal**, while Verstappen is committed to **Ford** through Red Bull Powertrains.",
-        "Separately, reports say Verstappen's **F1 future beyond this season** will be clarified at his **home Dutch Grand Prix** at Zandvoort.",
-        "Verstappen is contracted to Red Bull through **2028**, but has an exit clause and has been linked to **Mercedes and McLaren**."
-      ],
-      "background": "Max Verstappen is a four-time F1 world champion and Red Bull's biggest star, but persistent reliability and competitiveness issues at Red Bull this season have fuelled constant speculation about whether he'll leave once his contract's exit clause becomes active. Drivers exploring other disciplines \u2014 like NASCAR, IndyCar, or endurance racing \u2014 during quiet periods or contract uncertainty is a well-worn pattern in motorsport, though manufacturer and engine-supplier commitments usually make cross-series moves logistically hard.",
-      "what_happened": "Justin Marks, owner of NASCAR Cup Series team Trackhouse Racing, confirmed publicly that his team has held talks with Max Verstappen about racing in NASCAR, saying it is \"definitely on his radar\" and that the conversations happened through Red Bull's broader network. Marks was careful to note the practical roadblocks: Trackhouse runs cars exclusively under a Chevrolet manufacturer deal, while Verstappen's engine commitment is to Ford, via Red Bull's own Red Bull Powertrains operation \u2014 a conflict that makes any near-term NASCAR appearance complicated to arrange. Separately, multiple reports say Verstappen's future beyond the current F1 season \u2014 whether he stays at Red Bull, leaves via his exit clause, or moves to a rival team \u2014 is expected to be clarified around his home race, the Dutch Grand Prix at Zandvoort. Verstappen remains contracted to Red Bull through 2028 on paper, but persistent reporting links him to a possible move to Mercedes or McLaren if the exit clause is triggered.",
-      "why_it_matters": "When a reigning-era champion's own team's power-unit supplier confirms cross-series talks are real, it's a sign the driver is genuinely exploring life outside Red Bull or outside F1 altogether \u2014 not just paddock gossip. Combined with the Zandvoort deadline, it puts a concrete timeline on one of the sport's biggest open questions.",
-      "ripple_effects": "Any hint that Verstappen could leave reshapes the driver market for 2027 across multiple teams, and affects Red Bull's own planning for its lineup and technical direction. It also puts NASCAR back in the global motorsport conversation as a plausible option for an F1 star, which matters for the series' international profile.",
-      "why_now": "Marks's on-record comments this week, combined with reports pointing to Zandvoort as the moment Verstappen's future gets clarified, converge to make this the most concrete public signal yet on where things stand.",
-      "watch_next": "Any statement from Verstappen or Red Bull around the Dutch Grand Prix weekend at Zandvoort confirming his plans beyond 2026.",
-      "key_terms": [
-        {
-          "term": "Exit clause",
-          "definition": "A condition written into a driver's contract that lets them leave early if certain performance or other conditions are met, without needing to fully renegotiate."
-        }
-      ],
-      "the_lesson": "When people outside a star's own team \u2014 like a rival series' team owner \u2014 start confirming conversations on the record, that's usually a stronger signal than reporter speculation that a major move is genuinely being considered.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "GPFans",
-          "url": "https://www.gpfans.com/en/f1-news/1088755/max-verstappen-f1-nascar-cup-series-talks-trackhouse-racing-justin-marks/"
-        },
-        {
-          "name": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/justin-marks-admits-road-blocks-but-wouldnt-count-out-max-verstappen-for-future-nascar-start-155223975.html"
-        }
-      ],
-      "added_at": "2026-08-06T22:09:33+05:30",
-      "rank": 79
-    },
-    {
-      "category": "f1",
-      "region": "f1",
-      "published_iso": null,
-      "regions": [
-        "Global"
-      ],
-      "title": "Red Bull reportedly paid Helmut Marko \u20ac8 million to stay silent through the end of 2026",
-      "key_points": [
-        "A German report claims Red Bull paid veteran adviser **Helmut Marko around \u20ac8 million** as part of his exit, with a clause **barring him from interviews** until the end of 2026.",
-        "Other reports put the full severance package as high as **\u20ac10 million**, calling it a 'golden handshake.'",
-        "The claim comes from German journalist **Ralf Bach** at f1-insider.com, a well-sourced outlet on Red Bull's inner workings.",
-        "Marko officially retired after **more than 20 years** as Red Bull's senior motorsport adviser.",
-        "Despite the official exit, Marko reportedly **still remains involved behind the scenes** advising drivers and the junior programme."
-      ],
-      "background": "Helmut Marko has been one of the most powerful and outspoken figures in Formula 1 for two decades, running Red Bull's junior driver programme and holding major influence over decisions involving stars like Max Verstappen. Red Bull's late founder, Dietrich Mateschitz, was famous for encouraging blunt, outspoken personalities inside the team \u2014 Marko included. Marko's exit from his senior adviser role was announced as a retirement, but questions have persisted about whether it was fully voluntary given internal tensions at Red Bull.",
-      "what_happened": "According to a report from German journalist Ralf Bach, Red Bull paid Helmut Marko roughly \u20ac8 million as part of the terms of his departure from his senior adviser role, with the termination agreement including a clause preventing him from giving interviews until the end of 2026. Separate reporting has pegged the full payout figure as high as \u20ac10 million, describing it as a \"golden handshake.\" Marko had officially been presented as retiring after more than 20 years in the role. Despite that, he is reported to still be quietly involved, continuing to advise both Red Bull's Formula 1 drivers and its junior driver programme behind the scenes \u2014 suggesting the retirement was more of a formal title change than a full exit.",
-      "why_it_matters": "A confidentiality clause this specific \u2014 barring interviews for over a year \u2014 suggests Red Bull wanted to control the narrative around Marko's departure, which fuels speculation that the exit involved more internal conflict than the official \"retirement\" framing let on.",
-      "ripple_effects": "It keeps alive questions about instability inside Red Bull's management structure, coming not long after other leadership upheaval at the team. It also affects how seriously the paddock takes Red Bull's official statements about personnel changes going forward.",
-      "why_now": "The figures and the silence clause were only reported this week, well after Marko's retirement was first announced, as details of his exit package have leaked out.",
-      "watch_next": "Whether Marko breaks his silence at any point before the end of 2026, or whether Red Bull issues any response to the reported payout figures.",
-      "key_terms": [],
-      "the_lesson": "In high-profile organisations, an official \"retirement\" announcement and a confidentiality-bound severance payout often go together \u2014 the size and terms of an exit package can tell you more about what really happened than the press release does.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "PlanetF1",
-          "url": "https://www.planetf1.com/news/helmut-marko-red-bull-severance-payment-golden-handshake"
-        },
-        {
-          "name": "Crash.net",
-          "url": "https://www.crash.net/f1/news/1088258/1/revealed-eight-figure-red-bull-payout-helmut-marko-set-pocket"
-        }
-      ],
-      "added_at": "2026-08-06T22:09:33+05:30",
       "rank": 80
     }
   ],
