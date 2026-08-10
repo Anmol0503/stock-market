@@ -1,6 +1,6 @@
 {
   "date": "2026-08-10",
-  "generated_at": "2026-08-10T18:20:20+05:30",
+  "generated_at": "2026-08-10T20:12:52+05:30",
   "day_label": "Monday · 10 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,6 +8,141 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
+      "category": "climate",
+      "is_new": true,
+      "published_iso": "2026-08-10T06:00:00Z",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "CNN",
+      "importance": "high",
+      "regions": [
+        "Europe",
+        "Global"
+      ],
+      "title": "Western Europe just logged its hottest June–July ever, as wildfires burn over a million acres",
+      "what_happened": "The EU's Copernicus Climate Change Service confirmed Monday that western Europe's June and July 2026 was, on average, the hottest two-month opening to summer ever recorded, at 21.62°C — about 2.79°C above the historical average and above the previous record set in 2022. Separately, Copernicus said July 2026 was the hottest month ever logged for the world's oceans outside the polar regions, with record highs along the Atlantic and western Mediterranean. The extreme heat has fed record-breaking wildfires across Spain, France, and Italy, which together have burned more than 1.23 million acres and displaced hundreds of thousands of people, according to an EU report from August 6. Scientists point to abnormally dry soil — moisture levels in western Europe were significantly lower this July than in the previous record year of 2022 — as a key reason the heat has translated so directly into fire.",
+      "key_points": [
+        "Western Europe's **June–July 2026** was its **hottest ever recorded** two-month stretch, per the EU's Copernicus climate monitor.",
+        "Average temperature hit **21.62°C**, about **2.79°C above** the long-term average — beating the previous record set in **2022**.",
+        "**July was the hottest month ever logged** for the world's non-polar oceans, with record highs in the Atlantic and western Mediterranean.",
+        "Wildfires have burned over **1.23 million acres**, mostly in **Spain, France, and Italy**, displacing hundreds of thousands of people."
+      ],
+      "moot": "Climate records rarely stay records for long once a warming trend takes hold — each 'hottest ever' getting broken again within a few years is itself the real signal, more than any single month's number.",
+      "image_credit": "CNN",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "CNN",
+          "Washington Post"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Copernicus is the European Union's official climate-monitoring service, tracking global temperature and ocean heat using satellites and ground sensors. Europe has been warming roughly twice as fast as the global average for decades, a trend scientists link to its geography and shrinking snow and ice cover. Spain and France are already living through their worst wildfire seasons on record this year, as repeated heatwaves dry out soil and vegetation, priming them to burn faster and hotter each time.",
+        "why_it_matters": "This isn't a one-off hot spell — it's a new statistical baseline, arriving earlier and more often as the underlying warming trend continues. Warmer oceans also store more energy, which can intensify storms and disrupt weather patterns well beyond Europe.",
+        "ripple_effects": "Insurers, farmers, and power grids all face compounding costs — crop yields drop in extreme heat, wildfire damage bills climb, and electricity demand for cooling spikes even as drought cuts hydropower output, as seen this same month in Romania's Danube-linked energy crisis. Tourism-dependent Mediterranean economies also face disruption as heat and fire risk stretch across the whole summer rather than hitting in occasional spikes.",
+        "why_now": "The confirmation lands as Europe braces for yet another heatwave on top of an already record-breaking summer, with dry soils creating a feedback loop that makes each successive heat spell more dangerous.",
+        "watch_next": "Watch Copernicus's next monthly bulletin in early September to see if August extends the record streak, and whether the EU's wildfire acreage tally keeps climbing.",
+        "market_link": "Prolonged European heat and drought pressure agricultural commodities like wheat and olive oil, raise cooling-driven power demand, and add to insurance and reinsurance loss estimates for the summer.",
+        "key_terms": [
+          {
+            "term": "Copernicus Climate Change Service",
+            "definition": "The European Union's official climate-monitoring program, which tracks global temperature, ocean heat, and other climate data using satellites and ground sensors."
+          },
+          {
+            "term": "soil moisture feedback loop",
+            "definition": "A cycle where dry soil can't cool the air through evaporation the way moist soil does, leaving the ground even drier — and more prone to extreme heat and fire — the next time a heatwave hits."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNN",
+            "url": "https://www.cnn.com/2026/08/10/climate/europe-heatwave-wildfire-intl-hnk"
+          },
+          {
+            "name": "Washington Post",
+            "url": "https://www.washingtonpost.com/world/2026/08/09/europe-weather-climate-change/de8ec846-9460-11f1-9ef9-1be722184483_story.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "technology",
+      "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "Open Source For You",
+      "importance": "notable",
+      "regions": [
+        "Global",
+        "US"
+      ],
+      "title": "Meta releases 'Muse Glimmer,' a 30-billion-parameter AI agent small enough to run on a single home computer",
+      "what_happened": "Meta Superintelligence Labs, led by Chief AI Officer Alexandr Wang, released Muse Glimmer on Hugging Face under the Apache 2.0 open-source license on August 10. The 30-billion-parameter model was compressed from 55GB down to 18–20GB of memory through a process called 4-bit quantization, letting it run within a 24GB or 32GB VRAM budget on a single consumer GPU, gaming PC, or Mac. It's a distilled — meaning compressed and re-trained — version of Meta's larger Muse Spark 1.2 model, built through a technique called logit distillation combined with fine-tuning. Meta designed it specifically for always-on local agent work: coding, function calling, schedule management, file organization, and multi-step reasoning with the ability to recover from its own mistakes.",
+      "key_points": [
+        "Meta Superintelligence Labs open-sourced **Muse Glimmer**, a 30-billion-parameter AI model, on **August 10**.",
+        "It's compressed to run in **under 20GB** of memory — small enough for a **single consumer GPU** or gaming PC.",
+        "The model handles **coding, scheduling, and multi-step tasks completely offline**, no cloud needed.",
+        "It's built by **shrinking** a larger model (Muse Spark 1.2) through a technique called **logit distillation**.",
+        "Released free under the **Apache 2.0 license** — anyone can download, run, and modify it."
+      ],
+      "moot": "AI capability and AI accessibility are two different races — the biggest, most powerful models get the headlines, but the models that actually get used are often the ones that fit on hardware people already own.",
+      "image_credit": "Open Source For You",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Open Source For You",
+          "TestingCatalog"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "'Open-sourcing' an AI model means releasing its underlying weights publicly so anyone can download and run it themselves, instead of only accessing it through a company's paid API. Running AI locally — on your own device — rather than in the cloud matters because it can be cheaper, faster, and doesn't require sending your data to another company's servers. The AI industry has mostly chased ever-bigger, more expensive cloud models, but there's a growing parallel race to make capable models small and efficient enough to run on ordinary hardware, where Meta is competing directly with Google, Microsoft, and OpenAI.",
+        "why_it_matters": "An AI agent capable enough to code and manage tasks, but small enough to run entirely on a device you own, is a meaningful shift in how people could access AI — without a subscription or a constant internet connection. It signals that shrinking models for wide accessibility is now as strategically important to major AI labs as building the biggest, most powerful ones.",
+        "ripple_effects": "Cheaper, local AI access benefits developers and hobbyists who can't afford data-center-scale API bills, and it pressures rivals like OpenAI, Google, and Microsoft to release their own efficient, locally-runnable models. It could also boost demand for consumer-grade GPUs from companies like Nvidia and AMD, since a capable local AI agent needs real hardware to run well. Because these agents operate with more autonomy and less centralized oversight than cloud-hosted versions, it also raises fresh questions about safety and misuse as such tools spread onto ordinary computers.",
+        "why_now": "Meta is racing to build developer mindshare as the AI agent competition with OpenAI and Google intensifies, and demand is rising for AI tools that don't require constant cloud access or ongoing subscription costs.",
+        "watch_next": "Watch for independent benchmarks comparing Muse Glimmer against rival compact models like Google's Gemma or Microsoft's Phi, and whether competitors respond with their own local agent releases.",
+        "market_link": "Meta (META) competes directly with OpenAI, Google, and Microsoft in the AI agent race; efficient local models could pressure cloud-AI subscription revenue while boosting demand for consumer GPUs (Nvidia, AMD).",
+        "key_terms": [
+          {
+            "term": "open-source",
+            "definition": "Software — including an AI model's underlying weights — released publicly so anyone can use, inspect, or modify it, rather than being locked behind a paid API."
+          },
+          {
+            "term": "quantization",
+            "definition": "A technique that shrinks an AI model's memory footprint by storing its internal numbers with less precision, trading a little accuracy for a much smaller file size."
+          },
+          {
+            "term": "parameter",
+            "definition": "One of the billions of internal numbers a neural network tunes during training; more parameters generally mean more capability but also more memory and computing power to run."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Open Source For You",
+            "url": "https://www.opensourceforu.com/2026/08/meta-open-sources-muse-glimmer/"
+          },
+          {
+            "name": "TestingCatalog",
+            "url": "https://www.testingcatalog.com/meta-releases-muse-glimmer-for-local-ai-agents/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -85,8 +220,8 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "economy",
       "published_iso": "2026-08-10T09:00:00-04:00",
       "added_at": "2026-08-10T16:04:12+05:30",
@@ -154,8 +289,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "economy",
       "published_iso": "2026-08-10T09:00:00+09:00",
       "added_at": "2026-08-10T14:04:23+05:30",
@@ -226,8 +361,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-08-09T09:00:00+01:00",
       "added_at": "2026-08-10T14:04:23+05:30",
@@ -288,8 +423,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "health",
       "published_iso": "2026-08-09T00:00:00Z",
       "added_at": "2026-08-10T12:14:18+05:30",
@@ -358,8 +493,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -427,70 +562,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "geopolitics",
-      "published_iso": "2026-08-09T03:00:00+03:00",
-      "added_at": "2026-08-10T09:59:57+05:30",
-      "source": "Al Jazeera",
-      "importance": "high",
-      "regions": [
-        "Ukraine",
-        "Russia",
-        "Europe"
-      ],
-      "title": "Russia's overnight missile and drone strike on Odesa knocks out power to 300,000 families",
-      "what_happened": "Russian forces launched a combined missile-and-drone attack on Odesa region overnight into August 9, 2026, striking energy infrastructure and residential areas. Ukrainian officials said the attack **damaged residential buildings in two districts**, destroying and burning cars, and left **300,000 families without electricity**. At least 12 people were injured, with several hospitalized in moderate condition. President Volodymyr Zelensky said the outage also knocked out water pumping in parts of the city. Regional power company DTEK said repair crews were working continuously and had already reconnected roughly **90,000 of the disconnected customers** within hours, with critical infrastructure like hospitals prioritized first.",
-      "key_points": [
-        "Russia hit Odesa's energy grid overnight with missiles and drones, cutting power to **300,000 families**.",
-        "At least **12-13 people were injured**, several hospitalized, after residential buildings were damaged.",
-        "The strike also **interrupted the water supply** in parts of the city by knocking out pumping stations.",
-        "About **a third of homes** had power restored within hours; repair crews worked around the clock.",
-        "It's the latest in a pattern of Russian strikes aimed at Ukraine's power grid **as winter-prep season begins**."
-      ],
-      "moot": "Modern wars increasingly target the systems that keep ordinary life running — power, water, heat — because breaking those is often cheaper and more strategically effective than winning territory outright.",
-      "image_credit": "Al Jazeera",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Al Jazeera",
-          "Kyiv Independent"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Odesa is Ukraine's main Black Sea port city and has been a recurring target of Russian long-range strikes throughout the war, both for its military-shipping relevance and its civilian energy infrastructure. Russia has, over the past two winters, repeatedly targeted Ukraine's power grid in what Kyiv calls a deliberate campaign to freeze the population into submission. **DTEK**, the private company that runs much of Odesa's grid, has become practiced at emergency repairs but each strike degrades the system's redundancy further. This attack lands in the middle of an already fragile ceasefire-and-diplomacy track around the broader Russia-Ukraine war.",
-        "why_it_matters": "Attacks on civilian power and water infrastructure — rather than purely military targets — are a strategy aimed at breaking public morale and straining Ukraine's ability to function through the coming winter. Each strike also forces Ukraine to divert scarce air-defense interceptors to protect cities instead of the front line.",
-        "ripple_effects": "Odesa residents face renewed disruption to heating, water, and daily life with winter approaching; hospitals and emergency services must run on backup power during repairs. Repeated grid strikes also raise Ukraine's reconstruction costs and its need for continued Western financial and military support, keeping the war's economic burden on European allies elevated.",
-        "why_now": "The strike comes as both sides trade near-daily heavy attacks — Ukraine has been hitting Russian oil refineries, and Russia is retaliating against Ukrainian cities and infrastructure — with no ceasefire on this front of the war, unlike the separate Gaza track.",
-        "watch_next": "Whether DTEK fully restores Odesa's power grid within the promised 24-48 hours, and whether Russia follows up with further grid strikes elsewhere in Ukraine this week.",
-        "market_link": "Continued Russian strikes on Ukrainian infrastructure keep a geopolitical risk premium embedded in European natural gas prices and reconstruction-linked equities.",
-        "key_terms": [
-          {
-            "term": "Energy infrastructure strikes",
-            "definition": "Military attacks aimed at power plants, substations, and grids rather than troops — designed to disrupt civilian life and economic capacity rather than win battlefield ground directly."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/9/russian-forces-kill-several-in-ukraine-launch-brutal-attack-in-odesa"
-          },
-          {
-            "name": "Kyiv Independent",
-            "url": "https://kyivindependent.com/odesa-attack-aug-9-2026/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "technology",
       "published_iso": "2026-08-10T23:45:00Z",
       "added_at": "2026-08-10T08:04:36+05:30",
@@ -544,8 +617,8 @@
     },
     {
       "type": "story",
-      "id": "story-9",
-      "rank": 9,
+      "id": "story-11",
+      "rank": 11,
       "category": "geopolitics",
       "published_iso": "2026-08-10T14:30:00+08:00",
       "added_at": "2026-08-10T08:04:36+05:30",
@@ -611,72 +684,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
-      "category": "economy",
-      "published_iso": "2026-08-09T09:00:00+02:00",
-      "added_at": "2026-08-10T03:59:41+05:30",
-      "source": "Business Recorder (Reuters)",
-      "importance": "high",
-      "regions": [
-        "Germany",
-        "China",
-        "Europe"
-      ],
-      "title": "Germany's trade deficit with China widens to €55 billion as Chinese demand for European goods dries up",
-      "what_happened": "GTAI's preliminary data for the first half of 2026 shows Germany's trade deficit with China widening to about **€55 billion**, up from roughly €40 billion a year earlier. German exports to China fell by more than **12% year-on-year to just under €37 billion**, while imports from China climbed **8.9% to €91.8 billion**. As recently as 2021, China was Germany's second-biggest export market, buying €104 billion worth of German goods; today it ranks ninth. GTAI's East Asia expert, Corinne Abele, attributed the export slide to \"the weak domestic economy and increasing Chinese focus on domestic value chains,\" adding that German firms are increasingly producing inside China itself rather than exporting to it, while China's property crisis and cash-strapped regional governments are also curbing Chinese investment and demand.",
-      "key_points": [
-        "Germany's trade deficit with China widened to **€55 billion** in H1 2026, up from €40bn a year earlier",
-        "German exports to China **fell more than 12%** year-on-year to just under €37 billion",
-        "German imports from China **rose 8.9%** to €91.8 billion over the same period",
-        "China has slid from Germany's **2nd-biggest export market in 2021** to its **9th-biggest today**",
-        "Officials blame China's push for **domestic self-sufficiency**, not just a weak Chinese economy"
-      ],
-      "moot": "When your biggest customer decides to build its own supply chain instead of buying yours, no amount of product quality or brand strength can hold a trade relationship together — market share lost to localization rarely comes back on its own.",
-      "image_credit": "Business Recorder (Reuters)",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "Business Recorder (Reuters)"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "supply_chain",
-        "tariffs"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "For two decades, China was **Germany's most important trading partner** — German carmakers, machine-tool firms and chemical giants built their growth stories around selling into a booming Chinese market. That relationship has been quietly unwinding: Chinese firms increasingly build the industrial machinery, cars and chemicals they used to import, a strategy Beijing calls **\"domestic value chains.\"** Germany Trade & Invest (GTAI), the state agency that tracks this, has watched China's share of German exports shrink for several years running. The new H1 2026 numbers, released **August 9**, show that decline accelerating even as China remains Germany's single largest source of imports.",
-        "why_it_matters": "Germany's whole economic model leans on exporting high-value manufactured goods, and China was long its biggest growth engine outside Europe. A shrinking Chinese market for German goods — arriving on top of new **US tariffs** on European exports — removes one of the last big external demand sources German industry was counting on.",
-        "ripple_effects": "German industrial giants exposed to China (automakers, machinery and chemical firms) face slower growth and pressure to cut costs or jobs at home even as they build more factories inside China to stay close to that market. A weaker German economy is also a drag on the wider **eurozone**, since Germany is its largest economy.",
-        "why_now": "The figures are drawn from GTAI's official first-half 2026 trade data, released today, and reflect a multi-year trend that has now become sharp enough to make headlines.",
-        "watch_next": "Watch Germany's autumn trade figures for whether the export slide deepens, and how Berlin responds — whether through EU-level trade talks with Beijing or new industrial support at home.",
-        "market_link": "Watch German industrials and automakers with heavy China exposure (Volkswagen, BASF, Siemens, Mercedes-Benz) and the euro; a cooling China trade relationship is a headwind for European industrial and export-linked stocks.",
-        "key_terms": [
-          {
-            "term": "GTAI",
-            "definition": "Germany Trade & Invest, the German government's official economic development agency, which tracks and reports the country's trade data."
-          },
-          {
-            "term": "domestic value chains",
-            "definition": "A country's strategy of building its own suppliers and manufacturers for goods it used to import, so it relies less on foreign producers."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Business Recorder (Reuters)",
-            "url": "https://www.brecorder.com/news/40433979/german-trade-deficit-with-china-grows-as-beijing-relies-less-on-european-industry"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -743,8 +752,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -815,86 +824,160 @@
     },
     {
       "type": "story",
-      "id": "story-19",
-      "rank": 19,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Israeli forces fire on Palestinians in Khan Younis as Gaza's Hamas-disarmament standoff drags on",
-        "date": null
-      },
-      "published_iso": "2026-08-09T12:00:00+03:00",
-      "added_at": "2026-08-09T20:00:13+05:30",
-      "source": "CNN",
-      "importance": "critical",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-10T00:00:00+05:30",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "India Infoline",
+      "importance": "notable",
       "regions": [
-        "Israel",
-        "Gaza",
-        "Middle East",
-        "US"
+        "India"
       ],
-      "title": "Netanyahu formally rejects Trump's 15-point Gaza peace plan, says Israel won't withdraw until Hamas disarms",
-      "what_happened": "At a Cabinet meeting Sunday, Netanyahu said explicitly: **\"Israel rejects the 15-point document\"** put forward by Trump's Board of Peace. He said Israeli forces **will not carry out any withdrawal** from Gaza until Hamas is verifiably disarmed — a harder line than the plan itself, which envisions withdrawal happening **alongside**, not after, disarmament. Netanyahu also reaffirmed that **\"as long as I am prime minister, there will be no Palestinian state,\"** directly contradicting a component the plan's authors have floated as a longer-term horizon. The rejection is Netanyahu's most explicit public break yet with a peace framework the White House has repeatedly called a signature achievement. It comes as Netanyahu heads into **elections in October** and faces pressure from coalition partners who oppose any Gaza withdrawal.",
+      "title": "Dhoot Transmission's ₹3,067-crore IPO opens, part of a nine-IPO week worth nearly ₹7,700 crore",
+      "what_happened": "Dhoot Transmission's initial public offering opened for subscription today and runs through August 12, seeking to raise ₹3,066.89 crore — split between a ₹1,400 crore fresh issue and a ₹1,666.89 crore offer-for-sale by existing shareholders. Shares are priced between ₹829 and ₹871, with a minimum lot of 17 shares (₹14,807 at the upper band). Ahead of the opening, the company raised ₹918.3 crore from anchor investors, allotting over 10.5 million shares to 72 funds. Allotment is expected August 13, with listing on the NSE and BSE tentatively set for August 17. It's one of nine IPOs launching this week — five mainboard offerings worth ₹7,479 crore and four smaller SME issues — making it one of the busiest IPO weeks of the year, alongside diagnostics firm Molbio's ₹940-crore offer.",
       "key_points": [
-        "Netanyahu told Israel's Cabinet **\"Israel rejects the 15-point document\"** — the Gaza peace framework from Trump's **Board of Peace**",
-        "He said the **IDF will not withdraw** from Gaza until Hamas is **fully and verifiably disarmed**",
-        "The plan itself calls for a **phased Israeli withdrawal alongside disarmament**, not disarmament first — the opposite of what Netanyahu is now demanding",
-        "Netanyahu also ruled out a **Palestinian state** \"as long as I am prime minister\"",
-        "The rejection lands as Netanyahu faces **elections in October** and mounting pressure from his right-wing coalition"
+        "**Dhoot Transmission's ₹3,067-crore IPO** opened for bidding today, part of a **mega week** for Indian IPOs.",
+        "Price band set at **₹829–₹871** per share; retail investors need a minimum of **₹14,807** for 17 shares.",
+        "The auto-parts maker — a major **wiring-harness** supplier for two- and three-wheelers — already raised **₹918 crore** from anchor investors.",
+        "It's one of **nine IPOs** launching this week aiming to raise nearly **₹7,700 crore** combined."
       ],
-      "moot": "A peace plan is only as strong as the sequencing both sides actually agree to — when the biggest party publicly rejects the order of operations, the deal isn't a deal, it's a proposal.",
-      "image_credit": "CNN",
+      "moot": "When multiple companies rush to IPO in the same week, it's less about any one company's fundamentals and more about bankers and investors reading a favourable market mood — a window that can close quickly if sentiment shifts.",
+      "image_credit": "India Infoline",
       "credibility": {
-        "level": "confirmed",
+        "level": "developing",
         "count": 2,
-        "tier": 1,
+        "tier": 2,
         "outlets": [
-          "Al Jazeera",
-          "CNN"
+          "India Infoline",
+          "Upstox"
         ],
         "corroboration": 0
       },
-      "thread": {
-        "status": "escalating",
-        "day": 4,
-        "previously": "On August 8 we reported that the Hamas-disarmament standoff was dragging on, with Israeli troops firing on Palestinians near Khan Younis even as both sides remained bound, at least nominally, to the Board of Peace's phased withdrawal plan.",
-        "changed": "Netanyahu has now explicitly rejected that 15-point plan's central sequencing, saying Israel won't withdraw until Hamas disarms first — a harder, more public break with the framework than anything said before."
-      },
-      "concepts": [
-        "ceasefire_vs_truce"
+      "concepts": [],
+      "figures": [
+        {
+          "raw": "₹3,066.89 crore",
+          "words": "₹30.67 billion",
+          "usd_approx": "≈ $319mn"
+        },
+        {
+          "raw": "₹1,400 crore",
+          "words": "₹14 billion",
+          "usd_approx": "≈ $146mn"
+        },
+        {
+          "raw": "₹1,666.89 crore",
+          "words": "₹16.67 billion",
+          "usd_approx": "≈ $173mn"
+        },
+        {
+          "raw": "₹918.3 crore",
+          "words": "₹9.18 billion",
+          "usd_approx": "≈ $95mn"
+        }
       ],
-      "figures": [],
       "depth": {
-        "background": "An October 2025 ceasefire ended the most intense fighting in Gaza, and in July 2026 President Trump unveiled a 15-point plan through a new US-led body called the **Board of Peace**: Hamas would disarm in stages, its tunnels would be destroyed, and Israeli troops would withdraw from Gaza in return. Netanyahu had appeared to go along with the plan's broad strokes for weeks even as skirmishes continued — Israeli forces fired on Palestinians near Khan Younis just Saturday, part of what Palestinian officials call thousands of ceasefire violations. Hamas, for its part, has said it will only disarm if the process leads to eventual Palestinian statehood, which Israel's government rejects outright.",
-        "why_it_matters": "This is the clearest sign yet that the framework Trump has publicly championed as ending the Gaza war doesn't have Israel's buy-in on its central mechanism — sequencing withdrawal with disarmament. Without that, the plan risks becoming a slogan rather than a functioning ceasefire roadmap.",
-        "ripple_effects": "Expect friction between Washington and Jerusalem to become more public, since the White House has staked credibility on the plan. Hamas is likely to point to the rejection as proof Israel never intended to leave Gaza, hardening its own refusal to disarm — a standoff that keeps Gaza's civilians in continued danger and stalls reconstruction and aid efforts that depend on a real ceasefire holding.",
-        "why_now": "Netanyahu is heading into an October election and needs to hold together a coalition that includes hardliners opposed to any Gaza withdrawal, making a public, unambiguous rejection politically useful for him right now.",
-        "watch_next": "Whether the White House pushes back publicly on Netanyahu's rejection, and whether Hamas responds by hardening its own disarmament conditions.",
-        "market_link": "Continued uncertainty over the Gaza framework adds to the broader Middle East risk premium already pushing crude oil prices around the separate Iran-Hormuz standoff.",
+        "background": "An IPO (Initial Public Offering) is when a private company sells shares to the public for the first time, listing on a stock exchange like the NSE or BSE. Dhoot Transmission makes electrical and electronic vehicle components — chiefly wiring harnesses, the bundles of wires and connectors that route power and signals through a vehicle — mostly for India's huge two- and three-wheeler market. India's IPO market has been unusually active through 2026, with a wave of manufacturing and auto-ancillary firms going public as investors chase exposure to the country's growth story.",
+        "why_it_matters": "A cluster of large IPOs launching together is a read on investor appetite and market confidence — companies and their bankers only rush to list when they expect strong demand. For Dhoot Transmission specifically, the size of its anchor book, raised a day before opening, is an early signal of how the public offer itself may go.",
+        "ripple_effects": "A successful listing week adds fresh, liquid stocks to India's exchanges and can pull money away from existing shares as investors free up cash to subscribe to new issues. It also reinforces that Indian capital markets remain a go-to venue for auto-ancillary and manufacturing companies to raise growth capital, even as global uncertainty around tariffs and rates persists.",
+        "why_now": "Companies and investment bankers often cluster IPOs into busy weeks when broader market sentiment is favourable — this week follows a stretch of strong Indian equity performance and steady foreign investor buying.",
+        "watch_next": "Watch subscription numbers over the next two days through August 12 — how many times the issue is oversubscribed signals investor demand — and the listing-day move on August 17.",
+        "market_link": "Adds another large-cap auto-ancillary listing to Indian equities and tests investor appetite during a busy primary-market week alongside Molbio Diagnostics' IPO.",
         "key_terms": [
           {
-            "term": "Board of Peace",
-            "definition": "A US-led body set up by the Trump administration in 2026 to oversee and enforce the Gaza ceasefire and disarmament plan."
+            "term": "anchor investor",
+            "definition": "A large institutional investor allowed to buy IPO shares a day before the public offering opens, at a fixed price — used as an early signal of institutional confidence in the issue."
+          },
+          {
+            "term": "offer for sale (OFS)",
+            "definition": "The part of an IPO where existing shareholders, rather than the company itself, sell their shares to the public, so that portion of the money raised doesn't go to the company."
           }
         ],
         "sources": [
           {
-            "name": "CNN",
-            "url": "https://www.cnn.com/2026/08/09/middleeast/israel-gaza-trump-netanyahu-plan-intl"
+            "name": "India Infoline",
+            "url": "https://www.indiainfoline.com/news/ipo/dhoot-transmission-ipo-opens-today-check-price-band-gmp-lot-size-allotment-date-and-listing-details"
           },
           {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/9/israel-rejects-trumps-15-point-plan-for-gaza"
+            "name": "Upstox",
+            "url": "https://upstox.com/news/market-news/ipo/dhoot-transmission-ipo-day-1-check-subscription-status-price-band-lot-size-and-key-dates/article-198357/"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-22",
+      "rank": 22,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-09T00:00:00+05:30",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "India TV News",
+      "importance": "notable",
+      "regions": [
+        "India"
+      ],
+      "title": "India extends Enforcement Directorate chief Rahul Navin's tenure by a year, to August 2027",
+      "what_happened": "India's Appointments Committee of the Cabinet approved a one-year extension for Enforcement Directorate Director Rahul Navin, keeping him in the post until August 13, 2027, according to an order issued August 8. Navin, a 1993-batch Indian Revenue Service officer with more than three decades in the Income Tax Department, had been due to complete his term on August 13, 2026. He first took charge of the ED as interim chief before being made full-time director.",
+      "key_points": [
+        "The government extended **Enforcement Directorate (ED) Director Rahul Navin's** tenure by **one year**, through **August 2027**.",
+        "Navin is a **1993-batch Indian Revenue Service officer** with over **30 years** in the Income Tax Department.",
+        "The order came from the **Appointments Committee of the Cabinet**, days before his term was due to end on **August 13**.",
+        "The ED — India's top financial-crime and money-laundering investigator — has repeatedly seen its chiefs' tenures extended."
+      ],
+      "moot": "Watching who leads an enforcement agency, and how long they stay there, often tells you as much about a government's priorities as watching the cases the agency actually brings.",
+      "image_credit": "India TV News",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "ANI",
+          "India TV News"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "enforcement_directorate"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "The Enforcement Directorate is India's federal agency for investigating money laundering, foreign-exchange violations, and financial crime — roughly comparable to a mix of the FBI's financial-crimes unit and a currency-control regulator. In recent years it has become one of India's most politically consequential agencies, repeatedly used, opposition parties allege, to investigate rival politicians — drawing both government praise and accusations of selective targeting from critics. Navin took over as ED chief after his predecessor Sanjay Kumar Mishra's own tenure, itself controversially extended multiple times, finally ended.",
+        "why_it_matters": "Who leads the ED shapes which financial-crime and money-laundering cases move forward, and at what pace, with real consequences for the politicians, businesses, and bureaucrats under investigation. Repeated extensions of ED chiefs' tenures — a pattern also seen with Navin's predecessor — have drawn sustained criticism that the agency's independence is being compromised for political convenience.",
+        "ripple_effects": "Ongoing ED probes into opposition politicians and businesses continue under the same leadership rather than transitioning to a new chief, meaning no near-term change in the agency's investigative priorities. It also keeps a familiar face in place through a politically charged stretch, with state elections approaching and a contentious Parliament session underway.",
+        "why_now": "The extension order came just days before Navin's original term was set to expire on August 13, following the pattern set by past ED chiefs whose tenures were repeatedly prolonged via similar last-minute orders.",
+        "watch_next": "Watch whether opposition parties or the courts, which have previously scrutinized ED chief tenure extensions and struck some down, challenge this latest one.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Enforcement Directorate (ED)",
+            "definition": "India's federal agency that investigates money laundering, foreign-exchange law violations, and financial crime, reporting to the finance ministry."
+          },
+          {
+            "term": "Appointments Committee of the Cabinet",
+            "definition": "The top government body, chaired by the Prime Minister, that approves senior civil-service and agency-head appointments."
+          }
+        ],
+        "sources": [
+          {
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/news/india/rahul-navin-ed-director-given-one-year-extension-by-centre-till-august-2027-2026-08-09-1050867"
+          },
+          {
+            "name": "ANI",
+            "url": "https://aninews.in/news/national/general-news/rahul-navin-gets-one-year-extension-as-ed-director20260809212802/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-23",
+      "rank": 23,
+      "category": "india",
       "published_iso": "2026-08-09T20:10:00+05:30",
       "added_at": "2026-08-10T18:20:20+05:30",
       "source": "Free Press Journal",
@@ -957,8 +1040,8 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-08-10T10:28:01+05:30",
       "added_at": "2026-08-10T16:04:12+05:30",
@@ -1020,8 +1103,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1098,8 +1181,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-10T11:00:00+05:30",
       "added_at": "2026-08-10T14:04:23+05:30",
@@ -1167,8 +1250,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-09T10:00:00+09:00",
       "added_at": "2026-08-10T12:14:18+05:30",
@@ -1228,8 +1311,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-10T09:15:00+05:30",
       "added_at": "2026-08-10T12:14:18+05:30",
@@ -1313,8 +1396,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-29",
+      "rank": 29,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1383,8 +1466,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1448,8 +1531,8 @@
     },
     {
       "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-08-10T10:00:00+05:30",
       "added_at": "2026-08-10T08:04:36+05:30",
@@ -1514,8 +1597,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "published_iso": "2026-08-09T21:50:00+05:30",
       "added_at": "2026-08-10T01:59:59+05:30",
@@ -1580,6 +1663,129 @@
       "rank": 61,
       "category": "f1",
       "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "Crash.net",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "F1's youngest-ever points leader, 19-year-old Kimi Antonelli, says he's still not at Verstappen or Norris's level",
+      "what_happened": "Antonelli currently leads the 2026 F1 drivers' championship by 50 points heading into the summer break, having won six of the season's first eleven races, including five consecutive victories in one stretch that began with a maiden win in China. That run made him F1's youngest-ever championship leader when he took the points lead after winning the Japanese Grand Prix in March. He has finished all but two races of the season on the podium, with his two non-scoring results at Barcelona and Silverstone both caused by mechanical failures rather than driving errors. Despite this record, Antonelli said in comments this week that he doesn't believe he has yet reached the level of recent champions Max Verstappen and Lando Norris, saying 'there is a long way to reach' that standard, and crediting his car and team for much of his success so far.",
+      "key_points": [
+        "**Kimi Antonelli**, 19, leads the F1 drivers' championship by **50 points** at the summer break.",
+        "He became F1's **youngest-ever championship leader** after winning the Japanese Grand Prix in March.",
+        "The Mercedes rookie has won **6 of the first 11 races**, including **five in a row** at one stretch.",
+        "Despite the dominant run, Antonelli says he doesn't yet feel at the level of champions **Verstappen and Norris**."
+      ],
+      "moot": "Being handed the best car doesn't guarantee results — even a driver who credits the machinery for most of his success still has to consistently convert that advantage into finishes, race after race, without the mistakes that undo lesser talents.",
+      "image_credit": "Crash.net",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Crash.net",
+          "Formula1.com"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Andrea Kimi Antonelli is a Mercedes driver who, at 19, is in only his second F1 season after being fast-tracked through the junior categories as one of the sport's most hyped prospects. He replaced seven-time champion Lewis Hamilton at Mercedes when Hamilton moved to Ferrari, taking on one of the most pressure-filled seats on the grid at an unusually young age. His rapid rise to championship contention has drawn comparisons to a young Verstappen, who himself became F1's youngest race winner and champion in his own era.",
+        "why_it_matters": "A teenager leading the championship by a wide margin, in only his second season, is a genuinely rare event in F1 — and how he handles the pressure of being the favourite, rather than the underdog, over the second half of the season will shape whether he closes it out.",
+        "ripple_effects": "A commanding Antonelli title run reshapes Mercedes' championship hopes after several lean years since Hamilton's departure, and pressures Ferrari and McLaren to find pace in the second half of the season. It also raises Antonelli's market value and profile heading into future contract and sponsorship conversations.",
+        "why_now": "The comments come right at F1's summer break — the traditional moment for reflection and stock-taking before the second half of the season resumes at the Dutch Grand Prix in late August.",
+        "watch_next": "Watch whether Antonelli's lead holds or narrows once racing resumes at Zandvoort on August 21–23, and how he handles his first summer as the outright favourite rather than a breakout rookie.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "podium",
+            "definition": "A top-three finish in a race — one of the standard measures of a driver's season-long consistency, alongside wins and total points."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Crash.net",
+            "url": "https://www.crash.net/f1/news/1102076/1/f1-championship-leader-kimi-antonellis-surprising-claim-about-his-current-level"
+          },
+          {
+            "name": "Formula1.com",
+            "url": "https://www.formula1.com/en/latest/article/in-numbers-how-antonellis-points-advantage-compares-to-previous-seasons.5I6IspbcPj5h8yk3gB31cj"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-62",
+      "rank": 62,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-10T20:12:51+05:30",
+      "source": "PlanetF1",
+      "importance": "notable",
+      "regions": [
+        "Global"
+      ],
+      "title": "F1 boss says the already-planned 2027 engine rule change should finally satisfy Verstappen's complaints",
+      "what_happened": "Formula 1 CEO Stefano Domenicali said he has spoken with Verstappen directly about the previously agreed shift in engine rules, which reduces the electric motor's share of power output from the current roughly 50:50 split to 58:42 in favour of the combustion engine in 2027, and 60:40 by 2028. Verstappen has said 60:40 is the minimum ratio he'd be content racing with, and Domenicali said he believes the 2028 change will make the Dutchman 'very happy.' F1 reportedly wanted an even more aggressive shift away from electric power, but teams pushed back and settled on the phased 58:42-then-60:40 timeline. The comments land as Verstappen's contract situation remains unresolved: his Red Bull exit clause activated after he went into F1's summer break outside the championship's top two, and Red Bull has offered him a new deal removing that clause — which he has not yet accepted.",
+      "key_points": [
+        "F1 CEO **Stefano Domenicali** said he's discussed the incoming engine rule change directly with **Max Verstappen**.",
+        "From 2027, the power split between engine and battery shifts to **58:42** favouring the combustion engine, reaching **60:40 by 2028**.",
+        "That **60:40 split** is the minimum Verstappen has said he needs to be happy with how the cars drive.",
+        "The timing matters: Verstappen's **Red Bull exit clause is now active**, and his F1 future beyond 2026 is unresolved."
+      ],
+      "moot": "In any sport or industry built around a handful of star performers, the people setting the rules often end up managing star egos and retention almost as much as they manage the actual competition.",
+      "image_credit": "PlanetF1",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "PlanetF1",
+          "Sky Sports"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Since 2026, F1's hybrid power units have split output roughly 50-50 between the traditional combustion engine and the electric motor (MGU-K) that recovers braking energy — a ratio drivers including Verstappen have criticized for making cars behave unnaturally, especially at low speed. F1's teams and governing body agreed months ago to dial back the electric share to make cars feel more like traditional racers, though the change won't fully land until 2028. Verstappen, a four-time champion, has used his frustration with the current cars as leverage in an increasingly public standoff with Red Bull over his contract.",
+        "why_it_matters": "Verstappen is one of the sport's biggest draws, and his public dissatisfaction with the current cars has become entangled with speculation about whether he leaves Red Bull entirely. F1 addressing his technical complaints is as much a retention play for the sport's biggest star as it is a genuine engineering fix.",
+        "ripple_effects": "If the rule change doesn't change Verstappen's calculus, Red Bull risks losing its most successful driver in a generation, with knock-on effects for sponsors, TV ratings tied to his storyline, and the wider driver market as rival teams eye a potential opening. Teams and drivers who backed the more combustion-favouring split also get validated by this outcome.",
+        "why_now": "The comments surface as F1 enters its summer break with Verstappen's future the sport's biggest unresolved storyline, and as Red Bull tries to convince him to sign a new contract before rivals make a play for him.",
+        "watch_next": "Watch for Verstappen's own response to Domenicali's comments, and whether he gives any signal about his 2027 plans around the Dutch Grand Prix on August 21–23 — the race he has flagged as his likely decision window.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "MGU-K",
+            "definition": "The Motor Generator Unit-Kinetic, the part of an F1 car's hybrid power unit that recovers energy from braking and deploys it as extra power — its share of the car's total output is what's changing under the new rules."
+          },
+          {
+            "term": "exit clause",
+            "definition": "A contract term letting a driver leave before their deal's official end date if certain conditions, like a team's competitive performance, are met."
+          }
+        ],
+        "sources": [
+          {
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/max-verstappen-red-bull-exit-stefano-domenicali-f1-2027"
+          },
+          {
+            "name": "Sky Sports",
+            "url": "https://www.skysports.com/f1/news/32461/13552811/formula-1-agree-engine-rule-changes-for-2027-and-2028-season-in-move-away-from-50-50-power-source"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-63",
+      "rank": 63,
+      "category": "f1",
       "published_iso": "2026-08-10T09:00:00+00:00",
       "added_at": "2026-08-10T18:20:20+05:30",
       "source": "The Judge 13",
@@ -1638,8 +1844,8 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-08-09T10:00:00+01:00",
       "added_at": "2026-08-10T16:04:12+05:30",
@@ -1693,8 +1899,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "development": true,
       "prev_ref": {
@@ -1757,8 +1963,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-09T00:00:00+01:00",
       "added_at": "2026-08-10T14:04:23+05:30",
@@ -1812,8 +2018,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-09T00:00:00Z",
       "added_at": "2026-08-10T12:14:18+05:30",
@@ -1872,8 +2078,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-10T01:00:00+01:00",
       "added_at": "2026-08-10T09:59:57+05:30",
@@ -1923,168 +2129,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
-      "category": "f1",
-      "published_iso": "2026-08-08T00:00:00Z",
-      "added_at": "2026-08-10T08:04:36+05:30",
-      "source": "Motorsport Week",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Cadillac gives up on its winless 2026 car to focus everything on 2027, as F1's newest team hits the summer break with zero points",
-      "what_happened": "Valtteri Bottas has confirmed that Cadillac will soon **halt development of its 2026 car** entirely and redirect its engineering resources toward the 2027 car instead. The team reaches the summer break as the only one on the grid without a single point, sitting **11th and last** in the constructors' championship after 11 races. Bottas's best result so far is **13th place** at the Chinese Grand Prix, and the car has suffered **five retirements** in the season's first half, including a brake fire during the Hungarian Grand Prix that was serious enough that Bottas has since stopped using the pit-entry wall approach during races. Separately, reports indicate American driver **Colton Herta**'s once-strong chances of landing a Cadillac F1 seat have largely evaporated as the team evaluates its options for future line-ups.",
-      "key_points": [
-        "Cadillac will soon **stop developing its 2026 car** to pour resources into next year's, says driver Valtteri Bottas.",
-        "F1's newest team sits **11th and last** in the constructors' championship after 11 races, with **zero points**.",
-        "Bottas's best finish is **13th** (China), with **five retirements** in the first half of the season.",
-        "A brake fire in Hungary forced Bottas to stop using the **pit-entry wall**, a further sign of car reliability issues.",
-        "Colton Herta's reported chances of an F1 seat at Cadillac have **evaporated** as the team reviews driver options."
-      ],
-      "moot": "New entrants in any highly technical, capital-intensive competition usually need more than one cycle to catch up — recognising early that a first attempt has failed and reallocating resources fast is often the smarter move than chasing marginal gains on a lost cause.",
-      "image_credit": "Motorsport Week",
-      "credibility": {
-        "level": "developing",
-        "count": 1,
-        "tier": 2,
-        "outlets": [
-          "Motorsport Week"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Cadillac joined Formula 1 in 2026 as the sport's newest entrant, fielding an all-new team built largely from scratch — historically one of the hardest ways to compete in F1, since new teams typically need several seasons just to reach the development level of established rivals. The team paired experienced driver **Valtteri Bottas**, a former Mercedes and Alfa Romeo/Sauber driver with 10 grand prix wins, alongside Sergio Perez, hoping his experience would help bed in a brand-new car and organisation. Coming into the sport in the same year as a major new set of technical regulations added an extra layer of difficulty, since every team was starting fresh design work simultaneously.",
-        "why_it_matters": "Giving up on the current car this early is an unusually blunt admission from a brand-new team that this season's design missed the mark, and it signals Cadillac is prioritising a competitive future over salvaging pride points this year.",
-        "ripple_effects": "A full pivot to 2027 development means Cadillac's remaining 2026 races become effectively about data-gathering and driver evaluation rather than results, which could affect Perez and Bottas's motivation and performances, and reshapes the team's driver-market calculus (including Herta's prospects) heading into next season.",
-        "why_now": "The timing follows the summer break, F1's traditional inflection point where teams reallocate development budget between the current and following year's car under the sport's cost-cap rules.",
-        "watch_next": "Whether Cadillac confirms its 2027 driver lineup, and how much of a step forward the new car shows when 2027 pre-season testing begins.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Motorsport Week",
-            "url": "https://www.motorsportweek.com/2026/08/08/cadillac-halt-development-focus-next-season/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-09T00:00:00Z",
-      "added_at": "2026-08-10T08:04:36+05:30",
-      "source": "Formula1.com",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Fernando Alonso names a window — Zandvoort to Monza — for deciding whether he races on in F1 for 2027",
-      "what_happened": "Speaking to media, Alonso said: **'I have not taken any decision; I will wait until probably summer break, which is August, and after summer it's Zandvoort, Monza — I think around that time I will probably decide what to do next year.'** That places his decision window in the run of races following the summer break, from the Dutch Grand Prix at Zandvoort through the Italian Grand Prix at Monza. He explicitly said Aston Martin's disappointing 2026 season — the team sits 19th in the drivers' standings — will **not** be the deciding factor; instead, he says the current regulations and whether the cars still give him the enjoyment he wants to keep racing are the bigger question. He has confirmed he intends to keep racing in some capacity in 2027 regardless, but hasn't committed to that being in Formula 1. Team principal and design chief Adrian Newey separately said he is 'pretty confident' Alonso will stay, pointing to an incoming Honda engine upgrade debuting at Zandvoort as a potential turning point for the car.",
-      "key_points": [
-        "Alonso, **44**, says he'll decide his 2027 plans **between the Dutch GP (Zandvoort) and Italian GP (Monza)**, late August into September.",
-        "He's confirmed he'll **keep racing in some form** in 2027 — just not necessarily in Formula 1.",
-        "Alonso says the call hinges on **the current-generation cars and regulations**, not Aston Martin's poor 2026 form.",
-        "Aston Martin sits **19th** in the drivers' standings this season, a near-pointless year for the team.",
-        "Team boss and design chief **Adrian Newey** says he's 'pretty confident' Alonso stays for 2027."
-      ],
-      "moot": "Even elite performers eventually weigh whether the conditions of their work — not just the results — still make it worth continuing; motivation and environment can matter as much as scoreboard success.",
-      "image_credit": "Formula1.com",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Formula1.com",
-          "RacingNews365"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Fernando Alonso is a two-time F1 world champion (2005, 2006) who returned to Aston Martin as the team built around him, hiring legendary designer **Adrian Newey** to lead its technical push for the new-generation regulations that arrived in 2026. Those new rules were supposed to level the playing field, but Aston Martin has instead had a difficult first half of the season, leaving Alonso, at 44, deep in the drivers' standings and facing genuine questions about whether continuing is worth it. He has said before that his motivation is tied more to whether the cars themselves are still exciting to drive under the new rules than to whether his team is winning.",
-        "why_it_matters": "One of the sport's most decorated active drivers publicly weighing retirement — or a switch to another racing category — adds real uncertainty to Aston Martin's 2027 lineup and to the broader driver market, since several other seats (Red Bull's, Alpine's) are already in flux for the same season.",
-        "ripple_effects": "If Alonso decides to leave F1, it opens one of the sport's most sought-after seats and would likely trigger a chain reaction across the driver market, similar to how one big-name departure typically cascades into several other moves. It also raises the stakes on Aston Martin's Honda engine upgrade landing well at Zandvoort, since that's now explicitly tied to keeping him.",
-        "why_now": "Alonso set this specific timeline himself in comments this week, tying his decision to the calendar's return from the summer break.",
-        "watch_next": "How Aston Martin's Honda-powered car performs at the Dutch Grand Prix at Zandvoort, the first race of the window Alonso named.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/alonso-addresses-speculation-linking-him-to-other-teams-as-he-shares-update-on-when-his-future-will-be-decided.6Bn1rU59nTHv5Q1yVHW0T"
-          },
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/aston-martin-share-fernando-alonso-update-as-f1-future-rumours-intensify"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-72",
-      "rank": 72,
-      "category": "f1",
-      "published_iso": "2026-08-09T08:00:00+01:00",
-      "added_at": "2026-08-10T01:59:59+05:30",
-      "source": "Motorsport.com",
-      "importance": "notable",
-      "regions": [
-        "Formula 1"
-      ],
-      "title": "F1 great Emerson Fittipaldi backs Lewis Hamilton's title push, says Ferrari's car finally suits him",
-      "what_happened": "Emerson Fittipaldi said this weekend he hopes to see **Lewis Hamilton** fight for the 2026 Formula 1 title, praising the improvement in Hamilton's form since he joined Ferrari. Hamilton currently sits **second** in the drivers' standings on 169 points, **50 points behind championship leader Kimi Antonelli** and **9 points ahead** of Antonelli's Mercedes teammate George Russell in third. Fittipaldi pointed to Ferrari's 2026 car as finally suiting Hamilton's driving style — a factor he says isn't getting enough attention — after Hamilton won his first race for Ferrari at the Barcelona Grand Prix earlier this season following a difficult 2025. 'I was so happy to see Lewis and Ferrari going fast,' Fittipaldi said. 'I really hope Lewis challenges for the championship.'",
-      "key_points": [
-        "Two-time champion **Emerson Fittipaldi** says he hopes Hamilton 'fights for the championship'",
-        "Hamilton sits **second** in the standings, **50 points behind** leader Kimi Antonelli",
-        "He's **9 points ahead** of teammate-rival George Russell in third",
-        "Fittipaldi says Ferrari's 2026 car finally suits Hamilton's driving style, aiding his rebound",
-        "Comes after Hamilton's **first Ferrari win** at the Barcelona Grand Prix this season"
-      ],
-      "moot": "In a season-long championship, a big points gap at the midpoint isn't fatal — form, car development and reliability over the second half often matter more than the standings snapshot today.",
-      "image_credit": "Motorsport.com",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "GPBlog",
-          "Motorsport.com"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Lewis Hamilton joined Ferrari for the 2026 season after a difficult final stretch at Mercedes, and his first season in red got off to a rocky start before improving markedly in the second half. Emerson Fittipaldi, a two-time F1 world champion from the 1970s, is a respected elder statesman of the sport whose public comments carry weight, especially about the Ferrari-Hamilton pairing fans have anticipated for years.",
-        "why_it_matters": "A 50-point gap with roughly half the season left is a real but not insurmountable deficit, and comments from a respected former champion add to the narrative pressure and expectation around one of F1's most closely watched driver-team pairings.",
-        "ripple_effects": "Continued strong form from Hamilton would tighten the title fight and add drama to Ferrari's season, while a stalled title bid keeps the pressure on questions about whether Hamilton can still win championships at Ferrari.",
-        "why_now": "The comments follow the Belgian Grand Prix weekend, a natural moment for pundits and legends to assess where the title fight stands at the season's midpoint.",
-        "watch_next": "Watch Hamilton's results over the next few races to see whether he can close the gap to Antonelli.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/lewis-hamilton-backed-for-ferrari-f1-championship-push-by-emerson-fittipaldi/"
-          },
-          {
-            "name": "GPBlog",
-            "url": "https://www.gpblog.com/en/news/hamilton-backed-by-former-world-champion-i-hope-he-can-challenge-for-the-title"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-73",
-      "rank": 73,
+      "id": "story-75",
+      "rank": 75,
       "category": "f1",
       "published_iso": "2026-08-09T10:00:00+01:00",
       "added_at": "2026-08-10T01:59:59+05:30",
@@ -2141,7 +2187,6 @@
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
-      "is_new": true,
       "published_iso": "2026-08-10T14:00:00+01:00",
       "added_at": "2026-08-10T18:20:20+05:30",
       "source": "Sky Sports",
@@ -2829,21 +2874,21 @@
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 137
+      "older_count": 135
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 102
+      "older_count": 105
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 86
+      "older_count": 85
     },
     {
       "type": "outro",
