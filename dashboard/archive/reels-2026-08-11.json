@@ -1,6 +1,6 @@
 {
   "date": "2026-08-11",
-  "generated_at": "2026-08-11T12:07:11+05:30",
+  "generated_at": "2026-08-11T14:02:50+05:30",
   "day_label": "Tuesday · 11 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -10,6 +10,127 @@
       "rank": 1,
       "category": "technology",
       "is_new": true,
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "Help Net Security / CERT Polska",
+      "importance": "high",
+      "regions": [
+        "Poland",
+        "Europe"
+      ],
+      "title": "Hackers used a hijacked private cellular network to sabotage a second Polish power plant",
+      "what_happened": "CERT Polska published a follow-up report revealing that attackers first broke into a wind farm's internet-exposed **Fortinet VPN/firewall device** — equipment meant to let remote staff securely log in. From there, they used a cellular router (a Teltonika device) to tunnel via SSH into the electricity distribution operator's **private APN** — a dedicated mobile network utilities use to remotely manage grid equipment, normally isolated from the public internet. Once inside, the attackers moved laterally into the heating plant's operational-technology network and targeted a **Wago programmable logic controller (PLC)** — the industrial computer that directly controls physical equipment. CERT Polska says the root cause was a common misconfiguration letting any device inside a private APN talk to any other device on it, meaning many other utilities — in Poland and beyond — could share the same weakness.",
+      "key_points": [
+        "Poland's national cyber authority, **CERT Polska**, revealed a previously undisclosed **December 2025** attack on a heating plant serving **50,000 residents**.",
+        "Attackers pivoted through a wind farm's **VPN firewall**, then a cellular router, into the utility's **private mobile network (APN)** to reach the plant's control systems.",
+        "It's the first documented attack of its kind against European energy infrastructure — a technique never seen before.",
+        "CERT Polska says the underlying misconfiguration is **common across Poland and likely used internationally**.",
+        "The full investigation took **over three months**, which is why it wasn't in the original report on Poland's wave of energy-sector attacks."
+      ],
+      "moot": "A security boundary is only as strong as its weakest connected device — attackers increasingly don't break down the front door, they hop from one 'trusted' but poorly secured system to the next until they reach something critical.",
+      "image_credit": "Help Net Security / CERT Polska",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "Help Net Security / CERT Polska"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "In late 2025, Poland's wind, solar, and heating infrastructure was hit by a wave of coordinated cyberattacks, which CERT Polska — Poland's national Computer Emergency Response Team, the government body that investigates and discloses major cyber incidents — reported on at the time. What's new today is a deep-dive follow-up on one specific incident left out of that first report because it took **three months to fully analyze**: a December 29, 2025 attack on a combined heat and power (CHP) plant supplying heating to about **50,000 people**. The attack used a genuinely novel path into the plant's industrial control systems — the computers that physically operate equipment like valves and generators — that security researchers hadn't documented before.",
+        "why_it_matters": "This is the first documented case of attackers using a private cellular network built specifically to isolate and protect grid equipment as a stepping stone to sabotage it — turning a supposed safety feature into an attack path. Because the misconfiguration is described as common, this isn't just a Polish problem; it's a blueprint that could be used against power and heating infrastructure anywhere that uses similar private APNs.",
+        "ripple_effects": "Utilities across Europe and beyond will likely need to audit their own private cellular networks for the same misconfiguration, which could mean costly, urgent security overhauls. Insurers and regulators may tighten cybersecurity requirements for energy infrastructure. It also adds to a broader pattern of hackers probing European energy systems since Russia's invasion of Ukraine, raising the stakes for grid resilience heading into winter heating season.",
+        "why_now": "CERT Polska is publishing this today because the technical investigation — tracing exactly how the attackers moved between systems — took more than three months to complete, well after the original incident and its initial report on the broader wave of attacks.",
+        "watch_next": "Watch for confirmation of who was behind the attack, and whether other European utilities disclose the same private-APN misconfiguration in their own networks.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Private APN",
+            "definition": "A dedicated mobile network, separate from the public internet, that utilities use to remotely connect and manage equipment like power meters and grid controllers."
+          },
+          {
+            "term": "Programmable logic controller (PLC)",
+            "definition": "A ruggedized industrial computer that directly operates physical equipment — like valves, motors, or heating units — in a power plant or factory."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Help Net Security / CERT Polska",
+            "url": "https://www.helpnetsecurity.com/2026/08/11/poland-energy-sector-cyberattack-heating-plant-private-apn/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "health",
+      "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "PBS NewsHour / AP",
+      "importance": "high",
+      "regions": [
+        "Democratic Republic of Congo",
+        "Africa"
+      ],
+      "title": "WHO reveals Congo's record-fast Ebola outbreak began three months before it was declared",
+      "what_happened": "The World Health Organization said genomic sequencing shows the Democratic Republic of Congo's current Ebola outbreak actually began around **February 2026**, roughly **three months before** it was officially declared in mid-May. Some of the earliest cases were **misdiagnosed as malaria or typhoid**, delaying detection and letting the virus spread undetected through Ituri province. One unpublished analysis suggests the true start may have been even earlier, in January, near the town of Mongbwalu. The outbreak — caused by the rare **Bundibugyo strain**, for which there is no approved vaccine or treatment — has now passed **4,200 confirmed cases and 1,900+ deaths**, making it the fastest-growing and second-largest Ebola outbreak ever recorded. WHO Director-General Tedros Adhanom Ghebreyesus warned the response is being **'outpaced'** by the virus's spread, a problem compounded by an ongoing aid-worker pay strike and active armed conflict in the region.",
+      "key_points": [
+        "Genomic sequencing shows the outbreak actually started around **February 2026** — three months before its **mid-May declaration**.",
+        "Early cases were **misdiagnosed as malaria or typhoid**, letting the virus spread undetected through Ituri province.",
+        "The rare **Bundibugyo strain** has no approved vaccine or treatment.",
+        "The outbreak has passed **4,200 confirmed cases** and **1,900+ deaths** — already the fastest-growing Ebola outbreak on record.",
+        "WHO chief Tedros says the response is being **'outpaced'** by the virus, worsened by an aid-worker pay strike and armed conflict."
+      ],
+      "moot": "In places where common illnesses like malaria mimic the symptoms of a rarer, deadlier disease, outbreaks can spread silently for months before doctors realize what they're actually dealing with — which is why the first cases of any outbreak are the hardest, and most important, to catch.",
+      "image_credit": "PBS NewsHour / AP",
+      "credibility": {
+        "level": "developing",
+        "count": 1,
+        "tier": 2,
+        "outlets": [
+          "PBS NewsHour / AP"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Ebola is a viral hemorrhagic fever that kills a large share of the people it infects, spread through contact with the bodily fluids of the sick or dead. The Democratic Republic of Congo has weathered more Ebola outbreaks than any other country, including the **2018-2020 outbreak** in this same eastern region that killed over 2,200 people. This outbreak is centered in Ituri province, an area also gripped by armed conflict involving multiple militia groups, which makes contact-tracing and treatment access far harder. The World Health Organization (WHO) declared this outbreak in **mid-May 2026**, but new genomic sequencing — a lab technique that reads the virus's genetic code to estimate how long it has been spreading — now shows it was already circulating for months before anyone noticed.",
+        "why_it_matters": "A three-month head start means the virus had far more time and far more chances to jump between people before anyone was containing it — a major reason this outbreak has grown so explosively. It's also a warning about diagnostic blind spots: where malaria and typhoid are common, doctors default to those diagnoses first, letting a rare disease like Ebola hide in plain sight.",
+        "ripple_effects": "Delayed detection makes the outbreak harder and more expensive to contain, straining an already conflict-torn health system and international aid budgets. Neighboring countries face a higher risk of cross-border spread, which could trigger travel and trade restrictions. Because there's no approved vaccine or treatment for the Bundibugyo strain specifically, containment relies entirely on old-fashioned public health tools — isolation, contact tracing, and safe burials — which conflict and the aid-worker pay strike are actively undermining.",
+        "why_now": "The finding comes from a new genomic analysis WHO just completed and published, which retroactively reconstructed the outbreak's true timeline — that kind of lab work takes months, which is why it's surfacing only now.",
+        "watch_next": "Watch whether WHO or vaccine makers fast-track a Bundibugyo-strain vaccine trial, and whether the case count keeps accelerating past 4,200.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Genomic sequencing",
+            "definition": "Reading a virus's genetic code in a lab to trace how it has spread and mutated over time — like a family tree for the outbreak."
+          },
+          {
+            "term": "Bundibugyo strain",
+            "definition": "One of several genetic varieties of the Ebola virus, generally considered less deadly than the more common Zaire strain but for which no vaccine is yet approved."
+          }
+        ],
+        "sources": [
+          {
+            "name": "PBS NewsHour / AP",
+            "url": "https://www.pbs.org/newshour/health/congos-fast-moving-ebola-outbreak-started-month-before-it-was-declared-who-says"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "technology",
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T12:07:11+05:30",
       "source": "TechCrunch",
@@ -72,10 +193,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T12:07:11+05:30",
       "source": "The Hill",
@@ -143,8 +263,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "published_iso": "2026-08-10T00:00:00+00:00",
       "added_at": "2026-08-11T09:58:51+05:30",
@@ -208,8 +328,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -289,8 +409,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "science",
       "published_iso": "2026-08-10T09:00:00+00:00",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -356,8 +476,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "geopolitics",
       "published_iso": "2026-08-10T18:00:00+03:00",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -423,70 +543,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "geopolitics",
-      "published_iso": "2026-08-10T00:00:00Z",
-      "added_at": "2026-08-11T06:00:56+05:30",
-      "source": "Al Jazeera",
-      "importance": "high",
-      "regions": [
-        "Sudan",
-        "Darfur"
-      ],
-      "title": "Sudan's army claims momentum in Darfur as the civil war passes 1,000 days",
-      "what_happened": "Sudan's army and allied groups say they have made gains against the RSF in western Darfur, repelling two successive RSF attacks on the strategically important Bir Saliba area in early August. The push comes as the war — now more than **1,000 days old** — continues to devastate the country: the UN's humanitarian affairs office (OCHA) says fighting is deepening needs and driving fresh displacement on top of the millions already forced from their homes. Separately, a rights group said an army drone strike hit a traditional court in western Darfur, killing at least **35 people**. The UN's special envoy for Sudan, Pekka Haavisto, continues shuttle diplomacy with both sides but has not secured a ceasefire. Millions of Sudanese children remain out of school, displaced, or exposed to grave rights violations, according to the UN.",
-      "key_points": [
-        "Sudan's army and allied forces repelled **two RSF attacks** on the strategic Bir Saliba area in western Darfur in early August.",
-        "The war between the army (SAF) and the paramilitary **Rapid Support Forces (RSF)** has now passed **1,000 days**.",
-        "A Sudanese army drone strike on a traditional court in Darfur reportedly killed **35 people**, a rights group said.",
-        "The **UN** warns fighting is deepening humanitarian needs and fueling fresh waves of mass displacement."
-      ],
-      "moot": "In wars fought over territory, humanitarian access often depends less on ceasefires than on which armed group physically controls the roads and towns aid convoys need to pass through.",
-      "image_credit": "Al Jazeera",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Al Jazeera",
-          "UN News"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "insurgency_militancy"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "Sudan's civil war began in April 2023 when rivalry between the regular army (SAF) and the paramilitary Rapid Support Forces (RSF) — a militia descended from the **Janjaweed** of the 2000s Darfur genocide — erupted into open fighting for control of the state. The RSF seized much of Darfur in western Sudan and parts of the capital, Khartoum, triggering what the UN calls one of the world's worst humanitarian crises, including confirmed famine conditions in parts of Darfur. Control has swung back and forth for over **1,000 days**, with both sides accused of atrocities against civilians. In recent weeks the army has gone on the offensive in western Darfur, trying to reclaim territory the RSF has held since 2023.",
-        "why_it_matters": "Sudan's war is one of the world's largest displacement and hunger crises, largely overshadowed by other global conflicts, and shifts in who controls Darfur affect where aid can reach and whether famine-hit areas get relief. A more confident army offensive could also harden Khartoum's stance against a negotiated settlement.",
-        "ripple_effects": "Continued fighting keeps pushing refugees into Chad, South Sudan and Egypt, straining those countries' resources and aid budgets. It also keeps global food-aid and reconstruction costs elevated and complicates any regional stability push by the UN and African Union, since foreign powers — including Gulf states — are reported to be backing opposing sides.",
-        "why_now": "The Bir Saliba clashes are part of a broader army push this summer to retake Darfur, territory the RSF has effectively controlled since the war's early months, as both sides look to gain leverage ahead of any renewed peace talks.",
-        "watch_next": "Watch whether the army's gains in Bir Saliba extend toward RSF strongholds like el-Fasher, and whether UN envoy Pekka Haavisto can get both sides back to the negotiating table.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Rapid Support Forces (RSF)",
-            "definition": "A paramilitary force in Sudan that grew out of the Janjaweed militias, now fighting Sudan's regular army for control of the country."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/10/has-the-sudanese-army-turned-the-page-on-control-of-western-sudan"
-          },
-          {
-            "name": "UN News",
-            "url": "https://news.un.org/en/story/2026/08/1168109"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "geopolitics",
       "published_iso": "2026-08-10T12:34:00-05:00",
       "added_at": "2026-08-11T06:00:56+05:30",
@@ -546,8 +604,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "economy",
       "published_iso": "2026-08-10T15:45:00-04:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -613,8 +671,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -688,8 +746,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 15,
+      "id": "story-17",
+      "rank": 17,
       "category": "geopolitics",
       "published_iso": "2026-08-10T13:00:00+00:00",
       "added_at": "2026-08-10T21:59:50+05:30",
@@ -749,8 +807,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 16,
+      "id": "story-18",
+      "rank": 18,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -821,8 +879,8 @@
     },
     {
       "type": "story",
-      "id": "story-17",
-      "rank": 17,
+      "id": "story-19",
+      "rank": 19,
       "category": "climate",
       "published_iso": "2026-08-10T06:00:00Z",
       "added_at": "2026-08-10T20:12:51+05:30",
@@ -885,158 +943,140 @@
     },
     {
       "type": "story",
-      "id": "story-19",
-      "rank": 19,
-      "category": "geopolitics",
-      "development": true,
-      "prev_ref": {
-        "title": "Iran and Oman agree shipping-lane coordinates for the Strait of Hormuz as a deal nears completion",
-        "date": null
-      },
-      "published_iso": "2026-08-10T08:00:00+03:00",
-      "added_at": "2026-08-10T16:04:12+05:30",
-      "source": "Al Jazeera",
+      "id": "story-21",
+      "rank": 21,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "AP via NPR member stations",
       "importance": "high",
       "regions": [
-        "Iran",
-        "UAE",
-        "Middle East"
+        "Assam",
+        "India"
       ],
-      "title": "Iran hardens its price for reopening the Strait of Hormuz, days after a missile hit a UAE oil tanker there",
-      "what_happened": "Early on **Saturday**, an Iranian missile struck an ADNOC tanker transiting the Strait of Hormuz; the UAE says there were no casualties this time, though the ministry noted that more than a dozen ADNOC vessels have now been hit by missiles or drones since the war began, with one sailor killed and 20 injured across the attacks. The UAE's foreign ministry branded the strike an act of piracy by Iran's **Revolutionary Guard Corps (IRGC)** and called on Tehran to halt the attacks and reopen the strait completely. Separately, Iran's foreign minister said Sunday that Tehran is close to a narrower, temporary arrangement with **Oman** allowing a limited shipping route through the strait — but stressed Iran still wants to largely control it. By Monday, Iranian officials had gone further, publicly setting out preconditions for a full reopening: the US must lift its blockade of Iranian ports, withdraw its forces from the region, drop sanctions on Iran, and pay damages for the war, before Hormuz 'fully reopens.' President Trump, for his part, has signaled he is for now leaning on economic pressure rather than a fresh military offensive.",
+      "title": "Assam flood death toll hits 100 as nearly 300,000 people crowd into relief camps",
+      "what_happened": "The death toll from Assam's ongoing floods reached **100** on Monday, August 10, after two more people died overnight. Days of relentless monsoon rain caused the **Brahmaputra** — which flows roughly 900 km through Assam — and other rivers to overflow, inundating villages, sweeping away homes, and forcing nearly **300,000 people** into government-run relief camps at the crisis's peak. About **49,000 people remain** in **125 relief camps and distribution centers**, even as floodwaters recede in some areas and residents begin returning home. Several rivers remain above the official danger mark, according to ASDMA, meaning the risk of fresh flooding hasn't passed. The floods have also killed large numbers of livestock, hurting rural livelihoods and raising fears of disease outbreaks in the affected areas.",
       "key_points": [
-        "Iran now demands the US **lift its blockade of Iranian ports**, withdraw troops, drop sanctions and **pay war damages** before Hormuz fully reopens.",
-        "A UAE-flagged **ADNOC oil tanker** was hit by an Iranian missile in the strait in the early hours of **Saturday**; no one was hurt this time.",
-        "Since the US-Israel war on Iran began in **February**, over a dozen ADNOC ships have been attacked, leaving **1 crew member dead and 20 wounded**.",
-        "The UAE called the strike an **'act of piracy'** by Iran's Revolutionary Guard Corps and demanded the strait reopen **'fully and unconditionally.'**",
-        "Iran's foreign minister separately said Sunday it is close to a **narrower deal with Oman** for a limited shipping route — short of a full reopening."
+        "The death toll in Assam's floods reached **100** after two more deaths overnight on **August 10**.",
+        "Nearly **300,000 people** were forced into relief camps at the crisis's peak; about **49,000 remain** across **125 camps**.",
+        "The **Brahmaputra** river, one of Asia's largest, overflowed after days of relentless monsoon rain.",
+        "Several rivers remain **above the official danger mark**, keeping the risk of fresh flooding alive.",
+        "Large numbers of **livestock have died**, threatening rural livelihoods and raising disease risks."
       ],
-      "moot": "Even when two sides are negotiating a narrow, practical fix — like a safe shipping lane — the underlying conflict can keep escalating on a separate track. A tactical deal doesn't resolve the strategic standoff feeding it.",
-      "image_credit": "Al Jazeera",
+      "moot": "Annual, 'expected' disasters like monsoon flooding can still turn into major humanitarian crises once rainfall intensity crosses a threshold — preparedness reduces damage, but it doesn't eliminate it when the rain is severe enough.",
+      "image_credit": "AP via NPR member stations",
       "credibility": {
         "level": "confirmed",
         "count": 2,
         "tier": 1,
         "outlets": [
-          "Al Jazeera",
-          "U.S. News & World Report"
+          "ABC News",
+          "AP via NPR member stations"
         ],
         "corroboration": 0
       },
-      "thread": {
-        "previously": "We reported Iran and Oman had agreed on shipping-lane coordinates through the Strait of Hormuz, with a limited-access deal appearing close to completion.",
-        "changed": "Iran has now attached hard new preconditions — a lifted blockade on its ports, a full US troop withdrawal, dropped sanctions, and war damages — before it will fully reopen the strait, even as a missile hit a UAE oil tanker there over the weekend."
-      },
-      "concepts": [
-        "crude_geopolitics",
-        "strait_chokepoint",
-        "sanctions"
-      ],
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "The **Strait of Hormuz** is the narrow waterway between Iran and Oman that roughly a fifth of the world's oil and a big share of its liquefied natural gas passes through — making it one of the most important chokepoints in the global economy. Since the **US and Israel launched a war on Iran in February 2026**, Iran has periodically closed or restricted the strait and its forces have repeatedly struck commercial ships passing through it, including tankers belonging to **ADNOC**, Abu Dhabi's state oil company. Earlier this month Iran and Oman appeared to be closing in on an arrangement that would let some shipping resume under agreed coordinates, raising hopes the crisis could ease.",
-        "why_it_matters": "The Strait of Hormuz is a chokepoint for global energy supply, so every attack or hardened demand there feeds directly into oil prices and shipping-insurance costs worldwide, not just in the Gulf.",
-        "ripple_effects": "Continued attacks and a wider gap between the two sides' demands make a full reopening less likely soon, keeping a risk premium in oil markets and raising costs for insurers and shippers routing tankers through the strait. A prolonged standoff also complicates US-Iran diplomacy on every other front, from sanctions relief talks to regional ceasefires.",
-        "why_now": "The fresh missile strike on an ADNOC tanker over the weekend, combined with Iran's public escalation of its demands, marks a hardening of Tehran's position just as a narrower Oman-brokered deal looked close to done.",
-        "watch_next": "Whether the narrower Iran-Oman shipping arrangement is finalized despite Iran's broader demands to Washington remaining unmet.",
-        "market_link": "Renewed attacks and stalled Hormuz talks keep a geopolitical risk premium in crude oil (Brent/WTI) prices and push up tanker insurance costs.",
+        "background": "Assam, in India's northeast, sits along the Brahmaputra river system and floods almost every monsoon season (roughly June to September), though severity varies year to year with rainfall. This year's monsoon has brought unusually intense, sustained rain, pushing the Brahmaputra and its tributaries well past danger levels across the state. The state's disaster response is coordinated by the Assam State Disaster Management Authority (ASDMA), which tracks river levels and runs relief camps. Floods like this one are a near-annual test of India's disaster preparedness in one of its most flood-prone regions.",
+        "why_it_matters": "A death toll of 100 and displacement of hundreds of thousands makes this one of the more severe flood disasters India has faced this monsoon season, straining state resources and testing disaster-response infrastructure in a region that floods almost every year. It's also a reminder that shifts in monsoon intensity are making these 'routine' annual floods progressively more destructive.",
+        "ripple_effects": "Displaced families face the immediate risk of waterborne disease outbreaks in crowded relief camps, while destroyed crops and dead livestock threaten rural incomes for months to come. Damaged roads, bridges, and embankments will require costly state and central government reconstruction spending. Continued high river levels mean the disaster isn't over — any new heavy rainfall could reverse the recovery already underway.",
+        "why_now": "The toll crossed 100 on August 10 as two more deaths were confirmed overnight, marking a grim milestone in a flood crisis that has been building for days as monsoon rains intensified.",
+        "watch_next": "Watch river levels against the official danger mark over the coming days — if they rise again, the roughly 49,000 people still in relief camps could grow rather than shrink.",
+        "market_link": null,
         "key_terms": [
           {
-            "term": "Strait of Hormuz",
-            "definition": "A narrow sea passage between Iran and Oman that around a fifth of the world's oil shipments pass through — one of the most strategically important chokepoints in global trade."
-          },
-          {
-            "term": "IRGC (Revolutionary Guard Corps)",
-            "definition": "Iran's elite military force, separate from its regular armed forces, responsible for many of Iran's most aggressive military and naval operations."
+            "term": "Brahmaputra",
+            "definition": "One of Asia's largest rivers, flowing from Tibet through northeast India and into Bangladesh — its seasonal flooding shapes life across Assam every monsoon."
           }
         ],
         "sources": [
           {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2"
+            "name": "AP via NPR member stations",
+            "url": "https://www.wunc.org/2026-08-10/flood-death-toll-in-indias-assam-reaches-100-as-thousands-lose-their-homes"
           },
           {
-            "name": "U.S. News & World Report",
-            "url": "https://www.usnews.com/news/world/articles/2026-08-08/uae-says-iran-attacked-adnoc-vessel-with-missile-in-strait-of-hormuz"
+            "name": "ABC News",
+            "url": "https://abcnews.com/International/wireStory/flood-death-toll-indias-assam-reaches-100-135509962"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-20",
-      "rank": 20,
-      "category": "economy",
-      "published_iso": "2026-08-10T09:00:00-04:00",
-      "added_at": "2026-08-10T16:04:12+05:30",
-      "source": "CBC News",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
+      "is_new": true,
+      "published_iso": "2026-08-10T19:00:00+05:30",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "ANI News",
       "importance": "high",
       "regions": [
-        "US",
-        "Canada"
+        "India"
       ],
-      "title": "Canada races to strike a deal with Trump before a 50% tariff hits $20 billion of its exports on August 19",
-      "what_happened": "Trump's proclamation sets an additional **50% tariff** on a wide range of Canadian goods — far beyond alcohol, dairy and autos, stretching to wood products, chemicals, minerals, food and textiles — covering close to **$20 billion** in annual trade. It takes effect at one minute past midnight Eastern time on **August 19**. Canadian and US trade officials have been meeting in Washington, including in-person talks between top negotiators, and have agreed to **daily contact** at various levels until the deadline. Canada is reportedly prepared to end its provincial bans on American alcohol brands — a long-standing US complaint — in exchange for relief, and negotiators have revived an old proposal for Canada to accept **quotas** on how much steel and aluminum it ships to the US in return for lower tariffs on those metals. PM Mark Carney says talks now cover 'all strategic sectors,' including autos, but cautioned any deal still needs sign-off 'in the Oval Office.'",
+      "title": "Parliament passes bill letting government allow charges on UPI payments — Sitharaman says users pay nothing, Opposition unconvinced",
+      "what_happened": "Parliament passed the **Taxation and Other Laws (Amendment) Bill, 2026** — the Lok Sabha approved it the previous week, and the **Rajya Sabha cleared it on Monday evening, August 10**, after a brief but heated debate that saw the Opposition walk out. As a Money Bill, the Rajya Sabha could only suggest changes before sending it back to the Lok Sabha. Its most contested provision amends Section 10A of the Payment and Settlement Systems Act to let the central government permit banks and payment providers to levy charges on **UPI and other digital payment modes — a legal power that didn't exist before**. Finance Minister Nirmala Sitharaman told the House this is merely an 'enabling provision,' not an actual fee, and that any future decision on a Merchant Discount Rate (the fee a merchant pays a bank per transaction) would go through NPCI's UPI oversight committee, with consumers and small merchants continuing to pay nothing. Opposition MP Sanjay Singh directly rebutted her, calling the assurance 'contradictory and misleading' — noting she'd earlier floated a committee to decide 'how much tax' to charge traders — and alleged the bill was introduced under **pressure from the US**, whose government has reportedly wanted UPI monetized after Indians shifted away from Visa and Mastercard toward the free system. The bill separately includes unrelated tax breaks for data-centre services and incentives for the diamond-trading industry.",
       "key_points": [
-        "A new **50% US tariff** on roughly **$20 billion** of Canadian goods is due to hit at **12:01am on August 19**.",
-        "Trump invoked **Section 338**, a **1930s law never used this way before**, bypassing the normal tariff process.",
-        "The tariff applies even to goods that qualify under **USMCA**, the existing North America free-trade pact.",
-        "Canada is weighing **ending its bans on US alcohol sales** and a **steel/aluminum export-quota deal** to win relief.",
-        "Negotiators are holding **daily meetings** in Washington as the deadline approaches, PM **Mark Carney** says."
+        "The **Taxation and Other Laws (Amendment) Bill, 2026** cleared the Rajya Sabha on **August 10**, after the Lok Sabha passed it the week before.",
+        "It amends the payments law to let the government **permit banks and payment firms to charge fees on UPI** for the first time.",
+        "Finance Minister **Nirmala Sitharaman** called it only an 'enabling provision' and promised **no charges for consumers or small merchants**.",
+        "Opposition MP **Sanjay Singh** called her assurance 'contradictory and misleading' and alleged the bill came under **pressure from the US**.",
+        "The bill also adds tax breaks for **data-centre services** and incentives for the **diamond trade**."
       ],
-      "moot": "Trade agreements like USMCA set the normal rules, but a government can still reach for older, broader legal powers — like Section 338 here — to override them when it wants leverage fast. Treaties reduce risk; they don't eliminate it.",
-      "image_credit": "CBC News",
+      "moot": "A law can create the legal power to do something — like charge a fee — long before anyone actually uses that power, and the political fight often happens the moment the door opens, not the moment someone walks through it.",
+      "image_credit": "ANI News",
       "credibility": {
         "level": "developing",
         "count": 2,
         "tier": 2,
         "outlets": [
-          "CBC News",
-          "Washington Trade & Tariff Letter"
+          "ANI News",
+          "The Statesman"
         ],
         "corroboration": 0
       },
-      "concepts": [
-        "tariffs",
-        "supply_chain",
-        "currency_strength"
-      ],
+      "concepts": [],
       "figures": [],
       "depth": {
-        "background": "The US and Canada have been locked in an on-and-off trade fight for much of 2026, with Washington accusing Canada of unfairly favoring its own producers over American alcohol, dairy and auto exports. In July, President Trump signed proclamations invoking **Section 338 of the Tariff Act of 1930** — a rarely-used, decades-old law that lets a president slap tariffs of up to 50% on a country found to discriminate against US commerce. It has never been used this way in the modern tariff era. The **USMCA** (the US-Mexico-Canada trade deal that replaced NAFTA) was supposed to guarantee tariff-free trade on qualifying goods, but these new tariffs apply regardless.",
-        "why_it_matters": "This is one of the biggest tests yet of how far Washington will go in reshaping trade with its closest ally and largest single trading partner. A 50% tariff would hit thousands of Canadian businesses and could raise prices for American consumers on everything from lumber to whisky, since importers typically pass tariff costs on.",
-        "ripple_effects": "If the tariff lands, expect retaliatory measures from Ottawa, pressure on the Canadian dollar, and knock-on costs for US industries — construction, food and drink, autos — that rely on Canadian inputs. A last-minute deal, by contrast, would be read as a template for how the US resolves trade disputes with other allies facing similar tariff threats this year.",
-        "why_now": "The clock is ticking toward the **August 19** deadline set by Trump's July proclamation, forcing both sides into intensive, daily negotiations this week.",
-        "watch_next": "Whether Washington and Ottawa land an interim deal before the tariff automatically takes effect just after midnight on August 19.",
-        "market_link": "Canadian exporters of steel, aluminum, autos, lumber and dairy — and the Canadian dollar — are directly exposed; US importers and retailers of those goods face higher costs.",
+        "background": "UPI (Unified Payments Interface) is India's instant, phone-based payment system, run by the National Payments Corporation of India (NPCI), and has become the backbone of everyday digital payments across the country — from street vendors to online shopping — largely because it has always been **free** for users and merchants. That free-ness has also made UPI a competitive threat to card networks like Visa and Mastercard, whose merchant fees UPI undercuts entirely. Until now, the law governing digital payments had no clause explicitly allowing anyone to charge fees on UPI transactions. This new bill inserts that clause for the first time, even though the government insists it has no immediate plan to use it.",
+        "why_it_matters": "UPI processes billions of free transactions a month for ordinary Indians, so any legal opening — however described as merely 'enabling' — to eventually charge fees touches nearly everyone who uses a phone to pay for anything. It also reopens a years-long fight over who should bear the cost of running a payments network that succeeded partly because it was free.",
+        "ripple_effects": "If fees are ever actually introduced, small merchants and low-income users who rely on free UPI could see new costs, potentially pushing some back toward cash. Banks and payment companies, who have long argued UPI's zero-fee model is financially unsustainable for them, would benefit from a new revenue stream. The political fight also feeds into broader India-US trade tensions, if the Opposition's claim about US pressure gains traction.",
+        "why_now": "The bill moved through Parliament in its final pre-recess week, alongside other pending legislation like the FCRA bill, and its passage on August 10 immediately triggered the same kind of Opposition pushback seen on the government's other end-of-session bills.",
+        "watch_next": "Watch NPCI's UPI and Service Operations Committee for any future move to actually set a Merchant Discount Rate — that would be the real test of Sitharaman's 'no charges' promise.",
+        "market_link": "Watch UPI-linked fintech and payments stocks for any repricing on MDR speculation, and traditional card-network names for relief if UPI's cost advantage narrows.",
         "key_terms": [
           {
-            "term": "Section 338",
-            "definition": "A rarely-used 1930s US law that lets the president impose tariffs up to 50% on a country found to discriminate against American commerce — normally trade disputes go through slower, more structured processes."
+            "term": "UPI",
+            "definition": "Unified Payments Interface — India's free, instant, phone-based payment system run by NPCI, used for everything from paying street vendors to online shopping."
           },
           {
-            "term": "USMCA",
-            "definition": "The US-Mexico-Canada Agreement, the free-trade deal that replaced NAFTA in 2020 and was meant to guarantee mostly tariff-free trade between the three countries."
+            "term": "Merchant Discount Rate (MDR)",
+            "definition": "A small fee a merchant pays their bank for processing a digital payment — currently zero for UPI transactions in India."
+          },
+          {
+            "term": "Money Bill",
+            "definition": "A category of legislation dealing with taxes or government spending that only needs Lok Sabha approval to become law — the Rajya Sabha can only suggest changes, not block it."
           }
         ],
         "sources": [
           {
-            "name": "CBC News",
-            "url": "https://www.cbc.ca/news/politics/canada-u-s-trade-negotiations-9.7298137"
+            "name": "ANI News",
+            "url": "https://aninews.in/news/business/parliament-clears-taxation-and-other-laws-amendment-bill-sitharaman-says-no-upi-mdr-for-consumers-small-merchants20260810191208/"
           },
           {
-            "name": "Washington Trade & Tariff Letter",
-            "url": "https://www.wttlonline.com/stories/us-canada-trade-talks-intensify-as-50-tariff-deadline-approaches,15517"
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/parliament-clears-taxation-and-other-laws-amendment-bill-sitharaman-assures-no-upi-charges-for-users-small-merchants-1503626364.html"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-21",
-      "rank": 21,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-11T00:00:00Z",
       "added_at": "2026-08-11T12:07:11+05:30",
       "source": "Whalesbook",
@@ -1104,10 +1144,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "RBI steps in to defend the rupee as rising oil prices threaten to push it past 95.4/dollar",
@@ -1179,8 +1218,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-10T00:00:00+00:00",
       "added_at": "2026-08-11T09:58:51+05:30",
@@ -1244,8 +1283,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1318,8 +1357,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-11T09:15:00+05:30",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -1393,8 +1432,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T04:01:29+05:30",
@@ -1456,131 +1495,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
-      "category": "india",
-      "published_iso": "2026-08-09T00:00:00Z",
-      "added_at": "2026-08-11T02:00:38+05:30",
-      "source": "The Tribune",
-      "importance": "notable",
-      "regions": [
-        "India",
-        "United Kingdom"
-      ],
-      "title": "PM Modi honours India's 39-medal Commonwealth Games contingent, led by a record boxing haul",
-      "what_happened": "India's contingent of 122 athletes returned from Glasgow with **39 medals** — 13 gold, 17 silver and 9 bronze — placing the country **4th overall** in the medal table. **Boxing was the standout discipline**, delivering 10 of India's medals including seven golds, the most golds any country has ever won in boxing at one Commonwealth Games. Prime Minister Narendra Modi hosted the medal-winning athletes at his residence, congratulating them individually; among those present were weightlifter and Olympic champion Mirabai Chanu and boxer Lovlina Borgohain.",
-      "key_points": [
-        "India won **39 medals** — **13 gold, 17 silver, 9 bronze** — at the **2026 Commonwealth Games in Glasgow**, finishing **4th** in the medal table.",
-        "Just **122 athletes** competed across 8 able-bodied sports and 5 integrated para sports.",
-        "**Boxing led the medal count** with 10 medals, including a record **7 golds** — the most any nation has won in boxing at a single Commonwealth Games.",
-        "PM Modi met and honoured the medalists at his residence, including **Olympic champion Mirabai Chanu** and boxer **Lovlina Borgohain**."
-      ],
-      "moot": "A small, focused squad can outperform sheer numbers — India's 122-athlete contingent's medal count shows depth in a few disciplines (boxing especially) can matter more than breadth across many.",
-      "image_credit": "The Tribune",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Olympics.com",
-          "The Tribune"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The **Commonwealth Games** is a multi-sport event held every four years among countries of the former British Empire (the 'Commonwealth'), similar in spirit to a smaller Olympics. India has historically used it as a proving ground for athletes ahead of Olympic cycles, particularly in boxing, wrestling, weightlifting and badminton. The 2026 edition was hosted in **Glasgow, Scotland**.",
-        "why_it_matters": "The results, and boxing's record haul in particular, reinforce boxing as one of India's strongest Olympic-pipeline sports, with implications for funding and athlete support heading toward the next Olympics.",
-        "ripple_effects": "Expect increased government and corporate sponsorship attention on boxing and other medal-heavy disciplines, and continued use of these results in India's broader 'sporting superpower' narrative ahead of future Olympic cycles.",
-        "why_now": "PM Modi's felicitation of the contingent took place this weekend, shortly after the athletes' return from Glasgow.",
-        "watch_next": "How India's sports ministry allocates funding ahead of the next Olympic cycle, particularly to boxing.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "The Tribune",
-            "url": "https://www.tribuneindia.com/news/commonwealth-games/pm-narendra-modi-hails-indian-contingent-on-winning-39-medals-at-cwg-2026"
-          },
-          {
-            "name": "Olympics.com",
-            "url": "https://www.olympics.com/en/news/commonwealth-games-2026-india-medals-tally-winners-table-cwg"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-08-10T00:00:00Z",
-      "added_at": "2026-08-11T02:00:38+05:30",
-      "source": "Business Today",
-      "importance": "notable",
-      "regions": [
-        "India"
-      ],
-      "title": "Vande Mataram will be sung at the Red Fort before Modi's Independence Day speech for the first time — backed by a new law that criminalizes disrupting it",
-      "what_happened": "During the Monsoon Session, both houses of Parliament passed the **Prevention of Insults to National Honour (Amendment) Bill, 2026**, extending the 1971 Act's protections to Vande Mataram. Insulting it, or **deliberately preventing its singing**, is now a criminal offence carrying up to **three years' imprisonment**, a fine, or both — with repeat offenders facing a **mandatory minimum one-year sentence**. Alongside the legal change, the government has revised the Red Fort ceremony protocol for August 15: attendees will now **stand as Vande Mataram is performed**, ahead of the flag hoisting, national anthem, and PM's address — a first in the ceremony's sequence. The Defence Ministry's official invitations this year print the **full six stanzas** of the song.",
-      "key_points": [
-        "For the first time, **'Vande Mataram'** will be performed at the Red Fort before PM Modi's **Independence Day address** on August 15, with the crowd standing for it.",
-        "Parliament passed the **Prevention of Insults to National Honour (Amendment) Bill, 2026**, giving Vande Mataram the **same legal protection as the national anthem**.",
-        "Intentionally insulting or disrupting its rendition is now punishable by **up to 3 years in prison**, a fine, or both.",
-        "A **second or later conviction** carries a **minimum one-year jail term**.",
-        "Official invitation cards for this year's ceremony print **all six stanzas** so guests can follow along."
-      ],
-      "moot": "Turning a cultural symbol into a legal obligation changes its meaning — what was once voluntary reverence becomes enforceable, which can just as easily invite backlash as it does compliance.",
-      "image_credit": "Business Today",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 2,
-        "outlets": [
-          "Akashvani (All India Radio)",
-          "Business Today",
-          "PRS Legislative Research"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "parliament_india",
-        "rajya_sabha"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "'**Vande Mataram**' ('I bow to thee, Mother') is India's official **national song**, distinct from 'Jana Gana Mana', the **national anthem**. Written by Bankim Chandra Chattopadhyay and adopted around independence, it has long carried patriotic and, for some communities, religious-imagery baggage that made it a periodically contested symbol — some groups have objected to parts of its Sanskrit-heavy text on religious grounds, while others champion it as core to the freedom movement's legacy. Until now it enjoyed only symbolic status, without the same legal shield as the anthem under the **Prevention of Insults to National Honour Act, 1971**.",
-        "why_it_matters": "This elevates a historically contested cultural symbol into one now backed by criminal law, at a moment when questions of religious and national symbolism are politically sensitive in India. It also formally locks in a new, permanent addition to how the country's most-watched annual ceremony is run.",
-        "ripple_effects": "Expect debate over whether criminalizing 'insult' to a song with religious undertones could be used against minority communities or dissenters, echoing older objections to some Vande Mataram verses. Schools, government offices and public events may now face pressure to adopt similar observance, given the criminal penalty attached.",
-        "why_now": "The bill cleared Parliament during the ongoing Monsoon Session, timed to take effect before this year's August 15 Independence Day.",
-        "watch_next": "How the revised Red Fort ceremony plays out on August 15, and whether the new law is invoked in any real prosecution.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Vande Mataram",
-            "definition": "India's national song, distinct from the national anthem 'Jana Gana Mana', with roots in the independence movement."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Business Today",
-            "url": "https://www.businesstoday.in/india/story/historic-move-vande-mataram-to-echo-from-red-fort-before-pm-modis-independence-day-speech-548391-2026-08-10"
-          },
-          {
-            "name": "PRS Legislative Research",
-            "url": "https://prsindia.org/billtrack/the-prevention-of-insults-to-national-honour-amendment-bill-2026"
-          },
-          {
-            "name": "Akashvani (All India Radio)",
-            "url": "https://newsonair.gov.in/parliament-passes-bill-granting-vande-mataram-same-statutory-protection-as-national-anthem/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "published_iso": "2026-08-10T15:26:00+00:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -1643,8 +1559,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "published_iso": "2026-08-10T03:45:00+00:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -1703,8 +1619,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-08-10T03:45:00+00:00",
       "added_at": "2026-08-10T21:59:50+05:30",
@@ -1787,8 +1703,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1859,8 +1775,8 @@
     },
     {
       "type": "story",
-      "id": "story-36",
-      "rank": 36,
+      "id": "story-38",
+      "rank": 38,
       "category": "india",
       "published_iso": "2026-08-10T10:28:01+05:30",
       "added_at": "2026-08-10T16:04:12+05:30",
@@ -1922,8 +1838,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-40",
+      "rank": 40,
       "category": "india",
       "published_iso": "2026-08-10T11:00:00+05:30",
       "added_at": "2026-08-10T14:04:23+05:30",
@@ -1991,95 +1907,69 @@
     },
     {
       "type": "story",
-      "id": "story-40",
-      "rank": 40,
-      "category": "india",
-      "published_iso": "2026-08-10T09:15:00+05:30",
-      "added_at": "2026-08-10T12:14:18+05:30",
-      "source": "Chittorgarh",
+      "id": "story-61",
+      "rank": 61,
+      "category": "f1",
+      "is_new": true,
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "PlanetF1",
       "importance": "notable",
       "regions": [
-        "India"
+        "Formula 1"
       ],
-      "title": "Molbio Diagnostics opens its ₹940-crore IPO today, part of a mega week for India's IPO market",
-      "what_happened": "Molbio Diagnostics' initial public offering opened for subscription today, August 10, and will remain open through August 12, with a price band set between **₹768 and ₹807 per share**. The **₹940 crore** offering includes a ₹200 crore fresh issue — money that goes directly to the company — and a ₹739.7 crore offer-for-sale, where existing shareholders cash out part of their stake. The minimum retail investment is about ₹14,526 for a lot of 18 shares. Molbio's listing is one of **nine IPOs collectively worth close to ₹7,700 crore** opening this week, alongside firms like Dhoot Transmission, Milky Mist Dairy Food, e-commerce platform Shiprocket, and Behari Lal Engineering — making it one of the most crowded IPO weeks of 2026 for Indian markets. Allotment is expected around August 13, with listing tentatively scheduled for August 17.",
+      "title": "Leclerc demands Ferrari investigate wild swings in race pace, as Hamilton's influence behind the scenes grows",
+      "what_happened": "Charles Leclerc is publicly demanding Ferrari investigate why the SF-26 has shown such wildly inconsistent race pace, saying: **'out of the last three races, there were two races where we were expecting to struggle, and we finished first and second... in the race where we expected to do well, we finished fourth and fifth.'** Separately, former F1 driver and pundit Damon Hill said Lewis Hamilton's behind-the-scenes influence has been central to Ferrari's 2026 turnaround — Hamilton reportedly sent the technical team documents describing changes he wanted, which he describes as 'ideas' rather than 'orders,' and pushed Ferrari toward the **Carbon Industrie** brake supplier he used at Mercedes. Leclerc later switched to the same Carbon Industrie brakes himself, after blaming his previous Brembo brakes for his crash at Monaco.",
       "key_points": [
-        "Molbio Diagnostics' IPO opens today, **August 10**, and closes August 12, priced at **₹768–₹807 per share**.",
-        "The issue is worth **₹940 crore** — split between a **₹200 crore fresh issue** and a **₹739.7 crore offer-for-sale** by existing shareholders.",
-        "It's one of **nine IPOs worth ~₹7,700 crore** launching this week alone, one of India's busiest IPO weeks of the year.",
-        "Molbio makes point-of-care **molecular diagnostics** devices — the kind of rapid testing kit used for diseases like TB and COVID-19.",
-        "Listing is tentatively set for **August 17** on both the NSE and BSE."
+        "Charles Leclerc is demanding Ferrari **investigate its SF-26's inconsistent race pace** after wildly swinging results.",
+        "In the last three races, Ferrari finished **1st and 2nd** in two it expected to struggle in — then **4th and 5th** in one it expected to lead.",
+        "Ex-F1 driver Damon Hill says Lewis Hamilton has effectively **taken control** of Ferrari's technical direction behind the scenes.",
+        "Hamilton reportedly pushed Ferrari toward the **Carbon Industrie brake supplier** he used at Mercedes.",
+        "Leclerc later switched to the **same brakes** after blaming his old Brembo setup for his **Monaco crash**."
       ],
-      "moot": "Not all the money raised in an IPO goes to the company — always check the fresh-issue vs. offer-for-sale split, since a heavily OFS-weighted IPO means you're mostly buying out early investors, not funding new growth.",
-      "image_credit": "Chittorgarh",
+      "moot": "In any high-performance team, wildly inconsistent results usually point to something engineers don't yet understand about their own system — not luck. Diagnosing that root cause matters more than reacting to any single good or bad result.",
+      "image_credit": "PlanetF1",
       "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
+        "level": "confirmed",
+        "count": 1,
+        "tier": 1,
         "outlets": [
-          "Business Standard",
-          "Chittorgarh"
+          "PlanetF1"
         ],
         "corroboration": 0
       },
       "concepts": [],
-      "figures": [
-        {
-          "raw": "₹940 crore",
-          "words": "₹9.4 billion",
-          "usd_approx": "≈ $98mn"
-        },
-        {
-          "raw": "₹200 crore",
-          "words": "₹2 billion",
-          "usd_approx": "≈ $21mn"
-        },
-        {
-          "raw": "₹739.7 crore",
-          "words": "₹7.4 billion",
-          "usd_approx": "≈ $77mn"
-        },
-        {
-          "raw": "₹7,700 crore",
-          "words": "₹77 billion",
-          "usd_approx": "≈ $800mn"
-        }
-      ],
+      "figures": [],
       "depth": {
-        "background": "Molbio Diagnostics is an Indian molecular diagnostics company known for its **Truenat** platform — portable, battery-operated devices that can run PCR-style tests (the same lab technique used for COVID-19 testing) outside a traditional lab, including in rural clinics. India's IPO market has been unusually active through 2026, with strong retail and institutional demand pulling more companies to list, especially in healthcare, diagnostics, and consumer sectors where India's growing middle class is expanding the customer base. A fresh issue means the company raises new money for itself, while an offer-for-sale lets existing investors (like early-stage backers) sell some of their shares to the public.",
-        "why_it_matters": "A cluster of large IPOs launching together is a signal of confidence — both from companies (who choose to go public when they expect strong demand) and investors (who have enough capital and appetite to absorb ₹7,700 crore of new listings in a single week). Molbio specifically represents India's push to build homegrown diagnostic manufacturing rather than relying on imported testing equipment.",
-        "ripple_effects": "Heavy IPO weeks can temporarily pull liquidity away from existing listed stocks as investors park money in new applications, and a strong or weak reception for Molbio will be read as a bellwether for the diagnostics and healthcare-manufacturing IPO pipeline still to come. A successful listing could encourage more Indian medtech firms to go public rather than seek private funding or acquisition.",
-        "why_now": "The subscription window opened today as part of a coordinated wave of IPOs timed by multiple companies to catch the current bout of strong investor risk appetite in Indian equities.",
-        "watch_next": "Watch the subscription numbers over the next two days (through August 12) — how many times the retail, institutional, and high-net-worth portions get oversubscribed will signal how the stock is likely to debut on August 17.",
-        "market_link": "Direct listing event on NSE/BSE; a strong debut could lift sentiment across India's healthcare and diagnostics IPO pipeline.",
+        "background": "Ferrari's Formula 1 team has spent years trying to close the gap to Red Bull and Mercedes, and 2026 brought a major shake-up when seven-time champion Lewis Hamilton joined the team from Mercedes, pairing with Charles Leclerc, Ferrari's long-time lead driver. Hamilton is known not just for his driving but for the deep technical influence he built at Mercedes during his championship years there, working closely with engineers on car setup and development. How much input a driver should have over engineering decisions — versus deferring entirely to the technical team — is a long-running tension in F1, especially when a superstar driver joins a team with its own established way of doing things.",
+        "why_it_matters": "Unpredictable race-to-race performance is one of the hardest problems for an F1 team to fix, because it usually means engineers don't fully understand what's driving the car's behavior — making it much harder to develop consistently for the rest of the season. The Hamilton influence story also signals a real shift in Ferrari's internal power structure, with a driver shaping technical direction to a degree that could affect Leclerc's own standing and development priorities within the team.",
+        "ripple_effects": "If Ferrari can't diagnose the inconsistency, it risks losing ground in the constructors' championship fight during a season where every point matters. A growing perception that Hamilton is steering technical decisions could also affect team dynamics with Leclerc and how Ferrari balances development priorities between its two drivers for the rest of the season.",
+        "why_now": "Leclerc's comments and the Hamilton-influence reporting both surfaced today, during the F1 summer break between the Belgian Grand Prix and the upcoming Dutch Grand Prix at Zandvoort, when teams and drivers typically speak more openly to media about season-long frustrations.",
+        "watch_next": "Watch whether Ferrari's findings — and any resulting car changes — show up in results starting at the Dutch Grand Prix in Zandvoort.",
+        "market_link": null,
         "key_terms": [
           {
-            "term": "Offer-for-sale (OFS)",
-            "definition": "Part of an IPO where existing shareholders sell their own shares to the public, as opposed to the company issuing new shares — the money here goes to the sellers, not the company."
-          },
-          {
-            "term": "Price band",
-            "definition": "The range within which investors can bid for shares in an IPO; the final price is set based on demand within that range."
+            "term": "SF-26",
+            "definition": "Ferrari's 2026 Formula 1 car, named for the team and the season."
           }
         ],
         "sources": [
           {
-            "name": "Chittorgarh",
-            "url": "https://www.chittorgarh.com/ipo/molbio-diagnostics-ipo/2579/"
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/lewis-hamilton-ferrari-control-damon-hill-charles-leclerc-requests-investigation"
           },
           {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/amp/markets/news/five-companies-to-launch-ipos-next-week-to-raise-over-7-400-crore-126080900270_1.html"
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/charles-leclerc-ferrari-sf26-puzzling-form-investigation"
           }
         ]
       }
     },
     {
       "type": "story",
-      "id": "story-61",
-      "rank": 61,
+      "id": "story-62",
+      "rank": 62,
       "category": "f1",
-      "is_new": true,
       "development": true,
       "prev_ref": {
         "title": "Honda's upgraded engine for Aston Martin could add up to 50 extra horsepower when it debuts at the Dutch Grand Prix",
@@ -2136,10 +2026,9 @@
     },
     {
       "type": "story",
-      "id": "story-62",
-      "rank": 62,
+      "id": "story-63",
+      "rank": 63,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T12:07:11+05:30",
       "source": "RacingNews365",
@@ -2197,8 +2086,8 @@
     },
     {
       "type": "story",
-      "id": "story-63",
-      "rank": 63,
+      "id": "story-64",
+      "rank": 64,
       "category": "f1",
       "published_iso": "2026-08-10T00:00:00+00:00",
       "added_at": "2026-08-11T09:58:51+05:30",
@@ -2251,8 +2140,8 @@
     },
     {
       "type": "story",
-      "id": "story-64",
-      "rank": 64,
+      "id": "story-65",
+      "rank": 65,
       "category": "f1",
       "published_iso": "2026-08-10T00:00:00+00:00",
       "added_at": "2026-08-11T09:58:51+05:30",
@@ -2310,8 +2199,8 @@
     },
     {
       "type": "story",
-      "id": "story-65",
-      "rank": 65,
+      "id": "story-66",
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-10T10:00:00+01:00",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -2365,8 +2254,8 @@
     },
     {
       "type": "story",
-      "id": "story-66",
-      "rank": 66,
+      "id": "story-67",
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-10T12:00:00+00:00",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -2425,8 +2314,8 @@
     },
     {
       "type": "story",
-      "id": "story-67",
-      "rank": 67,
+      "id": "story-68",
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T04:01:29+05:30",
@@ -2485,68 +2374,8 @@
     },
     {
       "type": "story",
-      "id": "story-68",
-      "rank": 68,
-      "category": "f1",
-      "published_iso": "2026-08-08T00:00:00Z",
-      "added_at": "2026-08-11T04:01:29+05:30",
-      "source": "PlanetF1",
-      "importance": "notable",
-      "regions": [
-        "Global"
-      ],
-      "title": "Honda's upgraded engine for Aston Martin could add up to 50 extra horsepower when it debuts at the Dutch Grand Prix",
-      "what_happened": "Honda confirmed it has completed the 'last phase' of a major upgrade to the power unit it supplies Aston Martin, aimed primarily at the internal combustion engine and at reducing internal friction to free up extra performance. Reports across the paddock estimate the gain at somewhere between **30 horsepower** (Honda's own conservative framing) and **50-plus horsepower** (per paddock rumors), which would be a substantial mid-season jump in a sport where lap times are often decided by fractions of a second. The upgraded unit was fitted to Aston Martin's car for a filming day following the Hungarian Grand Prix in late July as an early, low-pressure shakedown, ahead of its real competitive debut at the **Dutch Grand Prix**, the first race back from F1's August summer break.",
-      "key_points": [
-        "Honda has finished developing a **B-spec power unit upgrade** for Aston Martin, focused on the internal combustion engine and reduced friction.",
-        "Paddock estimates put the gain at **30 to 50+ horsepower** — a significant jump mid-season.",
-        "The new engine was quietly tested in Aston Martin's car during a **post-Hungarian GP filming day**, before its real competitive debut.",
-        "It's set to race for the first time at the **Dutch Grand Prix** after F1's August summer shutdown.",
-        "Honda says the upgrade also targets **better reliability**, not just raw power."
-      ],
-      "moot": "In highly regulated competitions, small technical gains within the rules — not dramatic redesigns — are often what separates the front and back of the field.",
-      "image_credit": "PlanetF1",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Motorsport Week",
-          "PlanetF1"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "In Formula 1, teams don't build their own engines from scratch every year — most buy 'power units' from manufacturers like Honda, Mercedes, or Ferrari, and mid-season upgrades to those engines can meaningfully shift the competitive order without any change to the car's aerodynamics. **Aston Martin** switched to Honda power for the 2026 season as part of a broader realignment of engine partnerships. Since F1 introduced new engine regulations for 2026, teams have been racing to find performance gains within a tightly constrained rulebook, making even a modest horsepower increase like this one a big deal relative to rivals.",
-        "why_it_matters": "Aston Martin has struggled with a car that hasn't matched its ambitions this season; a genuine 30-50bhp gain from its engine supplier could meaningfully close the gap to faster rivals for the remainder of 2026, independent of any chassis development.",
-        "ripple_effects": "A stronger Honda power unit doesn't just help Aston Martin — it raises pressure on rival engine manufacturers (Mercedes, Ferrari, Red Bull's own unit) to respond with their own updates, and could reshuffle the midfield order heading into the season's final third.",
-        "why_now": "The upgrade was timed to debut right as F1 resumes after its mandatory August shutdown, giving Aston Martin a fresh boost for the remaining races.",
-        "watch_next": "Aston Martin's actual pace at the Dutch Grand Prix once the upgraded engine is raced competitively for the first time.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "power unit",
-            "definition": "F1's term for the full hybrid engine package — the combustion engine plus electric motors and battery — that teams buy from manufacturers like Honda or Ferrari rather than building themselves."
-          }
-        ],
-        "sources": [
-          {
-            "name": "PlanetF1",
-            "url": "https://www.planetf1.com/news/honda-aston-martin-engine-upgrade"
-          },
-          {
-            "name": "Motorsport Week",
-            "url": "https://www.motorsportweek.com/2026/07/29/aston-martin-honda-upgrade-f1-testing/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-71",
-      "rank": 71,
+      "id": "story-72",
+      "rank": 72,
       "category": "f1",
       "published_iso": "2026-08-10T08:30:00+00:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -2600,8 +2429,8 @@
     },
     {
       "type": "story",
-      "id": "story-72",
-      "rank": 72,
+      "id": "story-73",
+      "rank": 73,
       "category": "f1",
       "published_iso": "2026-08-10T10:00:00+00:00",
       "added_at": "2026-08-10T21:59:50+05:30",
@@ -2656,8 +2485,8 @@
     },
     {
       "type": "story",
-      "id": "story-73",
-      "rank": 73,
+      "id": "story-74",
+      "rank": 74,
       "category": "f1",
       "published_iso": "2026-08-10T08:00:00+00:00",
       "added_at": "2026-08-10T21:59:50+05:30",
@@ -2712,8 +2541,8 @@
     },
     {
       "type": "story",
-      "id": "story-76",
-      "rank": 76,
+      "id": "story-77",
+      "rank": 77,
       "category": "f1",
       "published_iso": "2026-08-10T09:00:00+00:00",
       "added_at": "2026-08-10T18:20:20+05:30",
@@ -2777,6 +2606,71 @@
       "rank": 41,
       "category": "cricket",
       "is_new": true,
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "Female Cricket",
+      "importance": "notable",
+      "regions": [
+        "Papua New Guinea",
+        "Thailand"
+      ],
+      "title": "PNG Women win last-ball thriller over Thailand to take 1-0 T20I series lead",
+      "what_happened": "Papua New Guinea Women beat Thailand Women by **5 wickets** in the first T20I of their two-match series at Port Moresby on August 10, chasing down Thailand's total of **109/5** with the winning run coming off the **very last ball** of the innings, finishing on 110/5 in 20 overs. Thailand's innings was built around contributions from **Phannita Maya (35)** and **Nannapat Koncharoenkai (30)**. For PNG, bowler **Isabel Toua** was named Player of the Match after taking **3 wickets for just 13 runs**, helping restrict Thailand's total and setting up the tight chase. The win puts PNG **1-0 up** in the two-match series.",
+      "key_points": [
+        "Papua New Guinea Women beat Thailand Women by **5 wickets**, winning off the **very last ball** of the innings.",
+        "PNG chased down Thailand's **109/5** to finish **110/5 in 20 overs**.",
+        "Thailand's top scorers were **Phannita Maya (35)** and **Nannapat Koncharoenkai (30)**.",
+        "PNG's **Isabel Toua** was Player of the Match, taking **3 wickets for 13 runs**.",
+        "The result puts PNG **1-0 up** in the two-match T20I series."
+      ],
+      "moot": "Close, last-ball finishes aren't unique to the sport's biggest teams — they're a sign that a contest, at any level, has real, high-quality competition on both sides.",
+      "image_credit": "Female Cricket",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "ESPNcricinfo",
+          "Female Cricket"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Papua New Guinea and Thailand are both associate cricket nations — countries where cricket is growing but not yet at the top international tier of teams like India, Australia, or England. Women's cricket in these associate nations has been expanding steadily, with more bilateral series and World Cup qualifying pathways giving teams like PNG and Thailand regular competitive cricket. This two-match T20I series in Port Moresby, PNG's capital, is part of that growing associate-nation cricket calendar.",
+        "why_it_matters": "For associate cricket nations like PNG and Thailand, every close, competitive match like this builds the case for more funding, fixtures, and visibility for women's cricket outside the sport's traditional powerhouses. A last-ball finish is also a reminder that associate cricket produces genuine drama, not just development games.",
+        "ripple_effects": "A series win for PNG would boost their standing and momentum heading into future qualifying tournaments for global events. Strong performances by both teams help build the case for more regular fixtures against higher-ranked nations, which is how associate teams typically improve fastest.",
+        "why_now": "The match was the first of a fresh two-match bilateral series that just got underway in Port Moresby, with the series decider still to come.",
+        "watch_next": "Watch the second and final T20I of the series for whether PNG completes a series sweep or Thailand levels it.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "T20I",
+            "definition": "Twenty20 International — the shortest official cricket format between national teams, with each side batting for a maximum of 20 overs."
+          },
+          {
+            "term": "Associate nation",
+            "definition": "A cricket-playing country, like PNG or Thailand, that is a full member of the ICC but not yet in the sport's top competitive tier."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Female Cricket",
+            "url": "https://femalecricket.com/thailand-women-tour-of-papua-new-guinea-2026/95258-png-women-edge-thailand-in-last-ball-thriller-to-take-1-0-t20i-series-lead.html"
+          },
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/series/thailand-women-in-papua-new-guinea-2026-1549184/papua-new-guinea-women-vs-thailand-women-1st-t20i-1549208/full-scorecard"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
       "development": true,
       "prev_ref": {
         "title": "Trent Rockets Women can seal top spot as The Hundred's group stage wraps up against Southern Brave",
@@ -2838,8 +2732,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-43",
+      "rank": 43,
       "category": "cricket",
       "published_iso": "2026-08-10T00:00:00+00:00",
       "added_at": "2026-08-11T09:58:51+05:30",
@@ -2893,8 +2787,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-08-10T22:00:00+01:00",
       "added_at": "2026-08-11T08:01:56+05:30",
@@ -2948,8 +2842,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T04:01:29+05:30",
@@ -3013,8 +2907,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3078,8 +2972,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-10T00:00:00Z",
       "added_at": "2026-08-11T02:00:38+05:30",
@@ -3138,8 +3032,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-08-10T13:41:03+00:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -3188,8 +3082,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-08-10T12:30:00+00:00",
       "added_at": "2026-08-11T00:01:29+05:30",
@@ -3238,8 +3132,8 @@
     },
     {
       "type": "story",
-      "id": "story-50",
-      "rank": 50,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -3303,8 +3197,8 @@
     },
     {
       "type": "story",
-      "id": "story-51",
-      "rank": 51,
+      "id": "story-52",
+      "rank": 52,
       "category": "cricket",
       "published_iso": "2026-08-10T14:00:00+01:00",
       "added_at": "2026-08-10T18:20:20+05:30",
@@ -3367,63 +3261,8 @@
     },
     {
       "type": "story",
-      "id": "story-52",
-      "rank": 52,
-      "category": "cricket",
-      "published_iso": "2026-08-09T22:00:00-04:00",
-      "added_at": "2026-08-10T14:04:23+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "Caribbean",
-        "West Indies"
-      ],
-      "title": "St Lucia Kings survive a last-over scare to beat Antigua & Barbuda Falcons by 4 runs in the Caribbean Premier League",
-      "what_happened": "Playing in Kingstown on Sunday night, August 9, **St Lucia Kings posted 187 for 8**, anchored by an **82-run innings from Andries Gous**, with Falcons bowler Alzarri Joseph taking 3 for 32. Chasing 188 to win, the Falcons — led by **Evin Lewis (48)**, with useful support from Tajinder Robinson (30) and an unbeaten 28 from Fabian Allen — kept the match alive deep into the final over, needing **13 runs off the last six balls**. ESPNcricinfo's live win predictor had swung as high as **90% in the Falcons' favour** mid-chase before Kings bowler **Matthew Forde held his nerve**, conceding just 8 runs in the final over to seal a **4-run win** for St Lucia Kings.",
-      "key_points": [
-        "St Lucia Kings posted **187 for 8**, built around an **82-run innings from Andries Gous**.",
-        "Chasing 188, the Falcons needed just **13 runs off the final over**.",
-        "ESPNcricinfo's live win predictor had swung to **90% in the Falcons' favour** mid-chase.",
-        "Bowler **Matthew Forde** held his nerve, conceding just 8 runs in the last over to seal the win."
-      ],
-      "moot": "In T20 cricket, a match that looks 90% decided can flip within a handful of overs — win-probability models describe the situation in the moment, they don't decide the outcome.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "The Caribbean Premier League (CPL) is the Caribbean's top Twenty20 (20-overs-a-side) franchise cricket tournament, running from early August to late September 2026 and featuring current West Indies internationals alongside overseas stars. St Lucia Kings and the Antigua and Barbuda Falcons are two of the league's six franchises, both looking for an early-season statement result.",
-        "why_it_matters": "It's an early form statement for both franchises in a tightly contested six-team league, and a vivid reminder of how fast win-probability can swing in T20 cricket's final overs.",
-        "ripple_effects": "The result shapes the early CPL points table, and strong individual performances from Gous, Joseph and Forde feed into the broader conversation around West Indies white-ball team selection.",
-        "why_now": "This was the tournament's third match of the 2026 CPL season, played over the weekend as the competition got underway.",
-        "watch_next": "How both franchises perform as the CPL group stage continues through late August.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Win predictor",
-            "definition": "A live statistical tool used in cricket broadcasts that estimates each team's chance of winning based on the current match situation — a snapshot of probability, not a forecast of the result."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/series/caribbean-premier-league-2026-1534175/antigua-and-barbuda-falcons-vs-st-lucia-kings-3rd-match-1534181/match-report"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-53",
-      "rank": 53,
+      "id": "story-54",
+      "rank": 54,
       "category": "cricket",
       "published_iso": "2026-08-10T15:30:00+01:00",
       "added_at": "2026-08-10T12:14:18+05:30",
@@ -3483,8 +3322,8 @@
     },
     {
       "type": "story",
-      "id": "story-54",
-      "rank": 54,
+      "id": "story-55",
+      "rank": 55,
       "category": "cricket",
       "published_iso": "2026-08-10T21:00:00+01:00",
       "added_at": "2026-08-10T09:59:57+05:30",
@@ -3539,8 +3378,8 @@
     },
     {
       "type": "story",
-      "id": "story-56",
-      "rank": 56,
+      "id": "story-57",
+      "rank": 57,
       "category": "cricket",
       "published_iso": "2026-08-10T09:45:00+01:00",
       "added_at": "2026-08-10T08:04:36+05:30",
@@ -3598,28 +3437,28 @@
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 131
+      "older_count": 132
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 128
+      "older_count": 129
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 99
+      "older_count": 100
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 86
+      "older_count": 85
     },
     {
       "type": "outro",

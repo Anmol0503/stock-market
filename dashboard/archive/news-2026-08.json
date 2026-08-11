@@ -1,6 +1,6 @@
 {
   "month": "2026-08",
-  "count": 715,
+  "count": 721,
   "stories": [
     {
       "type": "story",
@@ -67,6 +67,60 @@
       "prev_ref": {
         "title": "RBI steps in to defend the rupee as rising oil prices threaten to push it past 95.4/dollar",
         "date": null
+      }
+    },
+    {
+      "type": "story",
+      "title": "Hackers used a hijacked private cellular network to sabotage a second Polish power plant",
+      "category": "technology",
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "Help Net Security / CERT Polska",
+      "what_happened": "CERT Polska published a follow-up report revealing that attackers first broke into a wind farm's internet-exposed **Fortinet VPN/firewall device** — equipment meant to let remote staff securely log in. From there, they used a cellular router (a Teltonika device) to tunnel via SSH into the electricity distribution operator's **private APN** — a dedicated mobile network utilities use to remotely manage grid equipment, normally isolated from the public internet. Once inside, the attackers moved laterally into the heating plant's operational-technology network and targeted a **Wago programmable logic controller (PLC)** — the industrial computer that directly controls physical equipment. CERT Polska says the root cause was a common misconfiguration letting any device inside a private APN talk to any other device on it, meaning many other utilities — in Poland and beyond — could share the same weakness.",
+      "key_points": [
+        "Poland's national cyber authority, **CERT Polska**, revealed a previously undisclosed **December 2025** attack on a heating plant serving **50,000 residents**.",
+        "Attackers pivoted through a wind farm's **VPN firewall**, then a cellular router, into the utility's **private mobile network (APN)** to reach the plant's control systems.",
+        "It's the first documented attack of its kind against European energy infrastructure — a technique never seen before.",
+        "CERT Polska says the underlying misconfiguration is **common across Poland and likely used internationally**.",
+        "The full investigation took **over three months**, which is why it wasn't in the original report on Poland's wave of energy-sector attacks."
+      ],
+      "depth": {
+        "background": "In late 2025, Poland's wind, solar, and heating infrastructure was hit by a wave of coordinated cyberattacks, which CERT Polska — Poland's national Computer Emergency Response Team, the government body that investigates and discloses major cyber incidents — reported on at the time. What's new today is a deep-dive follow-up on one specific incident left out of that first report because it took **three months to fully analyze**: a December 29, 2025 attack on a combined heat and power (CHP) plant supplying heating to about **50,000 people**. The attack used a genuinely novel path into the plant's industrial control systems — the computers that physically operate equipment like valves and generators — that security researchers hadn't documented before.",
+        "sources": [
+          {
+            "name": "Help Net Security / CERT Polska",
+            "url": "https://www.helpnetsecurity.com/2026/08/11/poland-energy-sector-cyberattack-heating-plant-private-apn/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Leclerc demands Ferrari investigate wild swings in race pace, as Hamilton's influence behind the scenes grows",
+      "category": "f1",
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "PlanetF1",
+      "what_happened": "Charles Leclerc is publicly demanding Ferrari investigate why the SF-26 has shown such wildly inconsistent race pace, saying: **'out of the last three races, there were two races where we were expecting to struggle, and we finished first and second... in the race where we expected to do well, we finished fourth and fifth.'** Separately, former F1 driver and pundit Damon Hill said Lewis Hamilton's behind-the-scenes influence has been central to Ferrari's 2026 turnaround — Hamilton reportedly sent the technical team documents describing changes he wanted, which he describes as 'ideas' rather than 'orders,' and pushed Ferrari toward the **Carbon Industrie** brake supplier he used at Mercedes. Leclerc later switched to the same Carbon Industrie brakes himself, after blaming his previous Brembo brakes for his crash at Monaco.",
+      "key_points": [
+        "Charles Leclerc is demanding Ferrari **investigate its SF-26's inconsistent race pace** after wildly swinging results.",
+        "In the last three races, Ferrari finished **1st and 2nd** in two it expected to struggle in — then **4th and 5th** in one it expected to lead.",
+        "Ex-F1 driver Damon Hill says Lewis Hamilton has effectively **taken control** of Ferrari's technical direction behind the scenes.",
+        "Hamilton reportedly pushed Ferrari toward the **Carbon Industrie brake supplier** he used at Mercedes.",
+        "Leclerc later switched to the **same brakes** after blaming his old Brembo setup for his **Monaco crash**."
+      ],
+      "depth": {
+        "background": "Ferrari's Formula 1 team has spent years trying to close the gap to Red Bull and Mercedes, and 2026 brought a major shake-up when seven-time champion Lewis Hamilton joined the team from Mercedes, pairing with Charles Leclerc, Ferrari's long-time lead driver. Hamilton is known not just for his driving but for the deep technical influence he built at Mercedes during his championship years there, working closely with engineers on car setup and development. How much input a driver should have over engineering decisions — versus deferring entirely to the technical team — is a long-running tension in F1, especially when a superstar driver joins a team with its own established way of doing things.",
+        "sources": [
+          {
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/lewis-hamilton-ferrari-control-damon-hill-charles-leclerc-requests-investigation"
+          },
+          {
+            "name": "PlanetF1",
+            "url": "https://www.planetf1.com/news/charles-leclerc-ferrari-sf26-puzzling-form-investigation"
+          }
+        ]
       }
     },
     {
@@ -169,6 +223,35 @@
           {
             "name": "Sky Sports",
             "url": "https://www.skysports.com/cricket/trent-rockets-men-v-southern-brave-men/scorecard/441164d0-89bb-57f3-a8e5-33af120e096c"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Parliament passes bill letting government allow charges on UPI payments — Sitharaman says users pay nothing, Opposition unconvinced",
+      "category": "india",
+      "published_iso": "2026-08-10T19:00:00+05:30",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "ANI News",
+      "what_happened": "Parliament passed the **Taxation and Other Laws (Amendment) Bill, 2026** — the Lok Sabha approved it the previous week, and the **Rajya Sabha cleared it on Monday evening, August 10**, after a brief but heated debate that saw the Opposition walk out. As a Money Bill, the Rajya Sabha could only suggest changes before sending it back to the Lok Sabha. Its most contested provision amends Section 10A of the Payment and Settlement Systems Act to let the central government permit banks and payment providers to levy charges on **UPI and other digital payment modes — a legal power that didn't exist before**. Finance Minister Nirmala Sitharaman told the House this is merely an 'enabling provision,' not an actual fee, and that any future decision on a Merchant Discount Rate (the fee a merchant pays a bank per transaction) would go through NPCI's UPI oversight committee, with consumers and small merchants continuing to pay nothing. Opposition MP Sanjay Singh directly rebutted her, calling the assurance 'contradictory and misleading' — noting she'd earlier floated a committee to decide 'how much tax' to charge traders — and alleged the bill was introduced under **pressure from the US**, whose government has reportedly wanted UPI monetized after Indians shifted away from Visa and Mastercard toward the free system. The bill separately includes unrelated tax breaks for data-centre services and incentives for the diamond-trading industry.",
+      "key_points": [
+        "The **Taxation and Other Laws (Amendment) Bill, 2026** cleared the Rajya Sabha on **August 10**, after the Lok Sabha passed it the week before.",
+        "It amends the payments law to let the government **permit banks and payment firms to charge fees on UPI** for the first time.",
+        "Finance Minister **Nirmala Sitharaman** called it only an 'enabling provision' and promised **no charges for consumers or small merchants**.",
+        "Opposition MP **Sanjay Singh** called her assurance 'contradictory and misleading' and alleged the bill came under **pressure from the US**.",
+        "The bill also adds tax breaks for **data-centre services** and incentives for the **diamond trade**."
+      ],
+      "depth": {
+        "background": "UPI (Unified Payments Interface) is India's instant, phone-based payment system, run by the National Payments Corporation of India (NPCI), and has become the backbone of everyday digital payments across the country — from street vendors to online shopping — largely because it has always been **free** for users and merchants. That free-ness has also made UPI a competitive threat to card networks like Visa and Mastercard, whose merchant fees UPI undercuts entirely. Until now, the law governing digital payments had no clause explicitly allowing anyone to charge fees on UPI transactions. This new bill inserts that clause for the first time, even though the government insists it has no immediate plan to use it.",
+        "sources": [
+          {
+            "name": "ANI News",
+            "url": "https://aninews.in/news/business/parliament-clears-taxation-and-other-laws-amendment-bill-sitharaman-says-no-upi-mdr-for-consumers-small-merchants20260810191208/"
+          },
+          {
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/parliament-clears-taxation-and-other-laws-amendment-bill-sitharaman-assures-no-upi-charges-for-users-small-merchants-1503626364.html"
           }
         ]
       }
@@ -1161,6 +1244,89 @@
           {
             "name": "PlanetF1",
             "url": "https://www.planetf1.com/news/oscar-piastri-mclaren-number-two-david-croft"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "WHO reveals Congo's record-fast Ebola outbreak began three months before it was declared",
+      "category": "health",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "PBS NewsHour / AP",
+      "what_happened": "The World Health Organization said genomic sequencing shows the Democratic Republic of Congo's current Ebola outbreak actually began around **February 2026**, roughly **three months before** it was officially declared in mid-May. Some of the earliest cases were **misdiagnosed as malaria or typhoid**, delaying detection and letting the virus spread undetected through Ituri province. One unpublished analysis suggests the true start may have been even earlier, in January, near the town of Mongbwalu. The outbreak — caused by the rare **Bundibugyo strain**, for which there is no approved vaccine or treatment — has now passed **4,200 confirmed cases and 1,900+ deaths**, making it the fastest-growing and second-largest Ebola outbreak ever recorded. WHO Director-General Tedros Adhanom Ghebreyesus warned the response is being **'outpaced'** by the virus's spread, a problem compounded by an ongoing aid-worker pay strike and active armed conflict in the region.",
+      "key_points": [
+        "Genomic sequencing shows the outbreak actually started around **February 2026** — three months before its **mid-May declaration**.",
+        "Early cases were **misdiagnosed as malaria or typhoid**, letting the virus spread undetected through Ituri province.",
+        "The rare **Bundibugyo strain** has no approved vaccine or treatment.",
+        "The outbreak has passed **4,200 confirmed cases** and **1,900+ deaths** — already the fastest-growing Ebola outbreak on record.",
+        "WHO chief Tedros says the response is being **'outpaced'** by the virus, worsened by an aid-worker pay strike and armed conflict."
+      ],
+      "depth": {
+        "background": "Ebola is a viral hemorrhagic fever that kills a large share of the people it infects, spread through contact with the bodily fluids of the sick or dead. The Democratic Republic of Congo has weathered more Ebola outbreaks than any other country, including the **2018-2020 outbreak** in this same eastern region that killed over 2,200 people. This outbreak is centered in Ituri province, an area also gripped by armed conflict involving multiple militia groups, which makes contact-tracing and treatment access far harder. The World Health Organization (WHO) declared this outbreak in **mid-May 2026**, but new genomic sequencing — a lab technique that reads the virus's genetic code to estimate how long it has been spreading — now shows it was already circulating for months before anyone noticed.",
+        "sources": [
+          {
+            "name": "PBS NewsHour / AP",
+            "url": "https://www.pbs.org/newshour/health/congos-fast-moving-ebola-outbreak-started-month-before-it-was-declared-who-says"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Assam flood death toll hits 100 as nearly 300,000 people crowd into relief camps",
+      "category": "india",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "AP via NPR member stations",
+      "what_happened": "The death toll from Assam's ongoing floods reached **100** on Monday, August 10, after two more people died overnight. Days of relentless monsoon rain caused the **Brahmaputra** — which flows roughly 900 km through Assam — and other rivers to overflow, inundating villages, sweeping away homes, and forcing nearly **300,000 people** into government-run relief camps at the crisis's peak. About **49,000 people remain** in **125 relief camps and distribution centers**, even as floodwaters recede in some areas and residents begin returning home. Several rivers remain above the official danger mark, according to ASDMA, meaning the risk of fresh flooding hasn't passed. The floods have also killed large numbers of livestock, hurting rural livelihoods and raising fears of disease outbreaks in the affected areas.",
+      "key_points": [
+        "The death toll in Assam's floods reached **100** after two more deaths overnight on **August 10**.",
+        "Nearly **300,000 people** were forced into relief camps at the crisis's peak; about **49,000 remain** across **125 camps**.",
+        "The **Brahmaputra** river, one of Asia's largest, overflowed after days of relentless monsoon rain.",
+        "Several rivers remain **above the official danger mark**, keeping the risk of fresh flooding alive.",
+        "Large numbers of **livestock have died**, threatening rural livelihoods and raising disease risks."
+      ],
+      "depth": {
+        "background": "Assam, in India's northeast, sits along the Brahmaputra river system and floods almost every monsoon season (roughly June to September), though severity varies year to year with rainfall. This year's monsoon has brought unusually intense, sustained rain, pushing the Brahmaputra and its tributaries well past danger levels across the state. The state's disaster response is coordinated by the Assam State Disaster Management Authority (ASDMA), which tracks river levels and runs relief camps. Floods like this one are a near-annual test of India's disaster preparedness in one of its most flood-prone regions.",
+        "sources": [
+          {
+            "name": "AP via NPR member stations",
+            "url": "https://www.wunc.org/2026-08-10/flood-death-toll-in-indias-assam-reaches-100-as-thousands-lose-their-homes"
+          },
+          {
+            "name": "ABC News",
+            "url": "https://abcnews.com/International/wireStory/flood-death-toll-indias-assam-reaches-100-135509962"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "PNG Women win last-ball thriller over Thailand to take 1-0 T20I series lead",
+      "category": "cricket",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-11T14:02:50+05:30",
+      "source": "Female Cricket",
+      "what_happened": "Papua New Guinea Women beat Thailand Women by **5 wickets** in the first T20I of their two-match series at Port Moresby on August 10, chasing down Thailand's total of **109/5** with the winning run coming off the **very last ball** of the innings, finishing on 110/5 in 20 overs. Thailand's innings was built around contributions from **Phannita Maya (35)** and **Nannapat Koncharoenkai (30)**. For PNG, bowler **Isabel Toua** was named Player of the Match after taking **3 wickets for just 13 runs**, helping restrict Thailand's total and setting up the tight chase. The win puts PNG **1-0 up** in the two-match series.",
+      "key_points": [
+        "Papua New Guinea Women beat Thailand Women by **5 wickets**, winning off the **very last ball** of the innings.",
+        "PNG chased down Thailand's **109/5** to finish **110/5 in 20 overs**.",
+        "Thailand's top scorers were **Phannita Maya (35)** and **Nannapat Koncharoenkai (30)**.",
+        "PNG's **Isabel Toua** was Player of the Match, taking **3 wickets for 13 runs**.",
+        "The result puts PNG **1-0 up** in the two-match T20I series."
+      ],
+      "depth": {
+        "background": "Papua New Guinea and Thailand are both associate cricket nations — countries where cricket is growing but not yet at the top international tier of teams like India, Australia, or England. Women's cricket in these associate nations has been expanding steadily, with more bilateral series and World Cup qualifying pathways giving teams like PNG and Thailand regular competitive cricket. This two-match T20I series in Port Moresby, PNG's capital, is part of that growing associate-nation cricket calendar.",
+        "sources": [
+          {
+            "name": "Female Cricket",
+            "url": "https://femalecricket.com/thailand-women-tour-of-papua-new-guinea-2026/95258-png-women-edge-thailand-in-last-ball-thriller-to-take-1-0-t20i-series-lead.html"
+          },
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/series/thailand-women-in-papua-new-guinea-2026-1549184/papua-new-guinea-women-vs-thailand-women-1st-t20i-1549208/full-scorecard"
           }
         ]
       }
