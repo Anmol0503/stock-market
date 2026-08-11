@@ -1,9 +1,112 @@
 {
   "date": "2026-08-11",
-  "generated_at": "2026-08-11T09:58:51+05:30",
+  "generated_at": "2026-08-11T12:07:11+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "region": "global",
+      "category": "technology",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "regions": [
+        "United States",
+        "Global"
+      ],
+      "title": "OpenAI launches GPT-5.6-Cyber, its first AI model built for offensive cybersecurity work",
+      "key_points": [
+        "New 'Daybreak Red' tier unlocks **GPT-5.6-Cyber**, trained for offensive security tasks",
+        "The model completed **95% of advanced exploit tasks**, versus just **1.5-2%** for the standard model",
+        "Used to find **two unknown Chrome V8 vulnerabilities** that could escape the browser's sandbox",
+        "First OpenAI model to hit the **'High' risk tier**, just below 'Critical'",
+        "Mandatory **hardware security keys** required for all Daybreak accounts from September 1"
+      ],
+      "background": "AI models have gotten steadily better at finding software vulnerabilities, forcing labs to decide how much of that capability to expose \u2014 the same skill that finds a bug to fix it can find one to exploit it. OpenAI grades models by real-world risk under its **'Preparedness Framework'**, with tiers running from low up to 'critical.' This is the first OpenAI model to hit the **'High'** tier, one step below the 'Critical' tier that led OpenAI to pause a separate model, 'Astra,' just a week earlier.",
+      "what_happened": "OpenAI split its 'Daybreak' cybersecurity program into two tiers: **'Daybreak Blue'**, for vetted defensive work like vulnerability detection and incident response, and **'Daybreak Red'**, which unlocks **GPT-5.6-Cyber** \u2014 a model built specifically for offensive security tasks like chaining exploits and bypassing authentication. GPT-5.6-Cyber completed **95%** of advanced security tasks in testing, compared with just 1.5-2% for the standard GPT-5.6 model under normal safeguards. OpenAI says it used the new model to find **two previously unknown vulnerabilities in Chrome's V8 engine** that could be chained together to corrupt memory and escape the browser's security sandbox. Because of the model's power, OpenAI is making hardware security keys mandatory for every Daybreak account starting September 1.",
+      "why_it_matters": "This is one of the clearest moments yet of a major AI lab deliberately building and releasing a model whose job is offensive hacking, betting that defenders need the same tools attackers already have.",
+      "ripple_effects": "Security teams gain a powerful new vulnerability-hunting tool, but the same capability could accelerate real cyberattacks if it leaks or is misused \u2014 expect scrutiny from regulators and rival labs on whether safeguards like mandatory hardware keys actually hold.",
+      "why_now": "AI-enabled cyberattacks have been rising, and OpenAI is positioning this as arming defenders with the same capability before attackers get there first.",
+      "watch_next": "Whether Daybreak Red access stays limited to vetted researchers, and whether rival AI labs release their own offensive-security models in response.",
+      "key_terms": [
+        {
+          "term": "Preparedness Framework",
+          "definition": "OpenAI's internal system for rating how much real-world risk a model's capabilities pose, used to decide what safeguards apply before release."
+        },
+        {
+          "term": "Sandbox escape",
+          "definition": "When a program breaks out of the isolated, restricted environment it's supposed to run in, gaining broader access to the underlying system."
+        }
+      ],
+      "the_lesson": "The same AI capability can be a defensive tool or an offensive weapon depending on who has access \u2014 which is why AI labs increasingly gate their most powerful features behind identity checks, not just technical limits.",
+      "concepts": [],
+      "market_link": "Cybersecurity software stocks and AI-lab valuation narratives could be sensitive to how this dual-use capability is received by regulators and enterprise buyers.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders"
+        }
+      ],
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "rank": 1
+    },
+    {
+      "region": "global",
+      "category": "geopolitics",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "regions": [
+        "United States",
+        "Russia",
+        "Iran",
+        "Ukraine"
+      ],
+      "title": "US House introduces sweeping new Russia and Iran sanctions bill named for the late Lindsey Graham",
+      "key_points": [
+        "House companion bill introduced by **16 bipartisan lawmakers**, led by Reps. McCaul and Hoyer",
+        "Follows the **Senate's 86-11 landslide vote** to pass its version days earlier",
+        "Lets the president impose **tariffs up to 100%** on the top five buyers of Russian oil and gas",
+        "Targets Russia's **'shadow fleet'** of tankers and shell companies moving sanctioned oil",
+        "Named for **Senator Lindsey Graham**, who died July 11 after building the deal for over a year"
+      ],
+      "background": "Congress has debated tougher Russia sanctions for years, but bills repeatedly stalled over how much authority to hand the White House. **Senator Lindsey Graham** became the bill's chief champion, working directly with the **Trump administration** to secure its backing before his sudden death. Russia's war economy has increasingly leaned on a **'shadow fleet'** of tankers with hidden ownership to keep selling oil above Western price caps, and this bill is aimed squarely at that workaround.",
+      "what_happened": "House Foreign Affairs Committee Chairman Emeritus **Michael McCaul (R-TX)** and Rep. **Steny Hoyer (D-MD)** introduced the House companion to the 'Lindsey O. Graham Sanctioning Russia and Iran Act of 2026,' joined by 16 other lawmakers from both parties. It follows the **Senate passing its version 86-11** just days earlier. The bill would let the president impose **tariffs of up to 100%** on the top five buyers of Russian oil or gas, sanction Russia's shadow fleet of tankers and shell companies, and target Russian officials, oligarchs and their families, while extending sanctions pressure to Iran too. It's named for Graham, who spent over a year negotiating the deal and locking in White House support before he died on **July 11**, shortly before the measure reached the floor.",
+      "why_it_matters": "This is one of the most aggressive sanctions packages Congress has moved against Russia's war economy \u2014 it targets the buyers of Russian energy, not just Russia itself, which raises the cost for any country still importing discounted Russian oil.",
+      "ripple_effects": "Major buyers of discounted Russian crude, including India and China, could face steep new US tariffs on their own exports if they don't scale back purchases, complicating trade ties. Oil markets and tanker/shipping stocks could see volatility, and Russia's war financing could come under real pressure if enforcement is aggressive.",
+      "why_now": "The push follows Graham's death and the momentum from the Senate's landslide vote, with lawmakers moving fast to honor him and lock in bipartisan support while it holds.",
+      "watch_next": "Whether the full House holds a floor vote, and how quickly Trump moves to actually invoke the tariff authority once it reaches his desk.",
+      "key_terms": [
+        {
+          "term": "Secondary sanctions",
+          "definition": "Penalties imposed not on the target country itself, but on outside countries or companies that keep doing business with it."
+        },
+        {
+          "term": "Shadow fleet",
+          "definition": "A network of tankers with hidden or obscured ownership used to move sanctioned oil around price caps and export bans."
+        }
+      ],
+      "the_lesson": "Sanctions bills often gain momentum less from the underlying policy case and more from political moments \u2014 here, honoring a deceased senator \u2014 showing legislative timing can matter as much as substance.",
+      "concepts": [
+        "sanctions",
+        "crude_geopolitics"
+      ],
+      "market_link": "Crude oil prices and tanker/shipping stocks could move if major buyers like India and China cut back on discounted Russian oil to dodge the new US tariffs.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "The Hill",
+          "url": "https://thehill.com/homenews/house/6021244-house-bipartisan-russia-sanctions-bill/"
+        },
+        {
+          "name": "Congressman Michael McCaul",
+          "url": "https://mccaul.house.gov/media-center/press-releases/mccaul-hoyer-colleagues-introduce-lindsey-o-graham-sanctioning-russia"
+        }
+      ],
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "rank": 2
+    },
     {
       "region": "global",
       "category": "geopolitics",
@@ -51,7 +154,7 @@
         }
       ],
       "added_at": "2026-08-11T09:58:51+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "region": "global",
@@ -116,7 +219,7 @@
         "title": "Iran hardens its price for reopening the Strait of Hormuz, days after a missile hit a UAE oil tanker there",
         "date": null
       },
-      "rank": 2
+      "rank": 4
     },
     {
       "category": "science",
@@ -166,7 +269,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "category": "geopolitics",
@@ -217,7 +320,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 4
+      "rank": 6
     },
     {
       "category": "geopolitics",
@@ -263,7 +366,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-11T06:00:56+05:30",
-      "rank": 5
+      "rank": 7
     },
     {
       "category": "geopolitics",
@@ -308,7 +411,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-11T06:00:56+05:30",
-      "rank": 6
+      "rank": 8
     },
     {
       "region": "global",
@@ -360,7 +463,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 7
+      "rank": 9
     },
     {
       "region": "global",
@@ -412,7 +515,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 8
+      "rank": 10
     },
     {
       "region": "global",
@@ -461,7 +564,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 9
+      "rank": 11
     },
     {
       "region": "global",
@@ -513,7 +616,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 10
+      "rank": 12
     },
     {
       "category": "economy",
@@ -564,7 +667,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 11
+      "rank": 13
     },
     {
       "category": "geopolitics",
@@ -623,7 +726,7 @@
         "title": "Ukraine sets Russia's Ilsky and Syzran oil refineries ablaze as Moscow strikes Kyiv's defence industry overnight",
         "date": null
       },
-      "rank": 12
+      "rank": 14
     },
     {
       "category": "geopolitics",
@@ -669,7 +772,7 @@
         }
       ],
       "added_at": "2026-08-10T21:59:50+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "category": "geopolitics",
@@ -726,7 +829,7 @@
         "title": "Gaza ceasefire holds for a fifth straight day",
         "date": null
       },
-      "rank": 14
+      "rank": 16
     },
     {
       "category": "climate",
@@ -773,7 +876,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "category": "technology",
@@ -825,7 +928,7 @@
       ],
       "region": "global",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 16
+      "rank": 18
     },
     {
       "category": "geopolitics",
@@ -888,7 +991,7 @@
         "title": "Iran and Oman agree shipping-lane coordinates for the Strait of Hormuz as a deal nears completion",
         "date": null
       },
-      "rank": 17
+      "rank": 19
     },
     {
       "category": "economy",
@@ -941,109 +1044,109 @@
         }
       ],
       "added_at": "2026-08-10T16:04:12+05:30",
-      "rank": 18
+      "rank": 20
     },
     {
-      "category": "economy",
-      "published_iso": "2026-08-10T09:00:00+09:00",
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-08-11T00:00:00Z",
       "regions": [
-        "Japan",
-        "South Korea",
-        "China",
-        "US",
-        "Asia"
+        "India"
       ],
-      "title": "Asian markets jump to record highs as a weak US jobs report fuels bets on a Fed rate cut",
-      "region": "global",
+      "title": "Shiprocket sets IPO price band at \u20b992-97, aiming to raise \u20b91,617 crore in its e-commerce logistics debut",
       "key_points": [
-        "Japan's **Nikkei 225 jumped about 2%** to a fresh record high on Monday.",
-        "South Korea's **KOSPI rose 1.1%**, extending Wall Street's Friday rally into Asia.",
-        "The US economy actually **lost 23,000 jobs in July**, versus forecasts for +85,000 \u2014 a rare, alarming miss.",
-        "**China's CSI 300 fell 0.4%**, moving against the regional trend on weak domestic demand data.",
-        "The **yen stayed near 158.2/dollar**, still fragile after last week's rare joint Japan-US intervention."
+        "Price band set at **\u20b992-97 per share**, valuing the issue at **\u20b91,617.48 crore**",
+        "IPO opens **August 12**, closes August 14; lists on BSE/NSE around **August 19**",
+        "Minimum lot size **154 shares** \u2014 about \u20b914,938 for retail investors at the upper band",
+        "Backed by **Temasek**, Singapore's state investment fund",
+        "One of **five mainboard IPOs** opening this week, together targeting over \u20b97,400 crore"
       ],
-      "background": "The US Federal Reserve sets America's benchmark interest rate to balance inflation against employment. When the US economy looks weaker than expected, traders often bet the Fed will hold off on raising rates \u2014 or even cut them \u2014 to support growth, and cheaper expected borrowing costs tend to lift stock markets worldwide because it makes future company profits more valuable today. Going into Friday, Fed officials were actually split, with some favoring a rate **hike** as soon as September if inflation stayed sticky.",
-      "what_happened": "On Monday, August 10, Japan's **Nikkei 225 rose roughly 2%** to a new record high, South Korea's KOSPI added **1.1%**, and the broader MSCI Asia-Pacific index (excluding Japan) gained 0.8%, as the region extended a rally that began on Wall Street on Friday. The trigger was Friday's US jobs report, which showed the world's largest economy **lost 23,000 jobs in July** instead of adding the roughly 85,000 economists expected, pushing unemployment up to 4.1%. Futures markets responded by sharply cutting the odds of a Fed rate hike and raising the odds the central bank instead holds steady or cuts. **China moved against the regional grain**: its CSI 300 index fell 0.4% after inflation data reinforced concerns about sluggish domestic demand. Meanwhile the dollar held near **158.2 yen**, still under pressure days after Japan and the US carried out a rare joint currency intervention to prop up the yen.",
-      "why_it_matters": "A sudden, weak US jobs number changes what investors expect the Fed to do next, and that expectation \u2014 more than the jobs data itself \u2014 is what's driving stock prices higher across Asia. It signals markets now see the era of higher US interest rates ending sooner than thought a week ago.",
-      "ripple_effects": "Lower expected US rates and a softer dollar typically send more foreign investment into Asian and emerging markets, including India, as investors chase higher returns outside the US. But a still-fragile Chinese economy could act as a drag on the wider region even as Japan and Korea rally, and the yen's continued weakness despite intervention shows how limited Japan's tools are to defend it.",
-      "why_now": "Friday's surprisingly weak US jobs report was the immediate trigger, flipping trader expectations from 'Fed might hike' to 'Fed likely holds or cuts.'",
-      "watch_next": "The Fed's next policy meeting and any fresh US inflation or jobs data that could confirm \u2014 or reverse \u2014 this rate-cut betting.",
+      "background": "Shiprocket built its business helping small and mid-sized online sellers \u2014 the kind who can't negotiate their own courier deals \u2014 access shipping, warehousing and logistics tools, riding India's e-commerce boom over the last decade. Its backers include **Temasek**, a signal of institutional confidence in India's logistics-tech sector. An **IPO (initial public offering)** lets a private company sell shares to the public for the first time, raising capital and letting early investors exit.",
+      "what_happened": "Shiprocket has set its IPO price band at **\u20b992 to \u20b997 per share**, valuing the **\u20b91,617.48 crore** issue. The IPO opens for subscription on **August 12** and closes **August 14**, with a minimum lot size of **154 shares** (about \u20b914,938 for retail investors at the upper band). Shares are expected to list on the BSE and NSE around **August 19**. Shiprocket is the latest name in an already packed IPO week in India, alongside Milky Mist Dairy Food, Dhoot Transmission, Molbio Diagnostics and Behari Lal Engineering \u2014 **five mainboard IPOs** together aiming to raise over \u20b97,400 crore.",
+      "why_it_matters": "Shiprocket going public is a bet on India's e-commerce and logistics infrastructure continuing to grow, and it's a real-time test of investor appetite in a week already crowded with large IPOs competing for the same pool of money.",
+      "ripple_effects": "A successful listing could encourage more logistics-tech and e-commerce-enabler startups toward IPOs; a weak one could cool that pipeline. Retail investors juggling five IPOs in one week may spread their bids thinner, affecting subscription levels across all of them.",
+      "why_now": "The price band announcement comes right before the subscription window opens on August 12 \u2014 the standard pre-IPO sequence.",
+      "watch_next": "Subscription levels when the IPO opens tomorrow, and the grey market premium in the days before listing.",
       "key_terms": [
         {
-          "term": "Federal Reserve (the Fed)",
-          "definition": "The US central bank; the interest rate it sets ripples through global borrowing costs, currencies and stock markets."
+          "term": "Price band",
+          "definition": "The minimum and maximum price range within which investors can bid for shares in an IPO; the final listing price is set within or at this range based on demand."
         },
         {
-          "term": "Nonfarm payrolls",
-          "definition": "The US government's monthly count of jobs added or lost outside farming \u2014 one of the most closely watched economic reports in the world."
+          "term": "Grey market premium",
+          "definition": "An unofficial, informal indicator of how much above (or below) the issue price a stock might list, based on off-exchange trading before the IPO."
         }
       ],
-      "the_lesson": "Stock markets often react more to what a 'bad' economic number implies about future central-bank policy than to the number itself \u2014 a weak jobs report can send stocks UP if it makes a rate cut look more likely.",
-      "concepts": [
-        "interest_rates",
-        "central_bank",
-        "currency_strength"
-      ],
-      "market_link": "Direct \u2014 Nikkei, KOSPI and USD/JPY are the assets moving; softer Fed rate-hike odds also tend to lift emerging-market currencies and equities, including India's Nifty and Sensex.",
-      "importance": "high",
-      "sources": [
-        {
-          "name": "Invezz",
-          "url": "https://invezz.com/au/news/2026/08/10/kospi-surges-as-asian-markets-rally-after-us-jobs-shock-rattles-fed-bets/"
-        },
-        {
-          "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html"
-        }
-      ],
-      "added_at": "2026-08-10T14:04:23+05:30",
-      "rank": 19
-    },
-    {
-      "category": "geopolitics",
-      "published_iso": "2026-08-09T09:00:00+01:00",
-      "regions": [
-        "Nigeria",
-        "West Africa"
-      ],
-      "title": "Nigerian army rescues 33 civilians kidnapped by gunmen in Zamfara, forcing the attackers to flee",
-      "region": "global",
-      "key_points": [
-        "**33 passengers** were rescued unharmed after being abducted while traveling through Zamfara state.",
-        "Troops from the **1 Brigade Forward Operating Base, Tsafe** acted on credible intelligence to intercept the kidnappers.",
-        "Soldiers engaged the gunmen with gunfire, forcing them to **abandon the captives and flee** into nearby bushland.",
-        "The rescue is part of a **years-long wave of mass kidnappings** for ransom across Nigeria's northwest."
-      ],
-      "background": "Northwest Nigeria has been gripped for nearly a decade by armed criminal gangs \u2014 locally called **'bandits'** \u2014 who kidnap travelers and villagers for ransom, distinct from jihadist groups like Boko Haram further northeast. Zamfara state has been one of the worst-hit, with mass abductions of bus and car passengers on rural roads a recurring event. The Nigerian military regularly runs operations against these gangs, but successful, casualty-free rescues like this one are relatively rare against a backdrop of an entrenched ransom economy.",
-      "what_happened": "Troops of the Nigerian Army's 1 Brigade, operating from Forward Operating Base Tsafe, rescued **33 passengers** who had been abducted by gunmen while traveling through Magazu village in the Tsafe local government area of Zamfara state on Saturday, August 8. Acting on credible intelligence, the soldiers made contact with the kidnappers as they were moving the captives toward an undisclosed location. The troops **engaged the gunmen with effective fire**, forcing them to abandon the victims and flee into adjoining bushland. All 33 abducted persons were secured and rescued **without any casualties**.",
-      "why_it_matters": "The episode is a rare clean success in a security fight Nigeria has struggled to win \u2014 most kidnappings end in prolonged captivity and ransom payment rather than rescue. It shows both the scale of the ongoing threat to ordinary travelers in the northwest and that faster, intelligence-led military responses can work.",
-      "ripple_effects": "A visible rescue may boost pressure on the military to replicate the approach elsewhere in Zamfara, Kaduna and Katsina states, but it does nothing to dismantle the underlying ransom-kidnapping economy that keeps drawing new gangs into the business. Ordinary road travel in the region remains high-risk in the meantime.",
-      "why_now": "The rescue happened this past weekend amid an ongoing, near-constant pattern of mass abductions on Zamfara's rural roads that has plagued the state for years.",
-      "watch_next": "Whether security forces catch or identify the gang that fled, and whether kidnappings continue in Zamfara and neighboring states in the coming weeks.",
-      "key_terms": [
-        {
-          "term": "Bandits (Nigeria)",
-          "definition": "Armed criminal gangs operating from forest hideouts in northwest Nigeria who kidnap for ransom and raid villages \u2014 a distinct, non-ideological threat from jihadist insurgents like Boko Haram."
-        }
-      ],
-      "the_lesson": "When ransom kidnapping becomes a low-risk, profitable business, it turns into a recurring criminal economy \u2014 one successful rescue doesn't fix that; only sustained enforcement against the economics of the crime does.",
-      "concepts": [
-        "insurgency_militancy"
-      ],
-      "market_link": null,
+      "the_lesson": "When several IPOs open the same week, they compete for the same investor money \u2014 timing an IPO isn't just about a company's own readiness, it's about the crowd it's launching into.",
+      "concepts": [],
+      "market_link": "Direct India primary-market story: \u20b91,617-crore Shiprocket IPO opens August 12, one of five mainboard IPOs this week.",
       "importance": "notable",
       "sources": [
         {
-          "name": "Washington Post",
-          "url": "https://www.washingtonpost.com/world/2026/08/09/nigeria-kidnappings-rescue-zamfara/10b13484-940d-11f1-9ef9-1be722184483_story.html"
-        },
-        {
-          "name": "Vanguard",
-          "url": "https://www.vanguardngr.com/2026/08/army-rescues-33-kidnapped-passengers-in-zamfara/"
+          "name": "Whalesbook",
+          "url": "https://www.whalesbook.com/news/English/transportation/Shiprocket-IPO-Opens-Aug-12-Price-Band-Set-at-indian-rupee92-97/6a7402453b2431b2558607e9"
         }
       ],
-      "added_at": "2026-08-10T14:04:23+05:30",
-      "rank": 20
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "rank": 21
+    },
+    {
+      "region": "india",
+      "category": "india",
+      "published_iso": "2026-08-11T05:30:00Z",
+      "regions": [
+        "India"
+      ],
+      "title": "Sensex and Nifty slide as oil prices jump on fading hopes for a Strait of Hormuz deal",
+      "thread": {
+        "previously": "We reported the RBI stepping in to defend the rupee as rising oil prices threatened to push it past 95.4 to the dollar, while the Sensex opened flat around 24,500 as strong global cues offset a quiet start to the week.",
+        "changed": "That pressure has turned into an outright selloff: Brent crude jumped roughly 5% as hopes for a US-Iran deal on reopening the Strait of Hormuz faded, and both the Sensex and Nifty fell over 0.4% by mid-morning Tuesday."
+      },
+      "key_points": [
+        "Nifty50 down **112.9 points (0.46%)** to 24,470.90, Sensex down **362.57 points** by mid-morning",
+        "Trigger: Brent crude jumped roughly **5% to $87.72/barrel** on fading Hormuz-deal hopes",
+        "Trump told Axios the US is only **'semi-negotiating'** with Iran, undercutting earlier talk of real progress",
+        "Top losers included **InterGlobe Aviation, Bajaj Finance, Shriram Finance** \u2014 fuel- and funding-cost sensitive names",
+        "Comes right after the **RBI defended the rupee** near 95.4/dollar over the weekend"
+      ],
+      "background": "India imports over **80% of the crude oil** it consumes, so a sustained oil-price jump hits the economy on multiple fronts: it widens the trade deficit, pressures the rupee, and pushes up domestic fuel and transport costs that can feed into inflation. The **Strait of Hormuz** \u2014 the narrow shipping lane roughly a fifth of the world's oil passes through \u2014 has been a flashpoint for months amid the wider US-Israel-Iran standoff. The RBI had already stepped in over the weekend to defend the rupee as it neared the psychologically important 95.4-to-the-dollar level.",
+      "what_happened": "India's benchmark indices opened weak on Tuesday and extended losses through the morning: by around 11am IST, the **Nifty50 was down 112.9 points (0.46%)** at 24,470.90, and the **Sensex had fallen 362.57 points (0.46%)** to 78,177.87. The trigger is oil \u2014 **Brent crude jumped roughly 5% to settle near $87.72 a barrel** as hopes dimmed that the US and Iran will strike a deal to reopen the Strait of Hormuz. President Trump told Axios the US is only **'semi-negotiating'** with Iran, undercutting his own earlier claims that talks were serious, while Iran has rejected direct talks and is demanding an end to the US naval blockade, sanctions relief, and compensation for war damage before it reopens shipping. Top losers on the Nifty50 included **InterGlobe Aviation, Bajaj Finance and Shriram Finance** \u2014 aviation and financing names especially sensitive to fuel and funding costs.",
+      "why_it_matters": "A sustained oil-price shock is one of the fastest ways to hurt an oil-importing economy like India's \u2014 it works through the rupee and inflation, not just a single day's stock prices, and can narrow the RBI's room to cut interest rates.",
+      "ripple_effects": "A weaker rupee makes imports (including oil itself) even more expensive, creating a feedback loop; airlines and NBFCs (non-bank lenders) with fuel- or funding-cost exposure are already among today's biggest losers; and if oil stays elevated, it could delay the rate cuts markets have been pricing in.",
+      "why_now": "The proximate trigger is Trump's own comment downplaying real US-Iran negotiations, which markets read as a signal the Hormuz standoff \u2014 and its oil-price risk \u2014 isn't close to resolving.",
+      "watch_next": "Whether Brent crude holds above $85 through the week, and whether the RBI needs to intervene further to defend the rupee.",
+      "key_terms": [
+        {
+          "term": "Strait of Hormuz",
+          "definition": "A narrow shipping channel between Iran and Oman that roughly a fifth of the world's oil supply passes through \u2014 restrictions there can move global oil prices sharply."
+        }
+      ],
+      "the_lesson": "For an oil-importing economy, geopolitical risk thousands of miles away \u2014 here, a standoff over a shipping lane \u2014 shows up almost immediately in the stock market, the currency, and eventually the cost of living at home.",
+      "concepts": [
+        "crude_geopolitics",
+        "usdinr",
+        "currency_strength",
+        "rbi"
+      ],
+      "market_link": "Direct markets story: Nifty50 and Sensex both down ~0.46% by mid-morning; aviation (InterGlobe) and NBFC stocks (Bajaj Finance, Shriram Finance) among the biggest losers; Brent crude near $87.72/barrel.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/markets/news/stock-market-live-august-11-nse-bse-sensex-today-nifty50-gift-nifty-brent-crude-q1-results-today-ipo-126081100088_1.html"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz"
+        }
+      ],
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "RBI steps in to defend the rupee as rising oil prices threaten to push it past 95.4/dollar",
+        "date": null
+      },
+      "rank": 22
     },
     {
       "region": "india",
@@ -1092,7 +1195,7 @@
         }
       ],
       "added_at": "2026-08-11T09:58:51+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "region": "india",
@@ -1150,7 +1253,7 @@
         "title": "Three Jharkhand exam board members resign amid a CID probe, but student protesters say it's not enough",
         "date": null
       },
-      "rank": 22
+      "rank": 24
     },
     {
       "category": "india",
@@ -1197,7 +1300,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
       "region": "india",
@@ -1244,7 +1347,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 24
+      "rank": 26
     },
     {
       "region": "india",
@@ -1283,7 +1386,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 25
+      "rank": 27
     },
     {
       "region": "india",
@@ -1334,7 +1437,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 26
+      "rank": 28
     },
     {
       "category": "india",
@@ -1382,7 +1485,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 27
+      "rank": 29
     },
     {
       "category": "india",
@@ -1427,7 +1530,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 28
+      "rank": 30
     },
     {
       "category": "india",
@@ -1475,7 +1578,7 @@
         }
       ],
       "added_at": "2026-08-10T21:59:50+05:30",
-      "rank": 29
+      "rank": 31
     },
     {
       "category": "india",
@@ -1532,7 +1635,7 @@
         "title": "India's Parliament enters its final week deadlocked, as Opposition presses Amit Shah to explain a crackdown on student protesters",
         "date": null
       },
-      "rank": 30
+      "rank": 32
     },
     {
       "category": "india",
@@ -1578,7 +1681,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "category": "india",
@@ -1627,7 +1730,7 @@
       ],
       "region": "india",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1675,7 +1778,7 @@
         }
       ],
       "added_at": "2026-08-10T18:20:20+05:30",
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1722,7 +1825,7 @@
         }
       ],
       "added_at": "2026-08-10T16:04:12+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1784,7 +1887,7 @@
         "title": "Jharkhand's 16-day exam-fraud protest reaches a sixth round of government talks with no breakthrough",
         "date": null
       },
-      "rank": 35
+      "rank": 37
     },
     {
       "category": "india",
@@ -1837,7 +1940,7 @@
         }
       ],
       "added_at": "2026-08-10T14:04:23+05:30",
-      "rank": 36
+      "rank": 38
     },
     {
       "region": "india",
@@ -1882,7 +1985,7 @@
         }
       ],
       "added_at": "2026-08-10T12:14:18+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "region": "india",
@@ -1930,111 +2033,56 @@
         }
       ],
       "added_at": "2026-08-10T12:14:18+05:30",
-      "rank": 38
+      "rank": 40
     },
     {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-08-10T09:00:00+05:30",
+      "region": "cricket",
+      "category": "cricket",
+      "published_iso": "2026-08-10T00:00:00Z",
       "regions": [
-        "India",
-        "Jharkhand"
+        "England"
       ],
-      "title": "Jharkhand student protesters march on the Assembly as Congress chief Kharge pledges support",
+      "title": "Trent Rockets Women fight back from 10-3 to beat Southern Brave and seal a spot in the Hundred final",
+      "thread": {
+        "previously": "We reported that Trent Rockets Women could seal top spot in the group stage with a win over Southern Brave, setting up a direct route to Sunday's final at Lord's.",
+        "changed": "They've now done it: Trent Rockets Women won by 3 wickets with 2 balls to spare, capping a comeback from 10-3 \u2014 the lowest powerplay score in the competition's history \u2014 to book their place in the final."
+      },
       "key_points": [
-        "Students staged a **'Vidhan Sabha Gherao'** march on Jharkhand's state Assembly in Ranchi today.",
-        "Security was **tightened across Ranchi** ahead of the march, now in its 16th-day-plus phase.",
-        "Congress president **Mallikarjun Kharge** publicly pledged the party's support to the protesters.",
-        "The protest is over alleged **irregularities in JPSC and JSSC recruitment exams**.",
-        "Several student leaders remain on an **indefinite hunger strike**, with one's blood glucose reported critically low."
+        "Trent Rockets Women won by **3 wickets with 2 balls remaining**, sealing top spot",
+        "Collapsed to **10 for 3** in the powerplay \u2014 the **lowest powerplay score** in Hundred history",
+        "**Nat Sciver-Brunt** hit an unbeaten 32 off 19 balls to steady the chase",
+        "Their **seventh straight win** of the competition",
+        "Goes straight to the **final at Lord's on August 16**, skipping the eliminator"
       ],
-      "background": "For over two weeks, students aspiring to join the Jharkhand Public Service Commission (JPSC) and Jharkhand Staff Selection Commission (JSSC) \u2014 the state's main recruitment exam bodies \u2014 have been protesting alleged malpractice and irregularities in those exams. Several rounds of talks with the state government led by Chief Minister Hemant Soren have failed to produce a breakthrough, with student leaders demanding a CID probe into the exam bodies and cancellation of a disputed civil-services exam. A handful of protest leaders have been on hunger strike for roughly a week, with one's health deteriorating.",
-      "what_happened": "Hundreds of students, many of them JPSC/JSSC exam aspirants, held a 'Vidhan Sabha Gherao' \u2014 a march aimed at surrounding the state Assembly \u2014 in Ranchi today, prompting Jharkhand police to tighten security and impose prohibitory orders across the city. The protest has now run for over two weeks with **six rounds of talks** between students and the state government failing to resolve the dispute. Congress president **Mallikarjun Kharge** said the party stands with the students 'irrespective of whether the government concerned is led by an ally or a political rival,' pledging to write to the government and raise the issue. Separately, the Congress's Jharkhand in-charge met Chief Minister Hemant Soren and submitted a memorandum of the students' demands.",
-      "why_it_matters": "Kharge's intervention nationalizes what had been a state-level standoff, adding political weight to student demands and putting pressure on the Jharkhand government \u2014 led by Congress's own coalition partner \u2014 to act. It also reflects a broader pattern this year of student-led protests over exam-recruitment integrity gaining national political traction.",
-      "ripple_effects": "Continued unrest risks disrupting the JPSC/JSSC recruitment process for thousands of job aspirants and could pressure other states to review their own exam-integrity safeguards. If hunger-striking students' health worsens further, it could escalate into a bigger political and law-and-order crisis for the state government.",
-      "why_now": "The march and Kharge's statement mark a fresh escalation after the sixth round of government talks failed to break the impasse a day earlier.",
-      "watch_next": "Whether today's Assembly march prompts the Soren government to concede to a CID probe, and the health status of the hunger-striking student leaders.",
+      "background": "The Hundred is England's 100-ball franchise cricket competition, with eight teams in men's and women's editions. The team that finishes **top of the table** after eight group games goes straight to the final, while second and third play an eliminator for the other spot \u2014 meaning table position matters as much as winning any single match. Trent Rockets Women had been building toward this all tournament, arriving at this match on a six-match winning streak.",
+      "what_happened": "**Trent Rockets Women** beat **Southern Brave Women by 3 wickets with 2 balls remaining** at Trent Bridge, Nottingham, sealing top spot in the group table and a direct place in **The Hundred final at Lord's on Sunday, August 16**. Chasing Southern Brave's 117 for 5, Trent Rockets collapsed to **10 for 3 in the powerplay \u2014 the lowest powerplay score in the competition's history** \u2014 before **Nat Sciver-Brunt** anchored the recovery, batting down the order and smashing **32 off just 19 balls** to help the Rockets reach 118 for 7. The win was Trent Rockets' **seventh straight victory** in the competition. As group-stage winners, they bypass Friday's eliminator at The Kia Oval, where the second and third-placed teams play for the other final spot.",
+      "why_it_matters": "Finishing top means Trent Rockets Women get a rest before the final while their rivals play a win-or-go-home eliminator \u2014 a real competitive advantage heading into the tournament's biggest match.",
+      "ripple_effects": "Southern Brave and the two teams below them now fight it out for the second final spot at the Kia Oval eliminator on August 14; Nat Sciver-Brunt's form as a finisher adds to her case as one of the tournament's standout players heading into the final.",
+      "why_now": "This was the final group-stage match that could mathematically confirm Trent Rockets Women's top spot, which is why it carried direct qualification stakes.",
+      "watch_next": "The Kia Oval eliminator on August 14 to see who joins Trent Rockets Women in Sunday's final at Lord's.",
       "key_terms": [
         {
-          "term": "Vidhan Sabha Gherao",
-          "definition": "A protest tactic in India where demonstrators try to surround or blockade a state legislative assembly building to press their demands."
+          "term": "Powerplay",
+          "definition": "The opening overs of a limited-overs cricket innings when fielding restrictions favor the batting side \u2014 a low score in this phase is considered a poor start."
         }
       ],
-      "the_lesson": "Recruitment-exam integrity is a flashpoint issue across Indian states because a compromised exam doesn't just anger a few candidates \u2014 it threatens the perceived fairness of the entire path to a stable government job for millions of aspirants.",
+      "the_lesson": "In tournaments with a table-topper's bye, the regular season isn't just about making the playoffs \u2014 where you finish changes your path, so contesting every group match for position matters as much as just qualifying.",
       "concepts": [],
       "market_link": null,
       "importance": "notable",
-      "thread": {
-        "previously": "The protest had reached a sixth round of talks with the state government, with no breakthrough on students' demands.",
-        "changed": "Students escalated with an Assembly march today as security was tightened in Ranchi, and Congress president Kharge publicly pledged the party's support."
-      },
       "sources": [
         {
-          "name": "The Week",
-          "url": "https://www.theweek.in/news/india/2026/08/10/jharkhand-recruitment-protest-ranchi-students-assembly-march.html"
-        },
-        {
-          "name": "Outlook India",
-          "url": "https://www.outlookindia.com/national/cjp-delegation-reaches-ranchi-to-back-jharkhand-student-protest"
+          "name": "Sky Sports",
+          "url": "https://www.skysports.com/cricket/news/12123/13571706/the-hundred-nat-sciver-brunt-helps-trent-rockets-women-into-final-after-exciting-victory-over-southern-brave"
         }
       ],
-      "added_at": "2026-08-10T09:59:57+05:30",
+      "added_at": "2026-08-11T12:07:11+05:30",
       "development": true,
       "prev_ref": {
-        "title": "Jharkhand's 16-day exam-fraud protest reaches a sixth round of government talks with no breakthrough",
+        "title": "Trent Rockets Women can seal top spot as The Hundred's group stage wraps up against Southern Brave",
         "date": null
       },
-      "rank": 39
-    },
-    {
-      "region": "india",
-      "category": "india",
-      "published_iso": "2026-08-10T04:58:00+05:30",
-      "regions": [
-        "India",
-        "Assam"
-      ],
-      "title": "Assam's flood death toll crosses 100 as monsoon devastation deepens",
-      "key_points": [
-        "Assam's flood death toll has **crossed 100**, up from 99 a day earlier.",
-        "Deaths break down as **60 males, 23 females, and 18 children**, per the state disaster authority.",
-        "**Cachar district** has recorded the most deaths (22), followed by Sivasagar and other northeastern districts.",
-        "Over **1.4-1.6 lakh people** remain affected across more than a dozen districts.",
-        "CM **Himanta Biswa Sarma** has been touring breached embankments, including in Darrang district."
-      ],
-      "background": "Assam floods almost every monsoon season because the Brahmaputra and its tributaries swell with heavy rain and glacial melt from the Himalayas, regularly breaching embankments across the state's low-lying floodplains. This year's flooding has been especially severe, with the death toll climbing steadily through late July and August as successive waves of heavy rain hit an already-saturated state. Chief Minister Himanta Biswa Sarma has been visiting the worst-hit districts, including Darrang, to inspect embankment breaches and relief efforts.",
-      "what_happened": "Assam's flood death toll has climbed past **100**, according to the State Disaster Management Authority, up from 99 reported the previous day. The toll includes 60 males, 23 females, and 18 children. **Cachar district** has the highest count with 22 deaths, with further fatalities spread across Sivasagar, Darrang, Nagaon, Dibrugarh, Hailakandi, Hojai, Kamrup, and Lakhimpur districts. More than **1.4 to 1.6 lakh people** remain affected across over a dozen districts, with homes, farmland, and infrastructure inundated. Relief operations continue through more than 2,000 distribution centres, with tens of thousands of people still sheltered in relief camps.",
-      "why_it_matters": "Crossing the 100-death mark makes this one of Assam's deadlier flood seasons in recent years, and it underscores how climate-driven extreme rainfall is straining the state's flood-management infrastructure \u2014 embankments built for an earlier era of rainfall patterns are increasingly failing to hold.",
-      "ripple_effects": "Displaced families face prolonged stays in relief camps, crop and livestock losses will hit rural incomes for the rest of the year, and damaged roads/embankments will require costly reconstruction. Political pressure is likely to grow on the state government over embankment maintenance and disaster preparedness ahead of future monsoon seasons.",
-      "why_now": "Continued heavy rain through early August kept adding to the toll day by day, pushing the cumulative count past the symbolic 100 mark today.",
-      "watch_next": "Whether the toll keeps rising as more rain is forecast, and whether the state announces a formal compensation package for affected families.",
-      "key_terms": [
-        {
-          "term": "Embankment breach",
-          "definition": "When a raised barrier built to hold back a river's floodwater fails or is overtopped, letting water surge into surrounding land."
-        }
-      ],
-      "the_lesson": "Infrastructure built to handle 'normal' extreme weather increasingly fails as climate change shifts what 'extreme' means \u2014 flood defenses need to be re-engineered for a wetter, less predictable future, not just repaired to their old spec.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "high",
-      "thread": {
-        "previously": "Assam's flood toll had climbed to 99, with the Chief Minister touring breached embankments in Darrang district.",
-        "changed": "The toll has now crossed 100, per state disaster authority figures reported today, as flooding continues to affect over a dozen districts."
-      },
-      "sources": [
-        {
-          "name": "ANI News",
-          "url": "https://aninews.in/news/national/general-news/assam-floods-death-toll-reaches-100-amid-widespread-devastation20260810045805/"
-        }
-      ],
-      "added_at": "2026-08-10T09:59:57+05:30",
-      "development": true,
-      "prev_ref": {
-        "title": "Assam's flood death toll climbs to 99 as the CM tours breached embankments in Darrang",
-        "date": null
-      },
-      "rank": 40
+      "rank": 41
     },
     {
       "region": "cricket",
@@ -2073,7 +2121,7 @@
         }
       ],
       "added_at": "2026-08-11T09:58:51+05:30",
-      "rank": 41
+      "rank": 42
     },
     {
       "category": "cricket",
@@ -2112,7 +2160,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 42
+      "rank": 43
     },
     {
       "region": "cricket",
@@ -2156,7 +2204,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 43
+      "rank": 44
     },
     {
       "region": "cricket",
@@ -2206,7 +2254,7 @@
         "title": "Afghanistan chase a series-clinching win over Ireland in today's 3rd ODI at Belfast, with World Cup qualification points on the line",
         "date": null
       },
-      "rank": 44
+      "rank": 45
     },
     {
       "region": "cricket",
@@ -2249,7 +2297,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 45
+      "rank": 46
     },
     {
       "category": "cricket",
@@ -2284,7 +2332,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 46
+      "rank": 47
     },
     {
       "category": "cricket",
@@ -2319,7 +2367,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 47
+      "rank": 48
     },
     {
       "category": "cricket",
@@ -2359,7 +2407,7 @@
         }
       ],
       "added_at": "2026-08-10T21:59:50+05:30",
-      "rank": 48
+      "rank": 49
     },
     {
       "category": "cricket",
@@ -2409,7 +2457,7 @@
         "title": "Scotland chase World Cup qualification points against bottom-placed UAE in Dundee",
         "date": null
       },
-      "rank": 49
+      "rank": 50
     },
     {
       "category": "cricket",
@@ -2456,7 +2504,7 @@
         }
       ],
       "added_at": "2026-08-10T18:20:20+05:30",
-      "rank": 50
+      "rank": 51
     },
     {
       "category": "cricket",
@@ -2496,7 +2544,7 @@
         }
       ],
       "added_at": "2026-08-10T14:04:23+05:30",
-      "rank": 51
+      "rank": 52
     },
     {
       "region": "cricket",
@@ -2541,7 +2589,7 @@
         }
       ],
       "added_at": "2026-08-10T12:14:18+05:30",
-      "rank": 52
+      "rank": 53
     },
     {
       "region": "cricket",
@@ -2581,7 +2629,7 @@
         }
       ],
       "added_at": "2026-08-10T09:59:57+05:30",
-      "rank": 53
+      "rank": 54
     },
     {
       "region": "cricket",
@@ -2622,7 +2670,7 @@
         }
       ],
       "added_at": "2026-08-10T08:04:36+05:30",
-      "rank": 54
+      "rank": 55
     },
     {
       "region": "cricket",
@@ -2663,7 +2711,7 @@
         }
       ],
       "added_at": "2026-08-10T08:04:36+05:30",
-      "rank": 55
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2724,7 +2772,7 @@
         "title": "India's Sai Sudharsan ruled out of Sri Lanka Test series with a toe stress fracture, reopening the No. 3 battle",
         "date": null
       },
-      "rank": 56
+      "rank": 57
     },
     {
       "category": "cricket",
@@ -2777,7 +2825,7 @@
         "title": "India's new Test captain Shubman Gill nurses a finger injury just days before the Sri Lanka series",
         "date": null
       },
-      "rank": 57
+      "rank": 58
     },
     {
       "category": "cricket",
@@ -2818,7 +2866,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-08-10T03:59:41+05:30",
-      "rank": 58
+      "rank": 59
     },
     {
       "region": "cricket",
@@ -2858,51 +2906,95 @@
         }
       ],
       "added_at": "2026-08-10T00:03:15+05:30",
-      "rank": 59
+      "rank": 60
     },
     {
-      "region": "cricket",
-      "category": "cricket",
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-08-10T00:00:00Z",
       "regions": [
-        "England",
-        "Pakistan"
+        "Global"
       ],
-      "published_iso": "2026-08-08T09:00:00+01:00",
-      "title": "Pakistan's Test squad lands in England as Bethell is ruled out and England recall Pope and Carse",
+      "title": "Honda confirms it has hit its internal target for Aston Martin's upgraded engine ahead of its Zandvoort debut",
+      "thread": {
+        "previously": "We reported that Honda's upgraded power unit for Aston Martin could add up to 50 extra horsepower when it debuts at the Dutch Grand Prix \u2014 still framed as a reported estimate, not confirmed.",
+        "changed": "Honda has now confirmed the engine has hit its internal performance target, and the upgrade already had its first on-track test during a filming day at the Hungaroring, alongside Aston Martin's new-look B-spec chassis."
+      },
       "key_points": [
-        "**Pakistan's Test squad**, led by Babar Azam, arrived in England on Saturday for a **3-match series**",
-        "England left-hander **Jacob Bethell will miss the entire series**, while Ollie Pope and Brydon Carse are recalled",
-        "The series opens **August 19 at Headingley**, followed by Lord's (Aug 27) in the WTC 2025-27 cycle",
-        "Joe Root leads England in Tests for the first time at home since **Ben Stokes' retirement** from international cricket",
-        "Pakistan play a four-day warm-up match against a Select XI from **August 12-15** before the series starts"
+        "Honda chief engineer confirms the upgraded engine has hit its **'internal target'**",
+        "Engine shakedown already run at a **200km filming day at the Hungaroring**",
+        "Competitive debut set for the **Dutch Grand Prix (August 21-23)** at Zandvoort",
+        "Aston Martin's revised **B-spec AMR26 chassis** already helped Alonso reach Q2 in Hungary",
+        "This is Honda's **only planned in-season engine upgrade** for 2026"
       ],
-      "background": "Ben Stokes shocked the cricket world by announcing his retirement from international cricket mid-Test in June 2026, ending a 15-year England career and 4-year Test captaincy. Joe Root has since taken over as England's Test captain. Pakistan's tour of England is part of the **ICC World Test Championship 2025-27 cycle**, the league table that decides which two teams reach the WTC final; results in individual series feed directly into a team's overall points percentage.",
-      "what_happened": "Pakistan's Test squad, captained by Babar Azam, landed in England on Saturday morning to begin preparations for a three-match series forming part of the ICC World Test Championship 2025-27 cycle. The team trains from Monday at the County Ground in Beckenham before a four-day practice match against a Select XI from **August 12-15**. Separately, England named its 16-man squad for the series: **Jacob Bethell will miss the entirety** of the series, while **Ollie Pope and Brydon Carse have been recalled** for the first time since the Ashes. The first Test starts **August 19 at Headingley in Leeds**, running to August 23, followed by the second Test at **Lord's from August 27-31**.",
-      "why_it_matters": "This series carries direct weight in the World Test Championship standings, which decide who plays in the WTC final \u2014 so results here shape both teams' path toward that title decider, not just bragging rights.",
-      "ripple_effects": "A strong Pakistan showing would boost their WTC qualification hopes and add pressure on Root's captaincy in his first home series in charge; an England win would cement the post-Stokes transition as smooth.",
-      "why_now": "Squads and travel are firming up now because the first Test is just over a week away, on August 19.",
-      "watch_next": "Watch the four-day Pakistan vs Select XI warm-up (Aug 12-15) for form and fitness clues ahead of the August 19 series opener.",
-      "key_terms": [
-        {
-          "term": "World Test Championship (WTC)",
-          "definition": "A league table across all Test-playing nations that ranks teams by win percentage over a two-year cycle; the top two teams play a final."
-        }
-      ],
-      "the_lesson": "In modern Test cricket, almost no series is 'just' a series anymore \u2014 the World Test Championship turns every match into a point-scoring exercise with knock-on effects for who reaches the final.",
+      "background": "Aston Martin has struggled through the first half of the 2026 season with its all-new car and Honda works-engine partnership \u2014 Honda returned to F1 as Aston Martin's official engine supplier this year \u2014 and both partners have been under pressure to show progress before F1's 2027 rules reset changes the competitive order again. The team split its 2026 upgrade into two steps: a chassis revision that debuted at the **Hungarian Grand Prix**, and this Honda engine upgrade timed for **Zandvoort**.",
+      "what_happened": "Honda chief engineer **Shintaro Orihara** confirmed the manufacturer has hit its **'internal target'** for the upgraded power unit it's building for Aston Martin, which will make its competitive debut at the **Dutch Grand Prix in Zandvoort (August 21-23)**. The upgrade focuses on the internal combustion engine, alongside changes to the lubrication system aimed at improving reliability and cutting friction. The new engine already had a shakedown during a **200km filming day at the Hungaroring**, run alongside Aston Martin's heavily revised **'B-spec' AMR26 chassis**, which helped Fernando Alonso reach Q2 and qualify a season-high 16th at the Hungarian Grand Prix. This is Honda's only planned in-season engine upgrade for 2026.",
+      "why_it_matters": "For a team that's underperformed all season, hitting an internal engine target and getting through a real on-track shakedown is a concrete signal of progress, not just a promise \u2014 it raises the stakes for whether Aston Martin can close the gap when the upgrade race-debuts.",
+      "ripple_effects": "A genuine power step could lift Aston Martin's midfield competitiveness for the rest of 2026, and feeds into Fernando Alonso's ongoing contract talks, since a team on the rise strengthens Aston Martin's hand in retaining him through 2028.",
+      "why_now": "The confirmation comes as F1's summer break winds down and teams prepare their next-race upgrades for Zandvoort, the first race back.",
+      "watch_next": "Aston Martin's actual pace gain when the engine runs competitively for the first time at the Dutch Grand Prix weekend.",
+      "key_terms": [],
+      "the_lesson": "In racing, as in most high-performance engineering, hitting an internal target and proving it in a real test are two different milestones \u2014 the real test is what actually matters to competitors and fans.",
+      "concepts": [],
       "market_link": null,
       "importance": "notable",
       "sources": [
         {
-          "name": "Sky Sports",
-          "url": "https://www.skysports.com/cricket/news/12123/13570252/jacob-bethell-to-miss-englands-test-series-against-pakistan-as-ollie-pope-and-brydon-carse-recalled-for-first-time-since-ashes"
-        },
-        {
-          "name": "The Nation",
-          "url": "https://www.nation.com.pk/09-Aug-2026/pakistan-reach-england-3-test-series"
+          "name": "PlanetF1",
+          "url": "https://www.planetf1.com/news/honda-engine-target-hit-aston-martin-50bhp-reports"
         }
       ],
-      "added_at": "2026-08-10T00:03:15+05:30",
-      "rank": 60
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "Honda's upgraded engine for Aston Martin could add up to 50 extra horsepower when it debuts at the Dutch Grand Prix",
+        "date": null
+      },
+      "rank": 61
+    },
+    {
+      "region": "f1",
+      "category": "f1",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "regions": [
+        "Global"
+      ],
+      "title": "Martin Brundle tells Ferrari junior Oliver Bearman to consider a 'Plan B' as his path to a seat closes",
+      "key_points": [
+        "Ex-F1 driver **Martin Brundle** says Bearman, 21, should look for a seat **outside Ferrari**",
+        "Both Ferrari seats look locked in: **Hamilton** is 2nd in the championship, **Leclerc** committed medium-term",
+        "Bearman has **outpaced teammate Esteban Ocon** at Haas in the VF-26 this season",
+        "Ferrari has **no seat available** for Bearman next season despite his junior-program status",
+        "Adds another name to F1's crowded **2027 driver market**"
+      ],
+      "background": "F1 teams run just two race seats, and Ferrari junior drivers have historically had to wait years \u2014 or move elsewhere \u2014 for a shot at the main team, since incumbents rarely lose their seats while performing well. Bearman was fast-tracked into F1 in 2024 as an emergency substitute and impressed enough to earn a full-time Haas seat while remaining part of **Ferrari's junior program**. Hamilton's move to Ferrari for 2025 was itself one of the biggest driver transfers in F1 history, and his recent return to form makes a lineup change even less likely.",
+      "what_happened": "Former F1 driver and commentator **Martin Brundle** has publicly urged Haas driver and Ferrari junior **Oliver Bearman**, 21, to start looking for a front-running seat outside Ferrari, since the team has no opening for him next season. Both current Ferrari drivers look committed: **Lewis Hamilton** is currently second in the drivers' championship with five podiums and a race win this season, reviving his form after a rocky start at Ferrari, while **Charles Leclerc** also appears settled at the team medium-term. Bearman has been considered Ferrari's top junior prospect and has outpaced his more experienced Haas teammate **Esteban Ocon** in the VF-26 this season, but with Ferrari's lineup effectively settled, Brundle's advice reflects a growing consensus that Bearman's Ferrari promotion may not come for years, if at all.",
+      "why_it_matters": "It's a reminder that being a top prospect at a big team doesn't guarantee a seat \u2014 Bearman's talent may now be better served by a team with a genuine opening, rather than waiting indefinitely for Ferrari.",
+      "ripple_effects": "If Bearman starts talking to rival teams, it adds another name to F1's already-crowded 2027 'silly season' driver market, alongside ongoing questions over Verstappen's future at Red Bull and Carlos Sainz's search for a top seat.",
+      "why_now": "The comments follow a stretch of strong Hamilton results at Ferrari, which has effectively closed the door Bearman may have been waiting for.",
+      "watch_next": "Whether Bearman or his management signal interest in specific rival seats before the 2027 driver market firms up.",
+      "key_terms": [
+        {
+          "term": "Junior driver program",
+          "definition": "A system where F1 teams sponsor and develop young drivers through junior racing series, with the hope \u2014 but no guarantee \u2014 of eventually promoting them to the main team."
+        }
+      ],
+      "the_lesson": "In competitive fields with very few top jobs, being the most talented person waiting in line doesn't guarantee the job \u2014 sometimes the better career move is a real opportunity elsewhere rather than waiting for a perfect one that may not come.",
+      "concepts": [],
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "RacingNews365",
+          "url": "https://racingnews365.com/ferrari-hopeful-oliver-bearman-told-to-consider-career-plan-b"
+        },
+        {
+          "name": "Motorsport Week",
+          "url": "https://www.motorsportweek.com/2026/08/10/martin-brundle-oliver-bearman-f1-plan-b/"
+        }
+      ],
+      "added_at": "2026-08-11T12:07:11+05:30",
+      "rank": 62
     },
     {
       "region": "f1",
@@ -2940,7 +3032,7 @@
         }
       ],
       "added_at": "2026-08-11T09:58:51+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "region": "f1",
@@ -2983,7 +3075,7 @@
         }
       ],
       "added_at": "2026-08-11T09:58:51+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "category": "f1",
@@ -3021,7 +3113,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 63
+      "rank": 65
     },
     {
       "category": "f1",
@@ -3064,7 +3156,7 @@
         }
       ],
       "added_at": "2026-08-11T08:01:56+05:30",
-      "rank": 64
+      "rank": 66
     },
     {
       "region": "f1",
@@ -3108,7 +3200,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 65
+      "rank": 67
     },
     {
       "region": "f1",
@@ -3152,7 +3244,7 @@
         }
       ],
       "added_at": "2026-08-11T04:01:29+05:30",
-      "rank": 66
+      "rank": 68
     },
     {
       "region": "f1",
@@ -3200,7 +3292,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 67
+      "rank": 69
     },
     {
       "region": "f1",
@@ -3248,7 +3340,7 @@
         }
       ],
       "added_at": "2026-08-11T02:00:38+05:30",
-      "rank": 68
+      "rank": 70
     },
     {
       "category": "f1",
@@ -3288,7 +3380,7 @@
         }
       ],
       "added_at": "2026-08-11T00:01:29+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "category": "f1",
@@ -3329,7 +3421,7 @@
         }
       ],
       "added_at": "2026-08-10T21:59:50+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "category": "f1",
@@ -3370,7 +3462,7 @@
         }
       ],
       "added_at": "2026-08-10T21:59:50+05:30",
-      "rank": 71
+      "rank": 73
     },
     {
       "category": "f1",
@@ -3412,7 +3504,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 72
+      "rank": 74
     },
     {
       "category": "f1",
@@ -3458,7 +3550,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-10T20:12:51+05:30",
-      "rank": 73
+      "rank": 75
     },
     {
       "category": "f1",
@@ -3502,7 +3594,7 @@
         }
       ],
       "added_at": "2026-08-10T18:20:20+05:30",
-      "rank": 74
+      "rank": 76
     },
     {
       "category": "f1",
@@ -3540,7 +3632,7 @@
         }
       ],
       "added_at": "2026-08-10T16:04:12+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "category": "f1",
@@ -3587,7 +3679,7 @@
         "title": "Verstappen's Red Bull exit clause is now active after a rough first half of 2026",
         "date": null
       },
-      "rank": 76
+      "rank": 78
     },
     {
       "category": "f1",
@@ -3627,7 +3719,7 @@
         }
       ],
       "added_at": "2026-08-10T14:04:23+05:30",
-      "rank": 77
+      "rank": 79
     },
     {
       "region": "f1",
@@ -3671,77 +3763,6 @@
         }
       ],
       "added_at": "2026-08-10T12:14:18+05:30",
-      "rank": 78
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-08-10T01:00:00+01:00",
-      "regions": [
-        "UK",
-        "F1"
-      ],
-      "title": "Oscar Piastri warned he risks becoming McLaren's 'number two' as Lando Norris pulls ahead",
-      "key_points": [
-        "F1 pundit David Croft warned Piastri risks being seen as McLaren's **'number two' driver**.",
-        "Norris has been **outpacing Piastri** through the recent run of races heading into the summer break.",
-        "The concern: will McLaren informally **prioritize Norris** in the title fight if the gap keeps growing?",
-        "McLaren has repeatedly insisted it treats both drivers **equally**, unlike some rival teams.",
-        "The tension adds a subplot to F1's four-week **summer break**, when driver-market talks typically heat up."
-      ],
-      "background": "McLaren went into the 2026 season with Lando Norris and Oscar Piastri as a nominally equal driver pairing, both racing for the constructors' and drivers' titles without a designated team leader \u2014 a policy the team has publicly stood by even as rivals like Red Bull have historically favored one driver. Through the season, Norris has increasingly out-qualified and out-raced his teammate, raising the perennial F1 question of whether a team with two title-capable drivers can keep treating them as truly equal once one clearly has the upper hand.",
-      "what_happened": "Formula 1 commentator David Croft said Piastri needs to find a way to match Norris's pace or risk McLaren effectively treating him as the team's number two driver, even without an official declaration. The comments come as Norris has pulled ahead of his teammate across recent races heading into F1's mid-season **summer break**, raising questions about whether McLaren will keep its stated equal-treatment policy if the performance gap widens further. McLaren has not signaled any change to its approach, and both drivers remain in the fight for the drivers' championship, but the widening internal gap is becoming a bigger storyline than the external title race for some observers.",
-      "why_it_matters": "How McLaren handles a growing gap between its two drivers will test its 'no team orders' philosophy at exactly the moment it matters most \u2014 mid-title-fight \u2014 and could shape Piastri's future contract leverage and Norris's championship trajectory for the rest of 2026.",
-      "ripple_effects": "If Piastri's form doesn't recover, it could affect his negotiating position for future contracts and fuel speculation about a shakeup in McLaren's driver lineup or approach for 2027. It also feeds the broader 'best teammate battle' storylines F1 fans and sponsors follow closely.",
-      "why_now": "The comments land right as F1 enters its four-week summer break, a period when team and driver dynamics get intensely scrutinized before racing resumes.",
-      "watch_next": "How Piastri performs relative to Norris when the season resumes after the summer break.",
-      "key_terms": [],
-      "the_lesson": "Even teams that publicly commit to treating drivers equally face pressure to informally favor whoever is performing better \u2014 formal policy and practical reality don't always stay aligned once results start to diverge.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "PlanetF1",
-          "url": "https://www.planetf1.com/news/oscar-piastri-mclaren-number-two-david-croft"
-        }
-      ],
-      "added_at": "2026-08-10T09:59:57+05:30",
-      "rank": 79
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-08-08T00:00:00Z",
-      "regions": [
-        "Global"
-      ],
-      "title": "Cadillac gives up on its winless 2026 car to focus everything on 2027, as F1's newest team hits the summer break with zero points",
-      "key_points": [
-        "Cadillac will soon **stop developing its 2026 car** to pour resources into next year's, says driver Valtteri Bottas.",
-        "F1's newest team sits **11th and last** in the constructors' championship after 11 races, with **zero points**.",
-        "Bottas's best finish is **13th** (China), with **five retirements** in the first half of the season.",
-        "A brake fire in Hungary forced Bottas to stop using the **pit-entry wall**, a further sign of car reliability issues.",
-        "Colton Herta's reported chances of an F1 seat at Cadillac have **evaporated** as the team reviews driver options."
-      ],
-      "background": "Cadillac joined Formula 1 in 2026 as the sport's newest entrant, fielding an all-new team built largely from scratch \u2014 historically one of the hardest ways to compete in F1, since new teams typically need several seasons just to reach the development level of established rivals. The team paired experienced driver **Valtteri Bottas**, a former Mercedes and Alfa Romeo/Sauber driver with 10 grand prix wins, alongside Sergio Perez, hoping his experience would help bed in a brand-new car and organisation. Coming into the sport in the same year as a major new set of technical regulations added an extra layer of difficulty, since every team was starting fresh design work simultaneously.",
-      "what_happened": "Valtteri Bottas has confirmed that Cadillac will soon **halt development of its 2026 car** entirely and redirect its engineering resources toward the 2027 car instead. The team reaches the summer break as the only one on the grid without a single point, sitting **11th and last** in the constructors' championship after 11 races. Bottas's best result so far is **13th place** at the Chinese Grand Prix, and the car has suffered **five retirements** in the season's first half, including a brake fire during the Hungarian Grand Prix that was serious enough that Bottas has since stopped using the pit-entry wall approach during races. Separately, reports indicate American driver **Colton Herta**'s once-strong chances of landing a Cadillac F1 seat have largely evaporated as the team evaluates its options for future line-ups.",
-      "why_it_matters": "Giving up on the current car this early is an unusually blunt admission from a brand-new team that this season's design missed the mark, and it signals Cadillac is prioritising a competitive future over salvaging pride points this year.",
-      "ripple_effects": "A full pivot to 2027 development means Cadillac's remaining 2026 races become effectively about data-gathering and driver evaluation rather than results, which could affect Perez and Bottas's motivation and performances, and reshapes the team's driver-market calculus (including Herta's prospects) heading into next season.",
-      "why_now": "The timing follows the summer break, F1's traditional inflection point where teams reallocate development budget between the current and following year's car under the sport's cost-cap rules.",
-      "watch_next": "Whether Cadillac confirms its 2027 driver lineup, and how much of a step forward the new car shows when 2027 pre-season testing begins.",
-      "key_terms": [],
-      "the_lesson": "New entrants in any highly technical, capital-intensive competition usually need more than one cycle to catch up \u2014 recognising early that a first attempt has failed and reallocating resources fast is often the smarter move than chasing marginal gains on a lost cause.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Motorsport Week",
-          "url": "https://www.motorsportweek.com/2026/08/08/cadillac-halt-development-focus-next-season/"
-        }
-      ],
-      "added_at": "2026-08-10T08:04:36+05:30",
       "rank": 80
     }
   ],
