@@ -51,9 +51,8 @@ if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
   "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
 fi
 
-# ---- refresh the downloadable Learn-course EPUB (public). Emailing to the Kindle is ON-DEMAND now
-#      (triggered from the Update Center button → make_kindle.py --force), so the schedule never sends mail.
-"$PY" make_kindle.py --build-only || echo "WARN: kindle build failed"
+# ---- Kindle is fully MANUAL now (user handles it): the schedule neither builds nor e-mails the EPUB.
+#      Send on demand yourself with `python make_kindle.py --force` (or the Update Center "Send to Kindle" button).
 
 # ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true
