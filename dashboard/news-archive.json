@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T04:00:41+05:30",
+  "generated_at": "2026-08-12T06:02:30+05:30",
   "count": 500,
   "stories": [
     {
@@ -254,6 +254,46 @@
       "development": true,
       "prev_ref": {
         "title": "Ukraine's drone commander warns Russia is building toward firing 200 ballistic missiles in a single strike",
+        "date": null
+      }
+    },
+    {
+      "type": "story",
+      "title": "Colombia's earthquake death toll surges past 220 as new president says 5,000 homes destroyed",
+      "category": "geopolitics",
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "CNN",
+      "what_happened": "The death toll from Sunday's magnitude-7.4 earthquake in western Colombia has climbed to at least **224**, according to a CNN tally, up from roughly 160 a day earlier as rescuers push into harder-to-reach areas. President De La Espriella said in a national briefing that **700 people were injured** and an estimated **5,000 homes** were damaged or destroyed. First responders pulled a woman alive from the rubble of a collapsed building in Cali nearly **30 hours** after the quake hit, one of several dramatic rescues that have kept hope alive even as the toll rises. Colombia's Geological Service has logged more than 70 aftershocks since the main quake, complicating rescue work and unnerving residents already living outdoors. Seven airports have suspended operations and hospitals, roads, aqueducts, power and telecoms remain disrupted across the hardest-hit cities, all of which remain under the country's highest-level red alert.",
+      "key_points": [
+        "Confirmed deaths have risen to at least **224**, up from ~160 a day earlier, as rescue teams reach more remote towns.",
+        "President **Abelardo De La Espriella**, newly inaugurated, says **700 people** were injured and an estimated **5,000 homes** damaged or destroyed.",
+        "A woman was pulled alive from a collapsed building in **Cali** almost **30 hours** after the quake struck.",
+        "Colombia's Geological Service has recorded more than **70 aftershocks** since the magnitude-7.4 quake.",
+        "**Seven airports** remain shut and hospitals, roads and power are disrupted across the hardest-hit region."
+      ],
+      "depth": {
+        "background": "A magnitude-7.4 earthquake struck western Colombia on Sunday, with the epicenter near San Jose del Palmar, flattening buildings across Pereira, Cali, Quibdo, Manizales and Armenia. All five cities remain under Colombia's highest disaster classification, **'red alert.'** Colombia sits atop the Pacific 'Ring of Fire,' where the Nazca oceanic plate grinds beneath South America, making it one of the most earthquake-prone countries on the continent. The disaster is one of the first major tests for **President Abelardo De La Espriella**, who was only recently inaugurated.",
+        "sources": [
+          {
+            "name": "CNN",
+            "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com/world/latin-america/strong-earthquake-colombia-ecuador-people-evacuating-homes-buildings-rcna591709"
+          }
+        ]
+      },
+      "thread": {
+        "status": "developing",
+        "day": 2,
+        "previously": "We reported the death toll had climbed past 160 as rescuers dug through rubble after Sunday's magnitude-7.4 earthquake in western Colombia.",
+        "changed": "The confirmed toll has risen to at least 224, and Colombia's newly inaugurated president gave the first full damage briefing: 700 injured, roughly 5,000 homes damaged or destroyed, and a woman rescued alive after 30 hours under rubble."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Colombia's earthquake death toll climbs past 160 as rescuers keep digging through rubble",
         "date": null
       }
     },
@@ -2156,6 +2196,104 @@
             "url": "https://www.planetf1.com/news/oscar-piastri-mclaren-number-two-david-croft"
           }
         ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "An unreleased Claude research model pushes a 160-year-old math problem's bound from 41.6% to 67.2%",
+      "category": "science",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "The AI Insider",
+      "what_happened": "Anthropic said on **August 10** that an unreleased research version of its Claude AI model improved a decades-old mathematical bound connected to the Riemann hypothesis, raising the proportion of zeta-function zeros proven to lie on the 'critical line' from **41.6% to 67.2%** — the largest single jump on this specific figure in the problem's history. Claude reached the result over **two extended coding sessions**, coordinating roughly **60 subagents** and generating about **31 million tokens** of output as it studied prior research, tested ideas, wrote code and checked its own results. Anthropic's mathematicians reviewed the work, outside experts examined the paper, and Claude additionally produced a machine-checkable version of the proof using the formal-verification language **Lean 4**. The company published the manuscript, the Lean repository and its process logs publicly, though the underlying model itself remains unreleased, with no weights disclosed. Crucially, Claude did not prove the Riemann hypothesis itself — a lower bound of 67.2% is still very far from the 100% a full proof would need, and no known technique, human or machine, currently exists to close that gap.",
+      "key_points": [
+        "Anthropic disclosed that an **unreleased, research-only version of Claude** made the largest single jump ever recorded on a bound tied to the **Riemann hypothesis**.",
+        "The AI raised the proven lower bound on zeta-function zeros lying on the 'critical line' from **41.6% to 67.2%**.",
+        "The work used **two extended coding sessions**, roughly **60 subagents**, and **31 million output tokens**.",
+        "Human mathematicians reviewed the result, and Claude also produced a machine-checkable proof using the formal-verification tool **Lean**.",
+        "The Riemann hypothesis itself remains **unsolved** — 67.2% is still far short of the 100% a full proof would require."
+      ],
+      "depth": {
+        "background": "The **Riemann hypothesis** is one of the most famous unsolved problems in mathematics, first proposed in 1859, with a **$1 million Millennium Prize** attached to a full proof. It makes a precise claim about where the zeros of a mathematical function called the Riemann zeta function are located — a claim that, if true, would explain deep patterns in how prime numbers are distributed. Mathematicians have long tried to prove that a growing *fraction* of these zeros satisfy the hypothesis, even without proving it for all of them; that fraction is the 'bound' this AI system just moved. Anthropic ran this as an internal research exercise using a version of its Claude model that has not been released to the public.",
+        "sources": [
+          {
+            "name": "The AI Insider",
+            "url": "https://theaiinsider.tech/2026/08/11/anthropic-says-claude-improved-a-longstanding-bound-tied-to-the-riemann-hypothesis/"
+          },
+          {
+            "name": "Neowin",
+            "url": "https://www.neowin.net/news/unreleased-claude-model-makes-breakthrough-on-century-old-riemann-hypothesis-math-problem/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Sharad Pawar's party meets Modi as India's next Lok Sabha seat count sparks a north-south political fight",
+      "category": "india",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "India TV News",
+      "what_happened": "All eight Lok Sabha MPs of the Sharad Pawar-led NCP (Sharadchandra Pawar), headed by working president **Supriya Sule**, met Prime Minister **Narendra Modi** at his residence on **Monday**. The meeting, which lasted roughly 15-30 minutes by different accounts, was officially about **Maharashtra-specific issues** — drought, water scarcity, onion prices, and pollution in the Chandrabhaga river — and constituency concerns. But it took place amid active speculation that the party might be softening its opposition to the **Delimitation Bill** or edging closer to the ruling NDA coalition, given Parliament's disrupted monsoon session has left many MPs unable to raise issues on the floor. Sule pushed back on the political read, saying no political topics were discussed and that the meeting was simply a practical way to escalate constituency issues directly to the PM. Congress and other opposition parties, wary of any crack in the anti-delimitation front, have been pushing allied parties to hold a firm, unified line.",
+      "key_points": [
+        "All **8 Lok Sabha MPs** of the Sharad Pawar-led NCP (Sharadchandra Pawar), led by **Supriya Sule**, met PM Modi at his residence.",
+        "The meeting fuelled speculation the party could **soften its stance** on India's upcoming **Delimitation Bill**.",
+        "**Delimitation** would redraw parliamentary seats based on population — potentially shifting power toward the **north** and away from southern/western states.",
+        "Sule said the meeting was a **courtesy call** about local Maharashtra issues, not politics, since Parliament sittings have been disrupted.",
+        "Opposition parties, including **Congress**, want NCP(SP) to hold a firm, unified anti-delimitation line."
+      ],
+      "depth": {
+        "background": "India's Constitution froze the number of Lok Sabha seats by state in the 1970s specifically so that states which controlled population growth (mostly in the south and west) wouldn't be punished with fewer seats relative to faster-growing northern states. That freeze was meant to be temporary and is due to end after the next census-based delimitation exercise, which is why the topic is now explosive: a straightforward population-based reallocation could shift dozens of seats toward states like Uttar Pradesh and Bihar and away from Tamil Nadu, Kerala, Karnataka and Maharashtra. **Supriya Sule** leads the parliamentary wing of the NCP (Sharadchandra Pawar), the faction led by veteran leader **Sharad Pawar** after the party split from Ajit Pawar's NCP faction, which is part of the ruling NDA coalition. Delimitation has already become a flashpoint in this year's Parliament session.",
+        "sources": [
+          {
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/news/india/ncp-sp-mp-meeting-pm-modi-congress-india-bloc-parliament-monsoon-session-delimitation-women-reservation-latest-updates-2026-08-10-1050895"
+          },
+          {
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/ncp-sharad-pawar-mps-meet-pm-modi-amid-buzz-over-nda-switch-delimitation-bill-stance-1503626200.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Jharkhand protest leader hospitalized in critical condition after 9-day hunger strike over exam scam",
+      "category": "india",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "Al Jazeera",
+      "what_happened": "Devendra Nath Mahto, the 33-year-old leader of Jharkhand's student job-exam protests, was hospitalized on **Monday** after his blood sugar dropped sharply while he joined a march toward the state legislative assembly — arriving on a stretcher after **nine days** without food. Doctors at Ranchi Sadar Hospital described his condition as **critical**. His hospitalization came the same day riot police used water cannons and batons on protesters marching on the assembly building, and at least **six other protesters** remain on indefinite hunger strike despite the escalating health toll. The state government had already moved over the weekend to cancel the 14th JPSC preliminary exam and two backlog recruitment tests, and three JPSC board members resigned after being questioned by state investigators. But student groups say the protest will continue until the government also scraps the separate Combined Graduate Level exam and hands the paper-leak investigation to the CBI, which they don't yet trust the state to run impartially.",
+      "key_points": [
+        "Student leader **Devendra Nath Mahto**, 33, was hospitalized after his **blood sugar dropped drastically** during Monday's march.",
+        "He had been on an **indefinite hunger strike for nine days**, protesting alleged **recruitment exam irregularities** in Jharkhand.",
+        "Doctors at **Ranchi Sadar Hospital** described his condition as **critical**.",
+        "At least **six other protesters** remain on hunger strike even after his hospitalization.",
+        "The state government has already agreed to **cancel three tainted exams**, but protesters want the **CBI** to take over the probe."
+      ],
+      "depth": {
+        "background": "The protest began after allegations surfaced that recruitment exams run by the **Jharkhand Public Service Commission (JPSC)** and Jharkhand Staff Selection Commission were compromised by paper leaks and rigging, threatening the futures of thousands of young job-seekers in one of India's poorer states. Student leader **Devendra Nath Mahto** emerged as the face of the movement, going on hunger strike to press the government to scrap the tainted exams and hand the investigation to India's federal police agency, the **Central Bureau of Investigation (CBI)**. The state government has already cancelled the 14th JPSC preliminary exam and two backlog recruitment tests, and three JPSC board members resigned after being questioned by investigators, but protesters say that isn't enough.",
+        "sources": [
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/8/10/protesters-rally-in-indias-jharkhand-over-alleged-exam-irregularities"
+          },
+          {
+            "name": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-08-10/jharkhand-student-protesters-march-over-compromised-government-job-exams"
+          }
+        ]
+      },
+      "thread": {
+        "status": "escalating",
+        "day": 3,
+        "previously": "We reported Jharkhand had agreed to cancel a tainted exam, but the student protest pressed on into its 17th day.",
+        "changed": "Protest leader Devendra Nath Mahto was hospitalized in critical condition after a 9-day hunger strike, and police used water cannons on marchers, sharply escalating the standoff even as the state cancels more of the disputed exams."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Jharkhand agrees to cancel a tainted exam, but the student protest presses on into day 17",
+        "date": null
       }
     },
     {
@@ -14801,122 +14939,6 @@
           {
             "name": "Free Press Journal",
             "url": "https://www.freepressjournal.in/tech/supreme-court-orders-rbi-to-frame-mule-account-sop-as-it-issues-fresh-nationwide-directions-against-digital-arrest-scams"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Delhi Police stop Kejriwal's march to PM Modi's residence over E20 ethanol-blended petrol",
-      "category": "india",
-      "published_iso": "2026-08-04T11:00:00+05:30",
-      "added_at": "2026-08-04T21:58:22+05:30",
-      "source": "The Tribune",
-      "what_happened": "On the morning of **August 4**, Arvind Kejriwal led roughly **100 AAP workers and leaders**, including Manish Sisodia and Jasmine Shah, on a march toward Prime Minister Narendra Modi's residence. Their goal was to formally submit over **2.3 lakh petitions** gathered from citizens across India opposing the government's E20 ethanol-blended petrol policy, which they say is hurting vehicle owners. **Delhi Police intercepted and stopped the march** on Firoz Shah Road before it could reach the PM's residence, having deployed a heavy security presence of Delhi Police and paramilitary personnel in anticipation. Blocked from proceeding, Kejriwal and the other leaders **sat down in protest on the road**. Kejriwal said afterward that he would **intensify** the campaign against the E20 mandate rather than stand down.",
-      "key_points": [
-        "**Arvind Kejriwal** and about **100 AAP supporters** tried to march to **PM Modi's residence** to hand over petitions against **E20 petrol**.",
-        "They carried more than **2.3 lakh (230,000) petitions** collected from citizens nationwide opposing the ethanol-blended fuel policy.",
-        "**Delhi Police stopped the march** on Firoz Shah Road, deploying heavy security including paramilitary forces.",
-        "Former Delhi deputy CM **Manish Sisodia** and AAP's **Jasmine Shah** sat down in protest after being blocked.",
-        "Kejriwal vowed to **intensify the campaign** against the Centre's E20 policy rather than back down."
-      ],
-      "depth": {
-        "background": "**E20 petrol** is petrol blended with **20% ethanol**, part of the central government's push to cut oil imports and vehicle emissions by mixing biofuel into every litre sold at the pump. AAP, which lost power in Delhi but remains a vocal opposition force, has campaigned against the mandate, arguing ethanol-blended fuel **damages engines and reduces mileage** in older vehicles, a claim the government disputes. Kejriwal, AAP's national convenor, has increasingly used street marches and petition drives to keep pressure on the BJP-led central government since leaving Delhi's chief ministership.",
-        "sources": [
-          {
-            "name": "The Tribune",
-            "url": "https://www.tribuneindia.com/news/delhi/kejriwal-aap-leaders-stopped-by-police-from-marching-towards-pm-residence-over-e20-petrol-issue/"
-          },
-          {
-            "name": "Business Standard",
-            "url": "https://www.business-standard.com/politics/police-stops-kejriwal-aap-leaders-march-to-pm-residence-over-e20-fuel-126080400643_1.html"
-          },
-          {
-            "name": "Siasat",
-            "url": "https://www.siasat.com/police-stop-kejriwals-march-to-pm-residence-over-e20-3518498/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Pro-Kannada groups call a Karnataka-wide bandh for August 13 over a fresh order to release Cauvery water to Tamil Nadu",
-      "category": "india",
-      "published_iso": "2026-08-04T11:00:00+05:30",
-      "added_at": "2026-08-04T18:08:37+05:30",
-      "source": "Deccan Herald",
-      "what_happened": "Pro-Kannada organisations have called for a statewide bandh (shutdown) in Karnataka on **August 13**, running from **6am to 6pm**, to protest a CWMA directive ordering the state to release **3,500 cusecs of Cauvery water per day to Tamil Nadu for 15 days**. Activist Vatal Nagaraj said the shutdown has the backing of more than **1,600 Kannada organisations** and over **1,000 other groups** across the state, arguing that Karnataka itself is short on water and that the release will hurt local farmers who depend on the same river for irrigation. The Kannada film industry has also thrown its support behind the bandh call. The protest adds to a summer already marked by heavy flooding and monsoon disruption elsewhere in Karnataka and neighboring states.",
-      "key_points": [
-        "Over **1,600 Kannada organisations** have called for a bandh across Karnataka on **August 13**, from 6am to 6pm.",
-        "The trigger: a **Cauvery Water Management Authority (CWMA)** order directing Karnataka to release **3,500 cusecs of water daily to Tamil Nadu for 15 days**.",
-        "Activists argue Karnataka itself is facing **water scarcity** and that the release would hurt local farmers.",
-        "The **Kannada film industry** has publicly extended support to the bandh call.",
-        "This is the latest flashpoint in a **decades-old inter-state dispute** over sharing the Cauvery river's water."
-      ],
-      "depth": {
-        "background": "The Cauvery river dispute is one of India's oldest and most politically charged inter-state water conflicts, pitting Karnataka (upstream) against Tamil Nadu (downstream) over how much river water each state can use, mainly for irrigation and drinking supply. The Supreme Court eventually settled the sharing formula and created the **Cauvery Water Management Authority (CWMA)** to enforce it, but on-the-ground compliance remains a recurring flashpoint whenever water levels run low, and past bandh calls over the issue have shut down Bengaluru and other Karnataka cities before.",
-        "sources": [
-          {
-            "name": "Deccan Herald",
-            "url": "https://www.deccanherald.com/india/karnataka/cauvery-water-dispute-pro-kannada-outfits-call-for-karnataka-bandh-on-august-13-4094313"
-          },
-          {
-            "name": "Telangana Today",
-            "url": "https://telanganatoday.com/karnataka-bandh-on-august-13-against-cwma-order-to-release-cauvery-water"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Kimi Antonelli opens up on how pressure 'destroyed' him during his brutal rookie F1 season",
-      "category": "f1",
-      "published_iso": "2026-08-04T11:00:00+00:00",
-      "added_at": "2026-08-04T18:08:37+05:30",
-      "source": "RacingNews365",
-      "what_happened": "In an interview released **August 4** as part of SAP's 'Significant Figures' series, Antonelli spoke candidly about the toll of his rookie Formula 1 season, saying the sheer pace of new experiences felt like **'driving three seasons at once'** — overwhelming both physically and mentally. He said the pressure of the role at points **'kind of destroyed'** him, particularly during a difficult stretch in the European leg of the season when he felt he was letting down the people who had backed him, including Wolff, who fast-tracked him into the seat. Antonelli said he has since found ways to manage that pressure better and feels the experience has made him stronger going into the current season. Fellow young driver Arvid Lindblad separately praised Antonelli's 'pure racing instincts' in comments carried the same day.",
-      "key_points": [
-        "Antonelli said the learning curve felt like **'driving three seasons at once'** — mentally and physically overwhelming.",
-        "He admitted the pressure of replacing **Lewis Hamilton** at Mercedes **'kind of destroyed'** him at points in his debut season.",
-        "The toughest stretch came during the **European leg** of the campaign, when he felt he was **letting down** those who believed in him.",
-        "He says the experience has made him **stronger** heading into this season.",
-        "The comments came in an **SAP-sponsored interview series** released **August 4**, during F1's summer break."
-      ],
-      "depth": {
-        "background": "Kimi Antonelli was thrust into one of the most scrutinized seats in Formula 1 when **Mercedes** picked him to replace seven-time champion **Lewis Hamilton**, who left for Ferrari — a decision Mercedes boss Toto Wolff made before Antonelli had even raced in Formula 2, the feeder series most drivers use to prove themselves first. That vote of confidence came with enormous pressure: comparisons to Hamilton, and to teammate **George Russell**, followed him into every race weekend of his rookie campaign.",
-        "sources": [
-          {
-            "name": "RacingNews365",
-            "url": "https://racingnews365.com/f1-news"
-          },
-          {
-            "name": "Formula1.com",
-            "url": "https://www.formula1.com/en/latest/article/i-let-the-pressure-destroy-me-antonelli-opens-up-on-2025-struggles-and-how-they-made-him-stronger.2unpygSUVSbHqMUuMiFu5A"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Sergio Perez says Cadillac's rookie-season struggles come down to a lack of in-house development, not just pace",
-      "category": "f1",
-      "published_iso": "2026-08-04T10:00:00Z",
-      "added_at": "2026-08-05T12:03:25+05:30",
-      "source": "Motorsport.com",
-      "what_happened": "Perez explained that Cadillac's persistent gap to the midfield — currently around **2.5 seconds a lap**, with the team about **one second off** the cars just ahead — is driven partly by **'inefficiency'** and partly by the fact that a lot of development work is **outsourced to third parties** rather than done in-house, limiting how fast the team can iterate. A **significant upgrade package introduced at the Austrian Grand Prix** was meant to close that gap but has left the team's competitive position largely unchanged. Team technical figure **Pat Symonds** separately conducted an extensive review of Bottas's car after Bottas underperformed Perez by more than expected, given both arrived with similar credentials, going through the car 'top to bottom' looking for a technical explanation. Both drivers say the team needs either a major development breakthrough or a stroke of luck to score Cadillac's first championship points.",
-      "key_points": [
-        "**Cadillac**, F1's brand-new team this season, remains roughly **one second per lap** off the midfield despite continuous car updates.",
-        "**Sergio Perez** says the gap is partly down to **'inefficiency'** and a lack of development done in-house, since Cadillac outsources much of its car design to third parties.",
-        "A big upgrade package introduced in **Austria** hasn't closed the gap as much as hoped.",
-        "Team veteran **Pat Symonds** has been probing why teammate **Valtteri Bottas** has struggled even more than Perez despite similar experience.",
-        "Both drivers say Cadillac needs a **'big step' or some luck** to score its first championship points."
-      ],
-      "depth": {
-        "background": "**Cadillac** joined the F1 grid as a brand-new team in 2026, a rare and difficult undertaking since building a competitive car from scratch normally takes years even for well-funded operations. Unlike established teams, Cadillac doesn't yet have full in-house design and manufacturing capability for every component, so it relies on **third-party suppliers** for parts of its car — which slows how quickly it can react to weaknesses. **Sergio Perez**, a former Red Bull driver, and **Valtteri Bottas**, a former Mercedes driver, were signed specifically for their experience to help the new team find its feet.",
-        "sources": [
-          {
-            "name": "Motorsport.com",
-            "url": "https://www.motorsport.com/f1/news/sergio-perez-explains-what-is-holding-cadillac-back-in-f1-2026/10844080/"
           }
         ]
       }

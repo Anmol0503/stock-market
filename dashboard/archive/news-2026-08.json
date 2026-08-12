@@ -1,6 +1,6 @@
 {
   "month": "2026-08",
-  "count": 769,
+  "count": 773,
   "stories": [
     {
       "type": "story",
@@ -254,6 +254,46 @@
       "development": true,
       "prev_ref": {
         "title": "Ukraine's drone commander warns Russia is building toward firing 200 ballistic missiles in a single strike",
+        "date": null
+      }
+    },
+    {
+      "type": "story",
+      "title": "Colombia's earthquake death toll surges past 220 as new president says 5,000 homes destroyed",
+      "category": "geopolitics",
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "CNN",
+      "what_happened": "The death toll from Sunday's magnitude-7.4 earthquake in western Colombia has climbed to at least **224**, according to a CNN tally, up from roughly 160 a day earlier as rescuers push into harder-to-reach areas. President De La Espriella said in a national briefing that **700 people were injured** and an estimated **5,000 homes** were damaged or destroyed. First responders pulled a woman alive from the rubble of a collapsed building in Cali nearly **30 hours** after the quake hit, one of several dramatic rescues that have kept hope alive even as the toll rises. Colombia's Geological Service has logged more than 70 aftershocks since the main quake, complicating rescue work and unnerving residents already living outdoors. Seven airports have suspended operations and hospitals, roads, aqueducts, power and telecoms remain disrupted across the hardest-hit cities, all of which remain under the country's highest-level red alert.",
+      "key_points": [
+        "Confirmed deaths have risen to at least **224**, up from ~160 a day earlier, as rescue teams reach more remote towns.",
+        "President **Abelardo De La Espriella**, newly inaugurated, says **700 people** were injured and an estimated **5,000 homes** damaged or destroyed.",
+        "A woman was pulled alive from a collapsed building in **Cali** almost **30 hours** after the quake struck.",
+        "Colombia's Geological Service has recorded more than **70 aftershocks** since the magnitude-7.4 quake.",
+        "**Seven airports** remain shut and hospitals, roads and power are disrupted across the hardest-hit region."
+      ],
+      "depth": {
+        "background": "A magnitude-7.4 earthquake struck western Colombia on Sunday, with the epicenter near San Jose del Palmar, flattening buildings across Pereira, Cali, Quibdo, Manizales and Armenia. All five cities remain under Colombia's highest disaster classification, **'red alert.'** Colombia sits atop the Pacific 'Ring of Fire,' where the Nazca oceanic plate grinds beneath South America, making it one of the most earthquake-prone countries on the continent. The disaster is one of the first major tests for **President Abelardo De La Espriella**, who was only recently inaugurated.",
+        "sources": [
+          {
+            "name": "CNN",
+            "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com/world/latin-america/strong-earthquake-colombia-ecuador-people-evacuating-homes-buildings-rcna591709"
+          }
+        ]
+      },
+      "thread": {
+        "status": "developing",
+        "day": 2,
+        "previously": "We reported the death toll had climbed past 160 as rescuers dug through rubble after Sunday's magnitude-7.4 earthquake in western Colombia.",
+        "changed": "The confirmed toll has risen to at least 224, and Colombia's newly inaugurated president gave the first full damage briefing: 700 injured, roughly 5,000 homes damaged or destroyed, and a woman rescued alive after 30 hours under rubble."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Colombia's earthquake death toll climbs past 160 as rescuers keep digging through rubble",
         "date": null
       }
     },
@@ -2156,6 +2196,104 @@
             "url": "https://www.planetf1.com/news/oscar-piastri-mclaren-number-two-david-croft"
           }
         ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "An unreleased Claude research model pushes a 160-year-old math problem's bound from 41.6% to 67.2%",
+      "category": "science",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "The AI Insider",
+      "what_happened": "Anthropic said on **August 10** that an unreleased research version of its Claude AI model improved a decades-old mathematical bound connected to the Riemann hypothesis, raising the proportion of zeta-function zeros proven to lie on the 'critical line' from **41.6% to 67.2%** — the largest single jump on this specific figure in the problem's history. Claude reached the result over **two extended coding sessions**, coordinating roughly **60 subagents** and generating about **31 million tokens** of output as it studied prior research, tested ideas, wrote code and checked its own results. Anthropic's mathematicians reviewed the work, outside experts examined the paper, and Claude additionally produced a machine-checkable version of the proof using the formal-verification language **Lean 4**. The company published the manuscript, the Lean repository and its process logs publicly, though the underlying model itself remains unreleased, with no weights disclosed. Crucially, Claude did not prove the Riemann hypothesis itself — a lower bound of 67.2% is still very far from the 100% a full proof would need, and no known technique, human or machine, currently exists to close that gap.",
+      "key_points": [
+        "Anthropic disclosed that an **unreleased, research-only version of Claude** made the largest single jump ever recorded on a bound tied to the **Riemann hypothesis**.",
+        "The AI raised the proven lower bound on zeta-function zeros lying on the 'critical line' from **41.6% to 67.2%**.",
+        "The work used **two extended coding sessions**, roughly **60 subagents**, and **31 million output tokens**.",
+        "Human mathematicians reviewed the result, and Claude also produced a machine-checkable proof using the formal-verification tool **Lean**.",
+        "The Riemann hypothesis itself remains **unsolved** — 67.2% is still far short of the 100% a full proof would require."
+      ],
+      "depth": {
+        "background": "The **Riemann hypothesis** is one of the most famous unsolved problems in mathematics, first proposed in 1859, with a **$1 million Millennium Prize** attached to a full proof. It makes a precise claim about where the zeros of a mathematical function called the Riemann zeta function are located — a claim that, if true, would explain deep patterns in how prime numbers are distributed. Mathematicians have long tried to prove that a growing *fraction* of these zeros satisfy the hypothesis, even without proving it for all of them; that fraction is the 'bound' this AI system just moved. Anthropic ran this as an internal research exercise using a version of its Claude model that has not been released to the public.",
+        "sources": [
+          {
+            "name": "The AI Insider",
+            "url": "https://theaiinsider.tech/2026/08/11/anthropic-says-claude-improved-a-longstanding-bound-tied-to-the-riemann-hypothesis/"
+          },
+          {
+            "name": "Neowin",
+            "url": "https://www.neowin.net/news/unreleased-claude-model-makes-breakthrough-on-century-old-riemann-hypothesis-math-problem/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Sharad Pawar's party meets Modi as India's next Lok Sabha seat count sparks a north-south political fight",
+      "category": "india",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "India TV News",
+      "what_happened": "All eight Lok Sabha MPs of the Sharad Pawar-led NCP (Sharadchandra Pawar), headed by working president **Supriya Sule**, met Prime Minister **Narendra Modi** at his residence on **Monday**. The meeting, which lasted roughly 15-30 minutes by different accounts, was officially about **Maharashtra-specific issues** — drought, water scarcity, onion prices, and pollution in the Chandrabhaga river — and constituency concerns. But it took place amid active speculation that the party might be softening its opposition to the **Delimitation Bill** or edging closer to the ruling NDA coalition, given Parliament's disrupted monsoon session has left many MPs unable to raise issues on the floor. Sule pushed back on the political read, saying no political topics were discussed and that the meeting was simply a practical way to escalate constituency issues directly to the PM. Congress and other opposition parties, wary of any crack in the anti-delimitation front, have been pushing allied parties to hold a firm, unified line.",
+      "key_points": [
+        "All **8 Lok Sabha MPs** of the Sharad Pawar-led NCP (Sharadchandra Pawar), led by **Supriya Sule**, met PM Modi at his residence.",
+        "The meeting fuelled speculation the party could **soften its stance** on India's upcoming **Delimitation Bill**.",
+        "**Delimitation** would redraw parliamentary seats based on population — potentially shifting power toward the **north** and away from southern/western states.",
+        "Sule said the meeting was a **courtesy call** about local Maharashtra issues, not politics, since Parliament sittings have been disrupted.",
+        "Opposition parties, including **Congress**, want NCP(SP) to hold a firm, unified anti-delimitation line."
+      ],
+      "depth": {
+        "background": "India's Constitution froze the number of Lok Sabha seats by state in the 1970s specifically so that states which controlled population growth (mostly in the south and west) wouldn't be punished with fewer seats relative to faster-growing northern states. That freeze was meant to be temporary and is due to end after the next census-based delimitation exercise, which is why the topic is now explosive: a straightforward population-based reallocation could shift dozens of seats toward states like Uttar Pradesh and Bihar and away from Tamil Nadu, Kerala, Karnataka and Maharashtra. **Supriya Sule** leads the parliamentary wing of the NCP (Sharadchandra Pawar), the faction led by veteran leader **Sharad Pawar** after the party split from Ajit Pawar's NCP faction, which is part of the ruling NDA coalition. Delimitation has already become a flashpoint in this year's Parliament session.",
+        "sources": [
+          {
+            "name": "India TV News",
+            "url": "https://www.indiatvnews.com/news/india/ncp-sp-mp-meeting-pm-modi-congress-india-bloc-parliament-monsoon-session-delimitation-women-reservation-latest-updates-2026-08-10-1050895"
+          },
+          {
+            "name": "The Statesman",
+            "url": "https://www.thestatesman.com/india/ncp-sharad-pawar-mps-meet-pm-modi-amid-buzz-over-nda-switch-delimitation-bill-stance-1503626200.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Jharkhand protest leader hospitalized in critical condition after 9-day hunger strike over exam scam",
+      "category": "india",
+      "published_iso": "2026-08-10T00:00:00Z",
+      "added_at": "2026-08-12T06:02:30+05:30",
+      "source": "Al Jazeera",
+      "what_happened": "Devendra Nath Mahto, the 33-year-old leader of Jharkhand's student job-exam protests, was hospitalized on **Monday** after his blood sugar dropped sharply while he joined a march toward the state legislative assembly — arriving on a stretcher after **nine days** without food. Doctors at Ranchi Sadar Hospital described his condition as **critical**. His hospitalization came the same day riot police used water cannons and batons on protesters marching on the assembly building, and at least **six other protesters** remain on indefinite hunger strike despite the escalating health toll. The state government had already moved over the weekend to cancel the 14th JPSC preliminary exam and two backlog recruitment tests, and three JPSC board members resigned after being questioned by state investigators. But student groups say the protest will continue until the government also scraps the separate Combined Graduate Level exam and hands the paper-leak investigation to the CBI, which they don't yet trust the state to run impartially.",
+      "key_points": [
+        "Student leader **Devendra Nath Mahto**, 33, was hospitalized after his **blood sugar dropped drastically** during Monday's march.",
+        "He had been on an **indefinite hunger strike for nine days**, protesting alleged **recruitment exam irregularities** in Jharkhand.",
+        "Doctors at **Ranchi Sadar Hospital** described his condition as **critical**.",
+        "At least **six other protesters** remain on hunger strike even after his hospitalization.",
+        "The state government has already agreed to **cancel three tainted exams**, but protesters want the **CBI** to take over the probe."
+      ],
+      "depth": {
+        "background": "The protest began after allegations surfaced that recruitment exams run by the **Jharkhand Public Service Commission (JPSC)** and Jharkhand Staff Selection Commission were compromised by paper leaks and rigging, threatening the futures of thousands of young job-seekers in one of India's poorer states. Student leader **Devendra Nath Mahto** emerged as the face of the movement, going on hunger strike to press the government to scrap the tainted exams and hand the investigation to India's federal police agency, the **Central Bureau of Investigation (CBI)**. The state government has already cancelled the 14th JPSC preliminary exam and two backlog recruitment tests, and three JPSC board members resigned after being questioned by investigators, but protesters say that isn't enough.",
+        "sources": [
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/8/10/protesters-rally-in-indias-jharkhand-over-alleged-exam-irregularities"
+          },
+          {
+            "name": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-08-10/jharkhand-student-protesters-march-over-compromised-government-job-exams"
+          }
+        ]
+      },
+      "thread": {
+        "status": "escalating",
+        "day": 3,
+        "previously": "We reported Jharkhand had agreed to cancel a tainted exam, but the student protest pressed on into its 17th day.",
+        "changed": "Protest leader Devendra Nath Mahto was hospitalized in critical condition after a 9-day hunger strike, and police used water cannons on marchers, sharply escalating the standoff even as the state cancels more of the disputed exams."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Jharkhand agrees to cancel a tainted exam, but the student protest presses on into day 17",
+        "date": null
       }
     },
     {
