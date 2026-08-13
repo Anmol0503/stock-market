@@ -1,6 +1,6 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-14T00:16:15+05:30",
+  "generated_at": "2026-08-14T02:09:09+05:30",
   "day_label": "Thursday · 13 August 2026",
   "dashboard_url": "../",
   "cards": [
@@ -8,8 +8,145 @@
       "type": "story",
       "id": "story-1",
       "rank": 1,
-      "category": "economy",
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-08-12T12:00:00-07:00",
+      "added_at": "2026-08-14T02:09:09+05:30",
+      "source": "VentureBeat",
+      "importance": "notable",
+      "regions": [
+        "United States",
+        "Global"
+      ],
+      "title": "xAI ships Grok 4.6, matching GPT-5.6 as the AI model race keeps accelerating",
+      "what_happened": "xAI released **Grok 4.6** on August 12 as the direct successor to Grok 4.5, available immediately through its API, the Cursor code editor, and its own Grok Build environment. Rather than making the model bigger, xAI kept the same 1.5-trillion-parameter foundation and improved it through better fine-tuning and reinforcement learning, plus an expanded **500,000-token context window** for handling large codebases or documents in one go. On xAI's own benchmark table, Grok 4.6 scores 61 on the Artificial Analysis Intelligence Index in its high-reasoning mode, up from 56 for Grok 4.5, putting it roughly level with GPT-5.6 Sol Max. It bills at $2 per million input tokens and $6 per million output tokens for shorter prompts, which xAI is marketing as roughly half the price of comparable frontier models. A larger 2.1-trillion-parameter Grok 4.7 is reportedly planned for release a few weeks later.",
+      "key_points": [
+        "xAI (under SpaceXAI) launched **Grok 4.6**, its newest flagship AI model, on **August 12**",
+        "It scores **61** on the Artificial Analysis Intelligence Index, up from 56 for Grok 4.5",
+        "That ties it with **GPT-5.6 Sol Max** for third-best in the world on that benchmark",
+        "It has a **500,000-token context window**, letting developers feed it entire codebases at once",
+        "Pricing stays at **$2/$6 per million tokens** in/out — roughly half the price of some rival models"
+      ],
+      "moot": "In fast-moving tech races, being cheaper and 'good enough' can matter as much as being outright best — xAI is competing on price and context length, not just raw benchmark supremacy.",
+      "image_credit": "VentureBeat",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "MarkTechPost",
+          "VentureBeat"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "The large AI-model industry has settled into a rapid release cadence, with OpenAI, Google, Anthropic, and xAI each pushing out upgraded flagship models every few months to stay ahead on independent benchmarks like the Artificial Analysis Intelligence Index. xAI, Elon Musk's AI company (now folded under the SpaceXAI banner), has been racing to close the gap with better-funded rivals, leaning on cheaper pricing and long-context, coding-focused features to win developers. Grok 4.5, its predecessor, trailed the top tier of models on most independent benchmarks.",
+        "why_it_matters": "AI model quality and price directly shape which companies build products on top of which models — a cheaper model that matches the leaders can shift enormous developer traffic overnight. It's also a proof point that xAI, despite starting years behind OpenAI and Google, can now credibly compete at the frontier of AI capability.",
+        "ripple_effects": "Cheaper, more capable models accelerate the broader AI application boom — more startups can afford to build agents, coding tools, and consumer apps. It also intensifies competitive pressure on OpenAI, Google, and Anthropic to keep cutting prices or improving quality, which is good for developers and consumers but squeezes the margins of every AI lab racing to stay ahead.",
+        "why_now": "This is the latest move in an ongoing, roughly-quarterly cycle of flagship AI model releases as labs race to top the same public benchmarks.",
+        "watch_next": "Watch for independent third-party benchmark results (beyond xAI's own numbers) and for how quickly developers adopt Grok 4.6 in tools like Cursor.",
+        "market_link": "AI infrastructure and chip names (Nvidia, AMD, data-center operators) tend to benefit from any signal that the AI capability race — and the compute spending behind it — is still accelerating.",
+        "key_terms": [
+          {
+            "term": "context window",
+            "definition": "The maximum amount of text (measured in tokens, roughly word-fragments) an AI model can 'see' and reason over at once in a single conversation or task."
+          },
+          {
+            "term": "parameters",
+            "definition": "The internal numerical values an AI model learns during training; roughly, more parameters generally means a more capable — and more expensive to run — model."
+          }
+        ],
+        "sources": [
+          {
+            "name": "VentureBeat",
+            "url": "https://venturebeat.com/technology/spacexai-debuts-grok-4-6-overtaking-kimi-k3s-performance-and-matching-gpt-5-6-sol-for-worlds-third-best-on-artificial-analysis"
+          },
+          {
+            "name": "MarkTechPost",
+            "url": "https://www.marktechpost.com/2026/08/12/spacexai-releases-grok-4-6/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-2",
+      "rank": 2,
+      "category": "geopolitics",
+      "is_new": true,
+      "published_iso": "2026-08-12T06:00:00+09:00",
+      "added_at": "2026-08-14T02:09:09+05:30",
+      "source": "Al Jazeera",
+      "importance": "high",
+      "regions": [
+        "North Korea",
+        "South Korea",
+        "Japan",
+        "Russia",
+        "Ukraine"
+      ],
+      "title": "North Korea fires its second ballistic missile in a week, and a missile unit is reportedly heading to Russia",
+      "what_happened": "South Korea's military detected North Korea launching a ballistic missile from Wonsan in Kangwon province at around **6 a.m. local time on Wednesday, August 12**. Japan's Defense Ministry tracked the missile flying roughly **690 kilometers** and reaching a maximum altitude of about **90 kilometers** before it fell outside Japan's exclusive economic zone, with no reported damage to ships or aircraft. This is North Korea's ninth ballistic missile launch since the start of 2026, and its second in less than a week — the first was a short-range missile fired from the same area on August 6. Separately, South Korean and Western intelligence assessments say a **North Korean missile unit has begun deploying to western Russia**, reportedly equipped with up to 120 ballistic missiles and six launchers that could be used against Ukraine.",
+      "key_points": [
+        "North Korea fired a ballistic missile toward the **Sea of Japan** early Wednesday from Wonsan",
+        "It flew about **690 km** and reached **90 km** altitude before falling outside Japan's waters",
+        "This was Pyongyang's **ninth ballistic missile launch of 2026**, and second in under a week",
+        "A North Korean missile unit is reportedly deploying to **western Russia** with up to **120 ballistic missiles**",
+        "Seoul says the launches are protest timing against upcoming **US-South Korea military drills**"
+      ],
+      "moot": "When a sanctioned state finds a wartime buyer for its weapons, sanctions lose much of their bite — North Korea's missile program is advancing precisely because Russia's war created a market for exactly what Pyongyang had to sell.",
+      "image_credit": "Al Jazeera",
+      "credibility": {
+        "level": "confirmed",
+        "count": 2,
+        "tier": 1,
+        "outlets": [
+          "Al Jazeera",
+          "South China Morning Post"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "proxy_war",
+        "nuclear_deterrence"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "North Korea has ramped up ballistic missile testing through 2026, usually timed to US-South Korea military exercises, which Pyongyang's government treats as rehearsals for an invasion of the North. Since Russia invaded Ukraine, North Korea has become one of Moscow's most important wartime suppliers — first sending artillery shells, then thousands of combat troops, and now reportedly entire missile units. In exchange, analysts believe Kim Jong Un's regime is getting **money, food, and Russian technology transfers** that help modernize North Korea's own weapons programs, including satellite and submarine technology.",
+        "why_it_matters": "Every North Korean missile test is also a live weapons-development exercise for a nuclear-armed state under UN sanctions — each launch refines guidance systems and range that could one day be turned into a genuine long-range nuclear threat. The reported missile-unit deployment to Russia would mark a new tier of North Korea-Russia military integration, beyond troops and shells, deepening a partnership that gives Pyongyang battlefield data and advanced technology in return.",
+        "ripple_effects": "For Ukraine, more North Korean missiles in Russian hands could mean more munitions raining down on its cities. For South Korea and Japan, each launch adds pressure to accelerate missile-defense spending and coordination with the US. For the wider world, a North Korea that is gaining combat experience and Russian know-how becomes a harder problem to manage diplomatically, and strengthens the informal Moscow-Pyongyang-Beijing alignment that Washington has been trying to counter.",
+        "why_now": "The timing lines up with North Korea's pattern of testing missiles just before joint US-South Korea drills, which it uses to signal displeasure and demonstrate readiness.",
+        "watch_next": "Watch for South Korea and the US to respond with their own joint military drills in the coming days, and for further intelligence on how many North Korean troops and missile units are now stationed in Russia.",
+        "market_link": "Escalation on the Korean peninsula tends to nudge safe-haven assets like gold and the yen higher and briefly weighs on South Korean and Japanese equities.",
+        "key_terms": [
+          {
+            "term": "exclusive economic zone",
+            "definition": "The stretch of ocean up to 200 nautical miles from a country's coast where it has special rights over resources and can treat incursions as provocations."
+          },
+          {
+            "term": "ballistic missile",
+            "definition": "A missile that is powered and guided for its initial launch phase, then falls under gravity toward its target — as opposed to a cruise missile, which is powered and guided throughout its flight."
+          }
+        ],
+        "sources": [
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2026/8/12/n-korea-launches-ballistic-missile-as-s-korea-us-plan-military-drills"
+          },
+          {
+            "name": "South China Morning Post",
+            "url": "https://www.scmp.com/week-asia/politics/article/3363744/north-korea-missile-launch-hints-upgraded-weapons-exports-russia-ukraine-war"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-3",
+      "rank": 3,
+      "category": "economy",
       "published_iso": "2026-08-13T14:00:00-04:00",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "CBC News",
@@ -71,10 +208,9 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 2,
+      "id": "story-4",
+      "rank": 4,
       "category": "geopolitics",
-      "is_new": true,
       "published_iso": "2026-08-13T09:30:00+02:00",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "Sudan Tribune",
@@ -139,8 +275,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 3,
+      "id": "story-5",
+      "rank": 5,
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -211,8 +347,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 4,
+      "id": "story-6",
+      "rank": 6,
       "category": "geopolitics",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T22:34:28+05:30",
@@ -271,8 +407,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-7",
+      "rank": 7,
       "category": "technology",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -338,8 +474,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 6,
+      "id": "story-8",
+      "rank": 8,
       "category": "economy",
       "published_iso": "2026-08-12T12:30:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -407,76 +543,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 7,
-      "category": "geopolitics",
-      "published_iso": "2026-08-12T12:00:00+00:00",
-      "added_at": "2026-08-13T18:15:32+05:30",
-      "source": "Euronews",
-      "importance": "high",
-      "regions": [
-        "Russia",
-        "Europe",
-        "EU"
-      ],
-      "title": "Putin threatens to seize European ships 'anywhere' in retaliation for EU moves against Russia's sanctioned 'shadow fleet'",
-      "what_happened": "President Vladimir Putin said Wednesday that Russia would seize European ships in retaliation if EU countries follow through on selling off cargo from detained Russian 'shadow fleet' tankers. Speaking while overseeing **naval drills in Russia's Far East**, Putin called the EU's sanctions move **'piracy and banditry'** and said, **'We will be forced to respond in kind.'** He specified the retaliation would not necessarily target ships in the same waters where Russian vessels were seized — Russia would act **'anywhere, including in the area of responsibility of the Pacific Fleet.'** The trigger was a new EU sanctions package passed last month permitting member states to sell the oil or cargo seized from shadow-fleet tankers; **nine** such tankers have been detained across Europe since the start of 2026, **four of them by France** alone.",
-      "key_points": [
-        "Putin called EU plans to sell off cargo from seized Russian tankers **'piracy and banditry'** and vowed to **'respond in kind'**.",
-        "He said Russia would seize European ships **wherever it 'deems necessary'** — explicitly including the **Pacific**, far from European waters.",
-        "The threat responds to new EU sanctions letting member states **sell the oil and cargo** from detained 'shadow fleet' tankers.",
-        "**Nine** such tankers have been detained in Europe since the start of 2026, **four of them in France**.",
-        "Putin made the comments while personally overseeing **Russian naval drills** in the Far East."
-      ],
-      "moot": "Sanctions enforcement tends to escalate in steps — freezing assets, then detaining them, then selling them — and each step invites a proportional response from the country being sanctioned, so tracking the exact stage of enforcement matters as much as tracking the sanctions themselves.",
-      "image_credit": "Euronews",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "Bloomberg",
-          "Euronews"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "sanctions"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "Russia's 'shadow fleet' is a network of aging, often unregistered or falsely-flagged oil tankers that Moscow uses to keep exporting oil despite Western **sanctions** imposed after its invasion of Ukraine — sanctions being economic penalties, like trade or financial restrictions, meant to pressure a country's government. European countries have increasingly intercepted and detained these tankers, several of them linked to sanctioned Russian companies or suspected of sabotage, like the tanker that sank off Oman spilling oil across protected coastline. Last month the EU passed new rules letting member states go a step further: not just detain the ships, but actually sell their oil and cargo.",
-        "why_it_matters": "This is a direct escalation from sanctions-and-detentions into a threat of retaliatory seizures of commercial shipping — a step that, if carried out, would raise real risk for any European-flagged or European-owned vessel operating near Russian-controlled waters, including far from Europe itself.",
-        "ripple_effects": "Shipping insurers may raise premiums or add exclusions for vessels transiting near Russian naval zones, especially in the Pacific and Arctic. European shipping and logistics firms could face new operational risk calculations, and the EU may pause or slow-walk the cargo-sale plan to avoid provoking retaliation. It also adds another flashpoint to an already tense standoff that includes the Ukraine war, Baltic Sea cable sabotage allegations, and NATO's hybrid-warfare warnings.",
-        "why_now": "The threat comes right as EU states move from simply detaining shadow-fleet tankers to actually selling their cargo — the first time sanctions enforcement has crossed into taking Russian-linked assets, which Moscow is treating as a new redline.",
-        "watch_next": "Whether any EU state actually completes a cargo sale from a detained tanker — that would be the trigger point for Putin to test his retaliation threat.",
-        "market_link": "Rising Russia-EU shipping tensions could push up marine insurance costs and add a geopolitical risk premium to Brent crude and European energy prices.",
-        "key_terms": [
-          {
-            "term": "Shadow fleet",
-            "definition": "A network of aging, often unregistered oil tankers Russia uses to export oil while evading Western sanctions."
-          },
-          {
-            "term": "Sanctions",
-            "definition": "Economic penalties, like trade or financial restrictions, that governments impose on a country to pressure its behavior."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/my-europe/2026/08/12/putin-threatens-retaliatory-seizures-of-european-ships"
-          },
-          {
-            "name": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-08-12/putin-threatens-retaliation-over-eu-moves-to-seize-russian-ships"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-8",
-      "rank": 8,
+      "id": "story-10",
+      "rank": 10,
       "category": "science",
       "development": true,
       "prev_ref": {
@@ -553,8 +621,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 10,
+      "id": "story-12",
+      "rank": 12,
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -628,8 +696,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 11,
+      "id": "story-13",
+      "rank": 13,
       "category": "climate",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T14:01:47+05:30",
@@ -702,8 +770,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 13,
+      "id": "story-15",
+      "rank": 15,
       "category": "geopolitics",
       "published_iso": "2026-08-13T10:00:00+03:30",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -776,8 +844,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 14,
+      "id": "story-16",
+      "rank": 16,
       "category": "geopolitics",
       "published_iso": "2026-08-13T09:00:00+08:00",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -852,6 +920,74 @@
       "rank": 21,
       "category": "india",
       "is_new": true,
+      "published_iso": "2026-08-13T11:00:00+05:30",
+      "added_at": "2026-08-14T02:09:09+05:30",
+      "source": "LiveLaw",
+      "importance": "notable",
+      "regions": [
+        "India",
+        "Karnataka"
+      ],
+      "title": "Supreme Court slams Karnataka's 'absurd' terror-trial delays, orders a dedicated fast-track court",
+      "what_happened": "The Supreme Court bench, hearing a bail plea from Shahid Khan — in custody since **September 22, 2022** in a case involving PFI members — pulled up the Karnataka government over what it called an 'absurd' prosecution plan. The state's case involves 707 witnesses in total, but its own submission proposed examining only 50 of them specifically in relation to Khan, with no clear timeline for finishing the trial. The bench said the state cannot have \"the luxury of prolonging trial for years\" while a citizen sits in jail awaiting trial, calling it \"callousness\" for a prosecuting agency to withhold a clear picture of when a case will conclude. As a remedy, the Court directed the Karnataka government to set up an **additional special court** to hear UAPA cases exclusively, on a day-to-day basis, with the necessary approvals to be granted within two weeks.",
+      "key_points": [
+        "The Supreme Court criticized Karnataka's prosecution plan in a **UAPA (terror law) case** as 'absurd'",
+        "The accused, Shahid Khan, has been in custody since **September 2022** without trial completing",
+        "Of **707 witnesses** in the case, the state proposed examining just 50 in relation to Khan — with no timeline",
+        "The Court called it **'callousness'** for the state to keep a citizen jailed without a clear trial plan",
+        "It ordered Karnataka to set up an **additional special court** dedicated to UAPA cases within two weeks"
+      ],
+      "moot": "A right (like bail or a fair trial) that exists on paper but takes years to enforce in practice isn't much of a right at all — courts stepping in to fix process delays is often as important as the underlying law itself.",
+      "image_credit": "LiveLaw",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Deccan Chronicle",
+          "LiveLaw"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [
+        "supreme_court_india",
+        "judiciary_collegium"
+      ],
+      "figures": [],
+      "depth": {
+        "background": "The UAPA (Unlawful Activities Prevention Act) is India's main anti-terror law, allowing extended pre-trial detention and making bail much harder to get than under ordinary criminal law. Critics have long argued it lets the state keep people in jail for years without ever proving a case in court, effectively making the process itself the punishment. This case involves an accused linked to the **Popular Front of India (PFI)**, an Islamic organisation the government banned in 2022 over alleged extremist links, and the ruling was delivered by a bench led by Chief Justice of India **Surya Kant**.",
+        "why_it_matters": "This is a direct check on how anti-terror law is applied in practice: courts, not just legislators, are pushing back on prosecutions that keep citizens jailed indefinitely without a credible plan to actually try the case. It reinforces a constitutional principle — the right to a fair and timely trial — against a law that has often been criticized for enabling the opposite.",
+        "ripple_effects": "The ruling could pressure other states with backlogged UAPA cases to speed up trials or risk similar judicial rebukes, and it may bolster bail arguments for other long-detained UAPA-accused individuals citing 'trial delay' as a ground. It also adds to a broader pattern of the current Supreme Court bench taking a firmer line on prolonged pre-trial detention across various laws.",
+        "why_now": "The ruling came as the Court heard Khan's bail plea after nearly four years in custody, prompting the bench to confront the state directly over the case's lack of progress.",
+        "watch_next": "Watch for whether Karnataka meets the two-week deadline to set up the new special court, and whether Khan is granted bail as the case proceeds.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "UAPA",
+            "definition": "The Unlawful Activities (Prevention) Act — India's principal anti-terrorism law, known for strict bail conditions that let authorities detain accused people for long periods before trial."
+          },
+          {
+            "term": "PFI",
+            "definition": "The Popular Front of India, an Islamic organisation banned by the Indian government in 2022 over alleged links to extremism and unlawful activity."
+          }
+        ],
+        "sources": [
+          {
+            "name": "LiveLaw",
+            "url": "https://www.livelaw.in/amp/top-stories/state-cant-prolong-trial-when-citizen-languishes-in-jail-supreme-court-slams-karnatakas-absurd-prosecution-plan-in-uapa-case-545561"
+          },
+          {
+            "name": "Deccan Chronicle",
+            "url": "https://www.deccanchronicle.com/nation/sc-directs-karnataka-to-set-up-additional-special-court-for-uapa-cases-1978614"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-22",
+      "rank": 22,
+      "category": "india",
       "published_iso": "2026-08-12T12:00:00+03:00",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "The Moscow Times",
@@ -913,10 +1049,9 @@
     },
     {
       "type": "story",
-      "id": "story-22",
-      "rank": 22,
+      "id": "story-23",
+      "rank": 23,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-12T22:11:41+05:30",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "CBS News",
@@ -981,8 +1116,8 @@
     },
     {
       "type": "story",
-      "id": "story-23",
-      "rank": 23,
+      "id": "story-24",
+      "rank": 24,
       "category": "india",
       "published_iso": "2026-08-12T12:33:00Z",
       "added_at": "2026-08-13T22:34:28+05:30",
@@ -1044,8 +1179,8 @@
     },
     {
       "type": "story",
-      "id": "story-24",
-      "rank": 24,
+      "id": "story-25",
+      "rank": 25,
       "category": "india",
       "published_iso": "2026-08-13T10:23:00Z",
       "added_at": "2026-08-13T22:34:28+05:30",
@@ -1106,8 +1241,8 @@
     },
     {
       "type": "story",
-      "id": "story-25",
-      "rank": 25,
+      "id": "story-26",
+      "rank": 26,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1198,8 +1333,8 @@
     },
     {
       "type": "story",
-      "id": "story-26",
-      "rank": 26,
+      "id": "story-27",
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-12T10:00:00+00:00",
       "added_at": "2026-08-13T18:15:32+05:30",
@@ -1263,8 +1398,8 @@
     },
     {
       "type": "story",
-      "id": "story-27",
-      "rank": 27,
+      "id": "story-28",
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-13T07:00:00+00:00",
       "added_at": "2026-08-13T18:15:32+05:30",
@@ -1332,73 +1467,8 @@
     },
     {
       "type": "story",
-      "id": "story-28",
-      "rank": 28,
-      "category": "india",
-      "published_iso": "2026-08-12T17:30:00+05:30",
-      "added_at": "2026-08-13T16:08:56+05:30",
-      "source": "Forbes India",
-      "importance": "high",
-      "regions": [
-        "India"
-      ],
-      "title": "India's retail inflation hits a 19-month high of 4.45% in July, driven by pricier food",
-      "what_happened": "The National Statistics Office reported that India's retail inflation rose to 4.45% in July, its highest level in 19 months and up from 4.38% in June. The increase was mainly driven by food prices, where inflation rose to 5.52% from 5.32% the month before. This marks the second consecutive month inflation has printed above the RBI's 4% target, following sixteen straight months where it had stayed below that level. The RBI's own projections, released alongside its August rate decision, anticipate inflation will keep climbing in the near term and peak around 5.9% in the October-December quarter of this fiscal year, before easing again.",
-      "key_points": [
-        "**Consumer price index (CPI) inflation** rose to **4.45% in July**, up from 4.38% in June — the **highest reading in 19 months**.",
-        "**Food inflation** was the main driver, climbing to **5.52%** from 5.32% the previous month.",
-        "This is the **second straight month** that inflation has stayed above the **RBI's 4% target**, after 16 months of running below it.",
-        "The RBI itself expects headline inflation to keep rising and **peak near 5.9% in the October-December quarter**.",
-        "Data was released by the **National Statistics Office (NSO)** on August 12."
-      ],
-      "moot": "Inflation data is backward-looking but forward-steering: a single month's higher-than-expected print can shift a central bank's entire near-term interest-rate plan, because it changes how much room policymakers feel they have to support growth without letting prices spiral.",
-      "image_credit": "Forbes India",
-      "credibility": {
-        "level": "developing",
-        "count": 2,
-        "tier": 2,
-        "outlets": [
-          "Forbes India",
-          "Upstox"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [
-        "cpi_wpi",
-        "rbi",
-        "inflation",
-        "monetary_policy_committee"
-      ],
-      "figures": [],
-      "depth": {
-        "background": "The Consumer Price Index (CPI) measures how much prices for a broad basket of everyday goods and services — like food, fuel and housing — have changed for typical households, and it's India's main gauge of retail inflation. The Reserve Bank of India (RBI) targets keeping CPI inflation around 4%, using it as the main input for interest-rate decisions. Just a week earlier, the RBI's rate-setting committee had held its key policy rate steady at 5.25% for a fourth straight meeting, citing a wish for 'greater clarity' on where inflation was heading before acting either way.",
-        "why_it_matters": "Inflation eating into household budgets is one of the most direct ways an economic trend is felt by ordinary people, especially through food costs, which weigh heaviest on lower-income families. It also narrows the RBI's room to cut interest rates to support growth, since doing so while inflation is already running hot risks making prices rise even faster.",
-        "ripple_effects": "Higher food inflation typically hits rural and lower-income households hardest, since they spend a larger share of their income on food. For markets, a hotter inflation print reduces the odds of an RBI rate cut at its October meeting, which matters for borrowing costs on everything from home loans to corporate credit, and can affect how foreign investors view Indian bonds.",
-        "why_now": "The data covers July and was released by the NSO on August 12, arriving just a week after the RBI's own rate decision cited inflation uncertainty as the reason for holding rates steady.",
-        "watch_next": "Whether food prices continue climbing into the RBI's projected 5.9% peak in the October-December quarter, and how that shapes the central bank's rate decision at its next meeting, October 5-7.",
-        "market_link": "Hotter-than-expected inflation reduces the odds of an RBI rate cut, which matters for rate-sensitive sectors like banks, NBFCs, autos and real estate, and for how foreign investors price Indian government bonds.",
-        "key_terms": [
-          {
-            "term": "CPI (Consumer Price Index)",
-            "definition": "A measure of how much prices for a typical basket of goods and services have risen over time — India's main gauge of retail inflation."
-          }
-        ],
-        "sources": [
-          {
-            "name": "Forbes India",
-            "url": "https://www.forbesindia.com/amp/article/news/july-retail-inflation-inches-up-to-4-45-percent/2997013/1"
-          },
-          {
-            "name": "Upstox",
-            "url": "https://upstox.com/news/business-news/economy/india-s-retail-inflation-grows-to-4-45-in-july-2026-shows-nso-data/article-198548/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-29",
-      "rank": 29,
+      "id": "story-30",
+      "rank": 30,
       "category": "india",
       "published_iso": "2026-08-13T08:00:00+05:30",
       "added_at": "2026-08-13T16:08:56+05:30",
@@ -1458,8 +1528,8 @@
     },
     {
       "type": "story",
-      "id": "story-30",
-      "rank": 30,
+      "id": "story-31",
+      "rank": 31,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1533,8 +1603,8 @@
     },
     {
       "type": "story",
-      "id": "story-31",
-      "rank": 31,
+      "id": "story-32",
+      "rank": 32,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1604,8 +1674,8 @@
     },
     {
       "type": "story",
-      "id": "story-32",
-      "rank": 32,
+      "id": "story-33",
+      "rank": 33,
       "category": "india",
       "published_iso": "2026-08-13T08:55:00+05:30",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -1662,8 +1732,8 @@
     },
     {
       "type": "story",
-      "id": "story-33",
-      "rank": 33,
+      "id": "story-34",
+      "rank": 34,
       "category": "india",
       "published_iso": "2026-08-13T09:15:00+05:30",
       "added_at": "2026-08-13T10:01:17+05:30",
@@ -1726,8 +1796,8 @@
     },
     {
       "type": "story",
-      "id": "story-34",
-      "rank": 34,
+      "id": "story-35",
+      "rank": 35,
       "category": "india",
       "development": true,
       "prev_ref": {
@@ -1795,8 +1865,8 @@
     },
     {
       "type": "story",
-      "id": "story-38",
-      "rank": 38,
+      "id": "story-39",
+      "rank": 39,
       "category": "india",
       "published_iso": "2026-08-13T00:30:00+05:30",
       "added_at": "2026-08-13T07:07:16+05:30",
@@ -1859,7 +1929,6 @@
       "id": "story-61",
       "rank": 61,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-13T10:00:00+01:00",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "TheJudge13",
@@ -1920,7 +1989,6 @@
       "id": "story-62",
       "rank": 62,
       "category": "f1",
-      "is_new": true,
       "published_iso": "2026-08-12T12:00:00+01:00",
       "added_at": "2026-08-14T00:16:15+05:30",
       "source": "PlanetF1",
@@ -2420,6 +2488,125 @@
       "id": "story-41",
       "rank": 41,
       "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-08-13T09:00:00+05:30",
+      "added_at": "2026-08-14T02:09:09+05:30",
+      "source": "Republic World",
+      "importance": "notable",
+      "regions": [
+        "India",
+        "Bangladesh"
+      ],
+      "title": "BCCI seeks the Indian government's go-ahead before confirming a Bangladesh tour, as cricket ties stay strained",
+      "what_happened": "BCCI sources say the board has locked in a proposed window for a six-match tour of Bangladesh but will not confirm it until it receives formal approval from the Indian government — standard practice for tours to countries where diplomatic sensitivities are in play. This follows a visit by BCB president Tamim Iqbal to the BCCI's Centre of Excellence in Bengaluru, which cricket officials on both sides described as a positive step toward normalizing relations. The tour, originally scheduled for August 2025, was deferred by mutual agreement to September 2026 after the earlier diplomatic rupture.",
+      "key_points": [
+        "BCCI says it will approach the **Indian government** for formal clearance before confirming a tour of Bangladesh",
+        "Tensions began in **January 2026** when BCCI asked KKR to release Bangladeshi bowler Mustafizur Rahman from the IPL",
+        "Bangladesh's board (BCB) then **refused to travel to India** for the 2026 T20 World Cup, citing security advice",
+        "A recent visit by **BCB president Tamim Iqbal** to the BCCI's Bengaluru academy has revived hopes for the tour",
+        "The series was originally set for **August 2025** before being deferred to **September 2026**"
+      ],
+      "moot": "When diplomatic relations between two countries sour, even seemingly unrelated institutions — like national cricket boards — end up needing government sign-off, because sport rarely stays separate from politics for long.",
+      "image_credit": "Republic World",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Cricket Addictor",
+          "Republic World"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "Cricket ties between India and Bangladesh soured amid the political turmoil in Bangladesh under its interim government led by Muhammad Yunus, feeding into a broader chill in bilateral relations. The flashpoint came when BCCI, citing violence against religious minorities in Bangladesh, asked Kolkata Knight Riders to release Bangladeshi pace bowler Mustafizur Rahman from their IPL 2026 squad — a request Bangladesh's board answered days later by pulling its national team out of traveling to India for the 2026 T20 World Cup over security concerns. Since then, ties have shown signs of thawing under new Bangladesh Prime Minister Tarique Rahman.",
+        "why_it_matters": "Cricket between India and Bangladesh is not just sport — it has become a visible barometer of the two countries' broader political relationship, and a canceled or confirmed tour sends a real diplomatic signal beyond the pitch. Government sign-off requirements show how closely India treats sports diplomacy as an extension of foreign policy when relations are fragile.",
+        "ripple_effects": "A confirmed tour would be read as a genuine thaw in India-Bangladesh relations and give both boards' broadcast and sponsorship revenues a lift; a further delay or cancellation would be read as ties remaining fragile. Player availability and IPL contracts for Bangladeshi cricketers could also remain a flashpoint depending on how relations evolve.",
+        "why_now": "The tour window needs to be locked in soon given the September 2026 target date, forcing BCCI to seek government clearance now.",
+        "watch_next": "Watch for the Indian government's formal response and whether BCCI and BCB announce confirmed fixtures for the September window.",
+        "market_link": null,
+        "key_terms": [],
+        "sources": [
+          {
+            "name": "Republic World",
+            "url": "https://www.republicworld.com/amp/cricket/bcci-awaits-government-green-light-before-confirming-bangladesh-tour-sources-2026-08-13-134661"
+          },
+          {
+            "name": "Cricket Addictor",
+            "url": "https://cricketaddictor.com/cricket-news/bcci-locks-bangladesh-tour-window-seeks-modi-govt-approval-for-series-462368/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-42",
+      "rank": 42,
+      "category": "cricket",
+      "is_new": true,
+      "published_iso": "2026-08-11T18:00:00+05:30",
+      "added_at": "2026-08-14T02:09:09+05:30",
+      "source": "BCCI.tv",
+      "importance": "notable",
+      "regions": [
+        "India",
+        "Sri Lanka"
+      ],
+      "title": "India names Shubman Gill to captain the Sri Lanka Tests, with Bumrah and Jadeja's returns still hanging on fitness",
+      "what_happened": "BCCI's selection committee announced the squad on **Tuesday**, confirming **Shubman Gill** as Test captain and **KL Rahul** in the leadership group as vice-captain. Ravindra Jadeja returns to the squad after his rest period, and uncapped domestic performer **Auqib Nabi** earns his first India call-up on the back of 104 wickets across his last two Ranji Trophy seasons. Jasprit Bumrah's status remains genuinely unsettled: some reports say he has been named in the squad but will only play once he clears a fitness test with the BCCI's Centre of Excellence, while other reports say he has already been ruled out and replaced by Nabi. India also has a four-day practice match in Colombo before the series to help assess player fitness.",
+      "key_points": [
+        "BCCI named its **15-man Test squad** for the two-match Sri Lanka series, starting **August 15** in Galle",
+        "**Shubman Gill** continues as captain, with **KL Rahul** as vice-captain",
+        "**Ravindra Jadeja** returns after being rested for the Afghanistan series in June",
+        "**Jasprit Bumrah**'s spot is contested — reports conflict on whether he's fully cleared or still assessing his knee",
+        "**Auqib Nabi**, a 26-year-old pacer from Jammu and Kashmir, gets a maiden call-up after **104 wickets** in two Ranji seasons"
+      ],
+      "moot": "In sports as in business, uncertainty about your most important asset (here, a star player's fitness) often matters more for planning than any single confirmed fact — teams have to build contingency plans around doubt, not just certainty.",
+      "image_credit": "BCCI.tv",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "BCCI.tv",
+          "The Tribune"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "India's Test side has been managing a wave of injuries through the middle of 2026, with fast bowler Jasprit Bumrah's fitness in particular being carefully managed by the BCCI's medical team since a knee issue first flared up around the T20 World Cup. The two-Test series against Sri Lanka — the first Test in Galle from August 15-19, the second in Colombo from August 23-27 — comes as India also manages the workload of veterans like Ravindra Jadeja, who sat out the Afghanistan series in June.",
+        "why_it_matters": "Bumrah is India's premier fast bowler and a genuine match-winner in Test cricket — his availability alone can swing a series, so his uncertain status is the single biggest storyline heading into the tour. The squad announcement also confirms India's leadership continuity under Gill after a period of speculation about his own fitness.",
+        "ripple_effects": "If Bumrah is unavailable, India's pace attack leans more heavily on Mohammed Siraj and Prasidh Krishna, changing the tactical balance against a Sri Lankan side that will target any inexperience in the bowling unit. A debut for Nabi also puts a spotlight on India's depth pipeline outside the usual metro cricket centres.",
+        "why_now": "The squad had to be finalized ahead of the team's departure and a four-day warm-up match in Colombo before the first Test begins August 15.",
+        "watch_next": "Watch for confirmation of Bumrah's final fitness clearance before the first Test XI is named in Galle.",
+        "market_link": null,
+        "key_terms": [
+          {
+            "term": "Ranji Trophy",
+            "definition": "India's premier domestic first-class cricket tournament, played between state teams and the traditional pathway for players to earn national selection."
+          }
+        ],
+        "sources": [
+          {
+            "name": "BCCI.tv",
+            "url": "https://www.bcci.tv/news/article/indias-squad-for-the-tour-of-sri-lanka-announced-2026"
+          },
+          {
+            "name": "The Tribune",
+            "url": "https://www.tribuneindia.com/news/bcci/gill-to-captain-india-in-sri-lanka-tests-bumrahs-availability-subject-to-fitness"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-43",
+      "rank": 43,
+      "category": "cricket",
       "published_iso": "2026-08-13T07:55:00Z",
       "added_at": "2026-08-13T22:34:28+05:30",
       "source": "IANS",
@@ -2477,8 +2664,8 @@
     },
     {
       "type": "story",
-      "id": "story-42",
-      "rank": 42,
+      "id": "story-44",
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-08-13T10:00:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -2533,8 +2720,8 @@
     },
     {
       "type": "story",
-      "id": "story-43",
-      "rank": 43,
+      "id": "story-45",
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-08-11T00:00:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -2594,8 +2781,8 @@
     },
     {
       "type": "story",
-      "id": "story-44",
-      "rank": 44,
+      "id": "story-46",
+      "rank": 46,
       "category": "cricket",
       "development": true,
       "prev_ref": {
@@ -2665,8 +2852,8 @@
     },
     {
       "type": "story",
-      "id": "story-45",
-      "rank": 45,
+      "id": "story-47",
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-12T12:00:00+00:00",
       "added_at": "2026-08-13T18:15:32+05:30",
@@ -2726,8 +2913,8 @@
     },
     {
       "type": "story",
-      "id": "story-46",
-      "rank": 46,
+      "id": "story-48",
+      "rank": 48,
       "category": "cricket",
       "published_iso": "2026-08-12T22:00:00+01:00",
       "added_at": "2026-08-13T16:08:56+05:30",
@@ -2781,8 +2968,8 @@
     },
     {
       "type": "story",
-      "id": "story-47",
-      "rank": 47,
+      "id": "story-49",
+      "rank": 49,
       "category": "cricket",
       "published_iso": "2026-08-13T18:00:00+09:30",
       "added_at": "2026-08-13T16:08:56+05:30",
@@ -2837,69 +3024,8 @@
     },
     {
       "type": "story",
-      "id": "story-48",
-      "rank": 48,
-      "category": "cricket",
-      "published_iso": "2026-08-12T15:00:00+01:00",
-      "added_at": "2026-08-13T12:07:47+05:30",
-      "source": "Sky Sports",
-      "importance": "notable",
-      "regions": [
-        "England",
-        "Pakistan"
-      ],
-      "title": "Root scraps England's midnight curfew in his first move as reinstated Test captain",
-      "what_happened": "Root confirmed England will not operate under a curfew for the upcoming three-match Test series against Pakistan, arguing that if players are trusted to make good decisions on the field, they should be trusted to do the same off it. It's the first real decision of his reinstated captaincy, and directly reverses the disciplinary approach that led to Stokes and Atkinson's suspension earlier in the year. The series begins August 19.",
-      "key_points": [
-        "Joe Root has **abolished England's midnight curfew** ahead of the Pakistan Test series.",
-        "It's his **first concrete decision** since being reinstated as Test captain.",
-        "Root says players should be trusted to **manage themselves like adults** off the field, just as they are on it.",
-        "The curfew is the same rule **Ben Stokes and Gus Atkinson were suspended for breaching** earlier this year.",
-        "The three-match series against Pakistan begins **August 19**."
-      ],
-      "moot": "New leaders often reveal their approach first through small symbolic decisions — how a captain handles team culture says as much about their style as their tactics do.",
-      "image_credit": "Sky Sports",
-      "credibility": {
-        "level": "confirmed",
-        "count": 3,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Geo News",
-          "Sky Sports"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "England's Test set-up has been through turbulence this year: Ben Stokes retired in June during the New Zealand series, having earlier been suspended for a Test — along with pace bowler Gus Atkinson — for breaching the team's midnight curfew during a night out. Former coach Brendon McCullum also stepped down after England lost that series 2-1. Root, England's most-capped modern batter, has now returned to the Test captaincy he previously held, alongside a new coaching setup.",
-        "why_it_matters": "It signals a deliberate cultural reset for an England dressing room that lost both its captain and its coach in the space of a few months — trading top-down discipline for personal responsibility right as a new leadership era begins.",
-        "ripple_effects": "The decision will be watched closely if England's on-field form or off-field discipline slips during the series — it sets an early tone for how the Root-Fleming era manages the team.",
-        "why_now": "It comes a week before the series opener, as Root settles into the captaincy and puts his own stamp on the team.",
-        "watch_next": "How England perform — and behave off the field — once the series against Pakistan starts on August 19.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "Sky Sports",
-            "url": "https://www.skysports.com/cricket/news/12123/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series"
-          },
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/story/england-vs-pakistan-joe-root-abolishes-midnight-curfew-1549630"
-          },
-          {
-            "name": "Geo News",
-            "url": "https://www.geo.tv/latest/677330-england-to-have-no-curfew-for-pakistan-tests-says-captain-root"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-49",
-      "rank": 49,
+      "id": "story-51",
+      "rank": 51,
       "category": "cricket",
       "published_iso": "2026-08-13T17:30:00+09:30",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -2959,200 +3085,8 @@
     },
     {
       "type": "story",
-      "id": "story-51",
-      "rank": 51,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Australia reunite Cummins-Starc-Hazlewood pace attack for first Bangladesh Test, as hosts wait on Shanto's XI amid camp 'niggles'",
-        "date": null
-      },
-      "published_iso": "2026-08-13T00:00:00+09:30",
-      "added_at": "2026-08-13T08:00:55+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "Australia",
-        "Bangladesh",
-        "Darwin"
-      ],
-      "title": "Australia win the toss and bat first as the historic Bangladesh Test begins in Darwin",
-      "what_happened": "Australia won the toss and captain **Pat Cummins** elected to bat first on a green Darwin surface in humid conditions, with opener **Travis Head** expecting a tough opening period against the new ball. Australia's confirmed XI is: Jake Weatherald, Travis Head, Marnus Labuschagne, Steve Smith, Cameron Green, Alex Carey, Beau Webster, Mitchell Starc, Pat Cummins (captain), Nathan Lyon, and Josh Hazlewood. Both Green and Webster won selection battles for their all-rounder spots, and Lyon returns to the side after sitting out the back end of the Ashes with a hamstring injury. This marks the first time in over a year that Australia's leading pace trio — Cummins, Hazlewood, and Starc — has played together. Bangladesh has named Ebadot Hossain and Mahmudul Hasan in its own XI as the tourists begin their first Test series on Australian soil in 23 years.",
-      "key_points": [
-        "Australia captain **Pat Cummins won the toss** and chose to **bat first** on a green, humid Darwin pitch.",
-        "The confirmed Australia XI includes **Cameron Green and Beau Webster**, both winning selection battles for the spot.",
-        "**Nathan Lyon returns** after missing the back end of the Ashes with a hamstring injury.",
-        "The Cummins-Hazlewood-Starc pace trio is playing together for the **first time in more than a year**.",
-        "This is Bangladesh's **first Test tour of Australia in 23 years**, marking a historic return fixture."
-      ],
-      "moot": "In cricket, winning the toss and choosing to bat or bowl first is itself a strategic bet shaped by pitch and weather conditions — a 'green' pitch typically favors fast bowlers early on, which is why batting first in humid, seam-friendly conditions is a genuine gamble, not just a formality.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "cricket.com.au"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "We reported Australia was set to reunite its Cummins-Starc-Hazlewood pace attack for the first Bangladesh Test, with the hosts still finalizing their XI amid fitness 'niggles' in camp.",
-        "changed": "Play has now actually started: captain Pat Cummins won the toss and chose to bat first on a green, humid Darwin pitch, and Australia's confirmed XI includes both Cameron Green and Beau Webster, plus a returning Nathan Lyon, while Bangladesh has picked Ebadot Hossain and Mahmudul Hasan."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Bangladesh last toured Australia for a Test series back in 2003, when Australia won comfortably — so this five-day match at Darwin's Marrara Cricket Ground, starting the current series, is being treated as a genuinely historic fixture for Bangladeshi cricket. Australia has been juggling injuries and form questions in its bowling attack over the past year, including during the recent Ashes series, which is why the reunion of its three most experienced fast bowlers together is being watched closely.",
-        "why_it_matters": "This is a milestone fixture for Bangladesh cricket regardless of the result, and for Australia it's the first real test of whether their full-strength pace attack can stay fit and effective together after a stretch of individual injuries and rotation.",
-        "ripple_effects": "A strong showing from Bangladesh would be a meaningful confidence boost for a team still building credibility in Test cricket outside home conditions, while Australia's results here feed directly into broader questions about squad depth heading into the next World Test Championship cycle.",
-        "why_now": "The match is the first of the series and started today, with the toss and team news landing just ahead of the opening ball.",
-        "watch_next": "How the Darwin pitch behaves under the humid conditions once bowlers get the new ball, and whether Australia's reunited pace trio can bowl Bangladesh out cheaply on day one.",
-        "market_link": null,
-        "key_terms": [],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espncricinfo.com/story/aus-vs-ban-1st-test-2026-australia-bat-first-in-darwin-bangladesh-play-ebadot-and-mahmud-1549650"
-          },
-          {
-            "name": "cricket.com.au",
-            "url": "https://www.cricket.com.au/news/4558217/live-blog-australia-bangladesh-first-test-2026-darwin-ball-by-ball-scores-highlights-news"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-53",
-      "rank": 53,
-      "category": "cricket",
-      "development": true,
-      "prev_ref": {
-        "title": "Australia reunite Cummins-Starc-Hazlewood pace attack for first Bangladesh Test, as hosts",
-        "date": null
-      },
-      "published_iso": "2026-08-13T00:00:00+09:30",
-      "added_at": "2026-08-13T07:07:16+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "Australia",
-        "Bangladesh"
-      ],
-      "title": "Australia bat first as Bangladesh's 23-year wait for a Test tour Down Under finally ends in Darwin",
-      "what_happened": "Play began today in Darwin with Australia's captain **Pat Cummins** winning the toss and electing to bat first, fielding a full-strength side: Travis Head, Jake Weatherald, Marnus Labuschagne, Steven Smith, Cameron Green, Alex Carey (wicketkeeper), Beau Webster, Cummins, **Mitchell Starc, Nathan Lyon and Josh Hazlewood** — reuniting Australia's premier pace trio of Cummins, Starc and Hazlewood for the first time in this series. Bangladesh, led by captain **Najmul Hossain Shanto**, have signalled they may field two spinners even on a fast, bouncy Australian pitch, after being dismissed for just 54 in their warm-up match's second innings. Weather forecasts point to dry, sunny conditions for all five days.",
-      "key_points": [
-        "Australia won the toss and chose to **bat first** in the opening Test at **Marrara Cricket Ground, Darwin** — Bangladesh's **first Test tour of Australia in 23 years**.",
-        "It's also Darwin's **first Test match in 22 years**, played in **clear, sunny conditions around 31°C**.",
-        "Australia's XI features their full frontline pace attack — **Cummins, Starc and Hazlewood together** — plus Travis Head, Steven Smith and captain Pat Cummins.",
-        "Bangladesh arrive under pressure after being **bowled out for just 54** in their second innings of the warm-up match against a Cricket Australia XI."
-      ],
-      "moot": "In sport, a rarely-repeated fixture (a team's first tour to a place in decades) carries extra weight beyond the single result — it's often treated as a referendum on a team's overall growth, not just form on the day.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 1,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo"
-        ],
-        "corroboration": 0
-      },
-      "thread": {
-        "previously": "Yesterday's story covered Australia naming their squad and reuniting the Cummins-Starc-Hazlewood pace trio ahead of the series opener.",
-        "changed": "Today the match actually started: Australia won the toss, chose to bat, and confirmed their full XI, while Bangladesh's likely tactics (fielding two spinners despite quick, bouncy conditions) became clear after their poor warm-up form."
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Bangladesh have toured Australia for Test cricket only rarely, and not at all in over two decades — a gap driven by scheduling, cricket-calendar priorities, and Australia's traditionally packed home summer. Darwin, in Australia's tropical Northern Territory, is an unusual and rarely-used Test venue, chosen partly to give Bangladesh conditions (heat, humidity) closer to what they're used to at home, even though the pitch and bounce still differ sharply from subcontinental cricket. Bangladesh's poor warm-up form has raised doubts about how competitive they can be against a full-strength Australian pace attack.",
-        "why_it_matters": "This is a genuine Test cricket rarity — a matchup and venue that essentially haven't happened in a generation — and an early gauge of whether Bangladesh's Test team can compete seriously outside home and familiar conditions against a full-strength opponent.",
-        "ripple_effects": "A heavy defeat would renew questions about Bangladesh's Test-match depth outside spin-friendly home pitches, while a competitive showing would boost their case for tougher future scheduling against top nations. For Australia, reuniting their first-choice pace attack is also a fitness and form checkpoint ahead of a busier home summer.",
-        "why_now": "The Test began today, August 13, as the first match of Bangladesh's tour, following their poor warm-up form which set the storyline for how the series opener would be watched.",
-        "watch_next": "Whether Bangladesh's bowling attack — potentially two spinners — can trouble Australia's top order, and how Bangladesh's batting responds after their warm-up collapse.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "Toss",
-            "definition": "A coin flip before a cricket match; the winning captain chooses whether to bat or field first, a decision shaped heavily by pitch and weather conditions."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.cricinfo.com/series/bangladesh-in-australia-2026-1527258/australia-vs-bangladesh-1st-test-1527273/match-preview"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-57",
-      "rank": 57,
-      "category": "cricket",
-      "published_iso": "2026-08-12T14:07:03Z",
-      "added_at": "2026-08-12T22:09:33+05:30",
-      "source": "ESPNcricinfo",
-      "importance": "notable",
-      "regions": [
-        "England",
-        "Pakistan",
-        "Cricket"
-      ],
-      "title": "England opener Emilio Gay named in warm-up squad ahead of Pakistan Tests, easing shoulder-injury fears",
-      "what_happened": "On **August 7**, while batting for Durham against Middlesex in a one-day match, Gay first felt discomfort in his right shoulder, then aggravated it two overs later hitting a boundary; he immediately called for the physio and retired hurt on 9 off 17 balls, undergoing a scan over the following days. Despite that scare, Gay has now been named in the **PCC Select XI** — a first-class invitational team — for a three-day tour match against Pakistan starting **August 13** at Beckenham, Kent's ground. Sky Sports reported it understands Gay is expected to be fit for the Test series, and his inclusion in this squad is the clearest sign yet that the shoulder issue isn't ruling him out of the opener at Headingley on **August 19**.",
-      "key_points": [
-        "England Test opener **Emilio Gay** was named in the 14-player **PCC Select XI** for a three-day warm-up match against touring Pakistan, starting **August 13 at Beckenham**.",
-        "Gay had retired hurt on **9 off 17 balls** on **August 7**, clutching his shoulder while batting for Durham, after aggravating discomfort that began two overs earlier.",
-        "His selection suggests he's expected to prove fitness in time for the **first Test at Headingley on August 19**, the opener of a three-match series against Pakistan.",
-        "The squad is captained by **Tom Haines** and includes uncapped and fringe players like Shoaib Bashir and Josh Hull.",
-        "A lost place for Gay would have forced England to reshuffle its top order just days before a marquee home series."
-      ],
-      "moot": "In cricket, a player's return from injury is rarely confirmed by a press statement alone — selectors and fans watch the next real match for proof, not the announcement.",
-      "image_credit": "ESPNcricinfo",
-      "credibility": {
-        "level": "confirmed",
-        "count": 2,
-        "tier": 1,
-        "outlets": [
-          "ESPNcricinfo",
-          "Sky Sports"
-        ],
-        "corroboration": 0
-      },
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Gay only nailed down England's Test opening slot earlier this year, making his fitness a genuine selection question rather than a formality. The warm-up match against Pakistan's touring side is the traditional final fitness and form check before a Test series — Pakistan's three-Test tour runs Headingley (Aug 19), Lord's (Aug 27-31) and Edgbaston (Sept 9-13).",
-        "why_it_matters": "Losing an established opener days before a home Test series would force selectors into an awkward reshuffle; Gay playing through this warm-up match is the concrete fitness test that will settle the question either way.",
-        "ripple_effects": "If Gay proves fit, England's top order stays settled heading into a high-profile summer series; if he breaks down again, expect a late call-up debate for his replacement before the Headingley Test.",
-        "why_now": "The squad announcement comes the day before the warm-up match starts, making it the immediate, concrete update on a fitness scare that first emerged five days ago.",
-        "watch_next": "Gay's performance and any discomfort during the three-day Beckenham match (August 13-15), which will directly decide the Headingley XI.",
-        "market_link": null,
-        "key_terms": [
-          {
-            "term": "warm-up match",
-            "definition": "A practice first-class fixture a touring team plays before a Test series, used by both sides to check form and fitness."
-          }
-        ],
-        "sources": [
-          {
-            "name": "ESPNcricinfo",
-            "url": "https://www.espn.com/cricket/story/_/id/49589934/emilio-gay-picked-tour-game-pakistan-shoulder-scare"
-          },
-          {
-            "name": "Sky Sports",
-            "url": "https://www.skysports.com/cricket/news/12123/13570730/england-opener-emilio-gay-retires-hurt-with-shoulder-injury-in-durham-fixture"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-58",
-      "rank": 58,
+      "id": "story-60",
+      "rank": 60,
       "category": "cricket",
       "published_iso": null,
       "added_at": "2026-08-12T20:10:51+05:30",
@@ -3232,28 +3166,28 @@
       "id": "archive-global",
       "category": "geopolitics",
       "region": "global",
-      "older_count": 136
+      "older_count": 137
     },
     {
       "type": "archive",
       "id": "archive-india",
       "category": "india",
       "region": "india",
-      "older_count": 124
+      "older_count": 125
     },
     {
       "type": "archive",
       "id": "archive-f1",
       "category": "f1",
       "region": "f1",
-      "older_count": 99
+      "older_count": 97
     },
     {
       "type": "archive",
       "id": "archive-cricket",
       "category": "cricket",
       "region": "cricket",
-      "older_count": 92
+      "older_count": 93
     },
     {
       "type": "outro",
