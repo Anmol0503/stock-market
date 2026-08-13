@@ -1,7 +1,64 @@
 {
   "month": "2026-08",
-  "count": 833,
+  "count": 840,
   "stories": [
+    {
+      "type": "story",
+      "title": "Karnataka shuts down for a 12-hour bandh today over the Cauvery water dispute",
+      "category": "india",
+      "published_iso": "2026-08-13T00:30:00+05:30",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "Deccan Herald",
+      "what_happened": "The **Cauvery Water Management Authority (CWMA)** upheld an earlier order from the Cauvery Water Regulation Committee directing Karnataka to release **3,500 cusecs of water to Tamil Nadu for 15 days**. In response, Nagaraj called a **12-hour, statewide bandh for August 13**, also demanding movement on Karnataka's own long-pending water projects — **Mekedatu, Mahadayi, and Kalasa-Banduri**. Organisers say more than 2,000 organisations are backing the shutdown, including transport unions and traders' bodies in Bengaluru and Mysuru. CM Shivakumar asked Nagaraj to withdraw the call, warning of disruption, but Nagaraj rejected the appeal and confirmed preparations would continue.",
+      "key_points": [
+        "Pro-Kannada groups led by veteran activist **Vatal Nagaraj** called a statewide bandh for **6am–6pm today**, backed by over **2,000 organisations**.",
+        "The trigger: a tribunal upheld an order for Karnataka to release **3,500 cusecs of Cauvery water to Tamil Nadu for 15 days**.",
+        "Karnataka's Chief Minister **D.K. Shivakumar** publicly appealed to Nagaraj to call it off — the appeal was **rejected**.",
+        "Schools, offices and essential services are expected to stay open, but **public transport, shops, and inter-state travel** face disruption."
+      ],
+      "depth": {
+        "background": "The Cauvery river dispute is one of India's longest-running inter-state conflicts: Karnataka and Tamil Nadu have fought for decades over how much water from the Cauvery (which originates in Karnataka) must be released downstream to Tamil Nadu, especially during dry spells. A series of tribunals and Supreme Court rulings have set sharing formulas, but each new release order still triggers protest in Karnataka, where farmers and Kannada activists see it as prioritising another state's needs over their own. Vatal Nagaraj has led such bandhs (shutdown protests) over the issue for years.",
+        "sources": [
+          {
+            "name": "Deccan Herald",
+            "url": "https://www.deccanherald.com/india/karnataka/karnataka-bandh-on-august-13-will-go-ahead-asserts-kannada-activist-vatal-nagraj-4106332"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Australia bat first as Bangladesh's 23-year wait for a Test tour Down Under finally ends in Darwin",
+      "category": "cricket",
+      "published_iso": "2026-08-13T00:00:00+09:30",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "ESPNcricinfo",
+      "what_happened": "Play began today in Darwin with Australia's captain **Pat Cummins** winning the toss and electing to bat first, fielding a full-strength side: Travis Head, Jake Weatherald, Marnus Labuschagne, Steven Smith, Cameron Green, Alex Carey (wicketkeeper), Beau Webster, Cummins, **Mitchell Starc, Nathan Lyon and Josh Hazlewood** — reuniting Australia's premier pace trio of Cummins, Starc and Hazlewood for the first time in this series. Bangladesh, led by captain **Najmul Hossain Shanto**, have signalled they may field two spinners even on a fast, bouncy Australian pitch, after being dismissed for just 54 in their warm-up match's second innings. Weather forecasts point to dry, sunny conditions for all five days.",
+      "key_points": [
+        "Australia won the toss and chose to **bat first** in the opening Test at **Marrara Cricket Ground, Darwin** — Bangladesh's **first Test tour of Australia in 23 years**.",
+        "It's also Darwin's **first Test match in 22 years**, played in **clear, sunny conditions around 31°C**.",
+        "Australia's XI features their full frontline pace attack — **Cummins, Starc and Hazlewood together** — plus Travis Head, Steven Smith and captain Pat Cummins.",
+        "Bangladesh arrive under pressure after being **bowled out for just 54** in their second innings of the warm-up match against a Cricket Australia XI."
+      ],
+      "depth": {
+        "background": "Bangladesh have toured Australia for Test cricket only rarely, and not at all in over two decades — a gap driven by scheduling, cricket-calendar priorities, and Australia's traditionally packed home summer. Darwin, in Australia's tropical Northern Territory, is an unusual and rarely-used Test venue, chosen partly to give Bangladesh conditions (heat, humidity) closer to what they're used to at home, even though the pitch and bounce still differ sharply from subcontinental cricket. Bangladesh's poor warm-up form has raised doubts about how competitive they can be against a full-strength Australian pace attack.",
+        "sources": [
+          {
+            "name": "ESPNcricinfo",
+            "url": "https://www.cricinfo.com/series/bangladesh-in-australia-2026-1527258/australia-vs-bangladesh-1st-test-1527273/match-preview"
+          }
+        ]
+      },
+      "thread": {
+        "previously": "Yesterday's story covered Australia naming their squad and reuniting the Cummins-Starc-Hazlewood pace trio ahead of the series opener.",
+        "changed": "Today the match actually started: Australia won the toss, chose to bat, and confirmed their full XI, while Bangladesh's likely tactics (fielding two spinners despite quick, bouncy conditions) became clear after their poor warm-up form."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Australia reunite Cummins-Starc-Hazlewood pace attack for first Bangladesh Test, as hosts",
+        "date": null
+      }
+    },
     {
       "type": "story",
       "title": "A total solar eclipse sweeps across mainland Europe for the first time since 1999",
@@ -410,6 +467,108 @@
             "url": "https://www.wbiw.com/2026/08/12/major-river-flooding-forecasted-across-south-central-indiana-as-heavy-rains-push-waterways-above-flood-stage/"
           }
         ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Researchers find a flaw that let weaker AI models leak stronger models' hidden reasoning — and even passwords",
+      "category": "technology",
+      "published_iso": "2026-08-12T00:00:00Z",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "The Hacker News",
+      "what_happened": "The researchers found that an encrypted reasoning block created in one session could be **replayed into a different session** and, if handed to a **cheaper, lighter model from the same company**, would sometimes get decoded and printed out in plain text — because lighter models are built with less aggressive filtering than a company's flagship model. Testing this against thousands of publicly logged AI-agent conversations, the team recovered **over 315,000 hidden reasoning blocks**, some of which contained sensitive data like API keys and passwords that had leaked into a model's internal reasoning. The three companies have since updated how they handle this: **Anthropic** now says reasoning blocks are tied to the specific model that created them and should be discarded when switching models; **Google** says its backend manages compatibility automatically; **OpenAI** still instructs developers to replay reasoning blocks manually.",
+      "key_points": [
+        "Security researchers showed **OpenAI, Anthropic, and Google's** AI systems could be tricked into revealing their **encrypted internal \"reasoning\"** — normally hidden from users.",
+        "The trick: replaying a hidden-reasoning block from one session into **a weaker model** in the same family, which lacks the safety filtering to refuse and just prints it out.",
+        "Across **6,708 public AI-agent conversation logs**, researchers decoded **315,320 hidden reasoning blocks**, some containing **leaked API keys and passwords**.",
+        "The flaw enables **four types of abuse**: stealing reasoning to copy a rival's model, extracting private user data, uncovering content models were told to hide, and smuggling hidden instructions past safety checks."
+      ],
+      "depth": {
+        "background": "Modern AI \"reasoning\" models think through a problem in a hidden scratchpad before giving their final answer — a technique that improves accuracy but that companies keep encrypted and invisible to protect their trade secrets and prevent misuse. Developers who build tools on top of these models sometimes need to pass that hidden reasoning between separate API calls to keep a conversation coherent, which is where this flaw lived. A research team published a paper titled \"Stealing Reasoning Traces from Proprietary LLM APIs\" documenting how they exploited this.",
+        "sources": [
+          {
+            "name": "The Hacker News",
+            "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
+          },
+          {
+            "name": "Simon Willison",
+            "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "US-Iran talks on reopening the Strait of Hormuz break down, and oil prices rise on the deadlock",
+      "category": "geopolitics",
+      "published_iso": "2026-08-12T00:00:00Z",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "Al Jazeera",
+      "what_happened": "Iran told mediators that a technical agreement with Oman on strait management **would not be enough on its own** — Tehran is now also demanding the US ease sanctions and pay war reparations before it will let normal shipping resume. Talks stalled as a result, and **oil prices rose** on the fading odds of a quick resolution: Brent crude settled near **$89 a barrel** and US crude (WTI) near **$83**. Iran's Supreme Leader Khamenei's son and de facto successor, Mojtaba Khamenei, named a new military high command, including Ali Abdollahi as armed forces chief of staff. Trump reiterated that the US would not tolerate interference with shipping, while Gulf states have grown visibly frustrated at being caught between the two sides.",
+      "key_points": [
+        "Oil prices climbed after **Iran added new demands** — including eased US sanctions and **war reparations** — before it will reopen the Strait of Hormuz.",
+        "The strait normally carries about **one-fifth of the world's oil supply**; shipping through it has collapsed to **8–15 vessels crossing on Aug 4–6**, versus roughly **130 transits before the conflict**.",
+        "Iran's Supreme Leader reshuffled the country's **top military leadership**, naming new armed forces and Revolutionary Guard commanders.",
+        "President Trump said the US has **\"total control\"** of the strait and warned Iran would **\"get blown away\"** if it interfered with shipping there."
+      ],
+      "depth": {
+        "background": "Since a US-Israel-Iran war erupted in late February 2026, Iranian attacks on shipping and US retaliatory strikes have repeatedly disrupted the **Strait of Hormuz**, the narrow waterway between Iran and Oman that oil tankers must pass through to leave the Gulf. Periodic ceasefire efforts and partial truces have not held, and Trump has followed a pattern of threatening major new strikes and then pulling back. Earlier in August, Iran appeared close to a deal with Oman on managing traffic through the strait, which briefly lifted hopes of it reopening.",
+        "sources": [
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/11/hormuz-oil-prices-us-iran.html"
+          }
+        ]
+      },
+      "thread": {
+        "previously": "Yesterday's coverage focused on the rupee and Indian oil companies bleeding money as the strait stayed shut, with a deal seen as unlikely soon.",
+        "changed": "Today the block is explicitly on the diplomatic track: Iran has added new demands (sanctions relief, reparations) that talks with Oman alone can't satisfy, oil prices have ticked up in response, and Iran has also reshuffled its military command."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "India's rupee slides to fresh lows and oil firms bleed ₹1,000 crore a day as the Strait of Hormuz",
+        "date": null
+      }
+    },
+    {
+      "type": "story",
+      "title": "Tata Sons begins the search for its next chairman — and its own 2022 rules make the obvious successor ineligible",
+      "category": "india",
+      "published_iso": "2026-08-12T00:00:00Z",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "Bloomberg",
+      "what_happened": "Chandrasekaran's resignation, confirmed yesterday, means Tata Sons must now run its succession process for the first time since 2017, under a formal mechanism written into the company's **Articles of Association**. Because Tata Trusts hold the controlling stake in Tata Sons, they get the decisive say in who becomes the next chairman. That creates an immediate complication: **Noel Tata**, seen as the natural internal candidate given his family ties and current seniority, already chairs Tata Trusts — and the 2022 provision that split the two roles means he cannot simply take the Tata Sons chairmanship too without stepping back from the Trusts, or the rule being changed. The group's AGM is scheduled for **August 18**, just days away, without a new chairman named.",
+      "key_points": [
+        "Tata Sons' succession process is now formally underway after **N. Chandrasekaran's** resignation, with a **formal Articles-of-Association mechanism** to follow.",
+        "**Tata Trusts**, which hold the majority stake in Tata Sons, will play the **key role** in picking the next chairman.",
+        "**Noel Tata**, the most obvious internal candidate, currently chairs Tata Trusts — and a **2022 rule bars one person from leading both** the Trusts and Tata Sons at once.",
+        "The group's **AGM on August 18** goes ahead without a confirmed successor in place, leaving Tata effectively **leaderless** at the top in the interim."
+      ],
+      "depth": {
+        "background": "Tata Sons is the holding company that controls the sprawling Tata Group — from Tata Motors and Tata Steel to TCS and Air India — making its chairman one of the most powerful roles in Indian business. Ratan Tata led the group for decades before handing over to Cyrus Mistry, whose abrupt removal in 2016 triggered a bitter public and legal fight; Chandrasekaran took over in 2017 to restore stability. In 2022, the Tata Trusts' rules were changed to formally separate the Trusts' leadership from the Tata Sons chairmanship, partly to prevent any one person concentrating that much power again.",
+        "sources": [
+          {
+            "name": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-08-12/tata-sons-chair-chandra-steps-down-leaving-group-leaderless"
+          },
+          {
+            "name": "Outlook Business",
+            "url": "https://www.outlookbusiness.com/corporate/how-tata-sons-will-pick-its-next-chairman-after-chandrasekaran-succession-plan-explained"
+          }
+        ]
+      },
+      "thread": {
+        "previously": "Yesterday's coverage was about the resignation itself — Chandrasekaran stepping down after Noel Tata blocked his reappointment over concerns about weak financial performance at some Tata companies.",
+        "changed": "Today's news is about what happens next: the formal succession process has begun, and it has run into an unexpected snag — the Tata Trusts/Tata Sons dual-role rule the group itself adopted in 2022 rules out the most obvious successor, Noel Tata, unless something changes before the August 18 AGM."
+      },
+      "development": true,
+      "prev_ref": {
+        "title": "Tata Sons chairman N. Chandrasekaran resigns after a board member blocks his reappointment",
+        "date": null
       }
     },
     {
@@ -1309,6 +1468,34 @@
     },
     {
       "type": "story",
+      "title": "Honda says its upgraded F1 engine has hit its internal targets ahead of its Zandvoort debut with Aston Martin",
+      "category": "f1",
+      "published_iso": "2026-08-11T00:00:00Z",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "TheJudge13",
+      "what_happened": "Honda's trackside general manager and chief engineer **Shintaro Orihara** confirmed the team's upgraded \"spec 2\" power unit has met its internal performance targets during factory testing, ahead of its planned first appearance at the **Dutch Grand Prix at Zandvoort**. The changes are described as internal engine refinements — better combustion efficiency, reduced friction, and improved lubrication — rather than anything requiring Aston Martin to redesign its car around it. Orihara was cagey about exact specifics, calling some of it \"a secret,\" but confirmed a filming day at the Hungaroring circuit already let both companies gather live data on the new unit ahead of its competitive debut.",
+      "key_points": [
+        "Honda's revamped power unit has **completed factory testing** and hit **\"internal targets\"** ahead of its public debut at the **Dutch Grand Prix (Aug 21–23)**.",
+        "Engineers estimate a gain of roughly **30–50 extra horsepower**, with Aston Martin hoping for about **half a second per lap**.",
+        "The upgrade targets **combustion efficiency, friction, and lubrication** — all internal changes, so Aston Martin's **AMR26 car itself won't need reconfiguring**.",
+        "A **filming day at the Hungaroring** already gave both teams real data, aimed at avoiding surprises when the engine is raced for real at Zandvoort."
+      ],
+      "depth": {
+        "background": "2026 marked a major regulatory shift for Formula 1's engines (power units), and Aston Martin switched suppliers this season — moving from Mercedes engines to a new **works partnership with Honda**, meaning Honda builds the engine specifically around Aston Martin rather than just supplying a customer unit. A new engine supplier relationship typically takes time to mature, and Honda's first major mid-season upgrade is being closely watched as a sign of how competitive that partnership can become.",
+        "sources": [
+          {
+            "name": "TheJudge13",
+            "url": "https://thejudge13.com/2026/08/11/honda-hits-target-with-new-aston-martin-f1-engine-ahead-of-zandvoort/"
+          },
+          {
+            "name": "Motorsport.com",
+            "url": "https://www.motorsport.com/f1/news/what-to-expect-from-hondas-long-awaited-f1-power-unit-upgrade-at-zandvoort/10845642/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
       "title": "The US National Institutes of Health stops funding research meant to inform policymakers",
       "category": "health",
       "published_iso": "2026-08-11T00:00:00Z",
@@ -2129,6 +2316,34 @@
           {
             "name": "NPR",
             "url": "https://www.npr.org/2026/08/11/g-s1-138166/syria-assad-sentenced-to-death"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": "Joe Root returns as England's Test captain for the Pakistan series, after Ben Stokes' shock retirement",
+      "category": "cricket",
+      "published_iso": "2026-08-11T00:00:00+01:00",
+      "added_at": "2026-08-13T07:07:16+05:30",
+      "source": "ICC",
+      "what_happened": "England's selectors have named Root as captain for at least the first two Tests of a three-match series against Pakistan, with reports suggesting he could stay in charge through next year's Ashes series if things go well. Alongside the captaincy change, the squad has been reshaped by injury and form: **Jacob Bethell**, tipped as a rising middle-order batter, is out with a knee injury, opening a spot for wicketkeeper-batter **Jordan Cox** to bat at No. 3. Experienced batters **Dan Lawrence and Ollie Pope** return to the fold after being out of the side. The series begins August 19 at Headingley, Leeds, followed by Lord's (Aug 27-31) and Edgbaston (Sep 9-13).",
+      "key_points": [
+        "England named a **16-player squad** for the first two Tests against Pakistan, with **Joe Root as captain** — his first time leading the side since **2022**.",
+        "Root steps in after **Ben Stokes' sudden retirement** from international cricket, announced mid-match during England's series against New Zealand.",
+        "**Jacob Bethell is ruled out** with a right knee injury; **Jordan Cox** is drafted in to bat at No. 3 in his place.",
+        "**Dan Lawrence and Ollie Pope** earn recalls to the squad as England rebuild for a **three-Test series starting August 19** at Headingley."
+      ],
+      "depth": {
+        "background": "Ben Stokes had captained England's Test side since 2022, reshaping the team around an aggressive, fast-scoring style known as \"Bazball.\" His retirement mid-series against New Zealand stunned English cricket, ending a 15-year international career and leaving the captaincy vacant with a major home series against Pakistan just weeks away. Joe Root, England's most capped modern batter and their captain from 2017-2022 before he stepped down for Stokes, was the obvious experienced option to steady the side.",
+        "sources": [
+          {
+            "name": "ICC",
+            "url": "https://www.icc-cricket.com/news/england-unveil-squad-for-first-two-tests-against-pakistan"
+          },
+          {
+            "name": "Yahoo Sports",
+            "url": "https://sports.yahoo.com/articles/england-squad-pakistan-test-series-094900086.html"
           }
         ]
       }
