@@ -51,8 +51,15 @@ if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
   "$PY" routine/decode_lesson.py || echo "WARN: lesson generation failed"
 fi
 
-# ---- Kindle is fully MANUAL now (user handles it): the schedule neither builds nor e-mails the EPUB.
+# ---- Kindle (Learn course) is fully MANUAL: the schedule neither builds nor e-mails that EPUB.
 #      Send on demand yourself with `python make_kindle.py --force` (or the Update Center "Send to Kindle" button).
+
+# ---- The Horizon Series: one all-round deep-dive book auto-e-mailed to the Kindle per day. Its own internal
+#      daily guard makes all-but-the-first-run-of-the-day a fast no-op. Mac-only (needs .env Gmail creds).
+#      Touches only output/ (gitignored) — no git/publish handling needed here.
+if [ -x "$CLAUDE" ] || command -v claude >/dev/null 2>&1; then
+  "$PY" routine/horizon.py || echo "WARN: horizon send failed"
+fi
 
 # ---- always stamp the public status record (so 'last checked' advances even if nothing was added) ----
 "$PY" routine/publish_status.py hourly >/dev/null 2>&1 || true

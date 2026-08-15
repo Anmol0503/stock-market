@@ -153,11 +153,19 @@ def _xhtml(title: str, inner: str) -> str:
             '<meta charset="utf-8"/></head><body>' + inner + '</body></html>')
 
 
-def build_epub(parts: list[dict], book_title: str, out_path: pathlib.Path) -> pathlib.Path:
+def build_epub(parts: list[dict], book_title: str, out_path: pathlib.Path,
+               author: str = "Daily Intelligence — Learn",
+               series: str | None = None, series_index: int | None = None) -> pathlib.Path:
+    """Render the parts into an EPUB. `author`/`series`/`series_index` make a set of books group and sort
+    together in the Kindle library (author grouping + calibre series metadata that readers honour)."""
     subj_emoji = (parts[0].get("emoji") or "🎓") if parts else "🎓"
     subj = (parts[0].get("subject_title") or "Your Course") if parts else "Your Course"
+    # a small series badge on the cover (e.g. "HORIZON · Nº 001") so flipping through covers is easy
+    badge = (f'<div style="font-size:.85em;letter-spacing:.2em;color:#999;text-transform:uppercase">'
+             f'{_esc(series)} · Nº {series_index:03d}</div>') if series and series_index else ""
     cover = _xhtml(book_title,
-                   f'<div style="text-align:center;margin-top:22%">'
+                   f'<div style="text-align:center;margin-top:20%">'
+                   f'{badge}'
                    f'<div style="font-size:3em">{_esc(subj_emoji)}</div>'
                    f'<h1 style="margin:.3em 6%">{_esc(subj)}</h1>'
                    f'<p style="color:#666">{_esc(book_title)}</p></div>')
@@ -182,13 +190,19 @@ def build_epub(parts: list[dict], book_title: str, out_path: pathlib.Path) -> pa
     # content-based id (NOT today's date) so an unchanged course rebuilds to identical bytes — avoids a
     # fresh commit every run.
     uid = f"dailylearn-{parts[0].get('seq','') if parts else '0'}-{parts[-1].get('seq','') if parts else '0'}"
+    if series and series_index:
+        uid = f"{series.lower()}-{series_index:03d}"        # stable, unique per series entry
+    # calibre series metadata → readers/apps group the books into one ordered collection on the Kindle
+    series_meta = (f'<meta name="calibre:series" content="{_esc(series)}"/>'
+                   f'<meta name="calibre:series_index" content="{series_index}"/>') if series and series_index else ""
     opf = ('<?xml version="1.0" encoding="utf-8"?>\n'
            '<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="bookid">'
            '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">'
            f'<dc:title>{_esc(book_title)}</dc:title>'
            '<dc:language>en</dc:language>'
            f'<dc:identifier id="bookid">{_esc(uid)}</dc:identifier>'
-           '<dc:creator>Daily Intelligence — Learn</dc:creator>'
+           f'<dc:creator>{_esc(author)}</dc:creator>'
+           f'{series_meta}'
            '</metadata>'
            f'<manifest>{"".join(manifest)}</manifest>'
            f'<spine toc="ncx">{"".join(spine)}</spine></package>')
