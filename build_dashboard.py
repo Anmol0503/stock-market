@@ -189,14 +189,20 @@ def _yesterday_world(today: str) -> dict | None:
     return _load_json(ARCHIVE / f"world-{prior[-1]}.json") if prior else None
 
 
-# ---- rolling news archive: the live feed shows the top-N per region; everything else collects here ----
+# ---- the feed is now ONE uncapped stack per tab (newest on top), minus what you've read (client-side).
+#      There is no separate "archive" surface anymore — the whole accumulating store IS the feed. ----
 NEWS_ARCHIVE = DASH / "news-archive.json"
-LIVE_PER_REGION = 20      # the live reels feed shows at most this many stories per tab (Global / India)
-NEWS_ARCHIVE_CAP = 500    # RECENT rolling window kept in news-archive.json (fast to browse). NOTHING is
-                          # lost past this — every story is also appended, forever, to the permanent monthly
-                          # shards dashboard/archive/news-<YYYY-MM>.json (see _append_history_shards).
-FRESH_HOURS = 30          # a story older than this drops OUT of the live feed (still kept in the archive)
-MIN_LIVE = 8              # ...but always keep at least this many newest per region, so it's never empty
+# The feed is sourced from this accumulating store, so this is the effective stack ceiling: the most recent
+# N stories per tab stay in the feed; anything past it rolls off (but is NEVER deleted — every story is also
+# appended, forever, to the permanent monthly shards dashboard/archive/news-<YYYY-MM>.json). Set generously —
+# you'll never hit it if you read regularly; it only exists to keep reels.json small enough to stay fast.
+STACK_PER_REGION = 250    # max stories KEPT IN THE FEED per tab (Global / India / F1 / Cricket) — generous
+NEWS_ARCHIVE_CAP = 500    # total kept in the feed window (~1.5 MB reels.json); the binding ceiling. Read
+                          # stories can't be filtered server-side, so they count toward this until they age
+                          # out — keeps the phone fast. Bump both if you want a deeper stack (bigger download).
+NEW_BADGE_MIN = 90        # a story added by the hourly within this many minutes gets a 🆕 badge in the feed
+                          # (the feed sorts by PUBLISH time, so a just-added story can land mid-feed — the
+                          # badge lets you spot it, matching the status panel's "Just added" list)
 NEW_BADGE_MIN = 90        # a story added by the hourly within this many minutes gets a 🆕 badge in the feed
                           # (the feed sorts by PUBLISH time, so a just-added story can land mid-feed — the
                           # badge lets you spot it, matching the status panel's "Just added" list)
@@ -275,10 +281,33 @@ def _slim_story(c: dict) -> dict:
         "key_points": c.get("key_points") or [],
         "depth": {"background": d.get("background"), "sources": d.get("sources") or []},
     }
-    for k in ("thread", "development", "prev_ref"):
+    for k in ("thread", "development", "prev_ref", "credibility"):
         if c.get(k):
             out[k] = c[k]
     return out
+
+
+def _slim_to_card(s: dict, idx: int, now: dt.datetime) -> dict:
+    """Turn a stored (slim) archive story back into a reels story card. The feed is now the whole
+    accumulating stack (no cap, no separate archive), so most cards come from here; today's freshly
+    decoded stories are used directly instead (richer) when the title matches — see build_reels."""
+    added_min = _minutes_since(s.get("added_at"), now)
+    d = s.get("depth") or {}
+    return {
+        "type": "story", "id": f"story-{idx}",
+        "category": s.get("category"),
+        **({"is_new": True} if added_min is not None and added_min <= NEW_BADGE_MIN else {}),
+        **({"development": True} if s.get("development") else {}),
+        **({"prev_ref": s["prev_ref"]} if s.get("prev_ref") else {}),
+        "published_iso": s.get("published_iso"), "added_at": s.get("added_at"),
+        "source": s.get("source"),
+        "title": s.get("title") or "", "what_happened": s.get("what_happened") or "",
+        "key_points": s.get("key_points") or [],
+        **({"credibility": s["credibility"]} if s.get("credibility") else {}),
+        **({"thread": s["thread"]} if s.get("thread") else {}),
+        "concepts": [], "figures": [],
+        "depth": {"background": d.get("background"), "sources": d.get("sources") or []},
+    }
 
 
 def _append_history_shards(slim_stories: list[dict]) -> None:
@@ -415,42 +444,42 @@ def build_reels() -> int:
                 "watch_next", "market_link", "key_terms", "sources")},
         })
 
-    # Archive EVERYTHING first (nothing is lost), then build a FRESH, de-duped live feed per region:
-    # newest-published first, drop stories older than FRESH_HOURS (beyond a MIN_LIVE floor so it's never
-    # empty), and skip near-duplicate events (a developing story re-decoded with different wording).
+    # Merge today's fresh decode into the accumulating store, THEN build the feed from that whole store.
+    # The feed is now ONE uncapped stack per tab (newest-added on top), de-duped — no cap, no archive card.
+    # Read stories are removed client-side, so the top is always the next thing you haven't read.
     update_news_archive(story_cards)
-    by_region: dict[str, list[dict]] = {r: [] for r in REGIONS}
+    today_full = {}                                    # today's richer cards, to prefer over slim records
     for c in story_cards:
-        by_region.setdefault(_story_region(c), []).append(c)
+        k = _norm_title(c.get("title"))
+        if k:
+            today_full.setdefault(k, c)
+    archive_data = _load_json(NEWS_ARCHIVE) or {}
+    by_region: dict[str, list[dict]] = {r: [] for r in REGIONS}
+    for s in (archive_data.get("stories") or []):
+        by_region.setdefault(_story_region(s), []).append(s)
+    idx = 0
     for region in REGIONS:
-        # order by when WE added the story to the feed (newest-added on top), not when the news broke;
-        # fall back to publish time for any legacy story that predates added_at stamping.
-        ranked = sorted(by_region[region],
-                        key=lambda c: c.get("added_at") or c.get("published_iso") or "", reverse=True)
-        live: list[dict] = []
+        ranked = sorted(by_region.get(region, []),
+                        key=lambda s: s.get("added_at") or s.get("published_iso") or "", reverse=True)
         seen_toks: list[set] = []
-        for c in ranked:
-            if len(live) >= LIVE_PER_REGION:
-                break
-            toks = _sig_tokens(c)
+        kept = 0
+        for s in ranked:
+            if kept >= STACK_PER_REGION:
+                break                              # generous safety ceiling; never hit if you read regularly
+            toks = _sig_tokens(s)
             if _is_near_dup(toks, seen_toks):
-                continue                       # same event, already shown → skip the rehash
-            age = _age_hours(c, now)
-            if len(live) >= MIN_LIVE and age is not None and age > FRESH_HOURS:
-                continue                       # past the floor and stale → keep it in the archive only
-            live.append(c)
+                continue                           # same event, already in the stack → skip the rehash
+            full = today_full.get(_norm_title(s.get("title")))
+            if full:
+                card = dict(full)
+                card["id"] = f"story-{idx}"        # renumber for a unique, ordered deck id
+            else:
+                card = _slim_to_card(s, idx, now)
+            cards.append(card)
+            idx += 1
+            kept += 1
             if toks:
                 seen_toks.append(toks)
-        cards.extend(live)
-    live_titles = {_norm_title(c.get("title")) for c in cards if c.get("type") == "story"}
-    archive_data = _load_json(NEWS_ARCHIVE) or {}
-    for region in REGIONS:
-        cat = REGION_CAT[region]
-        older = [s for s in (archive_data.get("stories") or [])
-                 if _story_region(s) == region and _norm_title(s.get("title")) not in live_titles]
-        if older:
-            cards.append({"type": "archive", "id": f"archive-{region}", "category": cat,
-                          "region": region, "older_count": len(older)})
 
     # -- 🎓 Learn tab is built CLIENT-SIDE in the reels from dashboard/lessons.json (the catalog written
     #    by routine/decode_lesson.py) so the reader can walk it at their own pace + browse the library.
