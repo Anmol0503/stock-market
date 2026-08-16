@@ -26,17 +26,28 @@ genuinely fresh, you may WebSearch for today's top story in that region instead.
 - **global** — geopolitics | economy | technology | science | health | climate (world stories that matter).
 - **india** — category `india` (national news, economy, policy, markets).
 - **f1** — Formula 1: races, results, driver/team news, regulations, standings. category `f1`.
-- **cricket** — cricket worldwide (India-heavy is fine): matches, series, selections, records. category `cricket`.
+- **cricket** — the STORIES behind the game, not the scorecard. Go for the **"masala" a boxscore never tells**:
+  dressing-room drama, captaincy & selection politics, feuds / spats / sledging, board & governance battles
+  (BCCI / ICC / PCB / CA), auctions, contracts & franchise moves, retirements / comebacks / axings and the human
+  story behind them, off-field controversies, money, and personalities. Records or milestones **only** when there
+  is a genuine human story in them. **AVOID** pure match reports, "who won", ball-by-ball, scorecards, points
+  tables, and bare fixtures — the reader gets scores elsewhere; here they want the intrigue. India-heavy is fine.
+  category `cricket`.
 
 ## How to pick (per region)
 1. Find what is **TRENDING RIGHT NOW** in that region: the story across the MOST sources/feeds, most
    recently. Volume across independent feeds + recency = trending. Confirm with WebSearch it's real & current.
    - **RECENCY IS A HARD REQUIREMENT.** Look at `published_iso`. Pick from **TODAY's** items (or, if truly
      nothing today, the last ~24h). **Never pick a story published before yesterday.** Prefer the freshest.
-   - For **f1 / cricket**: explore broadly (official sites, BBC Sport, ESPNcricinfo, Autosport, PlanetF1,
-     RaceFans, Cricbuzz, Reddit) and take the most-talked-about stories right now — results, signings,
-     injuries, controversies, standings. When asked for 2, pick two genuinely DIFFERENT stories (e.g. a race
-     result AND a driver-market move; a match result AND a selection/injury) — not two angles on one event.
+   - For **f1**: explore broadly (official F1, BBC Sport, Autosport, PlanetF1, RaceFans, Reddit) and take the
+     most-talked-about stories right now — results, signings, injuries, controversies, standings.
+   - For **cricket**: chase the **off-field story, not the result**. Explore ESPNcricinfo (features/news, not
+     scorecards), Cricbuzz, The Guardian/Telegraph cricket, Indian sports desks, and Reddit r/Cricket for what
+     people are actually ARGUING about right now — a captaincy row, an auction twist, a retirement, a board spat,
+     a snub, a feud, a big money move. Decode it like intrigue: who's involved, what's really going on, why it
+     matters, what happens next.
+   - When asked for 2, pick two genuinely DIFFERENT threads (for cricket e.g. a selection controversy AND an
+     auction/money story — never two angles on one event). Corroborate before publishing — never a rumour as fact.
 2. Pick the requested COUNT of genuinely new stories per region (not in `already_today`, not near-duplicates
    of each other). If you truly can't find enough new ones, return fewer — never pad with rehashes or duds.
 3. **VET:** if a candidate is only on Reddit/X and you can't corroborate it with a credible outlet, skip it.

@@ -124,19 +124,24 @@ WORLD_FEEDS = [
      "https://news.google.com/rss/search?q=F1+(Verstappen+OR+standings+OR+Grand+Prix)+when:3d&hl=en-US&gl=US&ceid=US:en"),
     ("f1", "Reddit r/formula1", "https://www.reddit.com/r/formula1/hot/.rss"),
 
-    # === CRICKET (its own tab — global + India-heavy, the analyst picks the most-trending) ===
-    ("cricket", "BBC Sport Cricket", "http://feeds.bbci.co.uk/sport/cricket/rss.xml"),
+    # === CRICKET (its own tab — the MASALA behind the game, not scorecards; India-heavy) ===
+    # Sources biased toward off-field stories (drama, politics, money, personalities). The analyst filters
+    # out pure match reports; these queries surface the intrigue a boxscore never tells.
     ("cricket", "ESPNcricinfo", "https://www.espncricinfo.com/rss/content/story/feeds/0.xml"),
     ("cricket", "The Hindu Cricket", "https://www.thehindu.com/sport/cricket/feeder/default.rss"),
     ("cricket", "TOI Cricket", "https://timesofindia.indiatimes.com/rssfeeds/54829575.cms"),
     ("cricket", "NDTV Cricket", "https://feeds.feedburner.com/ndtvsports-cricket"),
     ("cricket", "Cricbuzz (Google News)",
      "https://news.google.com/rss/search?q=site:cricbuzz.com+when:3d&hl=en-IN&gl=IN&ceid=IN:en"),
-    ("cricket", "Google News — Cricket",
-     "https://news.google.com/rss/search?q=cricket+when:3d&hl=en-IN&gl=IN&ceid=IN:en"),
-    ("cricket", "Google News — Cricket intl",
-     "https://news.google.com/rss/search?q=cricket+(Test+OR+ODI+OR+T20+OR+series)+when:3d&hl=en-US&gl=US&ceid=US:en"),
     ("cricket", "Reddit r/Cricket", "https://www.reddit.com/r/Cricket/hot/.rss"),
+    ("cricket", "GN — Cricket drama/controversy",
+     "https://news.google.com/rss/search?q=cricket+(controversy+OR+row+OR+spat+OR+feud+OR+slams+OR+backlash+OR+fallout+OR+sledging)+when:4d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("cricket", "GN — Cricket politics/board",
+     "https://news.google.com/rss/search?q=(BCCI+OR+ICC+OR+selection+OR+captaincy+OR+dropped+OR+axed+OR+snub+OR+sacked)+cricket+when:4d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("cricket", "GN — Cricket money/auction/moves",
+     "https://news.google.com/rss/search?q=(IPL+OR+auction+OR+retention+OR+contract+OR+franchise+OR+deal+OR+salary)+cricket+when:5d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("cricket", "GN — Cricket lives/retire/comeback",
+     "https://news.google.com/rss/search?q=cricket+(retirement+OR+comeback+OR+return+OR+relationship+OR+wedding+OR+business+OR+documentary)+when:5d&hl=en-US&gl=US&ceid=US:en"),
 
     # === REDDIT (per-subreddit .rss — the JSON API is 403-blocked, but RSS still serves) ===
     # These are LEADS to verify, not sources of record — the analyst confirms via WebSearch.

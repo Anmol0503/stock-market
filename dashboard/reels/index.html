@@ -346,6 +346,21 @@
   .tbar i{display:block;height:100%;background:linear-gradient(90deg,var(--puzzles),#c4b5fd);border-radius:99px}
   .tblurb{font-size:13.5px;line-height:1.5;color:var(--dim)}
 
+  /* ---- news read/done: mark-read chip on cards + per-tab 🗂 Read shelf ---- */
+  .readchip{margin-top:11px;width:100%;min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+    gap:8px;font-family:var(--round);font-weight:800;font-size:14px;cursor:pointer;color:var(--dim);
+    border:1px solid var(--line);background:var(--panel2);border-radius:13px;padding:9px 14px}
+  .readchip:active{transform:translateY(1px);filter:brightness(1.1)}
+  .readbadge{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:800;
+    color:#3fb950;background:rgba(63,185,80,.14);border-radius:99px;padding:2px 9px}
+  #readfab{position:fixed;right:14px;bottom:18px;z-index:30;display:none;align-items:center;gap:7px;
+    font-family:var(--round);font-weight:800;font-size:14px;cursor:pointer;color:var(--txt);
+    background:var(--panel);border:1px solid var(--line);border-radius:99px;
+    padding:11px 16px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+  #readfab .n{background:rgba(255,255,255,.16);border-radius:99px;padding:0 8px;min-width:20px;text-align:center}
+  #readfab.active{background:#3fb950;color:#04150a;border-color:#3fb950}
+  #readfab:active{transform:translateY(1px)}
+
   /* outro */
   .note{border:1px solid var(--line);border-radius:12px;background:var(--panel2);padding:11px 14px;font-size:14px;text-align:left}
   .note .w{color:var(--dim);font-size:12.5px}
@@ -434,6 +449,7 @@
   </div>
 </div>
 <div id="deck"></div>
+<div id="readfab" onclick="toggleReadView()"></div>
 <div id="empty"><div><div style="font-size:40px">📭</div>No deck yet for today.<br>Run the daily pipeline, then reload.</div></div>
 
 <div id="mask" onclick="closeSheet()"></div>
@@ -705,7 +721,8 @@ const R = {
     <div class="meta">${catChip(c.category)}${credChip(c.credibility)}${c.development?'<span class="devbadge">🔄 Development</span>':''}${threadRibbon(c.thread)}${c.importance==='critical'?'<span style="color:var(--down)">● critical</span>':''}</div>
     ${whenLine(c)}
     <h1 class="headline">${esc(c.title)}</h1>
-    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}`,
+    ${expandBtn(`openDecode(${JSON.stringify(c.id)})`, 'Read full story')}
+    <button class="readchip" onclick="markStoryRead('${c.id}')">✓ Mark read</button>`,
 
   // 📜 end-of-feed archive gateway: the live feed is the top 20; older stories collect here
   archive: c => `
@@ -811,6 +828,21 @@ const R = {
     <h1 class="headline">${esc(c.prompt)}</h1>
     ${expandBtn(`openPuzzle(${JSON.stringify(c.id)})`, 'Revise')}`,
 
+  // 🗂 Read shelf (per news tab): cover → the stories you've read, newest-read first
+  read_cover: c => `
+    <div class="eyebrow"><span class="day">🗂 Read — ${esc(CAT[c.category]?CAT[c.category].lbl:'News')}</span></div>
+    <div class="bigemoji">🗂</div>
+    <div class="lcov-subj">${esc(c.count)} read</div>
+    <div class="lcov-part">${c.count?'newest first · tap any story to read it again':'nothing here yet'}</div>
+    <div class="lcov-recap"><span class="lcov-lbl">how this works</span>Stories you open or mark read leave the feed and land here — so the top of your feed is always the next thing you haven't read.</div>
+    <button class="expand" onclick="toggleReadView()">← Back to the feed <span class="ar">↑</span></button>`,
+
+  read_story: c => `
+    <div class="meta">${catChip(c.category)}<span class="readbadge">✓ read ${esc(relTime(new Date(c.at).toISOString()))}</span></div>
+    <h1 class="headline">${esc(c.title)}</h1>
+    ${expandBtn(`openReadStory(${c.ri})`, 'Read it again')}
+    <button class="readchip" onclick="unmarkRead(${c.ri})">↩︎ Move back to the feed</button>`,
+
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
     <div class="scrollcue">swipe up ↑</div>`,
@@ -870,7 +902,7 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover'};   // extra class on top of .card
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
@@ -885,9 +917,65 @@ function pillarOf(c){
 }
 let PILLARSEL = 'global';
 
+// 🗂 news read shelf: opening/marking a story read pulls it out of the feed and onto a per-tab shelf.
+const NEWS_TABS = new Set(['global','india','f1','cricket']);
+const REGION_ACCENT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket'};
+let NEWS_VIEW = 'feed';               // 'feed' | 'read' — toggled per news tab via the 🗂 FAB
+let READ_LIST = [];                   // read-shelf entries for the current render (index → entry)
+let PENDING_FEED_RERENDER = false;    // set when a decode auto-marks read → re-filter the feed on close
+function rLoad(){ try{ return JSON.parse(localStorage.getItem('di_read'))||{}; }catch(e){ return {}; } }
+function rSave(o){ try{ localStorage.setItem('di_read', JSON.stringify(o)); }catch(e){} }
+const readKey = c => _tkey((c && (c.title||c.t)) || '');
+const isRead = c => !!rLoad()[readKey(c)];
+const storyRegion = cat => STORY_REGIONS.has(cat) ? cat : 'global';
+function readCountFor(region){ const r=rLoad(); return Object.keys(r).filter(k=>storyRegion(r[k].cat)===region).length; }
+
+function setRead(title, cat, on){
+  const k=_tkey(title); if(!k) return;
+  const o=rLoad();
+  if(on){ if(o[k]) return; o[k]={t:title, cat:cat||'global', at:Date.now()}; }   // keep the original read time
+  else delete o[k];
+  rSave(o);
+}
+function markStoryRead(id){
+  const c=(DECK&&DECK.cards||[]).find(x=>x.id===id && x.type==='story'); if(!c) return;
+  setRead(c.title, c.category, true);
+  toast('✓ Marked read — it’s on your 🗂 Read shelf');
+  const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
+}
+function unmarkRead(ri){
+  const e=READ_LIST[ri]; if(!e) return;
+  setRead(e.t, e.cat, false);
+  toast('↩︎ Moved back to the feed');
+  const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
+}
+function openReadStory(ri){ const e=READ_LIST[ri]; if(e) openPrevStory(e.t); }
+function toggleReadView(){
+  NEWS_VIEW = NEWS_VIEW==='read' ? 'feed' : 'read';
+  render(); document.getElementById('deck').scrollTo(0,0);
+}
+function newsReadCards(region){
+  const r=rLoad();
+  READ_LIST = Object.keys(r).map(k=>Object.assign({key:k}, r[k]))
+     .filter(e => storyRegion(e.cat)===region)
+     .sort((a,b)=>(b.at||0)-(a.at||0));
+  const cards = [{type:'read_cover', category:REGION_ACCENT[region], region, count:READ_LIST.length}];
+  READ_LIST.forEach((e,i)=> cards.push({type:'read_story', ri:i, category:e.cat, title:e.t, at:e.at}));
+  return cards;
+}
+function updateReadFab(){
+  const fab=document.getElementById('readfab'); if(!fab) return;
+  if(!NEWS_TABS.has(PILLARSEL)){ fab.style.display='none'; return; }
+  if(NEWS_VIEW==='read'){ fab.className='active'; fab.innerHTML='← Back to feed'; fab.style.display='inline-flex'; return; }
+  const n=readCountFor(PILLARSEL);
+  if(n<=0){ fab.style.display='none'; return; }
+  fab.className=''; fab.innerHTML=`🗂 Read <span class="n">${n}</span>`; fab.style.display='inline-flex';
+}
+
 function setPillar(p){
   if(!DECK) return;
   PILLARSEL = p;
+  NEWS_VIEW = 'feed';                 // always land on the live feed when switching tabs
   let active=null;
   document.querySelectorAll('#tabs button').forEach(b=>{ const on=b.dataset.p===p; b.classList.toggle('on', on); if(on) active=b; });
   document.getElementById('tabs').style.setProperty('--tabcat', `var(--${TAB_CAT[p]})`);
@@ -899,6 +987,7 @@ function setPillar(p){
 
 function render(){
   const deck = document.getElementById('deck');
+  updateReadFab();                         // 🗂 read-shelf toggle: visible only on news tabs with reads
   buildConceptFreq(); paintLearned();      // refresh the "new to you" nudges + learned count
   // Learn tab = built client-side from the lessons catalog (the reader's own pace); other tabs = news feed.
   let cards;
@@ -910,10 +999,26 @@ function render(){
     cards = PUZZLE_CARDS.map(c=>({card:c}));
   } else if(PILLARSEL==='done'){
     cards = doneDeckCards().map(c=>({card:c}));
+  } else if(NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='read'){
+    cards = newsReadCards(PILLARSEL).map(c=>({card:c}));       // 🗂 the read shelf for this tab
   } else {
-    cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
+    // live feed = newest on top, MINUS anything you've already read (it's on the 🗂 shelf)
+    cards = DECK.cards
+      .filter(c => pillarOf(c)===PILLARSEL && !(c.type==='story' && isRead(c)))
+      .map(c=>({card:c}));
   }
   if(!cards.length){
+    // news feed emptied because you've read it all → a friendly "caught up" with a jump to the shelf
+    if(NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='feed'){
+      const readN = readCountFor(PILLARSEL);
+      if(readN>0){
+        const cat = TAB_CAT[PILLARSEL]||'geopolitics';
+        deck.innerHTML = `<section class="card cover" style="${catStyle(cat)}"><div class="bigemoji">✅</div>`
+          + `<h1>You're all caught up</h1><div class="body" style="color:var(--dim)">You've read everything in this feed — <b style="color:var(--txt)">${readN}</b> stor${readN==1?'y is':'ies are'} on your 🗂 Read shelf. Fresh stories arrive through the day.</div>`
+          + `<button class="expand" onclick="toggleReadView()">🗂 Revisit what you read <span class="ar">↓</span></button></section>`;
+        document.getElementById('progress').innerHTML=''; paintFresh(); return;
+      }
+    }
     const isLearn = PILLARSEL==='learn';
     if(PILLARSEL==='puzzles'){
       deck.innerHTML = `<section class="card cover" style="${catStyle('puzzles')}"><div class="bigemoji">🧩</div>`
@@ -997,6 +1102,13 @@ function openSheet(title, html, cat){
 function closeSheet(){
   document.getElementById('mask').classList.remove('open');
   document.getElementById('sheet').classList.remove('open');
+  // a story you just read auto-marked itself → drop it from the feed now (scroll stays put, next story rises up)
+  if(PENDING_FEED_RERENDER){
+    PENDING_FEED_RERENDER = false;
+    if(NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='feed'){
+      const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
+    }
+  }
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
 
@@ -1463,6 +1575,7 @@ function openDecodeCard(c){
     h += credSec(c.credibility);             // how well-corroborated this is + what that means
     h += occurredSec(c.published_iso);       // when the news actually happened, below the sources
     masteryNote(c);
+    if(!isRead(c)){ setRead(c.title, c.category, true); PENDING_FEED_RERENDER = true; }   // reading it = read
     openSheet(c.title || 'Decoded', h, c.category);
     return;
   }
