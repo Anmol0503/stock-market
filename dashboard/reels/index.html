@@ -428,6 +428,7 @@
     <button data-p="cricket" onclick="setPillar('cricket')">🏏 Cricket</button>
     <button data-p="learn" onclick="setPillar('learn')">🎓 Learn</button>
     <button data-p="puzzles" onclick="setPillar('puzzles')">🧩 Puzzles</button>
+    <button data-p="done" onclick="setPillar('done')">✅ Done</button>
   </div>
 </div>
 <div id="deck"></div>
@@ -791,8 +792,22 @@ const R = {
   puzzles_done: c => `
     <div class="bigemoji">🎉</div>
     <h1>You've cleared the gym!</h1>
-    <div class="body" style="color:var(--dim)">You've worked through every puzzle in the bank${c.streak>0?` — 🔥 ${esc(c.streak)}-day streak`:''}. More are added over time. Revisit any of them from your toolkit to keep the patterns sharp.</div>
+    <div class="body" style="color:var(--dim)">You've worked through every puzzle in the bank${c.streak>0?` — 🔥 ${esc(c.streak)}-day streak`:''}. More are added over time. Revisit any of them from your ✅ Done tab to keep the patterns sharp.</div>
     ${expandBtn('openTechniques()', 'Review your techniques')}`,
+
+  // ✅ Done tab: a revision shelf of everything you've finished
+  done_cover: c => `
+    <div class="eyebrow"><span class="day">✅ Done — your revision shelf</span></div>
+    <div class="bigemoji">✅</div>
+    <div class="lcov-subj">${esc(c.count)} completed</div>
+    <div class="lcov-part">${esc(c.solved)} solved unaided · tap any card below to revise</div>
+    <div class="lcov-recap"><span class="lcov-lbl">why revise</span>Re-reading a finished puzzle and re-naming its technique is what turns 'I saw the answer' into 'I own the pattern'.</div>
+    <div class="scrollcue">swipe up to revise ↑</div>`,
+
+  done_puzzle: c => `
+    <div class="meta">${famChip(c.family)}${diffDots(c.difficulty)}<span class="pmark pmark-${esc(c.mark)}">${c.mark==='solved'?'✓ solved':(c.mark==='hint'?'💡 with a hint':'🤔 was stuck')}</span></div>
+    <h1 class="headline">${esc(c.prompt)}</h1>
+    ${expandBtn(`openPuzzle(${JSON.stringify(c.id)})`, 'Revise')}`,
 
   divider: c => `<div class="bigemoji">${esc(c.emoji)}</div><div class="t">${esc(c.title)}</div>
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
@@ -854,8 +869,8 @@ const R = {
 
 /* ---------- reel assembly + Stories-style progress ---------- */
 const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover'};   // extra class on top of .card
-const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles'})[c.type] || 'markets';
-const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles'};
+const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles'})[c.type] || 'markets';
+const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
 // three tabs: a story goes to India if its category is india, else Global; the daily deep-dive lesson
@@ -891,6 +906,8 @@ function render(){
   } else if(PILLARSEL==='puzzles'){
     PUZZLE_CARDS = puzzleDeckCards();
     cards = PUZZLE_CARDS.map(c=>({card:c}));
+  } else if(PILLARSEL==='done'){
+    cards = doneDeckCards().map(c=>({card:c}));
   } else {
     cards = DECK.cards.filter(c => pillarOf(c)===PILLARSEL).map(c=>({card:c}));
   }
@@ -899,6 +916,10 @@ function render(){
     if(PILLARSEL==='puzzles'){
       deck.innerHTML = `<section class="card cover" style="${catStyle('puzzles')}"><div class="bigemoji">🧩</div>`
         + `<h1>Loading your puzzles…</h1><div class="body" style="color:var(--dim)">If this stays, reload in a moment.</div></section>`;
+      document.getElementById('progress').innerHTML=''; paintFresh(); return; }
+    if(PILLARSEL==='done'){
+      deck.innerHTML = `<section class="card cover" style="${catStyle('puzzles')}"><div class="bigemoji">✅</div>`
+        + `<h1>Your Done shelf is empty</h1><div class="body" style="color:var(--dim)">Finish a puzzle on the 🧩 Puzzles tab — mark how it went — and it lands here so you can revise it anytime.</div></section>`;
       document.getElementById('progress').innerHTML=''; paintFresh(); return; }
     const cat = isLearn?'learn':(TAB_CAT[PILLARSEL]||'geopolitics');
     const sport = PILLARSEL==='f1'?'Formula 1':(PILLARSEL==='cricket'?'Cricket':null);
@@ -1167,6 +1188,18 @@ function puzzleDeckCards(){
 }
 function findPuzzle(id){ return puzzleList().find(p=>p.id===id); }
 
+// ✅ Done tab deck: every puzzle you've marked, newest first, tap to revise
+function doneDeckCards(){
+  const o=pLoad(), solved=o.solved||{}, doneAt=o.doneAt||{};
+  const items = Object.keys(solved).map(findPuzzle).filter(Boolean)
+    .sort((a,b)=>(doneAt[b.id]||0)-(doneAt[a.id]||0));
+  if(!items.length) return [];
+  const out=[{type:'done_cover', id:'dcov', count:items.length,
+    solved:items.filter(p=>solved[p.id]==='solved').length}];
+  items.forEach(p=>out.push(Object.assign({type:'done_puzzle', mark:solved[p.id]}, p)));
+  return out;
+}
+
 // the reveal ladder — each rung is a blur-to-reveal block so nothing spoils until you tap it
 function veilBlock(lbl, body){
   return `<div class="moot veil pveil" onclick="this.classList.add('open')">`
@@ -1183,20 +1216,21 @@ function openPuzzle(id){
   h += veilBlock('🎯 The general move (carry this to new puzzles)', hl(p.general_move));
   if(techChips) h += `<div class="bsec"><div class="bh"><span class="bi">🧰</span>Techniques used</div><div class="chips">${techChips}</div></div>`;
   const mk = (pLoad().solved||{})[id];
-  h += `<div class="pmarks"><div class="bh"><span class="bi">📊</span>How did it go?</div>`
+  h += `<div class="pmarks"><div class="bh"><span class="bi">✅</span>Mark done — how did it go?</div>`
      + `<div class="pmrow">`
      + `<button class="pmbtn${mk==='solved'?' sel':''}" onclick="markPuzzle('${id}','solved')">✓ Solved it</button>`
      + `<button class="pmbtn${mk==='hint'?' sel':''}" onclick="markPuzzle('${id}','hint')">💡 With a hint</button>`
      + `<button class="pmbtn${mk==='stuck'?' sel':''}" onclick="markPuzzle('${id}','stuck')">🤔 Was stuck</button>`
-     + `</div><div class="pmnote">Marking it updates your streak and shows which techniques to keep training.</div></div>`;
+     + `</div><div class="pmnote">Marking it moves this puzzle to your <b>✅ Done</b> tab to revise later, and updates your streak + techniques.</div></div>`;
   openSheet(FAM[p.family] ? FAM[p.family][1]+' puzzle' : 'Puzzle', h, 'puzzles');
 }
 
 function markPuzzle(id, mark){
   const p = findPuzzle(id); if(!p) return;
-  const o = pLoad(); o.solved=o.solved||{}; o.mastery=o.mastery||{};
+  const o = pLoad(); o.solved=o.solved||{}; o.mastery=o.mastery||{}; o.doneAt=o.doneAt||{};
   const prev = o.solved[id];
   o.solved[id] = mark;
+  o.doneAt[id] = Date.now();          // for the ✅ Done tab's newest-first order
   // technique mastery: count 'seen' once per puzzle; 'solved' credit only for unaided solves
   if(prev===undefined){
     (p.techniques||[]).forEach(k=>{ const m=o.mastery[k]||{seen:0,solved:0}; m.seen++; if(mark==='solved') m.solved++; o.mastery[k]=m; });
@@ -1217,8 +1251,8 @@ function markPuzzle(id, mark){
             : mark==='hint' ? "👍 Good — needing a hint is how the pattern sticks."
             : "🌱 Being stuck is the reps that count most. You'll spot it next time.";
   toast(msg);
-  // refresh the card badge + technique card, keep the sheet open
-  if(PILLARSEL==='puzzles'){ const y=document.getElementById('deck').scrollTop; render(); document.getElementById('deck').scrollTop=y; }
+  // refresh the card badge + technique/done cards, keep the sheet open
+  if(PILLARSEL==='puzzles' || PILLARSEL==='done'){ const y=document.getElementById('deck').scrollTop; render(); document.getElementById('deck').scrollTop=y; }
 }
 
 // the toolkit sheet — every technique, what it means, and your mastery bar
