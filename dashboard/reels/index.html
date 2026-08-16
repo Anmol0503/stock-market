@@ -323,6 +323,8 @@
   .pmark-solved{background:rgba(63,185,80,.16);color:#3fb950}
   .pmark-hint{background:rgba(245,185,66,.16);color:#f5b942}
   .pmark-stuck{background:color-mix(in srgb,var(--puzzles) 20%,transparent);color:var(--puzzles)}
+  .pmark-confused{background:rgba(244,114,182,.18);color:#f472b6}
+  .pveil.pdeep .lbl{color:#f472b6}   /* the slow step-by-step rung stands out */
   .pprompt{font-size:17px;line-height:1.6;color:var(--txt);font-weight:600;margin:2px 0 14px}
   .pveil{margin:10px 0}
   .pveil .lbl{color:var(--cat,var(--accent))}
@@ -770,7 +772,7 @@ const R = {
 
   puzzle: c => {
     const mk = (pLoad().solved||{})[c.id];
-    const badge = mk ? `<span class="pmark pmark-${mk}">${mk==='solved'?'✓ solved':(mk==='hint'?'💡 with a hint':'🤔 revisit')}</span>` : '';
+    const badge = mk ? `<span class="pmark pmark-${mk}">${pmarkLabel(mk)}</span>` : '';
     return `
     <div class="meta">${famChip(c.family)}${diffDots(c.difficulty)}${badge}</div>
     <h1 class="headline">${esc(c.prompt)}</h1>
@@ -805,7 +807,7 @@ const R = {
     <div class="scrollcue">swipe up to revise ↑</div>`,
 
   done_puzzle: c => `
-    <div class="meta">${famChip(c.family)}${diffDots(c.difficulty)}<span class="pmark pmark-${esc(c.mark)}">${c.mark==='solved'?'✓ solved':(c.mark==='hint'?'💡 with a hint':'🤔 was stuck')}</span></div>
+    <div class="meta">${famChip(c.family)}${diffDots(c.difficulty)}<span class="pmark pmark-${esc(c.mark)}">${pmarkLabel(c.mark)}</span></div>
     <h1 class="headline">${esc(c.prompt)}</h1>
     ${expandBtn(`openPuzzle(${JSON.stringify(c.id)})`, 'Revise')}`,
 
@@ -1110,6 +1112,7 @@ function openLessonSources(id){
 }
 
 /* ---------- 🧩 Puzzle Gym: attempt → reveal ladder → self-mark → technique mastery (all client-side) ---------- */
+function pmarkLabel(m){ return {solved:'✓ solved', hint:'💡 with a hint', stuck:'🤔 was stuck', confused:'🧠 revisit'}[m] || 'done'; }
 const FAM = {logic:['🧩','Logic'], lateral:['💡','Lateral'], math:['🔢','Math'], spatial:['🧊','Spatial'],
              wordplay:['🔤','Wordplay'], technique:['🧠','Toolkit']};
 const famChip = f => { const m = FAM[f]||['🧩', f||'Puzzle']; return `<span class="famchip">${m[0]} ${esc(m[1])}</span>`; };
@@ -1206,8 +1209,8 @@ function doneDeckCards(){
 }
 
 // the reveal ladder — each rung is a blur-to-reveal block so nothing spoils until you tap it
-function veilBlock(lbl, body){
-  return `<div class="moot veil pveil" onclick="this.classList.add('open')">`
+function veilBlock(lbl, body, cls){
+  return `<div class="moot veil pveil ${cls||''}" onclick="this.classList.add('open')">`
     + `<div class="lbl">${lbl}</div><div class="txt">${body}</div>`
     + `<div class="tap">👆 tap to reveal</div></div>`;
 }
@@ -1218,6 +1221,7 @@ function openPuzzle(id){
   h += veilBlock('💡 Hint', hl(p.hint));
   h += veilBlock('🧠 Technique — '+esc((p.techniques||[]).map(techName).join(', ')), hl(p.technique_note));
   h += veilBlock('✅ Solution', `<div class="pans">Answer: ${hl(p.answer)}</div>${hl(p.solution)}`);
+  if(p.deeper) h += veilBlock('🐢 Still not clicking? The slow, step-by-step version', hl(p.deeper).replace(/\n/g,'<br>'), 'pdeep');
   h += veilBlock('🎯 The general move (carry this to new puzzles)', hl(p.general_move));
   if(techChips) h += `<div class="bsec"><div class="bh"><span class="bi">🧰</span>Techniques used</div><div class="chips">${techChips}</div></div>`;
   const mk = (pLoad().solved||{})[id];
@@ -1226,7 +1230,8 @@ function openPuzzle(id){
      + `<button class="pmbtn${mk==='solved'?' sel':''}" onclick="markPuzzle('${id}','solved')">✓ Solved it</button>`
      + `<button class="pmbtn${mk==='hint'?' sel':''}" onclick="markPuzzle('${id}','hint')">💡 With a hint</button>`
      + `<button class="pmbtn${mk==='stuck'?' sel':''}" onclick="markPuzzle('${id}','stuck')">🤔 Was stuck</button>`
-     + `</div><div class="pmnote">Marking it moves this puzzle to your <b>✅ Done</b> tab to revise later, and updates your streak + techniques.</div></div>`;
+     + `<button class="pmbtn${mk==='confused'?' sel':''}" onclick="markPuzzle('${id}','confused')">🧠 Didn't get the solution</button>`
+     + `</div><div class="pmnote">Marking it moves this puzzle to your <b>✅ Done</b> tab to revise later, and updates your streak + techniques. Tap <b>🧠 Didn't get the solution</b> and I'll open a slower, step-by-step explanation.</div></div>`;
   openSheet(FAM[p.family] ? FAM[p.family][1]+' puzzle' : 'Puzzle', h, 'puzzles');
 }
 
@@ -1254,8 +1259,14 @@ function markPuzzle(id, mark){
   pSave(o);
   const msg = mark==='solved' ? "💪 Nice — that's a rep. The pattern's yours now."
             : mark==='hint' ? "👍 Good — needing a hint is how the pattern sticks."
+            : mark==='confused' ? "🐢 No worries — here's the slower, step-by-step version. Flagged for revision."
             : "🌱 Being stuck is the reps that count most. You'll spot it next time.";
   toast(msg);
+  // "Didn't get it" → auto-reveal the slow step-by-step block in the open sheet and bring it into view
+  if(mark==='confused'){
+    const dg = document.querySelector('#sbody .pdeep');
+    if(dg){ dg.classList.add('open'); try{ dg.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){} }
+  }
   // refresh the card badge + technique/done cards, keep the sheet open
   if(PILLARSEL==='puzzles' || PILLARSEL==='done'){ const y=document.getElementById('deck').scrollTop; render(); document.getElementById('deck').scrollTop=y; }
 }
