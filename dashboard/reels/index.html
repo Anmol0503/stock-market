@@ -346,20 +346,44 @@
   .tbar i{display:block;height:100%;background:linear-gradient(90deg,var(--puzzles),#c4b5fd);border-radius:99px}
   .tblurb{font-size:13.5px;line-height:1.5;color:var(--dim)}
 
-  /* ---- news read/done: mark-read chip on cards + per-tab 🗂 Read shelf ---- */
+  /* ---- news read/done: compact "mark read" action + per-tab 🗂 Read shelf ---- */
+  :root{--readgreen:#3fb950}
+  .cardactions{display:flex;gap:10px;align-items:stretch;margin-top:2px}
+  .cardactions .expand{flex:1;margin-top:0}
+  /* secondary "mark read": a slim outline pill next to the primary CTA — clearly secondary, one tap done */
+  .markread{flex:0 0 auto;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+    min-width:62px;min-height:52px;padding:0 12px;cursor:pointer;font-family:var(--round);font-weight:800;
+    color:var(--dim);background:var(--panel2);border:1px solid var(--line);border-radius:14px;
+    transition:transform .12s ease, background .18s ease, color .18s ease, border-color .18s ease}
+  .markread svg{transition:transform .18s cubic-bezier(.34,1.56,.64,1)}
+  .markread .mrlbl{font-size:10.5px;letter-spacing:.02em;line-height:1}
+  .markread:hover{color:var(--txt);border-color:color-mix(in srgb,var(--readgreen) 45%,var(--line))}
+  .markread:active{transform:scale(.94)}
+  .markread.armed{background:var(--readgreen);border-color:var(--readgreen);color:#04150a}
+  .markread.armed svg{transform:scale(1.18)}
+  /* the card's farewell: a soft green wash + a check that pops, then it slides away */
+  @keyframes readOut{60%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-14px) scale(.985)}}
+  @keyframes checkPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}45%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}
+  .card.read-out{animation:readOut .34s ease forwards;pointer-events:none}
+  .card.read-out::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--readgreen) 26%,transparent),transparent 62%);opacity:0;animation:readOut .34s ease forwards;z-index:2}
+  .card.read-out::after{content:"✓";position:absolute;left:50%;top:46%;font-weight:900;font-size:104px;color:var(--readgreen);
+    text-shadow:0 6px 26px color-mix(in srgb,var(--readgreen) 55%,transparent);animation:checkPop .34s cubic-bezier(.34,1.56,.64,1) forwards;z-index:3}
+  @media (prefers-reduced-motion: reduce){ .card.read-out{animation:none;opacity:0} .card.read-out::after,.card.read-out::before{display:none} }
   .readchip{margin-top:11px;width:100%;min-height:44px;display:inline-flex;align-items:center;justify-content:center;
     gap:8px;font-family:var(--round);font-weight:800;font-size:14px;cursor:pointer;color:var(--dim);
     border:1px solid var(--line);background:var(--panel2);border-radius:13px;padding:9px 14px}
   .readchip:active{transform:translateY(1px);filter:brightness(1.1)}
   .readbadge{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:800;
-    color:#3fb950;background:rgba(63,185,80,.14);border-radius:99px;padding:2px 9px}
-  #readfab{position:fixed;right:14px;bottom:18px;z-index:30;display:none;align-items:center;gap:7px;
+    color:var(--readgreen);background:color-mix(in srgb,var(--readgreen) 15%,transparent);border-radius:99px;padding:2px 9px}
+  #readfab{position:fixed;right:14px;bottom:20px;z-index:30;display:none;align-items:center;gap:8px;
     font-family:var(--round);font-weight:800;font-size:14px;cursor:pointer;color:var(--txt);
-    background:var(--panel);border:1px solid var(--line);border-radius:99px;
-    padding:11px 16px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
-  #readfab .n{background:rgba(255,255,255,.16);border-radius:99px;padding:0 8px;min-width:20px;text-align:center}
-  #readfab.active{background:#3fb950;color:#04150a;border-color:#3fb950}
-  #readfab:active{transform:translateY(1px)}
+    background:color-mix(in srgb,var(--panel) 82%,#000);border:1px solid var(--line);border-radius:99px;
+    padding:11px 17px;box-shadow:0 8px 26px rgba(0,0,0,.45);backdrop-filter:blur(8px);
+    transition:transform .14s ease, background .2s ease}
+  #readfab .fic{font-size:16px;line-height:1}
+  #readfab .n{background:var(--readgreen);color:#04150a;border-radius:99px;padding:1px 8px;min-width:20px;text-align:center;font-size:13px}
+  #readfab.active{background:var(--readgreen);color:#04150a;border-color:var(--readgreen)}
+  #readfab:active{transform:scale(.95)}
 
   /* outro */
   .note{border:1px solid var(--line);border-radius:12px;background:var(--panel2);padding:11px 14px;font-size:14px;text-align:left}
@@ -937,11 +961,22 @@ function setRead(title, cat, on){
   else delete o[k];
   rSave(o);
 }
-function markStoryRead(id){
+function markStoryRead(id, ev){
   const c=(DECK&&DECK.cards||[]).find(x=>x.id===id && x.type==='story'); if(!c) return;
   setRead(c.title, c.category, true);
-  toast('✓ Marked read — it’s on your 🗂 Read shelf');
-  const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
+  toast('✓ Marked read — find it on your 🗂 Read shelf');
+  const deck=document.getElementById('deck');
+  const btn = ev && (ev.currentTarget || ev.target && ev.target.closest('.markread'));
+  const card = btn && btn.closest('.card');
+  const commit = ()=>{ const y=deck.scrollTop; render(); deck.scrollTop=y; };
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(card && !reduce){
+    if(btn) btn.classList.add('armed');
+    card.classList.add('read-out');                 // green wash + ✓ pop, then the card slips away
+    let done=false; const fin=()=>{ if(done) return; done=true; commit(); };
+    card.addEventListener('animationend', fin, {once:true});
+    setTimeout(fin, 420);                            // fallback if animationend doesn't fire
+  } else commit();
 }
 function unmarkRead(ri){
   const e=READ_LIST[ri]; if(!e) return;
@@ -966,10 +1001,10 @@ function newsReadCards(region){
 function updateReadFab(){
   const fab=document.getElementById('readfab'); if(!fab) return;
   if(!NEWS_TABS.has(PILLARSEL)){ fab.style.display='none'; return; }
-  if(NEWS_VIEW==='read'){ fab.className='active'; fab.innerHTML='← Back to feed'; fab.style.display='inline-flex'; return; }
+  if(NEWS_VIEW==='read'){ fab.className='active'; fab.innerHTML='<span class="fic">←</span> Back to feed'; fab.style.display='inline-flex'; return; }
   const n=readCountFor(PILLARSEL);
   if(n<=0){ fab.style.display='none'; return; }
-  fab.className=''; fab.innerHTML=`🗂 Read <span class="n">${n}</span>`; fab.style.display='inline-flex';
+  fab.className=''; fab.innerHTML=`<span class="fic">🗂</span> Read <span class="n">${n}</span>`; fab.style.display='inline-flex';
 }
 
 function setPillar(p){
