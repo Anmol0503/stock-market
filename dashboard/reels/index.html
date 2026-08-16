@@ -1174,14 +1174,19 @@ function morePuzzles(n){
 
 function puzzleDeckCards(){
   if(!puzzleList().length) return [];
-  const o=pLoad(), set=todaysPuzzleSet(), out=[];
+  const o=pLoad(), solved=o.solved||{};
+  const assigned = todaysPuzzleSet();                    // today's assigned ids (stable within the day)
+  const set = assigned.filter(p=>!solved[p.id]);          // DONE ones leave the Puzzles tab (they're on ✅ Done)
+  const out=[];
   out.push({type:'puzzle_cover', id:'pcov', count:set.length, streak:o.streak||0});
   set.forEach(p=>out.push(Object.assign({type:'puzzle'}, p)));
-  if(!set.length) out.push({type:'puzzles_done', id:'pdone', streak:o.streak||0});
-  // "want more?" gateway — there are more in the bank than today's focused set
-  const inset = new Set(set.map(p=>p.id)), solved = o.solved||{};
+  const inset = new Set(assigned.map(p=>p.id));
   const remaining = puzzleList().filter(p=>!solved[p.id] && !inset.has(p.id)).length;
-  if(remaining>0) out.push({type:'puzzle_more', id:'pmore', remaining});
+  if(!set.length && remaining===0){
+    out.push({type:'puzzles_done', id:'pdone', streak:o.streak||0});   // whole bank cleared
+  } else if(remaining>0){
+    out.push({type:'puzzle_more', id:'pmore', remaining});             // pull more from the bank
+  }
   const practised = Object.keys(o.mastery||{}).filter(k=>(o.mastery[k].seen||0)>0).length;
   out.push({type:'puzzle_techniques', id:'ptech', practised, total:techList().length});
   return out;
