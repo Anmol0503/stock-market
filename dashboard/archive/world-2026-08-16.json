@@ -1,9 +1,108 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-17T02:02:03+05:30",
+  "generated_at": "2026-08-17T04:07:51+05:30",
   "headline": "US and Iran reignite their war over the Strait of Hormuz: Trump drops a 20% shipping fee but presses a naval blockade as strikes fly, pushing oil to a one-month high.",
   "the_big_picture": "The single thread running through today is the re-escalation of the US-Iran conflict at the Strait of Hormuz, the chokepoint that carries roughly a fifth of the world's oil. Trump backed off a threatened 20% transit fee but is pushing ahead with a naval blockade while both sides trade strikes and tankers come under attack, sending crude to a one-month high. That oil spike is the hinge for everything downstream: US inflation cooled to 3.5% but officials flagged fresh upside risk, India's inflation just breached its central bank's target, the rupee slid past 96 and the Sensex fell. Running underneath, an AI storyline cuts both ways: IBM shed roughly $70bn in a day after stumbling on AI deals, even as China's AI-driven exports jumped 27% and Nvidia began shipping powerful H200 chips into China.",
   "stories": [
+    {
+      "category": "technology",
+      "published_iso": "2026-08-14T00:00:00Z",
+      "regions": [
+        "Global"
+      ],
+      "title": "Hackers are actively exploiting a 'perfect 10' flaw in SAP's e-commerce software, days after the patch shipped",
+      "key_points": [
+        "The flaw, **CVE-2026-58231**, scores a maximum **10.0 out of 10** on the industry severity scale.",
+        "It lets an attacker with **no login credentials** run any code they want on the server.",
+        "Security researchers say **real attacks began within 3 days** of SAP's official patch.",
+        "SAP Commerce Cloud runs the backend for large **online stores and supply chains** worldwide.",
+        "SAP has **not yet publicly confirmed** active exploitation, even as independent researchers already have."
+      ],
+      "background": "SAP Commerce Cloud is enterprise software that big retailers and manufacturers use to run their online stores and connect them to inventory, pricing, and order systems \u2014 it sits deep in the digital supply chain, not just a storefront. SAP ships security fixes on a monthly 'Patch Tuesday'-style cycle (its August 2026 Security Patch Day fell around August 11), and this flaw was one of the fixes issued that day. The bug lives in the Data Hub Adapter extension and stems from insufficient authorization checks \u2014 an unauthenticated attacker can abuse a default authentication client and feed it malformed input to execute code on the server.",
+      "what_happened": "SAP patched CVE-2026-58231, a maximum-severity (CVSS 10.0) remote code execution flaw, as part of its August 2026 Security Patch Day. Within three days, the security firm **Defused** confirmed exploitation attempts hitting its honeypots \u2014 meaning attackers reverse-engineered the fix to figure out how to exploit systems that hadn't patched yet. Because the flaw requires no authentication and is described as low-complexity to exploit, successful attacks can hand intruders full control of backend databases, transaction pipelines, and other sensitive enterprise systems. Security company Onapsis has urged affected customers to apply the fix immediately and, as a stopgap, restrict network access to the vulnerable endpoint with an IP filter.",
+      "why_it_matters": "A flaw this severe, in software this widely used for e-commerce backends, is a prime target for ransomware groups and data thieves \u2014 successful exploitation can expose customer data, payment systems, and supply-chain operations all at once, not just a single website.",
+      "ripple_effects": "Any business running an unpatched SAP Commerce Cloud instance is now in the exploitation window; downstream partners and customers connected to those systems inherit the risk too. This lands amid an already-busy August for breaches (France, Israel's Bits of Gold, and a US healthcare provider have all disclosed incidents this month), adding pressure on corporate security teams already stretched thin.",
+      "why_now": "Publishing a patch is itself a signal to attackers \u2014 it reveals exactly what was broken, so skilled attackers can reverse-engineer the flaw from the fix faster than many organizations can apply it.",
+      "watch_next": "Whether SAP issues a formal advisory confirming active exploitation, and whether ransomware groups begin using the flaw at scale.",
+      "key_terms": [
+        {
+          "term": "CVSS score",
+          "definition": "A 0\u201310 industry scale for how severe a software vulnerability is; 10.0 is the maximum, reserved for flaws that are both easy to exploit and highly damaging."
+        },
+        {
+          "term": "Remote code execution (RCE)",
+          "definition": "A vulnerability that lets an attacker run their own commands on someone else's server, effectively taking control of it."
+        }
+      ],
+      "the_lesson": "A security patch doesn't end the danger \u2014 it starts a race, because publishing the fix also tells attackers exactly where the weakness was, and reverse-engineering a patch is often faster than an entire organization can roll out an update.",
+      "market_link": "Enterprise customers disclosing breaches tied to this flaw could bring scrutiny to SAP and put a spotlight on cybersecurity vendors that sell detection and patching tools.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/sap-commerce-cloud-cve-2026-58231.html"
+        },
+        {
+          "name": "Security Affairs",
+          "url": "https://securityaffairs.com/197244/security/sap-commerce-cloud-cve-2026-58231-exploited-in-the-wild.html"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 1
+    },
+    {
+      "category": "geopolitics",
+      "published_iso": "2026-08-16T00:00:00Z",
+      "regions": [
+        "Middle East",
+        "US",
+        "Egypt"
+      ],
+      "title": "Kushner meets Hamas's leadership in Cairo as Netanyahu formally rejects the Gaza disarmament plan",
+      "key_points": [
+        "Hamas leader **Khalil al-Hayya** met Egypt's intelligence chief in Cairo to shore up the fragile Gaza ceasefire.",
+        "**Jared Kushner**, Trump's Gaza envoy, held separate Cairo talks alongside **Nickolay Mladenov** of the Board of Peace.",
+        "Netanyahu formally **rejected** the Board of Peace's disarmament roadmap, saying troops won't withdraw until Hamas is 'genuinely disarmed.'",
+        "The plan requires Hamas to hand weapons to a **new Palestinian governing committee** \u2014 a step Hamas has resisted.",
+        "A planned humanitarian pilot zone on **Rafah's ruins** still needs Israeli authorization."
+      ],
+      "background": "The current Gaza ceasefire traces back to a US-brokered deal reached in October 2025 under Trump's 15-point plan, which set up the 'Board of Peace' \u2014 an international body led by figures like Jared Kushner and Nickolay Mladenov to oversee Gaza's reconstruction and Hamas's disarmament. **Khalil al-Hayya** became Hamas's de facto lead negotiator after the group's older leadership was killed or sidelined during the war. The sticking point ever since has been sequencing: Hamas wants Israeli withdrawal and reconstruction to move in step with any disarmament, while **Netanyahu** insists disarmament must come first and verifiably. Egypt, alongside Qatar, has served as the main mediator keeping both sides talking.",
+      "what_happened": "On August 16, Hamas's Al-Hayya traveled to Cairo for talks with Egypt's intelligence chief **Hassan Rashad** aimed at consolidating the ceasefire, arriving ahead of a planned regional swing by Kushner. Kushner, traveling with Mladenov, met separately with Egyptian President **Abdel-Fattah al-Sisi** the same day. The talks center on a 15-point roadmap under which Hamas would surrender its weapons to a newly created Palestinian governing committee for Gaza \u2014 but Netanyahu has now formally rejected the Board of Peace's version of that roadmap, saying Israeli forces will not withdraw until Hamas is genuinely disarmed. Separately, the Board of Peace is pushing to open a pilot humanitarian zone in the ruins of **Rafah**, though that also requires Israeli sign-off that hasn't been granted. Hamas, meanwhile, has publicly asked the Board of Peace to 'compel' Israel to implement its ceasefire obligations, including ending strikes and incursions.",
+      "why_it_matters": "This is the diplomatic machinery holding together one of the most fragile ceasefires of the past two years \u2014 if it stalls, Gaza risks sliding back into open conflict. The disarmament dispute isn't a technicality: it determines who controls Gaza's security once the guns fall silent, and who ultimately governs it.",
+      "ripple_effects": "For roughly two million Gazans, continued deadlock means reconstruction aid and the Rafah humanitarian zone stay stuck in limbo. For the region, Egypt and Qatar's mediating credibility is on the line, and any breakdown would add to an already-elevated Middle East risk premium (oil markets, shipping insurance) layered on top of the ongoing US-Iran tensions. For Washington, the Board of Peace is a signature Trump foreign-policy project \u2014 its success or failure will shape US standing as a regional broker.",
+      "why_now": "Kushner's regional visit was scheduled this week specifically to try to unstick the disarmament impasse before it undermines the ceasefire further, and Netanyahu's public rejection forces the issue into the open just as those talks begin.",
+      "watch_next": "Whether Kushner's planned meeting with Netanyahu this week produces any compromise on sequencing, or whether Israel authorizes the Rafah humanitarian zone.",
+      "key_terms": [
+        {
+          "term": "Board of Peace",
+          "definition": "An international oversight body set up under Trump's 2025 Gaza plan to manage the ceasefire, reconstruction, and Hamas's disarmament."
+        },
+        {
+          "term": "Disarmament roadmap",
+          "definition": "The disputed sequence of steps for Hamas to hand over its weapons in exchange for Israeli withdrawal and reconstruction aid."
+        }
+      ],
+      "the_lesson": "Ceasefires that leave 'who disarms first' unresolved tend to stall right there \u2014 the implementation details of a peace deal are often harder, and more consequential, than the headline agreement itself.",
+      "concepts": [
+        "ceasefire_vs_truce"
+      ],
+      "market_link": "A collapse of the ceasefire talks could add to the Middle East risk premium already priced into Brent crude amid the ongoing US-Iran war.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/8/16/hamas-leader-heads-to-cairo-for-gaza-talks-ahead-of-kushner-visit"
+        },
+        {
+          "name": "The Times of Israel",
+          "url": "https://www.timesofisrael.com/kushner-hamas-chief-in-egypt-for-talks-on-advancing-trumps-gaza-plan-idf-continues-strikes/"
+        }
+      ],
+      "region": "global",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 2
+    },
     {
       "region": "global",
       "category": "climate",
@@ -52,7 +151,7 @@
         }
       ],
       "added_at": "2026-08-17T02:02:03+05:30",
-      "rank": 1
+      "rank": 3
     },
     {
       "region": "global",
@@ -110,7 +209,7 @@
         "title": "Iran and Oman edge closer to a Hormuz shipping-map deal even as attacks on tankers keep mounting",
         "date": null
       },
-      "rank": 2
+      "rank": 4
     },
     {
       "region": "global",
@@ -158,7 +257,7 @@
         }
       ],
       "added_at": "2026-08-17T00:00:28+05:30",
-      "rank": 3
+      "rank": 5
     },
     {
       "region": "global",
@@ -203,7 +302,7 @@
         }
       ],
       "added_at": "2026-08-17T00:00:28+05:30",
-      "rank": 4
+      "rank": 6
     },
     {
       "region": "global",
@@ -262,7 +361,7 @@
         "title": "Canada and the US race to strike a trade deal before Trump's 50% tariff deadline hits Wednesday",
         "date": null
       },
-      "rank": 5
+      "rank": 7
     },
     {
       "region": "global",
@@ -325,10 +424,10 @@
         "title": "Israeli strikes kill 11 in south Lebanon, the deadliest since the June truce, as Hezbollah vows retaliation",
         "date": null
       },
-      "rank": 6
+      "rank": 8
     },
     {
-      "rank": 7,
+      "rank": 9,
       "category": "geopolitics",
       "published_iso": "2026-08-16T03:15:00+00:00",
       "regions": [
@@ -384,7 +483,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 8,
+      "rank": 10,
       "category": "geopolitics",
       "published_iso": "2026-08-16T06:45:00+00:00",
       "regions": [
@@ -441,7 +540,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 9,
+      "rank": 11,
       "category": "economy",
       "published_iso": "2026-08-15T00:00:00+00:00",
       "regions": [
@@ -498,7 +597,7 @@
       "added_at": "2026-08-16T18:07:29+05:30"
     },
     {
-      "rank": 10,
+      "rank": 12,
       "category": "geopolitics",
       "published_iso": "2026-08-15T00:16:00+00:00",
       "regions": [
@@ -592,7 +691,7 @@
           "url": "https://www.france24.com/en/europe/20260816-live-moscow-targeted-by-600-drones-overnight-explosions-heard-in-kyiv"
         }
       ],
-      "rank": 11,
+      "rank": 13,
       "added_at": "2026-08-16T16:01:14+05:30"
     },
     {
@@ -649,7 +748,7 @@
           "url": "https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want"
         }
       ],
-      "rank": 12,
+      "rank": 14,
       "added_at": "2026-08-16T16:01:14+05:30",
       "development": true,
       "prev_ref": {
@@ -701,7 +800,7 @@
         }
       ],
       "added_at": "2026-08-16T13:59:52+05:30",
-      "rank": 13
+      "rank": 15
     },
     {
       "region": "global",
@@ -753,7 +852,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 14
+      "rank": 16
     },
     {
       "region": "global",
@@ -808,7 +907,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 15
+      "rank": 17
     },
     {
       "region": "global",
@@ -853,7 +952,7 @@
         }
       ],
       "added_at": "2026-08-16T10:00:50+05:30",
-      "rank": 16
+      "rank": 18
     },
     {
       "region": "global",
@@ -912,7 +1011,7 @@
         "title": "Hezbollah drone wounds three Israeli soldiers in south Lebanon; Israel kills a Hezbollah commander in response",
         "date": null
       },
-      "rank": 17
+      "rank": 19
     },
     {
       "category": "geopolitics",
@@ -965,124 +1064,89 @@
         }
       ],
       "added_at": "2026-08-16T08:02:53+05:30",
-      "rank": 18
+      "rank": 20
     },
     {
-      "category": "science",
+      "category": "india",
+      "published_iso": "2026-08-15T07:30:00+05:30",
       "regions": [
-        "Indonesia",
-        "Southeast Asia"
+        "India"
       ],
-      "published_iso": "2026-08-15T10:00:00+07:00",
-      "title": "Flores earthquake death toll more than doubles to 47, as rescuers remain cut off from the worst-hit district",
-      "region": "global",
-      "thread": {
-        "status": "escalating",
-        "day": 2,
-        "previously": "We reported the magnitude-7.7 quake that struck off Flores Island on Saturday, killing at least 20 people and triggering a since-lifted tsunami warning.",
-        "changed": "The confirmed death toll has more than doubled to at least 47, and officials say it will keep climbing because rescue teams still haven't reached Nagekeo, the district closest to the epicenter, where landslides have blocked every road in."
-      },
+      "title": "Modi pledges 5 to 8 new semiconductor plants within 8 years as India's chip-making push accelerates",
       "key_points": [
-        "Confirmed deaths have climbed to **at least 47**, more than double Saturday's initial count of 20.",
-        "Rescue teams still **cannot physically reach Nagekeo**, the district nearest the epicenter \u2014 landslides have blocked every road.",
-        "About **2,000 residents evacuated** from Nagekeo as homes, warehouses and government buildings took damage.",
-        "The **magnitude-7.7 quake** struck 42 miles north-northwest of the city of Ende, and briefly triggered a tsunami warning that has since been lifted.",
-        "Indonesia's disaster agency and the **USGS both expect the toll to rise further** once crews finally break through to the cut-off area."
+        "PM Modi said India will add **5 to 8 new semiconductor fabrication plants** over the next **7 to 8 years**.",
+        "He said **three major chip plants have already started operations** under India's self-reliance push.",
+        "Output from these plants will also be **exported**, Modi said, not just used domestically.",
+        "The pledge was folded into his **'Atmanirbhar Bharat'** and 'Viksit Bharat by 2047' vision at Independence Day.",
+        "It came in the same 80th Independence Day speech that also unveiled a **1-crore-youth AI-skills program**."
       ],
-      "background": "Indonesia sits on the **Pacific Ring of Fire**, the horseshoe-shaped chain of fault lines that produces most of the world's earthquakes and volcanic eruptions, so powerful quakes are a recurring national risk. East Nusa Tenggara, the province that includes Flores, is one of Indonesia's poorest and least-connected regions, with narrow mountain roads that wash out easily in bad weather. That geography is now the core problem: it isn't a shortage of rescuers holding back the response, it's that **landslides have physically cut off the area closest to the epicenter**. The initial magnitude-7.7 shock hit early Saturday morning local time and was strong enough to trigger a tsunami warning for nearby coastlines before it was lifted hours later.",
-      "what_happened": "The earthquake's confirmed death toll has jumped from an initial count of about 20 on Saturday to **at least 47** as of the latest figures from Indonesia's National Disaster Management Agency. Search-and-rescue teams have still not been able to reach **Nagekeo Regency**, the area closest to the quake's epicenter, because landslides triggered by the tremor have blocked the roads leading in \u2014 one team tried to reach it by car and was turned back, while another is attempting the journey by ferry instead. Roughly **2,000 residents of Nagekeo evacuated** their homes, and officials have reported damage to houses, warehouses and government facilities in the district. The quake's epicenter was located **42 miles north-northwest of Ende**, a city on Flores Island in East Nusa Tenggara province. Communications with the hardest-hit areas remain disrupted, which is part of why officials can't yet give a precise damage assessment. Both Indonesian disaster officials and the US Geological Survey's automated damage-estimate system say the death toll is likely to keep rising once rescuers finally get in.",
-      "why_it_matters": "A death toll that **more than doubles in a single day** without rescuers even reaching the worst-hit area is a sign this could become one of the deadliest quakes to hit Indonesia in years. It also exposes a recurring weak point in disaster response in remote, mountainous regions: the emergency isn't over when the shaking stops, it continues for as long as damaged infrastructure keeps help from reaching survivors.",
-      "ripple_effects": "Indonesia will likely need international humanitarian assistance and engineering support to clear roads and restore communications to Nagekeo, similar to past major Indonesian quakes. Insurers and reinsurers with exposure to Indonesian catastrophe risk will be watching the damage assessment closely once it's available. For the local economy, damaged warehouses and government buildings in one of Indonesia's poorer provinces will slow an already-fragile local economy's recovery for months.",
-      "why_now": "This is a live, worsening disaster \u2014 the death toll is updating hour by hour as rescue teams slowly work through landslide-blocked roads to reach the epicenter area for the first time since Saturday's quake.",
-      "watch_next": "Watch for the first confirmed casualty figures out of Nagekeo once rescue teams physically reach the district \u2014 that will likely cause another jump in the official toll.",
+      "background": "India launched its semiconductor mission a few years ago with large financial incentives to attract chip manufacturers, partly in response to the global chip shortage exposed during the pandemic and to the broader US-China race over who controls advanced chip supply chains. Building a semiconductor fabrication plant ('fab') is enormously capital- and time-intensive \u2014 projects typically take years and tens of billions of dollars before producing a single usable chip \u2014 so government pledges on fab counts are watched closely for follow-through. India already has projects announced in states like Gujarat and Assam under this push.",
+      "what_happened": "During his 75-minute Independence Day address from the Red Fort on August 15 \u2014 India's 80th year of independence \u2014 PM Modi said India expects to add between five and eight new semiconductor plants over the next seven to eight years, and that three major plants have already begun operating, with their output set to be exported as well as used domestically. The announcement sat alongside a broader pitch to make India a global defence-manufacturing hub, and other Independence Day pledges including the AI-skills program and progress on the indigenous 'Sudarshan Chakra' air defence system.",
+      "why_it_matters": "Semiconductors sit underneath almost every piece of modern technology, from phones to defense systems, and countries are racing to reduce dependence on a handful of chip-producing regions. A credible chip-manufacturing base would give India both economic upside (exports, jobs) and strategic leverage in a technology increasingly treated as a national-security asset.",
+      "ripple_effects": "If delivered, new fabs could pull in global chip firms currently weighing India against competitors like Vietnam and Malaysia, and would benefit India's broader electronics-manufacturing and components ecosystem. But the ambitious timeline also invites scrutiny \u2014 semiconductor fabs elsewhere in the world have frequently slipped years behind initial government targets.",
+      "why_now": "Independence Day is India's single most-watched annual policy speech, and this year's address doubled as a broader economic and industrial roadmap amid heightened global attention to chip supply-chain security.",
+      "watch_next": "Whether specific new plant locations, investors, or incentive details are named in upcoming budget or policy announcements.",
       "key_terms": [
         {
-          "term": "Pacific Ring of Fire",
-          "definition": "A roughly 25,000-mile horseshoe of fault lines circling the Pacific Ocean where most of the world's earthquakes and volcanic eruptions happen; Indonesia sits directly on it."
-        },
-        {
-          "term": "USGS PAGER estimate",
-          "definition": "An automated US Geological Survey system that predicts likely casualty and economic-loss ranges for an earthquake within minutes, before official counts are available."
+          "term": "Semiconductor fab",
+          "definition": "Short for 'fabrication plant' \u2014 the highly specialized, capital-intensive factory where silicon wafers are turned into computer chips."
         }
       ],
-      "the_lesson": "In a major disaster, the official death toll often reflects how far rescuers have been able to reach, not the true scale of the damage \u2014 a toll that looks 'contained' can simply mean the worst-hit area hasn't been counted yet.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "critical",
-      "sources": [
-        {
-          "name": "NBC News",
-          "url": "https://www.nbcnews.com/world/indonesia/earthquake-indonesia-rcna592638"
-        },
-        {
-          "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/08/15/twenty-dead-after-indonesias-magnitude-7point7-earthquake-rescuers-say.html"
-        },
-        {
-          "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/8/15/at-least-two-killed-as-magnitude-7-7-quake-hits-indonesia"
-        }
-      ],
-      "added_at": "2026-08-16T08:02:53+05:30",
-      "development": true,
-      "prev_ref": {
-        "title": "A magnitude-7.7 earthquake off Indonesia's Flores Island kills at least 20 and triggers a tsunami warning",
-        "date": null
-      },
-      "rank": 19
-    },
-    {
-      "region": "global",
-      "category": "geopolitics",
-      "published_iso": "2026-08-15T02:30:00+03:00",
-      "regions": [
-        "Middle East",
-        "Lebanon",
-        "Israel"
-      ],
-      "title": "Hezbollah drone wounds three Israeli soldiers in south Lebanon; Israel kills a Hezbollah commander in response",
-      "key_points": [
-        "A Hezbollah explosive drone hit Israeli troops on the **Ali Taher Ridge** in south Lebanon around **2:30am Saturday**, seriously wounding an officer and two soldiers.",
-        "Israel struck back within hours, killing **Ali Samir Al-Haj Hassan**, a battalion commander in Hezbollah's elite **Radwan Force**, plus several other fighters.",
-        "The clash happened inside Lebanon, at a hilltop position Israeli troops still occupy **21 months after the November 2024 ceasefire** was supposed to end the war.",
-        "Israel also struck the Nabatieh area, hitting ground above a **Hezbollah underground facility** believed to sit beneath the ridge.",
-        "It is one of the most serious cross-border exchanges since the ceasefire, and raises fresh doubts about how long the truce can hold."
-      ],
-      "background": "Israel and Hezbollah, the Iran-backed militia and political party that controls much of south Lebanon, fought an intense war through 2024 that ended in a **November 2024 ceasefire**. Under that deal, the Lebanese army was supposed to take over security in the south and Israeli troops were meant to withdraw. Israel never fully left \u2014 it kept soldiers at five hilltop positions inside Lebanese territory, including **Ali Taher Ridge**, which it says are needed to watch for Hezbollah rebuilding its tunnel and rocket network. Lebanon considers this an ongoing violation of its sovereignty, while Israel has continued near-weekly strikes on people and sites it says are linked to Hezbollah's rearmament.",
-      "what_happened": "In the early hours of Saturday, August 15, a Hezbollah operative flew an explosive drone into a position held by Israeli soldiers from the elite **Yahalom combat-engineering unit** on Ali Taher Ridge, seriously wounding an officer and two soldiers. It was the most damaging attack on Israeli troops in the area in months. The Israeli military responded with a **precision airstrike** on the Lebanese village of Al-Ansar, killing **Ali Samir Al-Haj Hassan**, whom Israel identified as a battalion commander in the Radwan Force \u2014 Hezbollah's most highly trained combat unit \u2014 along with several other Hezbollah operatives. Israel followed up with additional strikes in the wider Nabatieh area, including on the ridge itself, which Israeli officials say sits above a **major underground Hezbollah facility**. Hezbollah has not publicly confirmed or denied carrying out the drone strike.",
-      "why_it_matters": "This is one of the most serious direct clashes between Israeli troops and Hezbollah since the November 2024 ceasefire, and it happened on contested ground \u2014 an Israeli position inside Lebanon that Beirut says shouldn't be there. It tests whether the fragile truce can survive real casualties on both sides rather than just periodic Israeli strikes.",
-      "ripple_effects": "A serious escalation here would reopen a second active front for Israel alongside Gaza, straining its military and drawing in Iran (Hezbollah's main backer) and possibly Syria's new government, which borders both. It would also derail Lebanon's fragile attempt to rebuild its economy and state institutions post-war, and could trigger a fresh wave of displacement in south Lebanon, where hundreds of thousands were driven from their homes during the 2024 war.",
-      "why_now": "The attack lands amid growing frustration in Lebanon over Israel's continued military presence at the five ridge positions, which Hezbollah and many Lebanese see as an unresolved violation of the ceasefire \u2014 even as Israel argues its presence is necessary until Hezbollah's tunnel network is fully dismantled.",
-      "key_terms": [
-        {
-          "term": "Radwan Force",
-          "definition": "Hezbollah's most elite combat unit, trained for infiltration operations and considered its most capable fighting force."
-        },
-        {
-          "term": "ceasefire vs. sovereignty dispute",
-          "definition": "A truce can end active fighting without resolving who controls the actual territory \u2014 which is exactly the fault line here."
-        }
-      ],
-      "watch_next": "Watch for whether Hezbollah publicly claims the drone attack, and whether Israel carries out further retaliatory strikes in the coming days \u2014 either would signal the ceasefire is unraveling rather than just being tested.",
-      "the_lesson": "A 'ceasefire' on paper doesn't always mean fighting has stopped \u2014 when the underlying territorial dispute (in this case, Israeli troops still occupying five positions inside Lebanon) is never resolved, low-level clashes can keep happening for years without either side formally restarting the war.",
+      "the_lesson": "Chip self-reliance targets are easy to announce and hard to deliver \u2014 building even one advanced fab can take years and tens of billions of dollars, so the real test of a pledge like this is whether plants actually start producing, not just get promised.",
       "concepts": [
-        "proxy_war",
-        "ceasefire_vs_truce"
+        "pli_scheme"
       ],
-      "market_link": null,
+      "market_link": "Continued policy commitment to chip manufacturing could support sentiment in India's listed electronics-components and industrial-infrastructure stocks tied to the semiconductor supply chain.",
       "importance": "high",
       "sources": [
         {
-          "name": "The Times of Israel",
-          "url": "https://www.timesofisrael.com/israeli-strikes-kill-11-in-south-lebanon-idf-says-raids-in-response-to-hezbollah-action/"
-        },
-        {
-          "name": "JNS",
-          "url": "https://www.jns.org/news/israel-news/idf-slays-hezbollah-commander-in-response-to-attack-on-soldiers"
+          "name": "Business Today",
+          "url": "https://www.businesstoday.in/technology/news/story/80th-independence-day-india-to-have-more-semiconductor-plants-in-7-8-yrs-says-pm-modi-549360-2026-08-15"
         }
       ],
-      "added_at": "2026-08-16T05:57:16+05:30",
-      "rank": 20
+      "region": "india",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 21
+    },
+    {
+      "category": "india",
+      "published_iso": "2026-08-16T09:00:00+05:30",
+      "regions": [
+        "India",
+        "Uttarakhand"
+      ],
+      "title": "Two more people killed as Uttarakhand's flash floods claim fresh victims in Dehradun and Udham Singh Nagar",
+      "key_points": [
+        "**Neha Arya**, 25, fell into rushing water at Sahastradhara in Dehradun while posing for a photo and was declared dead.",
+        "A **Class 11 student**, Pawan Chauhan, went missing after being swept away in the swollen **Gola river** in Udham Singh Nagar.",
+        "**SDRF and NDRF teams**, alongside police, have launched search-and-rescue operations for the missing student.",
+        "The deaths add to Uttarakhand's mounting monsoon toll, already strained by the ongoing **Pipalkoti tunnel collapse** rescue.",
+        "Authorities are renewing warnings against visiting **swollen rivers and waterfalls** during peak monsoon."
+      ],
+      "background": "Uttarakhand's steep Himalayan terrain and glacier-fed rivers make it especially prone to flash floods during the June\u2013September monsoon, when sudden, heavy rain upstream can turn a shallow stream into a deadly torrent within minutes. The state is already managing a multi-day rescue at the Pipalkoti tunnel collapse, where the death toll has climbed to 8, and this year's monsoon has been unusually deadly regionally \u2014 neighboring Himachal Pradesh's monsoon death toll has reached 183 in 47 days. Popular tourist and pilgrim spots like the Sahastradhara waterfall near Dehradun draw large crowds even during dangerous water conditions.",
+      "what_happened": "In Dehradun, 25-year-old Neha Arya fell into the water at Sahastradhara while posing for a photograph and was later declared dead despite rescue efforts. Separately, in Udham Singh Nagar, Class 11 student Pawan Chauhan disappeared while bathing in the swollen Gola river; police, State Disaster Response Force (SDRF), and National Disaster Response Force (NDRF) teams have launched a search operation that was ongoing as of the latest reports. Both incidents occurred amid a broader spell of heavy monsoon rain across north India, with the IMD separately issuing a red alert for a fresh Bay of Bengal low-pressure system threatening Odisha, Bengal, and Jharkhand.",
+      "why_it_matters": "These deaths highlight a less-visible but persistent driver of India's monsoon death toll: ordinary people underestimating fast-moving water at popular tourist and pilgrim sites, not just large-scale infrastructure disasters like tunnel collapses.",
+      "ripple_effects": "The incidents add further strain on Uttarakhand's SDRF and NDRF teams, who are simultaneously managing the Pipalkoti tunnel rescue, and could prompt renewed calls for barricades, warning signage, or outright restrictions on public access to waterfalls and riverbanks during monsoon months.",
+      "why_now": "A fresh spell of heavy monsoon rain has been moving across north India this week, swelling rivers and streams across multiple states simultaneously.",
+      "watch_next": "Whether search teams locate Pawan Chauhan, and whether the state government announces new monsoon-season access restrictions at popular water sites.",
+      "key_terms": [
+        {
+          "term": "SDRF / NDRF",
+          "definition": "State and National Disaster Response Force \u2014 India's specialist rescue units for floods, landslides, and other disasters."
+        }
+      ],
+      "the_lesson": "A large share of flash-flood death tolls comes not from headline infrastructure collapses but from ordinary people misjudging fast-moving water \u2014 which is why public warning systems and access restrictions matter as much as engineering fixes.",
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "News9live",
+          "url": "https://www.news9live.com/india/breaking-news-live-updates-todays-news-headlines-august-16-2026-pm-narendra-modi-donald-trump-us-israel-vs-iran-war-jpsc-jssc-students-protest-virginia-state-university-shooting-2999810"
+        }
+      ],
+      "region": "india",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 22
     },
     {
       "region": "india",
@@ -1132,7 +1196,7 @@
         }
       ],
       "added_at": "2026-08-17T00:00:28+05:30",
-      "rank": 21
+      "rank": 23
     },
     {
       "region": "india",
@@ -1183,7 +1247,7 @@
         "title": "One of three missing workers found dead as Chamoli tunnel rescue enters its third day",
         "date": null
       },
-      "rank": 22
+      "rank": 24
     },
     {
       "region": "india",
@@ -1226,10 +1290,10 @@
         }
       ],
       "added_at": "2026-08-16T22:01:48+05:30",
-      "rank": 23
+      "rank": 25
     },
     {
-      "rank": 24,
+      "rank": 26,
       "category": "india",
       "published_iso": "2026-08-16T13:02:00+05:30",
       "regions": [
@@ -1282,7 +1346,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 25,
+      "rank": 27,
       "category": "india",
       "published_iso": "2026-08-16T09:30:00+05:30",
       "regions": [
@@ -1335,7 +1399,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 26,
+      "rank": 28,
       "category": "india",
       "published_iso": "2026-08-16T13:47:37+05:30",
       "regions": [
@@ -1387,7 +1451,7 @@
       "added_at": "2026-08-16T18:07:29+05:30"
     },
     {
-      "rank": 27,
+      "rank": 29,
       "category": "india",
       "published_iso": "2026-08-15T14:00:49+05:30",
       "regions": [
@@ -1485,7 +1549,7 @@
           "url": "https://thecsrjournal.in/himachal-pradesh-monsoon-death-toll-increases-to-183-in-47-days/"
         }
       ],
-      "rank": 28,
+      "rank": 30,
       "added_at": "2026-08-16T16:01:14+05:30",
       "development": true,
       "prev_ref": {
@@ -1541,7 +1605,7 @@
         "title": "West Bengal Congress leader and his son shot dead in Nadia, ahead of state elections",
         "date": null
       },
-      "rank": 29
+      "rank": 31
     },
     {
       "region": "india",
@@ -1595,7 +1659,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 30
+      "rank": 32
     },
     {
       "region": "india",
@@ -1639,7 +1703,7 @@
         }
       ],
       "added_at": "2026-08-16T10:00:50+05:30",
-      "rank": 31
+      "rank": 33
     },
     {
       "region": "india",
@@ -1681,7 +1745,7 @@
         }
       ],
       "added_at": "2026-08-16T10:00:50+05:30",
-      "rank": 32
+      "rank": 34
     },
     {
       "category": "india",
@@ -1743,7 +1807,7 @@
         "title": "President Murmu unveils sweeping exam reforms after nationwide protests over paper leaks",
         "date": null
       },
-      "rank": 33
+      "rank": 35
     },
     {
       "category": "india",
@@ -1792,7 +1856,7 @@
         }
       ],
       "added_at": "2026-08-16T04:01:02+05:30",
-      "rank": 34
+      "rank": 36
     },
     {
       "category": "india",
@@ -1837,7 +1901,7 @@
         }
       ],
       "added_at": "2026-08-16T04:01:02+05:30",
-      "rank": 35
+      "rank": 37
     },
     {
       "region": "india",
@@ -1876,7 +1940,7 @@
         }
       ],
       "added_at": "2026-08-16T02:00:35+05:30",
-      "rank": 36
+      "rank": 38
     },
     {
       "region": "india",
@@ -1920,7 +1984,7 @@
         }
       ],
       "added_at": "2026-08-16T02:00:35+05:30",
-      "rank": 37
+      "rank": 39
     },
     {
       "category": "india",
@@ -1967,104 +2031,91 @@
       ],
       "region": "india",
       "added_at": "2026-08-16T00:02:33+05:30",
-      "rank": 38
+      "rank": 40
     },
     {
-      "category": "india",
-      "published_iso": "2026-08-14T15:30:00+05:30",
+      "category": "cricket",
+      "published_iso": "2026-08-16T00:00:00Z",
       "regions": [
         "India"
       ],
-      "title": "Sensex and Nifty claw back most of the day's losses to close only slightly lower",
+      "title": "Suryakumar Yadav's Mumbai Indians exit moves from trade rumour to expected release ahead of IPL 2027",
       "key_points": [
-        "The **Sensex fell just 71 points (-0.09%)** to close at **78,009**, recovering from a much steeper drop earlier in the day.",
-        "The **Nifty 50 dropped 0.12%** to settle at **24,366**.",
-        "Markets had sunk further at midday on fears of a **US naval blockade at the Strait of Hormuz**, a key oil chokepoint.",
-        "**Softer US inflation data** and positive global cues helped indices recover off their intraday lows.",
-        "**Auto, energy, FMCG, metal, pharma and realty** stocks dragged, while **consumer durables and media** shares gained."
+        "New reports suggest MI could simply **release** Suryakumar Yadav rather than arrange a trade.",
+        "**Tilak Varma** is reportedly the front-runner for the captaincy Suryakumar wanted.",
+        "Suryakumar had a **poor IPL 2026**: just **270 runs in 13 innings** at an average of 20.76.",
+        "That's a steep fall from IPL 2025, when he set MI's **franchise record for runs (717) and sixes (38)** in a season.",
+        "Neither MI nor Suryakumar has issued any **official statement** confirming a split."
       ],
-      "background": "Indian markets had a rough start on Friday, sliding further at midday as fears grew that the **US might blockade the Strait of Hormuz** \u2014 the narrow waterway between Iran and Oman that roughly a fifth of the world's oil passes through \u2014 amid elevated US-Iran tension. A blockade there would squeeze global oil supply and push up prices, which matters enormously for **India**, one of the world's largest oil importers, because costlier crude widens India's trade deficit and adds to inflation. By the close, though, markets had pared back most of that morning loss.",
-      "what_happened": "India's benchmark indices opened weak and slid further at midday on **Friday, August 14**, as fears about a potential **US naval blockade of the Strait of Hormuz** pushed crude oil prices higher. By the close, the **BSE Sensex** had recovered most of its losses to end down just **71 points (0.09%) at 78,009.25**, while the **Nifty 50** settled **0.12% lower at 24,366**, helped by **softer-than-expected US inflation data** and broadly positive global cues. The **Bank Nifty** fell a sharper **144 points (0.25%)** to close at **57,491**. Selling was concentrated in **auto, energy, FMCG, metal, pharma and realty** stocks, while **consumer durables and media** shares bucked the trend and gained. Broader markets underperformed the benchmarks, with the **Nifty Midcap 100 down 0.53%** and the **Nifty Smallcap 100 down 0.69%**.",
-      "why_it_matters": "The intraday recovery shows investors are treating the Strait of Hormuz/Iran tension as a real but not yet crisis-level risk \u2014 markets sold off on the fear, then bought back in on relief that US inflation isn't accelerating, which keeps the door open for future US interest-rate cuts.",
-      "ripple_effects": "If crude oil prices stay elevated on Middle East tension, that pressures India's import bill, the rupee, and inflation \u2014 all things the Reserve Bank of India watches closely when setting interest rates. Auto and metal stocks, sensitive to fuel costs and global demand, are likely to stay volatile as long as the Hormuz risk isn't resolved.",
-      "why_now": "The proximate trigger was fresh chatter about a possible US naval blockade at the Strait of Hormuz, part of the broader US-Iran standoff that has already forced India to cut its export tax on fuel as crude prices moved.",
-      "watch_next": "Whether crude oil prices keep climbing on Hormuz-related fears, and India's next inflation and trade-deficit data releases.",
-      "key_terms": [
-        {
-          "term": "Strait of Hormuz",
-          "definition": "A narrow shipping channel between Iran and Oman that about a fifth of the world's oil passes through \u2014 any disruption there tends to push global oil prices up sharply."
-        }
-      ],
-      "the_lesson": "Markets often overreact to a fear in the moment and then partially correct once more information arrives \u2014 a sharp midday selloff followed by a much smaller closing loss is a reminder that the scariest number of the day isn't always the one that matters most.",
-      "concepts": [
-        "crude_geopolitics",
-        "index"
-      ],
-      "market_link": "Sensex, Nifty, Bank Nifty, and crude-oil-sensitive sectors (auto, metals, energy) directly affected; the rupee and RBI's inflation outlook are indirectly at stake.",
-      "importance": "notable",
-      "thread": {
-        "previously": "Sensex and Nifty had slipped at midday on Friday as oil prices firmed on fears of a US naval blockade at the Strait of Hormuz.",
-        "changed": "By the close, markets had recovered most of that loss \u2014 the Sensex ended down just 71 points and the Nifty 0.12% lower \u2014 helped by softer US inflation data, even as auto, metal, and energy stocks stayed under pressure."
-      },
+      "background": "Suryakumar Yadav is India's T20 international captain and has been a long-time Mumbai Indians mainstay, but MI's own captaincy has been unsettled since a contentious leadership change in 2024. This continues the story we reported on August 15, when trade buzz first linked Suryakumar to a possible move to Kolkata Knight Riders in a swap involving Shreyas Iyer.",
+      "what_happened": "Reports now suggest that rather than a trade, Mumbai Indians may simply release Suryakumar Yadav ahead of the IPL 2027 season, with Tilak Varma emerging as the front-runner for the franchise captaincy that Suryakumar was believed to want. The shift follows a difficult IPL 2026 season for Suryakumar, in which he managed only 270 runs across 13 innings at an average of 20.76 \u2014 a sharp decline from his franchise-record IPL 2025 campaign, when he scored 717 runs and hit 38 sixes. Neither MI nor Suryakumar has made any official statement confirming a split; the reports remain sourced to unofficial commentary rather than club confirmation.",
+      "why_it_matters": "Suryakumar is India's white-ball T20 captain at international level \u2014 his standing (or lack of a leadership path) at his home franchise is being read as a signal about MI's internal pecking order, and would affect his market value ahead of any future auction process.",
+      "ripple_effects": "A release would put a marquee, India-captain-level player into the pool for other IPL franchises to pursue, and continues a pattern of captaincy instability at MI dating back to Rohit Sharma's 2024 exit from the role. It would also be a notable blow to fan and sponsor sentiment around one of the league's most recognizable players.",
+      "why_now": "Reports intensified this week as IPL franchises begin planning retentions and releases ahead of the 2027 season cycle.",
+      "watch_next": "Official confirmation from Mumbai Indians on retentions and releases, typically expected closer to the mega-auction window.",
+      "the_lesson": "In franchise sports, form and leadership ambitions are tightly linked \u2014 a bad season combined with a blocked path to captaincy is often enough to end even a long, successful player-team relationship.",
+      "market_link": null,
+      "importance": "high",
       "sources": [
         {
-          "name": "Business Standard",
-          "url": "https://www.business-standard.com/markets/news/stock-market-live-august-14-nse-bse-sensex-today-nifty50-gift-nifty-us-iran-tension-brent-crude-q1-result-today-ipo-listing-126081400074_1.html"
-        },
-        {
-          "name": "HDFC Sky",
-          "url": "https://hdfcsky.com/news/stock-market-close-report-today-august-14-2026-sensex-nifty-end-lower-after-volatile-session-as-middle-east-looms-over-stocks"
+          "name": "CricketAddictor",
+          "url": "https://cricketaddictor.com/cricket-news/suryakumar-yadav-set-to-leave-mumbai-indians-ahead-of-ipl-2027-report-462278/"
         }
       ],
-      "region": "india",
-      "added_at": "2026-08-16T00:02:33+05:30",
+      "thread": {
+        "previously": "We reported growing trade buzz linking Suryakumar Yadav to a possible move from Mumbai Indians to KKR in a swap involving Shreyas Iyer.",
+        "changed": "New reports now suggest MI may simply release Suryakumar outright rather than arrange a trade, with Tilak Varma emerging as the front-runner for the captaincy Suryakumar wanted."
+      },
+      "region": "cricket",
+      "added_at": "2026-08-17T04:07:51+05:30",
       "development": true,
       "prev_ref": {
-        "title": "Sensex and Nifty slip at midday as oil prices firm on fears of a US naval blockade at the Strait of Hormuz",
+        "title": "Suryakumar Yadav trade buzz builds: reports link MI star to KKR in a possible Shreyas Iyer swap",
         "date": null
       },
-      "rank": 39
+      "rank": 41
     },
     {
-      "category": "india",
-      "published_iso": "2026-08-15T11:00:00+05:30",
+      "category": "cricket",
+      "published_iso": "2026-08-16T08:00:00+05:30",
       "regions": [
-        "Uttar Pradesh",
         "India"
       ],
-      "title": "ITBP Deputy Inspector General killed in head-on highway collision in Saharanpur",
+      "title": "BCCI selectors bristle after board denies Rohit Sharma retirement talk \u2014 as Ajit Agarkar's own job comes up for renewal",
       "key_points": [
-        "ITBP **Deputy Inspector General (DIG) Parminder Singh, 52**, and his driver Ramsharan, 35, were killed in the crash.",
-        "It happened around **11 am** on the Dehradun\u2013Panchkula national highway near Sarsawa police station, Saharanpur.",
-        "Singh's vehicle hit a **road divider** and then collided head-on with an oncoming Swift car.",
-        "The DIG's gunner and three occupants of the other car were **injured** and taken to hospital in Pilkhani.",
-        "ITBP is the **Indo-Tibetan Border Police**, a paramilitary force that guards India's Himalayan frontier."
+        "BCCI secretary **Devajit Saikia** publicly denied any discussion of Rohit Sharma's ODI retirement.",
+        "Selectors are reportedly **irked** \u2014 the denial is said to undercut their push to move past Rohit.",
+        "The BCCI will separately meet chief selector **Ajit Agarkar** about extending his tenure, which **expires in September**.",
+        "Under Agarkar, India has won **two ICC trophies** \u2014 the 2025 Champions Trophy and the 2026 T20 World Cup.",
+        "The episode echoes recurring **BCCI-versus-selectors tension** over managing senior players' exits."
       ],
-      "background": "The Indo-Tibetan Border Police (ITBP) is one of India's central armed police forces, primarily responsible for guarding the mountainous India-China border. A Deputy Inspector General is a senior field-command rank within the force. High-speed convoy or official-vehicle accidents on Indian national highways are unfortunately common, and this crash claimed the life of a serving senior officer in transit.",
-      "what_happened": "Around 11 am, ITBP DIG Parminder Singh was travelling in a Scorpio vehicle on the Dehradun\u2013Panchkula National Highway near Sarsawa police station in Saharanpur district, Uttar Pradesh, when the vehicle struck a road divider and then collided head-on with an oncoming Swift car. **Singh and his driver Ramsharan died** at the scene or shortly after. The DIG's gunner sustained serious injuries, and three occupants of the Swift \u2014 Gurunanak Singh, Devendra Kaur and Gurnam Singh \u2014 were also injured. All the injured were admitted to the medical college in Pilkhani for treatment.",
-      "why_it_matters": "The death of a senior paramilitary officer in an avoidable road accident underscores the routine, often under-reported toll of India's high-speed national highways, even for officials with security escorts.",
-      "ripple_effects": "ITBP will need to fill the DIG's field-command role in the interim; an internal review of the accident and convoy protocols typically follows such incidents involving senior officers.",
-      "why_now": "This is a fresh, same-day incident from this morning.",
-      "watch_next": "Watch for the outcome of the police investigation into the cause of the collision.",
-      "key_terms": [
-        {
-          "term": "ITBP",
-          "definition": "The Indo-Tibetan Border Police, one of India's central armed police forces, tasked mainly with guarding the India-China Himalayan border."
-        }
-      ],
-      "the_lesson": "Rank and security escorts don't remove the basic risks of high-speed highway travel \u2014 road-safety incidents remain one of the most common causes of death for officials and civilians alike in India.",
-      "concepts": [],
+      "background": "Rohit Sharma is India's ODI captain and one of its most senior players, and speculation about when he'll step back from the format has intensified with the 2027 World Cup on the horizon. Ajit Agarkar became chief selector in 2023 and has overseen a highly successful run for the selection committee, including two ICC trophy wins. This is the same underlying dispute we reported on August 15, when selectors and the BCCI were described as being at odds over Rohit's ODI future.",
+      "what_happened": "BCCI secretary Devajit Saikia publicly dismissed any suggestion that Rohit Sharma's ODI retirement was under discussion, effectively debunking recent retirement speculation. According to reporting, this did not sit well with India's selectors, who are said to have wanted to move on from Rohit and feel the public denial undercuts that position. Separately, BCCI officials are set to meet Agarkar to discuss extending his tenure as chief selector beyond its September expiry.",
+      "why_it_matters": "This signals that India's succession planning for the ODI team ahead of the 2027 World Cup remains genuinely unresolved, and that friction between administrators and cricketing decision-makers is spilling into public view rather than staying contained internally.",
+      "ripple_effects": "The uncertainty could affect near-term team selection \u2014 including opportunities for players like Yashasvi Jaiswal as a potential Rohit successor \u2014 and could complicate Agarkar's authority if his own contract talks become entangled with this dispute.",
+      "why_now": "The story resurfaced this week as speculation intensified that an upcoming series could be Rohit's last, prompting the board's public pushback.",
+      "watch_next": "The outcome of BCCI's meeting with Agarkar on his tenure, and India's squad selection for its next ODI assignment.",
+      "the_lesson": "When an organization's spokesperson and its technical decision-makers send different public signals, it's usually a sign the real decision hasn't actually been made yet \u2014 the mixed messaging is itself the story.",
       "market_link": null,
-      "importance": "notable",
+      "importance": "high",
       "sources": [
         {
-          "name": "The Tribune",
-          "url": "https://www.tribuneindia.com/news/uttar-pradesh/itbp-dig-parminder-singh-driver-killed-in-head-on-collision-in-ups-saharanpur/"
+          "name": "DNA India",
+          "url": "https://www.dnaindia.com/cricket/report-selectors-irked-after-devajit-saikia-dismisses-rohit-sharma-retirement-talk-bcci-set-to-meet-ajit-agarkar-over-tenure-extension-3218531"
         }
       ],
-      "region": "india",
-      "added_at": "2026-08-15T21:58:05+05:30",
-      "rank": 40
+      "thread": {
+        "previously": "We reported the selection committee and BCCI were split over whether Rohit Sharma should continue in ODIs, with selectors reportedly wanting to move on from him.",
+        "changed": "BCCI secretary Devajit Saikia has now publicly denied any retirement discussion for Rohit, which selectors are said to be unhappy about \u2014 and the board is set to separately discuss extending chief selector Ajit Agarkar's own contract, which expires in September."
+      },
+      "region": "cricket",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "development": true,
+      "prev_ref": {
+        "title": "BCCI and its own selectors are at war over Rohit Sharma's ODI future",
+        "date": null
+      },
+      "rank": 42
     },
     {
       "region": "cricket",
@@ -2118,10 +2169,10 @@
         "title": "Devdutt Padikkal smashes a maiden Test century as India dominate day one of their historic 600th Test",
         "date": null
       },
-      "rank": 41
+      "rank": 43
     },
     {
-      "rank": 42,
+      "rank": 44,
       "category": "cricket",
       "published_iso": "2026-08-14T18:00:00+01:00",
       "regions": [
@@ -2183,7 +2234,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 43,
+      "rank": 45,
       "category": "cricket",
       "published_iso": "2026-08-15T20:00:00+05:30",
       "regions": [
@@ -2245,7 +2296,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 44,
+      "rank": 46,
       "category": "cricket",
       "published_iso": "2026-08-15T00:00:00Z",
       "regions": [
@@ -2296,7 +2347,7 @@
       "added_at": "2026-08-16T18:07:29+05:30"
     },
     {
-      "rank": 45,
+      "rank": 47,
       "category": "cricket",
       "published_iso": "2026-08-16T00:00:00Z",
       "regions": [
@@ -2383,7 +2434,7 @@
         }
       ],
       "added_at": "2026-08-16T13:59:52+05:30",
-      "rank": 46
+      "rank": 48
     },
     {
       "region": "cricket",
@@ -2427,7 +2478,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 47
+      "rank": 49
     },
     {
       "region": "cricket",
@@ -2472,7 +2523,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 48
+      "rank": 50
     },
     {
       "category": "cricket",
@@ -2527,7 +2578,7 @@
         "title": "The Hundred sets its Lord's finals: Manchester Super Giants and Sunrisers Leeds join Trent Rockets",
         "date": null
       },
-      "rank": 49
+      "rank": 51
     },
     {
       "category": "cricket",
@@ -2583,7 +2634,7 @@
         "title": "Bangladesh push Australia to the brink on day three in Darwin as the lead balloons past 200",
         "date": null
       },
-      "rank": 50
+      "rank": 52
     },
     {
       "category": "cricket",
@@ -2627,7 +2678,7 @@
         }
       ],
       "added_at": "2026-08-16T04:01:02+05:30",
-      "rank": 51
+      "rank": 53
     },
     {
       "region": "cricket",
@@ -2674,7 +2725,7 @@
         "title": "Jemimah Rodrigues ruled out of Asia Cup and Asian Games with severe hamstring tear",
         "date": null
       },
-      "rank": 52
+      "rank": 54
     },
     {
       "region": "cricket",
@@ -2727,7 +2778,7 @@
         "title": "Cricket Ireland braces for protests as Afghanistan series ends at Stormont, with Amnesty warning against 'Taliban propaganda'",
         "date": null
       },
-      "rank": 53
+      "rank": 55
     },
     {
       "category": "cricket",
@@ -2781,7 +2832,7 @@
         "title": "Jasprit Bumrah ruled out of the Sri Lanka Tests as India hands uncapped Auqib Nabi a shock call-up",
         "date": null
       },
-      "rank": 54
+      "rank": 56
     },
     {
       "category": "cricket",
@@ -2825,7 +2876,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-08-15T21:58:05+05:30",
-      "rank": 55
+      "rank": 57
     },
     {
       "category": "cricket",
@@ -2869,7 +2920,7 @@
       ],
       "region": "cricket",
       "added_at": "2026-08-15T21:58:05+05:30",
-      "rank": 56
+      "rank": 58
     },
     {
       "region": "cricket",
@@ -2913,7 +2964,7 @@
         }
       ],
       "added_at": "2026-08-15T20:00:09+05:30",
-      "rank": 57
+      "rank": 59
     },
     {
       "region": "cricket",
@@ -2952,95 +3003,87 @@
         }
       ],
       "added_at": "2026-08-15T18:00:56+05:30",
-      "rank": 58
-    },
-    {
-      "region": "cricket",
-      "category": "cricket",
-      "published_iso": "2026-08-15T17:30:00+05:30",
-      "regions": [
-        "India",
-        "Sri Lanka"
-      ],
-      "title": "Devdutt Padikkal smashes a maiden Test century as India dominate day one of their historic 600th Test",
-      "key_points": [
-        "**Devdutt Padikkal** scored a maiden Test century, finishing day one unbeaten on **118**.",
-        "India closed play at **273/2** after choosing to bat first at Galle.",
-        "Padikkal and **KL Rahul** put on a **150-run partnership** before Rahul retired hurt on 77.",
-        "Captain **Shubman Gill** was the only big wicket to fall, out for 16 to Prabath Jayasuriya.",
-        "**Rishabh Pant** was unbeaten on 18 at the close alongside Padikkal."
-      ],
-      "background": "This is India's 600th Test match \u2014 a milestone only one other team (England) had reached before, and the first for any Asian side. India opted to bowl first when they won the toss (as covered earlier), leaving uncapped fast bowler Auqib Nabi out of the XI, with Jasprit Bumrah already ruled out of the series through injury. Devdutt Padikkal, a 24-year-old left-hander with a strong domestic first-class record, had played Tests before without converting a start into a century \u2014 making today's knock his first three-figure score at this level.",
-      "what_happened": "India chose to bat first on winning the toss and dominated the opening day of the first Test against Sri Lanka in Galle. Opener **Devdutt Padikkal** anchored the innings, reaching his maiden Test century off 134 balls and finishing the day unbeaten on **118**. He shared a **150-run partnership** with **KL Rahul**, who brought up his half-century before retiring hurt on **77** in the final session. Sri Lanka's only breakthrough came when spinner **Prabath Jayasuriya** dismissed captain **Shubman Gill** for 16, caught at mid-off attempting a lofted drive. India closed the day strongly placed at **273 for 2**, with **Rishabh Pant** unbeaten on 18 alongside Padikkal.",
-      "why_it_matters": "A maiden century in a landmark 600th Test instantly elevates Padikkal's standing in the Indian side and eases selection pressure on him going forward. More broadly, a dominant batting day gives India control of a Test they'll want to use to build a series lead against a Sri Lanka side missing some experienced faces.",
-      "ripple_effects": "A big first-innings total puts pressure on Sri Lanka's batting to respond under scoreboard pressure, and gives India's bowlers time to work with on a wearing pitch later in the match. Padikkal's form also strengthens India's middle-order depth heading into a long home and away season.",
-      "why_now": "Day one of a five-day Test naturally sets the tone for the rest of the match, and a century on debut occasion of a milestone Test carries extra symbolic weight.",
-      "watch_next": "Whether India can push the total past 400 on day two and how Sri Lanka's batting responds under pressure.",
-      "key_terms": [
-        {
-          "term": "Retired hurt",
-          "definition": "When a batter leaves the field due to injury rather than being dismissed \u2014 they can return to bat later in the same innings if fit."
-        }
-      ],
-      "the_lesson": "In batting-friendly conditions, patient partnerships that occupy the crease for hours \u2014 not just quick scoring \u2014 are what actually build match-winning totals in Test cricket's longer format.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "ESPNcricinfo",
-          "url": "https://www.cricinfo.com/series/india-in-sri-lanka-2026-1543999/sri-lanka-vs-india-1st-test-1544001/live-cricket-score"
-        },
-        {
-          "name": "Outlook India",
-          "url": "https://www.outlookindia.com/sports/cricket/ind-vs-sl-live-score-1st-test-day-1-india-tour-of-sri-lanka-2026-updates-highlights-galle"
-        }
-      ],
-      "added_at": "2026-08-15T18:00:56+05:30",
-      "rank": 59
-    },
-    {
-      "region": "cricket",
-      "category": "cricket",
-      "published_iso": "2026-08-15T18:00:00+09:30",
-      "regions": [
-        "Australia",
-        "Bangladesh"
-      ],
-      "title": "Bangladesh closes in on a stunning Test win as Australia slump to 161 for 4 following on in Darwin",
-      "key_points": [
-        "Bangladesh posted **426** in their first innings, a **228-run lead**, powered by **Josh Hazlewood's 6-89**",
-        "Australia were bowled out for just **198** in reply, forcing them to bat again",
-        "Australia closed Day 3 at **161 for 4**, still trailing by **67 runs**",
-        "Star batter **Steven Smith** was dismissed, caught off spinner **Mehidy Hasan Miraz**"
-      ],
-      "background": "Bangladesh have never won a Test match in Australia, and Australia are one of the most dominant home Test sides in the sport \u2014 so any contest that puts Australia under real pressure on their own soil is unusual. This is the first Test of a two-match series in Darwin, played on a pitch that has clearly favored batting more than expected, with Bangladesh's middle order cashing in heavily in the first innings.",
-      "what_happened": "Bangladesh posted a commanding first-innings total of **426**, built through the middle order, while paceman **Josh Hazlewood** was Australia's standout bowler with figures of **6 for 89**. In reply, Australia collapsed to just **198 all out**, handing Bangladesh a **228-run lead** and forcing Australia to follow on and bat again immediately. Batting a second time, Australia lost **Steven Smith**, one of the world's best Test batters, caught off spinner **Mehidy Hasan Miraz**, and closed the third day's play on **161 for 4**, with **Cameron Green (43 not out)** and **Alex Carey (19 not out)** still at the crease \u2014 still trailing Bangladesh's first-innings total by **67 runs**.",
-      "why_it_matters": "An innings defeat for Australia \u2014 losing without even batting a third time \u2014 would be one of the biggest upsets in recent Test cricket, given Australia's dominance at home and Bangladesh's historically poor away record against them.",
-      "ripple_effects": "A Bangladesh win would be a landmark result for the team's Test program and could reshape how seriously Bangladesh are taken as a Test-playing nation going forward. For Australia, a defeat this heavy would raise questions about their batting depth outside their headline stars.",
-      "why_now": "Day 3 is when the follow-on and Australia's second-innings collapse actually happened, putting the result in serious doubt for the first time in the match.",
-      "watch_next": "Watch whether Green and Carey can steady Australia's second innings on Day 4, or whether Bangladesh completes a historic win.",
-      "key_terms": [
-        {
-          "term": "follow-on",
-          "definition": "When a team is forced to bat again immediately after being dismissed for a total far below their opponent's first-innings score, without the leading team batting a second time first."
-        }
-      ],
-      "the_lesson": "In Test cricket, one dominant innings can flip the balance of an entire match \u2014 a team that looks completely outclassed on paper can still put a heavily favored opponent under real pressure.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "ESPNcricinfo",
-          "url": "https://www.cricinfo.com/series/bangladesh-in-australia-2026-1527258/australia-vs-bangladesh-1st-test-1527273/match-report"
-        },
-        {
-          "name": "ESPN",
-          "url": "https://www.espn.com/cricket/series/24231/game/1527273/australia-vs-bangladesh-1st-test-24231"
-        }
-      ],
-      "added_at": "2026-08-15T15:59:11+05:30",
       "rank": 60
+    },
+    {
+      "category": "f1",
+      "published_iso": "2026-08-14T00:00:00Z",
+      "regions": [
+        "US"
+      ],
+      "title": "Cadillac F1's team boss is sacked as the team's billionaire owner faces an FBI probe \u2014 even after a record $12.5bn Lakers sale",
+      "key_points": [
+        "Cadillac F1 has replaced team principal **Graeme Lowden** with **Marcin Budkowski**, described as a sacking.",
+        "Team owner **Mark Walter** is under **FBI and SEC investigation** over roughly **$16\u201320 billion** in undisclosed private-credit loans.",
+        "Walter's phone and computer were **seized by the FBI**; his firms received grand jury subpoenas in February.",
+        "Days earlier, Walter sold the **LA Lakers for a record $12.5 billion** \u2014 a **25% profit** in just 10 months of ownership.",
+        "The investigation does **not directly implicate** Cadillac F1 or the Dodgers, but raises questions about ownership stability."
+      ],
+      "background": "Mark Walter runs TWG Global and Guggenheim Partners, and his sprawling sports empire includes the LA Dodgers, the LA Lakers (until this sale), and \u2014 new to the 2026 grid \u2014 the Cadillac Formula 1 team, one of F1's newest entrants. As a brand-new team still building competitiveness, Cadillac depends heavily on stable leadership and investor confidence. The federal investigation, run by Manhattan prosecutors and the SEC, centers on roughly $16\u201320 billion in private-credit loans that flowed from Walter-linked insurers through third parties to entities tied to Walter or TWG Global without being properly disclosed as related-party transactions.",
+      "what_happened": "Cadillac unexpectedly removed team principal Graeme Lowden and replaced him with Marcin Budkowski, in a move reported as a sacking rather than a mutual decision. This coincided with mounting reports that Walter is under FBI and SEC investigation, with his phone and computer seized and his firms \u2014 including Guggenheim Partners and two insurance subsidiaries \u2014 having received grand jury subpoenas back in February. Just days before the leadership change became public, Walter agreed to sell the Lakers to Josh Kushner and former Disney chief Bob Iger for a record $12.5 billion, up from the $10 billion he paid for the team roughly 10 months earlier; the deal still needs NBA Board of Governors approval, expected in September. Reports note the federal probe does not directly touch Cadillac F1 or the Dodgers, and the teams continue operating as normal.",
+      "why_it_matters": "A brand-new F1 team still fighting for competitiveness now faces a leadership shake-up right as its ultimate owner is under federal scrutiny \u2014 an unusual convergence that raises real questions about long-term stability for one of the grid's 11 teams.",
+      "ripple_effects": "It could complicate Cadillac's pitch to sponsors, staff, and drivers about long-term stability, and puts pressure on F1's governing bodies over how they vet team owners facing legal scrutiny. Andretti's IndyCar team, also linked to TWG Global, faces similar uncertainty according to reporting.",
+      "why_now": "The leadership change, the federal investigation reports, and the blockbuster Lakers sale all became public within days of each other this week \u2014 an unusual convergence of sports-business news around one person.",
+      "watch_next": "Whether the SEC/FBI probe produces formal charges, and whether F1's governing bodies comment on Cadillac's ownership stability.",
+      "key_terms": [
+        {
+          "term": "Related-party transaction",
+          "definition": "A financial deal between entities that are connected (e.g., owned by the same person), which regulators require to be clearly disclosed to avoid hidden conflicts of interest."
+        }
+      ],
+      "the_lesson": "Sports team ownership is increasingly tied to sprawling, leveraged corporate empires \u2014 a federal investigation into an owner's unrelated business dealings can create real uncertainty for a team's fans and staff, even when the team itself isn't accused of wrongdoing.",
+      "market_link": "Any formal charges against Walter's Guggenheim-linked entities could ripple into insurance and private-credit markets well beyond sports.",
+      "importance": "high",
+      "sources": [
+        {
+          "name": "TheJudge13",
+          "url": "https://thejudge13.com/2026/08/14/cadillac-f1-owner-walter-faces-fbi-as-team-changes-leadership-with-lowden-sacked-andretti-lawsuit-emerges/"
+        },
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/08/13/lakers-suddenly-sold-for-record-12-5-billion-as-federal-investigation-swirls-around-owner-mark-walter/"
+        }
+      ],
+      "region": "f1",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 61
+    },
+    {
+      "category": "f1",
+      "published_iso": "2026-08-15T12:00:00+02:00",
+      "regions": [
+        "Germany"
+      ],
+      "title": "Formula 1's teenage title leader goes undercover at a German karting event \u2014 and wins",
+      "key_points": [
+        "Mercedes' **Kimi Antonelli**, F1's **19-year-old championship leader**, raced go-karts in Germany under the alias 'Franz Antonelli.'",
+        "The fake name is a **direct nod to Max Verstappen**, who used 'Franz Hermann' to race incognito in 2025.",
+        "Antonelli reportedly **smashed rival competitors' lap times** despite the disguise.",
+        "He heads into next week's **Dutch Grand Prix at Zandvoort** holding a **50-point championship lead** over Lewis Hamilton.",
+        "The stunt keeps alive an unofficial F1 tradition of stars **racing incognito** between race weekends."
+      ],
+      "background": "Kimi Antonelli was promoted to Mercedes' race seat and has become the sport's breakout story in 2026, becoming the youngest points leader in F1 history at just 19. The 'racing incognito' tradition traces back to Max Verstappen, who first used the pseudonym 'Franz Hermann' in May 2025 to enter karting events without drawing a crowd. Formula 1 is on its summer break before resuming at Zandvoort for the Dutch Grand Prix \u2014 confirmed as the venue's final scheduled appearance on the calendar after five years back on the F1 schedule, and the first time the race will run as a Sprint weekend.",
+      "what_happened": "Antonelli entered a karting event in Germany under the alias 'Franz Antonelli' \u2014 a play on Verstappen's own pseudonym \u2014 reportedly outpacing other competitors at the session despite trying to stay under the radar. The appearance came in the closing days of F1's summer break, just before the grid reconvenes for the Dutch Grand Prix weekend at Zandvoort on August 21\u201323, where Antonelli will defend a 50-point lead over second-placed Lewis Hamilton and a 59-point lead over his own teammate George Russell.",
+      "why_it_matters": "It's a light story, but it underscores just how dominant and competitively restless Antonelli's title-winning form has been in 2026 \u2014 even on a break, the championship leader can't stay off a track.",
+      "ripple_effects": "It adds fan and media buzz ahead of Zandvoort's historic farewell Sprint weekend, and offers a lighter counter-narrative to the driver-market chaos that has otherwise dominated F1 headlines this summer.",
+      "why_now": "It happened in the final days before F1's summer break ends and the Zandvoort weekend begins.",
+      "watch_next": "Whether Antonelli extends his championship lead at Zandvoort's Sprint weekend, August 21\u201323.",
+      "the_lesson": "Even in F1's most data-driven, simulator-trained era, drivers still go racing for fun on their days off \u2014 competitive instinct doesn't clock out just because the championship points are already banked.",
+      "market_link": null,
+      "importance": "notable",
+      "sources": [
+        {
+          "name": "GPblog",
+          "url": "https://www.gpblog.com/en/news/f1-today-franz-antonelli-takes-over-german-karting-event-f1-fans-disappointed-after-social-media-tease"
+        },
+        {
+          "name": "PlanetF1",
+          "url": "https://www.planetf1.com/news/max-verstappen-franz-hermann-andrea-kimi-antonelli-daytona"
+        }
+      ],
+      "region": "f1",
+      "added_at": "2026-08-17T04:07:51+05:30",
+      "rank": 62
     },
     {
       "region": "f1",
@@ -3073,7 +3116,7 @@
         }
       ],
       "added_at": "2026-08-17T00:00:28+05:30",
-      "rank": 61
+      "rank": 63
     },
     {
       "region": "f1",
@@ -3117,7 +3160,7 @@
         }
       ],
       "added_at": "2026-08-17T00:00:28+05:30",
-      "rank": 62
+      "rank": 64
     },
     {
       "region": "f1",
@@ -3171,10 +3214,10 @@
         "title": "Verstappen expected to confirm he's staying at Red Bull through 2028 at the Dutch GP",
         "date": null
       },
-      "rank": 63
+      "rank": 65
     },
     {
-      "rank": 64,
+      "rank": 66,
       "category": "f1",
       "published_iso": "2026-08-14T09:00:00+00:00",
       "regions": [
@@ -3227,7 +3270,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 65,
+      "rank": 67,
       "category": "f1",
       "published_iso": "2026-08-15T10:00:00+00:00",
       "regions": [
@@ -3280,7 +3323,7 @@
       "added_at": "2026-08-16T19:59:10+05:30"
     },
     {
-      "rank": 66,
+      "rank": 68,
       "category": "f1",
       "published_iso": "2026-08-16T00:00:00Z",
       "regions": [
@@ -3335,7 +3378,7 @@
       "added_at": "2026-08-16T18:07:29+05:30"
     },
     {
-      "rank": 67,
+      "rank": 69,
       "category": "f1",
       "published_iso": "2026-08-15T00:00:00Z",
       "regions": [
@@ -3430,7 +3473,7 @@
           "url": "https://www.planetf1.com/news/mercedes-alpine-stake-talks-ended-valuation-concerns"
         }
       ],
-      "rank": 68,
+      "rank": 70,
       "added_at": "2026-08-16T16:01:14+05:30"
     },
     {
@@ -3466,7 +3509,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 69
+      "rank": 71
     },
     {
       "region": "f1",
@@ -3501,7 +3544,7 @@
         }
       ],
       "added_at": "2026-08-16T12:03:34+05:30",
-      "rank": 70
+      "rank": 72
     },
     {
       "category": "f1",
@@ -3545,7 +3588,7 @@
         }
       ],
       "added_at": "2026-08-16T08:02:53+05:30",
-      "rank": 71
+      "rank": 73
     },
     {
       "region": "f1",
@@ -3598,7 +3641,7 @@
         "title": "Verstappen's Red Bull exit clause is live \u2014 and the contract offers keep shifting",
         "date": null
       },
-      "rank": 72
+      "rank": 74
     },
     {
       "region": "f1",
@@ -3641,7 +3684,7 @@
         "title": "Audi opens the door to Carlos Sainz for 2027 as his Williams future comes into doubt",
         "date": null
       },
-      "rank": 73
+      "rank": 75
     },
     {
       "category": "f1",
@@ -3689,7 +3732,7 @@
         "title": "Verstappen says Alonso 'deserves to be top five, not P21' as Cadillac moves to shut down Perez-to-Williams rumours",
         "date": null
       },
-      "rank": 74
+      "rank": 76
     },
     {
       "category": "f1",
@@ -3728,7 +3771,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-15T21:58:05+05:30",
-      "rank": 75
+      "rank": 77
     },
     {
       "category": "f1",
@@ -3763,7 +3806,7 @@
       ],
       "region": "f1",
       "added_at": "2026-08-15T21:58:05+05:30",
-      "rank": 76
+      "rank": 78
     },
     {
       "region": "f1",
@@ -3808,7 +3851,7 @@
         }
       ],
       "added_at": "2026-08-15T20:00:09+05:30",
-      "rank": 77
+      "rank": 79
     },
     {
       "region": "f1",
@@ -3842,82 +3885,6 @@
         }
       ],
       "added_at": "2026-08-15T18:00:56+05:30",
-      "rank": 78
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-08-13T10:00:00+01:00",
-      "regions": [
-        "Global"
-      ],
-      "title": "McLaren boss admits he feared Norris-Piastri fallout after their title fight \u2014 says the opposite happened",
-      "key_points": [
-        "Team boss **Andrea Stella** admits he wasn't sure the Norris-Piastri relationship would survive their 2025 title battle.",
-        "**Lando Norris won** the 2025 title; **Oscar Piastri finished third**, having led for much of the season.",
-        "Stella says the bond has instead grown **'even stronger'** heading into the second half of 2026.",
-        "Piastri has leaned more heavily on the team to work through the disappointment, Stella said."
-      ],
-      "background": "Norris and Piastri fought a season-long title battle in 2025 that went down to the final race, with Norris coming out on top and Piastri dropping to third. Bitter intra-team title fights have wrecked driver relationships before in F1 history \u2014 team orders controversies and public friction are common when two drivers from the same team are racing each other for a championship. Going into 2026, there was genuine uncertainty inside McLaren about whether that rivalry would sour the pairing for the new season, especially with Piastri absorbing the disappointment of losing after leading for long stretches.",
-      "what_happened": "Speaking as F1 approaches the second half of the 2026 season, McLaren team principal **Andrea Stella** said he had no guarantee the Norris-Piastri relationship would remain intact after their tense 2025 title fight, which Norris won with Piastri finishing third. Stella said he has been struck by how the pair have handled the aftermath \u2014 rather than the relationship fraying, he said it has 'actually become even stronger,' both between the two drivers and with the wider team. He noted the dynamic wasn't fully predictable: while Norris came into 2026 fully bought in after his championship, Piastri's response was less certain, but Piastri has instead leaned more heavily on the team to accelerate his development on and off the track. Stella said he remains 'very pleased' with how both drivers are performing in 2026.",
-      "why_it_matters": "Driver harmony directly affects a team's competitiveness \u2014 a fractured pairing can cost a constructors' title through mistakes, team-order disputes or drivers racing each other instead of the field. McLaren keeping its lineup stable and cooperative gives it a real edge as the second half of the season, and the fight for wins, resumes.",
-      "ripple_effects": "A stable McLaren driver pairing raises the team's chances in both the drivers' and constructors' championships for the rest of 2026, and reduces the risk of a public rift that rival teams could exploit for signings or psychological advantage.",
-      "why_now": "The comments come as F1 teams regroup during the mid-season break before racing resumes, a natural moment for team bosses to assess how the first half's tensions have \u2014 or haven't \u2014 carried over.",
-      "watch_next": "How Norris and Piastri race each other on-track once competition resumes at the Dutch Grand Prix on August 21-23, especially in any close wheel-to-wheel moments.",
-      "key_terms": [],
-      "the_lesson": "How a team or partnership handles the *aftermath* of a bruising competition often matters more than the competition itself \u2014 visible harmony after a loss is a stronger signal of organizational health than harmony during easy times.",
-      "concepts": [],
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "GPFans",
-          "url": "https://www.gpfans.com/en/f1-news/1088862/mclaren-f1-boss-fears-lando-norris-oscar-piastri-relationship-title-fight/"
-        },
-        {
-          "name": "Autoaction",
-          "url": "https://autoaction.com.au/2026/08/13/mclaren-stella-2026-f1-title-fight"
-        }
-      ],
-      "added_at": "2026-08-15T18:00:56+05:30",
-      "rank": 79
-    },
-    {
-      "region": "f1",
-      "category": "f1",
-      "published_iso": "2026-08-15T09:00:00+01:00",
-      "regions": [
-        "Formula 1"
-      ],
-      "title": "Wolff credits a Schumacher-and-Hamilton veteran engineer for turning Kimi Antonelli into F1's youngest-ever points leader",
-      "key_points": [
-        "Antonelli has **5 wins from 7 races** and leads the championship by **41 points**",
-        "He's F1's **youngest-ever championship leader**",
-        "Race engineer **Pete 'Bono' Bonnington** \u2014 who engineered Michael Schumacher, then Lewis Hamilton for 12 seasons \u2014 now guides him",
-        "Wolff calls Bonnington 'nerdy' with data but a **'strong boss'** who mentors Antonelli"
-      ],
-      "background": "A Formula 1 race engineer is the driver's closest technical partner \u2014 in constant radio contact, managing strategy, car setup and in-race decisions. **Pete Bonnington** built his reputation over a long Mercedes career: he was **Michael Schumacher's** race engineer during Schumacher's Mercedes comeback, then spent **12 seasons** as **Lewis Hamilton's** engineer. When Hamilton left for Ferrari and Mercedes promoted rookie **Kimi Antonelli** for 2025, Bonnington stayed on to guide the teenager instead.",
-      "what_happened": "Mercedes team principal **Toto Wolff** publicly praised Bonnington for shaping Antonelli's rapid rise, describing him as **\"the optimum combination of an engineer, nerdy when he needs to be nerdy and to look at the science and the data, but also super compassionate when the driver needs support\"** \u2014 both a **\"good mentor\"** and a **\"strong boss.\"** In his second F1 season, Antonelli has won **5 of 7 races** so far in 2026 and become the sport's **youngest-ever championship leader**, holding a **41-point** lead over Hamilton in the standings.",
-      "why_it_matters": "A rookie driver's success or failure often hinges as much on the experienced engineer guiding them as on raw talent \u2014 Bonnington's track record with two generations of champions is now shaping a third.",
-      "ripple_effects": "Antonelli's form strengthens Mercedes' championship hopes and raises his value in future contract talks, while validating Mercedes' bet on youth over experience after Hamilton's departure. It also pressures rival teams' driver-engineer pairings to match the formula.",
-      "why_now": "The comments come during F1's summer break, a natural moment to reflect on the season's biggest storyline before racing resumes at Zandvoort.",
-      "watch_next": "Watch whether Antonelli can extend his lead once Ferrari's upgraded car arrives at the Dutch Grand Prix.",
-      "key_terms": [
-        {
-          "term": "race engineer",
-          "definition": "The team member who talks to the driver over the radio during a session, managing strategy, car setup and technical decisions in real time."
-        }
-      ],
-      "the_lesson": "Experience doesn't have to be about who's in the car \u2014 pairing a proven mentor with raw talent is often what turns potential into results.",
-      "market_link": null,
-      "importance": "notable",
-      "sources": [
-        {
-          "name": "Formula1.com",
-          "url": "https://www.formula1.com/en/latest/article/wolff-explains-how-bonnington-has-been-a-good-mentor-and-strong-boss-for-antonelli.7iWdgmTVdOxhjvRGV0UclL"
-        }
-      ],
-      "added_at": "2026-08-15T15:59:11+05:30",
       "rank": 80
     }
   ],
