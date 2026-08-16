@@ -776,6 +776,12 @@ const R = {
     ${expandBtn(`openPuzzle(${JSON.stringify(c.id)})`, mk?'Review it':'Stuck? Get help')}`;
   },
 
+  puzzle_more: c => `
+    <div class="meta">${famChip('technique')}<span>keep going</span></div>
+    <h1>Want more?</h1>
+    <div class="body" style="color:var(--dim)">That was today's focused set — a few, really wrestled with, beats twenty skimmed. But there are <b style="color:var(--txt)">${esc(c.remaining)}</b> more waiting whenever you're in the mood.</div>
+    <button class="expand" onclick="morePuzzles()">Add 3 more 🧩 <span class="ar">↓</span></button>`,
+
   puzzle_techniques: c => `
     <div class="meta">${famChip('technique')}<span>your toolkit</span></div>
     <h1>🧠 Your technique toolkit</h1>
@@ -848,7 +854,7 @@ const R = {
 
 /* ---------- reel assembly + Stories-style progress ---------- */
 const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover'};   // extra class on top of .card
-const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles'})[c.type] || 'markets';
+const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
@@ -1098,6 +1104,21 @@ function _dayStr(){ return new Date().toISOString().slice(0,10); }
 // today's adaptive set: keep the same set within a day; pick unsolved puzzles biased toward the reader's
 // weakest techniques + a difficulty matched to how they've been doing, with family variety. Deterministic per day.
 const SET_SIZE = 3;
+// rank a pool: bias toward the reader's weakest techniques + a difficulty matched to their progress
+function _rankPool(pool, o, today){
+  const solved=o.solved||{}, mastery=o.mastery||{};
+  const good = Object.values(solved).filter(m=>m==='solved').length;
+  const target = Math.min(5, 1 + Math.floor(good/6));   // 1..5, eases up over time
+  const need = k => { const m=mastery[k]||{seen:0,solved:0}; return 1 - (m.seen? m.solved/m.seen : 0) + (m.seen?0:0.3); };
+  const score = p => {
+    const tneed = (p.techniques||[]).reduce((s,k)=>s+need(k),0) / Math.max(1,(p.techniques||[]).length);
+    const dgap = Math.abs((p.difficulty||1) - target);
+    const jit = ((today.charCodeAt(8)+today.charCodeAt(9)+p.id.charCodeAt(1)) % 7) / 20;   // per-day variety, no randomness
+    return tneed*2 - dgap*0.6 + jit;
+  };
+  return pool.slice().sort((a,b)=>score(b)-score(a));
+}
+// the day's set — starts at SET_SIZE but can be GROWN by the reader (see morePuzzles); stable within a day
 function todaysPuzzleSet(){
   const all = puzzleList(); if(!all.length) return [];
   const o = pLoad(), today = _dayStr();
@@ -1106,28 +1127,28 @@ function todaysPuzzleSet(){
     const chosen = o.dayset.ids.map(id=>byId[id]).filter(Boolean);
     if(chosen.length) return chosen;
   }
-  const solved = o.solved||{}, mastery = o.mastery||{};
-  const unsolved = all.filter(p=>!solved[p.id]);
-  const pool = unsolved.length ? unsolved : [];
+  const solved = o.solved||{};
+  const pool = all.filter(p=>!solved[p.id]);
   if(!pool.length) return [];
-  // target difficulty: rises as the reader solves more unaided
-  const marks = Object.values(solved); const good = marks.filter(m=>m==='solved').length;
-  const target = Math.min(5, 1 + Math.floor(good/6));   // 1..5, eases up over time
-  // weakness score per technique: lower solved-rate → higher need
-  const need = k => { const m=mastery[k]||{seen:0,solved:0}; return 1 - (m.seen? m.solved/m.seen : 0) + (m.seen?0:0.3); };
-  const score = p => {
-    const tneed = (p.techniques||[]).reduce((s,k)=>s+need(k),0) / Math.max(1,(p.techniques||[]).length);
-    const dgap = Math.abs((p.difficulty||1) - target);
-    // stable per-day jitter so the set varies day to day without randomness
-    const jit = ((today.charCodeAt(8)+today.charCodeAt(9)+p.id.charCodeAt(1)) % 7) / 20;
-    return tneed*2 - dgap*0.6 + jit;
-  };
-  const ranked = pool.slice().sort((a,b)=>score(b)-score(a));
+  const ranked = _rankPool(pool, o, today);
   const set=[], fams=new Set();
   for(const p of ranked){ if(set.length>=SET_SIZE) break; if(fams.has(p.family) && set.length<SET_SIZE-1 && fams.size<3){ continue; } set.push(p); fams.add(p.family); }
   for(const p of ranked){ if(set.length>=SET_SIZE) break; if(!set.includes(p)) set.push(p); }
   o.dayset = {date:today, ids:set.map(p=>p.id)}; pSave(o);
   return set;
+}
+// pull more puzzles into today's view — the 3/day is a FLOOR, not a cap
+function morePuzzles(n){
+  n = n || SET_SIZE;
+  const all=puzzleList(), o=pLoad(), today=_dayStr();
+  const cur = (o.dayset && o.dayset.date===today && Array.isArray(o.dayset.ids)) ? o.dayset.ids.slice() : [];
+  const have = new Set(cur), solved = o.solved||{};
+  const pool = all.filter(p=>!solved[p.id] && !have.has(p.id));
+  if(!pool.length){ toast("That's the whole bank for now — I can add more whenever you ask 🙂"); return; }
+  const add = _rankPool(pool, o, today).slice(0, n).map(p=>p.id);
+  o.dayset = {date:today, ids:cur.concat(add)}; pSave(o);
+  if(PILLARSEL==='puzzles'){ const y=document.getElementById('deck').scrollTop; render(); document.getElementById('deck').scrollTop=y; }
+  toast('Added '+add.length+' more 🧩 — keep going!');
 }
 
 function puzzleDeckCards(){
@@ -1136,6 +1157,10 @@ function puzzleDeckCards(){
   out.push({type:'puzzle_cover', id:'pcov', count:set.length, streak:o.streak||0});
   set.forEach(p=>out.push(Object.assign({type:'puzzle'}, p)));
   if(!set.length) out.push({type:'puzzles_done', id:'pdone', streak:o.streak||0});
+  // "want more?" gateway — there are more in the bank than today's focused set
+  const inset = new Set(set.map(p=>p.id)), solved = o.solved||{};
+  const remaining = puzzleList().filter(p=>!solved[p.id] && !inset.has(p.id)).length;
+  if(remaining>0) out.push({type:'puzzle_more', id:'pmore', remaining});
   const practised = Object.keys(o.mastery||{}).filter(k=>(o.mastery[k].seen||0)>0).length;
   out.push({type:'puzzle_techniques', id:'ptech', practised, total:techList().length});
   return out;
