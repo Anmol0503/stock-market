@@ -88,6 +88,11 @@
   #tabs button{font-family:var(--round);font-size:12.5px;font-weight:700;color:var(--dim);cursor:pointer;flex:0 0 auto;
     border:none;background:none;border-radius:99px;padding:7px 11px;min-height:34px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
   #tabs button.on{color:#fff;background:linear-gradient(135deg, var(--tabcat,var(--accent)), color-mix(in srgb, var(--tabcat,var(--accent)) 62%, #000))}
+  /* exact unread count per news tab (the "available" counterpart of the 🗂 Read count) */
+  #tabs button .tcount{font-size:10.5px;font-weight:800;line-height:1;color:var(--dim);
+    background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:99px;padding:2px 6px;min-width:16px;text-align:center}
+  #tabs button.on .tcount{color:#fff;background:rgba(255,255,255,.22)}
+  #tabs button.empty .tcount{opacity:.45}
 
   /* cover / divider centered */
   .cover,.divider{text-align:center}
@@ -969,7 +974,6 @@ const NEWS_TABS = new Set(['global','india','f1','cricket']);
 const REGION_ACCENT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket'};
 let NEWS_VIEW = 'feed';               // 'feed' | 'read' — toggled per news tab via the 🗂 FAB
 let READ_LIST = [];                   // read-shelf entries for the current render (index → entry)
-let PENDING_FEED_RERENDER = false;    // set when a decode auto-marks read → re-filter the feed on close
 function rLoad(){ try{ return JSON.parse(localStorage.getItem('di_read'))||{}; }catch(e){ return {}; } }
 function rSave(o){ try{ localStorage.setItem('di_read', JSON.stringify(o)); }catch(e){} }
 // how the reader marks stories read: 'swipe' (default — swiping up past a story reads it) or 'button' (tap ✓)
@@ -1013,7 +1017,7 @@ function unmarkRead(ri){
   const e=READ_LIST[ri]; if(!e) return;
   setRead(e.t, e.cat, false);
   toast('↩︎ Moved back to the feed');
-  const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
+  const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y; updateTabCounts();
 }
 function openReadStory(ri){ const e=READ_LIST[ri]; if(e) openPrevStory(e.t); }
 function toggleReadView(){
@@ -1037,6 +1041,22 @@ function updateReadFab(){
   if(n<=0){ fab.style.display='none'; return; }
   fab.className=''; fab.innerHTML=`<span class="fic">🗂</span> Read <span class="n">${n}</span>`; fab.style.display='inline-flex';
 }
+// exact count of AVAILABLE (unread) stories on each news tab — the "available list" counterpart of 🗂 Read
+function unreadCountFor(region){
+  return (DECK && DECK.cards || []).filter(c => c.type==='story' && pillarOf(c)===region && !isRead(c)).length;
+}
+function updateTabCounts(){
+  if(!DECK) return;
+  document.querySelectorAll('#tabs button').forEach(b=>{
+    const p=b.dataset.p;
+    let badge=b.querySelector('.tcount');
+    if(!NEWS_TABS.has(p)){ if(badge) badge.remove(); return; }
+    const n=unreadCountFor(p);
+    if(!badge){ badge=document.createElement('span'); badge.className='tcount'; b.appendChild(badge); }
+    badge.textContent=n;
+    b.classList.toggle('empty', n===0);
+  });
+}
 
 function setPillar(p){
   if(!DECK) return;
@@ -1054,6 +1074,7 @@ function setPillar(p){
 function render(){
   const deck = document.getElementById('deck');
   updateReadFab();                         // 🗂 read-shelf toggle: visible only on news tabs with reads
+  updateTabCounts();                       // exact unread count badge on each news tab
   buildConceptFreq(); paintLearned();      // refresh the "new to you" nudges + learned count
   // Learn tab = built client-side from the lessons catalog (the reader's own pace); other tabs = news feed.
   let cards;
@@ -1133,25 +1154,25 @@ function render(){
   // without it. Property assignment (not addEventListener) means re-renders can't stack duplicate handlers.
   let settleT;
   const swipeReads = NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='feed' && markMode()==='swipe';
+  let lastActive = -1;   // the card you were viewing; when you move forward off it, THAT one is read
   const onSettle = ()=>{
     const best = deck.children[curIdx];
     if(!best) return;
     best.classList.add('inview');
     const cur = deck.querySelector('.card.active');
     if(cur !== best){ if(cur) cur.classList.remove('active'); best.classList.add('active'); }
-    // 👆 swipe-up-to-read: every story you've scrolled PAST (above the current card) is now read.
-    // Marked silently as you go (no reflow) — filtered out of the feed on the next open/refresh.
-    if(swipeReads){
-      let changed=false;
-      for(let j=0;j<curIdx;j++){
-        const cc = cards[j] && cards[j].card;
-        if(cc && cc.type==='story' && !isRead(cc)){
-          setRead(cc.title, cc.category, true); changed=true;
-          const el=deck.children[j]; if(el) el.classList.add('passed-read');
-        }
+    // 👆 swipe-up-to-read: mark ONLY the single card you just swiped up AWAY from (moved forward past),
+    // and only on a real forward step — never bulk, never on a programmatic scroll (lastActive starts at
+    // the first settled card, so the initial load / any restore marks nothing).
+    if(swipeReads && lastActive >= 0 && curIdx === lastActive + 1){
+      const cc = cards[lastActive] && cards[lastActive].card;
+      if(cc && cc.type==='story' && !isRead(cc)){
+        setRead(cc.title, cc.category, true);
+        const el=deck.children[lastActive]; if(el) el.classList.add('passed-read');
+        updateReadFab(); updateTabCounts();
       }
-      if(changed) updateReadFab();
     }
+    lastActive = curIdx;
   };
   deck.onscroll = ()=>{ clearTimeout(settleT); settleT = setTimeout(onSettle, 90); };
   deck.onscrollend = onSettle;
@@ -1182,13 +1203,6 @@ function openSheet(title, html, cat){
 function closeSheet(){
   document.getElementById('mask').classList.remove('open');
   document.getElementById('sheet').classList.remove('open');
-  // a story you just read auto-marked itself → drop it from the feed now (scroll stays put, next story rises up)
-  if(PENDING_FEED_RERENDER){
-    PENDING_FEED_RERENDER = false;
-    if(NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='feed'){
-      const deck=document.getElementById('deck'); const y=deck.scrollTop; render(); deck.scrollTop=y;
-    }
-  }
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
 
@@ -1655,7 +1669,8 @@ function openDecodeCard(c){
     h += credSec(c.credibility);             // how well-corroborated this is + what that means
     h += occurredSec(c.published_iso);       // when the news actually happened, below the sources
     masteryNote(c);
-    if(!isRead(c)){ setRead(c.title, c.category, true); PENDING_FEED_RERENDER = true; }   // reading it = read
+    // NOTE: opening a story does NOT mark it read — only swiping past it (swipe mode) or the ✓ button
+    // (button mode) does. So you can peek at the full story and it stays in your feed.
     openSheet(c.title || 'Decoded', h, c.category);
     return;
   }
