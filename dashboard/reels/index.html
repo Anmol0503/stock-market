@@ -374,6 +374,15 @@
   .card.read-out::after{content:"✓";position:absolute;left:50%;top:46%;font-weight:900;font-size:104px;color:var(--readgreen);
     text-shadow:0 6px 26px color-mix(in srgb,var(--readgreen) 55%,transparent);animation:checkPop .34s cubic-bezier(.34,1.56,.64,1) forwards;z-index:3}
   @media (prefers-reduced-motion: reduce){ .card.read-out{animation:none;opacity:0} .card.read-out::after,.card.read-out::before{display:none} }
+  /* 📅 day-divider card — opens each day's group in the feed */
+  .card.daybreak{justify-content:center;align-items:center;text-align:center}
+  .daydiv{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .daydiv-line{width:44px;height:4px;border-radius:99px;background:var(--cat,var(--accent));margin-bottom:10px;opacity:.9}
+  .daydiv-kicker{font-size:13px;font-weight:700;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}
+  .daydiv-big{font-size:clamp(34px,10vw,54px);font-weight:900;letter-spacing:-1px;line-height:1.02;
+    color:var(--txt);background:linear-gradient(180deg,var(--txt),color-mix(in srgb,var(--cat,var(--accent)) 55%,var(--txt)));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .daydiv-count{margin-top:8px;font-size:13.5px;font-weight:700;color:var(--dim)}
   /* swipe mode: a story you've scrolled past is quietly stamped read (removed on next open) */
   .card.passed-read{opacity:.5;transition:opacity .35s ease}
   .card.passed-read::after{content:"✓ read";position:absolute;top:calc(var(--deck-top) + 14px);right:20px;z-index:4;
@@ -524,6 +533,19 @@ function relTime(iso){
   const d = Math.round(h/24); return d===1?'yesterday':d+'d ago';
 }
 const todayLocal = () => new Date().toLocaleDateString('en-CA');
+// a friendly day label for the feed's day-divider cards: Today / Yesterday / "16 August"
+function dayLabel(dayStr){
+  if(!dayStr) return {kicker:'', big:'Earlier'};
+  const d = new Date(dayStr+'T00:00:00');
+  if(isNaN(d)) return {kicker:'', big:'Earlier'};
+  const today = new Date(); today.setHours(0,0,0,0);
+  const diff = Math.round((today - d)/86400000);
+  const big = diff===0 ? 'Today' : diff===1 ? 'Yesterday'
+            : d.toLocaleDateString(undefined,{day:'numeric',month:'long'});
+  const kicker = d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'short',year:
+                 (d.getFullYear()!==today.getFullYear()?'numeric':undefined)});
+  return {kicker, big};
+}
 // compact age like "40m" / "3h" / "2d" for the freshness pill
 function ageShort(iso){
   if(!iso) return null;
@@ -899,6 +921,16 @@ const R = {
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
     <div class="scrollcue">swipe up ↑</div>`,
 
+  // 📅 day break: opens each day's group in the feed so you can navigate day to day through the stack
+  day_divider: c => { const L = dayLabel(c.day); return `
+    <div class="daydiv">
+      <div class="daydiv-line"></div>
+      <div class="daydiv-kicker">${esc(L.kicker)}</div>
+      <div class="daydiv-big">${esc(L.big)}</div>
+      <div class="daydiv-count">${esc(c.count)} ${c.count==1?'story':'stories'} you haven't read</div>
+    </div>
+    <div class="scrollcue">swipe up ↑</div>`; },
+
   market_story: c => `
     <div class="meta">${catChip('markets')} <span>the market story</span></div>
     ${mootBlock(c.moot, "Today's markets in one line")}
@@ -954,7 +986,7 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover'};   // extra class on top of .card
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover', day_divider:'daybreak'};   // extra class on top of .card
 const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
@@ -1089,10 +1121,28 @@ function render(){
   } else if(NEWS_TABS.has(PILLARSEL) && NEWS_VIEW==='read'){
     cards = newsReadCards(PILLARSEL).map(c=>({card:c}));       // 🗂 the read shelf for this tab
   } else {
-    // live feed = newest on top, MINUS anything you've already read (it's on the 🗂 shelf)
-    cards = DECK.cards
-      .filter(c => pillarOf(c)===PILLARSEL && !(c.type==='story' && isRead(c)))
-      .map(c=>({card:c}));
+    // live feed = newest on top, MINUS what you've read — now ORGANISED BY DAY: stories are grouped by
+    // their publish date (newest day first), with a day-divider card opening each day so you can tell one
+    // day from the next as you swipe through the stack.
+    const feed = DECK.cards.filter(c => pillarOf(c)===PILLARSEL && c.type==='story' && !isRead(c));
+    const dayOf = c => String(c.published_iso || c.added_at || '').slice(0,10);
+    const ordered = feed.slice().sort((a,b)=>
+      String(b.published_iso||b.added_at||'').localeCompare(String(a.published_iso||a.added_at||'')));
+    const counts = {};
+    ordered.forEach(c=>{ const k=dayOf(c); counts[k]=(counts[k]||0)+1; });
+    cards = [];
+    let curDay = null;
+    ordered.forEach(c=>{
+      const k = dayOf(c);
+      if(k !== curDay){
+        curDay = k;
+        cards.push({card:{type:'day_divider', category:REGION_ACCENT[PILLARSEL]||'geopolitics', day:k, count:counts[k]}});
+      }
+      cards.push({card:c});
+    });
+    // any non-story region cards (e.g. the outro) close out the feed, only when there are stories to show
+    if(ordered.length)
+      DECK.cards.filter(c => pillarOf(c)===PILLARSEL && c.type!=='story').forEach(c=> cards.push({card:c}));
   }
   if(!cards.length){
     // news feed emptied because you've read it all → a friendly "caught up" with a jump to the shelf
