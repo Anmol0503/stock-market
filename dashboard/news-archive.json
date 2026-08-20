@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T07:59:18+05:30",
+  "generated_at": "2026-08-20T09:55:32+05:30",
   "count": 500,
   "stories": [
     {
@@ -819,6 +819,45 @@
           "Global Times",
           "Tech Startups",
           "ecns.cn (China News Service)"
+        ],
+        "corroboration": 0
+      }
+    },
+    {
+      "type": "story",
+      "title": "OpenAI unveils 'Private Safety Processing' to flag misuse without reading your data",
+      "category": "technology",
+      "published_iso": "2026-08-19T00:00:00Z",
+      "added_at": "2026-08-20T09:55:32+05:30",
+      "source": "TechCrunch",
+      "what_happened": "On **August 19, 2026**, OpenAI began previewing a new safety layer called **Private Safety Processing** to select customers. It is designed to spot patterns of abuse across many related interactions — the kind of gradual, multi-session misuse a one-off content filter would miss — **without OpenAI staff reading the actual prompts or responses**. Under the system, encrypted customer content can either stay entirely on the customer's own servers, or be stored by OpenAI using **encryption keys the customer alone controls**, so OpenAI says it cannot open the files even if it wanted to. What reaches OpenAI instead is a narrowly defined \"safety signal\" — essentially a flag that something looks risky — not the conversation itself. OpenAI says it will keep offering full **Zero Data Retention** for its most capable models to customers who want it, alongside this new layer. The company plans a broader rollout and a technical white paper in **September 2026**.",
+      "key_points": [
+        "OpenAI is previewing **Private Safety Processing**, which scans for abuse patterns across many sessions **without human review** of the actual conversations.",
+        "Customer content can stay on **customer-controlled infrastructure**, or be encrypted with keys **only the customer holds** — OpenAI says even its own staff can't unlock it.",
+        "The system passes OpenAI only a **narrow safety signal**, never the underlying prompts or AI replies.",
+        "A wider rollout plus a technical white paper are planned for **September 2026**.",
+        "The move is widely read as a direct answer to rival **Anthropic**, whose current policy leans on retaining conversation logs for safety review."
+      ],
+      "depth": {
+        "background": "AI companies face a real tension: catching someone who misuses a chatbot to plan something dangerous usually means reading what they typed, but enterprise customers paying for AI tools want a guarantee their sensitive data — trade secrets, legal filings, source code — isn't sitting somewhere company staff could read it. **Zero Data Retention (ZDR)** has been OpenAI's existing promise to big customers: keep no copy of what they send at all. The catch is that ZDR makes it hard to catch someone using the API across many separate sessions to slowly assemble something harmful, since there's no history to check. Anthropic recently went the other direction, requiring standard customers to allow data logging for safety review, which drew some enterprise pushback over privacy.",
+        "sources": [
+          {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/08/19/openai-previews-zero-retention-safety-system-as-anthropic-requires-data-logs"
+          }
+        ]
+      },
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Axios",
+          "TechCrunch"
         ],
         "corroboration": 0
       }
@@ -17912,35 +17951,6 @@
           {
             "name": "News On Japan",
             "url": "https://newsonjapan.com/article/150321.php"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "title": "Germany's top general says Russia is hitting NATO with hybrid attacks 'every day' as DNA evidence emerges in a Leipzig airport drone attack",
-      "category": "geopolitics",
-      "published_iso": "2026-08-11T18:00:00Z",
-      "added_at": "2026-08-12T22:09:33+05:30",
-      "source": "Al Jazeera",
-      "what_happened": "On the night of **August 4-5**, an explosive-laden drone was found on the tarmac at Leipzig/Halle Airport next to a Ukrainian An-124 cargo plane, after CCTV appeared to show it deliberately flying into the aircraft's wing; a bomb-disposal team made the unexploded device safe and no one was hurt. Five days later, German investigators recovered **DNA traces** from the drone that reportedly point toward **Lithuania**, and may connect to a **2024 arson attack** on a DHL logistics hub at the same airport — though officials caution the link isn't confirmed. A hidden antenna, believed to have relayed the drone's control signal, was found in a nearby tree. Against that backdrop, Bundeswehr chief Gen. Carsten Breuer told the Wall Street Journal that Russia is running hybrid attacks against NATO's eastern flank \"every day,\" using drones to map weaknesses in European air defenses while also working to destabilize governments through non-military means.",
-      "key_points": [
-        "Bundeswehr chief **Gen. Carsten Breuer** told the Wall Street Journal Russia is testing NATO's eastern flank with hybrid attacks **\"every day\"**, refining tactics for a future conflict.",
-        "Investigators say **DNA recovered from an explosive drone** that struck a Ukrainian cargo plane's wing at Leipzig Airport on **August 5** traces toward a network possibly linked to Russia's GRU.",
-        "The drone, carrying an unexploded charge, was found next to an **Antonov An-124** — a giant cargo plane used to move military and Ukraine-bound supplies.",
-        "A hidden **antenna** was found nearby, believed to have boosted the drone's control signal; a parallel Lithuanian case alleges a GRU-linked sabotage network.",
-        "Breuer says Russia is **already shifting its economy and military** toward a possible wider conflict with the West, even while still fighting in Ukraine."
-      ],
-      "depth": {
-        "background": "Western officials have described a rising pattern of Russian \"hybrid warfare\" against NATO countries over the past two years — drone incursions, arson, GPS jamming and sabotage — short of open war but designed to probe defenses and sow instability. The Leipzig incident on **August 5, 2026** was the most serious single event in that pattern so far because it targeted a strategic cargo plane tied to Ukraine's war effort, on German soil. It follows earlier US intelligence assessments, reported by the Wall Street Journal, that Russia could attempt a \"limited attack\" testing NATO's mutual-defense commitment (**Article 5**) as early as this autumn.",
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/9/germany-warns-of-daily-hybrid-warfare-following-suspected-drone-attack"
-          },
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/my-europe/2026/08/11/explosive-drone-at-leipzig-airport-whose-dna-trail-is-it"
           }
         ]
       }

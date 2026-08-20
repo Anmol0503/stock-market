@@ -1,15 +1,80 @@
 {
   "date": "2026-08-20",
-  "generated_at": "2026-08-20T07:59:18+05:30",
+  "generated_at": "2026-08-20T09:55:32+05:30",
   "day_label": "Thursday · 20 August 2026",
   "dashboard_url": "../",
   "cards": [
     {
       "type": "story",
       "id": "story-0",
-      "rank": 2,
-      "category": "geopolitics",
+      "rank": 1,
+      "category": "technology",
       "is_new": true,
+      "published_iso": "2026-08-19T00:00:00Z",
+      "added_at": "2026-08-20T09:55:32+05:30",
+      "source": "TechCrunch",
+      "importance": "notable",
+      "regions": [
+        "Global",
+        "US"
+      ],
+      "title": "OpenAI unveils 'Private Safety Processing' to flag misuse without reading your data",
+      "what_happened": "On **August 19, 2026**, OpenAI began previewing a new safety layer called **Private Safety Processing** to select customers. It is designed to spot patterns of abuse across many related interactions — the kind of gradual, multi-session misuse a one-off content filter would miss — **without OpenAI staff reading the actual prompts or responses**. Under the system, encrypted customer content can either stay entirely on the customer's own servers, or be stored by OpenAI using **encryption keys the customer alone controls**, so OpenAI says it cannot open the files even if it wanted to. What reaches OpenAI instead is a narrowly defined \"safety signal\" — essentially a flag that something looks risky — not the conversation itself. OpenAI says it will keep offering full **Zero Data Retention** for its most capable models to customers who want it, alongside this new layer. The company plans a broader rollout and a technical white paper in **September 2026**.",
+      "key_points": [
+        "OpenAI is previewing **Private Safety Processing**, which scans for abuse patterns across many sessions **without human review** of the actual conversations.",
+        "Customer content can stay on **customer-controlled infrastructure**, or be encrypted with keys **only the customer holds** — OpenAI says even its own staff can't unlock it.",
+        "The system passes OpenAI only a **narrow safety signal**, never the underlying prompts or AI replies.",
+        "A wider rollout plus a technical white paper are planned for **September 2026**.",
+        "The move is widely read as a direct answer to rival **Anthropic**, whose current policy leans on retaining conversation logs for safety review."
+      ],
+      "moot": "Security and privacy trade-offs aren't always fixed. Clever engineering — like sending a bare 'this looks risky' signal instead of the raw content — can sometimes deliver both safety and confidentiality at once, instead of forcing a choice between them.",
+      "image_credit": "TechCrunch",
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Axios",
+          "TechCrunch"
+        ],
+        "corroboration": 0
+      },
+      "concepts": [],
+      "figures": [],
+      "depth": {
+        "background": "AI companies face a real tension: catching someone who misuses a chatbot to plan something dangerous usually means reading what they typed, but enterprise customers paying for AI tools want a guarantee their sensitive data — trade secrets, legal filings, source code — isn't sitting somewhere company staff could read it. **Zero Data Retention (ZDR)** has been OpenAI's existing promise to big customers: keep no copy of what they send at all. The catch is that ZDR makes it hard to catch someone using the API across many separate sessions to slowly assemble something harmful, since there's no history to check. Anthropic recently went the other direction, requiring standard customers to allow data logging for safety review, which drew some enterprise pushback over privacy.",
+        "why_it_matters": "This is a preview of how AI companies plan to resolve a genuine trade-off between catching bad actors and protecting customer privacy. If it works as described, enterprise customers like banks, law firms, and hospitals get a stronger argument that using OpenAI's tools won't expose confidential data, while OpenAI still gets an early-warning system for people using its models to plan real harm.",
+        "ripple_effects": "This puts pressure on **Anthropic**, whose safety approach currently leans more on retaining logs, to explain or adjust its own policy — a public response is likely. Enterprise customers weighing OpenAI against Anthropic and Google now have a new privacy feature to factor into contract decisions, which could shift where large accounts take their business. It may also become the reference point other AI labs and regulators point to when arguing that safety and privacy don't have to be opposites.",
+        "why_now": "The announcement lands as AI models are increasingly used for longer, more autonomous, multi-step business tasks — exactly the kind of extended use where spotting misuse over time (not just in a single message) becomes necessary, and where enterprise customers are also most anxious about data exposure.",
+        "watch_next": "Watch for OpenAI's technical white paper and the wider rollout of Private Safety Processing in September 2026, and for whether Anthropic changes its own data-retention stance in response.",
+        "market_link": "Touches the competitive standing of OpenAI (backed heavily by Microsoft) versus Anthropic and Google in enterprise AI contracts; no single publicly-traded pure play moves directly on this.",
+        "key_terms": [
+          {
+            "term": "Zero Data Retention (ZDR)",
+            "definition": "A commitment by an AI company not to store any copy of what a customer sends to its models, so there is nothing to be hacked, leaked, or read later."
+          },
+          {
+            "term": "encryption keys",
+            "definition": "The digital 'combination' needed to unlock encrypted (scrambled) data — whoever holds the keys is the only one who can turn it back into something readable."
+          }
+        ],
+        "sources": [
+          {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/08/19/openai-previews-zero-retention-safety-system-as-anthropic-requires-data-logs"
+          }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "id": "story-1",
+      "rank": 3,
+      "category": "geopolitics",
       "development": true,
       "prev_ref": {
         "title": "Trump threatens to bomb Oman over the Strait of Hormuz, as the 60-day US-Iran deadline expires without a deal",
@@ -84,10 +149,9 @@
     },
     {
       "type": "story",
-      "id": "story-1",
-      "rank": 1,
+      "id": "story-2",
+      "rank": 2,
       "category": "economy",
-      "is_new": true,
       "published_iso": "2026-08-19T13:00:00-04:00",
       "added_at": "2026-08-20T07:59:18+05:30",
       "source": "Bloomberg",
@@ -151,8 +215,8 @@
     },
     {
       "type": "story",
-      "id": "story-2",
-      "rank": 3,
+      "id": "story-3",
+      "rank": 4,
       "category": "geopolitics",
       "published_iso": "2026-08-19T00:00:00Z",
       "added_at": "2026-08-20T06:02:02+05:30",
@@ -216,8 +280,8 @@
     },
     {
       "type": "story",
-      "id": "story-3",
-      "rank": 4,
+      "id": "story-4",
+      "rank": 5,
       "category": "science",
       "published_iso": "2026-08-19T00:00:00Z",
       "added_at": "2026-08-20T06:02:02+05:30",
@@ -280,8 +344,8 @@
     },
     {
       "type": "story",
-      "id": "story-4",
-      "rank": 6,
+      "id": "story-5",
+      "rank": 7,
       "category": "climate",
       "published_iso": "2026-08-19T06:00:00+00:00",
       "added_at": "2026-08-20T03:56:28+05:30",
@@ -345,8 +409,8 @@
     },
     {
       "type": "story",
-      "id": "story-5",
-      "rank": 5,
+      "id": "story-6",
+      "rank": 6,
       "category": "technology",
       "published_iso": "2026-08-19T04:00:00+00:00",
       "added_at": "2026-08-20T03:56:28+05:30",
@@ -415,8 +479,8 @@
     },
     {
       "type": "story",
-      "id": "story-6",
-      "rank": 9,
+      "id": "story-7",
+      "rank": 10,
       "category": "geopolitics",
       "published_iso": "2026-08-19T00:00:00Z",
       "added_at": "2026-08-20T00:00:23+05:30",
@@ -487,8 +551,8 @@
     },
     {
       "type": "story",
-      "id": "story-7",
-      "rank": 10,
+      "id": "story-8",
+      "rank": 11,
       "category": "economy",
       "published_iso": "2026-08-19T00:00:00Z",
       "added_at": "2026-08-20T00:00:23+05:30",
@@ -556,8 +620,8 @@
     },
     {
       "type": "story",
-      "id": "story-8",
-      "rank": 11,
+      "id": "story-9",
+      "rank": 12,
       "category": "health",
       "published_iso": "2026-08-19T11:00:00+00:00",
       "added_at": "2026-08-19T22:00:11+05:30",
@@ -632,8 +696,8 @@
     },
     {
       "type": "story",
-      "id": "story-9",
-      "rank": 12,
+      "id": "story-10",
+      "rank": 13,
       "category": "science",
       "published_iso": "2026-08-18T16:00:00+00:00",
       "added_at": "2026-08-19T22:00:11+05:30",
@@ -706,8 +770,8 @@
     },
     {
       "type": "story",
-      "id": "story-10",
-      "rank": 14,
+      "id": "story-11",
+      "rank": 15,
       "category": "climate",
       "published_iso": "2026-08-19T10:00:00-04:00",
       "added_at": "2026-08-19T20:02:28+05:30",
@@ -769,8 +833,8 @@
     },
     {
       "type": "story",
-      "id": "story-11",
-      "rank": 13,
+      "id": "story-12",
+      "rank": 14,
       "category": "technology",
       "development": true,
       "prev_ref": {
@@ -838,8 +902,8 @@
     },
     {
       "type": "story",
-      "id": "story-12",
-      "rank": 15,
+      "id": "story-13",
+      "rank": 16,
       "category": "health",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T18:04:23+05:30",
@@ -904,8 +968,8 @@
     },
     {
       "type": "story",
-      "id": "story-13",
-      "rank": 16,
+      "id": "story-14",
+      "rank": 17,
       "category": "geopolitics",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T18:04:23+05:30",
@@ -965,8 +1029,8 @@
     },
     {
       "type": "story",
-      "id": "story-14",
-      "rank": 17,
+      "id": "story-15",
+      "rank": 18,
       "category": "economy",
       "development": true,
       "prev_ref": {
@@ -1042,8 +1106,8 @@
     },
     {
       "type": "story",
-      "id": "story-15",
-      "rank": 18,
+      "id": "story-16",
+      "rank": 19,
       "category": "geopolitics",
       "published_iso": "2026-08-19T00:00:00Z",
       "added_at": "2026-08-19T14:02:20+05:30",
@@ -1102,8 +1166,8 @@
     },
     {
       "type": "story",
-      "id": "story-16",
-      "rank": 19,
+      "id": "story-17",
+      "rank": 20,
       "category": "geopolitics",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T14:02:20+05:30",
@@ -1170,8 +1234,7 @@
     },
     {
       "type": "story",
-      "id": "story-17",
-      "rank": 20,
+      "id": "story-18",
       "category": "technology",
       "development": true,
       "prev_ref": {
@@ -1181,10 +1244,6 @@
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T12:00:08+05:30",
       "source": "NPR",
-      "importance": "high",
-      "regions": [
-        "US"
-      ],
       "title": "Meta's $1.4 trillion child-safety trial opens with a bipartisan coalition of states accusing it of engineering Instagram to hook kids",
       "what_happened": "Opening arguments began on August 18 in a landmark federal trial pitting Meta against a bipartisan coalition of **29 US states**, with lawyers for **California, Colorado, Kentucky and New Jersey** leading the case. They allege Meta deliberately engineered Instagram and Facebook features — **infinite scroll, photo filters, and the 'like' button** — to be compulsively addictive for minors, and that it collected data from children under 13 without parental consent, violating child privacy law. Meta's defense rejects the claims, pointing to years of investment in teen safety tools like age checks and screen-time limits. The financial stakes are enormous: potential penalties have been estimated as high as **$1.4 trillion**, close to Meta's entire Nasdaq market value, though any final number would likely be far lower after negotiation or appeal. This builds on precedent — a New Mexico court already ordered Meta to pay **$567 million**, on top of an earlier $375 million fine, over similar child-safety allegations.",
       "key_points": [
@@ -1194,8 +1253,6 @@
         "Meta says it has **spent years building teen protections** and denies deliberately designing addictive products.",
         "A **New Mexico court already fined Meta $567 million** this year on top of an earlier $375 million child-safety penalty — a preview of the financial risk here."
       ],
-      "moot": "When a product's business model depends on engagement, the features that keep users hooked and the features that are healthiest for users can directly conflict — and courts are increasingly being asked to decide which one companies are legally required to prioritize.",
-      "image_credit": "NPR",
       "credibility": {
         "level": "confirmed",
         "count": 2,
@@ -1214,17 +1271,6 @@
       "figures": [],
       "depth": {
         "background": "For several years, whistleblower leaks and internal research (like the 2021 Facebook Papers) have alleged that Meta knew its platforms could harm teen mental health but prioritized engagement and growth anyway. That evidence fed a wave of state lawsuits, and this case — a bipartisan coalition of 29 states, with four leading the opening arguments — is the biggest test yet of whether Meta can be held financially liable for how it designed its apps. The case matters far beyond Meta: a loss could set a legal template for regulating addictive app design across the whole tech industry.",
-        "why_it_matters": "This is the biggest legal test yet of whether social media companies can be held liable in court — not just fined by regulators — for designing products that hook children. A loss for Meta could force real changes to how every major platform builds its algorithms and features for young users.",
-        "ripple_effects": "A significant ruling against Meta would pressure Instagram, TikTok, Snapchat and YouTube to preemptively redesign features aimed at teens, and could accelerate momentum for federal child-online-safety legislation in the US. Even short of a verdict, prolonged, damaging trial testimony can weigh on Meta's stock and reputation with advertisers.",
-        "why_now": "The trial's opening arguments began this week after years of pretrial litigation and evidence gathering following the original whistleblower disclosures.",
-        "watch_next": "Whether internal Meta documents and executive testimony presented during the trial reveal new details about what the company knew internally about addictive design.",
-        "market_link": "A large financial judgment or damaging trial revelations could pressure Meta's (META) stock and invite similar suits against other social platforms.",
-        "key_terms": [
-          {
-            "term": "Infinite scroll",
-            "definition": "An app design where content keeps loading automatically as you scroll, removing natural stopping points and encouraging longer, harder-to-quit usage sessions."
-          }
-        ],
         "sources": [
           {
             "name": "NPR",
@@ -1239,7 +1285,7 @@
     },
     {
       "type": "story",
-      "id": "story-18",
+      "id": "story-19",
       "category": "geopolitics",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T12:00:08+05:30",
@@ -1286,7 +1332,7 @@
     },
     {
       "type": "story",
-      "id": "story-19",
+      "id": "story-20",
       "category": "economy",
       "published_iso": "2026-08-19T00:00:00+00:00",
       "added_at": "2026-08-19T10:01:12+05:30",
@@ -1333,7 +1379,7 @@
     },
     {
       "type": "story",
-      "id": "story-20",
+      "id": "story-21",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1388,7 +1434,7 @@
     },
     {
       "type": "story",
-      "id": "story-21",
+      "id": "story-22",
       "category": "geopolitics",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T07:57:21+05:30",
@@ -1430,7 +1476,7 @@
     },
     {
       "type": "story",
-      "id": "story-22",
+      "id": "story-23",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1483,7 +1529,7 @@
     },
     {
       "type": "story",
-      "id": "story-23",
+      "id": "story-24",
       "category": "economy",
       "development": true,
       "prev_ref": {
@@ -1536,7 +1582,7 @@
     },
     {
       "type": "story",
-      "id": "story-24",
+      "id": "story-25",
       "category": "technology",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-19T05:58:19+05:30",
@@ -1578,7 +1624,7 @@
     },
     {
       "type": "story",
-      "id": "story-25",
+      "id": "story-26",
       "category": "geopolitics",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-19T03:56:14+05:30",
@@ -1620,7 +1666,7 @@
     },
     {
       "type": "story",
-      "id": "story-26",
+      "id": "story-27",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1671,7 +1717,7 @@
     },
     {
       "type": "story",
-      "id": "story-27",
+      "id": "story-28",
       "category": "technology",
       "published_iso": "2026-08-18T17:00:00+00:00",
       "added_at": "2026-08-19T01:58:59+05:30",
@@ -1708,7 +1754,7 @@
     },
     {
       "type": "story",
-      "id": "story-28",
+      "id": "story-29",
       "category": "technology",
       "published_iso": "2026-08-18T14:00:00+00:00",
       "added_at": "2026-08-19T01:58:59+05:30",
@@ -1750,7 +1796,7 @@
     },
     {
       "type": "story",
-      "id": "story-29",
+      "id": "story-30",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1806,7 +1852,7 @@
     },
     {
       "type": "story",
-      "id": "story-30",
+      "id": "story-31",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -1857,7 +1903,7 @@
     },
     {
       "type": "story",
-      "id": "story-31",
+      "id": "story-32",
       "category": "technology",
       "published_iso": "2026-08-18T09:00:00-04:00",
       "added_at": "2026-08-18T22:13:27+05:30",
@@ -1904,7 +1950,7 @@
     },
     {
       "type": "story",
-      "id": "story-32",
+      "id": "story-33",
       "category": "geopolitics",
       "published_iso": "2026-08-17T20:03:15+05:30",
       "added_at": "2026-08-18T22:13:27+05:30",
@@ -1951,7 +1997,7 @@
     },
     {
       "type": "story",
-      "id": "story-33",
+      "id": "story-34",
       "category": "economy",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-18T20:05:06+05:30",
@@ -1993,7 +2039,7 @@
     },
     {
       "type": "story",
-      "id": "story-34",
+      "id": "story-35",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -2049,7 +2095,7 @@
     },
     {
       "type": "story",
-      "id": "story-35",
+      "id": "story-36",
       "category": "economy",
       "published_iso": "2026-08-18T00:00:00Z",
       "added_at": "2026-08-18T18:06:36+05:30",
@@ -2091,7 +2137,7 @@
     },
     {
       "type": "story",
-      "id": "story-36",
+      "id": "story-37",
       "category": "technology",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-18T18:06:36+05:30",
@@ -2133,7 +2179,7 @@
     },
     {
       "type": "story",
-      "id": "story-37",
+      "id": "story-38",
       "category": "geopolitics",
       "published_iso": "2026-08-16T18:00:00+03:00",
       "added_at": "2026-08-18T15:59:11+05:30",
@@ -2175,7 +2221,7 @@
     },
     {
       "type": "story",
-      "id": "story-38",
+      "id": "story-39",
       "category": "geopolitics",
       "published_iso": "2026-08-16T05:01:00+03:00",
       "added_at": "2026-08-18T15:59:11+05:30",
@@ -2217,7 +2263,7 @@
     },
     {
       "type": "story",
-      "id": "story-39",
+      "id": "story-40",
       "category": "geopolitics",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-18T13:57:34+05:30",
@@ -2264,7 +2310,7 @@
     },
     {
       "type": "story",
-      "id": "story-40",
+      "id": "story-41",
       "category": "economy",
       "published_iso": "2026-08-17T00:00:00+08:00",
       "added_at": "2026-08-18T13:57:34+05:30",
@@ -2306,7 +2352,7 @@
     },
     {
       "type": "story",
-      "id": "story-41",
+      "id": "story-42",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -2356,7 +2402,7 @@
     },
     {
       "type": "story",
-      "id": "story-42",
+      "id": "story-43",
       "category": "geopolitics",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-18T12:00:14+05:30",
@@ -2397,7 +2443,7 @@
     },
     {
       "type": "story",
-      "id": "story-43",
+      "id": "story-44",
       "category": "climate",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-18T09:58:43+05:30",
@@ -2439,7 +2485,7 @@
     },
     {
       "type": "story",
-      "id": "story-44",
+      "id": "story-45",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -2495,7 +2541,7 @@
     },
     {
       "type": "story",
-      "id": "story-45",
+      "id": "story-46",
       "category": "climate",
       "published_iso": "2026-08-16T09:00:00Z",
       "added_at": "2026-08-18T07:57:44+05:30",
@@ -2537,7 +2583,7 @@
     },
     {
       "type": "story",
-      "id": "story-46",
+      "id": "story-47",
       "category": "technology",
       "published_iso": "2026-08-17T13:30:00+00:00",
       "added_at": "2026-08-18T04:07:15+05:30",
@@ -2579,7 +2625,7 @@
     },
     {
       "type": "story",
-      "id": "story-47",
+      "id": "story-48",
       "category": "geopolitics",
       "published_iso": "2026-08-17T09:00:00+00:00",
       "added_at": "2026-08-18T04:07:15+05:30",
@@ -2621,7 +2667,7 @@
     },
     {
       "type": "story",
-      "id": "story-48",
+      "id": "story-49",
       "category": "geopolitics",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-18T02:02:45+05:30",
@@ -2663,7 +2709,7 @@
     },
     {
       "type": "story",
-      "id": "story-49",
+      "id": "story-50",
       "category": "economy",
       "published_iso": "2026-08-17T00:00:00+09:00",
       "added_at": "2026-08-18T02:02:45+05:30",
@@ -2705,7 +2751,7 @@
     },
     {
       "type": "story",
-      "id": "story-50",
+      "id": "story-51",
       "category": "economy",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-17T23:58:35+05:30",
@@ -2742,7 +2788,7 @@
     },
     {
       "type": "story",
-      "id": "story-51",
+      "id": "story-52",
       "category": "geopolitics",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T23:58:35+05:30",
@@ -2784,7 +2830,7 @@
     },
     {
       "type": "story",
-      "id": "story-52",
+      "id": "story-53",
       "category": "technology",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-17T22:02:10+05:30",
@@ -2831,7 +2877,7 @@
     },
     {
       "type": "story",
-      "id": "story-53",
+      "id": "story-54",
       "category": "climate",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T22:02:10+05:30",
@@ -2878,7 +2924,7 @@
     },
     {
       "type": "story",
-      "id": "story-54",
+      "id": "story-55",
       "category": "technology",
       "published_iso": "2026-08-17T06:00:00+05:30",
       "added_at": "2026-08-17T20:01:37+05:30",
@@ -2920,7 +2966,7 @@
     },
     {
       "type": "story",
-      "id": "story-55",
+      "id": "story-56",
       "category": "geopolitics",
       "published_iso": "2026-08-16T07:00:00Z",
       "added_at": "2026-08-17T20:01:37+05:30",
@@ -2967,7 +3013,7 @@
     },
     {
       "type": "story",
-      "id": "story-56",
+      "id": "story-57",
       "category": "climate",
       "published_iso": "2026-08-17T02:00:00Z",
       "added_at": "2026-08-17T18:41:41+05:30",
@@ -3009,7 +3055,7 @@
     },
     {
       "type": "story",
-      "id": "story-57",
+      "id": "story-58",
       "category": "health",
       "published_iso": "2026-08-16T18:00:00Z",
       "added_at": "2026-08-17T18:41:41+05:30",
@@ -3051,7 +3097,7 @@
     },
     {
       "type": "story",
-      "id": "story-58",
+      "id": "story-59",
       "category": "geopolitics",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-17T16:05:11+05:30",
@@ -3098,7 +3144,7 @@
     },
     {
       "type": "story",
-      "id": "story-59",
+      "id": "story-60",
       "category": "climate",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T16:05:11+05:30",
@@ -3145,7 +3191,7 @@
     },
     {
       "type": "story",
-      "id": "story-60",
+      "id": "story-61",
       "category": "geopolitics",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T14:11:02+05:30",
@@ -3192,7 +3238,7 @@
     },
     {
       "type": "story",
-      "id": "story-61",
+      "id": "story-62",
       "category": "technology",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T14:11:02+05:30",
@@ -3239,7 +3285,7 @@
     },
     {
       "type": "story",
-      "id": "story-62",
+      "id": "story-63",
       "category": "health",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-17T12:20:56+05:30",
@@ -3281,7 +3327,7 @@
     },
     {
       "type": "story",
-      "id": "story-63",
+      "id": "story-64",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -3332,7 +3378,7 @@
     },
     {
       "type": "story",
-      "id": "story-64",
+      "id": "story-65",
       "category": "geopolitics",
       "published_iso": "2026-08-17T09:00:00+09:00",
       "added_at": "2026-08-17T10:06:22+05:30",
@@ -3374,7 +3420,7 @@
     },
     {
       "type": "story",
-      "id": "story-65",
+      "id": "story-66",
       "category": "climate",
       "published_iso": "2026-08-15T05:58:00+08:00",
       "added_at": "2026-08-17T10:06:22+05:30",
@@ -3416,7 +3462,7 @@
     },
     {
       "type": "story",
-      "id": "story-66",
+      "id": "story-67",
       "category": "science",
       "published_iso": "2026-08-17T00:00:00Z",
       "added_at": "2026-08-17T07:58:05+05:30",
@@ -3458,7 +3504,7 @@
     },
     {
       "type": "story",
-      "id": "story-67",
+      "id": "story-68",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -3509,7 +3555,7 @@
     },
     {
       "type": "story",
-      "id": "story-68",
+      "id": "story-69",
       "category": "geopolitics",
       "published_iso": "2026-08-16T00:00:00Z",
       "added_at": "2026-08-17T04:07:51+05:30",
@@ -3551,7 +3597,7 @@
     },
     {
       "type": "story",
-      "id": "story-69",
+      "id": "story-70",
       "category": "technology",
       "published_iso": "2026-08-14T00:00:00Z",
       "added_at": "2026-08-17T04:07:51+05:30",
@@ -3593,7 +3639,7 @@
     },
     {
       "type": "story",
-      "id": "story-70",
+      "id": "story-71",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -3644,7 +3690,7 @@
     },
     {
       "type": "story",
-      "id": "story-71",
+      "id": "story-72",
       "category": "climate",
       "published_iso": "2026-08-15T00:00:00Z",
       "added_at": "2026-08-17T02:02:03+05:30",
@@ -3686,7 +3732,7 @@
     },
     {
       "type": "story",
-      "id": "story-72",
+      "id": "story-73",
       "category": "climate",
       "published_iso": "2026-08-16T07:00:00+00:00",
       "added_at": "2026-08-17T00:00:28+05:30",
@@ -3728,7 +3774,7 @@
     },
     {
       "type": "story",
-      "id": "story-73",
+      "id": "story-74",
       "category": "geopolitics",
       "published_iso": "2026-08-16T05:30:00+00:00",
       "added_at": "2026-08-17T00:00:28+05:30",
@@ -3770,7 +3816,7 @@
     },
     {
       "type": "story",
-      "id": "story-74",
+      "id": "story-75",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -3822,7 +3868,7 @@
     },
     {
       "type": "story",
-      "id": "story-75",
+      "id": "story-76",
       "category": "economy",
       "development": true,
       "prev_ref": {
@@ -3874,7 +3920,7 @@
     },
     {
       "type": "story",
-      "id": "story-76",
+      "id": "story-77",
       "category": "geopolitics",
       "published_iso": "2026-08-16T06:45:00+00:00",
       "added_at": "2026-08-16T19:59:10+05:30",
@@ -3916,7 +3962,7 @@
     },
     {
       "type": "story",
-      "id": "story-77",
+      "id": "story-78",
       "category": "geopolitics",
       "published_iso": "2026-08-16T03:15:00+00:00",
       "added_at": "2026-08-16T19:59:10+05:30",
@@ -3958,7 +4004,7 @@
     },
     {
       "type": "story",
-      "id": "story-78",
+      "id": "story-79",
       "category": "geopolitics",
       "published_iso": "2026-08-15T00:16:00+00:00",
       "added_at": "2026-08-16T18:07:29+05:30",
@@ -4000,7 +4046,7 @@
     },
     {
       "type": "story",
-      "id": "story-79",
+      "id": "story-80",
       "category": "economy",
       "published_iso": "2026-08-15T00:00:00+00:00",
       "added_at": "2026-08-16T18:07:29+05:30",
@@ -4042,7 +4088,7 @@
     },
     {
       "type": "story",
-      "id": "story-80",
+      "id": "story-81",
       "category": "geopolitics",
       "published_iso": "2026-08-16T06:00:00Z",
       "added_at": "2026-08-16T16:01:14+05:30",
@@ -4069,7 +4115,7 @@
     },
     {
       "type": "story",
-      "id": "story-81",
+      "id": "story-82",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -4109,7 +4155,7 @@
     },
     {
       "type": "story",
-      "id": "story-82",
+      "id": "story-83",
       "category": "climate",
       "published_iso": "2026-08-15T18:00:00-04:00",
       "added_at": "2026-08-16T13:59:52+05:30",
@@ -4137,7 +4183,7 @@
     },
     {
       "type": "story",
-      "id": "story-83",
+      "id": "story-84",
       "category": "climate",
       "published_iso": "2026-08-15T14:00:00+02:00",
       "added_at": "2026-08-16T12:03:34+05:30",
@@ -4173,7 +4219,7 @@
     },
     {
       "type": "story",
-      "id": "story-84",
+      "id": "story-85",
       "category": "geopolitics",
       "published_iso": "2026-08-15T06:00:00+03:00",
       "added_at": "2026-08-16T12:03:34+05:30",
@@ -4209,7 +4255,7 @@
     },
     {
       "type": "story",
-      "id": "story-85",
+      "id": "story-86",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -4252,7 +4298,7 @@
     },
     {
       "type": "story",
-      "id": "story-86",
+      "id": "story-87",
       "category": "economy",
       "published_iso": "2026-08-15T00:00:00+00:00",
       "added_at": "2026-08-16T10:00:50+05:30",
@@ -4284,7 +4330,7 @@
     },
     {
       "type": "story",
-      "id": "story-87",
+      "id": "story-88",
       "category": "geopolitics",
       "published_iso": "2026-08-15T12:00:00-04:00",
       "added_at": "2026-08-16T08:02:53+05:30",
@@ -4316,7 +4362,7 @@
     },
     {
       "type": "story",
-      "id": "story-88",
+      "id": "story-89",
       "category": "science",
       "development": true,
       "prev_ref": {
@@ -4363,7 +4409,7 @@
     },
     {
       "type": "story",
-      "id": "story-89",
+      "id": "story-90",
       "category": "geopolitics",
       "published_iso": "2026-08-15T02:30:00+03:00",
       "added_at": "2026-08-16T05:57:16+05:30",
@@ -4395,7 +4441,7 @@
     },
     {
       "type": "story",
-      "id": "story-90",
+      "id": "story-91",
       "category": "geopolitics",
       "published_iso": "2026-08-15T10:30:00+06:30",
       "added_at": "2026-08-16T04:01:02+05:30",
@@ -4427,7 +4473,7 @@
     },
     {
       "type": "story",
-      "id": "story-91",
+      "id": "story-92",
       "category": "health",
       "published_iso": "2026-08-13T18:00:00+01:00",
       "added_at": "2026-08-16T04:01:02+05:30",
@@ -4459,7 +4505,7 @@
     },
     {
       "type": "story",
-      "id": "story-92",
+      "id": "story-93",
       "category": "technology",
       "published_iso": "2026-08-14T18:00:00+00:00",
       "added_at": "2026-08-16T02:00:35+05:30",
@@ -4491,7 +4537,7 @@
     },
     {
       "type": "story",
-      "id": "story-93",
+      "id": "story-94",
       "category": "geopolitics",
       "published_iso": "2026-08-13T12:00:00+00:00",
       "added_at": "2026-08-16T02:00:35+05:30",
@@ -4518,7 +4564,7 @@
     },
     {
       "type": "story",
-      "id": "story-94",
+      "id": "story-95",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -4559,7 +4605,7 @@
     },
     {
       "type": "story",
-      "id": "story-95",
+      "id": "story-96",
       "category": "geopolitics",
       "published_iso": "2026-08-14T15:00:00-04:00",
       "added_at": "2026-08-16T00:02:33+05:30",
@@ -4591,7 +4637,7 @@
     },
     {
       "type": "story",
-      "id": "story-96",
+      "id": "story-97",
       "category": "technology",
       "published_iso": "2026-08-15T08:29:00+01:00",
       "added_at": "2026-08-15T21:58:05+05:30",
@@ -4623,7 +4669,7 @@
     },
     {
       "type": "story",
-      "id": "story-97",
+      "id": "story-98",
       "category": "geopolitics",
       "published_iso": "2026-08-14T00:00:00+00:00",
       "added_at": "2026-08-15T21:58:05+05:30",
@@ -4651,7 +4697,7 @@
     },
     {
       "type": "story",
-      "id": "story-98",
+      "id": "story-99",
       "category": "geopolitics",
       "published_iso": "2026-08-14T20:00:00+00:00",
       "added_at": "2026-08-15T20:00:09+05:30",
@@ -4683,7 +4729,7 @@
     },
     {
       "type": "story",
-      "id": "story-99",
+      "id": "story-100",
       "category": "technology",
       "published_iso": "2026-08-14T16:00:00+00:00",
       "added_at": "2026-08-15T20:00:09+05:30",
@@ -4711,7 +4757,7 @@
     },
     {
       "type": "story",
-      "id": "story-100",
+      "id": "story-101",
       "category": "geopolitics",
       "published_iso": "2026-08-14T14:00:00+03:00",
       "added_at": "2026-08-15T18:00:56+05:30",
@@ -4742,7 +4788,7 @@
     },
     {
       "type": "story",
-      "id": "story-101",
+      "id": "story-102",
       "category": "technology",
       "published_iso": "2026-08-14T10:00:00+08:00",
       "added_at": "2026-08-15T18:00:56+05:30",
@@ -4774,7 +4820,7 @@
     },
     {
       "type": "story",
-      "id": "story-102",
+      "id": "story-103",
       "category": "geopolitics",
       "published_iso": "2026-08-14T20:00:00-05:00",
       "added_at": "2026-08-15T15:59:11+05:30",
@@ -4805,7 +4851,7 @@
     },
     {
       "type": "story",
-      "id": "story-103",
+      "id": "story-104",
       "category": "technology",
       "published_iso": "2026-08-14T20:00:00+02:00",
       "added_at": "2026-08-15T15:59:11+05:30",
@@ -4836,7 +4882,7 @@
     },
     {
       "type": "story",
-      "id": "story-104",
+      "id": "story-105",
       "category": "science",
       "published_iso": "2026-08-15T05:58:00+08:00",
       "added_at": "2026-08-15T14:03:42+05:30",
@@ -4872,7 +4918,7 @@
     },
     {
       "type": "story",
-      "id": "story-105",
+      "id": "story-106",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -4915,7 +4961,7 @@
     },
     {
       "type": "story",
-      "id": "story-106",
+      "id": "story-107",
       "category": "economy",
       "published_iso": "2026-08-14T06:00:00+08:00",
       "added_at": "2026-08-15T09:59:03+05:30",
@@ -4947,7 +4993,7 @@
     },
     {
       "type": "story",
-      "id": "story-107",
+      "id": "story-108",
       "category": "geopolitics",
       "published_iso": "2026-08-14T00:00:00Z",
       "added_at": "2026-08-15T08:00:12+05:30",
@@ -4979,7 +5025,7 @@
     },
     {
       "type": "story",
-      "id": "story-108",
+      "id": "story-109",
       "category": "science",
       "published_iso": "2026-08-15T02:00:00+00:00",
       "added_at": "2026-08-15T05:59:23+05:30",
@@ -5019,7 +5065,7 @@
     },
     {
       "type": "story",
-      "id": "story-109",
+      "id": "story-110",
       "category": "geopolitics",
       "published_iso": "2026-08-14T18:00:00+00:00",
       "added_at": "2026-08-15T05:59:23+05:30",
@@ -5059,7 +5105,7 @@
     },
     {
       "type": "story",
-      "id": "story-110",
+      "id": "story-111",
       "category": "economy",
       "published_iso": "2026-08-14T14:00:00+00:00",
       "added_at": "2026-08-15T04:03:44+05:30",
@@ -5091,7 +5137,7 @@
     },
     {
       "type": "story",
-      "id": "story-111",
+      "id": "story-112",
       "category": "health",
       "published_iso": "2026-08-14T01:10:29+00:00",
       "added_at": "2026-08-15T04:03:44+05:30",
@@ -5123,7 +5169,7 @@
     },
     {
       "type": "story",
-      "id": "story-112",
+      "id": "story-113",
       "category": "geopolitics",
       "published_iso": "2026-08-13T14:00:00+00:00",
       "added_at": "2026-08-15T04:03:44+05:30",
@@ -5155,7 +5201,7 @@
     },
     {
       "type": "story",
-      "id": "story-113",
+      "id": "story-114",
       "category": "economy",
       "development": true,
       "prev_ref": {
@@ -5194,7 +5240,7 @@
     },
     {
       "type": "story",
-      "id": "story-114",
+      "id": "story-115",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -5233,7 +5279,7 @@
     },
     {
       "type": "story",
-      "id": "story-115",
+      "id": "story-116",
       "category": "technology",
       "published_iso": "2026-08-14T09:00:00-04:00",
       "added_at": "2026-08-14T22:21:08+05:30",
@@ -5261,7 +5307,7 @@
     },
     {
       "type": "story",
-      "id": "story-116",
+      "id": "story-117",
       "category": "geopolitics",
       "published_iso": "2026-08-13T20:00:00+03:00",
       "added_at": "2026-08-14T22:21:08+05:30",
@@ -5297,7 +5343,7 @@
     },
     {
       "type": "story",
-      "id": "story-117",
+      "id": "story-118",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -5342,7 +5388,7 @@
     },
     {
       "type": "story",
-      "id": "story-118",
+      "id": "story-119",
       "category": "geopolitics",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-14T20:36:06+05:30",
@@ -5374,7 +5420,7 @@
     },
     {
       "type": "story",
-      "id": "story-119",
+      "id": "story-120",
       "category": "geopolitics",
       "published_iso": "2026-08-13T16:00:00+03:00",
       "added_at": "2026-08-14T16:09:10+05:30",
@@ -5410,7 +5456,7 @@
     },
     {
       "type": "story",
-      "id": "story-120",
+      "id": "story-121",
       "category": "climate",
       "published_iso": "2026-08-13T09:00:00Z",
       "added_at": "2026-08-14T16:09:10+05:30",
@@ -5438,7 +5484,7 @@
     },
     {
       "type": "story",
-      "id": "story-121",
+      "id": "story-122",
       "category": "economy",
       "published_iso": "2026-08-13T20:00:00-04:00",
       "added_at": "2026-08-14T12:33:04+05:30",
@@ -5469,7 +5515,7 @@
     },
     {
       "type": "story",
-      "id": "story-122",
+      "id": "story-123",
       "category": "geopolitics",
       "published_iso": "2026-08-13T18:00:00-04:00",
       "added_at": "2026-08-14T12:33:04+05:30",
@@ -5505,7 +5551,7 @@
     },
     {
       "type": "story",
-      "id": "story-123",
+      "id": "story-124",
       "category": "geopolitics",
       "published_iso": "2026-08-13T18:00:00+03:00",
       "added_at": "2026-08-14T10:08:57+05:30",
@@ -5537,7 +5583,7 @@
     },
     {
       "type": "story",
-      "id": "story-124",
+      "id": "story-125",
       "category": "geopolitics",
       "published_iso": "2026-08-14T00:00:00+03:00",
       "added_at": "2026-08-14T08:00:06+05:30",
@@ -5565,7 +5611,7 @@
     },
     {
       "type": "story",
-      "id": "story-125",
+      "id": "story-126",
       "category": "geopolitics",
       "published_iso": "2026-08-13T15:00:00+08:00",
       "added_at": "2026-08-14T08:00:06+05:30",
@@ -5593,7 +5639,7 @@
     },
     {
       "type": "story",
-      "id": "story-126",
+      "id": "story-127",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -5634,7 +5680,7 @@
     },
     {
       "type": "story",
-      "id": "story-127",
+      "id": "story-128",
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -5675,7 +5721,7 @@
     },
     {
       "type": "story",
-      "id": "story-128",
+      "id": "story-129",
       "category": "science",
       "published_iso": "2026-08-13T04:55:38+00:00",
       "added_at": "2026-08-14T04:07:50+05:30",
@@ -5707,7 +5753,7 @@
     },
     {
       "type": "story",
-      "id": "story-129",
+      "id": "story-130",
       "category": "health",
       "development": true,
       "prev_ref": {
@@ -5748,7 +5794,7 @@
     },
     {
       "type": "story",
-      "id": "story-130",
+      "id": "story-131",
       "category": "technology",
       "published_iso": "2026-08-12T12:00:00-07:00",
       "added_at": "2026-08-14T02:09:09+05:30",
@@ -5780,7 +5826,7 @@
     },
     {
       "type": "story",
-      "id": "story-131",
+      "id": "story-132",
       "category": "geopolitics",
       "published_iso": "2026-08-12T06:00:00+09:00",
       "added_at": "2026-08-14T02:09:09+05:30",
@@ -5812,7 +5858,7 @@
     },
     {
       "type": "story",
-      "id": "story-132",
+      "id": "story-133",
       "category": "economy",
       "published_iso": "2026-08-13T14:00:00-04:00",
       "added_at": "2026-08-14T00:16:15+05:30",
@@ -5844,7 +5890,7 @@
     },
     {
       "type": "story",
-      "id": "story-133",
+      "id": "story-134",
       "category": "geopolitics",
       "published_iso": "2026-08-13T09:30:00+02:00",
       "added_at": "2026-08-14T00:16:15+05:30",
@@ -5876,7 +5922,7 @@
     },
     {
       "type": "story",
-      "id": "story-134",
+      "id": "story-135",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -5917,7 +5963,7 @@
     },
     {
       "type": "story",
-      "id": "story-135",
+      "id": "story-136",
       "category": "geopolitics",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T22:34:28+05:30",
@@ -5949,7 +5995,7 @@
     },
     {
       "type": "story",
-      "id": "story-136",
+      "id": "story-137",
       "category": "technology",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -5981,7 +6027,7 @@
     },
     {
       "type": "story",
-      "id": "story-137",
+      "id": "story-138",
       "category": "economy",
       "published_iso": "2026-08-12T12:30:00Z",
       "added_at": "2026-08-13T20:26:00+05:30",
@@ -6013,7 +6059,7 @@
     },
     {
       "type": "story",
-      "id": "story-138",
+      "id": "story-139",
       "category": "science",
       "development": true,
       "prev_ref": {
@@ -6054,7 +6100,7 @@
     },
     {
       "type": "story",
-      "id": "story-139",
+      "id": "story-140",
       "category": "geopolitics",
       "published_iso": "2026-08-12T12:00:00+00:00",
       "added_at": "2026-08-13T18:15:32+05:30",
@@ -6086,7 +6132,7 @@
     },
     {
       "type": "story",
-      "id": "story-140",
+      "id": "story-141",
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -6131,7 +6177,7 @@
     },
     {
       "type": "story",
-      "id": "story-141",
+      "id": "story-142",
       "category": "geopolitics",
       "published_iso": "2026-08-12T12:00:00Z",
       "added_at": "2026-08-13T16:08:56+05:30",
@@ -6167,7 +6213,7 @@
     },
     {
       "type": "story",
-      "id": "story-142",
+      "id": "story-143",
       "category": "climate",
       "published_iso": "2026-08-13T00:00:00Z",
       "added_at": "2026-08-13T14:01:47+05:30",
@@ -6203,7 +6249,7 @@
     },
     {
       "type": "story",
-      "id": "story-143",
+      "id": "story-144",
       "category": "geopolitics",
       "published_iso": "2026-08-12T00:00:00Z",
       "added_at": "2026-08-13T14:01:47+05:30",
@@ -6239,7 +6285,7 @@
     },
     {
       "type": "story",
-      "id": "story-144",
+      "id": "story-145",
       "category": "geopolitics",
       "published_iso": "2026-08-13T10:00:00+03:30",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -6274,7 +6320,7 @@
     },
     {
       "type": "story",
-      "id": "story-145",
+      "id": "story-146",
       "category": "geopolitics",
       "published_iso": "2026-08-13T09:00:00+08:00",
       "added_at": "2026-08-13T12:07:47+05:30",
@@ -6309,7 +6355,7 @@
     },
     {
       "type": "story",
-      "id": "story-146",
+      "id": "story-147",
       "category": "geopolitics",
       "published_iso": "2026-08-12T13:30:00+03:00",
       "added_at": "2026-08-13T10:01:17+05:30",
@@ -6341,7 +6387,7 @@
     },
     {
       "type": "story",
-      "id": "story-147",
+      "id": "story-148",
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -6384,7 +6430,7 @@
     },
     {
       "type": "story",
-      "id": "story-148",
+      "id": "story-149",
       "category": "geopolitics",
       "published_iso": "2026-08-12T00:00:00Z",
       "added_at": "2026-08-13T08:00:55+05:30",
@@ -6416,7 +6462,7 @@
     },
     {
       "type": "story",
-      "id": "story-149",
+      "id": "story-150",
       "category": "climate",
       "development": true,
       "prev_ref": {
@@ -6457,7 +6503,7 @@
     },
     {
       "type": "story",
-      "id": "story-150",
+      "id": "story-151",
       "category": "technology",
       "published_iso": "2026-08-12T00:00:00Z",
       "added_at": "2026-08-13T07:07:16+05:30",
@@ -6488,7 +6534,7 @@
     },
     {
       "type": "story",
-      "id": "story-151",
+      "id": "story-152",
       "category": "geopolitics",
       "development": true,
       "prev_ref": {
@@ -6528,7 +6574,7 @@
     },
     {
       "type": "story",
-      "id": "story-152",
+      "id": "story-153",
       "category": "climate",
       "published_iso": "2026-08-12T04:40:00Z",
       "added_at": "2026-08-13T00:01:06+05:30",
@@ -6554,38 +6600,6 @@
           {
             "name": "WBIW",
             "url": "https://www.wbiw.com/2026/08/12/major-river-flooding-forecasted-across-south-central-indiana-as-heavy-rains-push-waterways-above-flood-stage/"
-          }
-        ]
-      }
-    },
-    {
-      "type": "story",
-      "id": "story-153",
-      "category": "geopolitics",
-      "published_iso": "2026-08-11T18:00:00Z",
-      "added_at": "2026-08-12T22:09:33+05:30",
-      "source": "Al Jazeera",
-      "title": "Germany's top general says Russia is hitting NATO with hybrid attacks 'every day' as DNA evidence emerges in a Leipzig airport drone attack",
-      "what_happened": "On the night of **August 4-5**, an explosive-laden drone was found on the tarmac at Leipzig/Halle Airport next to a Ukrainian An-124 cargo plane, after CCTV appeared to show it deliberately flying into the aircraft's wing; a bomb-disposal team made the unexploded device safe and no one was hurt. Five days later, German investigators recovered **DNA traces** from the drone that reportedly point toward **Lithuania**, and may connect to a **2024 arson attack** on a DHL logistics hub at the same airport — though officials caution the link isn't confirmed. A hidden antenna, believed to have relayed the drone's control signal, was found in a nearby tree. Against that backdrop, Bundeswehr chief Gen. Carsten Breuer told the Wall Street Journal that Russia is running hybrid attacks against NATO's eastern flank \"every day,\" using drones to map weaknesses in European air defenses while also working to destabilize governments through non-military means.",
-      "key_points": [
-        "Bundeswehr chief **Gen. Carsten Breuer** told the Wall Street Journal Russia is testing NATO's eastern flank with hybrid attacks **\"every day\"**, refining tactics for a future conflict.",
-        "Investigators say **DNA recovered from an explosive drone** that struck a Ukrainian cargo plane's wing at Leipzig Airport on **August 5** traces toward a network possibly linked to Russia's GRU.",
-        "The drone, carrying an unexploded charge, was found next to an **Antonov An-124** — a giant cargo plane used to move military and Ukraine-bound supplies.",
-        "A hidden **antenna** was found nearby, believed to have boosted the drone's control signal; a parallel Lithuanian case alleges a GRU-linked sabotage network.",
-        "Breuer says Russia is **already shifting its economy and military** toward a possible wider conflict with the West, even while still fighting in Ukraine."
-      ],
-      "concepts": [],
-      "figures": [],
-      "depth": {
-        "background": "Western officials have described a rising pattern of Russian \"hybrid warfare\" against NATO countries over the past two years — drone incursions, arson, GPS jamming and sabotage — short of open war but designed to probe defenses and sow instability. The Leipzig incident on **August 5, 2026** was the most serious single event in that pattern so far because it targeted a strategic cargo plane tied to Ukraine's war effort, on German soil. It follows earlier US intelligence assessments, reported by the Wall Street Journal, that Russia could attempt a \"limited attack\" testing NATO's mutual-defense commitment (**Article 5**) as early as this autumn.",
-        "sources": [
-          {
-            "name": "Al Jazeera",
-            "url": "https://www.aljazeera.com/news/2026/8/9/germany-warns-of-daily-hybrid-warfare-following-suspected-drone-attack"
-          },
-          {
-            "name": "Euronews",
-            "url": "https://www.euronews.com/my-europe/2026/08/11/explosive-drone-at-leipzig-airport-whose-dna-trail-is-it"
           }
         ]
       }
@@ -6727,7 +6741,6 @@
       "id": "story-158",
       "rank": 21,
       "category": "india",
-      "is_new": true,
       "published_iso": "2026-08-19T12:00:00+05:30",
       "added_at": "2026-08-20T07:59:18+05:30",
       "source": "Business Standard",

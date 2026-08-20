@@ -1,6 +1,6 @@
 {
   "month": "2026-08",
-  "count": 1339,
+  "count": 1340,
   "stories": [
     {
       "type": "story",
@@ -819,6 +819,45 @@
           "Global Times",
           "Tech Startups",
           "ecns.cn (China News Service)"
+        ],
+        "corroboration": 0
+      }
+    },
+    {
+      "type": "story",
+      "title": "OpenAI unveils 'Private Safety Processing' to flag misuse without reading your data",
+      "category": "technology",
+      "published_iso": "2026-08-19T00:00:00Z",
+      "added_at": "2026-08-20T09:55:32+05:30",
+      "source": "TechCrunch",
+      "what_happened": "On **August 19, 2026**, OpenAI began previewing a new safety layer called **Private Safety Processing** to select customers. It is designed to spot patterns of abuse across many related interactions — the kind of gradual, multi-session misuse a one-off content filter would miss — **without OpenAI staff reading the actual prompts or responses**. Under the system, encrypted customer content can either stay entirely on the customer's own servers, or be stored by OpenAI using **encryption keys the customer alone controls**, so OpenAI says it cannot open the files even if it wanted to. What reaches OpenAI instead is a narrowly defined \"safety signal\" — essentially a flag that something looks risky — not the conversation itself. OpenAI says it will keep offering full **Zero Data Retention** for its most capable models to customers who want it, alongside this new layer. The company plans a broader rollout and a technical white paper in **September 2026**.",
+      "key_points": [
+        "OpenAI is previewing **Private Safety Processing**, which scans for abuse patterns across many sessions **without human review** of the actual conversations.",
+        "Customer content can stay on **customer-controlled infrastructure**, or be encrypted with keys **only the customer holds** — OpenAI says even its own staff can't unlock it.",
+        "The system passes OpenAI only a **narrow safety signal**, never the underlying prompts or AI replies.",
+        "A wider rollout plus a technical white paper are planned for **September 2026**.",
+        "The move is widely read as a direct answer to rival **Anthropic**, whose current policy leans on retaining conversation logs for safety review."
+      ],
+      "depth": {
+        "background": "AI companies face a real tension: catching someone who misuses a chatbot to plan something dangerous usually means reading what they typed, but enterprise customers paying for AI tools want a guarantee their sensitive data — trade secrets, legal filings, source code — isn't sitting somewhere company staff could read it. **Zero Data Retention (ZDR)** has been OpenAI's existing promise to big customers: keep no copy of what they send at all. The catch is that ZDR makes it hard to catch someone using the API across many separate sessions to slowly assemble something harmful, since there's no history to check. Anthropic recently went the other direction, requiring standard customers to allow data logging for safety review, which drew some enterprise pushback over privacy.",
+        "sources": [
+          {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/08/19/openai-previews-zero-retention-safety-system-as-anthropic-requires-data-logs"
+          }
+        ]
+      },
+      "credibility": {
+        "level": "developing",
+        "count": 2,
+        "tier": 2,
+        "outlets": [
+          "Axios",
+          "TechCrunch"
         ],
         "corroboration": 0
       }
