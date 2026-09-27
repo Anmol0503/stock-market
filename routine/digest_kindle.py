@@ -27,7 +27,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 import make_kindle as mk   # noqa: E402
 
-SITE = os.environ.get("DIGEST_SITE", "https://anmol0503.github.io/stock-market")
+SITE = os.environ.get("DIGEST_SITE", "https://anmol0503.github.io/stock-market/dashboard")
 LOCAL_DIR = ROOT / "dashboard" / "digest"
 STATE = ROOT / "output" / "digest-kindle-state.json"     # {sent: [dates]}  (output/ is gitignored)
 BOOKS = ROOT / "output" / "digest-kindle"
