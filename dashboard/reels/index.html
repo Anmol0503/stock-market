@@ -3,330 +3,383 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#15171b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>The Daily Digest</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icon-180.png">
 <style>
-  /* Soothing, reading-first palette. Dark = soft warm charcoal (no pure black / pure white glare);
-     light = warm paper. Section colours are muted pastels, used as gentle tints — never loud. */
+  /* Midnight-ink + soft gold. Calm, high-legibility, never glaring. Each section has one gentle hue. */
   :root{
     color-scheme:dark;
-    --bg:#15171b; --panel:#1c1f25; --panel2:#23272f; --line:#2d323b; --txt:#e7e2d9; --soft:#cfc9bf; --dim:#9a9ea6;
-    --accent:#86b9c7; --good:#8cc49a; --ontab:#15171b; --shadow:0 1px 0 rgba(255,255,255,.02);
-    --top:#86b9c7; --world:#93b4dd; --india:#e2b27f; --affects_you:#dcc47e; --markets:#8cc7a6; --tech_ai:#b6a7dc;
-    --science:#85c4bc; --f1:#dc9595; --cricket:#9bc68f; --next:#a9adb5;
+    --bg:#0e1320; --surface:#161d2e; --surface2:#1c2538; --line:#28324a; --txt:#e9edf4; --soft:#c7cfdd; --dim:#8f9bb2;
+    --gold:#f0c56e; --good:#7fd6a4; --on:#0e1320;
+    --top:#f0c56e; --world:#86aefc; --india:#ffb27a; --affects_you:#f0c56e; --markets:#6fd8ad; --tech_ai:#b9a2ff;
+    --science:#62d3cb; --f1:#ff8f8f; --cricket:#97d98f; --next:#aab6cc;
     --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     --read:"Iowan Old Style","Charter","Georgia","Cambria",serif;
+    --hdr:calc(env(safe-area-inset-top) + 98px);
   }
   @media (prefers-color-scheme: light){
     :root{
       color-scheme:light;
-      --bg:#f5f0e6; --panel:#fcf8f1; --panel2:#efe8db; --line:#e2d8c6; --txt:#2c2a26; --soft:#46423b; --dim:#7a7468;
-      --accent:#3f7f90; --good:#3e7d4f; --ontab:#fffdf8; --shadow:0 1px 2px rgba(80,60,20,.06);
-      --top:#3f7f90; --world:#46699a; --india:#a8672a; --affects_you:#96771c; --markets:#3d7d5a; --tech_ai:#6a58a0;
-      --science:#2f7a71; --f1:#a84b4b; --cricket:#4d7d3f; --next:#6c6f76;
+      --bg:#f6f2ea; --surface:#fffdf9; --surface2:#f1ebe0; --line:#e3dacb; --txt:#1f2430; --soft:#3c4352; --dim:#737b8c;
+      --gold:#b3801e; --good:#2f7d4f; --on:#fffdf9;
+      --top:#b3801e; --world:#3d63b0; --india:#b8612a; --affects_you:#a57716; --markets:#27805a; --tech_ai:#6a4fbd;
+      --science:#1f7e77; --f1:#b54444; --cricket:#467d34; --next:#626b7d;
     }
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--ui);-webkit-text-size-adjust:100%;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  button{font:inherit;color:inherit;cursor:pointer}
-  a{color:var(--sec,var(--accent))}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:var(--ui);
+    -webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;overflow:hidden}
+  button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+  a{color:var(--sec,var(--gold))}
 
-  /* ---------- sticky header: date switcher + refresh, then section tabs ---------- */
-  #hdr{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
-    padding:calc(env(safe-area-inset-top) + 8px) 12px 9px}
-  .daterow{display:flex;align-items:center;gap:8px;max-width:680px;margin:0 auto}
-  .arrow,#refresh{flex:0 0 auto;width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--panel);
-    font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;color:var(--soft)}
-  .arrow:disabled{opacity:.28;cursor:default}
-  #refresh{font-size:17px}
+  /* ---------- header: date pill + refresh · section tabs · progress ---------- */
+  #hdr{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(env(safe-area-inset-top) + 8px) 12px 0;
+    background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 96%,transparent) 70%,transparent);}
+  .toprow{display:flex;align-items:center;gap:8px;max-width:620px;margin:0 auto}
+  #datepill{flex:1;min-width:0;height:40px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:99px;
+    background:var(--surface);border:1px solid var(--line);white-space:nowrap;overflow:hidden}
+  #datepill .d{font-weight:650;font-size:15px;overflow:hidden;text-overflow:ellipsis}
+  #datepill .ed{font-size:12px;font-weight:650;color:var(--dim);margin-left:auto}
+  #datepill .ed.final{color:var(--good)}
+  #datepill .car{color:var(--dim);font-size:12px}
+  #refresh{flex:0 0 auto;width:40px;height:40px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:16px}
   #refresh.spin{animation:spin .8s linear infinite} @keyframes spin{to{transform:rotate(360deg)}}
-  #datebtn{flex:1;min-width:0;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--panel);
-    display:flex;align-items:center;justify-content:center;gap:8px;padding:0 10px;white-space:nowrap;overflow:hidden}
-  #datebtn b{font-size:15.5px;font-weight:650}
-  .ed{font-size:12px;font-weight:600;color:var(--dim)} .ed.final{color:var(--good)}
-  #tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 2px;margin:9px auto 0;max-width:680px;
-    scroll-snap-type:x proximity}
+  #tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:620px;margin:8px auto 0;padding:0 1px}
   #tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;scroll-snap-align:center;display:flex;align-items:center;gap:6px;height:36px;padding:0 13px;
-    border-radius:99px;border:1px solid var(--line);background:var(--panel);font-size:14px;font-weight:600;color:var(--dim);white-space:nowrap;
-    transition:background .2s,color .2s,border-color .2s}
-  .tab .n{font-size:11.5px;font-weight:700;opacity:.75}
-  .tab.on{color:var(--ontab);background:var(--sec);border-color:var(--sec)}
-  .tab.on .n{opacity:.8}
+  .tab{flex:0 0 auto;height:34px;padding:0 12px;border-radius:99px;display:flex;align-items:center;gap:5px;font-size:13.5px;
+    font-weight:600;color:var(--dim);background:var(--surface);border:1px solid var(--line);white-space:nowrap;transition:all .2s}
+  .tab .n{font-size:11px;font-weight:700;opacity:.7}
+  .tab.on{background:var(--sec);border-color:var(--sec);color:var(--on)}
+  #prog{max-width:620px;margin:8px auto 0;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
+  #prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s}
 
-  /* ---------- content ---------- */
-  main{max-width:680px;margin:0 auto;padding:18px 16px calc(48px + env(safe-area-inset-bottom))}
-  .sechead{margin:2px 2px 2px}
-  .sechead h1{font-size:25px;line-height:1.2;margin:0;font-weight:700;letter-spacing:-.2px}
-  .rt{font-size:13px;color:var(--dim);margin:4px 2px 0}
-  .gist{font-family:var(--read);font-size:18px;line-height:1.6;color:var(--soft);margin:10px 2px 20px}
-  .story{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;margin-bottom:16px;
-    box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .story::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sec);opacity:.55}
-  .story .meta{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--dim);margin-bottom:8px}
-  .dev{color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);border-radius:99px;padding:2px 9px}
-  .story h2{font-size:20.5px;line-height:1.35;margin:0 0 4px;font-weight:700;letter-spacing:-.15px}
-  .lbl{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
-  .story p{font-family:var(--read);font-size:17.5px;line-height:1.7;margin:0;color:var(--txt)}
-  .blk{margin-top:14px}
-  .blk.back{background:var(--panel2);border-radius:14px;padding:12px 14px}
-  .blk.back p{color:var(--soft)}
-  .blk.why{background:color-mix(in srgb,var(--sec) 11%,var(--panel));border:1px solid color-mix(in srgb,var(--sec) 22%,transparent);
-    border-radius:14px;padding:12px 14px}
-  .terms{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
-  .term{font-family:var(--read);font-size:16px;line-height:1.6;color:var(--soft);margin:0 0 6px}
-  .term b{font-family:var(--ui);font-size:14.5px;color:var(--txt)}
-  .src{margin-top:12px;font-size:13px;color:var(--dim)} .src a{text-decoration:none}
-  b.k{font-weight:700;color:var(--txt);background:color-mix(in srgb,var(--sec,var(--accent)) 16%,transparent);border-radius:4px;padding:0 3px}
+  /* ---------- the reel ---------- */
+  #deck{position:fixed;inset:0;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  #deck::-webkit-scrollbar{display:none}
+  .card{min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;display:flex;flex-direction:column;
+    justify-content:flex-start;gap:12px;padding:calc(var(--hdr) + 10px) 20px calc(22px + env(safe-area-inset-bottom))}
+  .card > *{width:100%;max-width:580px;margin-left:auto;margin-right:auto}
+  .card > :first-child{margin-top:auto} .card > :last-child{margin-bottom:auto}   /* centred when it fits, top-aligned when it doesn't */
+  .card::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 55% at 50% 0%, color-mix(in srgb,var(--sec) 13%,transparent), transparent 70%)}
+  .card > *{position:relative}
 
-  .lede{font-family:var(--read);font-size:20px;line-height:1.6;margin:4px 2px 6px;color:var(--txt)}
-  .toprow,.secrow{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--panel);
-    border:1px solid var(--line);border-radius:18px;padding:13px 15px;margin-bottom:10px;box-shadow:var(--shadow)}
-  .toprow .e,.secrow .e{font-size:21px;flex:0 0 auto;width:26px;text-align:center}
-  .toprow .t,.secrow .t{flex:1;min-width:0}
-  .toprow b,.secrow b{display:block;font-size:16px;line-height:1.35;font-weight:650}
-  .toprow span.w,.secrow span.w{display:block;font-size:14.5px;line-height:1.45;color:var(--dim);margin-top:3px}
-  .go{color:var(--dim);font-size:22px}
-  .h3{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:26px 2px 11px}
-  .watch{margin:14px 0 0;padding-left:22px;font-family:var(--read);font-size:17.5px;line-height:1.65} .watch li{margin-bottom:12px}
-  .nextbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;margin-top:8px;
-    border-radius:16px;border:1px solid var(--line);background:var(--panel2);font-weight:650;font-size:15px;color:var(--soft)}
-  .disc{font-size:12.5px;color:var(--dim);line-height:1.55;margin-top:20px;text-align:center}
-  .empty{text-align:center;color:var(--dim);padding:70px 10px;font-size:16px;line-height:1.6}
-  .empty .big{font-size:44px;margin-bottom:10px}
+  /* cover */
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .bigdate{font-family:var(--read);font-size:40px;line-height:1.05;font-weight:700;letter-spacing:-.5px;margin-top:-6px}
+  .sub{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px;color:var(--dim);margin-top:-6px}
+  .badge{font-size:12px;font-weight:700;border-radius:99px;padding:3px 10px;background:var(--surface2);color:var(--dim)}
+  .badge.final{color:var(--good);background:color-mix(in srgb,var(--good) 14%,transparent)}
+  .lede{font-family:var(--read);font-size:19px;line-height:1.6;margin:0;color:var(--txt)}
+  .k{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+  .toplist{display:flex;flex-direction:column;gap:8px;margin-top:-6px}
+  .toprow{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--surface);
+    border:1px solid var(--line);border-radius:16px;padding:11px 13px}
+  .toprow .e{font-size:19px;flex:0 0 auto;width:24px;text-align:center}
+  .toprow .t{flex:1;min-width:0} .toprow b{display:block;font-size:15px;line-height:1.35;font-weight:650}
+  .toprow i{display:block;font-style:normal;font-size:13.5px;line-height:1.4;color:var(--dim);margin-top:2px}
+  .toprow .go{color:var(--dim);font-size:20px}
+  .foot{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--dim)}
+  .cue{font-size:13px;color:var(--dim);text-align:center;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-4px)}}
 
-  /* ---------- bottom sheet + banner ---------- */
-  #mask{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+  /* section intro */
+  .secemoji{font-size:54px;text-align:center;line-height:1}
+  .sectitle{font-family:var(--read);font-size:34px;font-weight:700;text-align:center;margin:0;color:var(--sec)}
+  .gist{font-family:var(--read);font-size:19px;line-height:1.6;text-align:center;color:var(--soft);margin:0}
+  .count{font-size:13.5px;color:var(--dim);text-align:center}
+
+  /* story */
+  .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--dim)}
+  .chip{color:var(--sec);font-weight:700}
+  .dev{color:var(--gold);background:color-mix(in srgb,var(--gold) 13%,transparent);border-radius:99px;padding:2px 9px}
+  .headline{font-family:var(--read);font-size:clamp(21px,5.6vw,25px);line-height:1.26;font-weight:700;margin:0;letter-spacing:-.2px}
+  .blk .lbl{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+  .blk p{font-family:var(--read);font-size:16px;line-height:1.52;margin:0}
+  .blk.back{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 12px}
+  .blk.back p{color:var(--soft);font-size:15px}
+  .blk.why{background:color-mix(in srgb,var(--sec) 12%,var(--surface));border-radius:16px;padding:10px 12px}
+  .nextline{font-size:14px;line-height:1.5;color:var(--soft)} .nextline b{color:var(--txt)}
+  .terms{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .term{font-size:13px;font-weight:600;border-radius:99px;padding:5px 11px;background:var(--surface2);border:1px solid var(--line);color:var(--soft)}
+  .src{font-size:12.5px;color:var(--dim)} .src a{text-decoration:none}
+  b.k2{font-weight:700;color:var(--txt);background:color-mix(in srgb,var(--sec,var(--gold)) 18%,transparent);border-radius:4px;padding:0 3px}
+
+  /* end card */
+  .watch{margin:0;padding-left:20px;font-family:var(--read);font-size:17.5px;line-height:1.6} .watch li{margin-bottom:10px}
+  .pillbtn{align-self:center;width:auto!important;font-size:14px;font-weight:650;padding:11px 18px;border-radius:99px;
+    background:var(--surface);border:1px solid var(--line)}
+  .disc{font-size:12px;color:var(--dim);line-height:1.5;text-align:center}
+  .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100svh;color:var(--dim);
+    text-align:center;padding:0 30px;font-size:16px;line-height:1.6}
+
+  @media (max-height:780px){
+    .blk p{font-size:15px;line-height:1.48} .blk.back p{font-size:14.5px} .headline{font-size:20px} .card{gap:9px}
+    .blk.back,.blk.why{padding:9px 11px} .blk .lbl{margin-bottom:2px}
+    .bigdate{font-size:34px} .lede{font-size:17.5px}
+  }
+
+  /* ---------- sheets, calendar, banner, toast ---------- */
+  #mask{position:fixed;inset:0;background:rgba(5,8,15,.55);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
   #mask.open{opacity:1;pointer-events:auto}
-  #sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--panel);border:1px solid var(--line);border-bottom:0;
-    border-radius:22px 22px 0 0;max-height:80vh;display:flex;flex-direction:column;transform:translateY(105%);
-    transition:transform .3s cubic-bezier(.3,.9,.3,1);max-width:680px;margin:0 auto}
+  #sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--surface);border-top:1px solid var(--line);
+    border-radius:24px 24px 0 0;max-height:85vh;display:flex;flex-direction:column;transform:translateY(105%);
+    transition:transform .3s cubic-bezier(.3,.9,.3,1);max-width:620px;margin:0 auto}
   #sheet.open{transform:none}
-  #sheet .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 8px}
-  #sheet h3{margin:0;font-size:17px;font-weight:650} #sheet .x{font-size:20px;color:var(--dim);background:none;border:0;padding:4px 8px}
-  #sbody{overflow-y:auto;padding:4px 18px calc(22px + env(safe-area-inset-bottom))}
-  .dayrow{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;
-    background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:12px 15px;margin-bottom:8px}
-  .dayrow.cur{border-color:var(--accent)}
-  .dayrow b{display:block;font-size:15.5px;font-weight:650} .dayrow span{font-size:13px;color:var(--dim)}
+  #sheet .grab{width:38px;height:4px;border-radius:4px;background:var(--line);margin:10px auto 0}
+  #sheet .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 6px}
+  #sheet h3{margin:0;font-size:17px;font-weight:650} #sheet .x{font-size:20px;color:var(--dim);padding:4px 8px}
+  #sbody{overflow-y:auto;padding:6px 18px calc(22px + env(safe-area-inset-bottom))}
+  .quick{display:flex;gap:8px;margin-bottom:14px}
+  .quick button{flex:1;height:42px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);font-weight:650;font-size:14px}
+  .quick button:disabled{opacity:.35}
+  .calhead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 10px}
+  .calhead b{font-family:var(--read);font-size:19px}
+  .calhead button{width:36px;height:36px;border-radius:12px;background:var(--surface2);font-size:18px;color:var(--soft)}
+  .calhead button:disabled{opacity:.25}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+  .cal .wd{font-size:11.5px;font-weight:700;color:var(--dim);padding-bottom:4px}
+  .cal .day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;
+    font-size:15px;color:var(--dim);opacity:.45}
+  .cal button.day{opacity:1;color:var(--txt);background:var(--surface2);border:1px solid var(--line);font-weight:650}
+  .cal button.day .dot{width:6px;height:6px;border-radius:50%;margin-top:3px;border:1.5px solid var(--gold)}
+  .cal button.day.final .dot{background:var(--good);border-color:var(--good)}
+  .cal button.day.sel{background:var(--gold);border-color:var(--gold);color:var(--on)}
+  .cal button.day.sel .dot{border-color:var(--on);background:var(--on)}
+  .cal .today{outline:1.5px dashed var(--dim);outline-offset:-3px}
+  .legend{display:flex;gap:14px;justify-content:center;font-size:12px;color:var(--dim);margin-top:14px}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
   .p{font-family:var(--read);font-size:16.5px;line-height:1.6;color:var(--soft);margin:0 0 12px}
-  .primary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;border-radius:16px;border:0;
-    background:var(--accent);color:var(--ontab);font-weight:700;font-size:15.5px;text-decoration:none;margin:8px 0 10px}
+  .primary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;border-radius:16px;
+    background:var(--gold);color:var(--on);font-weight:700;font-size:15.5px;text-decoration:none;margin:8px 0 10px}
   .secondary{display:flex;align-items:center;justify-content:center;width:100%;height:48px;border-radius:16px;
-    border:1px solid var(--line);background:var(--panel2);font-weight:600;font-size:14.5px}
-  #banner{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,160%);
-    z-index:30;display:flex;align-items:center;gap:10px;background:var(--accent);color:var(--ontab);font-weight:700;
-    border-radius:99px;padding:13px 20px;box-shadow:0 8px 28px rgba(0,0,0,.3);transition:transform .35s;white-space:nowrap;border:0}
+    border:1px solid var(--line);background:var(--surface2);font-weight:600;font-size:14.5px}
+  #banner{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,170%);z-index:30;
+    background:var(--gold);color:var(--on);font-weight:700;border-radius:99px;padding:13px 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .35s;white-space:nowrap}
   #banner.show{transform:translate(-50%,0)}
-  #toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 112px);transform:translateX(-50%);z-index:50;
-    background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:10px 15px;font-size:14px;
-    opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+  #toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:50;
+    background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:14.5px;line-height:1.5;
+    opacity:0;pointer-events:none;transition:opacity .25s;width:min(90vw,480px);text-align:left;box-shadow:0 10px 30px rgba(0,0,0,.3)}
   #toast.show{opacity:1}
+  #toast b{color:var(--gold)}
   @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
 </style>
 </head>
 <body>
 
 <header id="hdr">
-  <div class="daterow">
-    <button class="arrow" id="prev" aria-label="Previous day" onclick="stepDay(1)">‹</button>
-    <button id="datebtn" onclick="openDays()" aria-label="Choose a day"><b id="datelbl">…</b><span class="ed" id="edlbl"></span></button>
-    <button class="arrow" id="next" aria-label="Next day" onclick="stepDay(-1)">›</button>
+  <div class="toprow">
+    <button id="datepill" onclick="openCalendar()" aria-label="Pick a day"><span>📅</span><span class="d" id="dlabel">…</span><span class="ed" id="edlabel"></span><span class="car">▾</span></button>
     <button id="refresh" aria-label="Get the latest update" onclick="openRefresh()">🔄</button>
   </div>
   <nav id="tabs" aria-label="Sections"></nav>
+  <div id="prog"><i></i></div>
 </header>
 
-<main id="main"><div class="empty"><div class="big">📰</div>Loading your digest…</div></main>
+<div id="deck"><div class="empty"><div style="font-size:44px">📰</div>Loading your digest…</div></div>
 
 <div id="mask" onclick="closeSheet()"></div>
-<div id="sheet" role="dialog"><div class="bar"><h3 id="stitle"></h3><button class="x" onclick="closeSheet()" aria-label="Close">✕</button></div><div id="sbody"></div></div>
+<div id="sheet" role="dialog"><div class="grab"></div><div class="bar"><h3 id="stitle"></h3><button class="x" onclick="closeSheet()" aria-label="Close">✕</button></div><div id="sbody"></div></div>
 <button id="banner" onclick="loadNewer()">✨ New edition ready · Load</button>
 <div id="toast"></div>
 
 <script>
-// 📰 The Daily Digest — the whole web app. Reads dashboard/digest/index.json + digest-<date>.json (built in the
-// cloud every 3h, final at 11 PM IST). One section at a time; switch sections with the tabs or a sideways swipe,
-// days with ‹ › or the date list. (The old multi-tab reels app lives, unlinked, at ./classic.html.)
-const ROUTINE_URL = 'https://claude.ai/code/routines/trig_01RrsV4Pi2R6komAEPRJQTyJ';  // tap "Run now" there
+// 📰 The Daily Digest — a reel: cover → [section intro → one full-screen card per story]… → what to watch.
+// Data: dashboard/digest/index.json + digest-<date>.json (built in the cloud every 3h, final at 11 PM IST).
+// (The old multi-tab app is kept, unlinked, at ./classic.html.)
+const ROUTINE_URL = 'https://claude.ai/code/routines/trig_01RrsV4Pi2R6komAEPRJQTyJ';
 const SCHEDULE = '8 AM · 11 AM · 2 PM · 5 PM · 8 PM · 11 PM';
 const SEC = {
   top:{e:'⭐',t:'Top'}, world:{e:'🌍',t:'World'}, india:{e:'🇮🇳',t:'India'}, affects_you:{e:'⚠️',t:'Affects you'},
   markets:{e:'📈',t:'Markets'}, tech_ai:{e:'🤖',t:'Tech & AI'}, science:{e:'🔬',t:'Science'},
   f1:{e:'🏎️',t:'F1'}, cricket:{e:'🏏',t:'Cricket'}, next:{e:'👀',t:'Next'}};
 
-let INDEX=null, DOC=null, DATE=null, CUR='top', ORDER=['top'];
+let INDEX=null, DOC=null, DATE=null, CARDS=[], CUR='top', CAL_MONTH=null;
 const $ = id => document.getElementById(id);
 const esc = s => (s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const hl = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b class="k">$1</b>');
-const bust = () => '?_='+Date.now();
-const getJSON = u => fetch(u+bust(),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+const hl = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b class="k2">$1</b>');
+const getJSON = u => fetch(u+'?_='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+const iso = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const TODAY = () => iso(new Date());
 
-function dayLabel(d, long){
-  if(!d) return '';
+function dayName(d, style){
   const x=new Date(d+'T00:00:00'), t=new Date(); t.setHours(0,0,0,0);
-  const diff=Math.round((t-x)/864e5);
-  const s=x.toLocaleDateString(undefined, long?{weekday:'long',day:'numeric',month:'long'}:{weekday:'short',day:'numeric',month:'short'});
+  const diff=Math.round((t-x)/864e5), s=x.toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short'});
+  if(style==='big') return diff===0?'Today':diff===1?'Yesterday':x.toLocaleDateString(undefined,{day:'numeric',month:'long'});
   return diff===0?'Today · '+s : diff===1?'Yesterday · '+s : s;
 }
-function ago(iso){
-  const t=new Date(iso); if(isNaN(t)) return '';
-  const m=Math.max(0,Math.round((Date.now()-t)/6e4));
-  return m<2?'just now':m<60?m+' min ago':Math.round(m/60)+' h ago';
-}
-function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('show'),2600); }
+function ago(t){ t=new Date(t); if(isNaN(t)) return ''; const m=Math.max(0,Math.round((Date.now()-t)/6e4));
+  return m<2?'just now':m<60?m+' min ago':Math.round(m/60)+' h ago'; }
+const words = it => [it.headline,it.what,it.context,it.why_it_matters,it.next].join(' ').split(/\s+/).length;
+const mins = items => Math.max(1, Math.round((items||[]).reduce((n,it)=>n+words(it),0)/200));
+function showTerm(el){ toast('<b>'+esc(el.dataset.t)+'</b> — '+esc(el.dataset.m), 6000); }
+function toast(html, ms){ const t=$('toast'); t.innerHTML=html; t.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('show'), ms||2600); }
 
-/* ---------- loading ---------- */
+/* ---------- data ---------- */
 async function loadIndex(){ const ix=await getJSON('../digest/index.json'); if(ix) INDEX=ix; return INDEX; }
-async function loadDay(date, keepSection){
-  const d = await getJSON('../digest/digest-'+date+'.json');
+const days = () => (INDEX&&INDEX.days)||[];
+async function loadDay(date, keep){
+  const d=await getJSON('../digest/digest-'+date+'.json');
   if(!d){ toast('Couldn’t load that day — check your connection'); return; }
-  DOC=d; DATE=date;
-  ORDER=['top', ...(d.sections||[]).filter(s=>(s.items||[]).length).map(s=>s.key), 'next'];
-  if(!keepSection || !ORDER.includes(CUR)) CUR='top';
-  paint(); saveHash();
+  DOC=d; DATE=date; build();
+  const target = keep && CARDS.findIndex(c=>c.sec===keep);
+  $('deck').scrollTo(0, 0);
+  if(target>0) requestAnimationFrame(()=>jumpTo(target, false));
+  saveHash();
 }
 async function boot(){
-  const h=parseHash();
+  const [hd, hs]=(location.hash||'').replace(/^#/,'').split('/');
   await loadIndex();
-  const days=(INDEX&&INDEX.days)||[];
-  if(!days.length){ $('main').innerHTML='<div class="empty"><div class="big">📰</div>Your first digest is being written.<br>Editions land at '+SCHEDULE+' IST.</div>'; paintHeader(); return; }
-  CUR = h.s && SEC[h.s] ? h.s : 'top';
-  await loadDay(days.some(x=>x.date===h.d)?h.d:days[0].date, true);
+  if(!days().length){ $('deck').innerHTML=`<div class="empty"><div style="font-size:44px">📰</div>Your first digest is being written.<br>Editions land at ${SCHEDULE} IST.</div>`; paintHeader(); return; }
+  await loadDay(days().some(x=>x.date===hd)?hd:days()[0].date, SEC[hs]?hs:null);
 }
 
-/* ---------- rendering ---------- */
-function paintHeader(){
-  const days=(INDEX&&INDEX.days)||[], i=days.findIndex(x=>x.date===DATE);
-  $('datelbl').textContent = DATE ? dayLabel(DATE) : 'The Daily Digest';
-  const ed=$('edlbl');
-  if(DOC){ ed.textContent = DOC.final ? '✅ Final' : '🕒 '+String(DOC.edition||'').replace(/^Updated /,''); ed.className='ed'+(DOC.final?' final':''); }
-  $('prev').disabled = i<0 || i>=days.length-1;   // older day
-  $('next').disabled = i<=0;                      // newer day
+/* ---------- build the reel ---------- */
+function build(){
+  const secs=(DOC.sections||[]).filter(s=>(s.items||[]).length);
+  const total=secs.reduce((a,s)=>a+s.items.length,0), allMins=secs.reduce((a,s)=>a+mins(s.items),0);
+  CARDS=[{sec:'top', html:coverHTML(secs,total,allMins)}];
+  secs.forEach(s=>{
+    CARDS.push({sec:s.key, html:introHTML(s)});
+    s.items.forEach((it,i)=>CARDS.push({sec:s.key, html:storyHTML(s,it,i)}));
+  });
+  CARDS.push({sec:'next', html:endHTML()});
+  $('deck').innerHTML = CARDS.map((c,i)=>`<section class="card" data-i="${i}" style="--sec:var(--${c.sec})">${c.html}</section>`).join('');
+  paintHeader(); paintTabs(secs); observe(); CUR='top'; markTab();
 }
-function paintTabs(){
-  const n = k => { const s=(DOC.sections||[]).find(x=>x.key===k); return s?(s.items||[]).length:0; };
-  $('tabs').innerHTML = ORDER.map(k=>`<button class="tab ${k===CUR?'on':''}" style="--sec:var(--${k})" onclick="go('${k}')">`
-    + `<span>${SEC[k].e}</span>${esc(SEC[k].t)}${(k!=='top'&&k!=='next')?`<span class="n">${n(k)}</span>`:''}</button>`).join('');
-  const on=$('tabs').querySelector('.tab.on'); if(on) on.scrollIntoView({inline:'center',block:'nearest'});
+function coverHTML(secs,total,allMins){
+  return `<div class="eyebrow">📰 The Daily Digest</div>
+    <div class="bigdate">${esc(dayName(DATE,'big'))}</div>
+    <div class="sub">${esc(new Date(DATE+'T00:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'}))}
+      <span class="badge ${DOC.final?'final':''}">${DOC.final?'✅ Final edition':'🕒 '+esc(DOC.edition||'')}</span></div>
+    <p class="lede">${hl(DOC.top_line)}</p>
+    ${(DOC.top5||[]).length?`<div class="k">The biggest stories</div><div class="toplist">${DOC.top5.map(t=>
+      `<button class="toprow" onclick="jumpSection('${esc(t.section)}')"><span class="e">${(SEC[t.section]||{}).e||'•'}</span><span class="t"><b>${esc(t.title)}</b><i>${esc(t.why)}</i></span><span class="go">›</span></button>`).join('')}</div>`:''}
+    <div class="foot">${total} stories · about ${allMins} min</div>
+    <div class="cue">swipe up to begin ↑</div>`;
 }
-function words(it){ return [it.headline,it.what,it.context,it.why_it_matters,it.next,...(it.terms||[]).map(t=>t.meaning)].join(' ').split(/\s+/).length; }
-function readMins(items){ return Math.max(1, Math.round((items||[]).reduce((n,it)=>n+words(it),0)/200)); }
-function storyHTML(it){
-  return `<article class="story">
-    <div class="meta">${it.status==='developing'?'<span class="dev">🔄 Developing</span>':''}${it.updated_at?`<span>Updated ${esc(ago(it.updated_at))}</span>`:''}</div>
-    <h2>${esc(it.headline)}</h2>
+function introHTML(s){
+  return `<div class="secemoji">${SEC[s.key].e}</div>
+    <h1 class="sectitle">${esc(SEC[s.key].t)}</h1>
+    ${(s.gist||s.summary)?`<p class="gist">${hl(s.gist||s.summary)}</p>`:''}
+    <div class="count">${s.items.length} ${s.items.length==1?'story':'stories'} · about ${mins(s.items)} min</div>
+    <div class="cue">swipe up ↑</div>`;
+}
+function storyHTML(s,it,i){
+  return `<div class="meta"><span class="chip">${SEC[s.key].e} ${esc(SEC[s.key].t)}</span><span>${i+1} of ${s.items.length}</span>${it.status==='developing'?'<span class="dev">🔄 Developing</span>':''}</div>
+    <h1 class="headline">${esc(it.headline)}</h1>
     <div class="blk"><div class="lbl">What happened</div><p>${hl(it.what)}</p></div>
     ${it.context?`<div class="blk back"><div class="lbl">🧭 The backstory</div><p>${hl(it.context)}</p></div>`:''}
     <div class="blk why"><div class="lbl">💡 Why it matters</div><p>${hl(it.why_it_matters)}</p></div>
-    ${it.next?`<div class="blk"><div class="lbl">⏭ What's next</div><p>${hl(it.next)}</p></div>`:''}
-    ${(it.terms||[]).length?`<div class="terms"><div class="lbl">📖 Words to know</div>${it.terms.map(t=>`<p class="term"><b>${esc(t.term)}</b> — ${esc(t.meaning)}</p>`).join('')}</div>`:''}
-    ${(it.sources||[]).length?`<div class="src">Source: ${it.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</div>`:''}
-  </article>`;
+    ${it.next?`<div class="nextline"><b>⏭ Next:</b> ${hl(it.next)}</div>`:''}
+    ${(it.terms||[]).length?`<div class="terms"><span class="lbl" style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)">📖 Words</span>${it.terms.map(t=>
+      `<button class="term" data-t="${esc(t.term)}" data-m="${esc(t.meaning)}" onclick="showTerm(this)">${esc(t.term)}</button>`).join('')}</div>`:''}
+    ${(it.sources||[]).length?`<div class="src">Source: ${it.sources.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</div>`:''}`;
 }
-function nextBtn(){
-  const i=ORDER.indexOf(CUR), k=ORDER[i+1];
-  return k ? `<button class="nextbtn" onclick="go('${k}')">Next: ${SEC[k].e} ${esc(SEC[k].t)} →</button>` : '';
-}
-function paint(){
-  paintHeader(); paintTabs();
-  const m=$('main'); document.body.style.setProperty('--sec', `var(--${CUR})`);
-  m.style.setProperty('--sec', `var(--${CUR})`);
-  let h='';
-  if(CUR==='top'){
-    const secs=(DOC.sections||[]).filter(s=>(s.items||[]).length);
-    const total=secs.reduce((a,s)=>a+s.items.length,0);
-    h += `<p class="lede">${hl(DOC.top_line)}</p>`;
-    if((DOC.top5||[]).length){
-      h += `<div class="h3">The biggest stories</div>` + DOC.top5.map(t=>`<button class="toprow" onclick="go('${esc(t.section)}')">`
-        + `<span class="e">${(SEC[t.section]||{}).e||'•'}</span><span class="t"><b>${esc(t.title)}</b><span class="w">${esc(t.why)}</span></span><span class="go">›</span></button>`).join('');
-    }
-    const mins=secs.reduce((a,s)=>a+readMins(s.items),0);
-    h += `<div class="h3">Every section · ${total} stories · about ${mins} min</div>` + secs.map(s=>`<button class="secrow" onclick="go('${s.key}')">`
-      + `<span class="e">${SEC[s.key].e}</span><span class="t"><b>${esc(SEC[s.key].t)} · ${s.items.length} · ${readMins(s.items)} min</b><span class="w">${hl(s.gist||s.summary||'')}</span></span><span class="go">›</span></button>`).join('');
-    h += `<div class="disc">${DOC.final?'✅ Final edition for the day':'🕒 '+esc(DOC.edition||'')+' · updates at '+SCHEDULE+' IST'}</div>`;
-  } else if(CUR==='next'){
-    h += `<div class="sechead"><h1>👀 What to watch next</h1></div>`;
-    h += (DOC.watch_tomorrow||[]).length ? `<ul class="watch">${DOC.watch_tomorrow.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`
-         : `<p class="gist">The watch-list is written with the 11 PM final edition.</p>`;
-    h += `<div class="disc">${esc(DOC.disclaimer||'')}</div>`;
-  } else {
-    const s=(DOC.sections||[]).find(x=>x.key===CUR);
-    if(!s){ go('top'); return; }
-    h += `<div class="sechead"><h1>${SEC[CUR].e} ${esc(SEC[CUR].t)}</h1><div class="rt">${s.items.length} ${s.items.length==1?'story':'stories'} · about ${readMins(s.items)} min</div></div>`;
-    if(s.gist||s.summary) h += `<p class="gist">${hl(s.gist||s.summary)}</p>`;
-    h += (s.items||[]).map(storyHTML).join('');
-  }
-  h += nextBtn();
-  m.innerHTML = h;
+function endHTML(){
+  return `<div class="secemoji">👀</div>
+    <h1 class="sectitle">What to watch next</h1>
+    ${(DOC.watch_tomorrow||[]).length?`<ul class="watch">${DOC.watch_tomorrow.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`
+      :`<p class="gist">The watch-list arrives with the 11 PM final edition.</p>`}
+    <div class="count">That's everything for ${esc(dayName(DATE,'big').toLowerCase()==='today'?'today':dayName(DATE))}. ✨</div>
+    <button class="pillbtn" onclick="openCalendar()">📅 Read another day</button>
+    <div class="disc">${esc(DOC.disclaimer||'')}</div>`;
 }
 
-/* ---------- navigation ---------- */
-function go(k){ if(!ORDER.includes(k)) return; CUR=k; paint(); window.scrollTo({top:0}); saveHash(); }
-function stepDay(dir){      // dir +1 = older, -1 = newer (index is newest first)
-  const days=(INDEX&&INDEX.days)||[], i=days.findIndex(x=>x.date===DATE), j=i+dir;
-  if(j>=0 && j<days.length){ loadDay(days[j].date, true).then(()=>window.scrollTo({top:0})); }
+/* ---------- header, tabs, progress ---------- */
+function paintHeader(){
+  $('dlabel').textContent = DATE ? dayName(DATE) : 'The Daily Digest';
+  const ed=$('edlabel');
+  if(DOC){ ed.textContent = DOC.final ? '✅ Final' : '🕒 '+String(DOC.edition||'').replace(/^Updated /,''); ed.className='ed'+(DOC.final?' final':''); }
 }
+function paintTabs(secs){
+  const keys=['top',...secs.map(s=>s.key),'next'];
+  $('tabs').innerHTML = keys.map(k=>{ const s=secs.find(x=>x.key===k);
+    return `<button class="tab" data-k="${k}" style="--sec:var(--${k})" onclick="jumpSection('${k}')">${SEC[k].e} ${esc(SEC[k].t)}${s?`<span class="n">${s.items.length}</span>`:''}</button>`; }).join('');
+}
+function markTab(){
+  document.querySelectorAll('.tab').forEach(t=>{ const on=t.dataset.k===CUR; t.classList.toggle('on',on);
+    if(on) try{ t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'}); }catch(e){} });
+}
+let IO=null;
+function observe(){
+  if(IO) IO.disconnect();
+  IO=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return;
+    const i=+e.target.dataset.i, c=CARDS[i]; if(!c) return;
+    $('prog').firstElementChild.style.width = Math.round(i/Math.max(1,CARDS.length-1)*100)+'%';
+    if(c.sec!==CUR){ CUR=c.sec; markTab(); saveHash(); }
+  }), {root:$('deck'), rootMargin:'-45% 0px -45% 0px'});
+  [...$('deck').children].forEach(el=>IO.observe(el));
+}
+function jumpTo(i, smooth){ const el=$('deck').children[i]; if(el) $('deck').scrollTo({top:el.offsetTop, behavior:smooth===false?'auto':'smooth'}); }
+function jumpSection(k){ const i=CARDS.findIndex(c=>c.sec===k); if(i>=0) jumpTo(i); }
 function saveHash(){ try{ history.replaceState(null,'','#'+DATE+'/'+CUR); }catch(e){} }
-function parseHash(){ const [d,s]=(location.hash||'').replace(/^#/,'').split('/'); return {d:/^\d{4}-\d\d-\d\d$/.test(d)?d:null, s}; }
 
-// sideways swipe = next / previous section (vertical scrolling is left alone)
-let sx=0, sy=0, st=0;
-document.addEventListener('touchstart', e=>{ if($('sheet').classList.contains('open')) return; const t=e.touches[0]; sx=t.clientX; sy=t.clientY; st=Date.now(); }, {passive:true});
-document.addEventListener('touchend', e=>{
-  if(!DOC || $('sheet').classList.contains('open') || !st) return;
-  const t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy; st=0;
-  if(Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*1.8){
-    const i=ORDER.indexOf(CUR), j=i+(dx<0?1:-1);
-    if(j>=0 && j<ORDER.length) go(ORDER[j]);
-  }
-}, {passive:true});
-
-/* ---------- sheets: days + refresh ---------- */
-function openSheet(title, html){ $('stitle').textContent=title; $('sbody').innerHTML=html; $('mask').classList.add('open'); $('sheet').classList.add('open'); }
+/* ---------- sheet ---------- */
+function openSheet(t,h){ $('stitle').textContent=t; $('sbody').innerHTML=h; $('mask').classList.add('open'); $('sheet').classList.add('open'); }
 function closeSheet(){ $('mask').classList.remove('open'); $('sheet').classList.remove('open'); }
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSheet(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
 
-function openDays(){
-  const days=(INDEX&&INDEX.days)||[];
-  openSheet('📅 Pick a day', days.length ? days.map(x=>`<button class="dayrow ${x.date===DATE?'cur':''}" onclick="closeSheet(); loadDay('${x.date}', true)">`
-    + `<span><b>${esc(dayLabel(x.date,true))}</b><span>${x.final?'✅ Final':'🕒 '+esc(x.edition||'')} · ${esc(x.items)} stories</span></span><span class="go">›</span></button>`).join('')
-    : '<p class="p">No digests yet.</p>');
+/* ---------- calendar date picker ---------- */
+function openCalendar(){
+  const d=new Date((DATE||TODAY())+'T00:00:00'); CAL_MONTH=new Date(d.getFullYear(), d.getMonth(), 1);
+  openSheet('📅 Pick a day', calHTML());
 }
+function calHTML(){
+  const have=new Map(days().map(x=>[x.date,x]));
+  const all=days().map(x=>x.date).sort();
+  const y=CAL_MONTH.getFullYear(), m=CAL_MONTH.getMonth();
+  const first=new Date(y,m,1), lead=(first.getDay()+6)%7, n=new Date(y,m+1,0).getDate();
+  const minM=all.length?all[0].slice(0,7):'', maxM=all.length?all[all.length-1].slice(0,7):'';
+  const ym=iso(first).slice(0,7);
+  const yd=iso(new Date(Date.now()-864e5));
+  let cells='';
+  ['M','T','W','T','F','S','S'].forEach(w=>cells+=`<div class="wd">${w}</div>`);
+  for(let i=0;i<lead;i++) cells+='<div></div>';
+  for(let dd=1; dd<=n; dd++){
+    const key=iso(new Date(y,m,dd)), x=have.get(key), cls=(key===TODAY()?' today':'');
+    cells += x ? `<button class="day${x.final?' final':''}${key===DATE?' sel':''}${cls}" onclick="pickDay('${key}')" aria-label="${esc(key)}">${dd}<span class="dot"></span></button>`
+               : `<div class="day${cls}">${dd}</div>`;
+  }
+  return `<div class="quick"><button onclick="pickDay('${TODAY()}')" ${have.has(TODAY())?'':'disabled'}>Today</button>
+      <button onclick="pickDay('${yd}')" ${have.has(yd)?'':'disabled'}>Yesterday</button></div>
+    <div class="calhead"><button onclick="calMove(-1)" ${ym<=minM?'disabled':''} aria-label="Previous month">‹</button>
+      <b>${first.toLocaleDateString(undefined,{month:'long',year:'numeric'})}</b>
+      <button onclick="calMove(1)" ${ym>=maxM?'disabled':''} aria-label="Next month">›</button></div>
+    <div class="cal">${cells}</div>
+    <div class="legend"><span><i style="background:var(--good)"></i>Final edition</span><span><i style="border:1.5px solid var(--gold)"></i>Still updating</span></div>`;
+}
+function calMove(k){ CAL_MONTH=new Date(CAL_MONTH.getFullYear(), CAL_MONTH.getMonth()+k, 1); $('sbody').innerHTML=calHTML(); }
+function pickDay(d){ closeSheet(); if(d!==DATE) loadDay(d); }
+
+/* ---------- latest update ---------- */
 async function openRefresh(){
   const b=$('refresh'); b.classList.add('spin');
-  const before = DOC && DOC.updated_at;
-  await loadIndex();
-  const latest=((INDEX&&INDEX.days)||[])[0];
-  b.classList.remove('spin');
-  if(latest && (latest.date!==DATE || latest.updated_at!==before)){ await loadDay(latest.date, true); toast('✨ Loaded the latest edition'); return; }
+  const before=DOC&&DOC.updated_at; await loadIndex(); b.classList.remove('spin');
+  const latest=days()[0];
+  if(latest && (latest.date!==DATE || latest.updated_at!==before)){ await loadDay(latest.date); toast('✨ Loaded the latest edition'); return; }
   openSheet('🔄 Latest update',
-    `<p class="p">You're reading the newest edition — <b>${esc(DOC?(DOC.final?'Final':DOC.edition):'—')}</b>${DOC&&DOC.updated_at?' ('+esc(ago(DOC.updated_at))+')':''}.</p>`
-    + `<p class="p">New editions arrive automatically at <b>${SCHEDULE}</b> IST.</p>`
-    + `<p class="p">Want one right now? Open the update routine and tap <b>Run now</b>. It takes about 7–10 minutes — keep this page open and it will offer the new edition when it lands.</p>`
-    + `<a class="primary" href="${ROUTINE_URL}" target="_blank" rel="noopener" onclick="WATCH_UNTIL=Date.now()+20*60e3">Run an update now ↗</a>`
+    `<p class="p">You're on the newest edition — <b>${esc(DOC?(DOC.final?'Final':DOC.edition):'—')}</b>${DOC&&DOC.updated_at?' ('+esc(ago(DOC.updated_at))+')':''}.</p>`
+    + `<p class="p">New editions arrive by themselves at <b>${SCHEDULE}</b> IST.</p>`
+    + `<p class="p">Want one right now? Open the update routine and tap <b>Run now</b>. It takes about 10 minutes — keep this page open and it will offer the new edition when it lands.</p>`
+    + `<a class="primary" href="${ROUTINE_URL}" target="_blank" rel="noopener" onclick="WATCH_UNTIL=Date.now()+25*60e3">Run an update now ↗</a>`
     + `<button class="secondary" onclick="closeSheet()">Not now</button>`);
 }
-
-// background check: every 2 min (5 min if idle), look for a newer edition and offer it — never yanks the page
 let WATCH_UNTIL=0, NEWER=null;
 async function checkNewer(){
   if(document.hidden || !DOC) return;
-  await loadIndex();
-  const latest=((INDEX&&INDEX.days)||[])[0];
-  if(latest && (latest.date>DATE || (latest.date===DATE && latest.updated_at!==DOC.updated_at))){
-    NEWER=latest.date; $('banner').classList.add('show');
-  }
-  paintHeader();
+  await loadIndex(); const latest=days()[0];
+  if(latest && (latest.date>DATE || (latest.date===DATE && latest.updated_at!==DOC.updated_at))){ NEWER=latest.date; $('banner').classList.add('show'); }
 }
-function loadNewer(){ $('banner').classList.remove('show'); if(NEWER) loadDay(NEWER, true).then(()=>toast('✨ Loaded the latest edition')); }
+function loadNewer(){ $('banner').classList.remove('show'); if(NEWER) loadDay(NEWER, CUR).then(()=>toast('✨ Loaded the latest edition')); }
 setInterval(()=>{ if(Date.now()<WATCH_UNTIL || Math.random()<0.4) checkNewer(); }, 120e3);
 document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) checkNewer(); });
 
