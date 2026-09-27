@@ -374,19 +374,41 @@
   .card.read-out::after{content:"✓";position:absolute;left:50%;top:46%;font-weight:900;font-size:104px;color:var(--readgreen);
     text-shadow:0 6px 26px color-mix(in srgb,var(--readgreen) 55%,transparent);animation:checkPop .34s cubic-bezier(.34,1.56,.64,1) forwards;z-index:3}
   @media (prefers-reduced-motion: reduce){ .card.read-out{animation:none;opacity:0} .card.read-out::after,.card.read-out::before{display:none} }
-  /* 📰 Daily Digest */
-  .dg-edition{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--dim);
-    border:1px solid var(--line);border-radius:99px;padding:4px 11px}
+  /* 📰 Daily Digest — every card must read comfortably on a phone */
+  .card.dg{justify-content:flex-start;gap:14px}
+  .card.dg > :first-child{margin-top:auto} .card.dg > :last-child{margin-bottom:auto}  /* centred if it fits, top-aligned if it doesn't */
+  .dg-eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cat,var(--accent))}
+  .dg-date{font-family:var(--round);font-size:34px;font-weight:900;line-height:1.05;letter-spacing:-.5px;margin-top:-6px}
+  .dg-sub{font-size:13.5px;color:var(--dim);display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:-8px}
+  .dg-edition{font-size:12px;font-weight:800;border:1px solid var(--line);border-radius:99px;padding:2px 9px}
   .dg-edition.final{color:#3fb950;border-color:color-mix(in srgb,#3fb950 45%,var(--line))}
-  .dg-top{text-align:left;margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.45}
-  .dg-top li b{display:block;color:var(--txt)} .dg-top li span{color:var(--dim)}
-  .dg-chip{font-weight:800;color:var(--cat,var(--accent))}
-  .dg-sum{font-size:15.5px;line-height:1.6}
-  .dg-item{border-top:1px solid var(--line);padding:14px 0}.dg-item:first-of-type{border-top:none}
-  .dg-ih{display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.35}
-  .dg-ih .devbadge{align-self:flex-start}
-  .dg-why{font-size:14px;line-height:1.5;color:#c3cedd;background:var(--panel2);border-radius:10px;padding:8px 11px;margin-top:6px}
-  .dg-src{font-size:12.5px;margin-top:8px;color:var(--dim)} .dg-src a{color:var(--cat,var(--accent))}
+  .dg-lede{font-size:17px;line-height:1.55;color:var(--txt);margin:0}
+  .dg-k{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+  .dg-toplist{display:flex;flex-direction:column;gap:8px;margin-top:-6px}
+  .dg-toprow{display:flex;align-items:center;gap:11px;text-align:left;width:100%;cursor:pointer;font:inherit;color:inherit;
+    background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+  .dg-toprow .e{font-size:20px;flex:0 0 auto}
+  .dg-toprow .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+  .dg-toprow b{font-size:15px;line-height:1.3} .dg-toprow i{font-style:normal;font-size:13px;line-height:1.35;color:var(--dim)}
+  .dg-toprow .go{color:var(--dim);font-size:20px}
+  .dg-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--dim)}
+  .dg-days{font:inherit;font-size:13px;font-weight:700;color:var(--txt);cursor:pointer;background:var(--panel2);
+    border:1px solid var(--line);border-radius:99px;padding:8px 13px;align-self:center}
+  .dg-sectitle{font-family:var(--round);font-size:30px;font-weight:900;line-height:1.1;text-align:center;margin:0}
+  .dg-gist{font-size:17px;line-height:1.55;text-align:center;color:#d6deea;margin:0}
+  .dg-count{font-size:13px;color:var(--dim);text-align:center}
+  .dg-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:700}
+  .dg-chip{color:var(--cat,var(--accent));font-weight:800}
+  .dg-n{color:var(--dim)}
+  .dg-dev{color:#5b9dff;background:rgba(91,157,255,.14);border-radius:99px;padding:2px 8px}
+  .dg-h{font-family:var(--round);font-size:clamp(22px,6vw,27px);line-height:1.25;font-weight:850;letter-spacing:-.3px;margin:0}
+  .dg-blk p{font-size:16.5px;line-height:1.55;margin:0;color:#e3e9f2}
+  .dg-blk.why{background:color-mix(in srgb,var(--cat,var(--accent)) 12%,var(--panel2));border-radius:14px;padding:11px 13px}
+  .dg-blk.ctx{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:11px 13px}
+  .dg-blk.ctx p{font-size:15px;color:#c8d2df}
+  .dg-src{font-size:12.5px;color:var(--dim)} .dg-src a{color:var(--cat,var(--accent));text-decoration:none}
+  .dg-watch{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5}
+  @media (max-height:700px){ .dg-blk p{font-size:15.5px} .dg-h{font-size:21px} .card.dg{gap:11px} }
   /* 📅 day-divider card — opens each day's group in the feed */
   .card.daybreak{justify-content:center;align-items:center;text-align:center}
   .daydiv{display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -935,29 +957,36 @@ const R = {
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
     <div class="scrollcue">swipe up ↑</div>`,
 
-  // 📰 The Daily Digest: cover (the day in one breath + top 5) → one card per section → watch tomorrow
+  // 📰 The Daily Digest — one phone-screen card per story: cover → [section intro → story cards]… → watch next
   digest_cover: c => { const L = dayLabel(c.date); return `
-    <div class="eyebrow"><span class="day">📰 The Daily Digest</span></div>
-    <div class="lcov-subj">${esc(L.big)}</div>
-    <div class="lcov-part">${esc(L.kicker)}</div>
-    <div class="dg-edition ${c.final?'final':''}">${c.final?'✅ ':'🕒 '}${esc(c.edition||'')}</div>
-    <div class="lcov-recap"><span class="lcov-lbl">the day in one breath</span>${hl(c.top_line)}</div>
-    ${(c.top5||[]).length?`<ol class="dg-top">${c.top5.map(t=>`<li><b>${esc((DIGEST_SEC[t.section]||{}).emoji||'•')} ${esc(t.title)}</b><span>${hl(t.why)}</span></li>`).join('')}</ol>`:''}
-    <button class="readchip" onclick="openDigestDays()">📅 Other days</button>
-    <div class="scrollcue">swipe up for each section ↑</div>`; },
+    <div class="dg-eyebrow">📰 The Daily Digest</div>
+    <div class="dg-date">${esc(L.big)}</div>
+    <div class="dg-sub">${esc(L.kicker)} <span class="dg-edition ${c.final?'final':''}">${c.final?'✅ Final':'🕒 '+esc(String(c.edition||'').replace(/^Updated /,''))}</span></div>
+    <p class="dg-lede">${hl(c.top_line)}</p>
+    ${(c.top5||[]).length?`<div class="dg-k">Today's biggest stories</div>
+    <div class="dg-toplist">${c.top5.map(t=>`<button class="dg-toprow" onclick="jumpDigest(${JSON.stringify(t.section)})"><span class="e">${esc((DIGEST_SEC[t.section]||{}).emoji||'•')}</span><span class="t"><b>${esc(t.title)}</b><i>${esc(t.why)}</i></span><span class="go">›</span></button>`).join('')}</div>`:''}
+    <div class="dg-foot"><span>${esc(c.total)} stories · swipe up ↑</span><button class="dg-days" onclick="openDigestDays()">📅 Other days</button></div>`; },
 
-  digest_section: c => `
-    <div class="meta"><span class="dg-chip">${esc(c.emoji)} ${esc(c.title)}</span><span>${esc(c.items.length)} ${c.items.length==1?'story':'stories'}</span></div>
-    <h1 class="headline">${esc(c.title)}</h1>
-    <div class="summary dg-sum">${hl(c.summary)}</div>
-    ${expandBtn(`openDigestSection(${JSON.stringify(c.key)})`, 'Read the stories')}`,
+  digest_sechead: c => `
+    <div class="bigemoji">${esc(c.emoji)}</div>
+    <h1 class="dg-sectitle">${esc(c.title)}</h1>
+    ${c.gist?`<p class="dg-gist">${hl(c.gist)}</p>`:''}
+    <div class="dg-count">${esc(c.n)} ${c.n==1?'story':'stories'} · swipe up ↑</div>`,
+
+  digest_story: c => `
+    <div class="dg-meta"><span class="dg-chip">${esc(c.emoji)} ${esc(c.sectitle)}</span><span class="dg-n">${esc(c.i)} / ${esc(c.n)}</span>${c.status==='developing'?'<span class="dg-dev">🔄 Developing</span>':''}</div>
+    <h1 class="dg-h">${esc(c.headline)}</h1>
+    <div class="dg-blk"><div class="dg-k">What happened</div><p>${hl(c.what)}</p></div>
+    <div class="dg-blk why"><div class="dg-k">💡 Why it matters</div><p>${hl(c.why_it_matters)}</p></div>
+    ${c.context?`<div class="dg-blk ctx"><div class="dg-k">🧭 New to this?</div><p>${hl(c.context)}</p></div>`:''}
+    ${(c.sources||[]).length?`<div class="dg-src">Source: ${c.sources.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</div>`:''}`,
 
   digest_watch: c => `
-    <div class="meta"><span class="dg-chip">👀 Watch tomorrow</span></div>
-    <h1>What to watch next</h1>
-    ${(c.items||[]).length?`<ul class="lrecap">${c.items.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`:''}
-    <div class="disc" style="margin-top:14px">${esc(c.disclaimer||'')}</div>
-    <button class="readchip" onclick="openDigestDays()">📅 Other days</button>`,
+    <div class="bigemoji">👀</div>
+    <h1 class="dg-sectitle">What to watch next</h1>
+    ${(c.items||[]).length?`<ul class="dg-watch">${c.items.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`:''}
+    <div class="dg-count">That's the day. ${esc(c.disclaimer||'')}</div>
+    <button class="dg-days" onclick="openDigestDays()">📅 Other days</button>`,
 
   // 📅 day break: opens each day's group in the feed so you can navigate day to day through the stack
   day_divider: c => { const L = dayLabel(c.day); return `
@@ -1024,8 +1053,8 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover', day_divider:'daybreak', digest_cover:'cover'};   // extra class on top of .card
-const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles', digest_cover:'digest', digest_section:'digest', digest_watch:'digest'})[c.type] || 'markets';
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover', day_divider:'daybreak', digest_cover:'dg', digest_sechead:'dg', digest_story:'dg', digest_watch:'dg'};   // extra class on top of .card
+const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles', digest_cover:'digest', digest_sechead:'digest', digest_story:'digest', digest_watch:'digest'})[c.type] || 'markets';
 const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles', digest:'digest'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
@@ -1867,21 +1896,22 @@ function loadDigest(date){
 }
 function digestDeckCards(){
   const d = DIGEST_DOC; if(!d) return [];
-  const out = [{type:'digest_cover', date:d.date, edition:d.edition, final:d.final, top_line:d.top_line, top5:d.top5||[]}];
-  (d.sections||[]).forEach(sc=> out.push(Object.assign({type:'digest_section'}, sc)));
+  const secs = d.sections||[];
+  const total = secs.reduce((n,sc)=>n+(sc.items||[]).length, 0);
+  const out = [{type:'digest_cover', date:d.date, edition:d.edition, final:d.final, top_line:d.top_line, top5:d.top5||[], total}];
+  secs.forEach(sc=>{
+    const n=(sc.items||[]).length; if(!n) return;
+    out.push({type:'digest_sechead', key:sc.key, emoji:sc.emoji, title:sc.title, gist:sc.gist||sc.summary, n});
+    sc.items.forEach((it,i)=> out.push(Object.assign({type:'digest_story', key:sc.key, emoji:sc.emoji, sectitle:sc.title, i:i+1, n}, it)));
+  });
   out.push({type:'digest_watch', items:d.watch_tomorrow||[], disclaimer:d.disclaimer});
   return out;
 }
-function openDigestSection(key){
-  const sc = ((DIGEST_DOC&&DIGEST_DOC.sections)||[]).find(x=>x.key===key); if(!sc) return;
-  const h = `<div class="one">${hl(sc.summary)}</div>` + sc.items.map(it=>`
-    <div class="dg-item">
-      <div class="dg-ih">${it.status==='developing'?'<span class="devbadge">🔄 Developing</span>':''}<b>${esc(it.headline)}</b></div>
-      <p class="prose">${hl(it.what)}</p>
-      <div class="dg-why">💡 ${hl(it.why_it_matters)}</div>
-      <div class="dg-src">${(it.sources||[]).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</div>
-    </div>`).join('');
-  openSheet(`${sc.emoji} ${sc.title}`, h, 'digest');
+// tap a "biggest stories" row on the cover → jump to that section
+function jumpDigest(key){
+  const i = digestDeckCards().findIndex(c=>c.type==='digest_sechead' && c.key===key);
+  const el = i>=0 && document.getElementById('deck').children[i];
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 function openDigestDays(){
   const days = (DIGEST_INDEX&&DIGEST_INDEX.days)||[];

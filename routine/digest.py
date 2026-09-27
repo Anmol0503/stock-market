@@ -38,7 +38,10 @@ PROMPT = ROOT / "routine" / "digest_prompt.md"
 
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 FINAL_FROM = dt.time(22, 30)          # a run at/after 22:30 IST produces the day's FINAL edition
-MAX_ITEMS = 6                         # per section — the whole point is that it stays readable
+MAX_ITEMS = 8                         # stories per section (one phone-screen card each)
+# word limits per field (prompt targets + ~20% slack) — an over-long card doesn't fit one phone screen
+WORDS = {"headline": 15, "what": 55, "why_it_matters": 36, "context": 50, "gist": 30,
+         "top_line": 50, "top5.title": 10, "top5.why": 18, "watch": 20}
 MAX_CANDIDATES = 22                   # raw leads handed to the editor per section bucket
 LOOKBACK_FALLBACK_H = 12              # no previous run known -> look back this far
 
@@ -168,12 +171,23 @@ def prepare() -> int:
 
 
 # ---------------------------------------------------------------- merge
+def _words(s) -> int:
+    return len(str(s or "").split())
+
+
+def _too_long(errs: list, where: str, text, key: str) -> None:
+    n = _words(text)
+    if n > WORDS[key]:
+        errs.append(f"{where}: {n} words > {WORDS[key]} — shorten it (must fit one phone screen)")
+
+
 def _validate(upd: dict) -> list[str]:
     errs: list[str] = []
     if not isinstance(upd, dict):
         return ["update is not a JSON object"]
     if not str(upd.get("top_line") or "").strip():
         errs.append("top_line is empty")
+    _too_long(errs, "top_line", upd.get("top_line"), "top_line")
     top5 = upd.get("top5")
     if not isinstance(top5, list) or not (1 <= len(top5) <= 5):
         errs.append("top5 must be a list of 1–5 entries")
@@ -181,6 +195,11 @@ def _validate(upd: dict) -> list[str]:
         for i, t in enumerate(top5):
             if not (isinstance(t, dict) and t.get("title") and t.get("why") and t.get("section") in SECTIONS):
                 errs.append(f"top5[{i}] needs title, why and a valid section")
+            else:
+                _too_long(errs, f"top5[{i}].title", t.get("title"), "top5.title")
+                _too_long(errs, f"top5[{i}].why", t.get("why"), "top5.why")
+    for i, w in enumerate(upd.get("watch_tomorrow") or []):
+        _too_long(errs, f"watch_tomorrow[{i}]", w, "watch")
     secs = upd.get("sections")
     if not isinstance(secs, list):
         errs.append("sections must be a list")
@@ -196,8 +215,11 @@ def _validate(upd: dict) -> list[str]:
         if k in keys:
             errs.append(f"duplicate section {k}")
         keys.add(k)
-        if not str(s.get("summary") or "").strip():
-            errs.append(f"{k}: summary is empty")
+        gist = s.get("gist") or s.get("summary")
+        if not str(gist or "").strip():
+            errs.append(f"{k}: gist is empty")
+        else:
+            _too_long(errs, f"{k}.gist", gist, "gist")
         its = s.get("items")
         if not isinstance(its, list) or not its:
             errs.append(f"{k}: needs at least one item (omit the section if there's nothing)")
@@ -205,9 +227,11 @@ def _validate(upd: dict) -> list[str]:
         if len(its) > MAX_ITEMS:
             errs.append(f"{k}: {len(its)} items > {MAX_ITEMS}")
         for j, it in enumerate(its):
-            for f in ("headline", "what", "why_it_matters"):
+            for f in ("headline", "what", "why_it_matters", "context"):
                 if not str((it or {}).get(f) or "").strip():
                     errs.append(f"{k}.items[{j}]: {f} is empty")
+                else:
+                    _too_long(errs, f"{k}.items[{j}].{f}", it[f], f)
             srcs = (it or {}).get("sources") or []
             if not any(isinstance(x, dict) and str(x.get("url") or "").startswith("http") for x in srcs):
                 errs.append(f"{k}.items[{j}]: needs at least one source with a url")
@@ -252,6 +276,7 @@ def merge() -> int:
                 "headline": it["headline"].strip(),
                 "what": it["what"].strip(),
                 "why_it_matters": it["why_it_matters"].strip(),
+                "context": it["context"].strip(),
                 "status": it.get("status") if it.get("status") in ("new", "developing") else "new",
                 "first_seen": it.get("first_seen") or first_seen.get(_norm(it["headline"])) or stamp,
                 "updated_at": it.get("updated_at") or stamp,
@@ -259,7 +284,7 @@ def merge() -> int:
                             for x in it["sources"] if isinstance(x, dict) and str(x.get("url", "")).startswith("http")][:3],
             })
         sections.append({"key": s["key"], "emoji": emoji, "title": title,
-                         "summary": s["summary"].strip(), "items": items})
+                         "gist": (s.get("gist") or s.get("summary")).strip(), "items": items})
 
     doc = {
         "date": date,

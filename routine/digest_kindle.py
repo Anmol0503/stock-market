@@ -62,9 +62,11 @@ def _parts(d: dict) -> list[dict]:
         srcs = [s for it in sc.get("items") or [] for s in (it.get("sources") or [])]
         parts.append(dict(base, part=i, total_parts=total,
                           session_title=f"{sc.get('emoji', '')} {sc.get('title', '')}".strip(),
-                          recap_so_far=sc.get("summary") or "",
+                          recap_so_far=sc.get("gist") or sc.get("summary") or "",
                           chunks=[{"heading": it.get("headline"), "idea": it.get("what"),
-                                   "key_takeaway": it.get("why_it_matters")} for it in sc.get("items") or []],
+                                   "detail": ("New to this? " + it["context"]) if it.get("context") else None,
+                                   "key_takeaway": "Why it matters: " + (it.get("why_it_matters") or "")}
+                                  for it in sc.get("items") or []],
                           sources=srcs))
     parts.append(dict(base, part=total, total_parts=total, session_title="👀 Watch tomorrow",
                       chunks=[{"heading": "What to watch next", "points": d.get("watch_tomorrow") or []}],
