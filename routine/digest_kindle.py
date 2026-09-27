@@ -64,8 +64,11 @@ def _parts(d: dict) -> list[dict]:
                           session_title=f"{sc.get('emoji', '')} {sc.get('title', '')}".strip(),
                           recap_so_far=sc.get("gist") or sc.get("summary") or "",
                           chunks=[{"heading": it.get("headline"), "idea": it.get("what"),
-                                   "detail": ("New to this? " + it["context"]) if it.get("context") else None,
-                                   "key_takeaway": "Why it matters: " + (it.get("why_it_matters") or "")}
+                                   "detail": ("The backstory: " + it["context"]) if it.get("context") else None,
+                                   "example": ("What's next: " + it["next"]) if it.get("next") else None,
+                                   "key_takeaway": "Why it matters: " + (it.get("why_it_matters") or ""),
+                                   "key_terms": [{"term": t.get("term"), "definition": t.get("meaning")}
+                                                 for t in it.get("terms") or []]}
                                   for it in sc.get("items") or []],
                           sources=srcs))
     parts.append(dict(base, part=total, total_parts=total, session_title="👀 Watch tomorrow",

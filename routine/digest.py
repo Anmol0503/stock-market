@@ -38,9 +38,9 @@ PROMPT = ROOT / "routine" / "digest_prompt.md"
 
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 FINAL_FROM = dt.time(22, 30)          # a run at/after 22:30 IST produces the day's FINAL edition
-MAX_ITEMS = 8                         # stories per section (one phone-screen card each)
+MAX_ITEMS = 6                         # stories per section — ~35–40/day ≈ the 15–20 min daily read
 # word limits per field (prompt targets + ~20% slack) — an over-long card doesn't fit one phone screen
-WORDS = {"headline": 15, "what": 55, "why_it_matters": 36, "context": 50, "gist": 30,
+WORDS = {"headline": 16, "what": 85, "why_it_matters": 48, "context": 80, "next": 32, "term": 22, "gist": 30,
          "top_line": 50, "top5.title": 10, "top5.why": 18, "watch": 20}
 MAX_CANDIDATES = 22                   # raw leads handed to the editor per section bucket
 LOOKBACK_FALLBACK_H = 12              # no previous run known -> look back this far
@@ -232,6 +232,17 @@ def _validate(upd: dict) -> list[str]:
                     errs.append(f"{k}.items[{j}]: {f} is empty")
                 else:
                     _too_long(errs, f"{k}.items[{j}].{f}", it[f], f)
+            if (it or {}).get("next"):
+                _too_long(errs, f"{k}.items[{j}].next", it["next"], "next")
+            terms = (it or {}).get("terms") or []
+            if not isinstance(terms, list) or len(terms) > 2:
+                errs.append(f"{k}.items[{j}]: terms must be a list of at most 2")
+            else:
+                for t in terms:
+                    if not (isinstance(t, dict) and t.get("term") and t.get("meaning")):
+                        errs.append(f"{k}.items[{j}]: each term needs term + meaning")
+                    else:
+                        _too_long(errs, f"{k}.items[{j}].terms", t["meaning"], "term")
             srcs = (it or {}).get("sources") or []
             if not any(isinstance(x, dict) and str(x.get("url") or "").startswith("http") for x in srcs):
                 errs.append(f"{k}.items[{j}]: needs at least one source with a url")
@@ -277,6 +288,9 @@ def merge() -> int:
                 "what": it["what"].strip(),
                 "why_it_matters": it["why_it_matters"].strip(),
                 "context": it["context"].strip(),
+                **({"next": it["next"].strip()} if str(it.get("next") or "").strip() else {}),
+                **({"terms": [{"term": t["term"].strip(), "meaning": t["meaning"].strip()} for t in it["terms"][:2]]}
+                   if it.get("terms") else {}),
                 "status": it.get("status") if it.get("status") in ("new", "developing") else "new",
                 "first_seen": it.get("first_seen") or first_seen.get(_norm(it["headline"])) or stamp,
                 "updated_at": it.get("updated_at") or stamp,
