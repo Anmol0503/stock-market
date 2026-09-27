@@ -3,182 +3,201 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121314">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>The Daily Digest</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icon-180.png">
 <style>
-  /* Midnight-ink + soft gold. Calm, high-legibility, never glaring. Each section has one gentle hue. */
-  :root{
+  /* Editorial, calm, typographic. Neutral surfaces; ONE accent per section used sparingly (label, tab underline,
+     the "why it matters" rule, progress). Themes: dark (default after dark) · light · sepia. */
+  :root, [data-theme="dark"]{
     color-scheme:dark;
-    --bg:#0e1320; --surface:#161d2e; --surface2:#1c2538; --line:#28324a; --txt:#e9edf4; --soft:#c7cfdd; --dim:#8f9bb2;
-    --gold:#f0c56e; --good:#7fd6a4; --on:#0e1320;
-    --top:#f0c56e; --world:#86aefc; --india:#ffb27a; --affects_you:#f0c56e; --markets:#6fd8ad; --tech_ai:#b9a2ff;
-    --science:#62d3cb; --f1:#ff8f8f; --cricket:#97d98f; --next:#aab6cc;
-    --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    --read:"Iowan Old Style","Charter","Georgia","Cambria",serif;
-    --hdr:calc(env(safe-area-inset-top) + 98px);
+    --bg:#121314; --surface:#1b1c1e; --line:#2a2b2e; --txt:#ecebe8; --soft:#c9c7c2; --dim:#8d8b86; --on:#121314;
+    --accent:#e2b86b;
+    --top:#e2b86b; --world:#7ea6e0; --india:#e8a064; --affects_you:#e2b86b; --markets:#6fbf94; --tech_ai:#a896e0;
+    --science:#63b9b0; --f1:#e27d7d; --cricket:#78b86a; --next:#8d8b86;
   }
-  @media (prefers-color-scheme: light){
-    :root{
-      color-scheme:light;
-      --bg:#f6f2ea; --surface:#fffdf9; --surface2:#f1ebe0; --line:#e3dacb; --txt:#1f2430; --soft:#3c4352; --dim:#737b8c;
-      --gold:#b3801e; --good:#2f7d4f; --on:#fffdf9;
-      --top:#b3801e; --world:#3d63b0; --india:#b8612a; --affects_you:#a57716; --markets:#27805a; --tech_ai:#6a4fbd;
-      --science:#1f7e77; --f1:#b54444; --cricket:#467d34; --next:#626b7d;
-    }
+  [data-theme="light"]{
+    color-scheme:light;
+    --bg:#fbfaf7; --surface:#f1efe9; --line:#e4e1d9; --txt:#1c1b19; --soft:#3e3c38; --dim:#7a766d; --on:#fbfaf7;
+    --accent:#a86b12;
+    --top:#a86b12; --world:#2f5ea8; --india:#b2561c; --affects_you:#9a6a0c; --markets:#207048; --tech_ai:#5d45a8;
+    --science:#1b716a; --f1:#b03a3a; --cricket:#3d6f2c; --next:#7a766d;
+  }
+  [data-theme="sepia"]{
+    color-scheme:light;
+    --bg:#f4ecd8; --surface:#ebe1c9; --line:#dccfb2; --txt:#3b2f22; --soft:#554637; --dim:#86745d; --on:#f4ecd8;
+    --accent:#9b5e1a;
+    --top:#9b5e1a; --world:#3d5f8f; --india:#a4531f; --affects_you:#8f6414; --markets:#3f6b45; --tech_ai:#634c8f;
+    --science:#2f6b64; --f1:#9e3d34; --cricket:#4d6b2e; --next:#86745d;
+  }
+  :root{
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --serif:"New York","Iowan Old Style","Charter","Georgia",serif;
+    --tsz:1;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:var(--ui);
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:var(--sans);
     -webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;overflow:hidden}
-  button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
-  a{color:var(--sec,var(--gold))}
+  body{display:flex;flex-direction:column;height:100dvh}
+  button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+  a{color:inherit}
+  svg{display:block}
 
-  /* ---------- header: date pill + refresh · section tabs · progress ---------- */
-  #hdr{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(env(safe-area-inset-top) + 8px) 12px 0;
-    background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 96%,transparent) 70%,transparent);}
-  .toprow{display:flex;align-items:center;gap:8px;max-width:620px;margin:0 auto}
-  #datepill{flex:1;min-width:0;height:40px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:99px;
-    background:var(--surface);border:1px solid var(--line);white-space:nowrap;overflow:hidden}
-  #datepill .d{font-weight:650;font-size:15px;overflow:hidden;text-overflow:ellipsis}
-  #datepill .ed{font-size:12px;font-weight:650;color:var(--dim);margin-left:auto}
-  #datepill .ed.final{color:var(--good)}
-  #datepill .car{color:var(--dim);font-size:12px}
-  #refresh{flex:0 0 auto;width:40px;height:40px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:16px}
-  #refresh.spin{animation:spin .8s linear infinite} @keyframes spin{to{transform:rotate(360deg)}}
-  #tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:620px;margin:8px auto 0;padding:0 1px}
+  /* ---------- header: one quiet line + text tabs ---------- */
+  #hdr{flex:0 0 auto;background:var(--bg);padding:calc(env(safe-area-inset-top) + 6px) 0 0;z-index:5}
+  .row{display:flex;align-items:center;gap:4px;max-width:640px;margin:0 auto;padding:0 12px 0 18px;height:44px}
+  #datepill{display:flex;align-items:center;gap:6px;height:44px;min-width:0;margin-right:auto}
+  #datepill .d{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.2px;white-space:nowrap}
+  #datepill .ed{font-size:12.5px;color:var(--dim);white-space:nowrap}
+  #datepill .ed.final{color:var(--markets)}
+  #datepill svg{color:var(--dim)}
+  .iconbtn{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--soft)}
+  .iconbtn:active{background:var(--surface)}
+  .aa{font-family:var(--serif);font-size:17px;font-weight:700}
+  #refresh.spin svg{animation:spin .8s linear infinite} @keyframes spin{to{transform:rotate(360deg)}}
+  #tabs{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;max-width:640px;margin:0 auto;padding:0 18px;
+    border-bottom:1px solid var(--line)}
   #tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;height:34px;padding:0 12px;border-radius:99px;display:flex;align-items:center;gap:5px;font-size:13.5px;
-    font-weight:600;color:var(--dim);background:var(--surface);border:1px solid var(--line);white-space:nowrap;transition:all .2s}
-  .tab .n{font-size:11px;font-weight:700;opacity:.7}
-  .tab.on{background:var(--sec);border-color:var(--sec);color:var(--on)}
-  #prog{max-width:620px;margin:8px auto 0;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
-  #prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s}
+  .tab{flex:0 0 auto;height:40px;display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:var(--dim);
+    white-space:nowrap;position:relative;transition:color .2s}
+  .tab .n{font-size:11.5px;font-weight:600;opacity:.8;font-variant-numeric:tabular-nums}
+  .tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;border-radius:2px;background:var(--sec);transform:scaleX(0);transition:transform .25s}
+  .tab.on{color:var(--txt)} .tab.on::after{transform:scaleX(1)}
+  #prog{height:2px;max-width:640px;margin:0 auto} #prog i{display:block;height:100%;width:0;background:var(--sec,var(--accent));transition:width .25s,background .25s}
 
   /* ---------- the reel ---------- */
-  #deck{position:fixed;inset:0;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;
-    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  #deck{flex:1 1 auto;min-height:0;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   #deck::-webkit-scrollbar{display:none}
-  .card{min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;display:flex;flex-direction:column;
-    justify-content:flex-start;gap:12px;padding:calc(var(--hdr) + 10px) 20px calc(22px + env(safe-area-inset-bottom))}
-  .card > *{width:100%;max-width:580px;margin-left:auto;margin-right:auto}
-  .card > :first-child{margin-top:auto} .card > :last-child{margin-bottom:auto}   /* centred when it fits, top-aligned when it doesn't */
-  .card::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(120% 55% at 50% 0%, color-mix(in srgb,var(--sec) 13%,transparent), transparent 70%)}
-  .card > *{position:relative}
+  .card{height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:calc(22px * var(--fit)) 24px calc(22px + env(safe-area-inset-bottom));--fit:1}
+  .card.scroll{overflow-y:auto;justify-content:flex-start}
+  .card > *{width:100%;max-width:560px;margin-left:auto;margin-right:auto;flex:0 0 auto}
+  .fz{font-size:calc(var(--s) * var(--tsz) * var(--fit))}
+
+  /* shared type */
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--sec)}
+  .kicker .muted{color:var(--dim);font-weight:600}
+  .serif{font-family:var(--serif)}
+  b.hl{font-weight:700;color:var(--txt)}
 
   /* cover */
-  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-  .bigdate{font-family:var(--read);font-size:40px;line-height:1.05;font-weight:700;letter-spacing:-.5px;margin-top:-6px}
-  .sub{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px;color:var(--dim);margin-top:-6px}
-  .badge{font-size:12px;font-weight:700;border-radius:99px;padding:3px 10px;background:var(--surface2);color:var(--dim)}
-  .badge.final{color:var(--good);background:color-mix(in srgb,var(--good) 14%,transparent)}
-  .lede{font-family:var(--read);font-size:19px;line-height:1.6;margin:0;color:var(--txt)}
-  .k{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
-  .toplist{display:flex;flex-direction:column;gap:8px;margin-top:-6px}
-  .toprow{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--surface);
-    border:1px solid var(--line);border-radius:16px;padding:11px 13px}
-  .toprow .e{font-size:19px;flex:0 0 auto;width:24px;text-align:center}
-  .toprow .t{flex:1;min-width:0} .toprow b{display:block;font-size:15px;line-height:1.35;font-weight:650}
-  .toprow i{display:block;font-style:normal;font-size:13.5px;line-height:1.4;color:var(--dim);margin-top:2px}
-  .toprow .go{color:var(--dim);font-size:20px}
-  .foot{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--dim)}
-  .cue{font-size:13px;color:var(--dim);text-align:center;animation:bob 2.4s ease-in-out infinite}
-  @keyframes bob{50%{transform:translateY(-4px)}}
+  .c-date{font-size:13px;font-weight:600;color:var(--dim);letter-spacing:.02em;margin-bottom:6px}
+  .c-title{font-family:var(--serif);--s:40px;line-height:1.05;font-weight:700;letter-spacing:-.8px;margin:0}
+  .c-ed{margin-top:8px;font-size:13px;color:var(--dim)} .c-ed.final{color:var(--markets)}
+  .c-lede{font-family:var(--serif);--s:19px;line-height:1.5;margin:calc(20px * var(--fit)) 0 0;color:var(--soft)}
+  .c-list{margin-top:calc(24px * var(--fit));border-top:1px solid var(--line)}
+  .c-item{color:var(--txt);display:flex;gap:14px;width:100%;text-align:left;padding:calc(13px * var(--fit)) 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .c-num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);width:18px;flex:0 0 auto;font-variant-numeric:lining-nums}
+  .c-item .t{flex:1;min-width:0}
+  .c-item b{display:block;--s:16px;line-height:1.3;font-weight:650;color:var(--txt)}
+  .c-item span{display:block;--s:14px;line-height:1.4;color:var(--dim);margin-top:2px}
+  .c-foot{margin-top:calc(18px * var(--fit));display:flex;justify-content:space-between;font-size:13px;color:var(--dim)}
 
   /* section intro */
-  .secemoji{font-size:54px;text-align:center;line-height:1}
-  .sectitle{font-family:var(--read);font-size:34px;font-weight:700;text-align:center;margin:0;color:var(--sec)}
-  .gist{font-family:var(--read);font-size:19px;line-height:1.6;text-align:center;color:var(--soft);margin:0}
-  .count{font-size:13.5px;color:var(--dim);text-align:center}
+  .i-kicker{text-align:left}
+  .i-title{font-family:var(--serif);font-size:calc(44px * var(--tsz));line-height:1;font-weight:700;letter-spacing:-1px;margin:10px 0 0;color:var(--txt)}
+  .i-rule{width:44px;height:3px;border-radius:3px;background:var(--sec);margin:calc(16px * var(--fit)) 0}
+  .i-gist{font-family:var(--serif);font-size:calc(20px * var(--tsz));line-height:1.5;color:var(--soft);margin:0}
+  .i-meta{margin-top:18px;font-size:13px;color:var(--dim)}
+  .i-list{margin-top:14px;border-top:1px solid var(--line)}
+  .i-item{display:flex;gap:12px;width:100%;text-align:left;color:var(--txt);padding:calc(11px * var(--fit)) 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .i-item .n{font-size:12px;font-weight:700;color:var(--sec);width:14px;flex:0 0 auto;font-variant-numeric:tabular-nums}
+  .i-item span.t{--s:15px;line-height:1.35;font-weight:550}
 
   /* story */
-  .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--dim)}
-  .chip{color:var(--sec);font-weight:700}
-  .dev{color:var(--gold);background:color-mix(in srgb,var(--gold) 13%,transparent);border-radius:99px;padding:2px 9px}
-  .headline{font-family:var(--read);font-size:clamp(21px,5.6vw,25px);line-height:1.26;font-weight:700;margin:0;letter-spacing:-.2px}
-  .blk .lbl{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
-  .blk p{font-family:var(--read);font-size:16px;line-height:1.52;margin:0}
-  .blk.back{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 12px}
-  .blk.back p{color:var(--soft);font-size:15px}
-  .blk.why{background:color-mix(in srgb,var(--sec) 12%,var(--surface));border-radius:16px;padding:10px 12px}
-  .nextline{font-size:14px;line-height:1.5;color:var(--soft)} .nextline b{color:var(--txt)}
-  .terms{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-  .term{font-size:13px;font-weight:600;border-radius:99px;padding:5px 11px;background:var(--surface2);border:1px solid var(--line);color:var(--soft)}
-  .src{font-size:12.5px;color:var(--dim)} .src a{text-decoration:none}
-  b.k2{font-weight:700;color:var(--txt);background:color-mix(in srgb,var(--sec,var(--gold)) 18%,transparent);border-radius:4px;padding:0 3px}
+  .s-top{display:flex;align-items:center;gap:10px;margin-bottom:calc(10px * var(--fit))}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;padding:2px 8px}
+  .s-head{font-family:var(--serif);--s:25px;line-height:1.22;font-weight:700;letter-spacing:-.3px;margin:0}
+  .s-blk{margin-top:calc(18px * var(--fit))}
+  .s-lbl{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+  .s-txt{--s:16.5px;line-height:1.55;margin:0;color:var(--txt)}
+  .s-blk.back .s-txt{color:var(--soft)}
+  .s-blk.why{border-left:3px solid var(--sec);padding-left:14px}
+  .s-blk.why .s-lbl{color:var(--sec)}
+  .s-foot{margin-top:calc(18px * var(--fit));display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--dim)}
+  .s-foot .terms{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  .term{font-size:13.5px;color:var(--soft);text-decoration:underline dotted;text-underline-offset:3px;font-weight:600}
+  .s-foot a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 
-  /* end card */
-  .watch{margin:0;padding-left:20px;font-family:var(--read);font-size:17.5px;line-height:1.6} .watch li{margin-bottom:10px}
-  .pillbtn{align-self:center;width:auto!important;font-size:14px;font-weight:650;padding:11px 18px;border-radius:99px;
-    background:var(--surface);border:1px solid var(--line)}
-  .disc{font-size:12px;color:var(--dim);line-height:1.5;text-align:center}
-  .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100svh;color:var(--dim);
-    text-align:center;padding:0 30px;font-size:16px;line-height:1.6}
+  /* end */
+  .e-list{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .e-list li{font-family:var(--serif);font-size:calc(17.5px * var(--tsz));line-height:1.5;padding:12px 0;border-bottom:1px solid var(--line)}
+  .e-done{margin-top:22px;font-size:14px;color:var(--dim)}
+  .linkbtn{margin-top:14px;align-self:flex-start;width:auto!important;margin-left:0!important;font-size:14.5px;font-weight:650;color:var(--accent)}
+  .disc{margin-top:18px;font-size:11.5px;line-height:1.5;color:var(--dim)}
+  .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:var(--dim);text-align:center;padding:0 30px;font-size:16px;line-height:1.6}
 
-  @media (max-height:780px){
-    .blk p{font-size:15px;line-height:1.48} .blk.back p{font-size:14.5px} .headline{font-size:20px} .card{gap:9px}
-    .blk.back,.blk.why{padding:9px 11px} .blk .lbl{margin-bottom:2px}
-    .bigdate{font-size:34px} .lede{font-size:17.5px}
-  }
-
-  /* ---------- sheets, calendar, banner, toast ---------- */
-  #mask{position:fixed;inset:0;background:rgba(5,8,15,.55);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+  /* ---------- sheets ---------- */
+  #mask{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
   #mask.open{opacity:1;pointer-events:auto}
-  #sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--surface);border-top:1px solid var(--line);
-    border-radius:24px 24px 0 0;max-height:85vh;display:flex;flex-direction:column;transform:translateY(105%);
-    transition:transform .3s cubic-bezier(.3,.9,.3,1);max-width:620px;margin:0 auto}
-  #sheet.open{transform:none}
-  #sheet .grab{width:38px;height:4px;border-radius:4px;background:var(--line);margin:10px auto 0}
-  #sheet .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 6px}
-  #sheet h3{margin:0;font-size:17px;font-weight:650} #sheet .x{font-size:20px;color:var(--dim);padding:4px 8px}
-  #sbody{overflow-y:auto;padding:6px 18px calc(22px + env(safe-area-inset-bottom))}
-  .quick{display:flex;gap:8px;margin-bottom:14px}
-  .quick button{flex:1;height:42px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);font-weight:650;font-size:14px}
-  .quick button:disabled{opacity:.35}
-  .calhead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 10px}
-  .calhead b{font-family:var(--read);font-size:19px}
-  .calhead button{width:36px;height:36px;border-radius:12px;background:var(--surface2);font-size:18px;color:var(--soft)}
-  .calhead button:disabled{opacity:.25}
-  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
-  .cal .wd{font-size:11.5px;font-weight:700;color:var(--dim);padding-bottom:4px}
-  .cal .day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;
-    font-size:15px;color:var(--dim);opacity:.45}
-  .cal button.day{opacity:1;color:var(--txt);background:var(--surface2);border:1px solid var(--line);font-weight:650}
-  .cal button.day .dot{width:6px;height:6px;border-radius:50%;margin-top:3px;border:1.5px solid var(--gold)}
-  .cal button.day.final .dot{background:var(--good);border-color:var(--good)}
-  .cal button.day.sel{background:var(--gold);border-color:var(--gold);color:var(--on)}
-  .cal button.day.sel .dot{border-color:var(--on);background:var(--on)}
-  .cal .today{outline:1.5px dashed var(--dim);outline-offset:-3px}
-  .legend{display:flex;gap:14px;justify-content:center;font-size:12px;color:var(--dim);margin-top:14px}
-  .legend span{display:flex;align-items:center;gap:5px}
-  .legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
-  .p{font-family:var(--read);font-size:16.5px;line-height:1.6;color:var(--soft);margin:0 0 12px}
-  .primary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;border-radius:16px;
-    background:var(--gold);color:var(--on);font-weight:700;font-size:15.5px;text-decoration:none;margin:8px 0 10px}
-  .secondary{display:flex;align-items:center;justify-content:center;width:100%;height:48px;border-radius:16px;
-    border:1px solid var(--line);background:var(--surface2);font-weight:600;font-size:14.5px}
+  #sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--bg);border-top:1px solid var(--line);
+    border-radius:22px 22px 0 0;max-height:85vh;display:flex;flex-direction:column;transform:translateY(105%);
+    transition:transform .3s cubic-bezier(.3,.9,.3,1);max-width:640px;margin:0 auto;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+  #sheet:not(.open){box-shadow:none;visibility:hidden;transition:transform .3s cubic-bezier(.3,.9,.3,1),visibility 0s .3s}
+  #sheet.open{transform:none;visibility:visible}
+  #sheet .grab{width:36px;height:4px;border-radius:4px;background:var(--line);margin:9px auto 0}
+  #sheet .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px 4px}
+  #sheet h3{margin:0;font-family:var(--serif);font-size:20px} #sheet .x{font-size:15px;font-weight:600;color:var(--accent)}
+  #sbody{overflow-y:auto;padding:8px 20px calc(24px + env(safe-area-inset-bottom))}
+  .quick{display:flex;gap:8px;margin-bottom:18px}
+  .seg{flex:1;height:40px;border-radius:12px;background:var(--surface);font-weight:600;font-size:14px;color:var(--soft)}
+  .seg:disabled{opacity:.35}
+  .seg.on{background:var(--txt);color:var(--bg)}
+  .calhead{display:flex;align-items:center;justify-content:space-between;margin:0 0 10px}
+  .calhead b{font-size:15px;font-weight:650}
+  .calhead button{width:34px;height:34px;border-radius:10px;color:var(--soft);font-size:20px}
+  .calhead button:disabled{opacity:.2}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+  .cal .wd{font-size:11px;font-weight:600;color:var(--dim);padding:4px 0 6px}
+  .cal .day{height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;
+    font-size:15px;color:var(--dim);opacity:.4;font-variant-numeric:tabular-nums}
+  .cal button.day{opacity:1;color:var(--txt);font-weight:600;position:relative}
+  .cal button.day::after{content:"";position:absolute;bottom:5px;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.55}
+  .cal button.day.final::after{background:var(--markets);opacity:1}
+  .cal button.day.sel{background:var(--txt);color:var(--bg)} .cal button.day.sel::after{background:var(--bg)}
+  .cal .today{box-shadow:inset 0 0 0 1.5px var(--line)}
+  .legend{display:flex;gap:16px;justify-content:center;font-size:12px;color:var(--dim);margin-top:14px}
+  .legend span{display:flex;align-items:center;gap:6px} .legend i{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .h4{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);margin:4px 0 10px}
+  .themes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}
+  .theme{border-radius:14px;border:1.5px solid var(--line);padding:12px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--bg);color:var(--txt)}
+  .theme .sw{font-family:var(--serif);font-size:20px;font-weight:700}
+  .theme small{font-size:12px;font-weight:600}
+  .theme.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .row2{display:flex;gap:8px}
+  .p{font-size:15.5px;line-height:1.55;color:var(--soft);margin:0 0 12px}
+  .primary{display:flex;align-items:center;justify-content:center;width:100%;height:50px;border-radius:14px;
+    background:var(--txt);color:var(--bg);font-weight:650;font-size:15.5px;text-decoration:none;margin:10px 0 8px}
+  .secondary{display:flex;align-items:center;justify-content:center;width:100%;height:46px;border-radius:14px;color:var(--soft);font-weight:600;font-size:15px}
   #banner{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,170%);z-index:30;
-    background:var(--gold);color:var(--on);font-weight:700;border-radius:99px;padding:13px 20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .35s;white-space:nowrap}
+    background:var(--txt);color:var(--bg);font-weight:650;font-size:14.5px;border-radius:99px;padding:12px 20px;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .35s;white-space:nowrap}
   #banner.show{transform:translate(-50%,0)}
-  #toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:50;
-    background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:14.5px;line-height:1.5;
-    opacity:0;pointer-events:none;transition:opacity .25s;width:min(90vw,480px);text-align:left;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-  #toast.show{opacity:1}
-  #toast b{color:var(--gold)}
+  #toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:50;
+    background:var(--txt);color:var(--bg);border-radius:14px;padding:12px 16px;font-size:14.5px;line-height:1.5;
+    opacity:0;pointer-events:none;transition:opacity .25s;width:min(88vw,460px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  #toast.show{opacity:1} #toast b{font-weight:700}
   @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
 </style>
+<script>
+  // apply the saved theme + text size BEFORE first paint (no flash)
+  (function(){ let p={}; try{ p=JSON.parse(localStorage.getItem('digest_prefs'))||{}; }catch(e){}
+    const dark = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+    const ok={dark:1,light:1,sepia:1}; document.documentElement.dataset.theme = (!p.theme || p.theme==='auto' || !ok[p.theme]) ? (dark?'dark':'light') : p.theme;
+    document.documentElement.style.setProperty('--tsz', p.size||1); })();
+</script>
 </head>
 <body>
 
 <header id="hdr">
-  <div class="toprow">
-    <button id="datepill" onclick="openCalendar()" aria-label="Pick a day"><span>📅</span><span class="d" id="dlabel">…</span><span class="ed" id="edlabel"></span><span class="car">▾</span></button>
-    <button id="refresh" aria-label="Get the latest update" onclick="openRefresh()">🔄</button>
+  <div class="row">
+    <button id="datepill" onclick="openCalendar()" aria-label="Pick a day"><span class="d" id="dlabel">…</span><span class="ed" id="edlabel"></span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    <button class="iconbtn" id="refresh" aria-label="Get the latest update" onclick="openRefresh()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
+    <button class="iconbtn aa" onclick="openDisplay()" aria-label="Theme and text size">Aa</button>
   </div>
   <nav id="tabs" aria-label="Sections"></nav>
   <div id="prog"><i></i></div>
@@ -187,28 +206,31 @@
 <div id="deck"><div class="empty"><div style="font-size:44px">📰</div>Loading your digest…</div></div>
 
 <div id="mask" onclick="closeSheet()"></div>
-<div id="sheet" role="dialog"><div class="grab"></div><div class="bar"><h3 id="stitle"></h3><button class="x" onclick="closeSheet()" aria-label="Close">✕</button></div><div id="sbody"></div></div>
-<button id="banner" onclick="loadNewer()">✨ New edition ready · Load</button>
+<div id="sheet" role="dialog"><div class="grab"></div><div class="bar"><h3 id="stitle"></h3><button class="x" onclick="closeSheet()" aria-label="Close">Done</button></div><div id="sbody"></div></div>
+<button id="banner" onclick="loadNewer()">New edition ready · Tap to load</button>
 <div id="toast"></div>
 
 <script>
 // 📰 The Daily Digest — a reel: cover → [section intro → one full-screen card per story]… → what to watch.
-// Data: dashboard/digest/index.json + digest-<date>.json (built in the cloud every 3h, final at 11 PM IST).
-// (The old multi-tab app is kept, unlinked, at ./classic.html.)
+// Data: dashboard/digest/index.json + digest-<date>.json (cloud, every 3h, final 11 PM IST). Old app: ./classic.html.
 const ROUTINE_URL = 'https://claude.ai/code/routines/trig_01RrsV4Pi2R6komAEPRJQTyJ';
 const SCHEDULE = '8 AM · 11 AM · 2 PM · 5 PM · 8 PM · 11 PM';
 const SEC = {
-  top:{e:'⭐',t:'Top'}, world:{e:'🌍',t:'World'}, india:{e:'🇮🇳',t:'India'}, affects_you:{e:'⚠️',t:'Affects you'},
+  top:{e:'',t:'Top'}, world:{e:'🌍',t:'World'}, india:{e:'🇮🇳',t:'India'}, affects_you:{e:'⚠️',t:'Affects you'},
   markets:{e:'📈',t:'Markets'}, tech_ai:{e:'🤖',t:'Tech & AI'}, science:{e:'🔬',t:'Science'},
-  f1:{e:'🏎️',t:'F1'}, cricket:{e:'🏏',t:'Cricket'}, next:{e:'👀',t:'Next'}};
+  f1:{e:'🏎️',t:'F1'}, cricket:{e:'🏏',t:'Cricket'}, next:{e:'',t:'Coming up'}};
+const THEMES = [['auto','Auto'],['dark','Dark'],['light','Light'],['sepia','Sepia']];
+const FIT_MIN = 0.84;                      // auto-fit never shrinks text below 84% of the chosen size
 
 let INDEX=null, DOC=null, DATE=null, CARDS=[], CUR='top', CAL_MONTH=null;
 const $ = id => document.getElementById(id);
 const esc = s => (s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const hl = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b class="k2">$1</b>');
+const hl = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b class="hl">$1</b>');
 const getJSON = u => fetch(u+'?_='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
 const iso = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const TODAY = () => iso(new Date());
+function prefs(){ try{ return JSON.parse(localStorage.getItem('digest_prefs'))||{}; }catch(e){ return {}; } }
+function savePrefs(p){ try{ localStorage.setItem('digest_prefs', JSON.stringify(p)); }catch(e){} }
 
 function dayName(d, style){
   const x=new Date(d+'T00:00:00'), t=new Date(); t.setHours(0,0,0,0);
@@ -230,8 +252,8 @@ async function loadDay(date, keep){
   const d=await getJSON('../digest/digest-'+date+'.json');
   if(!d){ toast('Couldn’t load that day — check your connection'); return; }
   DOC=d; DATE=date; build();
-  const target = keep && CARDS.findIndex(c=>c.sec===keep);
-  $('deck').scrollTo(0, 0);
+  $('deck').scrollTop=0;
+  const target = keep ? CARDS.findIndex(c=>c.sec===keep) : -1;
   if(target>0) requestAnimationFrame(()=>jumpTo(target, false));
   saveHash();
 }
@@ -246,75 +268,89 @@ async function boot(){
 function build(){
   const secs=(DOC.sections||[]).filter(s=>(s.items||[]).length);
   const total=secs.reduce((a,s)=>a+s.items.length,0), allMins=secs.reduce((a,s)=>a+mins(s.items),0);
-  CARDS=[{sec:'top', html:coverHTML(secs,total,allMins)}];
+  CARDS=[{sec:'top', html:coverHTML(total,allMins)}];
   secs.forEach(s=>{
-    CARDS.push({sec:s.key, html:introHTML(s)});
+    CARDS.push({sec:s.key, html:introHTML(s, CARDS.length)});
     s.items.forEach((it,i)=>CARDS.push({sec:s.key, html:storyHTML(s,it,i)}));
   });
   CARDS.push({sec:'next', html:endHTML()});
   $('deck').innerHTML = CARDS.map((c,i)=>`<section class="card" data-i="${i}" style="--sec:var(--${c.sec})">${c.html}</section>`).join('');
   paintHeader(); paintTabs(secs); observe(); CUR='top'; markTab();
+  requestAnimationFrame(fitAll);
 }
-function coverHTML(secs,total,allMins){
-  return `<div class="eyebrow">📰 The Daily Digest</div>
-    <div class="bigdate">${esc(dayName(DATE,'big'))}</div>
-    <div class="sub">${esc(new Date(DATE+'T00:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'}))}
-      <span class="badge ${DOC.final?'final':''}">${DOC.final?'✅ Final edition':'🕒 '+esc(DOC.edition||'')}</span></div>
-    <p class="lede">${hl(DOC.top_line)}</p>
-    ${(DOC.top5||[]).length?`<div class="k">The biggest stories</div><div class="toplist">${DOC.top5.map(t=>
-      `<button class="toprow" onclick="jumpSection('${esc(t.section)}')"><span class="e">${(SEC[t.section]||{}).e||'•'}</span><span class="t"><b>${esc(t.title)}</b><i>${esc(t.why)}</i></span><span class="go">›</span></button>`).join('')}</div>`:''}
-    <div class="foot">${total} stories · about ${allMins} min</div>
-    <div class="cue">swipe up to begin ↑</div>`;
+function coverHTML(total,allMins){
+  const long=new Date(DATE+'T00:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+  return `<div class="c-date">${esc(long)}</div>
+    <h1 class="c-title fz">${esc(dayName(DATE,'big')==='Today'?"Today's briefing":dayName(DATE,'big')==='Yesterday'?"Yesterday's briefing":'The briefing')}</h1>
+    <div class="c-ed ${DOC.final?'final':''}">${DOC.final?'Final edition':esc(DOC.edition||'')} · ${total} stories · ${allMins} min read</div>
+    <p class="c-lede fz">${hl(DOC.top_line)}</p>
+    ${(DOC.top5||[]).length?`<div class="c-list">${DOC.top5.map((t,i)=>
+      `<button class="c-item" onclick="jumpSection('${esc(t.section)}')" style="--sec:var(--${esc(t.section)})"><span class="c-num">${i+1}</span><span class="t"><b class="fz">${esc(t.title)}</b><span class="fz">${esc(t.why)}</span></span></button>`).join('')}</div>`:''}
+    <div class="c-foot"><span>Swipe up to start</span><span>↑</span></div>`;
 }
-function introHTML(s){
-  return `<div class="secemoji">${SEC[s.key].e}</div>
-    <h1 class="sectitle">${esc(SEC[s.key].t)}</h1>
-    ${(s.gist||s.summary)?`<p class="gist">${hl(s.gist||s.summary)}</p>`:''}
-    <div class="count">${s.items.length} ${s.items.length==1?'story':'stories'} · about ${mins(s.items)} min</div>
-    <div class="cue">swipe up ↑</div>`;
+function introHTML(s, at){
+  return `<div class="kicker i-kicker">Section</div>
+    <h1 class="i-title">${esc(SEC[s.key].t)}</h1>
+    <div class="i-rule"></div>
+    ${(s.gist||s.summary)?`<p class="i-gist">${hl(s.gist||s.summary)}</p>`:''}
+    <div class="i-meta">${s.items.length} ${s.items.length==1?'story':'stories'} · ${mins(s.items)} min read</div>
+    <div class="i-list">${s.items.map((it,j)=>`<button class="i-item" onclick="jumpTo(${at+1+j})"><span class="n">${j+1}</span><span class="t fz">${esc(it.headline)}</span></button>`).join('')}</div>`;
 }
 function storyHTML(s,it,i){
-  return `<div class="meta"><span class="chip">${SEC[s.key].e} ${esc(SEC[s.key].t)}</span><span>${i+1} of ${s.items.length}</span>${it.status==='developing'?'<span class="dev">🔄 Developing</span>':''}</div>
-    <h1 class="headline">${esc(it.headline)}</h1>
-    <div class="blk"><div class="lbl">What happened</div><p>${hl(it.what)}</p></div>
-    ${it.context?`<div class="blk back"><div class="lbl">🧭 The backstory</div><p>${hl(it.context)}</p></div>`:''}
-    <div class="blk why"><div class="lbl">💡 Why it matters</div><p>${hl(it.why_it_matters)}</p></div>
-    ${it.next?`<div class="nextline"><b>⏭ Next:</b> ${hl(it.next)}</div>`:''}
-    ${(it.terms||[]).length?`<div class="terms"><span class="lbl" style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)">📖 Words</span>${it.terms.map(t=>
-      `<button class="term" data-t="${esc(t.term)}" data-m="${esc(t.meaning)}" onclick="showTerm(this)">${esc(t.term)}</button>`).join('')}</div>`:''}
-    ${(it.sources||[]).length?`<div class="src">Source: ${it.sources.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</div>`:''}`;
+  return `<div class="s-top"><span class="kicker">${esc(SEC[s.key].t)} <span class="muted">· ${i+1} of ${s.items.length}</span></span>${it.status==='developing'?'<span class="tag">Developing</span>':''}</div>
+    <h1 class="s-head fz">${esc(it.headline)}</h1>
+    <div class="s-blk"><div class="s-lbl">The news</div><p class="s-txt fz">${hl(it.what)}</p></div>
+    ${it.context?`<div class="s-blk back"><div class="s-lbl">The backstory</div><p class="s-txt fz">${hl(it.context)}</p></div>`:''}
+    <div class="s-blk why"><div class="s-lbl">Why it matters</div><p class="s-txt fz">${hl(it.why_it_matters)}</p></div>
+    ${it.next?`<div class="s-blk"><div class="s-lbl">What's next</div><p class="s-txt fz">${hl(it.next)}</p></div>`:''}
+    <div class="s-foot">
+      ${(it.terms||[]).length?`<div class="terms"><span>Words to know:</span>${it.terms.map(t=>
+        `<button class="term" data-t="${esc(t.term)}" data-m="${esc(t.meaning)}" onclick="showTerm(this)">${esc(t.term)}</button>`).join('')}</div>`:''}
+      ${(it.sources||[]).length?`<div>Source: ${it.sources.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(', ')}</div>`:''}
+    </div>`;
 }
 function endHTML(){
-  return `<div class="secemoji">👀</div>
-    <h1 class="sectitle">What to watch next</h1>
-    ${(DOC.watch_tomorrow||[]).length?`<ul class="watch">${DOC.watch_tomorrow.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`
-      :`<p class="gist">The watch-list arrives with the 11 PM final edition.</p>`}
-    <div class="count">That's everything for ${esc(dayName(DATE,'big').toLowerCase()==='today'?'today':dayName(DATE))}. ✨</div>
-    <button class="pillbtn" onclick="openCalendar()">📅 Read another day</button>
+  return `<div class="kicker">What to watch</div>
+    <h1 class="i-title">Coming up</h1>
+    <div class="i-rule"></div>
+    ${(DOC.watch_tomorrow||[]).length?`<ul class="e-list">${DOC.watch_tomorrow.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`
+      :`<p class="i-gist">The watch-list arrives with the 11 PM final edition.</p>`}
+    <div class="e-done">That's everything for ${esc(dayName(DATE,'big')==='Today'?'today':dayName(DATE))}.</div>
+    <button class="linkbtn" onclick="openCalendar()">Read another day →</button>
     <div class="disc">${esc(DOC.disclaimer||'')}</div>`;
 }
 
+/* ---------- auto-fit: shrink a card's text just enough to fit its screen ---------- */
+function fit(card){
+  card.classList.remove('scroll'); let f=1; card.style.setProperty('--fit', f);
+  while(card.scrollHeight > card.clientHeight + 1 && f > FIT_MIN){ f=Math.round((f-0.02)*100)/100; card.style.setProperty('--fit', f); }
+  if(card.scrollHeight > card.clientHeight + 1) card.classList.add('scroll');
+}
+function fitAll(){ document.querySelectorAll('#deck .card').forEach(fit); }
+let RZ; window.addEventListener('resize', ()=>{ clearTimeout(RZ); RZ=setTimeout(fitAll, 150); });
+
 /* ---------- header, tabs, progress ---------- */
 function paintHeader(){
-  $('dlabel').textContent = DATE ? dayName(DATE) : 'The Daily Digest';
+  const x = DATE ? new Date(DATE+'T00:00:00') : null;
+  $('dlabel').textContent = x ? (dayName(DATE,'big')==='Today'?'Today':dayName(DATE,'big')==='Yesterday'?'Yesterday':x.toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short'})) : 'The Daily Digest';
   const ed=$('edlabel');
-  if(DOC){ ed.textContent = DOC.final ? '✅ Final' : '🕒 '+String(DOC.edition||'').replace(/^Updated /,''); ed.className='ed'+(DOC.final?' final':''); }
+  if(DOC){ ed.textContent = (x?x.toLocaleDateString(undefined,{day:'numeric',month:'short'})+' · ':'') + (DOC.final ? 'Final' : String(DOC.edition||'').replace(/^Updated /,'')); ed.className='ed'+(DOC.final?' final':''); }
 }
 function paintTabs(secs){
   const keys=['top',...secs.map(s=>s.key),'next'];
   $('tabs').innerHTML = keys.map(k=>{ const s=secs.find(x=>x.key===k);
-    return `<button class="tab" data-k="${k}" style="--sec:var(--${k})" onclick="jumpSection('${k}')">${SEC[k].e} ${esc(SEC[k].t)}${s?`<span class="n">${s.items.length}</span>`:''}</button>`; }).join('');
+    return `<button class="tab" data-k="${k}" style="--sec:var(--${k})" onclick="jumpSection('${k}')">${esc(SEC[k].t)}${s?`<span class="n">${s.items.length}</span>`:''}</button>`; }).join('');
 }
 function markTab(){
   document.querySelectorAll('.tab').forEach(t=>{ const on=t.dataset.k===CUR; t.classList.toggle('on',on);
-    if(on) try{ t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'}); }catch(e){} });
+    if(on){ const box=$('tabs'); try{ box.scrollTo({left:t.offsetLeft-box.clientWidth/2+t.clientWidth/2, behavior:'smooth'}); }catch(e){} } });
 }
 let IO=null;
 function observe(){
   if(IO) IO.disconnect();
   IO=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return;
     const i=+e.target.dataset.i, c=CARDS[i]; if(!c) return;
-    $('prog').firstElementChild.style.width = Math.round(i/Math.max(1,CARDS.length-1)*100)+'%';
+    $('prog').firstElementChild.style.width = Math.round(i/Math.max(1,CARDS.length-1)*100)+'%'; $('prog').style.setProperty('--sec', `var(--${c.sec})`);
     if(c.sec!==CUR){ CUR=c.sec; markTab(); saveHash(); }
   }), {root:$('deck'), rootMargin:'-45% 0px -45% 0px'});
   [...$('deck').children].forEach(el=>IO.observe(el));
@@ -323,39 +359,50 @@ function jumpTo(i, smooth){ const el=$('deck').children[i]; if(el) $('deck').scr
 function jumpSection(k){ const i=CARDS.findIndex(c=>c.sec===k); if(i>=0) jumpTo(i); }
 function saveHash(){ try{ history.replaceState(null,'','#'+DATE+'/'+CUR); }catch(e){} }
 
-/* ---------- sheet ---------- */
+/* ---------- sheets ---------- */
 function openSheet(t,h){ $('stitle').textContent=t; $('sbody').innerHTML=h; $('mask').classList.add('open'); $('sheet').classList.add('open'); }
 function closeSheet(){ $('mask').classList.remove('open'); $('sheet').classList.remove('open'); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
 
-/* ---------- calendar date picker ---------- */
-function openCalendar(){
-  const d=new Date((DATE||TODAY())+'T00:00:00'); CAL_MONTH=new Date(d.getFullYear(), d.getMonth(), 1);
-  openSheet('📅 Pick a day', calHTML());
+/* ---------- Aa: theme + text size ---------- */
+function openDisplay(){ openSheet('Display', displayHTML()); }
+function displayHTML(){
+  const p=prefs(), cur=p.theme||'auto', size=+(p.size||1);
+  return `<div class="h4">Theme</div><div class="themes">${THEMES.map(([k,l])=>
+      `<button class="theme ${k===cur?'on':''}" onclick="setTheme('${k}')" ${k==='auto'?'':`data-theme="${k}"`}><span class="sw">Aa</span><small>${l}</small></button>`).join('')}</div>
+    <div class="h4">Text size</div>
+    <div class="row2">${[[.92,'Smaller'],[1,'Default'],[1.1,'Larger']].map(([v,l])=>`<button class="seg ${size===v?'on':''}" onclick="setSize(${v})">${l}</button>`).join('')}</div>`;
 }
+function applyTheme(t){
+  const dark=window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+  const real = (t==='auto' || !{dark:1,light:1,sepia:1}[t]) ? (dark?'dark':'light') : t;
+  document.documentElement.dataset.theme = real;
+  const m=document.querySelector('meta[name="theme-color"]'); if(m) m.content=getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+}
+function setTheme(t){ const p=prefs(); p.theme=t; savePrefs(p); applyTheme(t); $('sbody').innerHTML=displayHTML(); }
+function setSize(v){ const p=prefs(); p.size=v; savePrefs(p); document.documentElement.style.setProperty('--tsz', v); $('sbody').innerHTML=displayHTML(); fitAll(); }
+
+/* ---------- calendar date picker ---------- */
+function openCalendar(){ const d=new Date((DATE||TODAY())+'T00:00:00'); CAL_MONTH=new Date(d.getFullYear(), d.getMonth(), 1); openSheet('Choose a day', calHTML()); }
 function calHTML(){
-  const have=new Map(days().map(x=>[x.date,x]));
-  const all=days().map(x=>x.date).sort();
-  const y=CAL_MONTH.getFullYear(), m=CAL_MONTH.getMonth();
-  const first=new Date(y,m,1), lead=(first.getDay()+6)%7, n=new Date(y,m+1,0).getDate();
-  const minM=all.length?all[0].slice(0,7):'', maxM=all.length?all[all.length-1].slice(0,7):'';
-  const ym=iso(first).slice(0,7);
+  const have=new Map(days().map(x=>[x.date,x])), all=days().map(x=>x.date).sort();
+  const y=CAL_MONTH.getFullYear(), m=CAL_MONTH.getMonth(), first=new Date(y,m,1), lead=(first.getDay()+6)%7, n=new Date(y,m+1,0).getDate();
+  const minM=all.length?all[0].slice(0,7):'', maxM=all.length?all[all.length-1].slice(0,7):'', ym=iso(first).slice(0,7);
   const yd=iso(new Date(Date.now()-864e5));
-  let cells='';
-  ['M','T','W','T','F','S','S'].forEach(w=>cells+=`<div class="wd">${w}</div>`);
+  let cells=['M','T','W','T','F','S','S'].map(w=>`<div class="wd">${w}</div>`).join('');
   for(let i=0;i<lead;i++) cells+='<div></div>';
   for(let dd=1; dd<=n; dd++){
     const key=iso(new Date(y,m,dd)), x=have.get(key), cls=(key===TODAY()?' today':'');
-    cells += x ? `<button class="day${x.final?' final':''}${key===DATE?' sel':''}${cls}" onclick="pickDay('${key}')" aria-label="${esc(key)}">${dd}<span class="dot"></span></button>`
+    cells += x ? `<button class="day${x.final?' final':''}${key===DATE?' sel':''}${cls}" onclick="pickDay('${key}')" aria-label="${key}">${dd}</button>`
                : `<div class="day${cls}">${dd}</div>`;
   }
-  return `<div class="quick"><button onclick="pickDay('${TODAY()}')" ${have.has(TODAY())?'':'disabled'}>Today</button>
-      <button onclick="pickDay('${yd}')" ${have.has(yd)?'':'disabled'}>Yesterday</button></div>
+  return `<div class="quick"><button class="seg ${DATE===TODAY()?'on':''}" onclick="pickDay('${TODAY()}')" ${have.has(TODAY())?'':'disabled'}>Today</button>
+      <button class="seg ${DATE===yd?'on':''}" onclick="pickDay('${yd}')" ${have.has(yd)?'':'disabled'}>Yesterday</button></div>
     <div class="calhead"><button onclick="calMove(-1)" ${ym<=minM?'disabled':''} aria-label="Previous month">‹</button>
       <b>${first.toLocaleDateString(undefined,{month:'long',year:'numeric'})}</b>
       <button onclick="calMove(1)" ${ym>=maxM?'disabled':''} aria-label="Next month">›</button></div>
     <div class="cal">${cells}</div>
-    <div class="legend"><span><i style="background:var(--good)"></i>Final edition</span><span><i style="border:1.5px solid var(--gold)"></i>Still updating</span></div>`;
+    <div class="legend"><span><i style="background:var(--markets)"></i>Final edition</span><span><i style="background:var(--accent);opacity:.55"></i>Still updating</span></div>`;
 }
 function calMove(k){ CAL_MONTH=new Date(CAL_MONTH.getFullYear(), CAL_MONTH.getMonth()+k, 1); $('sbody').innerHTML=calHTML(); }
 function pickDay(d){ closeSheet(); if(d!==DATE) loadDay(d); }
@@ -365,8 +412,8 @@ async function openRefresh(){
   const b=$('refresh'); b.classList.add('spin');
   const before=DOC&&DOC.updated_at; await loadIndex(); b.classList.remove('spin');
   const latest=days()[0];
-  if(latest && (latest.date!==DATE || latest.updated_at!==before)){ await loadDay(latest.date); toast('✨ Loaded the latest edition'); return; }
-  openSheet('🔄 Latest update',
+  if(latest && (latest.date!==DATE || latest.updated_at!==before)){ await loadDay(latest.date); toast('Loaded the latest edition'); return; }
+  openSheet('Latest edition',
     `<p class="p">You're on the newest edition — <b>${esc(DOC?(DOC.final?'Final':DOC.edition):'—')}</b>${DOC&&DOC.updated_at?' ('+esc(ago(DOC.updated_at))+')':''}.</p>`
     + `<p class="p">New editions arrive by themselves at <b>${SCHEDULE}</b> IST.</p>`
     + `<p class="p">Want one right now? Open the update routine and tap <b>Run now</b>. It takes about 10 minutes — keep this page open and it will offer the new edition when it lands.</p>`
@@ -379,10 +426,12 @@ async function checkNewer(){
   await loadIndex(); const latest=days()[0];
   if(latest && (latest.date>DATE || (latest.date===DATE && latest.updated_at!==DOC.updated_at))){ NEWER=latest.date; $('banner').classList.add('show'); }
 }
-function loadNewer(){ $('banner').classList.remove('show'); if(NEWER) loadDay(NEWER, CUR).then(()=>toast('✨ Loaded the latest edition')); }
+function loadNewer(){ $('banner').classList.remove('show'); if(NEWER) loadDay(NEWER, CUR).then(()=>toast('Loaded the latest edition')); }
 setInterval(()=>{ if(Date.now()<WATCH_UNTIL || Math.random()<0.4) checkNewer(); }, 120e3);
 document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) checkNewer(); });
+try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{ if((prefs().theme||'auto')==='auto') applyTheme('auto'); }); }catch(e){}
 
+applyTheme(prefs().theme||'auto');
 boot();
 
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
