@@ -20,7 +20,7 @@
     --accent:#5b9dff; --amber:#f5b942;
     --up:#3fb950; --down:#f4685f;
     --geopolitics:#f4685f; --economy:#3fb950; --technology:#a970ff; --science:#2dd4bf;
-    --health:#f472b6; --climate:#5cc98a; --india:#ff9933; --markets:#5b9dff; --learn:#f5b942; --puzzles:#a78bfa;
+    --health:#f472b6; --climate:#5cc98a; --india:#ff9933; --markets:#5b9dff; --learn:#f5b942; --puzzles:#a78bfa; --digest:#38bdf8;
   --f1:#e10600; --cricket:#2fbf71;
     /* native fonts (no downloads): rounded headings, neutral sans UI, editorial serif for reading */
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -374,6 +374,19 @@
   .card.read-out::after{content:"✓";position:absolute;left:50%;top:46%;font-weight:900;font-size:104px;color:var(--readgreen);
     text-shadow:0 6px 26px color-mix(in srgb,var(--readgreen) 55%,transparent);animation:checkPop .34s cubic-bezier(.34,1.56,.64,1) forwards;z-index:3}
   @media (prefers-reduced-motion: reduce){ .card.read-out{animation:none;opacity:0} .card.read-out::after,.card.read-out::before{display:none} }
+  /* 📰 Daily Digest */
+  .dg-edition{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--dim);
+    border:1px solid var(--line);border-radius:99px;padding:4px 11px}
+  .dg-edition.final{color:#3fb950;border-color:color-mix(in srgb,#3fb950 45%,var(--line))}
+  .dg-top{text-align:left;margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.45}
+  .dg-top li b{display:block;color:var(--txt)} .dg-top li span{color:var(--dim)}
+  .dg-chip{font-weight:800;color:var(--cat,var(--accent))}
+  .dg-sum{font-size:15.5px;line-height:1.6}
+  .dg-item{border-top:1px solid var(--line);padding:14px 0}.dg-item:first-of-type{border-top:none}
+  .dg-ih{display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.35}
+  .dg-ih .devbadge{align-self:flex-start}
+  .dg-why{font-size:14px;line-height:1.5;color:#c3cedd;background:var(--panel2);border-radius:10px;padding:8px 11px;margin-top:6px}
+  .dg-src{font-size:12.5px;margin-top:8px;color:var(--dim)} .dg-src a{color:var(--cat,var(--accent))}
   /* 📅 day-divider card — opens each day's group in the feed */
   .card.daybreak{justify-content:center;align-items:center;text-align:center}
   .daydiv{display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -491,6 +504,7 @@
 <div id="progress"></div>
 <div id="hdr">
   <div id="tabs">
+    <button data-p="digest" onclick="setPillar('digest')">📰 Digest</button>
     <button data-p="global" onclick="setPillar('global')">🌍 Global</button>
     <button data-p="india" onclick="setPillar('india')">🇮🇳 India</button>
     <button data-p="f1" onclick="setPillar('f1')">🏎️ F1</button>
@@ -517,7 +531,7 @@ const CAT = {
   technology:{lbl:"Technology",emoji:"⚙️"}, science:{lbl:"Science",emoji:"🔬"},
   health:{lbl:"Health",emoji:"🩺"}, climate:{lbl:"Climate",emoji:"🌱"}, india:{lbl:"India",emoji:"🇮🇳"},
   f1:{lbl:"Formula 1",emoji:"🏎️"}, cricket:{lbl:"Cricket",emoji:"🏏"},
-  markets:{lbl:"Markets",emoji:"📈"}, learn:{lbl:"Learn",emoji:"🎓"}, puzzles:{lbl:"Puzzles",emoji:"🧩"}
+  markets:{lbl:"Markets",emoji:"📈"}, learn:{lbl:"Learn",emoji:"🎓"}, puzzles:{lbl:"Puzzles",emoji:"🧩"}, digest:{lbl:"Digest",emoji:"📰"}
 };
 const THREAD = {developing:"📈 Developing", escalating:"🔺 Escalating", cooling:"🔻 Cooling", resolved:"✅ Resolved"};
 const sgn = p => p==null?'—':(p>=0?'+':'')+Number(p).toFixed(2)+'%';
@@ -921,6 +935,30 @@ const R = {
     ${c.subtitle?`<div class="sub">${esc(c.subtitle)}</div>`:''}
     <div class="scrollcue">swipe up ↑</div>`,
 
+  // 📰 The Daily Digest: cover (the day in one breath + top 5) → one card per section → watch tomorrow
+  digest_cover: c => { const L = dayLabel(c.date); return `
+    <div class="eyebrow"><span class="day">📰 The Daily Digest</span></div>
+    <div class="lcov-subj">${esc(L.big)}</div>
+    <div class="lcov-part">${esc(L.kicker)}</div>
+    <div class="dg-edition ${c.final?'final':''}">${c.final?'✅ ':'🕒 '}${esc(c.edition||'')}</div>
+    <div class="lcov-recap"><span class="lcov-lbl">the day in one breath</span>${hl(c.top_line)}</div>
+    ${(c.top5||[]).length?`<ol class="dg-top">${c.top5.map(t=>`<li><b>${esc((DIGEST_SEC[t.section]||{}).emoji||'•')} ${esc(t.title)}</b><span>${hl(t.why)}</span></li>`).join('')}</ol>`:''}
+    <button class="readchip" onclick="openDigestDays()">📅 Other days</button>
+    <div class="scrollcue">swipe up for each section ↑</div>`; },
+
+  digest_section: c => `
+    <div class="meta"><span class="dg-chip">${esc(c.emoji)} ${esc(c.title)}</span><span>${esc(c.items.length)} ${c.items.length==1?'story':'stories'}</span></div>
+    <h1 class="headline">${esc(c.title)}</h1>
+    <div class="summary dg-sum">${hl(c.summary)}</div>
+    ${expandBtn(`openDigestSection(${JSON.stringify(c.key)})`, 'Read the stories')}`,
+
+  digest_watch: c => `
+    <div class="meta"><span class="dg-chip">👀 Watch tomorrow</span></div>
+    <h1>What to watch next</h1>
+    ${(c.items||[]).length?`<ul class="lrecap">${c.items.map(x=>`<li>${hl(x)}</li>`).join('')}</ul>`:''}
+    <div class="disc" style="margin-top:14px">${esc(c.disclaimer||'')}</div>
+    <button class="readchip" onclick="openDigestDays()">📅 Other days</button>`,
+
   // 📅 day break: opens each day's group in the feed so you can navigate day to day through the stack
   day_divider: c => { const L = dayLabel(c.day); return `
     <div class="daydiv">
@@ -986,9 +1024,9 @@ const R = {
 };
 
 /* ---------- reel assembly + Stories-style progress ---------- */
-const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover', day_divider:'daybreak'};   // extra class on top of .card
-const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles'})[c.type] || 'markets';
-const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles'};
+const EXTRA = {cover:'cover', divider:'divider', lesson_cover:'cover', caught_up:'cover', puzzle_cover:'cover', puzzles_done:'cover', read_cover:'cover', done_cover:'cover', day_divider:'daybreak', digest_cover:'cover'};   // extra class on top of .card
+const cardCat = c => c.category || ({concept:'learn', quiz:'learn', puzzle_cover:'puzzles', puzzle:'puzzles', puzzle_techniques:'puzzles', puzzles_done:'puzzles', puzzle_more:'puzzles', done_cover:'puzzles', done_puzzle:'puzzles', digest_cover:'digest', digest_section:'digest', digest_watch:'digest'})[c.type] || 'markets';
+const TAB_CAT = {global:'geopolitics', india:'india', f1:'f1', cricket:'cricket', markets:'markets', learn:'learn', puzzles:'puzzles', done:'puzzles', digest:'digest'};
 const STORY_REGIONS = new Set(['india','f1','cricket']);   // a story's category IS its tab when it's one of these
 const LESSON_TYPES = new Set(['lesson_cover','lesson','lesson_recap','learn_journal']);
 // three tabs: a story goes to India if its category is india, else Global; the daily deep-dive lesson
@@ -1113,6 +1151,8 @@ function render(){
   if(PILLARSEL==='learn'){
     LEARN_CARDS = learnDeckCards();
     cards = LEARN_CARDS.map(c=>({card:c}));
+  } else if(PILLARSEL==='digest'){
+    cards = digestDeckCards().map(c=>({card:c}));             // 📰 today's (or a picked day's) digest
   } else if(PILLARSEL==='puzzles'){
     PUZZLE_CARDS = puzzleDeckCards();
     cards = PUZZLE_CARDS.map(c=>({card:c}));
@@ -1157,6 +1197,13 @@ function render(){
       }
     }
     const isLearn = PILLARSEL==='learn';
+    if(PILLARSEL==='digest'){
+      deck.innerHTML = `<section class="card cover" style="${catStyle('digest')}"><div class="bigemoji">📰</div>`
+        + (DIGEST_INDEX===null
+           ? `<h1>Loading your digest…</h1><div class="body" style="color:var(--dim)">If this stays, reload in a moment.</div>`
+           : `<h1>Today's digest is being written</h1><div class="body" style="color:var(--dim)">A fresh edition is folded together every 3 hours (8, 11 AM · 2, 5, 8, 11 PM), with the full-day final at 11 PM.</div>`)
+        + `</section>`;
+      document.getElementById('progress').innerHTML=''; paintFresh(); return; }
     if(PILLARSEL==='puzzles'){
       deck.innerHTML = `<section class="card cover" style="${catStyle('puzzles')}"><div class="bigemoji">🧩</div>`
         + `<h1>Loading your puzzles…</h1><div class="body" style="color:var(--dim)">If this stays, reload in a moment.</div></section>`;
@@ -1803,14 +1850,57 @@ function loadPuzzles(){
   return fetch('../puzzles.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     .then(d=>{ if(d) PUZZLES=d; if(DECK && PILLARSEL==='puzzles') render(); });
 }
-const TABS_OK = ['global','india','f1','cricket','learn','puzzles'];
+// 📰 The Daily Digest — dashboard/digest/index.json (list of days) + digest-<date>.json (built in the cloud
+// every 3h, final at 11 PM IST). 100% client-side, like Learn/Puzzles.
+let DIGEST_INDEX=null, DIGEST_DOC=null;       // null index = still loading; {days:[]} = loaded (maybe empty)
+const DIGEST_SEC = {world:{emoji:'🌍'}, india:{emoji:'🇮🇳'}, affects_you:{emoji:'⚠️'}, markets:{emoji:'📈'},
+                    tech_ai:{emoji:'🤖'}, science:{emoji:'🔬'}, f1:{emoji:'🏎️'}, cricket:{emoji:'🏏'}};
+function loadDigest(date){
+  const idx = DIGEST_INDEX && DIGEST_INDEX.days ? Promise.resolve(DIGEST_INDEX)
+    : fetch('../digest/index.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null);
+  return idx.then(ix=>{
+    DIGEST_INDEX = ix || {days:[]};
+    const day = date || ((DIGEST_INDEX.days||[])[0]||{}).date;
+    if(!day){ DIGEST_DOC=null; return null; }
+    return fetch('../digest/digest-'+day+'.json?_='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null);
+  }).then(d=>{ if(d) DIGEST_DOC=d; if(DECK && PILLARSEL==='digest'){ render(); document.getElementById('deck').scrollTo(0,0); } });
+}
+function digestDeckCards(){
+  const d = DIGEST_DOC; if(!d) return [];
+  const out = [{type:'digest_cover', date:d.date, edition:d.edition, final:d.final, top_line:d.top_line, top5:d.top5||[]}];
+  (d.sections||[]).forEach(sc=> out.push(Object.assign({type:'digest_section'}, sc)));
+  out.push({type:'digest_watch', items:d.watch_tomorrow||[], disclaimer:d.disclaimer});
+  return out;
+}
+function openDigestSection(key){
+  const sc = ((DIGEST_DOC&&DIGEST_DOC.sections)||[]).find(x=>x.key===key); if(!sc) return;
+  const h = `<div class="one">${hl(sc.summary)}</div>` + sc.items.map(it=>`
+    <div class="dg-item">
+      <div class="dg-ih">${it.status==='developing'?'<span class="devbadge">🔄 Developing</span>':''}<b>${esc(it.headline)}</b></div>
+      <p class="prose">${hl(it.what)}</p>
+      <div class="dg-why">💡 ${hl(it.why_it_matters)}</div>
+      <div class="dg-src">${(it.sources||[]).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</div>
+    </div>`).join('');
+  openSheet(`${sc.emoji} ${sc.title}`, h, 'digest');
+}
+function openDigestDays(){
+  const days = (DIGEST_INDEX&&DIGEST_INDEX.days)||[];
+  const cur = DIGEST_DOC && DIGEST_DOC.date;
+  openSheet('📅 Other days', days.length
+    ? `<div class="jlist" style="max-height:66vh">${days.map(x=>{ const L=dayLabel(x.date); return `
+        <div class="jrow" onclick="closeSheet(); loadDigest(${JSON.stringify(x.date)})">
+          <div class="jmain"><b>${esc(L.big)}${x.date===cur?' · reading':''}</b><span>${esc(x.final?'✅ Final':(x.edition||''))} · ${esc(x.items)} stories</span></div>
+          <div class="jgo">›</div></div>`; }).join('')}</div>`
+    : '<div class="one">No digests yet — the first one lands at the next 3-hourly run.</div>', 'digest');
+}
+const TABS_OK = ['digest','global','india','f1','cricket','learn','puzzles'];
 // the deck (reels.json) regenerates ~every 2h on the laptop; fetch the latest
-loadStatus(); loadEntities(); loadLessons(); loadPuzzles();
+loadStatus(); loadEntities(); loadLessons(); loadPuzzles(); loadDigest();
 fetch('../reels.json?_='+Date.now())
   .then(r=>{ if(!r.ok) throw 0; return r.json(); })
   .then(d=>{ DECK=d;
     const h=(location.hash||'').replace(/^#/,'');           // deep-link a tab, e.g. #learn
-    setPillar(TABS_OK.includes(h)?h:'global'); })
+    setPillar(TABS_OK.includes(h)?h:'digest'); })          // 📰 Digest is the landing tab
   .catch(()=>{ document.getElementById('empty').style.display='flex'; });
 // let the tabs be shareable/deep-linkable + reflect the current tab in the URL
 window.addEventListener('hashchange',()=>{ const h=(location.hash||'').replace(/^#/,'');

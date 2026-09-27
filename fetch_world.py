@@ -143,6 +143,18 @@ WORLD_FEEDS = [
     ("cricket", "GN — Cricket lives/retire/comeback",
      "https://news.google.com/rss/search?q=cricket+(retirement+OR+comeback+OR+return+OR+relationship+OR+wedding+OR+business+OR+documentary)+when:5d&hl=en-US&gl=US&ceid=US:en"),
 
+    # === DAILY DIGEST extras: markets, AI, and "affects you" (practical India rule/price changes) ===
+    ("markets", "GN — Markets India",
+     "https://news.google.com/rss/search?q=(Sensex+OR+Nifty+OR+RBI+OR+rupee)+when:1d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("markets", "GN — Markets global",
+     "https://news.google.com/rss/search?q=(stocks+OR+%22Wall+Street%22+OR+%22Federal+Reserve%22+OR+%22oil+prices%22+OR+bitcoin)+when:1d&hl=en-US&gl=US&ceid=US:en"),
+    ("technology", "GN — AI",
+     "https://news.google.com/rss/search?q=(%22artificial+intelligence%22+OR+OpenAI+OR+Anthropic+OR+Gemini+OR+Nvidia)+when:1d&hl=en-US&gl=US&ceid=US:en"),
+    ("affects_you", "GN — India new rules & deadlines",
+     "https://news.google.com/rss/search?q=(%22new+rules%22+OR+deadline+OR+%22from+today%22+OR+GST+OR+%22income+tax%22+OR+UPI+OR+KYC)+India+when:2d&hl=en-IN&gl=IN&ceid=IN:en"),
+    ("affects_you", "GN — India prices & alerts",
+     "https://news.google.com/rss/search?q=(%22price+hike%22+OR+%22petrol+price%22+OR+%22LPG+price%22+OR+%22IMD+alert%22+OR+outage)+India+when:2d&hl=en-IN&gl=IN&ceid=IN:en"),
+
     # === REDDIT (per-subreddit .rss — the JSON API is 403-blocked, but RSS still serves) ===
     # These are LEADS to verify, not sources of record — the analyst confirms via WebSearch.
     ("geopolitics", "Reddit r/worldnews", "https://www.reddit.com/r/worldnews/hot/.rss"),
