@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""📰 The Daily Digest — one aggregated newsletter per IST day, folded together every ~3 hours.
+"""📰 The Daily Digest — one aggregated newsletter per IST day, built once a day at 11 PM IST (plus on-demand "Run now" updates).
 
 Instead of a firehose of 20+ stories per tab, each run folds what's NEW since the last run into a single
 running digest per day: a few sections (World, India, Affects you, Markets, Tech & AI, Science, F1, Cricket),

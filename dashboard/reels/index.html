@@ -288,9 +288,9 @@
 
 <script>
 // 📰 The Daily Digest — a reel: cover → [section intro → one full-screen card per story]… → what to watch.
-// Data: dashboard/digest/index.json + digest-<date>.json (cloud, every 3h, final 11 PM IST). Old app: ./classic.html.
+// Data: dashboard/digest/index.json + digest-<date>.json (cloud, once daily at 11 PM IST + on-demand Run now). Old app: ./classic.html.
 const ROUTINE_URL = 'https://claude.ai/code/routines/trig_01RrsV4Pi2R6komAEPRJQTyJ';
-const SCHEDULE = '8 AM · 11 AM · 2 PM · 5 PM · 8 PM · 11 PM';
+const SCHEDULE = '11 PM';
 const IC = {  // Lucide-style line icons
   top:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   world:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
@@ -522,7 +522,7 @@ async function openRefresh(){
   if(latest && (latest.date!==DATE || latest.updated_at!==before)){ await loadDay(latest.date); toast('Loaded the latest edition'); return; }
   openSheet('Latest edition',
     `<p class="p">You're on the newest edition — <b>${esc(DOC?(DOC.final?'Final':DOC.edition):'—')}</b>${DOC&&DOC.updated_at?' ('+esc(ago(DOC.updated_at))+')':''}.</p>`
-    + `<p class="p">New editions arrive by themselves at <b>${SCHEDULE}</b> IST.</p>`
+    + `<p class="p">The full-day edition arrives by itself at <b>${SCHEDULE}</b> IST every night.</p>`
     + `<p class="p">Want one right now? Open the update routine and tap <b>Run now</b>. It takes about 10 minutes — keep this page open and it will offer the new edition when it lands.</p>`
     + `<a class="primary" href="${ROUTINE_URL}" target="_blank" rel="noopener" onclick="WATCH_UNTIL=Date.now()+25*60e3">Run an update now ↗</a>`
     + `<button class="secondary" onclick="closeSheet()">Not now</button>`);
