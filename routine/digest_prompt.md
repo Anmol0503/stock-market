@@ -37,12 +37,18 @@ over-long cards.
 
 | field | what it is | length |
 |---|---|---|
-| `headline` | What happened, in plain words. A statement, not a teaser. | ≤ 14 words |
-| `what` | The facts: who did what, where, when, the key numbers. **3–4 short sentences.** | 40–70 words |
-| `context` | **The backstory** — everything a newcomer needs to follow this: who these people are, how we got here, what the thing even is. Assume zero prior knowledge. **2–3 sentences.** | 30–65 words |
-| `why_it_matters` | The real-world consequence — ideally for the reader / India / ordinary people. **1–2 sentences.** | ≤ 40 words |
-| `next` | What happens next / what to watch: the next date, decision or risk. **1 sentence.** (Omit only if truly nothing.) | ≤ 28 words |
+| `headline` | What happened, in plain words. A statement, not a teaser. | ≤ 12 words |
+| `what` | The facts: who did what, where, when, the key numbers. **3 short sentences.** | 35–55 words |
+| `context` | **The backstory** — everything a newcomer needs to follow this: who these people are, how we got here, what the thing even is. Assume zero prior knowledge. **2 sentences.** | 25–45 words |
+| `why_it_matters` | The real-world consequence — ideally for the reader / India / ordinary people. **1 sentence.** | ≤ 30 words |
+| `next` | What happens next / what to watch: the next date, decision or risk. **1 sentence.** (Omit only if truly nothing.) | ≤ 22 words |
+| `insight` | **✦ Claude's insight** (optional — only when you have a genuinely non-obvious point): what most coverage misses — the hidden incentive, the second-order effect, what it signals, or its link to another story today. | ≤ 30 words |
+| `must_read` | `true` on the **2–3 stories of the whole day** the reader must not miss. | — |
 | `terms` | 0–2 words a newcomer might not know, each `{term, meaning}` in plain words. Only if genuinely needed. | meaning ≤ 18 words |
+
+**Claude's insight rules:** it is *analysis*, so ground it only in facts already on the card or well-established
+background — never new, unverified facts or numbers. Be neutral ("signals", "suggests", "the risk is"), not partisan.
+No filler ("this is significant"). Aim for insights on the ~8–12 best stories of the day, not every card.
 
 Writing rules:
 - **Short sentences** (≤ 20 words). One idea per sentence. No semicolons, no stacked clauses, no "meanwhile /
@@ -87,6 +93,8 @@ Each section also gets a `gist`: **one sentence (≤ 25 words)** saying what tha
 
 ## Top of the digest
 - `top_line` — the day in **2 short sentences** (≤ 40 words total).
+- `claude_take` — **✦ Claude's take on today**: 2–3 sentences (≤ 60 words) — the pattern that ties today together and the
+  single thing the reader should walk away with. Analysis grounded in today's stories, not new facts.
 - `top5` — the 3–5 biggest stories: `{title (≤ 8 words), why (≤ 15 words), section}`.
 - `watch_tomorrow` — 2–5 short lines (≤ 15 words each) on what to watch next (required when `is_final`).
 
@@ -94,11 +102,12 @@ Each section also gets a `gist`: **one sentence (≤ 25 words)** saying what tha
 ```json
 {
   "top_line": "…",
+  "claude_take": "…",
   "top5": [ { "title": "…", "why": "…", "section": "affects_you" } ],
   "sections": [
     { "key": "affects_you", "gist": "one sentence",
       "items": [ { "headline": "…", "what": "…", "context": "…", "why_it_matters": "…", "next": "…",
-                   "terms": [ { "term": "…", "meaning": "…" } ],
+                   "terms": [ { "term": "…", "meaning": "…" } ], "insight": "…", "must_read": false,
                    "status": "new", "first_seen": "<keep from current_digest if updating>",
                    "updated_at": "<now_ist if you changed it>",
                    "sources": [ { "name": "Business Standard", "url": "https://…" } ] } ] }

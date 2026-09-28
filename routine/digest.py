@@ -40,7 +40,8 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 FINAL_FROM = dt.time(22, 30)          # a run at/after 22:30 IST produces the day's FINAL edition
 MAX_ITEMS = 6                         # stories per section — ~35–40/day ≈ the 15–20 min daily read
 # word limits per field (prompt targets + ~20% slack) — an over-long card doesn't fit one phone screen
-WORDS = {"headline": 16, "what": 85, "why_it_matters": 48, "context": 80, "next": 32, "term": 22, "gist": 30,
+WORDS = {"headline": 14, "what": 62, "why_it_matters": 38, "context": 55, "next": 28, "term": 22, "gist": 30,
+         "insight": 36, "claude_take": 70,
          "top_line": 50, "top5.title": 10, "top5.why": 18, "watch": 20}
 MAX_CANDIDATES = 22                   # raw leads handed to the editor per section bucket
 LOOKBACK_FALLBACK_H = 12              # no previous run known -> look back this far
@@ -234,6 +235,8 @@ def _validate(upd: dict) -> list[str]:
                     _too_long(errs, f"{k}.items[{j}].{f}", it[f], f)
             if (it or {}).get("next"):
                 _too_long(errs, f"{k}.items[{j}].next", it["next"], "next")
+            if (it or {}).get("insight"):
+                _too_long(errs, f"{k}.items[{j}].insight", it["insight"], "insight")
             terms = (it or {}).get("terms") or []
             if not isinstance(terms, list) or len(terms) > 2:
                 errs.append(f"{k}.items[{j}]: terms must be a list of at most 2")
@@ -246,6 +249,11 @@ def _validate(upd: dict) -> list[str]:
             srcs = (it or {}).get("sources") or []
             if not any(isinstance(x, dict) and str(x.get("url") or "").startswith("http") for x in srcs):
                 errs.append(f"{k}.items[{j}]: needs at least one source with a url")
+    must = sum(1 for s in secs if isinstance(s, dict) for it in (s.get("items") or []) if isinstance(it, dict) and it.get("must_read"))
+    if must > 4:
+        errs.append(f"{must} stories marked must_read — keep it to the 2–3 the reader truly must not miss")
+    if upd.get("claude_take"):
+        _too_long(errs, "claude_take", upd["claude_take"], "claude_take")
     blob = json.dumps(upd, ensure_ascii=False)
     if "/Users/" in blob or _EMAIL.search(blob):
         errs.append("contains a local path or an email address (public page!)")
@@ -289,6 +297,8 @@ def merge() -> int:
                 "why_it_matters": it["why_it_matters"].strip(),
                 "context": it["context"].strip(),
                 **({"next": it["next"].strip()} if str(it.get("next") or "").strip() else {}),
+                **({"insight": it["insight"].strip()} if str(it.get("insight") or "").strip() else {}),
+                **({"must_read": True} if it.get("must_read") else {}),
                 **({"terms": [{"term": t["term"].strip(), "meaning": t["meaning"].strip()} for t in it["terms"][:2]]}
                    if it.get("terms") else {}),
                 "status": it.get("status") if it.get("status") in ("new", "developing") else "new",
@@ -307,6 +317,7 @@ def merge() -> int:
         "edition": _edition(now, final),
         "runs": (prev.get("runs") or []) + [stamp],
         "top_line": upd["top_line"].strip(),
+        **({"claude_take": upd["claude_take"].strip()} if str(upd.get("claude_take") or "").strip() else {}),
         "top5": [{"title": t["title"], "why": t["why"], "section": t["section"]} for t in upd["top5"][:5]],
         "sections": sections,
         "watch_tomorrow": [str(x) for x in (upd.get("watch_tomorrow") or []) if str(x).strip()][:5],

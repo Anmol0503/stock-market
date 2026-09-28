@@ -54,24 +54,24 @@
   svg.i{display:block;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
   /* ============ header ============ */
-  #hdr{flex:0 0 auto;position:relative;z-index:5;padding:calc(env(safe-area-inset-top) + 10px) 0 0;
+  #hdr{flex:0 0 auto;position:relative;z-index:5;padding:calc(env(safe-area-inset-top) + 6px) 0 0;
     background:var(--glass);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px);
     border-bottom:1px solid var(--line)}
   .brand{display:flex;align-items:center;gap:11px;max-width:640px;margin:0 auto;padding:0 16px}
-  .logo{width:38px;height:38px;border-radius:12px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;
+  .logo{width:32px;height:32px;border-radius:10px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;
     background:linear-gradient(135deg,#f6b44b,#e2683c 55%,#c2417e);box-shadow:0 6px 16px rgba(226,104,60,.35)}
   .wm{flex:1;min-width:0;display:flex;flex-direction:column;text-align:left}
-  .wm b{font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.1}
-  .wm span{font-size:12.5px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wm b{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.1}
+  .wm span{font-size:12px;color:var(--dim);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .wm span .final{color:var(--markets-c);font-weight:600}
-  .icb{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--soft);
+  .icb{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--soft);
     background:var(--card2);border:1px solid var(--line)}
   .icb:active{transform:scale(.94)}
   .icb.aa{font-family:var(--display);font-weight:700;font-size:15px}
   #refresh.spin svg{animation:spin .8s linear infinite} @keyframes spin{to{transform:rotate(360deg)}}
-  #tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:640px;margin:10px auto 0;padding:0 16px 10px}
+  #tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;max-width:640px;margin:6px auto 0;padding:0 12px 6px}
   #tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;height:34px;padding:0 12px 0 10px;border-radius:99px;display:flex;align-items:center;gap:6px;font-size:13.5px;
+  .tab{flex:0 0 auto;height:30px;padding:0 10px 0 9px;border-radius:99px;display:flex;align-items:center;gap:6px;font-size:13.5px;
     font-weight:600;color:var(--dim);white-space:nowrap;transition:all .25s;border:1px solid transparent}
   .tab .n{font-size:11px;font-weight:700;min-width:18px;height:18px;border-radius:99px;display:flex;align-items:center;justify-content:center;
     background:var(--card2);color:var(--dim);padding:0 5px}
@@ -83,8 +83,8 @@
   /* ============ reel ============ */
   #deck{flex:1 1 auto;min-height:0;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   #deck::-webkit-scrollbar{display:none}
-  .slot{height:100%;scroll-snap-align:start;scroll-snap-stop:always;padding:12px 12px calc(12px + env(safe-area-inset-bottom));display:flex}
-  .card{flex:1;max-width:600px;margin:0 auto;border-radius:28px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
+  .slot{height:100%;scroll-snap-align:start;scroll-snap-stop:always;padding:8px 8px calc(8px + env(safe-area-inset-bottom));display:flex}
+  .card{flex:1;max-width:600px;margin:0 auto;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
     overflow:hidden;display:flex;flex-direction:column;position:relative;--fit:1}
   .card.scroll{overflow-y:auto}
   .fz{font-size:calc(var(--s) * var(--tsz) * var(--fit))}
@@ -94,21 +94,21 @@
   b.hl{font-weight:700;color:var(--txt);background:linear-gradient(transparent 62%, color-mix(in srgb,var(--c) 30%,transparent) 62%);padding:0 1px}
 
   /* ---- story ---- */
-  .hero{position:relative;overflow:hidden;padding:calc(18px * var(--fit)) 20px calc(20px * var(--fit));color:var(--heroTxt);flex:0 0 auto}
+  .hero{position:relative;overflow:hidden;padding:calc(14px * var(--fit)) 18px calc(16px * var(--fit));color:var(--heroTxt);flex:0 0 auto}
   .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 90% at 0% 0%,rgba(255,255,255,.16),transparent 60%);pointer-events:none}
   .h-top{display:flex;align-items:center;gap:8px;position:relative;z-index:1}
   .h-ic{width:30px;height:30px;border-radius:10px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
   .h-lbl{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.95}
   .h-n{margin-left:auto;font-size:12px;font-weight:600;background:rgba(0,0,0,.18);border-radius:99px;padding:3px 9px}
   .h-dev{font-size:11px;font-weight:700;background:rgba(255,255,255,.22);border-radius:99px;padding:3px 9px}
-  .h-title{position:relative;z-index:1;font-family:var(--display);--s:24px;font-weight:650;line-height:1.2;letter-spacing:-.3px;margin:calc(12px * var(--fit)) 0 0;
+  .h-title{position:relative;z-index:1;font-family:var(--display);--s:22px;font-weight:650;line-height:1.2;letter-spacing:-.3px;margin:calc(9px * var(--fit)) 0 0;
     font-variation-settings:"opsz" 60;text-wrap:balance}
-  .body{flex:1 0 auto;display:flex;flex-direction:column;justify-content:center;gap:calc(14px * var(--fit));padding:calc(16px * var(--fit)) 20px calc(16px * var(--fit))}
+  .body{flex:1 0 auto;display:flex;flex-direction:column;justify-content:center;gap:calc(12px * var(--fit));padding:calc(13px * var(--fit)) 18px calc(12px * var(--fit))}
   .b-lbl{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
   .b-lbl svg{width:14px;height:14px}
-  .b-txt{--s:16px;line-height:1.55;margin:0;color:var(--txt)}
-  .back{background:var(--card2);border-radius:16px;padding:calc(12px * var(--fit)) 14px}
-  .back .b-txt{color:var(--soft);--s:15px}
+  .b-txt{--s:15.5px;line-height:1.5;margin:0;color:var(--txt)}
+  .back{background:var(--card2);border-radius:14px;padding:calc(10px * var(--fit)) 12px}
+  .back .b-txt{color:var(--soft);--s:14.5px}
   .why .b-lbl{color:var(--c)}
   .why{border-left:3px solid var(--c);padding-left:13px}
   .next{display:flex;gap:8px;align-items:flex-start}
@@ -118,6 +118,35 @@
   .term{font-size:12.5px;font-weight:600;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);border-radius:99px;padding:4px 10px}
   .foot a{text-decoration:none;color:var(--soft);font-weight:500}
   .foot .sep{flex:1}
+
+  /* ---- smart folding: if a story can't fit, the backstory (then "next") collapses to a one-tap row ---- */
+  .card.fold1 .back .b-txt, .card.fold1 .back .terms-in{display:none}
+  .card.fold1 .back{cursor:pointer;padding-top:calc(9px * var(--fit));padding-bottom:calc(9px * var(--fit))}
+  .card.fold1 .back .b-lbl{margin-bottom:0}
+  .card.fold1 .back .b-lbl::after{content:"Tap to read ›";margin-left:auto;font-weight:600;letter-spacing:0;text-transform:none;color:var(--c);font-size:12.5px}
+  .card.fold2 .next{display:none}
+  .card.fold1.cover .c-item .t span{display:none}
+  .card.fold2.cover .c-lede{display:none}
+  .card.fold3.cover .c-meta{display:none}
+  .card.fold1.intro .bigic,.card.fold1.intro .watermark{display:none}
+  .card.fold2.intro .i-gist{display:none}
+  .card.fold3.intro .i-meta{display:none}
+  .card.fold3 .foot{display:none} .card.open .foot{display:flex}
+  .card.open{overflow-y:auto} .card.open .back .b-txt{display:block} .card.open .next{display:flex}
+  .card.open .back .b-lbl::after{content:none} .card.open .back .b-lbl{margin-bottom:5px}
+  .card.open .body{justify-content:flex-start}
+  /* ---- ✦ Claude's insight ---- */
+  .ins{position:relative;border-radius:14px;padding:calc(10px * var(--fit)) 12px;
+    background:linear-gradient(135deg,color-mix(in srgb,#a78bfa 16%,var(--card)),color-mix(in srgb,#f472b6 12%,var(--card)));
+    border:1px solid color-mix(in srgb,#a78bfa 35%,transparent)}
+  .ins .b-lbl{color:#c4b5fd;margin-bottom:4px}
+  [data-theme="light"] .ins .b-lbl{color:#7c3aed}
+  .ins .b-txt{--s:14.5px;line-height:1.48;font-style:italic}
+  .spark{display:inline-block;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal;font-size:13px}
+  .h-must{font-size:11px;font-weight:700;background:#fff;color:var(--b);border-radius:99px;padding:3px 9px;display:flex;align-items:center;gap:4px}
+  .c-take{position:relative;margin-top:calc(14px * var(--fit))}
+  .c-take .b-txt{--s:14.5px}
+  .must-dot{font-size:11px;font-weight:700;color:#f472b6;margin-left:6px;white-space:nowrap}
 
   /* ---- cover ---- */
   .cover{padding:0}
@@ -345,6 +374,7 @@ function coverHTML(total,allMins){
       <h1 class="c-title fz">${today?`Your ${allMins}&#8209;minute briefing`:`The briefing for ${esc(shortDate(DATE))}`}</h1>
       <div class="c-meta"><span class="pill ${DOC.final?'final':''}">${DOC.final?'✓ Final edition':esc(DOC.edition||'')}</span><span class="pill">${total} stories</span><span class="pill">${secsCount()} sections</span></div>
       <p class="c-lede fz">${hl(DOC.top_line)}</p>
+      ${DOC.claude_take?`<div class="ins c-take"><div class="b-lbl"><span class="spark">✦</span> Claude's take on today</div><p class="b-txt fz">${hl(DOC.claude_take)}</p></div>`:''}
     </div>
     ${(DOC.top5||[]).length?`<div class="c-list"><div class="c-k">Top stories</div>${DOC.top5.map(t=>
       `<button class="c-item" onclick="jumpSection('${esc(t.section)}')"><span class="sq grad" style="${secVars(t.section)}">${icon(t.section)}</span><span class="t"><b class="fz">${esc(t.title)}</b><span class="fz">${esc(t.why)}</span></span><span class="chev">${icon('chev',16)}</span></button>`).join('')}</div>`:''}
@@ -366,13 +396,14 @@ function storyHTML(s,it,i){
   return `<div class="hero grad">
       <div class="watermark">${icon(s.key)}</div>
       <div class="h-top"><span class="h-ic">${icon(s.key,16)}</span><span class="h-lbl">${esc(SEC[s.key])}</span>
-        ${it.status==='developing'?'<span class="h-dev">Developing</span>':''}<span class="h-n">${i+1} / ${s.items.length}</span></div>
+        ${it.must_read?'<span class="h-must">★ Don\'t miss</span>':''}${it.status==='developing'?'<span class="h-dev">Developing</span>':''}<span class="h-n">${i+1} / ${s.items.length}</span></div>
       <h1 class="h-title fz">${esc(it.headline)}</h1>
     </div>
     <div class="body">
       <div><div class="b-lbl">${icon('news',14)}The news</div><p class="b-txt fz">${hl(it.what)}</p></div>
-      ${it.context?`<div class="back"><div class="b-lbl">${icon('book',14)}The backstory</div><p class="b-txt fz">${hl(it.context)}</p></div>`:''}
+      ${it.context?`<div class="back" onclick="openBack(this)"><div class="b-lbl">${icon('book',14)}The backstory</div><p class="b-txt fz">${hl(it.context)}</p></div>`:''}
       <div class="why"><div class="b-lbl">${icon('bulb',14)}Why it matters</div><p class="b-txt fz">${hl(it.why_it_matters)}</p></div>
+      ${it.insight?`<div class="ins"><div class="b-lbl"><span class="spark">✦</span> Claude's insight</div><p class="b-txt fz">${hl(it.insight)}</p></div>`:''}
       ${it.next?`<div class="next">${icon('arrow',16)}<p class="fz"><b>Next:</b> ${hl(it.next)}</p></div>`:''}
       <div class="foot">${(it.terms||[]).map(t=>`<button class="term" data-t="${esc(t.term)}" data-m="${esc(t.meaning)}" onclick="showTerm(this)">${esc(t.term)}</button>`).join('')}
         <span class="sep"></span>${(it.sources||[]).slice(0,2).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</div>
@@ -392,10 +423,17 @@ function endHTML(){
 
 /* ---------- auto-fit ---------- */
 function fit(card){
-  card.classList.remove('scroll'); let f=1; card.style.setProperty('--fit', f);
-  while(card.scrollHeight > card.clientHeight + 1 && f > FIT_MIN){ f=Math.round((f-0.02)*100)/100; card.style.setProperty('--fit', f); }
-  if(card.scrollHeight > card.clientHeight + 1) card.classList.add('scroll');
+  const over = () => card.scrollHeight > card.clientHeight + 1;
+  const shrink = min => { let f=1; card.style.setProperty('--fit', f);
+    while(over() && f > min){ f=Math.round((f-0.02)*100)/100; card.style.setProperty('--fit', f); } };
+  card.classList.remove('scroll','fold1','fold2','fold3','open');
+  shrink(0.92); if(!over()) return;
+  card.classList.add('fold1'); shrink(0.9); if(!over()) return;     // backstory → one-tap row
+  card.classList.add('fold2'); shrink(0.88); if(!over()) return;    // "next" folds in with it
+  card.classList.add('fold3'); shrink(0.84); if(!over()) return;    // sources + word chips fold in too
+  card.classList.add('scroll');                                      // last resort: scroll inside the card
 }
+function openBack(el){ const c=el.closest('.card'); if(c && c.classList.contains('fold1')) c.classList.add('open'); }
 function fitAll(){ document.querySelectorAll('#deck .card').forEach(fit); }
 let RZ; window.addEventListener('resize', ()=>{ clearTimeout(RZ); RZ=setTimeout(fitAll, 150); });
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>fitAll());

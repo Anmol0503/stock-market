@@ -56,7 +56,7 @@ def _parts(d: dict) -> list[dict]:
     sections = d.get("sections") or []
     total = len(sections) + 2
     parts = [dict(base, part=1, total_parts=total, session_title="The day in one breath",
-                  recap_so_far=d.get("top_line") or "",
+                  recap_so_far=(d.get("top_line") or "") + (("  ✦ Claude's take: " + d["claude_take"]) if d.get("claude_take") else ""),
                   chunks=[{"heading": t.get("title"), "idea": t.get("why")} for t in d.get("top5") or []])]
     for i, sc in enumerate(sections, 2):
         srcs = [s for it in sc.get("items") or [] for s in (it.get("sources") or [])]
@@ -66,7 +66,8 @@ def _parts(d: dict) -> list[dict]:
                           chunks=[{"heading": it.get("headline"), "idea": it.get("what"),
                                    "detail": ("The backstory: " + it["context"]) if it.get("context") else None,
                                    "example": ("What's next: " + it["next"]) if it.get("next") else None,
-                                   "key_takeaway": "Why it matters: " + (it.get("why_it_matters") or ""),
+                                   "key_takeaway": "Why it matters: " + (it.get("why_it_matters") or "")
+                                                   + (("  ✦ Claude's insight: " + it["insight"]) if it.get("insight") else ""),
                                    "key_terms": [{"term": t.get("term"), "definition": t.get("meaning")}
                                                  for t in it.get("terms") or []]}
                                   for it in sc.get("items") or []],
