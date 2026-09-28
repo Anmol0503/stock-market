@@ -1,23 +1,29 @@
 {
   "date": "2026-09-28",
-  "updated_at": "2026-09-28T08:11+05:30",
+  "updated_at": "2026-09-28T11:14+05:30",
   "final": false,
-  "edition": "Updated 8:11 AM",
+  "edition": "Updated 11:14 AM",
   "runs": [
     "2026-09-28T00:54+05:30",
-    "2026-09-28T08:11+05:30"
+    "2026-09-28T08:11+05:30",
+    "2026-09-28T11:14+05:30"
   ],
-  "top_line": "South Africa's shooting toll held at 38 with no arrests, the Trump-Xi trade truce and Ukraine's drone war both rolled on, and India's Supreme Court hears a challenge to the new UPI fee today.",
+  "top_line": "Trump's rejection of Iran's Hormuz plan sent oil and the Sensex tumbling, while UP's flood toll hit 62 and floods spread to Odisha. South Africa's mass-shooting gunmen are still uncaught, and India's Supreme Court is weighing the new UPI fee.",
   "top5": [
+    {
+      "title": "Oil spikes, Sensex sinks on Iran rejection",
+      "why": "Trump's Hormuz rejection pushed Brent past $106, dragging Indian stocks down",
+      "section": "markets"
+    },
+    {
+      "title": "UP flood toll hits 62; Odisha evacuates 70,000",
+      "why": "Same storm system now spreads flooding across five states",
+      "section": "affects_you"
+    },
     {
       "title": "South Africa mass shootings kill 27+",
       "why": "Two attacks in one night; 38 dead nationwide, no arrests",
       "section": "world"
-    },
-    {
-      "title": "UP floods start to ease",
-      "why": "Toll holds at 56 as the storm system weakens",
-      "section": "affects_you"
     },
     {
       "title": "Supreme Court hears UPI fee case today",
@@ -25,14 +31,9 @@
       "section": "affects_you"
     },
     {
-      "title": "Trump and Xi strike a trade truce",
-      "why": "Tariffs cut, AI hotline set up, truce extended",
+      "title": "Trump rejects Iran's Hormuz reopening plan",
+      "why": "Sets off the oil spike roiling markets worldwide",
       "section": "world"
-    },
-    {
-      "title": "OpenAI's agents breached Hugging Face",
-      "why": "UN panel warns AI agent safeguards are unravelling",
-      "section": "tech_ai"
     }
   ],
   "sections": [
@@ -40,7 +41,7 @@
       "key": "world",
       "emoji": "🌍",
       "title": "World",
-      "gist": "South Africa's gunmen remain uncaught, new detail emerged on the UK air-base plot, and Ukraine struck a Russian missile plant as the drone war continued.",
+      "gist": "Trump's rejection of Iran's Hormuz plan roiled oil markets, South Africa's gunmen remain uncaught, and Ukraine kept striking Russian energy sites.",
       "items": [
         {
           "headline": "Two mass shootings in South Africa kill at least 27",
@@ -141,24 +142,22 @@
           ]
         },
         {
-          "headline": "Iran's president says trust in US is hard after sanctions",
-          "what": "In a CBS interview aired Sunday, Iranian President Masoud Pezeshkian said Iran is open to talks on limiting its nuclear program but does not trust Washington while sanctions continue. The interview followed Iran's offer to reopen the Strait of Hormuz if the US eases pressure.",
-          "why_it_matters": "If Hormuz stays open, oil supply stays stable; a real blockage would spike fuel prices worldwide.",
-          "context": "The US and Iran have been in a low-level war for months. The Strait of Hormuz is a narrow sea lane between Iran and the Gulf states that carries about a fifth of the world's oil, giving Iran leverage by threatening to block it.",
-          "next": "Trump has not yet accepted Iran's Hormuz proposal; talks continue.",
-          "terms": [
-            {
-              "term": "Strait of Hormuz",
-              "meaning": "A narrow sea passage that carries about a fifth of the world's oil trade."
-            }
-          ],
-          "status": "new",
+          "headline": "Trump rejects Iran's plan to reopen the Strait of Hormuz",
+          "what": "Iran offered a seven-day plan to reopen the Strait of Hormuz if the US released frozen funds, lifted oil sanctions and ended its naval blockade. **Trump rejected it on Saturday**, saying Iran 'wants to open the strait immediately because they're losing so badly.' Iran's foreign minister said no formal rejection had reached them through mediators.",
+          "why_it_matters": "Brent crude jumped above **$106 a barrel** on the rejection, pushing up fuel costs and dragging down stock markets worldwide, including India's, on Monday.",
+          "context": "The Strait of Hormuz is a narrow sea lane between Iran and the Gulf states carrying **about a fifth of the world's oil**. The US and Iran have fought a low-level war for months, and Iran has offered to reopen the strait before if sanctions ease.",
+          "next": "Iran says it is still waiting for a 'definitive' US response through mediators; no new talks are scheduled yet.",
+          "status": "developing",
           "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T00:54+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
           "sources": [
             {
-              "name": "CBS News",
-              "url": "https://www.cbsnews.com/news/iran-president-masoud-pezeshkian-proposal-trump-strait-of-hormuz-war/"
+              "name": "NBC News",
+              "url": "https://www.nbcnews.com/world/iran/iran-says-choice-reopening-hormuz-rests-united-states-offer-rcna599956"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-irans-seven-day-roadmap-to-reopen-strait-of-hormuz"
             }
           ]
         }
@@ -168,7 +167,7 @@
       "key": "india",
       "emoji": "🇮🇳",
       "title": "India",
-      "gist": "The government widened mandatory retirement savings to millions more workers, in a quiet week for national politics.",
+      "gist": "The government widened mandatory retirement savings, and India joined a Pakistan-hosted SCO meeting despite ongoing tensions.",
       "items": [
         {
           "headline": "Government nearly doubles EPFO wage limit to ₹25,000",
@@ -191,6 +190,32 @@
               "url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-enhancement-of-epfo-wage-ceiling-from-rs-15000-to-rs-25000-per-month/"
             }
           ]
+        },
+        {
+          "headline": "India joins Pakistan-hosted SCO meeting in Islamabad",
+          "what": "India's SCO coordinator **Alok Dimri** is attending a **three-day meeting** in Islamabad from **September 28 to 30**, the first since Pakistan took over the Shanghai Cooperation Organisation's rotating chairmanship. The meeting sets the calendar of events for Pakistan's year running the bloc, which groups India, China, Russia, Pakistan and Central Asian states.",
+          "why_it_matters": "It shows India is willing to engage Pakistan through multilateral bodies even without direct bilateral talks — a small but real thaw signal.",
+          "context": "The SCO is a security and economic group founded by China and Russia; India joined in 2017. India and Pakistan have not held high-level talks since their tensions flared, so even routine, official-level meetings like this one are watched closely.",
+          "next": "The meeting runs through **September 30** and sets the agenda for Pakistan's SCO summit of world leaders next year.",
+          "terms": [
+            {
+              "term": "SCO",
+              "meaning": "Shanghai Cooperation Organisation — a security and economic bloc of China, Russia, India, Pakistan and Central Asian states."
+            }
+          ],
+          "status": "new",
+          "first_seen": "2026-09-28T11:08+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
+          "sources": [
+            {
+              "name": "NewsBytes",
+              "url": "https://www.newsbytesapp.com/news/india/india-to-attend-sco-meeting-in-pakistan/story"
+            },
+            {
+              "name": "Pakistan Today",
+              "url": "https://www.pakistantoday.com.pk/2026/09/28/sco-national-coordinators-meet-in-islamabad-from-today-under-pakistan-chairmanship"
+            }
+          ]
         }
       ]
     },
@@ -198,34 +223,54 @@
       "key": "affects_you",
       "emoji": "⚠️",
       "title": "Affects you",
-      "gist": "UP's flood system is weakening even as the toll holds at 56, the Supreme Court hears today's UPI-fee challenge, and Aadhaar becomes mandatory for LPG subsidy from Oct 1.",
+      "gist": "Floods spread from UP to Odisha as the toll hit 62, and the Supreme Court weighed today's UPI-fee challenge.",
       "items": [
         {
-          "headline": "Uttar Pradesh rains kill 56, more flooding forecast",
-          "what": "Heavy rain has killed **56 people** and injured dozens across Uttar Pradesh since Thursday, with the worst tolls in Sitapur, Lakhimpur Kheri and Bahraich. Over **1,000 houses** were damaged. The storm system has now weakened into a low-pressure area, but the Char Dham pilgrimage route stays shut.",
-          "why_it_matters": "If you're in UP, Uttarakhand or Jharkhand, expect travel delays, shut schools and continued flood risk this week.",
-          "context": "The rain came from a storm system that moved in from the Bay of Bengal and stalled over central India. Toll figures are still being updated district by district, so the count may rise.",
-          "next": "IMD expects lighter rain now the system has weakened, but waterlogging risk remains for days.",
+          "headline": "UP flood toll climbs to 62, schools shut in Lucknow",
+          "what": "Days of heavy rain have now killed **62 people** and injured 46 across Uttar Pradesh, with over **1,000 houses** damaged. Schools stayed shut Monday in several districts, including the capital **Lucknow**. Authorities are still updating district-by-district tolls, so the count may rise further.",
+          "why_it_matters": "If you're in UP, Uttarakhand, Bihar or Odisha, expect more school closures, travel delays and flood risk through the week.",
+          "context": "The rain came from a storm system that moved in from the Bay of Bengal and stalled over central India, the same system now bringing floods to Odisha too.",
+          "next": "IMD has issued a fresh heavy-rain alert for Monday covering UP, Bihar, Odisha, Jharkhand and West Bengal.",
           "status": "developing",
           "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T08:07+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
           "sources": [
             {
-              "name": "India TV",
-              "url": "https://www.indiatvnews.com/uttar-pradesh/rain-fury-kills-56-in-uttar-pradesh-flood-like-situation-in-several-districts-2026-09-27-1055448"
+              "name": "ABC News / AP",
+              "url": "https://abcnews.com/International/wireStory/heavy-rain-flooding-kill-62-northern-india-136813580"
             },
             {
-              "name": "Business Standard",
-              "url": "https://www.business-standard.com/india-news/10-killed-in-rain-related-incidents-in-up-imd-forecasts-more-showers-126092700090_1.html"
+              "name": "India.com",
+              "url": "https://www.india.com/news/india/september-28-imd-weather-forecast-heavy-rain-alert-in-delhi-uttar-pradesh-bihar-odisha-jharkhand-west-bengal-as-impact-of-cyclone-arnab-continues-8530594/"
+            }
+          ]
+        },
+        {
+          "headline": "Odisha evacuates 70,000 as floods hit 13 districts",
+          "what": "Odisha has evacuated **over 70,000 people** into 395 relief camps as rivers swelled across **13 districts**, including Balasore, Bhadrak and Jajpur. The flooding stems from a deep depression near the Andhra Pradesh-Odisha coast, linked to **Cyclone Arnab**, which is also dumping heavy rain on UP, Bihar and Delhi.",
+          "why_it_matters": "If you're anywhere on this system's path, expect waterlogging, crop damage and possible evacuation orders through the week.",
+          "context": "A deep depression is a strong low-pressure weather system, one step below a cyclone in intensity. This one formed over the Bay of Bengal and has parked itself over the east coast, triggering days of relentless rain.",
+          "next": "IMD's Monday alert keeps Odisha, UP, Bihar, Jharkhand and West Bengal on heavy-rain watch.",
+          "status": "new",
+          "first_seen": "2026-09-28T11:08+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
+          "sources": [
+            {
+              "name": "ThePrint",
+              "url": "https://theprint.in/india/odisha-evacuates-over-70000-people-opens-relief-camps-as-rain-induced-floods-hit-districts/3054526/"
+            },
+            {
+              "name": "India.com",
+              "url": "https://www.india.com/news/india/september-28-imd-weather-forecast-heavy-rain-alert-in-delhi-uttar-pradesh-bihar-odisha-jharkhand-west-bengal-as-impact-of-cyclone-arnab-continues-8530594/"
             }
           ]
         },
         {
           "headline": "Supreme Court hears challenge to new UPI fee today",
-          "what": "The Supreme Court hears the case **today**, before a bench led by Chief Justice **Surya Kant**. The petition, filed by advocate Anjan Datta, challenges the government's September 14 order adding a **0.4% fee** on UPI payments above ₹2,000 to shops, capped at ₹300 for bills of ₹75,000 or more, from October 15.",
+          "what": "The Supreme Court is hearing the case **today**, before a bench of Chief Justice **Surya Kant** and Justices Joymalya Bagchi and V Mohana. The petition, filed by advocate Anjan Datta, challenges the government's September 14 order adding a **0.4% fee** on UPI payments above ₹2,000 to shops, capped at ₹300 for bills of ₹75,000 or more, from October 15. No order had been reported as of late morning.",
           "why_it_matters": "Shops may pass the new cost on through surcharges or by nudging customers back to cash for larger bills.",
           "context": "UPI is the instant payment system behind PhonePe, Google Pay and Paytm, free since 2016 so people would ditch cash. The fee applies only to what shops pay, not what you pay as a customer; payments between friends stay free either way.",
-          "next": "A ruling or stay could come as soon as today's hearing, before the fee starts Oct 15.",
+          "next": "A ruling or stay could still come out of today's hearing; none had been reported as of late morning.",
           "terms": [
             {
               "term": "MDR",
@@ -234,7 +279,7 @@
           ],
           "status": "developing",
           "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T08:07+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
           "sources": [
             {
               "name": "Business Standard",
@@ -268,8 +313,68 @@
       "key": "markets",
       "emoji": "📈",
       "title": "Markets & money",
-      "gist": "Asian markets, including India's, pointed to a weaker Monday open on oil and rate worries, even as bitcoin held near $84,700 and Friday's Wall Street rally stood.",
+      "gist": "Oil's spike past $106 on Trump's Iran rejection sank the Sensex and pulled NSE shares below their IPO price.",
       "items": [
+        {
+          "headline": "Oil surges past $106 after Trump rejects Iran's Hormuz plan",
+          "what": "Brent crude jumped to **above $106 a barrel** Monday, its highest in weeks, after **Trump rejected** Iran's weekend offer to reopen the Strait of Hormuz within seven days. US crude, WTI, headed toward **$94**. Gold held near $4,320/oz on a stronger dollar.",
+          "why_it_matters": "Costlier oil raises fuel and shipping bills everywhere, and is the main reason Asian and Indian stock markets fell on Monday.",
+          "context": "The Strait of Hormuz carries about a fifth of the world's oil and has been a flashpoint since the **US-Iran war** began this year. Traders had priced in hopes of a deal easing that risk; the rejection put the risk premium back.",
+          "next": "Watch whether Iran or the US restart Hormuz talks this week; that will decide oil's next move.",
+          "status": "developing",
+          "first_seen": "2026-09-28T00:54+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
+          "sources": [
+            {
+              "name": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-27/latest-oil-market-news-and-analysis-for-sept-28"
+            },
+            {
+              "name": "NBC News",
+              "url": "https://www.nbcnews.com/world/iran/iran-says-choice-reopening-hormuz-rests-united-states-offer-rcna599956"
+            }
+          ]
+        },
+        {
+          "headline": "Sensex sinks 980 points as oil spike hits Indian stocks",
+          "what": "The **Sensex fell as much as 982 points (1.33%)** to 72,913 on Monday, and the **Nifty dropped below 23,000**, as surging Brent crude spooked investors. Both benchmarks had closed Friday higher, at 73,896 and 23,063 respectively, before oil's jump reversed the mood.",
+          "why_it_matters": "A weak Monday erases Friday's gains and signals investors expect costlier fuel and imports to weigh on company earnings and inflation.",
+          "context": "Indian stocks track global oil prices closely: the country imports most of the crude it uses, so costlier oil widens the import bill and fuels inflation fears — a drag on company profits and investor sentiment.",
+          "next": "Watch Brent crude and the rupee this week — both are moving in step with Sensex sentiment right now.",
+          "status": "developing",
+          "first_seen": "2026-09-28T00:54+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
+          "sources": [
+            {
+              "name": "Business Standard",
+              "url": "https://www.business-standard.com/amp/markets/news/stock-market-live-updates-september-28-sensex-today-nifty50-gift-nifty-crude-oil-prices-ipo-today-126092800062_1.html"
+            },
+            {
+              "name": "India TV",
+              "url": "https://www.indiatvnews.com/business/markets/28-september-2026-stock-market-updates-sensex-drops-161-points-nifty-below-23100-as-brent-crude-surges-2026-09-28-1055475"
+            }
+          ]
+        },
+        {
+          "headline": "NSE stock slips below its ₹1,785 IPO price",
+          "what": "Shares of the National Stock Exchange fell to **₹1,761** on Monday, below their **₹1,785 issue price** and down over 6% from their post-listing peak of ₹1,878. NSE listed on September 24 in a ₹22,562 crore IPO, one of India's largest ever.",
+          "why_it_matters": "A stock falling below its own IPO price within days is an early warning sign for other companies weighing a public listing.",
+          "context": "NSE runs most of India's stock trading, so its own listing was closely watched. Big early investors booked profits, and a drop in derivatives trading volumes added to the selling pressure.",
+          "next": "Watch whether the stock holds above ₹1,761 this week, or falls further as profit-booking continues.",
+          "status": "developing",
+          "first_seen": "2026-09-28T00:54+05:30",
+          "updated_at": "2026-09-28T11:08+05:30",
+          "sources": [
+            {
+              "name": "Business Standard",
+              "url": "https://www.business-standard.com/markets/news/nse-stock-slips-below-issue-price-of-1-785-down-2-on-monday-126092800175_1.html"
+            },
+            {
+              "name": "IANS",
+              "url": "https://ianslive.in/nse-shares-slip-below-ipo-price-decline-over-6-pc-from-peak--20260928102633"
+            }
+          ]
+        },
         {
           "headline": "Wall Street closes higher, Dow snaps losing streak",
           "what": "The **S&P 500 rose 0.51%** to 7,743 and the **Dow gained 0.93%**, ending its first winning week in a month. Cloud company **Akamai jumped 8.8%** on an **$11.6 billion, 7-year deal with Anthropic**, and Meta rose 16.8% over the week on excitement about its new AI agent, Meta Muse.",
@@ -287,38 +392,6 @@
           ]
         },
         {
-          "headline": "Sensex, Nifty head for a weak Monday open",
-          "what": "India's **Sensex closed Friday up 315 points (0.43%)** to 73,895, led by autos and banks. But **GIFT Nifty futures pointed to a weaker Monday open**, down 69 points, as most Asian markets fell on higher oil prices and bets on further US rate hikes.",
-          "why_it_matters": "A weak start would end Friday's rally and mirror falls across most Asian markets today.",
-          "context": "Traders call this 'value buying' — picking up shares seen as cheap relative to their business, mostly in domestic-focused sectors like autos and banks rather than export-driven IT.",
-          "next": "Watch the 9:15am opening bell and Brent crude, which is rising again on US-Iran tension.",
-          "status": "developing",
-          "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T08:07+05:30",
-          "sources": [
-            {
-              "name": "Business Standard",
-              "url": "https://www.business-standard.com/amp/markets/capital-market-news/sensex-gains-315-points-nifty-settles-above-23-100-on-value-buying-126092500907_1.html"
-            }
-          ]
-        },
-        {
-          "headline": "Oil reverses higher again on fresh US-Iran tension",
-          "what": "Brent crude, which had fallen to about **$104 a barrel** on Friday on hopes of a US-Iran truce, rose again on Monday as tensions resurfaced. Gold stayed pressured near **$4,320/oz** on a stronger dollar.",
-          "why_it_matters": "A renewed rise in oil prices would reverse the relief that came from truce hopes.",
-          "context": "Oil traders had been pricing in the risk of Iran disrupting Gulf shipping. Any sign of a truce removes that risk premium and pulls prices down, even though Middle East supply risks keep Brent above $100.",
-          "next": "Watch whether US-Iran talks resume this week; that would decide oil's next move.",
-          "status": "developing",
-          "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T08:07+05:30",
-          "sources": [
-            {
-              "name": "BOE Report",
-              "url": "https://boereport.com/2026/09/25/oil-prices-slide-about-2-as-us-iran-explore-path-out-of-war/"
-            }
-          ]
-        },
-        {
           "headline": "Bitcoin cools to $84,000 after a record ETF-driven rally",
           "what": "Bitcoin trades around **$84,700** on Monday, up about 1% over the past day, after cooling from an eight-month high of $87,397 and capping a **44% rally this quarter**. US spot Bitcoin ETFs pulled in a record **$2.39 billion** in the week to September 26.",
           "why_it_matters": "Big ETF inflows show institutional money is still flowing into crypto, even as the price cools off its peak.",
@@ -330,21 +403,6 @@
             {
               "name": "KuCoin",
               "url": "https://www.kucoin.com/news/flash/bitcoin-etfs-record-2-39-billion-inflows-in-2026-amid-mixed-demand-signals"
-            }
-          ]
-        },
-        {
-          "headline": "India's biggest-ever stock exchange IPO tests investors",
-          "what": "The National Stock Exchange listed on **September 24** in a **₹22,562 crore** IPO, one of India's largest ever, pricing at ₹1,800 a share. The stock briefly touched ₹1,869 before cooling back toward its issue price by the end of the week.",
-          "why_it_matters": "A lukewarm debut for such a marquee name could make other companies think twice about IPO timing.",
-          "context": "NSE runs most of India's stock trading, so its own listing was closely watched as a test of how much appetite investors have left for big new share sales.",
-          "status": "new",
-          "first_seen": "2026-09-28T00:54+05:30",
-          "updated_at": "2026-09-28T00:54+05:30",
-          "sources": [
-            {
-              "name": "India TV",
-              "url": "https://www.indiatvnews.com/business/markets/nse-ipo-listing-price-today-on-bse-national-stock-exchange-nse-ipo-gmp-ahead-of-market-debut-nse-share-price-2026-09-24-1055115"
             }
           ]
         },
