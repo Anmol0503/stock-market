@@ -48,7 +48,8 @@ over-long cards.
 
 **Claude's insight rules:** it is *analysis*, so ground it only in facts already on the card or well-established
 background — never new, unverified facts or numbers. Be neutral ("signals", "suggests", "the risk is"), not partisan.
-No filler ("this is significant"). Aim for insights on the ~8–12 best stories of the day, not every card.
+No filler ("this is significant"). **REQUIRED: give an `insight` to the 8–12 most important stories of the day
+(at least 6 — the merge step rejects fewer), including existing stories from `current_digest` that don't have one yet.**
 
 Writing rules:
 - **Short sentences** (≤ 20 words). One idea per sentence. No semicolons, no stacked clauses, no "meanwhile /

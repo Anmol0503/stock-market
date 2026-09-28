@@ -252,6 +252,13 @@ def _validate(upd: dict) -> list[str]:
     must = sum(1 for s in secs if isinstance(s, dict) for it in (s.get("items") or []) if isinstance(it, dict) and it.get("must_read"))
     if must > 4:
         errs.append(f"{must} stories marked must_read — keep it to the 2–3 the reader truly must not miss")
+    n_items = sum(len(s.get("items") or []) for s in secs if isinstance(s, dict))
+    n_ins = sum(1 for s in secs if isinstance(s, dict) for it in (s.get("items") or []) if isinstance(it, dict) and str(it.get("insight") or "").strip())
+    need = min(6, max(2, n_items // 4))
+    if n_ins < need:
+        errs.append(f"only {n_ins} stories have a Claude's insight — add one to at least {need} of the most important stories")
+    if not str(upd.get("claude_take") or "").strip():
+        errs.append("claude_take is empty — write Claude's take on today")
     if upd.get("claude_take"):
         _too_long(errs, "claude_take", upd["claude_take"], "claude_take")
     blob = json.dumps(upd, ensure_ascii=False)
