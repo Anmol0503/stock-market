@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""📰 The Daily Digest — one aggregated newsletter per IST day, built once a day at 11 PM IST (plus on-demand "Run now" updates).
+"""📰 The Daily Digest — one aggregated newsletter per IST day, built once a day at 6 PM IST (plus on-demand "Run now" updates).
 
 Instead of a firehose of 20+ stories per tab, each run folds what's NEW since the last run into a single
 running digest per day: a few sections (World, India, Affects you, Markets, Tech & AI, Science, F1, Cricket),
-each with a running summary + at most 6 items. The 11 PM IST run marks the day FINAL.
+each with a running summary + at most 6 items. The 6 PM IST run (or any run after 5:30 PM) marks the day FINAL.
 
 Pure Python around ONE editor step (Claude). In the cloud routine the cloud agent IS the editor; on the Mac
 `run-local` calls the headless CLI (Max subscription, Sonnet via config/usage.json).
@@ -37,7 +37,7 @@ INDEX = DIGEST_DIR / "index.json"
 PROMPT = ROOT / "routine" / "digest_prompt.md"
 
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
-FINAL_FROM = dt.time(22, 30)          # a run at/after 22:30 IST produces the day's FINAL edition
+FINAL_FROM = dt.time(17, 30)          # a run at/after 17:30 IST produces the day's FINAL edition
 MAX_ITEMS = 6                         # stories per section — ~35–40/day ≈ the 15–20 min daily read
 # word limits per field (prompt targets + ~20% slack) — an over-long card doesn't fit one phone screen
 WORDS = {"headline": 14, "what": 62, "why_it_matters": 38, "context": 55, "next": 28, "term": 22, "gist": 30,
@@ -98,7 +98,7 @@ def _day_file(date: str) -> pathlib.Path:
 
 
 def _edition(now: dt.datetime, final: bool) -> str:
-    return "Final · 11 PM" if final else "Updated " + now.strftime("%-I:%M %p")
+    return "Final · " + now.strftime("%-I:%M %p") if final else "Updated " + now.strftime("%-I:%M %p")
 
 
 def _sig(text: str) -> set:
@@ -114,7 +114,7 @@ def _near_dup(toks: set, seen: list) -> bool:
 # ---------------------------------------------------------------- prepare
 def _since(today: str, now: dt.datetime) -> dt.datetime:
     """Collect news published after the most recent digest run (today's, else yesterday's), so overnight
-    news between yesterday's 11 PM final and today's first run is never lost."""
+    news between yesterday's final and today's first run is never lost."""
     yday = (dt.date.fromisoformat(today) - dt.timedelta(days=1)).isoformat()
     for d in (today, yday):
         doc = _load(_day_file(d))

@@ -3,7 +3,7 @@
 
 The digest itself is built in the cloud (routine/digest.py) and published to GitHub Pages. This script reads it
 straight from the LIVE SITE over HTTPS — no git, so the Mac's checkout state never matters — and e-mails the
-final (11 PM) edition to the Kindle once per day. If the Mac was asleep at 11 PM, the next run catches up on
+final (evening, 6 PM) edition to the Kindle once per day. If the Mac was asleep in the evening, the next run catches up on
 unsent finals from the last 2 days (oldest first). Titles "Digest · 27 Sep 2026", author/series "The Daily
 Digest", so the Kindle library groups and sorts them.
 
@@ -88,7 +88,7 @@ def send_day(date: str, *, dry: bool, force: bool, local: bool) -> bool:
         print(f"digest-kindle: {date} not published yet")
         return False
     if not d.get("final") and not force:
-        print(f"digest-kindle: {date} is not final yet ({d.get('edition')}) — waiting for the 11 PM edition")
+        print(f"digest-kindle: {date} is not final yet ({d.get('edition')}) — waiting for the 6 PM final edition")
         return False
     title = _title(date)
     BOOKS.mkdir(parents=True, exist_ok=True)

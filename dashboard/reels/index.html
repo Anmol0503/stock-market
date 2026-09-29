@@ -288,9 +288,9 @@
 
 <script>
 // 📰 The Daily Digest — a reel: cover → [section intro → one full-screen card per story]… → what to watch.
-// Data: dashboard/digest/index.json + digest-<date>.json (cloud, once daily at 11 PM IST + on-demand Run now). Old app: ./classic.html.
+// Data: dashboard/digest/index.json + digest-<date>.json (cloud, once daily at 6 PM IST + on-demand Run now). Old app: ./classic.html.
 const ROUTINE_URL = 'https://claude.ai/code/routines/trig_01RrsV4Pi2R6komAEPRJQTyJ';
-const SCHEDULE = '11 PM';
+const SCHEDULE = '6 PM';
 const IC = {  // Lucide-style line icons
   top:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   world:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
@@ -416,7 +416,7 @@ function endHTML(){
       <h1 class="e-title">You're all caught up</h1>
       <p class="e-sub">That's everything for ${rel(DATE)===0?'today':esc(shortDate(DATE))}.</p>
       ${(DOC.watch_tomorrow||[]).length?`<div class="c-k e-k" style="padding:0">What to watch next</div><ul class="e-list">${DOC.watch_tomorrow.map(x=>`<li>${icon('next',16)}<span>${hl(x)}</span></li>`).join('')}</ul>`
-        :`<p class="e-sub">The watch-list arrives with the 11 PM final edition.</p>`}
+        :`<p class="e-sub">The watch-list arrives with the 6 PM final edition.</p>`}
       <button class="btn" onclick="openCalendar()">Read another day ${icon('arrow',16)}</button>
       <div class="disc">${esc(DOC.disclaimer||'')}</div>
     </div>`;

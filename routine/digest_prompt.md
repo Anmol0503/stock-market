@@ -10,7 +10,7 @@ news: assume they have never heard of the people, places, laws or companies invo
 
 ## Read this ONE file
 `output/digest-context.json`:
-- `date`, `now_ist`, `is_final` — the IST day you're editing and whether this is the **11 PM final edition**.
+- `date`, `now_ist`, `is_final` — the IST day you're editing and whether this is the **final edition** (the evening run).
 - `current_digest` — the digest so far today (**null on the first run of the day**). Start from it.
 - `candidates` — raw headlines published since the last run, pre-bucketed by section. LEADS, not facts.
   (They may be empty — then find the day's news yourself with WebSearch.)
