@@ -1,13 +1,14 @@
 {
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T18:32+05:30",
+  "updated_at": "2026-10-21T18:38+05:30",
   "final": true,
-  "edition": "Final · 6:32 PM",
+  "edition": "Final · 6:38 PM",
   "runs": [
-    "2026-10-21T18:32+05:30"
+    "2026-10-21T18:32+05:30",
+    "2026-10-21T18:38+05:30"
   ],
-  "top_line": "Three democracies and a disputed African border all turned tense this week, while a quiet Fed meeting looms as the next big market trigger. Antonelli stands one race from history, and India's cricketers barely pause for breath.",
-  "claude_take": "Brazil and Israel head into tight votes within days of each other, and Sudan's civil war keeps bleeding into neighbouring Abyei with no clean resolution in sight. Markets are holding their breath for the Fed, not reacting to it yet. The pattern today is **anticipation** — of votes, of a rate decision, of a title — more than resolution.",
+  "top_line": "A Kolkata stampede killed 19 as protests over India's voter rolls grew, while the RBI's rate hike dragged the Sensex down and three world elections edge closer. Antonelli stands one race from an F1 title, and India's cricketers juggle a new captain and a new tour.",
+  "claude_take": "Today's thread is **institutions under strain**: India's crowd-safety gaps, voter-roll trust, and a hawkish RBI squeezing banks all surfaced at once, alongside elections testing Brazil's and Israel's democracies. Markets are bracing rather than reacting — for the Fed, not to it. Even sport mirrors this: a rookie closing in on history, a new cricket captain inheriting a reshuffled side.",
   "top5": [
     {
       "title": "Drone strike kills dozens in Abyei market",
@@ -15,24 +16,24 @@
       "section": "world"
     },
     {
+      "title": "Kolkata stampede kills 19 at Durga Puja",
+      "why": "India's biggest festival again exposed deadly crowd-safety gaps",
+      "section": "india"
+    },
+    {
       "title": "Brazil's runoff is a razor-thin race",
       "why": "A Bolsonaro could return to power in Latin America's biggest economy",
       "section": "world"
     },
     {
-      "title": "Ex-general challenges Netanyahu in Oct 27 vote",
-      "why": "Israel's election could end Netanyahu's record run in power",
-      "section": "world"
-    },
-    {
-      "title": "Fed's rate call looms October 28",
-      "why": "Its tone will move global markets and the rupee",
+      "title": "RBI hikes rates as Sensex tumbles 876 points",
+      "why": "Costlier loans and a bank-led selloff squeeze markets together",
       "section": "markets"
     },
     {
-      "title": "Antonelli can clinch F1 title in Austin",
-      "why": "Would make him F1's youngest-ever champion at 19",
-      "section": "f1"
+      "title": "Ex-general challenges Netanyahu in Oct 27 vote",
+      "why": "Israel's election could end Netanyahu's record run in power",
+      "section": "world"
     }
   ],
   "sections": [
@@ -125,11 +126,162 @@
       ]
     },
     {
+      "key": "india",
+      "emoji": "🇮🇳",
+      "title": "India",
+      "gist": "A deadly Kolkata stampede, growing protests over the voter rolls and a shooting at a Bollywood star's car marked a tense week.",
+      "items": [
+        {
+          "headline": "Kolkata stampede at Durga Puja festival kills 19 people",
+          "what": "A crush of festival-goers in Kolkata's Chorbagan neighbourhood killed **19 people** and injured 25 on Saturday night. Police say rain and a loudspeaker announcement pushed the crowd to surge forward outside a decorated pandal, or festival pavilion. West Bengal detained several organisers and ordered a judge-led inquiry into what went wrong.",
+          "why_it_matters": "It's a reminder that India's biggest religious gatherings often lack the crowd-control measures needed to prevent deadly stampedes.",
+          "context": "Durga Puja is eastern India's biggest festival, when millions visit elaborately decorated pandals to see goddess Durga's idol over several nights. Deadly crowd crushes are a recurring risk at India's festivals, where huge numbers gather in tight public spaces.",
+          "next": "The judge-led inquiry and police questioning of organisers continue; more arrests are possible.",
+          "must_read": true,
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "All India Radio (newsonair.gov.in)",
+              "url": "https://newsonair.gov.in/kolkata-durga-puja-stampede-kills-19-west-bengal-cm-announces-rs-25-lakh-aid-and-government-jobs/"
+            },
+            {
+              "name": "Onmanorama",
+              "url": "https://www.onmanorama.com/news/india/2026/10/18/kolkata-durga-puja-stampede-death-toll-rises-to-19-12-including-organisers-detained.amp.html"
+            }
+          ]
+        },
+        {
+          "headline": "Protesters demand India's election chief resign",
+          "what": "The Cockroach Janta Party, a youth protest group, has held near-daily rallies demanding Election Commissioner Gyanesh Kumar's resignation. They say a recent voter-list revision wrongly deleted millions of names, mostly hurting opposition supporters. A court this week extended two arrested activists' detention, and the protests have spread to other states.",
+          "why_it_matters": "If voters were wrongly removed from the rolls, it could change the outcome of future elections.",
+          "context": "The Election Commission runs India's elections and is meant to be neutral; critics accuse commissioner **Gyanesh Kumar** of favouring the ruling party. The group formed in May, naming itself after a Chief Justice remark about unemployed youth, as a jab at the ruling BJP.",
+          "next": "Watch for the activists' appeal in a higher court and whether protests keep spreading.",
+          "insight": "The protest has outlasted most movements this year, showing the voter-roll issue carries real public anger beyond parties.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "Al Jazeera",
+              "url": "https://aljazeera.com/news/2026/10/19/indian-court-extends-detention-of-cockroach-leaders"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/9/25/indias-cockroach-movement-demands-election-chiefs-resignation"
+            }
+          ]
+        },
+        {
+          "headline": "Gunmen open fire on Bollywood star Tiger Shroff",
+          "what": "Three men on a motorcycle fired at actor **Tiger Shroff's** car in Mumbai's Juhu area on Sunday night. Shroff was unhurt, but his driver was wounded in the hand. Police detained three suspects at a Rajasthan railway station the next day.",
+          "why_it_matters": "It raises fresh fears about gang threats against celebrities, after a string of past extortion cases in Mumbai.",
+          "context": "Tiger Shroff is a top Bollywood action star known for dance and martial-arts films. An anonymous message claimed the **Lawrence Bishnoi gang** — a crime network blamed for past celebrity extortion and violence — was behind the attack, though police haven't confirmed it.",
+          "next": "Mumbai police are reviewing CCTV footage to trace the shooters and confirm who ordered the attack.",
+          "terms": [
+            {
+              "term": "Lawrence Bishnoi gang",
+              "meaning": "A criminal network from Punjab blamed for shootings and extortion of celebrities and businessmen."
+            }
+          ],
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "The National",
+              "url": "https://www.thenationalnews.com/arts-culture/2026/10/19/who-is-tiger-shroff-and-what-do-we-know-about-the-shooting-of-the-bollywood-star/"
+            },
+            {
+              "name": "Sacnilk",
+              "url": "https://www.sacnilk.com/news/tiger-shroff-firing-case-all-three-suspected-shooters-arrested-in-rajasthans-kota"
+            }
+          ]
+        },
+        {
+          "headline": "India's tax collections jump 11.6% as GST reform continues",
+          "what": "India collected about **₹12.46 lakh crore** in GST — the tax on goods and services — between April and September, up 11.6%. Finance Minister Nirmala Sitharaman said the next reform phase will focus on making compliance simpler for businesses. The changes follow last year's rate cuts, which were only the first step, she said.",
+          "why_it_matters": "Higher tax collections give the government more room to spend on welfare and infrastructure without borrowing more.",
+          "context": "GST is the single tax that replaced a tangle of state and central taxes on goods and services in 2017. Rising collections suggest the economy and consumer spending are holding up despite global uncertainty.",
+          "next": "The GST Council is expected to take up the compliance proposals in its next meeting.",
+          "insight": "Strong, resilient collections let the government claim reforms are working, even as growth slows elsewhere.",
+          "terms": [
+            {
+              "term": "GST",
+              "meaning": "Goods and Services Tax — India's single nationwide tax on sales of goods and services."
+            }
+          ],
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "IBTimes India",
+              "url": "https://www.ibtimes.co.in/next-phase-gst-reforms-simplify-compliance-boost-economy-fm-906985"
+            },
+            {
+              "name": "New Kerala",
+              "url": "https://www.newkerala.com/news/a/next-phase-gst-reforms-support-pm-modis-viksit-539.htm"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "markets",
       "emoji": "📈",
       "title": "Markets & money",
-      "gist": "All eyes turned to next week's Fed decision, the first big test since the RBI's own rate hike.",
+      "gist": "The Sensex tumbled on bank earnings worries and the RBI's hawkish rate hike, as all eyes turned to next week's Fed decision.",
       "items": [
+        {
+          "headline": "Sensex sinks 876 points on bank earnings worries",
+          "what": "India's **Sensex fell 876 points (1.17%)** to 73,852.90 on Monday, its sharpest drop in weeks. The **Nifty 50 dropped 1.11%** to 22,888.95 as investors fretted over bank earnings and high crude oil prices. HDFC Bank, Axis Bank and ICICI Bank all reported results that raised concerns about profit margins.",
+          "why_it_matters": "A weak bank sector can slow lending to businesses and households across the economy.",
+          "context": "The Sensex and Nifty are India's two main stock-market indexes, tracking its biggest listed companies. Markets had rallied for five straight sessions before this reversal, so some pullback was expected.",
+          "next": "Markets were shut Tuesday for Dussehra; trading resumes today with more earnings due.",
+          "insight": "The selloff hit banks hardest just as the RBI turned stricter on rates — a double squeeze on lending growth.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "Kotak Securities",
+              "url": "https://www.kotakneo.com/news/market-news/stock-market-update-19october-2026-sensex-nifty/"
+            },
+            {
+              "name": "Outlook Business",
+              "url": "https://www.outlookbusiness.com/markets/sensex-nifty-snap-5-day-rally-as-financial-stocks"
+            }
+          ]
+        },
+        {
+          "headline": "RBI raises key interest rate to 5.50%, turns hawkish",
+          "what": "India's central bank, the **RBI**, raised its main lending rate by **0.25 percentage points to 5.50%** on October 7. It was the first hike since 2023, and the bank shifted its stance to **\"calibrated tightening\"**, ruling out near-term cuts. The RBI also raised its inflation forecast for the year to 5.2%.",
+          "why_it_matters": "Loans for homes, cars and businesses will likely get costlier, and further cuts are now off the table for months.",
+          "context": "The repo rate is what the RBI charges banks to borrow money, which filters through to loan and deposit rates for everyone. The bank is responding to a weak monsoon and high energy prices pushing up prices faster than expected.",
+          "next": "The RBI's next rate decision is due **December 2-4**.",
+          "insight": "Two of six rate-setters wanted to hold steady, suggesting the RBI's hawkish turn isn't unanimous.",
+          "terms": [
+            {
+              "term": "repo rate",
+              "meaning": "The interest rate the central bank charges banks for short-term loans."
+            }
+          ],
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "Corplaw Updates",
+              "url": "https://www.corplawupdates.in/updates/rbi-repo-rate-hike-5-50-percent-october-2026"
+            },
+            {
+              "name": "Brickwork Ratings",
+              "url": "https://www.brickworkratings.com/Research/Brickwork_Ratings_RBI_MPC_Meet_Outcome_October_2026.pdf"
+            }
+          ]
+        },
         {
           "headline": "Fed's October rate decision looms next week",
           "what": "The US Federal Reserve meets on **October 27-28** to decide its next interest-rate move. The meeting follows a run of hot US inflation data and a volatile month for Indian and US stocks. India's own central bank, the RBI, already raised its key rate to 5.50% this month.",
@@ -153,6 +305,22 @@
               "url": "https://fedratecalc.com/fomc-meeting-schedule/"
             }
           ]
+        },
+        {
+          "headline": "Bitcoin holds steady near $83,000 this month",
+          "what": "**Bitcoin** has traded in a tight **$83,000-$86,600** range through October, with no major breakout. The latest reading, from October 10, put it near **$83,000**, with trader sentiment reading \"greed.\" Prediction markets see roughly a one-in-three chance it closes October above $85,000.",
+          "why_it_matters": "Crypto often moves with riskier stocks, so a breakout either way could signal a broader shift in investor mood.",
+          "context": "Bitcoin is the largest cryptocurrency, often used as a barometer for risk appetite across markets. Calm, sideways trading like this often comes before a bigger move once traders pick a direction.",
+          "next": "Watch whether Bitcoin breaks decisively above $86,600 or below $83,000 this week.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "bgeometrics",
+              "url": "https://bgeometrics.com/reports/daily/2026-10-10.html"
+            }
+          ]
         }
       ]
     },
@@ -160,7 +328,7 @@
       "key": "tech_ai",
       "emoji": "🤖",
       "title": "Tech & AI",
-      "gist": "Anthropic had a busy week — a new cheap AI model, a Singapore pact, and election safeguards for the midterms.",
+      "gist": "Anthropic had a busy week on safety, while OpenAI chased $30B in funding and Microsoft unveiled its own AI chip to rival Nvidia.",
       "items": [
         {
           "headline": "Anthropic opens a Singapore office, signs AI safety pact",
@@ -216,6 +384,55 @@
               "url": "https://www.unite.ai/?p=485620"
             }
           ]
+        },
+        {
+          "headline": "OpenAI is reportedly seeking $30 billion in new funding",
+          "what": "OpenAI is in talks to raise about **$30 billion** from investors, Reuters reported on October 19. The deal could value the company at over **$1.4 trillion**. Talks are still ongoing, so the terms could still change before anything is finalised.",
+          "why_it_matters": "A **$1.4 trillion** valuation would make OpenAI one of the most valuable private companies ever, raising the stakes if AI demand slows.",
+          "context": "OpenAI, the maker of ChatGPT, has raised money in several rounds this year to fund the huge data centres its AI models need. Each round has pushed its valuation higher, reflecting investor bets that AI demand will keep growing.",
+          "next": "Watch for the round to close and for who the new investors are.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "The Motley Fool",
+              "url": "https://fool.com/investing/2026/10/20/openai-is-reportedly-raising-usd30-billion-which-chip-stock-gains-the-most"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft unveils its own AI chip to rival Nvidia",
+          "what": "Microsoft revealed its new **Maia 300** AI chip, which it plans to start using in 2027. The chip is designed to run AI models more cheaply inside Microsoft's own data centres. It is the latest sign that Microsoft wants to rely less on Nvidia's chips.",
+          "why_it_matters": "Every major **Nvidia** customer building rival chips could eventually slow Nvidia's growth and lower AI computing costs industry-wide.",
+          "context": "**Nvidia** makes the graphics chips that power most AI systems today, and charges a premium for them. Microsoft, Google, Amazon and OpenAI are all now designing their own AI chips to cut costs and reduce dependence on one supplier.",
+          "next": "Watch whether Microsoft's own chip performs well enough to actually cut its Nvidia orders.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "Axios",
+              "url": "https://www.axios.com/2026/10/13/big-tech-ai-chips-nvidia-rivals"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI drops its push to restrict AI chip sales to China",
+          "what": "OpenAI has reportedly stopped lobbying Washington for tighter limits on advanced AI chip sales to China, two sources told Politico. The company previously pushed for stricter export controls, worried rivals could use Chinese-bought chips to catch up. Nvidia, which sells those chips and opposed the restrictions, benefits most from this reversal.",
+          "why_it_matters": "It removes a major voice pushing for tougher China chip rules, making it easier for **Nvidia** to keep selling into a huge market.",
+          "context": "The US has restricted advanced chip exports to China since 2022, fearing they could boost Chinese military and AI power. **Nvidia**, the dominant maker of AI chips, has lobbied against these limits, saying they just push China to build its own supply.",
+          "next": "Watch for the Commerce Department's next export-rule update and whether China retaliates on its own chip curbs.",
+          "insight": "The timing — alongside OpenAI's own push to raise $30B — suggests chip politics may bend to each company's funding needs, not fixed strategy.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "The Next Web",
+              "url": "https://thenextweb.com/news/openai-china-chip-export-controls-retreat-nvidia"
+            }
+          ]
         }
       ]
     },
@@ -223,7 +440,7 @@
       "key": "science",
       "emoji": "🔬",
       "title": "Science, health & climate",
-      "gist": "Congo's Ebola outbreak kept widening, reaching an eighth province as the case count climbed past 9,200.",
+      "gist": "Health research offered a possible Alzheimer's sleep fix and a statin-pain clue, while COP31 loomed over global climate trust.",
       "items": [
         {
           "headline": "Ebola outbreak reaches an eighth Congolese province",
@@ -239,6 +456,55 @@
             {
               "name": "ECDC",
               "url": "https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf"
+            }
+          ]
+        },
+        {
+          "headline": "Removing overactive brain cells restored sleep in mice",
+          "what": "University of Kentucky researchers removed overactive immune cells from the brains of mice with Alzheimer's-like disease. This restored more than **two hours** of lost sleep per day. The team says these overactive cells, not just toxic brain plaques, may drive the sleep loss seen in Alzheimer's.",
+          "why_it_matters": "It points to a new treatment target for Alzheimer's sleep problems that does not depend on clearing plaques, which has mostly failed.",
+          "context": "Alzheimer's disease is marked by sticky brain plaques and severe sleep problems that worsen as the disease progresses. Most Alzheimer's research and drugs have focused on clearing those plaques, with limited success so far.",
+          "next": "Watch for follow-up studies testing whether this also works in human Alzheimer's patients.",
+          "insight": "This targets brain inflammation instead of amyloid plaques, the approach most Alzheimer's drugs have chased for two decades with limited success.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "ScienceDaily (University of Kentucky)",
+              "url": "https://www.sciencedaily.com/releases/2026/10/261018084421.htm"
+            }
+          ]
+        },
+        {
+          "headline": "Scientists may have found why statins cause muscle pain",
+          "what": "McMaster University researchers found that **statins**, widely used cholesterol drugs, can disrupt how muscle cells make energy. That disruption triggers an immune response that damages muscle tissue, in cell and mouse experiments. Blocking that immune response prevented much of the muscle damage in their tests.",
+          "why_it_matters": "If confirmed, this could lead to new drugs that stop statin muscle pain without reducing their cholesterol-lowering benefit.",
+          "context": "**Statins** lower cholesterol and help prevent heart attacks and strokes, but muscle pain is a common reason people stop taking them. Earlier research blamed a calcium leak inside muscle cells, while this team points to a separate energy-and-immune pathway.",
+          "next": "Watch for human trials testing drugs that block this immune pathway without affecting cholesterol.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "McMaster University",
+              "url": "https://news.mcmaster.ca/mcmaster-researchers-uncover-possible-cause-of-muscle-pain-from-widely-used-cholesterol-medication/"
+            }
+          ]
+        },
+        {
+          "headline": "UN warns of trust test ahead of COP31 summit",
+          "what": "The **COP31** climate summit will run from **November 9 to 20** in Antalya, Turkey. Current government climate policies are on track to warm the planet by roughly **2.8°C**, far above the 1.5°C goal. The United Nations says the summit faces a major test of trust between nations.",
+          "why_it_matters": "The summit's outcome will shape how fast major economies, including India's trading partners, cut emissions and fund climate damage.",
+          "context": "**COP** stands for Conference of the Parties, the yearly United Nations meeting where countries negotiate action on climate change. Turkey and Australia are jointly leading this year's talks after Australia dropped its own bid to host.",
+          "next": "Watch the World Leaders' Summit on **November 11-12** for the biggest commitments.",
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "UN News",
+              "url": "https://news.un.org/en/story/2026/10/1168617"
             }
           ]
         }
@@ -277,21 +543,52 @@
       "key": "cricket",
       "emoji": "🏏",
       "title": "Cricket — the masala",
-      "gist": "India's cricketers landed in New Zealand for a grueling five-match T20 series starting this weekend.",
+      "gist": "India's West Indies series ended in a rained-out tie, and a new-look side under debut captain Shreyas Iyer heads to New Zealand.",
       "items": [
         {
-          "headline": "India begin a grueling five-T20I tour of New Zealand",
-          "what": "India's cricket team plays the first of **five T20Is** against New Zealand at Christchurch on **October 22**. Further matches follow at Christchurch, Wellington, Auckland and Hamilton through **November 1**, before a three-match ODI series starts November 4. It is India's second long tour in a row after West Indies.",
-          "why_it_matters": "A packed calendar like this often leads to injuries or burnout, and selectors will be watched closely for how they rotate players.",
-          "context": "India just finished a tour of the West Indies, so the squad barely gets a break before flying to New Zealand. Back-to-back tours like this put heavy physical strain on players and raise questions about workload management.",
-          "next": "First T20I at Christchurch is **October 22**, with the series running into early November.",
+          "headline": "Rain washes out India-West Indies T20I decider",
+          "what": "India posted **118 for 5** in the series-deciding fifth T20I in Bengaluru on Oct 17 before rain ended play. The match was washed out with no result. The five-match series finished **tied 2-2**, after both teams won two games each.",
+          "why_it_matters": "Neither side could settle the rivalry on the field, leaving bragging rights shared ahead of India's next series.",
+          "context": "T20I is cricket's shortest international format, with each side batting 20 overs. The series swung back and forth, with both teams winning two of the first four matches before the decider.",
+          "next": "India leave almost immediately for New Zealand, starting a new T20I series on **Oct 22**.",
           "status": "new",
           "first_seen": "2026-10-21T18:18+05:30",
           "updated_at": "2026-10-21T18:32+05:30",
           "sources": [
             {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/sports/liveblog/2026/10/17/live-india-vs-west-indies-fifth-t20-international"
+            },
+            {
               "name": "ESPNcricinfo",
-              "url": "https://www.espn.com.au/cricket/scores/series/24469"
+              "url": "https://www.espn.in/cricket/scores/series/24289?type=t20i"
+            }
+          ]
+        },
+        {
+          "headline": "Shreyas Iyer leads India in first series as captain",
+          "what": "Shreyas Iyer will captain India's T20I team for the first time since replacing Suryakumar Yadav earlier this year. The five-match series against New Zealand starts **Oct 22** in Christchurch. Pace bowler Bhuvneshwar Kumar and spinner Varun Chakaravarthy return to the squad after time out of the side.",
+          "why_it_matters": "A new captain and two recalled veterans show India is still reshaping its T20 side less than a year after its World Cup win.",
+          "context": "India dropped Suryakumar as T20I captain this year despite him leading the team to a World Cup win, after a long form slump. Iyer previously captained Kolkata Knight Riders to the 2024 IPL title and is India's ODI vice-captain.",
+          "next": "The first of five T20Is is at **Hagley Oval** in Christchurch on Oct 22.",
+          "insight": "Recalling two out-of-favour veterans for a new captain's first series suggests selectors value experience over a clean break.",
+          "terms": [
+            {
+              "term": "T20I",
+              "meaning": "a Twenty20 International — cricket's shortest format, limited to 20 overs a side."
+            }
+          ],
+          "status": "new",
+          "first_seen": "2026-10-21T18:18+05:30",
+          "updated_at": "2026-10-21T18:32+05:30",
+          "sources": [
+            {
+              "name": "TV9 Marathi",
+              "url": "https://www.tv9marathi.com/sports/cricket-news/series/schedule/ind-in-nz-5-t20is-2026-15632"
+            },
+            {
+              "name": "IANS",
+              "url": "https://ianslive.in/shreyas-iyer-replaces-suryakumar-yadav-as-indias-new-t20i-captain--20260606131310"
             }
           ]
         }
@@ -299,11 +596,11 @@
     }
   ],
   "watch_tomorrow": [
-    "India's first T20I vs New Zealand — Christchurch, October 22.",
+    "India's first T20I vs New Zealand under new captain Shreyas Iyer — Christchurch, October 22.",
     "Formula 1's US Grand Prix, where Antonelli could clinch the title — October 23-25.",
     "Brazil's presidential runoff between Lula and Flávio Bolsonaro — October 25.",
     "Israel's general election, Netanyahu vs Eisenkot — October 27.",
-    "The Fed's rate decision, after RBI's own October hike — October 28."
+    "The Fed's rate decision, right after RBI's own October hike — October 28."
   ],
   "disclaimer": "Not financial advice. A personal, automated news digest — summaries of public reporting with links to the original sources. Verify anything important before acting on it."
 }
