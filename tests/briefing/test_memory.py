@@ -50,3 +50,16 @@ def test_calendar_due_covered_pending():
     statuses = sorted(e["status"] for e in cal["events"] if e["date"] == "2026-11-03")
     assert statuses == ["covered", "pending"]
     assert [e["title"] for e in agenda.upcoming(cal, "2026-11-04")] == ["Israel coalition deadline"]
+
+
+def test_same_day_rerun_does_not_count_twice():
+    doc = {"threads": []}
+    t = threads.touch(doc, tid=None, title="Cyclone Murasu landfall", section="india", date="2026-11-02",
+                      summary="first", timeline_text="x", item_id="s4")
+    threads.touch(doc, tid=t["id"], title="x", section="india", date="2026-11-03", summary="second",
+                  timeline_text="y", item_id="s1")
+    assert threads.before(t, "2026-11-03") == {"date": "2026-11-03", "days": 1, "summary": "first", "last_state": []}
+    threads.touch(doc, tid=t["id"], title="x", section="india", date="2026-11-03", summary="second again",
+                  timeline_text="y", item_id="s1")                     # a re-run on the same morning
+    assert t["days"] == 2 and threads.before(t, "2026-11-03")["summary"] == "first"
+    assert threads.context(t, "2026-11-03")["days"] == 1 and threads.context(t, "2026-11-03")["summary"] == "first"

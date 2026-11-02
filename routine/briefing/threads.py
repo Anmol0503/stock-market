@@ -34,11 +34,21 @@ def find(doc: dict, tid: str) -> dict | None:
     return next((t for t in doc["threads"] if t["id"] == tid), None)
 
 
-def context(t: dict) -> dict:
-    """The compact view prompts get."""
-    return {"id": t["id"], "title": t["title"], "section": t.get("section"), "days": t.get("days", 1),
-            "last_covered": t.get("last_covered"), "summary": t.get("summary", ""),
-            "last_state": [s["fact"] for s in (t.get("last_state") or [])][:6],
+def before(t: dict, date: str) -> dict:
+    """The thread as it stood before `date`'s edition touched it: {days, summary, last_state}."""
+    b = t.get("before_today") or {}
+    if b.get("date") == date:
+        return b
+    return {"days": int(t.get("days") or 0), "summary": t.get("summary", ""), "last_state": t.get("last_state") or []}
+
+
+def context(t: dict, date: str | None = None) -> dict:
+    """The compact view prompts get (as of before `date`'s edition, so same-day re-runs see the same thing)."""
+    b = before(t, date) if date else {"days": t.get("days", 1), "summary": t.get("summary", ""),
+                                      "last_state": t.get("last_state") or []}
+    return {"id": t["id"], "title": t["title"], "section": t.get("section"), "days": b["days"],
+            "last_covered": t.get("last_covered"), "summary": b["summary"],
+            "last_state": [s["fact"] for s in (b["last_state"] or [])][:6],
             "recent": [f"{e['date']}: {e['text']}" for e in (t.get("timeline") or [])[-5:]],
             "watch": t.get("watch") or [], "keywords": t.get("keywords") or []}
 
@@ -70,6 +80,10 @@ def touch(doc: dict, *, tid: str | None, title: str, section: str, date: str, su
              "watch": [], "keywords": [], "resolution": None}
         doc["threads"].append(t)
     if t.get("last_covered") != date:
+        # Snapshot the state before today's first touch, so a same-day re-run reports the same day count and
+        # "previously" instead of counting the day twice.
+        t["before_today"] = {"date": date, "days": int(t.get("days") or 0), "summary": t.get("summary", ""),
+                             "last_state": t.get("last_state") or []}
         t["days"] = int(t.get("days") or 0) + 1
     t["last_covered"] = date
     t["status"] = "active"
@@ -126,7 +140,9 @@ def from_bootstrap(result: dict, date: str) -> dict:
             tid = new_id(doc, b.get("title") or "story")
         doc["threads"].append({
             "id": tid, "title": (b.get("title") or "")[:80], "section": b.get("section") or "world",
-            "status": "active", "opened": date, "last_covered": date, "days": 1,
+            # covered by the old digest up to the day before: today's first touch then counts as day 2
+            "status": "active", "opened": date,
+            "last_covered": (dt.date.fromisoformat(date) - dt.timedelta(days=1)).isoformat(), "days": 1,
             "summary": b.get("summary") or "", "keywords": [k.lower() for k in (b.get("keywords") or [])][:10],
             "last_state": [{"fact": s.get("fact", ""), "url": None, "published": s.get("date")}
                            for s in (b.get("last_state") or [])][:6],

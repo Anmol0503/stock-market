@@ -1,49 +1,67 @@
-/* Reels service worker — fresh when online, readable offline.
+/* The Briefing — service worker. Fresh when online, readable offline.
  *
- * This is a DAILY-updated app, so the cache must never win over the network when we're online.
- * Strategy = network-first for everything except immutable icons:
- *   - HTML shell, glossary.js, JSON  -> try network, cache the copy, fall back to cache offline.
- *     => a reload always shows today's deck + the latest UI when you have signal.
- *   - icons (*.png)                  -> cache-first (they don't change between versions).
- * Bump CACHE whenever this file changes so old caches are purged on activate.
+ * - Precaches the app shell (+ digest.html, the old Daily Digest archive page).
+ * - Network-first for HTML / JS / CSS / JSON: a daily product must never show yesterday's edition because a cache won.
+ *   The cached copy is only the offline fallback. Cache keys drop the "_" cache-busting query the app adds.
+ * - Cache-first for images and fonts (they don't change once published).
+ * - Does NOT intercept video: no `destination === "video"`, no Range requests, no *.mp4. Media elements stream with
+ *   Range requests; answering them from a service worker breaks seeking and iOS playback.
+ * - Cross-origin requests other than images/fonts (e.g. source links) go straight to the network.
+ * Bump CACHE whenever this file or the shell changes; activate purges every other cache (including old reels-v*).
  */
-const CACHE = "reels-v38";   // bump on any UI change → activate purges the old cache so stale pages can't linger
-const SHELL = ["./", "./index.html", "./manifest.json", "../glossary.js",
-               "./icon-192.png", "./icon-512.png", "./icon-180.png"];
+const CACHE = "briefing-v1";
+const SHELL = ["./", "./index.html", "./app.css", "./app.js", "./player.js", "./manifest.json", "./digest.html",
+               "./icon-180.png", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled(SHELL.map(u => c.add(u)))));
-  self.skipWaiting();                 // take over as soon as the new SW is installed
+  e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled(SHELL.map(u => c.add(new Request(u, { cache: "reload" }))))));
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", e => {
-  e.waitUntil(caches.keys().then(keys =>
-    Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))   // purge old versions
-  ).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys()
+    .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+    .then(() => self.clients.claim()));
 });
+
+/** Cache key without the app's "_=<timestamp>" cache-buster, so the cache holds one copy per file. */
+function cacheKey(url) {
+  const u = new URL(url);
+  u.searchParams.delete("_");
+  return u.toString();
+}
 
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
-  // Images = local icons AND remote news lead-images (hotlinked og:image). Both are effectively immutable,
-  // and news images are usually cross-origin, so cache-first: swiping back to a card never refetches, and
-  // opaque cross-origin responses cache fine. Network is the fallback only when the image isn't cached yet.
-  const isImage = req.destination === "image" || /\.(jpe?g|png|webp|gif|avif)(\?|$)/i.test(url.pathname);
 
-  if (isImage) {
-    e.respondWith(
-      caches.open(CACHE).then(c => c.match(req).then(hit => hit || fetch(req).then(res => {
-        try { c.put(req, res.clone()); } catch (_) {} return res;
-      }).catch(() => hit)))
-    );
-  } else {
-    // network-first: HTML, glossary, and JSON are always fresh when online; cached copy is the
-    // offline fallback only. `cache:"no-store"` bypasses the HTTP disk cache so we hit the CDN.
-    e.respondWith(
-      fetch(req, { cache: "no-store" }).then(res => {
-        const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return res;
-      }).catch(() => caches.match(req, { ignoreSearch: true }))
-    );
+  // Never touch media: let the browser stream it (Range requests) straight from the network.
+  if (req.destination === "video" || req.destination === "audio" || req.headers.has("range") || /\.(mp4|m4v|webm|mov|m3u8)$/i.test(url.pathname)) return;
+
+  const isFont = req.destination === "font" || /\.(woff2?|ttf|otf)$/i.test(url.pathname) || url.hostname === "fonts.gstatic.com";
+  const isImage = req.destination === "image" || /\.(jpe?g|png|webp|gif|avif|svg)$/i.test(url.pathname);
+  const sameOrigin = url.origin === self.location.origin;
+  const isFontCss = url.hostname === "fonts.googleapis.com";
+
+  if (!sameOrigin && !isImage && !isFont && !isFontCss) return;     // e.g. outbound source links
+
+  if (isImage || isFont) {
+    // cache-first: published images/fonts never change; opaque cross-origin responses cache fine
+    e.respondWith(caches.open(CACHE).then(c => c.match(req).then(hit => hit || fetch(req).then(res => {
+      if (res && (res.ok || res.type === "opaque")) c.put(req, res.clone()).catch(() => {});
+      return res;
+    }))));
+    return;
   }
+
+  // network-first for HTML, JS, CSS, JSON (and the Google Fonts stylesheet); cached copy only when offline
+  const key = cacheKey(req.url);
+  e.respondWith(
+    fetch(req, { cache: "no-store" }).then(res => {
+      // (the Google Fonts stylesheet is an opaque no-cors response; keep it too so fonts work offline)
+      if (res && (res.ok || (isFontCss && res.type === "opaque"))) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(key, copy)).catch(() => {}); }
+      return res;
+    }).catch(() => caches.match(key).then(hit => hit || caches.match(req, { ignoreSearch: true })).then(hit => hit || Response.error()))
+  );
 });

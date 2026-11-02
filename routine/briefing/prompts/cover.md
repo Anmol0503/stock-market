@@ -4,6 +4,6 @@ items say.
 - **changes** 5–8 lines, each at most 22 words: the biggest changes since the previous edition, most
   important first. Each has `ref`: the id of the item it comes from (copied exactly, e.g. "s1" or
   "b-india-2").
-- **watch_today** 2–4 items happening on the edition date, from the calendar and items given, each at most
-  20 words, with time_ist ("HH:MM" or "").
+- **watch_today** 2–3 items happening on the edition date, from the calendar and items given, each at most
+  12 words (it must fit one phone screen), with time_ist ("HH:MM" or "").
 Absolute dates only. Plain words, no hype.

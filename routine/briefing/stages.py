@@ -168,7 +168,7 @@ async def _pipeline(R: Run) -> None:
         tdoc = threads.from_bootstrap(boot, R.date)
         cluster.attach_thread_hints(leads["clusters"], threads.active(tdoc))
     active = threads.active(tdoc)
-    thr_ctx = {t["id"]: threads.context(t) for t in tdoc["threads"]}
+    thr_ctx = {t["id"]: threads.context(t, R.date) for t in tdoc["threads"]}
 
     # ---- 3. recall (yesterday vs the now-complete Wikipedia page) + triage, concurrently
     t0 = time.monotonic()
@@ -452,7 +452,8 @@ async def _editor(R: Run, scored, active, due, upcoming, misses, covered, window
                              BRIEFS_MIN=config.BRIEFS_MIN, BRIEFS_MAX=config.BRIEFS_MAX)
     try:
         plan = await R.ask("editor", sys_p, prompting.editor(date=R.date, window=window, cands=cands,
-                                                              threads=[threads.context(t) for t in active], due=due,
+                                                              threads=[threads.context(t, R.date) for t in active],
+                                                              due=due,
                                                               upcoming=upcoming, misses=misses, covered=covered),
                            schemas.EDITOR, label="editor")
     except EngineError as e:
@@ -661,8 +662,9 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
             t = threads.find(tdoc, slot.get("thread_id") or "")
             pub_thread = None
             if t:
-                pub_thread = {"id": t["id"], "status": "developing", "day": int(t.get("days") or 0) + 1,
-                              "previously": t.get("summary") or None, "changed": s.get("changed") or None}
+                b = threads.before(t, R.date)
+                pub_thread = {"id": t["id"], "status": "developing", "day": b["days"] + 1,
+                              "previously": b["summary"] or None, "changed": s.get("changed") or None}
             story, notes, _reel_ok = build.public_story(f"s{len(stories) + 1}", slot, s, research, thread=pub_thread,
                                                         window=window, now=now, markets=markets)
             qnotes += notes
@@ -685,7 +687,7 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
     for item_id, r in brief_recs.items():
         it = r["item"]
         t = threads.find(tdoc, it.get("thread_id") or "")
-        item = {**it, "thread": {"id": t["id"], "day": int(t.get("days") or 0) + 1} if t else None}
+        item = {**it, "thread": {"id": t["id"], "day": threads.before(t, R.date)["days"] + 1} if t else None}
         b, err = build.public_brief(item, r["brief"], r["facts"], window)
         if b:
             sec_items[it["section"]].append(b)
@@ -800,7 +802,7 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
         "published_at": config.iso(now), "window": window, "status": status, "notes": reader_notes,
         "cover": {"top_line": cover.get("top_line", ""), "changes": changes,
                   "watch_today": [{"text": w["text"], "time_ist": w.get("time_ist") or None, "calendar_id": None}
-                                  for w in cover.get("watch_today") or []][:4],
+                                  for w in cover.get("watch_today") or []][:3],
                   "read_min": read_min, "watch_min": round(sum(1.3 for s in stories if s.get("reel")))},
         "stories": stories, "sections": sections, "also": also[: config.ALSO_MAX],
         "quiz": [{**s["check"], "story": s["id"]} for s in stories if s.get("check")][: config.QUIZ_N],
