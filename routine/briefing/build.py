@@ -142,28 +142,36 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
 
 
 def reel_problems(scenes: list[dict], research: dict, year: int, markets: dict | None = None) -> list[dict]:
+    """Reel script checks. Only problems that would make a video WRONG or MISLEADING are hard (they drop the
+    video): a big number not in the claims, a relative date, symbols the voice can't read. Length, scene count,
+    scene order and map codes are soft: the fixer is asked to correct them, but the video is still made."""
     P = []
+
+    def add(where, issue, soft):
+        P.append({"where": where, "issue": issue, "severity": "fix", "soft": soft})
+    if not scenes:
+        return [{"where": "reel", "issue": "no reel script", "severity": "fix", "soft": False}]
     if not 5 <= len(scenes) <= 9:
-        P.append({"where": "reel", "issue": f"{len(scenes)} scenes; must be 5–9", "severity": "fix"})
+        add("reel", f"{len(scenes)} scenes; aim for 5–8", True)
     total = sum(words(sc.get("say")) for sc in scenes)
-    if scenes and not _in(total, "reel_total", 0.12):
-        P.append({"where": "reel", "issue": f"narration {total} words; must be 140–230", "severity": "fix"})
+    lo, hi = config.WORDS["reel_total"]
+    if not _in(total, "reel_total", 0.12):
+        add("reel", f"narration {total} words; aim for {lo}–{hi}", 80 <= total <= 260)
     corpus = claim_corpus(research, markets)
     for i, sc in enumerate(scenes):
         say = sc.get("say") or ""
         if words(say) > 55:
-            P.append({"where": f"reel[{i}]", "issue": "scene narration over 50 words", "severity": "fix"})
+            add(f"reel[{i}]", "scene narration over 50 words", words(say) <= 90)
         if UNSPEAKABLE.search(say):
-            P.append({"where": f"reel[{i}]", "issue": "narration has symbols; spell them out (per cent, rupees)",
-                      "severity": "fix"})
+            add(f"reel[{i}]", "narration has symbols; spell them out (per cent, rupees)", False)
         if RELATIVE.search(say):
-            P.append({"where": f"reel[{i}]", "issue": "relative date in narration", "severity": "fix"})
+            add(f"reel[{i}]", "relative date in narration", False)
         if sc.get("kind") == "big_number" and unverified_numbers(sc.get("number_value", ""), corpus, year):
-            P.append({"where": f"reel[{i}]", "issue": "big number not in the claims", "severity": "fix"})
+            add(f"reel[{i}]", "big number not in the claims", False)
         if sc.get("kind") == "map" and not all(re.fullmatch(r"[A-Z]{3}", c or "") for c in sc.get("map_iso3") or [""]):
-            P.append({"where": f"reel[{i}]", "issue": "map needs ISO alpha-3 country codes", "severity": "fix"})
-    if scenes and scenes[0].get("kind") != "hook":
-        P.append({"where": "reel[0]", "issue": "first scene must be the hook", "severity": "fix"})
+            add(f"reel[{i}]", "map needs ISO alpha-3 country codes", True)
+    if scenes[0].get("kind") != "hook":
+        add("reel[0]", "first scene must be the hook", True)
     return P
 
 
@@ -280,7 +288,7 @@ def public_story(sid: str, slot: dict, s: dict, research: dict, *, thread: dict 
     newest = max((x["published"] for x in sources if x["published"]), default=None)
 
     scenes = [_scene(sc) for sc in s.get("reel") or []]
-    rp = reel_problems(s.get("reel") or [], research, now.year, markets)
+    rp = [p for p in reel_problems(s.get("reel") or [], research, now.year, markets) if not p.get("soft")]
     reel_ok = bool(scenes) and not rp
     if not reel_ok and scenes:
         notes.append(f"{sid}: reel script failed checks, no video ({rp[0]['issue'] if rp else 'empty'})")

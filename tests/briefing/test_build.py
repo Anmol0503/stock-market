@@ -108,3 +108,20 @@ def test_privacy_check():
     assert build.privacy_ok({"a": "write to someone@example.com"})
     assert build.privacy_ok({"a": "/Users/me/file"})
     assert not build.privacy_ok({"a": "clean text"})
+
+
+def test_a_slightly_long_reel_keeps_its_video():
+    s = story()
+    for sc in s["reel"][1:4]:                                                       # ~145 -> ~235 words in all
+        sc["say"] = sc["say"] + " " + " ".join(["more"] * 15)
+    st, notes, reel_ok = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW,
+                                            markets=None)
+    assert reel_ok and st["reel"] and not any("reel script failed" in n for n in notes)
+
+
+def test_a_misleading_reel_loses_its_video_but_not_the_story():
+    s = story()
+    s["reel"][2]["kind"], s["reel"][2]["number_value"] = "big_number", "9,999 deaths"   # not in the claims
+    st, notes, reel_ok = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW,
+                                            markets=None)
+    assert st and not reel_ok and st["reel"] is None
