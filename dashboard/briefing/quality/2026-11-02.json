@@ -1,0 +1,169 @@
+{
+ "date": "2026-11-02",
+ "generated_at": "2026-11-02T17:38+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-01T13:01+05:30",
+  "end": "2026-11-02T15:01+05:30"
+ },
+ "counts": {
+  "stories": 5,
+  "briefs": 24,
+  "also": 11,
+  "planned_stories": 5,
+  "planned_briefs": 30,
+  "clusters": 1279,
+  "items": 1669
+ },
+ "sources": {
+  "ok": 115,
+  "total": 115,
+  "failed": []
+ },
+ "recall": {
+  "edition": null,
+  "total": null,
+  "matched": null,
+  "misses": []
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s3: reel script failed checks, no video (narration 224 words; must be 140–230)",
+  "s4: reel script failed checks, no video (narration 242 words; must be 140–230)",
+  "b-markets-5: no fresh dated source",
+  "b-tech_ai-1: no fresh dated source"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": null,
+   "problems": [
+    "views[0] (Donald Trump): The view says 'talks are fine, but he is in no great hurry'. That part comes from k8, but the view cites only k1, which supports just t"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": null,
+   "problems": [
+    "next.unknowns, $1 million fraud-tip reward: The claims only say the reported date is uncertain. They don't say it 'may date from 2024', so that is an invented d",
+    "next.unknowns, Senate races list: The claims don't name North Carolina, Georgia, Maine or Texas as Senate races that decide control. Calling these 'the Senate r"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": null,
+   "problems": [
+    "next.text and reel outro: The story tells readers to 'watch for reports' from the 1 November march. Today is 2 November, so that date has passed. The claims onl",
+    "analogy.text: It says removal needs 'a two-thirds vote of all members'. The claims say two-thirds of members present and voting, plus a majority of total member",
+    "for_you.text: It says SIR 'decides whether your name stays on the voter list'. That is stronger than the claims, which say SIR aims to include eligible electors"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": null,
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": null,
+   "problems": [
+    "why_chain step 3: Says investors asked SEBI for tax reform 'after' the record $31B selling. The claims give no such order. They say SEBI met investors over two ",
+    "misconception.fact: Says any change 'would come through the Union Budget'. The claims say only that the government decides and the recommendations were submitte",
+    "so_far / numbers / reel timeline: The 'July 2024' date for the Budget raising the rate from 10% to 12.5% isn't in the claims. k11 says only 'Budget 2024'. Use '",
+    "why_chain step 5 / players (Garre, JM Financial): These views rest on a Business Standard search summary whose page was unreadable (k9). The chain states them f"
+   ],
+   "error": null
+  }
+ ],
+ "sections": {
+  "world": {
+   "planned": 5,
+   "verified": 4,
+   "written": 4,
+   "passed": 4,
+   "lost": [
+    "b-world-3: not verified"
+   ]
+  },
+  "india": {
+   "planned": 4,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-india-1: not verified",
+    "b-india-4: not verified"
+   ]
+  },
+  "affects_you": {
+   "planned": 4,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": [
+    "b-affects_you-4: not verified"
+   ]
+  },
+  "markets": {
+   "planned": 5,
+   "verified": 5,
+   "written": 5,
+   "passed": 5,
+   "lost": []
+  },
+  "tech_ai": {
+   "planned": 4,
+   "verified": 4,
+   "written": 4,
+   "passed": 4,
+   "lost": []
+  },
+  "science": {
+   "planned": 3,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": []
+  },
+  "f1": {
+   "planned": 3,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": []
+  },
+  "cricket": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  }
+ },
+ "timings": {
+  "gather": 89.3,
+  "bootstrap": 33.0,
+  "triage": 0.0,
+  "merge": 0.0,
+  "scout": 0.0,
+  "editor": 0.0,
+  "stories+sections": 0.0,
+  "build": 0.0
+ },
+ "usage": {
+  "calls": 0,
+  "failures": 0,
+  "cost_usd": 0.0,
+  "seconds": 0.0,
+  "by_role": {}
+ }
+}
