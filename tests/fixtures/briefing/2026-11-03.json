@@ -96,6 +96,77 @@
       3
      ]
     },
+    "lesson": {
+     "concept": "How railway signals keep two trains apart",
+     "big_idea": "Track is split into blocks, and a computer lets only one train into each block at a time by turning its signal green.",
+     "steps": [
+      {
+       "title": "Track is split into blocks",
+       "text": "Each stretch of line is a block. Sensors tell the control computer whether a train is inside it.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "One train per block",
+       "text": "The computer turns a block's entrance signal green only when the block is empty, and red otherwise.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "Junctions need agreement",
+       "text": "Where two lines meet, both control computers must agree who owns the junction before either signal clears.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "A mismatch must stop everything",
+       "text": "If the two pictures differ, a safety check should turn every signal red until people sort it out.",
+       "src": [
+        1
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Say two trains, A and B, both want a junction block, and train A asked first.",
+      "lines": [
+       {
+        "label": "Train A asks",
+        "calc": "Junction free → A gets it",
+        "note": "the block was empty"
+       },
+       {
+        "label": "Train B asks",
+        "calc": "Junction taken → B sees red",
+        "note": "one train per block"
+       },
+       {
+        "label": "Computers disagree",
+        "calc": "Check fails → all signals red",
+        "note": "the safe choice"
+       },
+       {
+        "label": "At Toledo",
+        "calc": "Check silent → B sees green",
+        "note": "the failure"
+       }
+      ],
+      "result": "The system is only as safe as the check that catches two computers disagreeing."
+     },
+     "apply": {
+      "text": "Investigators say the check meant to catch the mismatch failed silently, so the regional train saw green on a junction the high-speed train already held.",
+      "src": [
+       1,
+       2
+      ]
+     },
+     "practice": {
+      "q": "If three trains wait for one junction block, how many can have a green signal at once?",
+      "answer": "Only one. The block allows one train; the other two see red until it leaves."
+     }
+    },
     "why_chain": {
      "steps": [
       {
@@ -319,7 +390,12 @@
      }
     ]
    },
-   "reel_hash": "a1b2c3d4"
+   "reel_hash": "a1b2c3d4",
+   "takeaways": [
+    "Track is split into blocks.",
+    "Spain's train crash: a green light that should have been red.",
+    "Watch the next official update for what changes."
+   ]
   },
   {
    "id": "s2",
@@ -562,6 +638,70 @@
       3
      ]
     },
+    "lesson": {
+     "concept": "How a central bank rate reaches your EMI",
+     "big_idea": "When the central bank changes its rate, banks change what they charge, and a floating-rate loan's EMI follows a few months later.",
+     "steps": [
+      {
+       "title": "The policy rate",
+       "text": "The Fed or the RBI sets the rate at which banks borrow overnight. It is the base price of money.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "Banks pass it on",
+       "text": "Banks link loan rates to that base. A floating-rate home loan moves when the benchmark moves.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "Your EMI is recalculated",
+       "text": "At the next reset, the bank recalculates your monthly instalment, or keeps it and changes the loan length.",
+       "src": [
+        1
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Say you have a ₹50 lakh home loan over 20 years and the rate falls from 9% to 8.75%.",
+      "lines": [
+       {
+        "label": "EMI at 9%",
+        "calc": "about ₹44,986 a month",
+        "note": "standard EMI formula"
+       },
+       {
+        "label": "EMI at 8.75%",
+        "calc": "about ₹44,186 a month",
+        "note": "same loan, lower rate"
+       },
+       {
+        "label": "Monthly saving",
+        "calc": "₹44,986 − ₹44,186 = ₹800",
+        "note": "per month"
+       },
+       {
+        "label": "Over a year",
+        "calc": "₹800 × 12 = ₹9,600",
+        "note": "before any reset delay"
+       }
+      ],
+      "result": "A quarter-point cut saves about ₹800 a month on a ₹50 lakh loan."
+     },
+     "apply": {
+      "text": "The Fed held its rate, so there is no push from Washington for the RBI to cut soon, and floating-rate EMIs stay where they are for now.",
+      "src": [
+       1,
+       2
+      ]
+     },
+     "practice": {
+      "q": "On a ₹25 lakh loan, roughly how much would the same cut save each month?",
+      "answer": "Half the loan, so about half the saving: around ₹400 a month, or ₹4,800 a year."
+     }
+    },
     "why_chain": {
      "steps": [
       {
@@ -785,7 +925,12 @@
      }
     ]
    },
-   "reel_hash": "hash3"
+   "reel_hash": "hash3",
+   "takeaways": [
+    "When the central bank changes its rate.",
+    "The Fed held rates: what it means for your EMI.",
+    "Watch the next official update for what changes."
+   ]
   },
   {
    "id": "s4",

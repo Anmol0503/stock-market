@@ -63,7 +63,15 @@ RESEARCH = obj(
 )
 
 _CIDS = arr(STR)
-SCENE_KINDS = ["hook", "kinetic", "big_number", "map", "bar", "line", "timeline", "players", "outro"]
+SCENE_KINDS = ["hook", "kinetic", "big_number", "map", "bar", "line", "timeline", "players", "steps", "outro"]
+# The lesson: one idea the reader needs, built up step by step, with a worked example they can follow line by line.
+LESSON = obj(
+    concept=STR, big_idea=STR,
+    steps=arr(obj(title=STR, text=STR, cids=_CIDS)),
+    example=obj(setup=STR, lines=arr(obj(label=STR, calc=STR, note=STR)), result=STR),
+    apply=obj(text=STR, cids=_CIDS),
+    practice=obj(q=STR, answer=STR),
+)
 STORY = obj(
     headline=STR, question=STR, dek=STR,
     so_far=obj(text=STR, cids=_CIDS),
@@ -79,11 +87,13 @@ STORY = obj(
     changed=STR, thread_summary=STR, state_facts=arr(obj(fact=STR, cid=STR)),
     terms=arr(obj(term=STR, meaning=STR)),
     check=obj(q=STR, options=arr(STR), answer=INT, why=STR),
+    lesson=LESSON, takeaways=arr(STR),
     reel=arr(obj(kind={"type": "string", "enum": SCENE_KINDS}, say=STR, show=STR,
                  number_value=STR, number_label=STR, number_cid=STR,
                  map_iso3=arr(STR), map_lon=NUM, map_lat=NUM, map_label=STR,
                  chart_title=STR, chart_unit=STR, chart_points=arr(obj(label=STR, value=NUM)), chart_cids=_CIDS,
-                 timeline=arr(obj(when=STR, what=STR)), players=arr(obj(name=STR, role=STR)))),
+                 timeline=arr(obj(when=STR, what=STR)), players=arr(obj(name=STR, role=STR)),
+                 steps=arr(obj(label=STR, calc=STR)))),
 )
 
 CHECK = obj(ok=BOOL, problems=arr(obj(where=STR, issue=STR, severity=enum("fix", "drop"))))

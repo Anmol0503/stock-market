@@ -26,6 +26,8 @@ class Run:
         self.state = self._load("state") or {
             "date": date, "started_at": config.iso(self.now), "deadline": config.iso(config.deadline_for(self.now)),
             "status": "running", "stage": "start", "done": [], "timings": {}, "notes": [], "progress": {}}
+        if force and self.state.get("status") in ("done", "failed"):   # a forced re-run gets a new time budget
+            self.state.update(started_at=config.iso(self.now), deadline=config.iso(config.deadline_for(self.now)))
         if self.state.get("notes"):          # a resumed run starts with fresh notes; keep the old ones apart
             self.state.setdefault("previous_notes", []).extend(self.state["notes"])
             self.state["notes"] = []
@@ -508,6 +510,7 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
         chk = await R.ask("checker", prompting.system("checker"),
                           prompting.checker(story, research, thread=thread, code_problems=code_p),
                           schemas.CHECK, label=f"check-{sid}", need_s=240)
+        _lesson_never_drops(chk)
         problems = (chk.get("problems") or []) + [p for p in code_p if p not in (chk.get("problems") or [])]
         if any(p["severity"] == "drop" for p in chk.get("problems") or []):
             rec.update(status="demote", story=story, problems=problems)
@@ -519,6 +522,7 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
             chk2 = await R.ask("checker", prompting.system("checker"),
                                prompting.checker(fixed, research, thread=thread, code_problems=code_p2),
                                schemas.CHECK, label=f"recheck-{sid}", need_s=180)
+            _lesson_never_drops(chk2)
             left = (chk2.get("problems") or []) + code_p2
             blocking = [p for p in left if p["severity"] == "drop" or p["where"].split("[")[0] in build.REQUIRED_BLOCKS]
             rec.update(status="demote" if blocking else "ok", story=fixed, problems=left)
@@ -531,6 +535,13 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
     R.state["progress"]["stories_done"] = R.state["progress"].get("stories_done", 0) + 1
     R._save_state()
     return rec
+
+
+def _lesson_never_drops(chk: dict) -> None:
+    """A problem in the lesson is fixed or the lesson removed; it never costs the reader the whole story."""
+    for p in chk.get("problems") or []:
+        if str(p.get("where", "")).startswith(("lesson", "takeaways")):
+            p["severity"] = "fix"
 
 
 async def _stories(R: Run, plan: dict, cmap: dict, thr_ctx: dict, window: dict, markets) -> list[dict]:
@@ -667,6 +678,9 @@ def _strip_optional(story: dict, problems: list[dict]) -> dict:
             s["views"] = []
         elif w == "players":
             s["players"] = []
+        elif w.startswith(("lesson", "takeaways")) and not p.get("soft"):
+            s["lesson"] = {}                      # a lesson with a wrong fact or bad sums is worse than none
+            s["takeaways"] = []
     return s
 
 

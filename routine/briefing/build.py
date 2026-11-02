@@ -137,7 +137,74 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
     if nums:   # 3+ invented-looking numbers after a fix pass blocks the story
         bad("facts:numbers", f"numbers not found in the claims: {', '.join(sorted(nums)[:6])}",
             "drop" if len(nums) >= 3 else "fix")
+    P += lesson_problems(s, research, year, markets)
     P += reel_problems(s.get("reel") or [], research, year, markets)
+    return P
+
+
+def lesson_text(s: dict) -> str:
+    ls = s.get("lesson") or {}
+    ex = ls.get("example") or {}
+    parts = [ls.get("concept"), ls.get("big_idea"), ex.get("setup"), ex.get("result"),
+             (ls.get("apply") or {}).get("text"), (ls.get("practice") or {}).get("q"),
+             (ls.get("practice") or {}).get("answer")]
+    parts += [f"{x.get('title')}. {x.get('text')}" for x in ls.get("steps") or []]
+    parts += [f"{x.get('label')} {x.get('calc')} {x.get('note')}" for x in ex.get("lines") or []]
+    parts += list(s.get("takeaways") or [])
+    return " ".join(p for p in parts if p)
+
+
+HYPOTHETICAL = re.compile(r"^\s*(say|imagine|suppose|assume|picture|let's say|let us say|think of)\b", re.I)
+
+
+def lesson_problems(s: dict, research: dict, year: int, markets: dict | None = None) -> list[dict]:
+    """The lesson ("Learn the idea") is required, but it is never a reason to drop a story: every problem is a fix,
+    and a lesson still broken after the fix pass is removed (see stages._strip_optional)."""
+    P = []
+
+    def bad(where, issue, soft=False):   # soft = length/shape only; the lesson is kept even if it stays
+        P.append({"where": where, "issue": issue, "severity": "fix", **({"soft": True} if soft else {})})
+    ls = s.get("lesson") or {}
+    if not ls.get("concept") or not (ls.get("steps") or []):
+        return [{"where": "lesson", "issue": "the lesson is missing: teach the one idea behind the story",
+                 "severity": "fix"}]
+    for key, wkey in (("concept", "concept"), ("big_idea", "big_idea")):
+        if not _in(words(ls.get(key)), wkey, 0.2):
+            bad(f"lesson.{key}", f"{words(ls.get(key))} words; must be {W[wkey][0]}–{W[wkey][1]}", True)
+    steps = ls.get("steps") or []
+    if not 3 <= len(steps) <= 5:
+        bad("lesson.steps", f"{len(steps)} steps; must be 3–5", True)
+    for i, st in enumerate(steps):
+        if not st.get("title") or not _in(words(st.get("text")), "lesson_step", 0.25):
+            bad(f"lesson.steps[{i}]", f"each step needs a title and 15–55 words (has {words(st.get('text'))})", True)
+    ex = ls.get("example") or {}
+    lines = ex.get("lines") or []
+    if not 3 <= len(lines) <= 6 or not all(x.get("label") and x.get("calc") for x in lines):
+        bad("lesson.example", f"worked example needs 3–6 lines, each with a label and the working (has {len(lines)})", True)
+    if not HYPOTHETICAL.search(ex.get("setup") or ""):
+        bad("lesson.example", "the example's setup must start with 'Say', 'Imagine' or 'Suppose' (it is made up)")
+    if not ex.get("result"):
+        bad("lesson.example", "the example needs a result: what it shows")
+    ap = ls.get("apply") or {}
+    if not _in(words(ap.get("text")), "apply", 0.2):
+        bad("lesson.apply", f"{words(ap.get('text'))} words; must be 20–70 and link the idea back to the news", True)
+    for c in ap.get("cids") or []:
+        if c not in {x.get("cid") for x in research.get("claims") or []}:
+            bad("lesson.apply", f"cites unknown claim {c}")
+    pr = ls.get("practice") or {}
+    if not pr.get("q") or not pr.get("answer"):
+        bad("lesson.practice", "add a try-it-yourself question with a worked answer", True)
+    tk = [t for t in s.get("takeaways") or [] if t]
+    if len(tk) != 3 or not all(_in(words(t), "takeaway", 0.25) for t in tk):
+        bad("takeaways", "exactly 3 takeaways of 5–22 words each", True)
+    if not _in(words(lesson_text(s)), "lesson_total", 0.1):
+        bad("lesson", f"{words(lesson_text(s))} words; the lesson should be {W['lesson_total'][0]}–{W['lesson_total'][1]}", True)
+    for m in set(RELATIVE.findall(lesson_text(s))):
+        bad("lesson", f"relative date '{m}': use an absolute date")
+    # Real-world facts in the lesson live in `apply` (the example and practice are made-up numbers).
+    nums = unverified_numbers(ap.get("text") or "", claim_corpus(research, markets), year)
+    if nums:
+        bad("lesson.apply", f"numbers not found in the claims: {', '.join(sorted(nums)[:6])}")
     return P
 
 
@@ -204,6 +271,8 @@ def _scene(sc: dict) -> dict:
         out["timeline"] = (sc.get("timeline") or [])[:5]
     elif k == "players":
         out["players"] = (sc.get("players") or [])[:4]
+    elif k == "steps":
+        out["steps"] = [x for x in sc.get("steps") or [] if x.get("calc")][:4]
     return out
 
 
@@ -256,6 +325,10 @@ def public_story(sid: str, slot: dict, s: dict, research: dict, *, thread: dict 
     blocks["next"] = {"text": nx.get("text", ""), "dates": [d for d in nx.get("dates") or [] if d.get("date")][:5],
                       "unknowns": [u for u in nx.get("unknowns") or [] if u][:4]}
 
+    lesson = public_lesson(s, refs)
+    if lesson:
+        blocks["lesson"] = lesson
+
     sources = [{"n": i + 1, **src_by_url[u]} for i, u in enumerate(order)]
     # ---- source rules
     start = config.parse_ts(window["start"]) - dt.timedelta(hours=24)
@@ -302,11 +375,33 @@ def public_story(sid: str, slot: dict, s: dict, research: dict, *, thread: dict 
         "blocks": blocks,
         "terms": [t for t in s.get("terms") or [] if t.get("term") and t.get("meaning")][:4],
         "check": _check(s.get("check")),
+        "takeaways": [t for t in s.get("takeaways") or [] if t][:3] if lesson else [],
         "confidence": {"level": level, "publishers": len(pubs), "primary": primary, "newest": newest},
         "sources": sources, "reel": reel, "reel_hash": reel_hash,
-        "read_min": max(2, math.ceil(words(story_text(s)) / 200)),
+        "read_min": max(2, math.ceil((words(story_text(s)) + (words(lesson_text(s)) if lesson else 0)) / 200)),
     }
     return story, notes, reel_ok
+
+
+def public_lesson(s: dict, refs) -> dict | None:
+    ls = s.get("lesson") or {}
+    steps = [x for x in ls.get("steps") or [] if x.get("title") and x.get("text")]
+    ex = ls.get("example") or {}
+    lines = [{"label": x["label"], "calc": x["calc"], "note": x.get("note", "")}
+             for x in ex.get("lines") or [] if x.get("label") and x.get("calc")]
+    if not ls.get("concept") or len(steps) < 2:
+        return None
+    out = {"concept": ls["concept"], "big_idea": ls.get("big_idea", ""),
+           "steps": [{"title": x["title"], "text": x["text"], "src": refs(x.get("cids"))} for x in steps[:5]]}
+    if ex.get("setup") and lines:
+        out["example"] = {"setup": ex["setup"], "lines": lines[:6], "result": ex.get("result", "")}
+    ap = ls.get("apply") or {}
+    if ap.get("text"):
+        out["apply"] = {"text": ap["text"], "src": refs(ap.get("cids"))}
+    pr = ls.get("practice") or {}
+    if pr.get("q") and pr.get("answer"):
+        out["practice"] = {"q": pr["q"], "answer": pr["answer"]}
+    return out
 
 
 def _check(c: dict | None) -> dict | None:

@@ -125,3 +125,49 @@ def test_a_misleading_reel_loses_its_video_but_not_the_story():
     st, notes, reel_ok = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW,
                                             markets=None)
     assert st and not reel_ok and st["reel"] is None
+
+
+def test_good_story_has_a_published_lesson_and_takeaways():
+    s = story()
+    s["reel"][2].update(kind="steps", steps=[{"label": "Week 1", "calc": "10 × 2 = 20"}])
+    st, _, _ = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW, markets=None)
+    ls = st["blocks"]["lesson"]
+    assert ls["concept"] and len(ls["steps"]) == 3 and len(ls["example"]["lines"]) == 3
+    assert ls["apply"]["src"] and ls["practice"]["answer"] and len(st["takeaways"]) == 3
+    assert st["reel"]["scenes"][2]["steps"] == [{"label": "Week 1", "calc": "10 × 2 = 20"}]
+
+
+def test_lesson_rules():
+    s = story()
+    s["lesson"] = {}
+    assert any(p["where"] == "lesson" and "missing" in p["issue"] for p in problems(s))
+    s = story()
+    s["lesson"]["example"]["setup"] = "The panel counted 10 people who each infected 2 more every week."
+    assert any(p["where"] == "lesson.example" and "Say" in p["issue"] and not p.get("soft") for p in problems(s))
+    s = story()
+    s["lesson"]["apply"]["text"] += " Officials moved 4,700 people."          # a real-world number not in claims
+    assert any(p["where"] == "lesson.apply" and "4700" in p["issue"] for p in problems(s))
+    # made-up numbers in the worked example are fine, and lesson problems never drop the story
+    assert not any(p["where"].startswith("lesson") for p in problems(story()))
+    s = story()
+    s["lesson"]["steps"] = s["lesson"]["steps"][:1]
+    assert all(p["severity"] == "fix" for p in problems(s) if p["where"].startswith("lesson"))
+
+
+def test_a_wrong_lesson_is_removed_but_a_long_one_is_kept():
+    from routine.briefing import stages
+    s = story()
+    kept = stages._strip_optional(s, [{"where": "lesson", "issue": "600 words", "severity": "fix", "soft": True}])
+    assert kept["lesson"]["concept"]
+    gone = stages._strip_optional(s, [{"where": "lesson.example", "issue": "10 × 2 is not 30", "severity": "fix"}])
+    assert gone["lesson"] == {} and gone["takeaways"] == []
+    st, _, _ = build.public_story("s1", SLOT, gone, research(), thread=None, window=WINDOW, now=NOW, markets=None)
+    assert st and "lesson" not in st["blocks"] and st["takeaways"] == []
+
+
+def test_checker_cannot_drop_a_story_over_its_lesson():
+    from routine.briefing import stages
+    chk = {"ok": False, "problems": [{"where": "lesson.example", "issue": "bad sums", "severity": "drop"},
+                                     {"where": "what_happened", "issue": "unsupported", "severity": "drop"}]}
+    stages._lesson_never_drops(chk)
+    assert [p["severity"] for p in chk["problems"]] == ["fix", "drop"]

@@ -12,7 +12,13 @@ List only real problems:
 6. a conclusion, for_you line or reel line that adds a new claim the body doesn't support;
 7. a contradiction with the previous state of the story (if given), unless the claims show it changed;
 8. a relative date ("today", "yesterday", "this week") instead of an absolute date;
-9. a stale fact presented as new (the supporting claim is old background).
+9. a stale fact presented as new (the supporting claim is old background);
+10. in the lesson: a rate, threshold, date or rule tied to now that the claims don't support (timeless,
+    well-established mechanisms are fine); a wrong rule or mechanism; arithmetic in the worked example or
+    practice answer that doesn't add up; an example that isn't clearly made up ("Say…", "Imagine…") or that
+    could be mistaken for a real event; a step that skips something a newcomer needs to follow the next one.
+
+Check the example's arithmetic line by line. Lesson problems are severity "fix", never "drop".
 
 severity "fix" = can be corrected or cut while keeping the story; "drop" = the story's core claim is
 unsupported. Set ok = true and problems = [] if there are no real problems. Be strict about facts and

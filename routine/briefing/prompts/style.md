@@ -22,6 +22,10 @@ Instagram explainer reels do: simply, step by step, so it actually makes sense.
 7. **What it means for the reader in India.** Be concrete: prices, EMIs, jobs, rules, travel, savings.
    If there is no direct effect, say so plainly in one line; never invent one.
 8. **What happens next.** Dated, specific things to watch, plus what is still unknown.
+9. **Teach one idea so it sticks.** Every big story leaves the reader having learned one lasting idea
+   (a mechanism, a rule, how an institution works). Build it from zero in small steps, then work through a
+   made-up example with simple numbers, line by line, like a teacher at a whiteboard. Show the working;
+   never jump to the answer. Then use the idea to explain the news.
 
 ## Voice
 - Plain words. Short sentences (aim for under 18 words). One idea per sentence.

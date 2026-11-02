@@ -68,7 +68,11 @@ WORDS = {
     "brief_text": (50, 120), "brief_background": (8, 30), "brief_why": (8, 25), "also": (8, 25),
     "top_line": (15, 40), "change": (5, 22), "watch": (4, 20), "gist": (8, 25), "quiet_note": (5, 25),
     "term_meaning": (4, 20), "check_q": (6, 25), "check_why": (5, 30),
-    "story_total": (450, 850), "reel_total": (130, 190), "scene_say": (6, 50), "scene_show": (0, 8),
+    "story_total": (450, 850), "reel_total": (150, 220), "scene_say": (6, 50), "scene_show": (0, 8),
+    # the lesson ("Learn the idea"), counted on top of story_total
+    "concept": (3, 10), "big_idea": (12, 40), "lesson_step": (15, 55), "example_setup": (12, 50),
+    "example_result": (10, 45), "apply": (20, 70), "practice_q": (8, 40), "practice_answer": (12, 70),
+    "takeaway": (5, 22), "lesson_total": (180, 520),
 }
 EXCERPT_MAX_CHARS = 200   # public excerpts stay short (copyright)
 

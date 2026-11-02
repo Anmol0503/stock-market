@@ -62,7 +62,7 @@ def story(*, contested: bool = False) -> dict:
     for sc in scenes:
         sc.update({"number_value": "", "number_label": "", "number_cid": "", "map_iso3": [], "map_lon": 0, "map_lat": 0,
                    "map_label": "", "chart_title": "", "chart_unit": "", "chart_points": [], "chart_cids": [],
-                   "timeline": [], "players": []})
+                   "timeline": [], "players": [], "steps": []})
     return {
         "headline": "Panel reports 1,250 cases after the outbreak spreads",
         "question": "Why is the outbreak spreading faster than officials expected this season?",
@@ -81,5 +81,30 @@ def story(*, contested: bool = False) -> dict:
         "terms": [{"term": "Outbreak", "meaning": "a sudden rise in cases of a disease"}],
         "check": {"q": "What did the panel report about the outbreak?", "options": ["Fewer cases", "1,250 cases", "No change"],
                   "answer": 1, "why": "The panel reported 1,250 cases."},
+        "lesson": lesson(),
+        "takeaways": ["An outbreak grows when each case passes on to more than one person.",
+                      "The panel reported 1,250 cases and 68 deaths in the outbreak.",
+                      "Watch the panel review on 10 November for the cause."],
         "reel": scenes,
+    }
+
+
+def lesson() -> dict:
+    """A lesson that passes every rule: hypothetical example with made-up numbers, facts only in `apply`."""
+    return {
+        "concept": "How an outbreak grows from case to case",
+        "big_idea": "An outbreak grows when each sick person passes the illness to more than one other person, "
+                    "so the numbers multiply instead of adding up.",
+        "steps": [{"title": "Each case infects others", "text": words(30, 11), "cids": []},
+                  {"title": "Count the multiplier", "text": words(30, 12), "cids": []},
+                  {"title": "Above one, it grows", "text": words(30, 13), "cids": ["k4"]}],
+        "example": {"setup": "Say 10 people are sick and each one passes it to 2 more people every week.",
+                    "lines": [{"label": "Week 1", "calc": "10 × 2 = 20 new cases", "note": "each case infects two"},
+                              {"label": "Week 2", "calc": "20 × 2 = 40 new cases", "note": "the new cases do the same"},
+                              {"label": "Week 3", "calc": "40 × 2 = 80 new cases", "note": "it doubles each week"}],
+                    "result": "Three weeks turn 10 cases into 80 new ones a week, which is why early action matters."},
+        "apply": {"text": "The panel reported 1,250 cases and 68 deaths, which means the multiplier stayed above one "
+                          "for weeks before officials acted.", "cids": ["k1"]},
+        "practice": {"q": "If 5 people each infect 3 others every week, how many new cases come in week 2?",
+                     "answer": "Week 1: 5 × 3 = 15. Week 2: 15 × 3 = 45 new cases."},
     }

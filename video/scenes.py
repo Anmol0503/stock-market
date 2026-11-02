@@ -71,6 +71,14 @@ body{font-family:'Inter',system-ui,sans-serif;color:#fff;background:#0b1020;posi
 .pl{display:grid;grid-template-columns:1fr 1fr;gap:24px}.pl .card{display:flex;flex-direction:column;gap:12px}
 .pl .av{width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--b);font-weight:900;font-size:44px;
   display:flex;align-items:center;justify-content:center}.pl .nm{font-size:38px;font-weight:800;line-height:1.15}.pl .rl{font-size:30px;opacity:.85}
+.sx{display:flex;flex-direction:column;gap:20px}
+.sx .row{display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.18);
+  border-radius:30px;padding:24px 30px}
+.sx .n{flex:0 0 68px;height:68px;border-radius:50%;background:#fff;color:var(--b);font-weight:900;font-size:36px;
+  display:flex;align-items:center;justify-content:center}
+.sx .lb{font-size:28px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.sx .cl{font-weight:800;line-height:1.15;letter-spacing:-.01em}
+.sx .row.last{background:#fff;color:#111}.sx .row.last .n{background:var(--b);color:#fff}
 """
 
 
@@ -227,6 +235,16 @@ def scene_html(sc: dict, *, section: str, headline: str, idx: int, total: int, m
                         f"<div class='nm'>{esc(p.get('name'))}</div><div class='rl'>{esc(p.get('role'))}</div></div>"
                         for p in sc["players"][:4])
         body = f"<div class='kick'>{esc(show) or 'Who is involved'}</div><div class='pl'>{cards}</div>"
+    elif kind == "steps" and sc.get("steps"):
+        rows = sc["steps"][:4]
+        longest = max(len(str(r.get("calc") or "")) for r in rows)
+        size = (56 if longest <= 22 else 48 if longest <= 30 else 40) - (6 if len(rows) == 4 else 0)
+        tight = " style='gap:14px'" if len(rows) == 4 else ""
+        body = (f"<div class='kick'>{esc(show) or 'Worked example'}</div><div class='sx'{tight}>"
+                + "".join(f"<div class='row{' last' if i == len(rows) - 1 else ''}'><div class='n'>{i + 1}</div><div>"
+                          f"<div class='lb'>{esc(r.get('label'))}</div><div class='cl' style='font-size:{size}px'>"
+                          f"{esc(r.get('calc'))}</div></div></div>" for i, r in enumerate(rows))
+                + "</div>")
     elif kind == "outro":
         size = _fit_size(show, 104, per_line=15, max_lines=4)
         body = (f"<div class='kick'>Remember</div><div class='show' style='font-size:{size}px'>{esc(show)}</div>"

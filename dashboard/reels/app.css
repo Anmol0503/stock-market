@@ -695,3 +695,51 @@ details.trans[open] summary .chev{transform:rotate(90deg)}
 /* Watch-today and This-week rows are reminders (full detail lives in each explainer): two lines each keeps
    the cover and the end card on one phone screen with real-length text. */
 .cv-watch li>span:last-child,.wk .t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+
+/* ---------------------------------------------------------------- the lesson ("Learn the idea") */
+.st-learn{display:flex;align-items:center;gap:7px;margin:8px 0 0;font-size:calc(13.5px * var(--tsz));font-weight:700;color:#fff;min-width:0}
+.st-learn svg{flex:0 0 auto;opacity:.95}
+.st-learn span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:3px 9px;border-radius:8px;background:rgba(255,255,255,.18)}
+.tag.lesson{color:#f59e0b;border-color:color-mix(in srgb,#f59e0b 45%,transparent)}
+[data-theme="light"] .tag.lesson{color:#b45309}
+.blk[data-block="lesson"]{margin-top:34px;padding:18px 16px 16px;border-radius:20px;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--a) 12%,var(--card)),var(--card) 60%);border:1px solid color-mix(in srgb,var(--c) 26%,transparent)}
+.ls-c{font-family:var(--display);font-size:calc(23px * var(--tsz));line-height:1.2;font-weight:700;letter-spacing:-.3px;margin:2px 0 8px}
+.ls-big{font-size:calc(17px * var(--tsz))!important;line-height:1.5!important;font-weight:600;margin:0 0 14px!important}
+.ls-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ls-steps li{display:flex;gap:12px;align-items:flex-start}
+.ls-steps .n,.ls-lines .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:13.5px;font-weight:800;color:#fff;background:linear-gradient(140deg,var(--a),var(--b));margin-top:1px}
+.ls-steps b{display:block;font-size:calc(15.5px * var(--tsz));margin-bottom:2px}
+.ls-steps p{margin:0!important;font-size:calc(15.5px * var(--tsz))!important;line-height:1.5!important;color:var(--soft)}
+.lesson .lab{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--c);margin-bottom:8px}
+.ls-ex{margin-top:16px;padding:14px;border-radius:16px;background:var(--bg2,var(--card));border:1px dashed color-mix(in srgb,var(--c) 45%,transparent)}
+.ls-ex .setup{margin:0 0 12px!important;font-size:calc(16px * var(--tsz))!important;line-height:1.5!important;font-style:italic}
+.ls-lines{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ls-lines li{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border-radius:13px;background:var(--card);border:1px solid var(--line)}
+.ls-lines li:last-child{border-color:color-mix(in srgb,var(--c) 45%,transparent);background:color-mix(in srgb,var(--c) 10%,var(--card))}
+.ls-lines .k{display:block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.ls-lines .calc{display:block;font-size:calc(17px * var(--tsz));font-weight:800;line-height:1.35;font-variant-numeric:tabular-nums;margin-top:1px}
+.ls-lines small{display:block;font-size:calc(13.5px * var(--tsz));color:var(--soft);line-height:1.4;margin-top:2px}
+.ls-ex .res{display:flex;gap:9px;align-items:flex-start;margin-top:12px}
+.ls-ex .res svg{color:var(--ok);flex:0 0 auto;margin-top:3px}
+.ls-ex .res p{margin:0!important;font-size:calc(16px * var(--tsz))!important;line-height:1.5!important;font-weight:600}
+.ls-apply{margin-top:16px}
+.ls-apply p{margin:0!important}
+.ls-try{margin-top:16px;border-radius:14px;border:1px solid var(--line);background:var(--card);overflow:hidden}
+.ls-try summary{list-style:none;cursor:pointer;padding:12px 14px;display:block}
+.ls-try summary::-webkit-details-marker{display:none}
+.ls-try .lab{margin-bottom:4px}
+.ls-try .q{display:block;font-size:calc(16px * var(--tsz));font-weight:600;line-height:1.45}
+.ls-try .rv{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--c)}
+.ls-try .rv .chev{transition:transform .2s}
+.ls-try[open] .rv .chev{transform:rotate(90deg)}
+.ls-try>p{margin:0!important;padding:0 14px 14px;font-size:calc(16px * var(--tsz))!important;line-height:1.55!important;
+  border-top:1px solid var(--line);padding-top:12px}
+.xs.learned .tk{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.xs.learned .tk li{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border-radius:14px;background:var(--card);border:1px solid var(--line);
+  font-size:calc(16px * var(--tsz));line-height:1.45}
+.xs.learned .tk svg{flex:0 0 auto;color:var(--ok);margin-top:3px}
+.learned .row{align-items:flex-start;text-align:left}
+.learned .row .t span{display:block;font-weight:500;color:var(--soft);font-size:calc(13.5px * var(--tsz));margin-top:2px}
+.learned .row .chev{align-self:center}

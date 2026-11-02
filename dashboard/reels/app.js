@@ -44,6 +44,7 @@ const IC = {
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
   star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
+  learn: '<path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
   help: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
   zap: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
   activity: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
@@ -314,6 +315,8 @@ function render() {
   if (d.also.length) cards.push(listCard('also', 'wrap', alsoSpec(d.also)));
   if (d.quiz.length) cards.push({ id: 'quiz', tab: 'wrap', car: true, label: 'Quiz', html: quizHTML(d.quiz) });
   if (d.developing.length) cards.push(listCard('developing', 'wrap', devSpec(d.developing)));
+  const lessons = d.stories.filter(s => s.blocks && s.blocks.lesson && s.blocks.lesson.concept);
+  if (lessons.length) cards.push(listCard('learned', 'wrap', learnedSpec(lessons)));
   cards.push({ id: 'end', tab: 'wrap', label: 'You’re caught up', html: endHTML() });
 
   deck.innerHTML = cards.map(slotHTML).join('');
@@ -461,6 +464,7 @@ function storyHTML(s, i, n) {
       <div class="st-text" data-act="explain" data-story="${id}">
         <h2 class="st-h clamp">${esc(s.headline)}</h2>
         ${s.question ? `<p class="st-q clamp">${esc(s.question)}</p>` : ''}
+        ${s.blocks && s.blocks.lesson && s.blocks.lesson.concept ? `<p class="st-learn">${icon('learn', 15)}<span>Learn: ${esc(s.blocks.lesson.concept)}</span></p>` : ''}
         ${!v && s.dek ? `<p class="st-d clamp">${esc(s.dek)}</p>` : ''}
       </div>
       <div class="st-act">
@@ -532,6 +536,18 @@ function briefHTML(k, it, j, n) {
 }
 
 /* ---------------------------------------------------------------- quiz (one question per slide; nothing is saved) */
+function learnedSpec(list) {
+  return {
+    label: 'What you learned today', cls: 'learned', style: vars('quiz'),
+    head: lcHead('quiz', 'learn', 'What you learned today', `${plural(list.length, 'idea')} to keep`, 'Tap one to go back over its lesson'),
+    items: list.map(s => {
+      const k = sk(s.section), ls = s.blocks.lesson, line = arr(s.takeaways)[0] || ls.big_idea || '';
+      return `<li><button class="row press" data-act="learn" data-story="${esc(s.id)}"><span class="sq grad" style="${vars(k)}">${icon('learn', 18)}</span>
+        <span class="t">${esc(ls.concept)}${line ? `<span>${esc(line)}</span>` : ''}</span>${icon('chev', 16, 'chev')}</button></li>`;
+    }),
+  };
+}
+
 function optsHTML(q) {
   const ans = Number.isInteger(q.answer) ? q.answer : -1;
   return `<div class="opts" role="group">${arr(q.options).map((o, j) => `<button class="opt" data-act="answer" data-j="${j}" data-a="${ans}">
@@ -767,10 +783,29 @@ const para = (text, src) => text ? String(text).split(/\n{2,}/).map((p, i, all) 
 const blkHead = (label, ic, tag) => `<div class="bh"><span class="bl">${icon(ic, 15)}${esc(label)}</span>${tag ? `<span class="tag ${tag}">${cap(tag)}</span>` : ''}</div>`;
 const initials = name => String(name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 
+// The lesson: one idea built up step by step, a worked example line by line, then back to the news.
+function lessonHTML(b) {
+  if (!b || !b.concept) return '';
+  const steps = arr(b.steps).filter(x => x && x.text), ex = b.example, lines = arr(ex && ex.lines).filter(x => x && x.calc);
+  const ap = b.apply, pr = b.practice;
+  return `<div class="lesson">
+    <h3 class="ls-c">${esc(b.concept)}</h3>
+    ${b.big_idea ? `<p class="ls-big">${rich(b.big_idea)}</p>` : ''}
+    ${steps.length ? `<ol class="ls-steps">${steps.map((st, i) => `<li><span class="n">${i + 1}</span><div><b>${esc(st.title)}</b><p>${rich(st.text)}${sup(st.src)}</p></div></li>`).join('')}</ol>` : ''}
+    ${lines.length ? `<div class="ls-ex"><div class="lab">${icon('hash', 14)}Worked example</div>${ex.setup ? `<p class="setup">${rich(ex.setup)}</p>` : ''}
+      <ol class="ls-lines">${lines.map((l, i) => `<li><span class="n">${i + 1}</span><div><span class="k">${esc(l.label)}</span><span class="calc">${esc(l.calc)}</span>${l.note ? `<small>${esc(l.note)}</small>` : ''}</div></li>`).join('')}</ol>
+      ${ex.result ? `<div class="res">${icon('cc', 18)}<p>${rich(ex.result)}</p></div>` : ''}</div>` : ''}
+    ${ap && ap.text ? `<div class="ls-apply"><div class="lab">${icon('news', 14)}Back to the news</div><p>${rich(ap.text)}${sup(ap.src)}</p></div>` : ''}
+    ${pr && pr.q ? `<details class="ls-try"><summary><span class="lab">${icon('help', 14)}Try it yourself</span><span class="q">${esc(pr.q)}</span>
+      <span class="rv">Show the answer${icon('chev', 15, 'chev')}</span></summary><p>${rich(pr.answer)}</p></details>` : ''}
+  </div>`;
+}
+
 // Fixed block order; optional blocks are skipped when missing.
 const BLOCKS = [
   ['so_far', 'The story so far', 'history', 'fact', b => para(b.text, b.src)],
   ['what_happened', 'What happened', 'news', 'fact', b => para(b.text, b.src)],
+  ['lesson', 'Learn the idea', 'learn', 'lesson', lessonHTML],
   ['why_chain', 'Why it happened', 'link', 'analysis', b => arr(b.steps).length ? `<ol class="chain">${arr(b.steps).map(st => `<li>${rich(st.text)}${sup(st.src)}</li>`).join('')}</ol>` : ''],
   ['players', 'Key players', 'users', null, b => arr(b.items).length ? `<div class="players">${arr(b.items).map(p => `<div class="player"><span class="av" aria-hidden="true">${esc(initials(p.name))}</span><div><b>${esc(p.name)}</b><span>${rich(p.who)}</span></div></div>`).join('')}</div>` : ''],
   ['numbers', 'By the numbers', 'hash', null, b => arr(b.items).length ? `<div class="nums">${arr(b.items).map(x => `<div class="num"><b>${esc(x.value)}</b><span>${rich(x.meaning)}${sup(x.src)}</span></div>`).join('')}</div>` : ''],
@@ -820,6 +855,8 @@ function explainerHTML(s) {
       ${t.previously ? `<div class="th-row"><span class="lab">Previously</span><p>${rich(t.previously)}</p></div>` : ''}
       ${t.changed ? `<div class="th-row now"><span class="lab">What changed</span><p>${rich(t.changed)}</p></div>` : ''}</div>` : ''}
     ${blocks}
+    ${arr(s.takeaways).length ? `<section class="xs learned"><div class="xs-h"><span class="sq grad">${icon('learn', 18)}</span><div><h2>What you learned</h2><small>Three things to remember</small></div></div>
+      <ul class="tk">${arr(s.takeaways).map(x => `<li>${icon('check', 16)}<span>${rich(x)}</span></li>`).join('')}</ul></section>` : ''}
     ${chk ? `<section class="xs check"><div class="xs-h"><span class="sq grad">${icon('help', 18)}</span><div><h2>Check yourself</h2><small>Tap an answer to reveal it</small></div></div>
       <p class="qq">${esc(chk.q)}</p>${optsHTML(chk)}</section>` : ''}
     ${terms.length ? `<section class="xs"><div class="xs-h"><span class="sq grad">${icon('book', 18)}</span><div><h2>Words to know</h2><small>Tap a word for its meaning</small></div></div>
@@ -844,7 +881,7 @@ function srcHTML(x) {
   </li>`;
 }
 
-function openExplainer(id, { fromHash = false } = {}) {
+function openExplainer(id, { fromHash = false, block = '' } = {}) {
   const s = storyById(id);
   if (!s) return;
   const ex = $('ex'), sc = $('exScroll');
@@ -865,6 +902,10 @@ function openExplainer(id, { fromHash = false } = {}) {
     if (fromHash && !already) EX_PUSHED = false;
   } catch (e) { /* ignore */ }
   setTimeout(() => { const x = ex.querySelector('.ex-x'); if (x) x.focus({ preventScroll: true }); }, 60);
+  if (block) setTimeout(() => {          // e.g. "What you learned today" opens straight at the lesson
+    const el = sc.querySelector(`[data-block="${CSS.escape(block)}"]`), bar = ex.querySelector('.ex-bar');
+    if (el) sc.scrollTop += el.getBoundingClientRect().top - sc.getBoundingClientRect().top - (bar ? bar.offsetHeight : 56) - 8;
+  }, 380);
 }
 function closeExplainer({ fromPop = false, silent = false } = {}) {
   if (!EX) return;
@@ -1007,6 +1048,7 @@ document.addEventListener('click', e => {
     case 'slide': goSlide(t); break;
     case 'next-card': nextCard(t); break;
     case 'explain': openExplainer(t.dataset.story); break;
+    case 'learn': openExplainer(t.dataset.story, { block: 'lesson' }); break;
     case 'ex-close': closeExplainer(); break;
     case 'answer': answer(t); break;
     case 'term': toggleTerm(t); break;
