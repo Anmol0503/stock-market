@@ -19,6 +19,11 @@ List only real problems:
     could be mistaken for a real event; a step that skips something a newcomer needs to follow the next one.
 
 Check the example's arithmetic line by line. Lesson problems are severity "fix", never "drop".
+The lesson and why_chain may explain long-standing rules from general knowledge: how the Constitution says
+an officer is removed, how a tax is calculated, how a storm forms. Do NOT flag such a step just because the
+claims don't mention it. Flag it only if you believe the rule is wrong, out of date, or overstated. Give
+the `where` of a lesson problem as the exact part: "lesson.steps[2]", "lesson.example", "lesson.apply",
+"lesson.practice" or "takeaways".
 
 severity "fix" = can be corrected or cut while keeping the story; "drop" = the story's core claim is
 unsupported. Set ok = true and problems = [] if there are no real problems. Be strict about facts and

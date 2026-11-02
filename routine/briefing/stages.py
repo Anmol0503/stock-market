@@ -678,10 +678,34 @@ def _strip_optional(story: dict, problems: list[dict]) -> dict:
             s["views"] = []
         elif w == "players":
             s["players"] = []
-        elif w.startswith(("lesson", "takeaways")) and not p.get("soft"):
-            s["lesson"] = {}                      # a lesson with a wrong fact or bad sums is worse than none
-            s["takeaways"] = []
+    _strip_lesson(s, [p["where"] for p in problems if str(p.get("where", "")).startswith(("lesson", "takeaways"))
+                      and not p.get("soft")])
     return s
+
+
+def _strip_lesson(s: dict, wheres: list[str]) -> None:
+    """Remove only the flagged parts of a lesson: a wrong fact or bad sums is worse than a gap. If the core goes
+    (the concept, the big idea, or all but one step), the whole lesson goes."""
+    if not wheres:
+        return
+    ls, drop_steps = dict(s.get("lesson") or {}), set()
+    for w in wheres:
+        m = re.match(r"\s*(takeaways|lesson)(?:\.(\w+))?(?:\[(\d+)\])?", w)
+        kind, part, idx = m.groups() if m else ("lesson", None, None)
+        if kind == "takeaways":
+            s["takeaways"] = []
+        elif part == "steps" and idx is not None:
+            drop_steps.add(int(idx))
+        elif part in ("example", "apply", "practice"):
+            ls[part] = {}
+        else:
+            ls = {}
+            break
+    ls["steps"] = [st for i, st in enumerate(ls.get("steps") or []) if i not in drop_steps]
+    if not ls.get("concept") or len(ls["steps"]) < 2:
+        s["lesson"], s["takeaways"] = {}, []
+    else:
+        s["lesson"] = ls
 
 
 async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gists, tdoc, cal, due, window,

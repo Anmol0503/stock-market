@@ -159,7 +159,9 @@ def test_a_wrong_lesson_is_removed_but_a_long_one_is_kept():
     s = story()
     kept = stages._strip_optional(s, [{"where": "lesson", "issue": "600 words", "severity": "fix", "soft": True}])
     assert kept["lesson"]["concept"]
-    gone = stages._strip_optional(s, [{"where": "lesson.example", "issue": "10 × 2 is not 30", "severity": "fix"}])
+    no_ex = stages._strip_optional(s, [{"where": "lesson.example", "issue": "10 × 2 is not 30", "severity": "fix"}])
+    assert no_ex["lesson"]["example"] == {} and no_ex["lesson"]["steps"]
+    gone = stages._strip_optional(s, [{"where": "lesson", "issue": "the idea itself is wrong", "severity": "fix"}])
     assert gone["lesson"] == {} and gone["takeaways"] == []
     st, _, _ = build.public_story("s1", SLOT, gone, research(), thread=None, window=WINDOW, now=NOW, markets=None)
     assert st and "lesson" not in st["blocks"] and st["takeaways"] == []
@@ -171,3 +173,23 @@ def test_checker_cannot_drop_a_story_over_its_lesson():
                                      {"where": "what_happened", "issue": "unsupported", "severity": "drop"}]}
     stages._lesson_never_drops(chk)
     assert [p["severity"] for p in chk["problems"]] == ["fix", "drop"]
+
+
+def test_only_the_flagged_part_of_a_lesson_is_removed():
+    from routine.briefing import stages
+    s = stages._strip_optional(story(), [{"where": "lesson.steps[1] (Count the multiplier)", "issue": "x", "severity": "fix"},
+                                         {"where": "lesson.apply.text", "issue": "x", "severity": "fix"}])
+    assert [x["title"] for x in s["lesson"]["steps"]] == ["Each case infects others", "Above one, it grows"]
+    assert s["lesson"]["apply"] == {} and s["lesson"]["example"]["lines"] and len(s["takeaways"]) == 3
+    two_bad = [{"where": f"lesson.steps[{i}]", "issue": "x", "severity": "fix"} for i in (0, 1)]
+    assert stages._strip_optional(story(), two_bad)["lesson"] == {}           # one step left is not a lesson
+
+
+def test_thin_sourcing_is_caught_before_the_fix_pass():
+    s = story()
+    for b in ("so_far", "what_happened", "for_you"):
+        s[b]["cids"] = ["k1"]
+    s["why_chain"] = [{**st, "cids": ["k1"]} for st in s["why_chain"]]
+    s["numbers"][0]["cids"] = ["k1"]
+    s["lesson"]["steps"][2]["cids"], s["lesson"]["apply"]["cids"] = ["k1"], ["k1"]
+    assert any(p["where"] == "sources" and "only 1 site" in p["issue"] for p in problems(s))

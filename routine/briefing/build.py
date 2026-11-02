@@ -127,6 +127,18 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
         for c in used:
             if c not in cids:
                 bad(b, f"cites unknown claim {c}")
+    claims = {c.get("cid"): c for c in research.get("claims") or []}
+    cited = {x for b in ("so_far", "what_happened", "for_you", "misconception") for x in (s.get(b) or {}).get("cids") or []}
+    cited |= {x for st in s.get("why_chain") or [] for x in st.get("cids") or []}
+    cited |= {x for n in s.get("numbers") or [] for x in n.get("cids") or []}
+    cited |= {v.get("cid") for v in s.get("views") or []}
+    cited |= {x for x in ((s.get("lesson") or {}).get("apply") or {}).get("cids") or []}
+    cited |= {x for st in (s.get("lesson") or {}).get("steps") or [] for x in st.get("cids") or []}
+    sites = {domain(claims[c].get("url")) for c in cited if c in claims and str(claims[c].get("url", "")).startswith("http")}
+    if len(sites) < 3:
+        avail = sorted({domain(c.get("url")) for c in claims.values() if str(c.get("url", "")).startswith("http")} - sites)
+        bad("sources", f"the story cites claims from only {len(sites)} site(s); cite claims from at least 3 different "
+                       f"sites (also available: {', '.join(avail[:6]) or 'none'})")
     total = words(story_text(s))
     if not _in(total, "story_total", 0.1):
         bad("story", f"{total} words in total; must be {W['story_total'][0]}–{W['story_total'][1]}")
