@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02T17:46+05:30",
+ "generated_at": "2026-11-02T23:22+05:30",
  "status": "complete",
  "window": {
   "start": "2026-11-01T13:01+05:30",
@@ -35,49 +35,74 @@
   {
    "slot": "s1",
    "status": "ok",
-   "research": null,
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 10
+   },
    "problems": [
-    "views[0] (Donald Trump): The view says 'talks are fine, but he is in no great hurry'. That part comes from k8, but the view cites only k1, which supports just t"
+    "players: Qatar: It says Qatar \"proposed the two-day plan\". k6 says Iran made the original seven-day proposal and Qatar asked Iran to shorten it to two days.",
+    "for_you: \"So cooking gas is more exposed than petrol\": The claims compare LPG (88%) with crude (41%). They say nothing about petrol, so the conclusion should co"
    ],
    "error": null
   },
   {
    "slot": "s2",
    "status": "ok",
-   "research": null,
+   "research": {
+    "claims": 14,
+    "sites": 8,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
    "problems": [
-    "next.unknowns, $1 million fraud-tip reward: The claims only say the reported date is uncertain. They don't say it 'may date from 2024', so that is an invented d",
-    "next.unknowns, Senate races list: The claims don't name North Carolina, Georgia, Maine or Texas as Senate races that decide control. Calling these 'the Senate r"
+    "players (Hakeem Jeffries) and views (Hakeem Jeffries): No claim mentions Jeffries, his job title, or that he is 'very confident' Democrats will win the House. C"
    ],
    "error": null
   },
   {
    "slot": "s3",
    "status": "ok",
-   "research": null,
+   "research": {
+    "claims": 16,
+    "sites": 9,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 8
+   },
    "problems": [
-    "next.text and reel outro: The story tells readers to 'watch for reports' from the 1 November march. Today is 2 November, so that date has passed. The claims onl",
-    "analogy.text: It says removal needs 'a two-thirds vote of all members'. The claims say two-thirds of members present and voting, plus a majority of total member",
-    "for_you.text: It says SIR 'decides whether your name stays on the voter list'. That is stronger than the claims, which say SIR aims to include eligible electors"
+    "reel[2] (big_number) say: It calls SIR deletions 'the main charge'. The claims list six charges, with electoral manipulation first, and none is ranked as the ma"
    ],
    "error": null
   },
   {
    "slot": "s4",
    "status": "ok",
-   "research": null,
+   "research": {
+    "claims": 14,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 8
+   },
    "problems": [],
    "error": null
   },
   {
    "slot": "s5",
    "status": "ok",
-   "research": null,
+   "research": {
+    "claims": 11,
+    "sites": 7,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 5
+   },
    "problems": [
-    "why_chain step 3: Says investors asked SEBI for tax reform 'after' the record $31B selling. The claims give no such order. They say SEBI met investors over two ",
-    "misconception.fact: Says any change 'would come through the Union Budget'. The claims say only that the government decides and the recommendations were submitte",
-    "so_far / numbers / reel timeline: The 'July 2024' date for the Budget raising the rate from 10% to 12.5% isn't in the claims. k11 says only 'Budget 2024'. Use '",
-    "why_chain step 5 / players (Garre, JM Financial): These views rest on a Business Standard search summary whose page was unreadable (k9). The chain states them f"
+    "for_you.text: The line says any change would come \"probably in the February Budget\". The claims only say the recommendations were submitted ahead of the Budget "
    ],
    "error": null
   }
@@ -154,14 +179,27 @@
   "merge": 0.0,
   "scout": 0.0,
   "editor": 0.0,
-  "stories+sections": 0.0,
+  "stories+sections": 92.0,
   "build": 0.0
  },
  "usage": {
-  "calls": 0,
+  "calls": 9,
   "failures": 0,
-  "cost_usd": 0.0,
-  "seconds": 0.0,
-  "by_role": {}
+  "cost_usd": 1.03,
+  "seconds": 258.3,
+  "by_role": {
+   "checker": {
+    "calls": 6,
+    "cost_usd": 0.3244,
+    "seconds": 95.8,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 3,
+    "cost_usd": 0.7062,
+    "seconds": 162.4,
+    "failures": 0
+   }
+  }
  }
 }

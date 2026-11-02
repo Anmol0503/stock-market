@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "date": "2026-11-02",
- "edition": "Evening · 5:46 PM",
- "published_at": "2026-11-02T17:46+05:30",
+ "edition": "Evening · 11:22 PM",
+ "published_at": "2026-11-02T23:22+05:30",
  "window": {
   "start": "2026-11-01T13:01+05:30",
   "end": "2026-11-02T15:01+05:30"
@@ -58,13 +58,13 @@
     "calendar_id": null
    }
   ],
-  "read_min": 33,
+  "read_min": 47,
   "watch_min": 6
  },
  "stories": [
   {
    "id": "s1",
-   "slug": "iran-offers-two-day-hormuz-reopening",
+   "slug": "trump-threatens-more-strikes-as-qatar",
    "section": "world",
    "india_angle": "secondary",
    "contested": true,
@@ -73,60 +73,62 @@
     "status": "developing",
     "day": 2,
     "previously": "Iran's Revolutionary Guard claimed strikes on seven tankers in the Strait of Hormuz around October 23-24, 2026, one of the biggest single-day attacks of the war, unverified externally. Brent hit about $111-112 and was reported near $117 by October 27. Shipping through the strait is disrupted; Indian commercial LPG prices may change November 1.",
-    "changed": "New since last coverage: Iran says Hormuz could reopen within two days under a Qatar-shaped plan. Trump threatens strikes on one or two remaining sites. Brent fell about 3% on 2 November."
+    "changed": "New since our last report: Trump says one or two Iranian sites remain to be hit, and Khamenei has ordered an unrestricted response. Iran is also discussing a Qatar plan to reopen Hormuz within two days. Brent fell about 3%."
    },
-   "headline": "Iran offers two-day Hormuz reopening as Trump threatens new strikes",
+   "headline": "Trump threatens more strikes as Qatar talks offer Hormuz reopening plan",
    "question": "Is the Iran war about to escalate, or could Qatar's talks reopen Hormuz?",
-   "dek": "Both paths are open. Iran says Hormuz could reopen within two days if the US meets several conditions. Trump says one or two sites still need hitting. Oil fell on the hope.",
+   "dek": "Either could happen. Trump says one or two Iranian sites are still to be hit. Iranian negotiators in Qatar are discussing reopening Hormuz within two days if the US meets their conditions.",
    "blocks": {
     "so_far": {
-     "text": "The Iran war began in late February 2026. The Strait of Hormuz is the narrow sea passage that links the Gulf to the open ocean. Tankers leaving the Gulf must pass through it. By 30 October, Brent crude, the main global oil price, was up about 70% from a year earlier. On 1 November, Iran's Revolutionary Guards said two tankers struck mines in the strait. That claim has not been verified.",
+     "text": "The current war began in late February 2026. Iran's Supreme Leader is Mojtaba Khamenei. The Strait of Hormuz is the narrow sea lane off Iran's coast that links Gulf oil and gas producers to the world. Bloomberg reported on 31 October that attacks on shipping there are hurting both sides' economies. The US, for its part, is blockading Iran's ports and has placed sanctions on Iran's oil and gas. By 30 October, Brent crude, the main world oil price, was about 70% higher than a year earlier.",
      "src": [
       1,
-      2
+      2,
+      3
      ]
     },
     "what_happened": {
-     "text": "On 31 October, Donald Trump said the US still had to hit \"one or two sites\" in Iran, which could be done \"in 10 minutes\". He named Pickaxe Mountain, a suspected underground nuclear complex. Iran denies any nuclear work there. Iran's Supreme Leader, Mojtaba Khamenei, ordered that any threat be met with an \"immediate, impactful and geographically unrestricted response\". In parallel, Foreign Minister Abbas Araghchi said Iranian negotiators were in Qatar discussing a plan to reopen Hormuz within two days, if the US lifts its port blockade and eases oil and gas sanctions. Qatar asked Iran to compress a seven-day plan into two. Washington has not publicly responded.",
+     "text": "On 31 October, Donald Trump said the US still had to hit \"one or two sites\" in Iran, which could be done \"in 10 minutes\". He named Pickaxe Mountain, a suspected underground nuclear complex. Iran denies any nuclear work there. Supreme Leader Mojtaba Khamenei ordered that any threat meet an \"immediate, impactful and geographically unrestricted\" response. Foreign Minister Abbas Araghchi said Iranian negotiators were in Qatar. Qatar has asked Iran to shorten a seven-day plan to two days: US measures on day one, Hormuz reopened on day two. Washington has not publicly responded. On 2 November, oil fell about 3% on hopes from the talks.",
      "src": [
       1,
-      2
+      3,
+      4
      ]
     },
     "why_chain": {
      "steps": [
       {
-       "text": "Iran can slow tanker traffic through Hormuz with attacks and mines, which pushes up oil prices worldwide.",
+       "text": "Iran's strongest pressure tool is Hormuz: when ships stay away, oil prices rise for everyone.",
        "src": [
         2,
+        1
+       ]
+      },
+      {
+       "text": "The US has its own pressure tools: a blockade of Iran's ports and sanctions on its oil and gas.",
+       "src": [
         1,
         3
        ]
       },
       {
-       "text": "The US presses back with a blockade of Iranian ports and sanctions, which Iran wants lifted or eased.",
+       "text": "Iran is not holding direct talks with the US, so Qatar sits in the middle as the go-between.",
        "src": [
         1,
-        2
+        3
        ]
       },
       {
-       "text": "Each side holds something the other wants, so Qatar's plan swaps them: US steps on day one, Hormuz reopened on day two.",
+       "text": "Qatar's plan sets an order of moves: US measures on day one, Hormuz reopened on day two.",
        "src": [
-        2
+        3
        ]
       },
       {
-       "text": "But Iran's list goes beyond shipping: fewer US troops, an end to fighting in Lebanon, and released frozen funds.",
-       "src": [
-        2
-       ]
-      },
-      {
-       "text": "If talks stall, Trump's threatened strike and Khamenei's order for an unrestricted response could widen the war quickly.",
+       "text": "But Trump says one or two sites remain to be hit, and Iran's army warns a new attack would widen the war.",
        "src": [
         1,
-        4
+        5
        ]
       }
      ]
@@ -135,7 +137,7 @@
      "items": [
       {
        "name": "Donald Trump",
-       "who": "US leader; says one or two Iranian sites remain to be hit"
+       "who": "US President; says one or two Iranian sites remain to be hit"
       },
       {
        "name": "Mojtaba Khamenei",
@@ -143,40 +145,44 @@
       },
       {
        "name": "Abbas Araghchi",
-       "who": "Iran's foreign minister, describing the Qatar talks"
+       "who": "Iran's foreign minister"
       },
       {
        "name": "Marco Rubio",
        "who": "US Secretary of State"
+      },
+      {
+       "name": "Qatar",
+       "who": "Mediator hosting Iran's negotiators; proposed the two-day plan"
       }
      ]
     },
     "numbers": {
      "items": [
       {
-       "value": "About $109.75",
-       "meaning": "Brent on 2 November, down $3.68 (3.2%) in one report; other snapshots showed $110–112.",
+       "value": "$109.75",
+       "meaning": "Brent on 2 November, down $3.68 (3.2%) in one report; others showed $110–112.",
        "src": [
-        5
+        4
        ]
       },
       {
        "value": "About 70%",
-       "meaning": "How much Brent and WTI oil prices had risen in one year, as of 30 October.",
+       "meaning": "How much higher Brent and WTI oil prices were on 30 October than a year earlier.",
        "src": [
         1
        ]
       },
       {
        "value": "88%",
-       "meaning": "Share of India's LPG imports that came via Hormuz in nine months of FY2026, versus about 41% of crude.",
+       "meaning": "Share of India's LPG imports that came through Hormuz, against about 41% of its crude.",
        "src": [
         6
        ]
       },
       {
-       "value": "$57.8 billion",
-       "meaning": "India's net oil and gas import bill, April–July, up 43.4% from $40.3 billion a year earlier.",
+       "value": "$57.8bn",
+       "meaning": "India's net oil and gas import bill in April–July, up from $40.3bn a year earlier.",
        "src": [
         7
        ]
@@ -184,16 +190,23 @@
      ]
     },
     "analogy": {
-     "text": "Picture two neighbours in a feud. One has parked a truck across the shared lane, which is Hormuz. The other has locked the first one's shop, which is the blockade and sanctions. Qatar is the go-between saying: unlock the shop on day one, move the truck on day two.",
-     "breaks": "Here the truck owner also wants troop cuts, frozen money and peace in Lebanon, and both sides threaten force."
+     "text": "Think of two people selling a car who don't trust each other. A friend they both know stands in the middle. The buyer hands over the money first, and the keys come one day later. Qatar is the friend. US measures are the money. A reopened Hormuz is the keys.",
+     "breaks": "Qatar cannot force either side to keep its word. And one strike or one mine could wreck the swap halfway."
     },
     "views": {
      "items": [
       {
        "holder": "Donald Trump",
-       "view": "The US still has to hit \"one or two sites\", doable \"in 10 minutes\"; talks are fine, but he is in no great hurry.",
+       "view": "The one or two remaining Iranian sites could be hit \"in 10 minutes\".",
        "src": [
         1
+       ]
+      },
+      {
+       "holder": "Donald Trump",
+       "view": "The talks are fine, but he is in no great hurry.",
+       "src": [
+        3
        ]
       },
       {
@@ -205,74 +218,139 @@
       },
       {
        "holder": "Abbas Araghchi",
-       "view": "Hormuz can reopen within two days if Washington lifts its port blockade and eases oil and gas sanctions.",
+       "view": "Hormuz can reopen within two days if Washington meets Iran's conditions, including lifting its port blockade and easing oil and gas sanctions.",
        "src": [
         1
-       ]
-      },
-      {
-       "holder": "Marco Rubio",
-       "view": "Talks with Iran are continuing, but there is no timeframe for a result.",
-       "src": [
-        2
        ]
       }
      ]
     },
     "for_you": {
-     "text": "India feels this mainly through cooking gas and fuel costs. In the first nine months of FY2026, about 88% of India's LPG imports came through Hormuz, against about 41% of crude. India's net oil and gas import bill rose 43.4% in April–July, mostly because of price. A reopened strait would ease that pressure; a wider war would add to it. These India figures come from August reports.",
+     "text": "Outlook Business reported that Hormuz carried about 88% of India's LPG imports and about 41% of its crude in the first nine months of FY2026. So cooking gas is more exposed than petrol. India's oil and gas import bill rose 43.4% in April–July, mostly because prices rose. A reopening could ease that bill. A new strike could push it higher. These India figures are from August; no newer data was available.",
      "src": [
       6,
       7
      ]
     },
     "misconception": {
-     "myth": "The US and Iran are negotiating face to face to end the war.",
-     "fact": "There are no direct US–Iran talks. Iranian negotiators are in Qatar, which is shaping the two-day plan, and Washington has not publicly answered it.",
+     "myth": "Oil prices only fall once ships actually start moving again.",
+     "fact": "Prices move on expectations. Brent fell about 3% on 2 November on hopes from the Qatar talks, before any deal was signed.",
      "src": [
-      1,
-      2
+      4,
+      3
      ]
     },
     "next": {
-     "text": "Watch whether Washington answers Qatar's two-day plan, and whether Trump orders strikes on the remaining sites. New tanker hits in Hormuz would show if the strait is getting safer or worse. No deadline has been set.",
+     "text": "Watch whether Washington answers Qatar's two-day plan, and whether the US strikes Pickaxe Mountain or other sites. Either move could swing oil prices sharply. No date has been set for either.",
      "dates": [],
      "unknowns": [
-      "Whether the US will publicly answer the two-day plan",
-      "Whether Trump will strike Pickaxe Mountain or other sites",
-      "Whether Brent stood at $109.75 or about $111 on 2 November",
-      "No November data on India's LPG supply or import bill"
+      "Whether Washington will accept, reject or change Qatar's two-day plan",
+      "Whether the US will strike Pickaxe Mountain, and how Iran would respond",
+      "Whether the Revolutionary Guards' claim that two tankers struck mines on 1 November is true",
+      "Whether Brent stood at $109.75 or about $111 on 2 November"
      ]
+    },
+    "lesson": {
+     "concept": "How oil prices price in the odds of war",
+     "big_idea": "An oil price is a bet on the future. Traders weigh each possible outcome by how likely it seems. So news that changes the odds moves the price before anything physical changes.",
+     "steps": [
+      {
+       "title": "Price is a bet on the future",
+       "text": "Traders buy oil to be delivered in the coming weeks. So they pay what they think it will be worth then, not what it is worth now.",
+       "src": []
+      },
+      {
+       "title": "List the possible outcomes",
+       "text": "Keep it simple, with two outcomes. Hormuz stays shut, so oil is scarce and expensive. Or Hormuz reopens, supply returns and the price eases.",
+       "src": []
+      },
+      {
+       "title": "Weight each outcome by its odds",
+       "text": "Multiply each outcome's price by its chance, then add them up. This \"expected price\" is roughly where trading settles. The extra paid above the calm-times price is the \"risk premium\", the price of fear.",
+       "src": []
+      },
+      {
+       "title": "News changes the odds",
+       "text": "Talks that make a reopening more likely shrink the risk premium. Brent fell about 3% on 2 November on hopes from the Qatar talks. A strike threat pushes the odds the other way.",
+       "src": [
+        4,
+        1
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Imagine traders think Hormuz has a 50% chance of staying shut, with oil at $130 (assume). They see a 50% chance it reopens, with oil at $90 (assume). Then talks lift the reopening odds to 60%.",
+      "lines": [
+       {
+        "label": "Before the talks",
+        "calc": "0.5 × $130 + 0.5 × $90 = $110",
+        "note": "$65 + $45: each outcome weighted by its odds."
+       },
+       {
+        "label": "Talks raise hope",
+        "calc": "Reopen odds: 50% → 60% (assume)",
+        "note": "No ship has moved yet; only the odds changed."
+       },
+       {
+        "label": "After the talks",
+        "calc": "0.4 × $130 + 0.6 × $90 = $106",
+        "note": "$52 + $54 = $106."
+       },
+       {
+        "label": "Price change",
+        "calc": "$110 − $106 = $4, about 3.6%",
+        "note": "$4 ÷ $110 ≈ 3.6%."
+       }
+      ],
+      "result": "Nothing physical changed, yet the price fell about $4, because the odds shifted. That is the same kind of move as Brent's fall of about 3% on 2 November."
+     },
+     "apply": {
+      "text": "So when Araghchi said Hormuz could reopen within two days, and Qatar pushed a day-one, day-two plan, traders raised the odds of reopening. Brent fell to about $109.75. If the US strikes Pickaxe Mountain and Iran replies as Khamenei ordered, the odds flip, and the risk premium would likely rise again.",
+      "src": [
+       1,
+       3,
+       4
+      ]
+     },
+     "practice": {
+      "q": "Same example. After a US strike, traders think there is only a 30% chance Hormuz reopens. What is the expected oil price now?",
+      "answer": "The chance of staying shut becomes 70%. 0.7 × $130 = $91. 0.3 × $90 = $27. Add them: $91 + $27 = $118. That is $8 above the $110 starting point, because fear came back into the price."
+     }
     }
    },
    "terms": [
     {
      "term": "Brent crude",
-     "meaning": "The main global benchmark price for oil, quoted in dollars per barrel."
+     "meaning": "The main world benchmark price for a barrel of oil."
     },
     {
-     "term": "Port blockade",
-     "meaning": "Using navy ships to stop vessels entering or leaving a country's ports."
+     "term": "Blockade",
+     "meaning": "Using military force to stop ships entering or leaving a country's ports."
+    },
+    {
+     "term": "Sanctions",
+     "meaning": "Penalties one country puts on another's trade, such as banning its oil sales."
     },
     {
      "term": "Oil waivers",
-     "meaning": "US permissions letting some buyers purchase Iranian oil despite sanctions."
-    },
-    {
-     "term": "LPG",
-     "meaning": "Liquefied petroleum gas, the cooking gas in Indian household cylinders."
+     "meaning": "US permissions letting some buyers purchase Iranian oil without being penalised."
     }
    ],
    "check": {
-    "q": "Why did oil prices fall on 2 November even though no deal was signed?",
+    "q": "Why did oil prices fall on 2 November even though Hormuz had not reopened?",
     "options": [
-     "Hormuz had already fully reopened to tankers",
-     "Traders hoped the Qatar talks could reopen Hormuz soon",
-     "The US had lifted its sanctions on Iran"
+     "Ships had already returned to normal traffic through the strait",
+     "Traders saw a better chance of reopening, so they priced in less risk",
+     "The US had lifted its sanctions on Iranian oil"
     ],
     "answer": 1,
-    "why": "Prices moved on hope. Qatar's two-day plan raised the chance of tankers moving freely again, but the US has not responded and nothing is agreed."
+    "why": "No deal or reopening had happened. The talks raised the odds of reopening, and prices move on expected outcomes."
    },
+   "takeaways": [
+    "Oil prices weigh each outcome by its odds, so news moves prices before ships do.",
+    "Qatar's two-day plan to reopen Hormuz raised hopes, and Brent fell about 3%.",
+    "Watch for a US reply to Qatar's plan, or a strike on Pickaxe Mountain."
+   ],
    "confidence": {
     "level": "high",
     "publishers": 7,
@@ -290,14 +368,6 @@
     },
     {
      "n": 2,
-     "pub": "investingLive",
-     "url": "https://investinglive.com/commodities/oil-slips-as-iran-says-qatar-brokered-plan-could-reopen-hormuz-in-two-days/",
-     "published": "2026-11-02T09:30+05:30",
-     "type": "outlet",
-     "excerpt": "two tankers struck mines in Hormuz on Sunday. That claim has not been independently verified."
-    },
-    {
-     "n": 3,
      "pub": "Bloomberg",
      "url": "https://www.bloomberg.com/news/articles/2026-10-31/shipping-strikes-in-hormuz-leave-both-sides-with-economic-pain",
      "published": "2026-10-31T16:00+05:30",
@@ -305,20 +375,28 @@
      "excerpt": "Shipping Strikes In Hormuz Leave Both Sides With Economic Pain"
     },
     {
-     "n": 4,
-     "pub": "Deccan Chronicle",
-     "url": "https://www.deccanchronicle.com/world/irans-army-warns-any-new-us-attack-would-spread-war-wider-2000562",
-     "published": "2026-10-31T15:43+05:30",
+     "n": 3,
+     "pub": "investingLive",
+     "url": "https://investinglive.com/commodities/oil-slips-as-iran-says-qatar-brokered-plan-could-reopen-hormuz-in-two-days/",
+     "published": "2026-11-02T09:30+05:30",
      "type": "outlet",
-     "excerpt": "Iran's army warns any new US attack would spread war wider"
+     "excerpt": "Lifting recently imposed US sanctions; Reinstating oil waivers granted in June; Reducing the US military presence; Recognizing shipping routes designated by Iran and Oman; Releasing frozen funds"
     },
     {
-     "n": 5,
+     "n": 4,
      "pub": "Reuters (via Google News)",
      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPeHdxcnVlWmx5T1pjbDZQS19XeXlYTW1xZmNONnJQWHk4YU1EQTRzZFZQVEJxYjd6WEJTN2pfZC10ZGlzXzVURVdHZkg1RjZGY2tjN0ZVRjNRc0p4UmQ1c2F6MUt4eEpHSml6Z3Q4WHpqV094aEo0dTlVbk00OGFBazlmdGhsWGdtckFHQjlBTVU5Q0FRR3hxUnVmcVpPeGZsTHBlWmhTdw?oc=5",
      "published": "2026-11-02T04:43+05:30",
      "type": "wire",
      "excerpt": "Oil prices ease 3% on optimism for Qatari-led talks on ending Iran war"
+    },
+    {
+     "n": 5,
+     "pub": "Deccan Chronicle",
+     "url": "https://www.deccanchronicle.com/world/irans-army-warns-any-new-us-attack-would-spread-war-wider-2000562",
+     "published": "2026-10-31T15:43+05:30",
+     "type": "outlet",
+     "excerpt": "Iran's army warns any new US attack would spread war wider"
     },
     {
      "n": 6,
@@ -342,18 +420,23 @@
     "scenes": [
      {
       "kind": "hook",
-      "say": "Is the Iran war about to get bigger? Or could talks in Qatar reopen the Strait of Hormuz? Right now, both are possible.",
-      "show": "Escalation, or a deal in Qatar?"
+      "say": "Is the Iran war about to get bigger? Or could talks in Qatar reopen the Strait of Hormuz? Let's work it out.",
+      "show": "Escalation, or a deal?"
+     },
+     {
+      "kind": "kinetic",
+      "say": "On thirty-first October, Donald Trump said America still had to hit one or two sites in Iran. Iran's Supreme Leader, Mojtaba Khamenei, ordered an unrestricted response to any threat.",
+      "show": "Trump: 'one or two sites' left"
      },
      {
       "kind": "map",
-      "say": "Hormuz is the narrow sea lane out of the Gulf. Iran's Revolutionary Guards say two tankers hit mines there on the first of November. Nobody has verified that.",
-      "show": "Two tankers hit mines? Unverified",
+      "say": "But Iranian negotiators are also in Qatar. Qatar's plan: America acts on day one, and Hormuz reopens on day two. Washington has not publicly replied.",
+      "show": "Day one: US acts. Day two: Hormuz",
       "map": {
        "iso3": [
         "IRN",
-        "OMN",
-        "QAT"
+        "QAT",
+        "OMN"
        ],
        "pin": [
         56.3,
@@ -363,62 +446,57 @@
       }
      },
      {
-      "kind": "players",
-      "say": "On the thirty-first of October, Donald Trump said America still had to hit one or two sites in Iran. Iran's Supreme Leader, Mojtaba Khamenei, ordered an immediate, unrestricted response to any threat.",
-      "show": "Threat and counter-threat",
-      "players": [
+      "kind": "big_number",
+      "say": "On second November, Brent crude oil fell about three per cent, to nearly one hundred and ten dollars a barrel.",
+      "show": "Oil falls on hopes from the talks",
+      "number": {
+       "value": "$109.75",
+       "label": "Brent on 2 November, down 3.2%"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "Why would it fall before a single ship moved? Because an oil price is a bet. Traders weigh each outcome by its odds.",
+      "show": "An oil price is a bet"
+     },
+     {
+      "kind": "steps",
+      "say": "Imagine, with made-up numbers, a fifty-fifty chance. If the strait stays shut, oil is one hundred and thirty dollars. If it opens, ninety. Half of each gives one hundred and ten. Now talks lift the reopening odds to sixty per cent. The price drops to one hundred and six dollars.",
+      "show": "Odds change, price changes",
+      "steps": [
        {
-        "name": "Donald Trump",
-        "role": "One or two sites left to hit"
+        "label": "Before talks",
+        "calc": "0.5 × $130 + 0.5 × $90 = $110"
        },
        {
-        "name": "Mojtaba Khamenei",
-        "role": "Iran's Supreme Leader: unrestricted response"
+        "label": "Reopen odds rise to 60%",
+        "calc": "0.4 × $130 + 0.6 × $90 = $106"
+       },
+       {
+        "label": "Price change",
+        "calc": "$110 − $106 = $4"
        }
       ]
      },
      {
       "kind": "kinetic",
-      "say": "At the same time, Iranian negotiators are in Qatar. Qatar wants a two-step deal. Day one, America acts. Day two, Hormuz reopens.",
-      "show": "Day 1: US acts. Day 2: Hormuz opens"
-     },
-     {
-      "kind": "kinetic",
-      "say": "But Iran's list is long. Lift sanctions. Reduce America's military presence. End the fighting in Lebanon. Release frozen funds. Washington has not publicly answered.",
-      "show": "Iran's conditions go beyond shipping"
-     },
-     {
-      "kind": "big_number",
-      "say": "Oil still reacted. Brent crude fell about three per cent on the second of November, to around one hundred and ten dollars a barrel.",
-      "show": "Oil falls on hope of a deal",
-      "number": {
-       "value": "~$110",
-       "label": "Brent per barrel, 2 Nov, down ~3%"
-      }
-     },
-     {
-      "kind": "big_number",
-      "say": "For India, this reaches the gas cylinder. In the first nine months of financial year twenty twenty-six, about eighty-eight per cent of India's cooking gas imports came through Hormuz.",
-      "show": "India's LPG imports via Hormuz",
-      "number": {
-       "value": "88%",
-       "label": "India's LPG imports through Hormuz, FY2026 (nine months)"
-      }
+      "say": "A strike on Pickaxe Mountain would flip the odds the other way. For India, older data shows Hormuz carried about eighty-eight per cent of its L P G, or cooking gas, imports.",
+      "show": "India: 88% of LPG via Hormuz"
      },
      {
       "kind": "outro",
-      "say": "Remember: the deal and the strike threat are moving together. Watch whether Washington answers Qatar's two-day plan. Marco Rubio says there is no timeframe.",
-      "show": "Watch: US reply to Qatar plan"
+      "say": "Remember: news moves oil before ships do. Watch for America's answer to Qatar's two-day plan. No date has been set.",
+      "show": "Watch: the US reply to Qatar"
      }
     ]
    },
-   "reel_hash": "82b9bbc11aac",
-   "read_min": 4,
+   "reel_hash": "c7bf02b039fe",
+   "read_min": 7,
    "must_read": true
   },
   {
    "id": "s2",
-   "slug": "trump-ends-his-campaign-as-forecasts",
+   "slug": "us-midterms-on-3-november-forecasts",
    "section": "world",
    "india_angle": "secondary",
    "contested": true,
@@ -427,48 +505,56 @@
     "status": "developing",
     "day": 2,
     "previously": "Americans vote November 3, 2026 in midterms deciding control of Congress. Trump pledged over $400 million to help Republicans and offered $1 million rewards for fraud tips; he has twice mused about elections not happening, which the White House called a joke. Over 18 million have voted early and polls are tight. The DOJ also sued over the Alaska Senate race (Sullivan vs Peltola).",
-    "changed": "A judge dismissed the Alaska certification lawsuit. Trump ended his 28-stop tour on 1 November. A Harvard forecast and an NBC poll now lean Democratic, and a Michigan Democrat endorsed the Republican."
+    "changed": "New since the last edition: Trump ended his 28-stop campaign on 1 November, a judge dismissed the Alaska lawsuit, and a Harvard forecast gives Democrats 96% odds for the House and 76% for the Senate."
    },
-   "headline": "Trump ends his campaign as forecasts lean towards Democrats",
-   "question": "What is at stake in the US midterms on 3 November, and which way are they leaning?",
-   "dek": "The vote decides who controls Congress. A Harvard forecast and an NBC poll lean Democratic. A Democratic win would let them challenge Trump's agenda and investigate his administration.",
+   "headline": "US midterms on 3 November: forecasts lean Democratic as Trump ends campaign",
+   "question": "What is at stake in the 3 November US midterms, and which way are they leaning?",
+   "dek": "Every House seat, 35 Senate seats and 36 governorships are on the 3 November ballot. Forecasts and an NBC poll favour Democrats. Winning even one chamber would let them challenge Trump's agenda.",
    "blocks": {
     "so_far": {
-     "text": "Midterms are US elections held halfway through a president's four-year term. On 3 November 2026, all 435 seats in the House of Representatives, 35 Senate seats and 36 governorships are up for election. The House and the Senate together form Congress. The president's party usually loses seats in midterms. Trump has called voter fraud 'rampant', but evidence shows it is extremely rare. Even so, the Justice Department has opened probes or demanded that votes be set aside in several states.",
+     "text": "Americans vote on 3 November 2026 in the midterms. These are the elections held halfway through a president's four-year term. All 435 House seats, 35 Senate seats and 36 state governorships are on the ballot. The president's party usually loses seats in midterms. President Donald Trump, a Republican, says voter fraud is \"rampant\", but evidence shows it is extremely rare. His Justice Department has opened probes or demanded that votes be set aside in several states. It also sued to delay Alaska's certification (the official sign-off of results) if Republican Senator Dan Sullivan lost.",
      "src": [
       1,
       2
      ]
     },
     "what_happened": {
-     "text": "On 1 November 2026, Trump held his last two rallies, in Iowa and in Salina, Kansas. They ended a 28-stop campaign tour. \"I'm closing the sucker down,\" he said. On 2 November the BBC reported that a judge had dismissed the Trump administration's lawsuit over Alaska. The suit wanted to delay certification, the official confirmation of results, if Republican Senator Dan Sullivan lost. It concerned two candidates named Dan Sullivan on the ballot. A Harvard forecasting tool gives Democrats a 96% chance of winning the House and 76% for the Senate.",
+     "text": "On 1 November Trump held his last two rallies, in Iowa and in Salina, Kansas. They ended a 28-stop campaign. \"I'm closing the sucker down,\" he said. He also rallied in Florida. He won all three states easily before, and the BBC says this shows how defensive Republicans are. A Harvard forecasting tool gives Democrats a 96% chance of winning the House and 76% for the Senate. An NBC News poll found 52% of registered voters want a Democratic-run Congress, against 45% for a Republican one. A judge also dismissed the administration's Alaska lawsuit.",
      "src": [
       3,
+      4,
       2
      ]
     },
     "why_chain": {
      "steps": [
       {
-       "text": "The president's party usually loses seats in midterms, so Republicans start the race on the back foot.",
+       "text": "Midterms work as a verdict on the president's party, and that party usually loses seats.",
        "src": [
         2
        ]
       },
       {
-       "text": "Prices are rising, which the BBC links to the Iran war, so Trump told voters Democrats would 'bankrupt your family'.",
+       "text": "Prices are rising, which the BBC links to the Iran war, and Trump has tried to move attention away from them.",
        "src": [
         2
        ]
       },
       {
-       "text": "Trump spent his last days in Florida, Iowa and Kansas, states he won easily, which the BBC reads as defensive.",
+       "text": "He says Democrats would 'bankrupt your family'. The BBC reads his rallies in states he won easily as Republicans playing defence.",
        "src": [
+        2,
         4
        ]
       },
       {
-       "text": "If Democrats win even one chamber, they can challenge Trump's agenda and run investigations into his administration.",
+       "text": "Laws need both chambers, so winning even one lets Democrats block Trump's agenda and investigate his administration.",
+       "src": [
+        2
+       ]
+      },
+      {
+       "text": "Forecasts differ by chamber: a Harvard tool gives Democrats 96% odds in the House but 76% in the Senate.",
        "src": [
         2
        ]
@@ -479,19 +565,23 @@
      "items": [
       {
        "name": "Donald Trump",
-       "who": "US president, campaigning for a Republican Congress"
+       "who": "US president, a Republican, campaigning for a Republican Congress"
       },
       {
-       "name": "Haley Stevens",
-       "who": "Michigan Democrat who lost her Senate primary, then endorsed the Republican"
+       "name": "Hakeem Jeffries",
+       "who": "House Democratic leader, 'very confident' Democrats win the House"
       },
       {
        "name": "Mike Rogers",
        "who": "Republican Senate candidate in Michigan, a seat Democrats now hold"
       },
       {
+       "name": "Haley Stevens",
+       "who": "Michigan Democrat who lost the Senate primary, then endorsed Rogers"
+      },
+      {
        "name": "Dan Sullivan",
-       "who": "Republican senator from Alaska, at the centre of the dismissed lawsuit"
+       "who": "Republican Alaska senator whose race the Justice Department sued over"
       }
      ]
     },
@@ -499,50 +589,64 @@
      "items": [
       {
        "value": "96% and 76%",
-       "meaning": "Harvard tool's odds of Democrats winning the House and the Senate. The Senate is far less certain.",
+       "meaning": "Harvard tool's odds of Democrats winning the House and the Senate",
        "src": [
         2
        ]
       },
       {
        "value": "52% vs 45%",
-       "meaning": "NBC poll: registered voters preferring a Democratic over a Republican Congress, a 7-point gap.",
+       "meaning": "NBC poll: voters preferring a Democratic over a Republican Congress, a 7-point gap",
        "src": [
         2
        ]
       },
       {
-       "value": "435, 35, 36",
-       "meaning": "Every House seat, 35 Senate seats and 36 governorships are on the ballot.",
+       "value": "28 stops",
+       "meaning": "Trump's midterm campaign blitz, which ended on 1 November in Iowa and Kansas",
        "src": [
-        1
+        3
        ]
       },
       {
-       "value": "About 4.93%",
-       "meaning": "US 10-year government bond yield, below October's 5.36% peak. Source confidence is low.",
+       "value": "435 / 35 / 36",
+       "meaning": "House seats, Senate seats and governorships on the 3 November ballot",
        "src": [
-        5
+        1
        ]
       }
      ]
     },
     "analogy": {
-     "text": "Think of the president as a company's chief executive. Congress is a board with two halves. If Democrats win even one half, that half can question the chief executive's plans and investigate his team.",
-     "breaks": "A board can fire its chief executive. Congress cannot easily remove a president, and the president can veto bills."
+     "text": "Think of a new law as a door with two locks. The House holds one key and the Senate holds the other. The president must then sign. If the other party wins even one key, the president's plans stall at the door. Midterms decide who holds the keys.",
+     "breaks": "Real control is not all-or-nothing. Members can break with their party, and a majority also runs investigations, which no key does."
     },
     "views": {
      "items": [
       {
+       "holder": "Hakeem Jeffries, House Democratic leader",
+       "view": "He is 'very confident' that Democrats will win control of the House.",
+       "src": [
+        2
+       ]
+      },
+      {
        "holder": "Donald Trump",
-       "view": "Says a Democratic Congress would 'bankrupt your family' and 'open the border'.",
+       "view": "He says Democrats in control of Congress would 'bankrupt your family' and 'open the border'.",
        "src": [
         2
        ]
       },
       {
        "holder": "BBC",
-       "view": "Trump calls voter fraud 'rampant', but the BBC says evidence shows it is extremely rare.",
+       "view": "Trump rallying in Florida, Iowa and Kansas, states he won easily, shows how tight the race could be and how defensive Republicans are.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "holder": "Haley Stevens, Michigan Democrat",
+       "view": "After losing the primary to Abdul El-Sayed, she endorsed Republican Mike Rogers for Michigan's Senate seat.",
        "src": [
         2
        ]
@@ -550,74 +654,160 @@
      ]
     },
     "for_you": {
-     "text": "Polls close between about 4:30 a.m. and 11:30 a.m. IST on 4 November, so results will arrive during your Wednesday morning. No source yet shows a direct effect on Indian prices, trade or EMIs. Markets are watching, though. Asian stocks were mixed on 2 November as attention turned to the vote.",
+     "text": "Asian stock markets were mixed on 2 November, with attention turning to the US vote. The US 10-year bond yield (the interest rate on US government debt) was about 4.93%, below an October peak of 5.36%. It is not yet known how the result will affect prices, EMIs or US trade with India.",
      "src": [
-      6,
-      7
+      5,
+      6
      ]
     },
     "misconception": {
-     "myth": "A 96% forecast means Democrats have already won the House.",
-     "fact": "A forecast gives odds, not results. The same Harvard tool's 76% Senate figure still leaves about a one-in-four chance that Democrats fall short there.",
+     "myth": "Voter fraud is common enough to swing US elections.",
+     "fact": "Evidence shows voter fraud is extremely rare. Trump still calls it 'rampant', and his Justice Department has opened probes in several states.",
      "src": [
       2
      ]
     },
     "next": {
-     "text": "Americans vote on 3 November. Polls close in waves from 6 p.m. to 1 a.m. Eastern Time. That is about 4:30 a.m. to 11:30 a.m. IST on 4 November. The US Treasury announces its quarterly borrowing plans on 4 November.",
+     "text": "Voting ends on 3 November. Polls close in waves from 6 p.m. to 1 a.m. Eastern time. That is about 4:30 a.m. to 11:30 a.m. IST on 4 November. The US Treasury announces its quarterly borrowing plans on 4 November.",
      "dates": [
       {
        "date": "2026-11-03",
-       "what": "Election Day for the House, 35 Senate seats and 36 governorships"
+       "what": "Election Day for 435 House seats, 35 Senate seats and 36 governorships"
       },
       {
        "date": "2026-11-04",
-       "what": "Polls close between about 4:30 a.m. and 11:30 a.m. IST"
+       "what": "Polls close from about 4:30 a.m. to 11:30 a.m. IST"
       },
       {
        "date": "2026-11-04",
-       "what": "US Treasury announces its quarterly refunding (borrowing) plans"
+       "what": "US Treasury announces quarterly refunding (borrowing) plans"
       }
      ],
      "unknowns": [
-      "There are no final-weekend poll details for the Senate races that decide control, such as North Carolina, Georgia, Maine, Ohio, Texas, Iowa, Alaska and Michigan.",
-      "Trump's pledge of more than $400 million to Republicans has not been verified.",
-      "The date and details of the $1 million fraud-tip reward are unclear. It may date from 2024.",
-      "No source shows how a split Congress would affect tariffs or India's trade."
+      "Final-weekend polls for the Senate races that decide control",
+      "Whether Trump's reported $400 million pledge is accurate",
+      "When the $1 million fraud-tip reward was first offered",
+      "How a split Congress would affect trade with India"
      ]
+    },
+    "lesson": {
+     "concept": "How US midterms decide who controls Congress",
+     "big_idea": "Congress has two chambers. A party controls each one by holding more than half its seats. Winning even one chamber lets a party block the president's plans.",
+     "steps": [
+      {
+       "title": "Congress has two chambers",
+       "text": "Congress, America's law-making body, has two parts. The House of Representatives has 435 seats and the Senate has 100. A new law must pass both, then be signed by the president.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "Control means more than half",
+       "text": "A party controls a chamber when it holds a majority, meaning more than half the seats. In the House that is 218 of 435. In the Senate it is 51 of 100. At 50–50, the vice-president breaks ties.",
+       "src": []
+      },
+      {
+       "title": "Not every seat is up",
+       "text": "All 435 House seats are on the ballot on 3 November. Senators serve six-year terms, so only about a third face voters at once. This time it is 35 seats.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "One chamber is enough to block",
+       "text": "Laws need both chambers, so a party that wins just one can stop the president's bills. It also leads that chamber's committees, which can investigate his administration.",
+       "src": [
+        2
+       ]
+      },
+      {
+       "title": "The midterm pattern",
+       "text": "Midterms come halfway through a president's term. Voters often use them to judge his record, and the president's party usually loses seats.",
+       "src": [
+        2
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Imagine the Senate's 100 seats, and assume the Blue party holds 47 before the vote. Only 35 seats are on the ballot. The other 65 senators stay put.",
+      "lines": [
+       {
+        "label": "Majority needed",
+        "calc": "100 ÷ 2 = 50, plus 1 = 51",
+        "note": "More than half; 50 alone is only a tie."
+       },
+       {
+        "label": "Blue's gap",
+        "calc": "51 − 47 = 4 seats",
+        "note": "Blue must gain four more seats than it loses."
+       },
+       {
+        "label": "Where to find them",
+        "calc": "Only among the 35 seats up",
+        "note": "The 65 seats not on the ballot cannot change."
+       },
+       {
+        "label": "Blue gains 4 net",
+        "calc": "47 + 4 = 51 seats",
+        "note": "Blue now controls the Senate."
+       },
+       {
+        "label": "Blue gains only 3",
+        "calc": "47 + 3 = 50 seats",
+        "note": "A tie: the vice-president's vote decides control."
+       }
+      ],
+      "result": "A party out of power needs an exact number of net gains, and only seats on the ballot can deliver them. If it falls one short, control can hang on a tie-breaking vote."
+     },
+     "apply": {
+      "text": "Back to the news. All 435 House seats are up, but only 35 Senate seats are, so Senate control can change only through those 35 races. A Harvard tool gives Democrats a 96% chance in the House and 76% in the Senate. Even winning the House alone would let Democrats challenge Trump's agenda and investigate his administration.",
+      "src": [
+       1,
+       2
+      ]
+     },
+     "practice": {
+      "q": "The House has 435 seats. Assume the Red party wins 214 and the Blue party wins the rest. Who controls the House?",
+      "answer": "Majority first: 435 ÷ 2 = 217.5, so a party needs 218. Blue wins 435 − 214 = 221 seats. Red has 214, four short of 218. Blue controls the House, so it can block bills and run investigations."
+     }
     }
    },
    "terms": [
     {
      "term": "Midterms",
-     "meaning": "US national elections held halfway through a president's four-year term."
+     "meaning": "US elections for Congress and governors, held halfway through a president's four-year term"
     },
     {
-     "term": "Congress",
-     "meaning": "The US law-making body: the House of Representatives plus the Senate."
+     "term": "House of Representatives",
+     "meaning": "The larger chamber of Congress, with 435 seats, all elected every two years"
+    },
+    {
+     "term": "Senate",
+     "meaning": "The smaller chamber of Congress, 100 seats; senators serve six-year terms"
     },
     {
      "term": "Certification",
-     "meaning": "Officials formally confirming that an election result is final."
-    },
-    {
-     "term": "Primary",
-     "meaning": "A party's internal vote to pick its candidate for the main election."
+     "meaning": "The official sign-off that makes an election result final"
     }
    ],
    "check": {
-    "q": "Why does the BBC see Trump's final rallies in Florida, Iowa and Kansas as telling?",
+    "q": "If Democrats win the House but not the Senate, what can they do?",
     "options": [
-     "They are the closest swing states in the country",
-     "He won them easily before, so defending them suggests Republicans are worried",
-     "They hold most of the House seats on the ballot"
+     "Remove Trump from office straight away",
+     "Block Trump's bills and investigate his administration",
+     "Nothing, because the Senate decides everything"
     ],
     "answer": 1,
-    "why": "Campaigning in states you already won easily signals defence, not attack. The BBC says that shows how tight the race could be."
+    "why": "A law must pass both chambers, so one chamber is enough to block it. A House majority also runs investigations."
    },
+   "takeaways": [
+    "A party controls each chamber of Congress by holding more than half its seats.",
+    "Forecasts lean Democratic, and winning even one chamber would let them challenge Trump's agenda.",
+    "Watch polls close from about 4:30 a.m. IST on 4 November."
+   ],
    "confidence": {
     "level": "medium",
-    "publishers": 7,
+    "publishers": 6,
     "primary": 0,
     "newest": "2026-11-02T12:00+05:30"
    },
@@ -656,27 +846,19 @@
     },
     {
      "n": 5,
-     "pub": "Trading Economics / search summary",
-     "url": "https://tradingeconomics.com/united-states/government-bond-yield",
-     "published": "2026-11-02T12:00+05:30",
-     "type": "data",
-     "excerpt": "10-year Treasuries held at 4.931%, off October peak of 5.3645%; 2-year 4.612% (search summary)."
-    },
-    {
-     "n": 6,
-     "pub": "270toWin / PollCheck",
-     "url": "https://www.270towin.com/content/local-poll-closing-times-november-2026-general-election",
-     "published": "2026-11-02T12:00+05:30",
-     "type": "data",
-     "excerpt": "Polls close in waves from 6 p.m. to 1 a.m. Eastern Time on 3 November (search summary); IST conversion is mine."
-    },
-    {
-     "n": 7,
      "pub": "Digital Journal",
      "url": "https://www.digitaljournal.com/article/asian-stocks-mixed-as-tech-sector-struggles-to-rebound-from-selloff/",
      "published": "2026-11-02T12:00+05:30",
      "type": "outlet",
      "excerpt": "Asian stocks were mixed Monday as investors struggled to recover from last week's tough run fuelled by disappointing earnings from tech titans, while eyes turned to the US midterms."
+    },
+    {
+     "n": 6,
+     "pub": "Trading Economics / search summary",
+     "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+     "published": "2026-11-02T12:00+05:30",
+     "type": "data",
+     "excerpt": "10-year Treasuries held at 4.931%, off October peak of 5.3645%; 2-year 4.612% (search summary)."
     }
    ],
    "reel": {
@@ -684,59 +866,21 @@
     "scenes": [
      {
       "kind": "hook",
-      "say": "On the third of November, Americans vote in the midterm elections. What is at stake, and which way are they leaning?",
+      "say": "On the third of November, Americans vote. Not for president, but for control of Congress. What is at stake, and which way is it leaning?",
       "show": "US midterms: who controls Congress?"
      },
      {
       "kind": "big_number",
-      "say": "All four hundred and thirty-five seats in the House are up. So are thirty-five Senate seats and thirty-six governor posts. The House and the Senate together make up Congress, which writes the laws.",
-      "show": "Every House seat on the ballot",
+      "say": "Every one of the four hundred and thirty-five House seats is up. So are thirty-five Senate seats and thirty-six governor races.",
+      "show": "All 435 House seats on the ballot",
       "number": {
        "value": "435",
-       "label": "House seats up for election"
-      }
-     },
-     {
-      "kind": "bar",
-      "say": "A Harvard forecasting tool gives Democrats a ninety-six per cent chance of winning the House. For the Senate, the chance is seventy-six per cent.",
-      "show": "Harvard forecast: Democrats' chances",
-      "chart": {
-       "title": "Chance Democrats win",
-       "unit": "%",
-       "points": [
-        {
-         "label": "House",
-         "value": 96
-        },
-        {
-         "label": "Senate",
-         "value": 76
-        }
-       ]
-      }
-     },
-     {
-      "kind": "bar",
-      "say": "An NBC News poll points the same way. Fifty-two per cent of registered voters want a Democratic Congress. Forty-five per cent want a Republican one.",
-      "show": "NBC poll: which party should run Congress?",
-      "chart": {
-       "title": "Preferred control of Congress",
-       "unit": "%",
-       "points": [
-        {
-         "label": "Democratic",
-         "value": 52
-        },
-        {
-         "label": "Republican",
-         "value": 45
-        }
-       ]
+       "label": "House seats on the 3 November ballot"
       }
      },
      {
       "kind": "map",
-      "say": "On the first of November, Trump ended a twenty-eight stop tour in Iowa and Kansas. He won these states easily before. The BBC says this shows how defensive Republicans are.",
+      "say": "On the first of November, President Trump ended a twenty-eight stop campaign in Iowa and Kansas, states he won easily before. The BBC says this shows how defensive Republicans are.",
       "show": "Trump's last rally: Salina, Kansas",
       "map": {
        "iso3": [
@@ -750,23 +894,74 @@
       }
      },
      {
+      "kind": "steps",
+      "say": "Here is how control works. The Senate has one hundred seats. A majority is more than half, so fifty-one. Imagine a party holds forty-seven. It needs four more. And only the thirty-five seats on the ballot can deliver them.",
+      "show": "How a party wins the Senate",
+      "steps": [
+       {
+        "label": "Majority needed",
+        "calc": "100 ÷ 2 = 50, plus 1 = 51"
+       },
+       {
+        "label": "Assume party holds",
+        "calc": "47 seats"
+       },
+       {
+        "label": "Blue's gap",
+        "calc": "51 − 47 = 4 seats"
+       },
+       {
+        "label": "Where to find them",
+        "calc": "Only among the 35 seats up"
+       }
+      ]
+     },
+     {
       "kind": "kinetic",
-      "say": "Why does it matter? If Democrats win even one chamber, they can challenge Trump's agenda and investigate his administration. Separately, a judge threw out the government's lawsuit over certifying Alaska's Senate result.",
-      "show": "One chamber lets Democrats challenge Trump"
+      "say": "Why does control matter? A law must pass both chambers. So winning just one lets a party block the president's bills, and investigate his administration.",
+      "show": "One chamber is enough to block"
+     },
+     {
+      "kind": "bar",
+      "say": "An NBC News poll found fifty-two per cent of registered voters want a Democratic Congress. Forty-five per cent want a Republican one.",
+      "show": "NBC poll: 52 to 45",
+      "chart": {
+       "title": "Which party should run Congress?",
+       "unit": "% of registered voters",
+       "points": [
+        {
+         "label": "Democratic",
+         "value": 52
+        },
+        {
+         "label": "Republican",
+         "value": 45
+        }
+       ]
+      }
+     },
+     {
+      "kind": "big_number",
+      "say": "A Harvard forecasting tool gives Democrats a ninety-six per cent chance in the House, and seventy-six per cent in the Senate. Trump warns Democrats would bankrupt your family.",
+      "show": "Harvard forecast: House 96%, Senate 76%",
+      "number": {
+       "value": "96%",
+       "label": "Democrats' chance of winning the House (Harvard tool)"
+      }
      },
      {
       "kind": "outro",
-      "say": "Remember: a forecast gives odds, not a result. Polls close from about four thirty in the morning, Indian time, on the fourth of November. Watch the Senate.",
-      "show": "Results from 4:30 a.m. IST, 4 Nov"
+      "say": "Remember: win one chamber, and you can block the president. Polls start closing at about four thirty in the morning, Indian time, on the fourth of November.",
+      "show": "Polls close from 4:30 a.m. IST, 4 Nov"
      }
     ]
    },
-   "reel_hash": "b7048dac05bd",
-   "read_min": 4
+   "reel_hash": "4f8fc0614853",
+   "read_min": 7
   },
   {
    "id": "s3",
-   "slug": "opposition-holds-mock-impeachment-of-chief",
+   "slug": "opposition-stages-mock-impeachment-of-election",
    "section": "india",
    "india_angle": "primary",
    "contested": true,
@@ -775,62 +970,60 @@
     "status": "developing",
     "day": 2,
     "previously": "Opposition and civil-society groups have held weeks of protests demanding resignation of Chief Election Commissioner Gyanesh Kumar, accusing the EC of skewing voter-roll revision (SIR). On October 23, 2026 police detained marchers near the EC's Delhi office; protests are planned in 88 cities through November 1.",
-    "changed": "New: on 31 October the INDIA bloc held a mock 'public impeachment' of Gyanesh Kumar. It passed a resolution seeking his removal and prosecution, which has no legal effect."
+    "changed": "New since the protests: on 31 October the INDIA bloc held a symbolic 'public impeachment' of Gyanesh Kumar and passed a six-charge resolution seeking his removal and prosecution. It has no legal effect."
    },
-   "headline": "Opposition holds mock impeachment of Chief Election Commissioner over SIR",
+   "headline": "Opposition stages mock 'impeachment' of election chief Gyanesh Kumar",
    "question": "Why is the opposition trying to impeach India's Chief Election Commissioner over SIR?",
-   "dek": "On 31 October the INDIA bloc held a symbolic 'public impeachment' of Gyanesh Kumar over alleged voter-list deletions. It has no legal effect. Real removal needs a special majority in both Houses.",
+   "dek": "The opposition says SIR, a revision of voter lists, wrongly deleted crores of names. It cannot remove the Chief Election Commissioner without a two-thirds vote, so on 31 October it staged a symbolic trial.",
    "blocks": {
     "so_far": {
-     "text": "The Election Commission (EC) runs India's elections and keeps the voter lists. Its SIR exercise is a special revision of those lists. It is meant to add every eligible voter and remove ineligible names. Opposition parties say it wrongly deleted names. In March 2026, 193 opposition MPs signed notices seeking the removal of Chief Election Commissioner Gyanesh Kumar. On 6 April 2026, Lok Sabha Speaker Om Birla and the Rajya Sabha Chairman rejected them without giving a reason, according to The Wire. Around late April, 73 Rajya Sabha members filed a fresh notice. Thousands have protested in New Delhi demanding he resign.",
+     "text": "SIR is the Election Commission's (EC) revision of India's voter lists. The EC says it aims to add every eligible voter and remove every ineligible name. The Supreme Court held that the EC has the power to carry it out. Opposition parties say it unfairly deleted voters. In March 2026, 193 opposition MPs filed notices to remove Chief Election Commissioner Gyanesh Kumar. On 6 April the Lok Sabha Speaker and the Rajya Sabha Chairman rejected them without giving a reason, according to The Wire. Thousands have since protested in New Delhi.",
      "src": [
       1,
       2,
-      3,
-      4,
-      5
+      3
      ]
     },
     "what_happened": {
-     "text": "On 31 October 2026 the INDIA bloc held a symbolic 'public impeachment' of Gyanesh Kumar at Congress president Mallikarjun Kharge's Delhi residence. It had been put off from 30 October because of rain. Former Lok Sabha Speaker Meira Kumar led the proceedings, and Kharge moved the motion. The bloc listed six charges, including wrongful SIR deletions, altering Form 6 and sidelining the other two election commissioners. Its resolution seeks his removal, criminal proceedings including a sedition or treason prosecution, and withdrawal of his statutory protection. The resolution has no legal effect and does not remove him.",
+     "text": "On 31 October 2026, the INDIA bloc of opposition parties held a symbolic 'public impeachment' of Gyanesh Kumar at Congress president Mallikarjun Kharge's Delhi home. Reports say it was moved from 30 October because of rain. Former Lok Sabha Speaker Meira Kumar led it, and Kharge moved the motion. It listed six charges. These included wrongful SIR deletions, changes to Form 6, a voter-registration form, and sidelining the other two election commissioners. The resolution sought Kumar's removal and his criminal prosecution. It has no legal effect and does not remove him. A 'Dilli Chalo' march was planned for 1 November at Ramlila Maidan.",
      "src": [
-      6,
-      7,
-      2
+      4,
+      5,
+      6
      ]
     },
     "why_chain": {
      "steps": [
       {
-       "text": "The Constitution shields the CEC: under Article 324(5), he can be removed only like a Supreme Court judge.",
+       "text": "SIR re-checks voter lists. The opposition claims about 13.2 crore names were deleted, and says the changes hurt opposition parties most.",
        "src": [
-        3
+        5
        ]
       },
       {
-       "text": "A removal motion needs 100 Lok Sabha or 50 Rajya Sabha signatures just to begin.",
+       "text": "The EC says SIR is lawful and its decisions were unanimous. It ordered a special drive to enrol voters who were left out.",
        "src": [
-        3
+        7
        ]
       },
       {
-       "text": "To pass, it needs two-thirds of members present and voting, plus a majority of total membership, in each House.",
+       "text": "The Constitution protects the Chief Election Commissioner like a Supreme Court judge, so removal needs a special majority in both Houses.",
        "src": [
-        3
-       ]
-      },
-      {
-       "text": "Opposition leaders admit they lack those numbers, and their March notices were rejected on 6 April 2026.",
-       "src": [
-        3,
-        4
-       ]
-      },
-      {
-       "text": "On 31 October the bloc held a symbolic mock trial instead. It listed six charges but has no legal effect.",
-       "src": [
-        6,
         2
+       ]
+      },
+      {
+       "text": "Opposition leaders admit they lack those numbers, and their March notices were rejected in April before any vote.",
+       "src": [
+        2,
+        3
+       ]
+      },
+      {
+       "text": "So the bloc held a mock trial instead. It cannot remove Kumar, but it puts the charges before the public.",
+       "src": [
+        4,
+        5
        ]
       }
      ]
@@ -839,7 +1032,7 @@
      "items": [
       {
        "name": "Gyanesh Kumar",
-       "who": "Chief Election Commissioner; target of the mock impeachment"
+       "who": "Chief Election Commissioner; target of the opposition's removal campaign"
       },
       {
        "name": "Mallikarjun Kharge",
@@ -851,135 +1044,230 @@
       },
       {
        "name": "Rahul Gandhi",
-       "who": "Congress leader; a headline quotes him saying Kumar won't 'escape'"
+       "who": "Congress leader; a headline quoted him saying Kumar won't 'escape'"
       }
      ]
     },
     "numbers": {
      "items": [
       {
-       "value": "13.2 crore",
-       "meaning": "Voter names the resolution claims SIR deleted. Kharge said about 14 crore. Opposition claims, not findings.",
+       "value": "13.2–14 crore",
+       "meaning": "Voter names the opposition claims SIR deleted. The EC ordered an enrolment drive after criticism over about 13 crore deletions.",
+       "src": [
+        5,
+        7
+       ]
+      },
+      {
+       "value": "193 MPs",
+       "meaning": "Signed removal notices in March 2026: 130 Lok Sabha, 63 Rajya Sabha. All were rejected on 6 April.",
+       "src": [
+        2,
+        3
+       ]
+      },
+      {
+       "value": "100 or 50",
+       "meaning": "Signatures needed just to start a removal motion: 100 in Lok Sabha or 50 in Rajya Sabha.",
        "src": [
         2
        ]
       },
       {
-       "value": "About 13 crore",
-       "meaning": "Deletions that drew criticism, after which the EC ordered a special drive to enrol left-out voters.",
-       "src": [
-        8
-       ]
-      },
-      {
-       "value": "193 MPs",
-       "meaning": "Signed removal notices in March: 130 Lok Sabha, against the 100 needed to start a motion.",
-       "src": [
-        3
-       ]
-      },
-      {
        "value": "6 charges",
-       "meaning": "Listed in the mock trial; a late-April Rajya Sabha notice listed nine.",
+       "meaning": "Listed at the mock trial, including sidelining two fellow commissioners over at least 14 objections.",
        "src": [
-        2,
         5
        ]
       }
      ]
     },
     "analogy": {
-     "text": "Think of a housing society where only a two-thirds vote of all members can remove the secretary. A group that cannot muster that vote holds its own 'people's court' in one member's flat. It reads out charges and passes a verdict.",
-     "breaks": "Here the removal rules sit in the Constitution, and the mock verdict changes nothing in law."
+     "text": "Think of a school's student council that wants to remove the principal. Only the school board can do that, and it needs a very large vote. The council lacks the votes, so it holds an open 'trial' in the playground to win parents' support.",
+     "breaks": "In Parliament, the Speaker or Rajya Sabha Chairman can block the real process before any vote, as happened in April."
     },
     "views": {
      "items": [
       {
-       "holder": "Mallikarjun Kharge, Congress president",
-       "view": "Says 'We have no personal enmity with the CEC', but argues the 2023 CEC appointment law shields Kumar.",
+       "holder": "Mallikarjun Kharge (Congress)",
+       "view": "Says 'We have no personal enmity with the CEC'. Alleges SIR deleted crores of voters and that the 2023 appointment law shields Kumar; wants him removed.",
        "src": [
-        2
+        5
        ]
       },
       {
-       "holder": "Sagarika Ghose, TMC MP",
+       "holder": "Sagarika Ghose (TMC MP)",
        "view": "Wants Kumar removed, SIR ended and fresh West Bengal elections; describes a 'Modi-Shah-Gyanesh alliance'.",
        "src": [
-        2
+        5
        ]
       },
       {
        "holder": "Election Commission of India",
-       "view": "SIR is lawful; all decisions, including SIR, were unanimous; internal differences are normal deliberation.",
+       "view": "SIR is lawful. All decisions, including SIR, were unanimous; internal differences are normal deliberation. A special drive will enrol left-out voters.",
        "src": [
-        8
+        7
        ]
       },
       {
        "holder": "BJP",
-       "view": "Mocked the event; a Times Now headline carries the line 'Keep Rahul Gandhi as your mock Prime Minister for life'.",
+       "view": "Mocked the event; a Times Now headline quoted 'Keep Rahul Gandhi as your mock Prime Minister for life'. Full statement not available.",
        "src": [
-        9
+        8
        ]
       }
      ]
     },
     "for_you": {
-     "text": "If you vote in India, SIR is the exercise that decides whether your name stays on the voter list. After criticism over about 13 crore deletions, the EC ordered a special enrolment drive for voters who were left out. The mock impeachment itself changes nothing directly for you: it has no legal effect and does not remove anyone.",
+     "text": "If you vote, this fight is about whether your name stays on the voter list. After criticism over about 13 crore deletions, the EC ordered a special enrolment drive for left-out voters. It is sensible to check your own entry before your state's next election. The mock trial itself changes no rule and removes no one.",
      "src": [
-      1,
-      8,
-      2
+      7,
+      5
      ]
     },
     "misconception": {
-     "myth": "The mock impeachment removed the Chief Election Commissioner from office.",
-     "fact": "It was symbolic and has no legal effect. Only Parliament can remove him, by a special majority in both Houses, as with a Supreme Court judge.",
+     "myth": "The INDIA bloc's 'impeachment' removed the Chief Election Commissioner from office.",
+     "fact": "It was symbolic and has no legal effect. Real removal needs a motion passed by a special majority in both Houses of Parliament.",
      "src": [
-      2,
-      3
+      5,
+      2
      ]
     },
     "next": {
-     "text": "Watch for reports from the 1 November Dilli Chalo march at Ramlila Maidan. Also watch whether the opposition brings a formal removal motion in Parliament's next session, and how the EC answers the six charges.",
+     "text": "Watch for news of the 1 November march, any reply from the EC or the government, and whether the opposition brings a formal removal motion in Parliament's next session.",
      "dates": [
       {
        "date": "2026-11-01",
-       "what": "Planned 'Dilli Chalo' march at Ramlila Maidan, New Delhi"
+       "what": "'Dilli Chalo' march planned at Ramlila Maidan; outcome not yet reported"
       }
      ],
      "unknowns": [
       "What happened at the 1 November Ramlila Maidan march",
-      "Rahul Gandhi's exact words at the event",
-      "Any full reply from the BJP, the government or the EC to the 31 October event",
-      "Whether a formal removal motion will be brought in the next Parliament session"
+      "Full BJP, government and EC replies to the 31 October event",
+      "Whether a formal removal motion will come in Parliament's next session",
+      "Rahul Gandhi's exact words at the event"
      ]
+    },
+    "lesson": {
+     "concept": "How India removes a Chief Election Commissioner",
+     "big_idea": "The Chief Election Commissioner can be removed only the way a Supreme Court judge is. That needs signed notices, the presiding officer's approval, and a special majority in both Houses.",
+     "steps": [
+      {
+       "title": "Protected like a judge",
+       "text": "Under Article 324(5), the CEC can be removed only in the same way, and on the same grounds, as a Supreme Court judge. The idea is to keep the referee of elections safe from easy removal.",
+       "src": [
+        2
+       ]
+      },
+      {
+       "title": "Start with signatures",
+       "text": "A removal motion begins as a notice. At least 100 Lok Sabha MPs or 50 Rajya Sabha MPs must sign it.",
+       "src": [
+        2
+       ]
+      },
+      {
+       "title": "The gatekeeper decides",
+       "text": "The Lok Sabha Speaker or Rajya Sabha Chairman decides whether to admit the notice. If admitted, a committee investigates the charges. In April 2026 the 193-MP notices were rejected at this step, with no reason given, according to The Wire.",
+       "src": [
+        3,
+        9
+       ]
+      },
+      {
+       "title": "Two tests in each House",
+       "text": "The motion must win two-thirds of members present and voting. It must also win a majority of the House's total membership. It must pass both tests in both Houses.",
+       "src": [
+        2
+       ]
+      },
+      {
+       "title": "Only then, removal",
+       "text": "If both Houses pass the motion, the President orders the removal. There is no other route, so a protest or mock trial cannot remove the CEC.",
+       "src": [
+        5
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Imagine a House with 500 members. An opposition with 200 MPs wants to remove the election chief. On voting day, 450 members are present and voting.",
+      "lines": [
+       {
+        "label": "Stage 1: signatures",
+        "calc": "200 sign; at least 100 needed",
+        "note": "Enough to file the notice."
+       },
+       {
+        "label": "Stage 2: admission",
+        "calc": "Presiding officer admits the notice",
+        "note": "If refused, the process ends here."
+       },
+       {
+        "label": "Test A: two-thirds",
+        "calc": "⅔ of 450 = 300 'yes' votes",
+        "note": "Counts only members present and voting."
+       },
+       {
+        "label": "Test B: total majority",
+        "calc": "More than half of 500 = 251",
+        "note": "Counts the whole House, present or not."
+       },
+       {
+        "label": "The vote",
+        "calc": "200 yes, 250 no: 200 is below 300",
+        "note": "Fails both tests, so the motion falls."
+       }
+      ],
+      "result": "Even 200 united MPs fall 100 votes short. Removing an election chief needs wide support across parties, so an opposition cannot do it alone."
+     },
+     "apply": {
+      "text": "This is the opposition's problem. Its 193-MP notices passed the signature step but were rejected at the admission step on 6 April 2026. Its leaders admit they lack the two-thirds needed. So on 31 October the INDIA bloc held a mock trial with no legal effect, to argue its case in public.",
+      "src": [
+       2,
+       3,
+       4,
+       5
+      ]
+     },
+     "practice": {
+      "q": "Same 500-member House, but only 300 members turn up and vote. How many 'yes' votes does the motion need now?",
+      "answer": "Test A: two-thirds of 300 = 200. Test B: more than half of 500 = 251. The motion must pass both, so it needs at least 251 'yes' votes. Low attendance does not make removal easier."
+     }
     }
    },
    "terms": [
     {
      "term": "SIR",
-     "meaning": "The EC's special revision of voter lists, adding eligible names and removing ineligible ones."
+     "meaning": "The Election Commission's revision of voter lists, adding and removing names."
     },
     {
-     "term": "Impeachment",
-     "meaning": "A formal process by which Parliament removes a top official for misconduct."
+     "term": "INDIA bloc",
+     "meaning": "An alliance of opposition parties, including Congress, TMC and Samajwadi Party."
     },
     {
-     "term": "Statutory protection",
-     "meaning": "A legal shield given by an Act of Parliament, here the 2023 CEC law."
+     "term": "Article 324(5)",
+     "meaning": "Constitution clause: the CEC is removable only like a Supreme Court judge."
+    },
+    {
+     "term": "Special majority",
+     "meaning": "Two-thirds of members present and voting, plus over half the House's total membership."
     }
    ],
    "check": {
-    "q": "What would it actually take to remove the Chief Election Commissioner from office?",
+    "q": "Why could the 31 October 'impeachment' not remove Gyanesh Kumar?",
     "options": [
-     "Two-thirds of members present and voting, plus a majority of total membership, in each House",
-     "A resolution passed by the INDIA bloc at a public event",
-     "Signatures from 100 Lok Sabha MPs on a notice"
+     "Removal needs a special majority vote in both Houses of Parliament, not a meeting outside it",
+     "The Supreme Court had already cancelled the event",
+     "Only the President can propose removing a Chief Election Commissioner"
     ],
     "answer": 0,
-    "why": "Signatures only start a motion. Under Article 324(5), passing needs a special majority in both Houses. The mock resolution has no legal effect."
+    "why": "The CEC is removed like a Supreme Court judge: a motion must pass both Houses by a special majority. A mock trial has no legal effect."
    },
+   "takeaways": [
+    "A Chief Election Commissioner is removed like a Supreme Court judge: special majority in both Houses.",
+    "The opposition's 31 October mock impeachment over SIR deletions was symbolic and removed no one.",
+    "Watch whether a formal removal motion reaches Parliament's next session, and how the EC responds."
+   ],
    "confidence": {
     "level": "medium",
     "publishers": 7,
@@ -997,14 +1285,6 @@
     },
     {
      "n": 2,
-     "pub": "nationalheraldindia.com",
-     "url": "https://www.nationalheraldindia.com/politics/india-bloc-holds-public-impeachment-kharge-moves-resolution-against-cec",
-     "published": "2026-10-31T18:27+05:30",
-     "type": "outlet",
-     "excerpt": "Six broad charges: electoral manipulation; wrongful deletions via SIR; changing Form 6; ERONET and ECINET centralisation; excluding other two commissioners, 14 objections; denying hearing (fetched…"
-    },
-    {
-     "n": 3,
      "pub": "etvbharat.com",
      "url": "https://www.etvbharat.com/en/bharat/several-mp-sign-notice-seeking-motion-for-cec-gyanesh-kumar-removal-enn26031204384",
      "published": "2026-03-12T12:00+05:30",
@@ -1012,7 +1292,7 @@
      "excerpt": "A group of 193 Opposition MPs from both Houses of Parliament have submitted notices seeking the impeachment of CEC Gyanesh Kumar over alleged irregularities in the SIR in West Bengal."
     },
     {
-     "n": 4,
+     "n": 3,
      "pub": "thewire.in",
      "url": "https://thewire.in/politics/signed-by-193-mps-notices-to-impeach-cec-gyanesh-kumar-rejected-no-reason",
      "published": "2026-04-07T12:00+05:30",
@@ -1020,15 +1300,7 @@
      "excerpt": "Signed by 193 MPs, notices to impeach CEC Gyanesh Kumar rejected, no reason provided (headline; date from search summary)"
     },
     {
-     "n": 5,
-     "pub": "thewire.in",
-     "url": "https://thewire.in/politics/with-nine-charges-73-opposition-mps-move-fresh-notice-in-rajya-sabha-to-remove-cec-gyanesh-kumar",
-     "published": "2026-04-24T12:00+05:30",
-     "type": "outlet",
-     "excerpt": "With nine charges, 73 opposition MPs move fresh notice in Rajya Sabha to remove CEC Gyanesh Kumar (headline; details from search summary)"
-    },
-    {
-     "n": 6,
+     "n": 4,
      "pub": "oneindia.com",
      "url": "https://www.oneindia.com/india/india-bloc-holds-mock-public-impeachment-of-cec-gyanesh-kumar-ahead-of-delhi-rally-8247143.html",
      "published": "2026-10-31T18:10+05:30",
@@ -1036,7 +1308,15 @@
      "excerpt": "INDIA Bloc Holds Mock Public Impeachment Of CEC Gyanesh Kumar Ahead Of Delhi Rally (fetched summary: Meira Kumar led proceedings at Kharge's residence; Kharge moved the motion)"
     },
     {
-     "n": 7,
+     "n": 5,
+     "pub": "nationalheraldindia.com",
+     "url": "https://www.nationalheraldindia.com/politics/india-bloc-holds-public-impeachment-kharge-moves-resolution-against-cec",
+     "published": "2026-10-31T18:27+05:30",
+     "type": "outlet",
+     "excerpt": "INDIA bloc holds 'public impeachment'; Kharge moves resolution against CEC (fetched summary: resolution seeks removal, criminal proceedings incl. sedition prosecution)"
+    },
+    {
+     "n": 6,
      "pub": "theprint.in",
      "url": "https://theprint.in/india/india-blocs-public-impeachment-of-cec-postponed-to-saturday-rahul-says-oppn-standing-together/3086085/",
      "published": "2026-10-30T12:00+05:30",
@@ -1044,7 +1324,7 @@
      "excerpt": "India bloc's public impeachment of CEC postponed to Saturday, Rahul says oppn standing together (title; date logic from search summaries)"
     },
     {
-     "n": 8,
+     "n": 7,
      "pub": "businesstoday.in",
      "url": "https://businesstoday.in/india/story/gyanesh-kumar-chief-election-commissioner-special-intensive-revision-sir-voter-rolls-form-6-561266-2026-10-13",
      "published": "2026-10-13T15:31+05:30",
@@ -1052,12 +1332,20 @@
      "excerpt": "The EC stated that 'all decisions of the Election Commission of India, including the SIR, have been taken unanimously' (sources, via India Today TV)."
     },
     {
-     "n": 9,
+     "n": 8,
      "pub": "timesnownews.com",
      "url": "https://www.timesnownews.com/india/keep-rahul-gandhi-as-your-mock-prime-minister-for-life-bjps-swipe-at-oppositions-impeachment-program-article-156442526",
      "published": "2026-11-01T09:37+05:30",
      "type": "outlet",
      "excerpt": "Keep Rahul Gandhi As Your 'Mock Prime Minister' For Life: BJP's Swipe At Opposition's Impeachment Event"
+    },
+    {
+     "n": 9,
+     "pub": "thewire.in",
+     "url": "https://thewire.in/politics/with-nine-charges-73-opposition-mps-move-fresh-notice-in-rajya-sabha-to-remove-cec-gyanesh-kumar",
+     "published": "2026-04-24T12:00+05:30",
+     "type": "outlet",
+     "excerpt": "With nine charges, 73 opposition MPs move fresh notice in Rajya Sabha to remove CEC Gyanesh Kumar (headline; details from search summary)"
     }
    ],
    "reel": {
@@ -1065,109 +1353,102 @@
     "scenes": [
      {
       "kind": "hook",
-      "say": "Can the opposition remove India's election chief? On thirty-first October, it put him on trial. But only a mock one.",
-      "show": "A mock trial for India's election chief"
-     },
-     {
-      "kind": "players",
-      "say": "The INDIA bloc met at Congress president Mallikarjun Kharge's home in Delhi. Former Lok Sabha Speaker Meira Kumar led the proceedings. They passed a resolution seeking the removal of Chief Election Commissioner Gyanesh Kumar. It has no legal effect.",
-      "show": "Symbolic resolution, no legal effect",
-      "players": [
-       {
-        "name": "Gyanesh Kumar",
-        "role": "Chief Election Commissioner"
-       },
-       {
-        "name": "Mallikarjun Kharge",
-        "role": "Moved the mock motion"
-       },
-       {
-        "name": "Meira Kumar",
-        "role": "Led the proceedings"
-       }
-      ]
-     },
-     {
-      "kind": "big_number",
-      "say": "The fight is over S I R, a special revision of voter lists. The resolution claims about thirteen point two crore names were deleted. That is an opposition claim, not an established finding.",
-      "show": "Opposition claim, not a finding",
-      "number": {
-       "value": "13.2 crore",
-       "label": "voter names deleted, opposition claims"
-      }
-     },
-     {
-      "kind": "bar",
-      "say": "Removing the election chief works like removing a Supreme Court judge. In March, one hundred and ninety-three opposition MPs signed notices. That cleared the bar to start. But passing needs two-thirds in both Houses, and the opposition admits it lacks the numbers.",
-      "show": "Enough to start, not to pass",
-      "chart": {
-       "title": "MPs who signed vs needed to start",
-       "unit": "MPs",
-       "points": [
-        {
-         "label": "Lok Sabha signed",
-         "value": 130
-        },
-        {
-         "label": "Lok Sabha needed",
-         "value": 100
-        },
-        {
-         "label": "Rajya Sabha signed",
-         "value": 63
-        },
-        {
-         "label": "Rajya Sabha needed",
-         "value": 50
-        }
-       ]
-      }
+      "say": "Can India's opposition remove the Chief Election Commissioner? On the thirty-first of October, it held a mock trial to try.",
+      "show": "Can the opposition remove the election chief?"
      },
      {
       "kind": "timeline",
-      "say": "On sixth April, the notices were rejected without a reason, according to The Wire. In late April, seventy-three Rajya Sabha members filed a fresh one. Thousands have also protested in New Delhi, demanding he resign.",
+      "say": "In March, one hundred and ninety-three opposition MPs filed notices to remove Gyanesh Kumar. In April, those notices were rejected. So the INDIA bloc staged a symbolic public impeachment in Delhi.",
       "show": "From notices to a mock trial",
       "timeline": [
        {
-        "when": "March 2026",
-        "what": "193 MPs sign removal notices"
+        "when": "Mar 2026",
+        "what": "193 MPs file removal notices"
        },
        {
-        "when": "6 April 2026",
+        "when": "6 Apr 2026",
         "what": "Notices rejected"
        },
        {
-        "when": "Late April 2026",
-        "what": "73 Rajya Sabha MPs file fresh notice"
-       },
-       {
-        "when": "31 October 2026",
+        "when": "31 Oct 2026",
         "what": "Mock 'public impeachment'"
        },
        {
-        "when": "1 November 2026",
+        "when": "1 Nov 2026",
         "what": "Dilli Chalo march planned"
        }
       ]
      },
      {
+      "kind": "big_number",
+      "say": "The main charge is about SIR, a revision of voter lists. The opposition claims about thirteen point two crore names were deleted. The Election Commission says SIR is lawful.",
+      "show": "Opposition claim, not an established finding",
+      "number": {
+       "value": "13.2 crore",
+       "label": "Voter names the opposition says SIR deleted"
+      }
+     },
+     {
       "kind": "kinetic",
-      "say": "The Election Commission says S I R is lawful and its decisions were unanimous. It ordered a special drive to enrol left-out voters. The B J P mocked the event.",
-      "show": "EC: SIR is lawful"
+      "say": "Here is the rule. The election chief can be removed only like a Supreme Court judge. That needs a special majority in both Houses.",
+      "show": "Removed only like a Supreme Court judge"
+     },
+     {
+      "kind": "steps",
+      "say": "Imagine a House of five hundred, with four hundred and fifty voting. Two-thirds of them is three hundred. An opposition with two hundred votes falls a hundred short.",
+      "show": "Why 200 votes are not enough",
+      "steps": [
+       {
+        "label": "Test A: two-thirds",
+        "calc": "⅔ of 450 = 300"
+       },
+       {
+        "label": "Test B: total majority",
+        "calc": "More than half of 500 = 251"
+       },
+       {
+        "label": "The vote",
+        "calc": "200 yes: 100 short"
+       }
+      ]
+     },
+     {
+      "kind": "kinetic",
+      "say": "Opposition leaders admit they lack the numbers. So the mock trial has no legal effect. It argues their case in public instead.",
+      "show": "Mock trial: no legal effect"
+     },
+     {
+      "kind": "players",
+      "say": "Congress president Mallikarjun Kharge wants Kumar removed. The Election Commission says its decisions were unanimous. The BJP mocked the event.",
+      "show": "Who says what",
+      "players": [
+       {
+        "name": "Mallikarjun Kharge",
+        "role": "Wants Kumar removed"
+       },
+       {
+        "name": "Election Commission",
+        "role": "SIR lawful, decisions unanimous"
+       },
+       {
+        "name": "BJP",
+        "role": "Mocked the event"
+       }
+      ]
      },
      {
       "kind": "outro",
-      "say": "Remember: the mock verdict changes nothing in law. Watch for reports from the first November Dilli Chalo march, and whether a formal motion reaches Parliament.",
-      "show": "Symbolic verdict. Watch Parliament next."
+      "say": "Remember: removing the election chief needs a special majority in both Houses. Next, watch whether a formal motion reaches Parliament.",
+      "show": "Special majority, both Houses"
      }
     ]
    },
-   "reel_hash": "3037d4cea4f2",
-   "read_min": 4
+   "reel_hash": "01288b38f682",
+   "read_min": 7
   },
   {
    "id": "s4",
-   "slug": "cyclone-murasu-expected-to-hit-south",
+   "slug": "cyclone-murasu-to-hit-andhra-coast",
    "section": "affects_you",
    "india_angle": "primary",
    "contested": false,
@@ -1176,51 +1457,58 @@
     "status": "developing",
     "day": 1,
     "previously": null,
-    "changed": null
+    "changed": "The IMD raised Murasu's forecast winds from 80–90 kmph to 100–110 kmph. It now expects landfall near Ongole overnight on 2–3 November. Schools are shut in three states."
    },
-   "headline": "Cyclone Murasu expected to hit south Andhra coast near Ongole overnight",
+   "headline": "Cyclone Murasu to hit Andhra coast near Ongole overnight",
    "question": "Where and when will Cyclone Murasu hit, and who needs to prepare?",
-   "dek": "India's weather office expects Murasu to hit land near Ongole overnight, 11:30 pm on 2 November to 4 am on 3 November. Chennai has had torrential rain; Andhra and south Odisha may get more.",
+   "dek": "Murasu is expected to cross the south Andhra coast near Ongole between 11:30 pm on 2 November and 4 am on 3 November. Its rain reaches much further, from Chennai to south Odisha.",
    "blocks": {
     "so_far": {
-     "text": "A cyclone is a huge spinning storm that forms over warm sea. On 28 October, Cyclone Arnab crossed the Andhra Pradesh and Yanam coast with winds of 125–135 kmph. More than 1.8 lakh people were moved to safety. Odisha reported six deaths and 10 people missing. About a week later, a second storm is approaching. It is named Murasu, which means 'war drum'. India contributed the name. On 1 November, India Meteorological Department (IMD) chief Mrutyunjay Mohapatra forecast winds of 80–90 kmph, with landfall on the morning of 3 November.",
+     "text": "A cyclone is a huge spinning storm that gets its energy from warm sea water. On 28 October, Cyclone Arnab crossed the Andhra and Yanam coast with winds of 125–135 kmph. More than 1.8 lakh people were evacuated. Odisha reported six deaths and 10 people missing. About a week later, a new storm grew in the Bay of Bengal. It was named Murasu, meaning 'war drum', a name India suggested. On 1 November, the India Meteorological Department (IMD) forecast winds of 80–90 kmph and landfall on the morning of 3 November.",
      "src": [
       1,
       2
      ]
     },
     "what_happened": {
-     "text": "By 2 November, the IMD's forecast had grown stronger. It now calls Murasu a Severe Cyclonic Storm. The IMD expects it to cross the south Andhra coast between Nellore and Narsapur, near Ongole. It expects the storm to hit land between 11:30 pm on 2 November and 4 am on 3 November. Winds at landfall are forecast at 100–110 kmph, with gusts up to 120 kmph. Torrential rain hit Chennai, Chengalpattu and Tiruvallur. Schools are shut in Chennai and in Andhra's NTR, Palnadu, Nellore and Gudur districts. Odisha has started moving people out of risky areas. Chennai airport said some flights were cancelled.",
+     "text": "By 2 November, the IMD had raised its forecast. It now calls Murasu a Severe Cyclonic Storm. It expects Murasu to cross the south Andhra coast between Nellore and Narsapur, near Ongole. The expected time is between 11:30 pm on 2 November and 4 am on 3 November. Winds at landfall are forecast at 100–110 kmph, with gusts up to 120 kmph. Schools are shut in Andhra's NTR, Palnadu, Nellore and Gudur districts, in Chennai, and in Odisha's Malkangiri. Odisha has started moving people out of vulnerable areas and has placed more than 300 rescue teams. Chennai airport said some flights were cancelled.",
      "src": [
       1,
-      2
+      2,
+      3
      ]
     },
     "why_chain": {
      "steps": [
       {
-       "text": "A cyclone gets its energy from warm sea water, so it stays strong while it is over the Bay of Bengal.",
+       "text": "A cyclone feeds on warm sea water, so it stays strong until its centre crosses onto land.",
        "src": []
       },
       {
-       "text": "Winds are strongest near the centre, so the coast near Ongole is forecast to face 100–110 kmph winds as the centre crosses.",
+       "text": "Between 1 and 2 November, the IMD raised Murasu's wind forecast from 80–90 kmph to 100–110 kmph.",
+       "src": [
+        2,
+        1
+       ]
+      },
+      {
+       "text": "The push of wind grows with the square of its speed, so that rise means roughly 1.5 times the force.",
+       "src": [
+        1,
+        2
+       ]
+      },
+      {
+       "text": "Rain bands spread far beyond the landfall point, so Chennai, Telangana, south Odisha and south Chhattisgarh also face heavy rain.",
        "src": [
         1
        ]
       },
       {
-       "text": "Over land, the storm loses its warm-water fuel and weakens, but it still carries huge amounts of moisture inland.",
-       "src": []
-      },
-      {
-       "text": "That moisture falls as rain far from the coast, which is why Telangana districts are on alert and south Chhattisgarh expects very heavy rain.",
+       "text": "That is why schools are shut in three states and fishermen must stay off the sea until Wednesday afternoon.",
        "src": [
-        1
-       ]
-      },
-      {
-       "text": "The sea stays rough for a while after the storm passes, so fishermen are warned to stay ashore until the afternoon of 4 November.",
-       "src": [
+        3,
+        1,
         2
        ]
       }
@@ -1230,19 +1518,15 @@
      "items": [
       {
        "name": "Mrutyunjay Mohapatra",
-       "who": "Director General of the India Meteorological Department (IMD), which issues cyclone forecasts"
-      },
-      {
-       "name": "Odisha government",
-       "who": "Moving people from risky areas; has placed more than 300 rescue teams in advance"
+       "who": "Director General of the India Meteorological Department, which issues cyclone forecasts"
       }
      ]
     },
     "numbers": {
      "items": [
       {
-       "value": "100–110 kmph",
-       "meaning": "Murasu's forecast winds at landfall, gusting to 120 kmph. On 1 November the forecast was only 80–90 kmph.",
+       "value": "100–110 kmph, gusts 120",
+       "meaning": "Murasu's forecast landfall winds, up from 80–90 kmph in the 1 November forecast.",
        "src": [
         1,
         2
@@ -1250,21 +1534,21 @@
       },
       {
        "value": "125–135 kmph",
-       "meaning": "Cyclone Arnab's winds on 28 October. Murasu is forecast to be somewhat weaker than Arnab.",
+       "meaning": "Cyclone Arnab's winds on 28 October. Murasu is forecast to be weaker.",
        "src": [
         1
        ]
       },
       {
        "value": "1.8 lakh",
-       "meaning": "People moved to safety for Arnab. Figures for Murasu have not yet been reported.",
+       "meaning": "People evacuated for Arnab. Andhra's evacuation figures for Murasu are not yet reported.",
        "src": [
         1
        ]
       },
       {
        "value": "300+",
-       "meaning": "Rescue teams Odisha placed in position before Murasu arrives.",
+       "meaning": "Rescue teams Odisha has placed ahead of Murasu.",
        "src": [
         1
        ]
@@ -1272,73 +1556,145 @@
      ]
     },
     "analogy": {
-     "text": "Think of a cyclone as a giant sponge soaking up warm sea water. Over the sea it keeps refilling. At landfall the refilling stops, but the sponge keeps dripping as it moves inland. That is why districts far from Ongole can still get heavy rain.",
-     "breaks": "A sponge only drips. A cyclone also brings strong winds and rough seas, which do much of the damage near the coast."
+     "text": "Think of a car crash. A car going twice as fast carries four times the energy, not twice as much. Wind works the same way. A small rise in speed means a much bigger push on roofs, trees and power lines.",
+     "breaks": "A car hits once. Wind pushes for hours in repeated gusts, and rain and flooding bring dangers that speed alone does not measure."
     },
     "for_you": {
-     "text": "Coastal Andhra and Rayalaseema may get very heavy rain on 2 and 3 November. South Odisha may get heavy rain on 3–4 November. Chennai and six Telangana districts are on orange alert. Check if your child's school is shut. Some Chennai flights were cancelled, so check yours. Fishing boats should stay ashore until the afternoon of 4 November. Bihar has a red alert for 2 November; its link to Murasu is unconfirmed.",
-     "src": [
-      2,
-      1,
-      3
-     ]
-    },
-    "misconception": {
-     "myth": "The danger is over once the cyclone crosses the coast.",
-     "fact": "Rain keeps moving inland after landfall. South Odisha may get heavy rain on 3 and 4 November, and south Chhattisgarh expects very heavy rain on 3–4 November.",
+     "text": "You need to act if you live in coastal Andhra, Rayalaseema, Chennai, south Odisha, south Chhattisgarh or Telangana's orange-alert districts. Expect heavy rain from 2 to 4 November. Check whether your child's school is shut. Flying from Chennai? Confirm your flight first, because some were cancelled. Our sources have no news on trains, so check before you travel.",
      "src": [
       2,
       1
      ]
     },
+    "misconception": {
+     "myth": "Only the area where the cyclone makes landfall is in danger.",
+     "fact": "Rain bands reach far from the landfall point. Chennai has torrential rain and an orange alert. Telangana, south Odisha and south Chhattisgarh also have heavy-rain warnings.",
+     "src": [
+      1
+     ]
+    },
     "next": {
-     "text": "Watch the landfall window, from 11:30 pm on 2 November to 4 am on 3 November. South Odisha may get heavy rain on 3 and 4 November, and south Chhattisgarh expects very heavy rain. The fishing restriction is expected to end on the afternoon of 4 November.",
+     "text": "Landfall near Ongole is expected between 11:30 pm on 2 November and 4 am on 3 November. Heavy rain then moves to south Odisha and south Chhattisgarh on 3–4 November. The ban on fishing lasts until the afternoon of 4 November.",
      "dates": [
       {
        "date": "2026-11-02",
-       "what": "Landfall window opens at 11:30 pm near Ongole, south Andhra coast"
+       "what": "Landfall window opens at 11:30 pm IST near Ongole"
       },
       {
        "date": "2026-11-03",
-       "what": "Landfall window closes at 4 am; south Odisha may get heavy rain"
+       "what": "Landfall window closes at 4 am IST; very heavy rain in Andhra Pradesh and Rayalaseema"
       },
       {
        "date": "2026-11-04",
-       "what": "Malkangiri schools shut until this date; fishing restriction expected to end in the afternoon"
+       "what": "Heavy rain in south Odisha, very heavy rain in south Chhattisgarh; fishing ban expected to end in the afternoon"
       }
      ],
      "unknowns": [
-      "How many people Andhra Pradesh will move to safety for Murasu",
-      "Whether the IMD red alert for Bihar on 2 November is linked to Murasu",
-      "Whether any trains are cancelled",
-      "Exact landfall time: one earlier report said the morning of 3 November"
+      "How many people Andhra Pradesh has evacuated for Murasu",
+      "Whether trains are cancelled",
+      "Whether Bihar's red alert for 2 November is linked to Murasu",
+      "Exact landfall time: sources differ between late on 2 November and the morning of 3 November"
      ]
+    },
+    "lesson": {
+     "concept": "Why a little more wind means much more force",
+     "big_idea": "The push of wind on a roof or tree grows with the square of its speed. So if wind speed doubles, the force on everything it hits rises four times.",
+     "steps": [
+      {
+       "title": "Wind is moving air",
+       "text": "Air has weight. When it moves, it carries energy and pushes on anything in its way: roofs, trees, power lines, boats. Faster air pushes harder.",
+       "src": []
+      },
+      {
+       "title": "Force grows with speed squared",
+       "text": "Faster wind sends more air at a wall each second, and each bit of air hits harder. The two effects multiply. So force follows speed times speed, called 'speed squared'.",
+       "src": []
+      },
+      {
+       "title": "Compare two winds as a ratio",
+       "text": "To compare two winds, divide the faster speed by the slower one. Then multiply that answer by itself. The result tells you how many times harder the faster wind pushes.",
+       "src": []
+      },
+      {
+       "title": "Gusts bring the hardest shoves",
+       "text": "Sustained wind is the steady average speed. Gusts are short bursts above it. For Murasu, the IMD forecasts 100–110 kmph sustained, with gusts up to 120 kmph.",
+       "src": [
+        1
+       ]
+      }
+     ],
+     "example": {
+      "setup": "Say a 50 kmph wind pushes on a tin roof with a force we will call 100 units (assume). How hard does a 100 kmph wind push on the same roof?",
+      "lines": [
+       {
+        "label": "Speed ratio",
+        "calc": "100 ÷ 50 = 2",
+        "note": "The new wind is twice as fast."
+       },
+       {
+        "label": "Square the ratio",
+        "calc": "2 × 2 = 4",
+        "note": "Force grows with speed squared."
+       },
+       {
+        "label": "New push",
+        "calc": "100 units × 4 = 400 units",
+        "note": "Four times the force, not two."
+       },
+       {
+        "label": "Extra force",
+        "calc": "400 − 100 = 300 units more",
+        "note": "The added force alone is three times the original push."
+       }
+      ],
+      "result": "Doubling the wind speed makes the push four times stronger. So a forecast rise that looks small in kmph can mean much more stress on roofs, trees and power lines."
+     },
+     "apply": {
+      "text": "On 1 November, the IMD forecast Murasu's winds at up to 90 kmph. By 2 November, it said up to 110 kmph. 110 ÷ 90 is about 1.22, and squared that is about 1.5. So the upgraded storm may push about one and a half times as hard. Arnab, at up to 135 kmph, pushed about 1.5 times harder again.",
+      "src": [
+       2,
+       1
+      ]
+     },
+     "practice": {
+      "q": "Murasu's sustained wind is forecast at 100 kmph, with gusts up to 120 kmph. How much harder does a gust push than the steady wind?",
+      "answer": "Ratio: 120 ÷ 100 = 1.2. Square it: 1.2 × 1.2 = 1.44. So a gust pushes about 1.44 times as hard, which is 44% more, even though it is only 20% faster."
+     }
     }
    },
    "terms": [
     {
      "term": "Landfall",
-     "meaning": "The moment a cyclone's centre moves from the sea onto land."
+     "meaning": "The moment a cyclone's centre crosses from the sea onto land."
     },
     {
-     "term": "Severe Cyclonic Storm",
-     "meaning": "IMD category for cyclones with sustained winds of roughly 89–117 kmph."
+     "term": "Gust",
+     "meaning": "A short burst of wind stronger than the steady average speed."
     },
     {
      "term": "Orange alert",
-     "meaning": "IMD warning telling people to be prepared for severe weather."
+     "meaning": "An IMD warning telling people to be prepared for severe weather."
+    },
+    {
+     "term": "Severe Cyclonic Storm",
+     "meaning": "An IMD category for a strong cyclone, one step above an ordinary cyclonic storm."
     }
    ],
    "check": {
-    "q": "Murasu lands in Andhra Pradesh. Why are districts in Telangana also on orange alert?",
+    "q": "The IMD raised Murasu's top forecast wind from 90 to 110 kmph. Roughly how much harder will the wind push?",
     "options": [
-     "The storm carries moisture inland, which falls as heavy rain far from the coast",
-     "Murasu will hit land a second time in Telangana",
-     "Telangana's coastline lies directly in the cyclone's path"
+     "About 22% harder, the same as the rise in speed",
+     "About 1.5 times as hard",
+     "Exactly twice as hard"
     ],
-    "answer": 0,
-    "why": "A cyclone weakens over land but still carries a lot of moisture, so heavy rain spreads well beyond the landfall point."
+    "answer": 1,
+    "why": "Force grows with speed squared. 110 ÷ 90 is about 1.22, and 1.22 × 1.22 is about 1.5."
    },
+   "takeaways": [
+    "Wind force grows with speed squared: double the speed, four times the push.",
+    "Murasu's forecast rose to 100–110 kmph; landfall near Ongole overnight on 2–3 November.",
+    "Watch for heavy rain in south Odisha and Chhattisgarh on 3–4 November, and for evacuation figures."
+   ],
    "confidence": {
     "level": "medium",
     "publishers": 3,
@@ -1364,11 +1720,11 @@
     },
     {
      "n": 3,
-     "pub": "News On AIR",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZzFwcmM1ZFg0OGN3anMyMmRPMlNhV1hhTlZydGJmTV9vbnQ2eHo5WUtBUTd3YTNta01heHFEQ3lVbHozNkdBUVpLNGljOWpwU0c5OVhVek10YTBzbFdIekVVc3d1YWIyLURtaS1taVBzdTlRcnBZakZ6NG81aXhwalNtdGYxM3VGckJ1WE5fZW4xa2dOMzB6c0dfN1k2Zm9ubzE3T25zTDFXSVk?oc=5",
-     "published": "2026-11-02T02:44+05:30",
+     "pub": "Business Standard",
+     "url": "https://www.business-standard.com/amp/india-news/cyclone-murasu-andhra-braces-for-landfall-schools-shut-in-three-states-126110200128_1.html",
+     "published": "2026-11-02T12:00+05:30",
      "type": "outlet",
-     "excerpt": "IMD issues red alert for very heavy to extremely heavy rainfall in Bihar tomorrow."
+     "excerpt": "Cyclone Murasu: Andhra braces for landfall; schools shut in three states"
     }
    ],
    "reel": {
@@ -1376,12 +1732,12 @@
     "scenes": [
      {
       "kind": "hook",
-      "say": "A second cyclone in about a week is heading for India's east coast. Where will Cyclone Murasu hit, and who needs to get ready?",
+      "say": "A cyclone called Murasu is about to hit India's east coast. Where will it land, and who needs to get ready?",
       "show": "Cyclone Murasu: where, when, who?"
      },
      {
       "kind": "map",
-      "say": "India's weather office, the I M D, expects Murasu to cross the south Andhra coast near Ongole, between Nellore and Narsapur. The window is eleven thirty at night on the second of November, to four in the morning on the third.",
+      "say": "The India Meteorological Department expects Murasu to cross the south Andhra coast near Ongole. That is between eleven thirty at night on the second of November and four in the morning on the third.",
       "show": "Landfall near Ongole, 2–3 November",
       "map": {
        "iso3": [
@@ -1396,18 +1752,18 @@
      },
      {
       "kind": "bar",
-      "say": "The forecast got stronger. On the first of November, winds were expected at eighty to ninety kilometres per hour. Now it is a hundred to a hundred and ten, with gusts up to a hundred and twenty. Cyclone Arnab was stronger still.",
-      "show": "Forecast winds went up",
+      "say": "Its wind forecast was raised. On the first of November, the top figure was ninety kilometres an hour. By the second, it was one hundred and ten.",
+      "show": "Forecast winds raised",
       "chart": {
-       "title": "Top sustained wind speed",
+       "title": "Top forecast wind speed",
        "unit": "kmph",
        "points": [
         {
-         "label": "Murasu forecast, 1 Nov",
+         "label": "Murasu, 1 Nov forecast",
          "value": 90
         },
         {
-         "label": "Murasu forecast, 2 Nov",
+         "label": "Murasu, 2 Nov forecast",
          "value": 110
         },
         {
@@ -1419,54 +1775,55 @@
      },
      {
       "kind": "kinetic",
-      "say": "The rain reaches far beyond Ongole. Chennai has had torrential rain. Six Telangana districts are on orange alert. South Odisha may get heavy rain on the third and fourth of November. South Chhattisgarh expects very heavy rain on those days.",
-      "show": "Rain spreads far inland"
+      "say": "Why does twenty more kilometres an hour matter? Because the push of wind grows with the square of its speed.",
+      "show": "Force grows with speed squared"
      },
      {
-      "kind": "big_number",
-      "say": "Odisha has started moving people out of risky areas. It has placed more than three hundred rescue teams in advance. Schools are shut in parts of Andhra, in Chennai, and in Malkangiri.",
-      "show": "Odisha rescue teams ready",
-      "number": {
-       "value": "300+",
-       "label": "rescue teams placed in Odisha"
-      }
-     },
-     {
-      "kind": "timeline",
-      "say": "This comes soon after another storm. Cyclone Arnab hit on the twenty-eighth of October. More than one point eight lakh people were moved to safety. Odisha reported six deaths.",
-      "show": "Two cyclones, about a week apart",
-      "timeline": [
+      "kind": "steps",
+      "say": "Say a fifty kilometre an hour wind pushes a roof with one hundred units of force. Double the speed. Two times two is four. So the push becomes four hundred units.",
+      "show": "Double the speed, four times the push",
+      "steps": [
        {
-        "when": "28 Oct",
-        "what": "Cyclone Arnab crosses Andhra and Yanam coast"
+        "label": "Speed ratio",
+        "calc": "100 ÷ 50 = 2"
        },
        {
-        "when": "1 Nov",
-        "what": "Murasu forecast at 80–90 kmph"
+        "label": "Square the ratio",
+        "calc": "2 × 2 = 4"
        },
        {
-        "when": "2 Nov",
-        "what": "Chennai rain; schools shut; forecast upgraded"
-       },
-       {
-        "when": "2–3 Nov",
-        "what": "Landfall window, 11:30 pm to 4 am"
+        "label": "New push",
+        "calc": "100 units × 4 = 400 units"
        }
       ]
      },
      {
+      "kind": "kinetic",
+      "say": "For Murasu, one hundred and ten divided by ninety, squared, is about one point five. So the upgraded storm may push about one and a half times as hard.",
+      "show": "Upgrade: about 1.5 times the push"
+     },
+     {
+      "kind": "big_number",
+      "say": "The rain spreads far beyond landfall. Chennai has an orange alert. Telangana, south Odisha and south Chhattisgarh expect heavy rain. Schools are shut in three states. Odisha has placed over three hundred rescue teams.",
+      "show": "Rain alerts across five states",
+      "number": {
+       "value": "300+",
+       "label": "Rescue teams placed by Odisha"
+      }
+     },
+     {
       "kind": "outro",
-      "say": "Remember this: the danger does not end at the coast. Rain may keep falling inland until the fourth of November. Fishermen are warned to stay out of the Bay of Bengal until that afternoon.",
-      "show": "Rain may continue inland until 4 November"
+      "say": "Remember: a little more wind means a lot more force. Heavy rain moves to south Odisha and Chhattisgarh on the third and fourth of November. Fishermen must stay ashore until the afternoon of the fourth.",
+      "show": "Watch: 3–4 November rain"
      }
     ]
    },
-   "reel_hash": "0e694e11afa5",
-   "read_min": 4
+   "reel_hash": "8a71c8d8b02b",
+   "read_min": 6
   },
   {
    "id": "s5",
-   "slug": "sebi-wants-foreign-investors-freed-from",
+   "slug": "sebi-asks-government-to-scrap-long",
    "section": "markets",
    "india_angle": "primary",
    "contested": true,
@@ -1475,57 +1832,58 @@
     "status": "developing",
     "day": 1,
     "previously": null,
-    "changed": null
+    "changed": "First report, on 2 November 2026, that SEBI has formally recommended scrapping LTCG tax for foreign investors. It also proposed an LTCG exemption for mutual fund investors who switch funds."
    },
-   "headline": "SEBI wants foreign investors freed from long-term capital gains tax",
-   "question": "Why does SEBI want to scrap long-term capital gains tax for foreign investors?",
-   "dek": "Foreign investors have sold a record $31 billion of Indian stocks in 2026 and have asked for tax reform. SEBI has backed scrapping one tax. The government decides, possibly in February's Budget.",
+   "headline": "SEBI asks government to scrap long-term gains tax for foreign investors",
+   "question": "What would scrapping long-term gains tax for foreign investors actually change?",
+   "dek": "SEBI has recommended scrapping foreign investors' 12.5% long-term gains tax, as selling hit a record $31 billion in 2026. Reports don't give SEBI's reasons. The government decides; the Budget is due in February.",
    "blocks": {
     "so_far": {
-     "text": "SEBI, the Securities and Exchange Board of India, regulates the stock market. When a foreign investor sells Indian securities at a profit, India taxes that gain. Gains on holdings kept over a year face long-term capital gains tax at 12.5%. Gains on shorter holdings face a 20% short-term tax. In July 2024 the Budget raised the rate on listed shares from 10% to 12.5%. From 1 April 2025, foreign investors' gains on all securities faced 12.5%. In 2026, foreign investors have sold a record $31 billion (about ₹2.94 lakh crore) of Indian stocks. SEBI has met them several times over two years.",
+     "text": "If you sell shares for more than you paid, the profit is a capital gain, and it is taxed. Foreign investors in India pay 12.5% on gains from securities held over a year. This is called long-term capital gains (LTCG) tax. They pay 20% on short-term gains. They also pay securities transaction tax and tax on dividends. Budget 2024 raised LTCG on listed shares from 10% to 12.5%. From 1 April 2025, foreign investors paid 12.5% on gains from all securities. In July 2026, the government told Parliament it had no proposal to scrap LTCG on equities.",
      "src": [
       1,
-      2
+      2,
+      3
      ]
     },
     "what_happened": {
-     "text": "On 2 November 2026, Reuters reported, citing sources, that SEBI has recommended the government scrap long-term capital gains tax for foreign investors. SEBI also proposed relief for Indian mutual fund investors. They would pay no long-term capital gains tax when they sell existing holdings to invest in new ones. The recommendations are advisory, and the government makes the final decision. SEBI submitted them ahead of the Union Budget due in February 2027. The reports do not say whether Indian investors in shares would get any cut.",
+     "text": "On 2 November 2026, Reuters reported, citing sources, that SEBI has recommended scrapping LTCG tax for foreign investors. SEBI is India's stock market regulator. It also proposed relief for Indian mutual fund investors. They would pay no LTCG tax when they sell existing fund holdings to buy new ones. The recommendations are advice only. The final decision rests with the government. SEBI sent them ahead of the Union Budget, due in February 2027. In 2026 so far, foreign investors have sold a record $31 billion (about ₹2.94 lakh crore) of Indian shares.",
      "src": [
-      3,
       4,
-      5
+      5,
+      6,
+      1
      ]
     },
     "why_chain": {
      "steps": [
       {
-       "text": "In general, an investor's real return is the profit left after tax, so any tax on gains reduces it.",
+       "text": "Foreign investors have sold a record $31 billion of Indian shares in 2026, and the selling has put pressure on the rupee.",
        "src": [
         1
        ]
       },
       {
-       "text": "When foreign investors sell Indian shares, they convert rupees into dollars, and heavy selling pushes the rupee down.",
+       "text": "To take money home, a seller swaps rupees for dollars. More demand for dollars pushes the rupee's value down.",
+       "src": []
+      },
+      {
+       "text": "In SEBI's meetings with foreign investors over two years, the investors have asked for tax reform.",
        "src": [
         1
        ]
       },
       {
-       "text": "After a record $31 billion of selling in 2026, foreign investors asked SEBI for tax reform.",
+       "text": "A foreign fund compares what it keeps after tax across countries. Removing the 12.5% tax raises its take-home profit from India.",
        "src": [
         1
        ]
       },
       {
-       "text": "Scrapping the 12.5% long-term tax would raise their after-tax returns, which Jefferies says could support inflows.",
+       "text": "Reports don't give SEBI's reasoning. Jefferies says a cut could support inflows; Bernstein's Venugopal Garre says a cut alone won't.",
        "src": [
-        1
-       ]
-      },
-      {
-       "text": "The catch: JM Financial says lost revenue must be considered, and Bernstein's Venugopal Garre argues a cut alone won't sustain inflows.",
-       "src": [
-        6
+        1,
+        7
        ]
       }
      ]
@@ -1534,52 +1892,59 @@
      "items": [
       {
        "name": "SEBI",
-       "who": "India's market regulator; made the recommendation"
+       "who": "India's stock market regulator; recommended scrapping the tax"
       },
       {
-       "name": "Government (finance ministry)",
-       "who": "Makes the final decision on tax"
+       "name": "The government (finance ministry)",
+       "who": "Makes the final tax decision, usually in the Union Budget"
+      },
+      {
+       "name": "Foreign portfolio investors",
+       "who": "Overseas funds in Indian shares; sold a record $31 billion in 2026"
       },
       {
        "name": "Raamdeo Agrawal",
        "who": "Motilal Oswal; expects the move to be seen as positive"
-      },
-      {
-       "name": "Venugopal Garre",
-       "who": "Bernstein; doubts a tax cut alone brings lasting inflows"
       }
      ]
     },
     "numbers": {
      "items": [
       {
-       "value": "$31 billion (about ₹2.94 lakh crore)",
-       "meaning": "Record selling of Indian stocks by foreign investors in 2026 so far.",
+       "value": "$31 billion (₹2.94 lakh crore)",
+       "meaning": "Foreign selling of Indian shares so far in 2026, the most on record.",
        "src": [
         1
        ]
       },
       {
        "value": "12.5%",
-       "meaning": "Current long-term tax on foreign investors' gains; listed shares were taxed at 10% before July 2024.",
+       "meaning": "Foreign investors' tax on gains held over a year. The government says domestic investors pay the same rate.",
        "src": [
         1,
-        2
+        3
        ]
       },
       {
        "value": "20%",
-       "meaning": "Tax on gains from shorter holdings; the reports mention only scrapping the long-term tax.",
+       "meaning": "Foreign investors' short-term gains tax. The reported recommendation covers only the long-term tax.",
        "src": [
         1,
-        3
+        4
+       ]
+      },
+      {
+       "value": "10% → 12.5%",
+       "meaning": "Budget 2024 raised long-term tax on listed shares by a quarter.",
+       "src": [
+        2
        ]
       }
      ]
     },
     "analogy": {
-     "text": "Think of India as a shopping mall that charges a fee when shoppers leave with their purchases. Other malls nearby compete for the same shoppers. Removing the exit fee makes this mall cheaper to visit, so some shoppers may come back.",
-     "breaks": "Shoppers also pick malls for the shops inside. Investors also weigh growth, share prices and the rupee, not just tax."
+     "text": "Imagine a market where traders hand over 12.5% of their profit to the market owner. Foreign traders have been packing up and leaving. The market manager, SEBI, suggests dropping that cut for them. Only the owner, the government, can agree, and it would lose that income.",
+     "breaks": "Traders don't leave only because of the cut. Share prices, company profits and the rupee also matter."
     },
     "views": {
      "items": [
@@ -1592,88 +1957,172 @@
       },
       {
        "holder": "Raamdeo Agrawal, Motilal Oswal",
-       "view": "The move would likely be viewed as positive and could form part of the Budget, about two months away.",
+       "view": "The move would likely be seen as positive and could be part of the Budget, about two months away.",
        "src": [
         1
        ]
       },
       {
        "holder": "Venugopal Garre, Bernstein",
-       "view": "A tax cut alone would not trigger sustained foreign inflows, according to a Business Standard summary.",
+       "view": "A tax cut alone would not bring lasting foreign inflows.",
        "src": [
-        6
+        7
        ]
       },
       {
        "holder": "JM Financial",
-       "view": "The revenue the government would lose must be considered, according to a Business Standard summary.",
+       "view": "The tax revenue the government would lose must be considered.",
        "src": [
-        6
+        7
        ]
       }
      ]
     },
     "for_you": {
-     "text": "Nothing changes for your taxes yet; these are only recommendations. If you invest in mutual funds, one proposal could let you sell existing holdings and invest in new ones without paying long-term capital gains tax. The reports do not say whether Indian share investors would get any cut. The government's decision may come in the February 2027 Budget.",
+     "text": "If you invest in Indian shares, the government says you pay the same 12.5% long-term rate as foreign investors. The reports don't say whether your rate would change. If you hold mutual funds, SEBI's second idea matters: switching from one fund to another would not trigger LTCG tax. Nothing changes unless the government accepts it, probably in the February Budget.",
      "src": [
-      4,
-      5
+      3,
+      5,
+      6
      ]
     },
     "misconception": {
-     "myth": "SEBI has scrapped capital gains tax for foreign investors.",
-     "fact": "SEBI's recommendations are only advice. The government decides on tax, and any change would come through the Union Budget due in February 2027.",
+     "myth": "SEBI has scrapped the tax on foreign investors' gains.",
+     "fact": "SEBI only recommended it. The advice is not binding. The government decides, and the Union Budget is due in February 2027.",
      "src": [
-      5
+      4,
+      6
      ]
     },
     "next": {
-     "text": "The government will weigh SEBI's ideas while it prepares the Union Budget, due in February 2027. Watch whether the finance ministry accepts them, what revenue it would give up, and whether foreign selling continues.",
+     "text": "Watch the Union Budget in February 2027. The government may accept, change or reject SEBI's advice. In July 2026, it told Parliament it had no proposal to scrap LTCG on equities.",
      "dates": [
       {
        "date": "2027-02",
-       "what": "Union Budget due in February 2027 (exact day not given); possible decision on SEBI's proposals"
+       "what": "Union Budget due; the government could decide on SEBI's recommendations (exact date not given)"
       }
      ],
      "unknowns": [
       "Whether the finance ministry will accept the proposal",
-      "Whether Indian share investors would get any long-term gains tax cut",
+      "Whether domestic equity investors would get any LTCG cut; the reports don't say",
       "How much tax revenue the government would lose",
-      "Whether the government has moved from its July 2026 stance of no plan to scrap the tax on equities"
+      "Whether the government has moved from its July 2026 position"
      ]
+    },
+    "lesson": {
+     "concept": "How capital gains tax shrinks an investor's return",
+     "big_idea": "When you sell an investment for more than you paid, the profit is your gain. The tax takes a share of that gain, so it lowers the return the investor actually keeps.",
+     "steps": [
+      {
+       "title": "Gain is sale minus cost",
+       "text": "A capital gain is the sale price minus what you paid. If you sell for less than you paid, there is no gain, so there is no gains tax.",
+       "src": []
+      },
+      {
+       "title": "Holding time sets the rate",
+       "text": "Foreign investors pay 12.5% on gains from holdings kept over a year. That is long-term. Gains on holdings kept under a year are short-term, taxed at 20%.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "title": "Tax applies to gain only",
+       "text": "The rate is charged on the profit, not on the whole sale amount. A 12.5% tax takes one-eighth of the profit and leaves the rest.",
+       "src": []
+      },
+      {
+       "title": "Investors compare after-tax returns",
+       "text": "Investors judge a market by what they keep. The after-tax return is the profit kept, divided by the money first put in. Remove the tax and that figure rises.",
+       "src": []
+      }
+     ],
+     "example": {
+      "setup": "Say a foreign fund buys Indian shares for ₹20 crore and sells them two years later for ₹24 crore.",
+      "lines": [
+       {
+        "label": "Gain",
+        "calc": "₹24 crore − ₹20 crore = ₹4 crore",
+        "note": "Profit from the sale"
+       },
+       {
+        "label": "Held over a year?",
+        "calc": "Yes, two years, so long-term",
+        "note": "The 12.5% long-term rate applies"
+       },
+       {
+        "label": "Tax at 12.5%",
+        "calc": "12.5% of ₹4 crore = ₹50 lakh",
+        "note": "Charged on the gain only"
+       },
+       {
+        "label": "Kept",
+        "calc": "₹4 crore − ₹50 lakh = ₹3.5 crore",
+        "note": "Profit the fund takes home"
+       },
+       {
+        "label": "Return after tax",
+        "calc": "₹3.5 crore ÷ ₹20 crore = 17.5%",
+        "note": "Down from 20% before tax"
+       },
+       {
+        "label": "Without the tax",
+        "calc": "Keeps ₹4 crore: ₹4 crore ÷ ₹20 crore = 20%",
+        "note": "What scrapping the tax would mean"
+       }
+      ],
+      "result": "The 12.5% tax cuts this fund's return from 20% to 17.5%. Scrapping it lets the fund keep the full ₹4 crore, so Indian shares look better next to other markets."
+     },
+     "apply": {
+      "text": "Foreign investors pay this 12.5% on long-term gains and have sold a record $31 billion of Indian shares in 2026. SEBI's recommendation would lift a fund like ours from 17.5% to 20%. Bernstein's Venugopal Garre argues tax alone won't bring lasting inflows. JM Financial says the lost revenue must be weighed before the Budget.",
+      "src": [
+       1,
+       4,
+       7,
+       6
+      ]
+     },
+     "practice": {
+      "q": "Same fund puts in ₹20 crore, but sells after six months for ₹24 crore. How much tax, and would SEBI's idea change it?",
+      "answer": "Held under a year, so short-term at 20%. Gain: ₹24 crore − ₹20 crore = ₹4 crore. Tax: 20% of ₹4 crore = ₹80 lakh. Kept: ₹3.2 crore, a 16% return. SEBI's reported idea covers only long-term gains, so this tax would stay."
+     }
     }
    },
    "terms": [
     {
-     "term": "Long-term capital gains tax",
-     "meaning": "Tax on profit from selling an investment held for more than a year."
+     "term": "LTCG (long-term capital gains) tax",
+     "meaning": "Tax on profit from investments held for over a year."
     },
     {
-     "term": "Foreign portfolio investor",
-     "meaning": "A foreign fund or investor buying Indian shares or bonds, not running businesses."
+     "term": "Foreign portfolio investor (FPI)",
+     "meaning": "An overseas fund or investor that buys Indian shares and bonds."
     },
     {
      "term": "Union Budget",
      "meaning": "The government's yearly plan for taxes and spending, presented to Parliament."
     },
     {
-     "term": "Advisory",
-     "meaning": "A suggestion the decision-maker can accept or reject."
+     "term": "Securities transaction tax",
+     "meaning": "A small tax charged each time shares are bought or sold."
     }
    ],
    "check": {
-    "q": "Why might scrapping the tax not bring foreign money back for long?",
+    "q": "If the government accepted SEBI's idea exactly as reported, which foreign fund would still pay capital gains tax?",
     "options": [
-     "Investors weigh more than tax, and Bernstein's Garre argues a cut alone won't sustain inflows",
-     "SEBI has no power over foreign investors at all",
-     "Foreign investors already pay no capital gains tax in India"
+     "A fund that sells shares at a profit after six months",
+     "A fund that sells shares at a profit after two years",
+     "Neither; all capital gains tax would go"
     ],
     "answer": 0,
-    "why": "Foreign investors currently pay 12.5% long-term tax, and tax is only one factor. Garre argues a cut alone won't bring lasting inflows."
+    "why": "The reported idea covers only long-term gains, on holdings kept over a year. Short-term gains are still taxed at 20%."
    },
+   "takeaways": [
+    "Capital gains tax takes a share of profit, so it lowers investors' after-tax return.",
+    "SEBI recommended scrapping foreign investors' 12.5% long-term tax; they sold a record $31 billion in 2026.",
+    "Watch the Union Budget in February 2027; the government decides and must weigh lost revenue."
+   ],
    "confidence": {
     "level": "high",
-    "publishers": 6,
+    "publishers": 7,
     "primary": 0,
     "newest": "2026-11-02T14:30+05:30"
    },
@@ -1696,6 +2145,14 @@
     },
     {
      "n": 3,
+     "pub": "Outlook Business",
+     "url": "https://www.outlookbusiness.com/economy-and-policy/no-proposal-to-scrap-ltcg-on-equities-government-tells-parliament",
+     "published": "2026-07-21T12:00+05:30",
+     "type": "outlet",
+     "excerpt": "No Proposal To Scrap LTCG On Equities, Government Tells Parliament"
+    },
+    {
+     "n": 4,
      "pub": "Reuters",
      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMzZGZDRyZ3dzMWVMcEp4bmVRbGNoRFdhODFvSDFjZmplU1VDRXNleUs1MElLczNVRHN5WS0xc2phWXFZaktGQ1pqelBPbjRfeWRLSFBqajEzRU43bWxpUkZtNVM4VGs0LVVUMzVlbW13X0FGZlJLWWZDZmpscXV4NVBNemxXZ2RhZEozakVfRlNWb3E0MTlEYlhveXRZVHVmeUozNkJ4RjBBQTR2TUt2QnJZajV1SVRMZUEyMG5n?oc=5",
      "published": "2026-11-02T12:08+05:30",
@@ -1703,7 +2160,7 @@
      "excerpt": "EXCLUSIVE: India markets regulator backs removal of long-term capital gains tax for foreign investors, sources say"
     },
     {
-     "n": 4,
+     "n": 5,
      "pub": "Mint",
      "url": "https://www.livemint.com/market/stock-market-news/sebi-backs-removal-of-ltcg-for-foreign-investors-report-11793602169050.html",
      "published": "2026-11-02T12:22+05:30",
@@ -1711,7 +2168,7 @@
      "excerpt": "suggesting they be exempt from LTCG if they are selling existing holdings to invest in new ones, the sources said."
     },
     {
-     "n": 5,
+     "n": 6,
      "pub": "Times of India",
      "url": "https://timesofindia.indiatimes.com/business/india-business/ltcg-tax-relief-on-the-cards-sebi-wants-long-term-capital-gains-tax-to-be-removed-for-foreign-investors/articleshow/135452510.cms",
      "published": "2026-11-02T14:30+05:30",
@@ -1719,7 +2176,7 @@
      "excerpt": "The recommendations have been submitted ahead of the annual Union Budget scheduled for February. However, they are advisory in nature, and the final decision on whether to accept them rests with the…"
     },
     {
-     "n": 6,
+     "n": 7,
      "pub": "Business Standard",
      "url": "https://business-standard.com/markets/news/can-cutting-ltcg-stcg-revive-fpi-flows-jm-financial-bernstein-answer-126110200610_1.html",
      "published": "2026-11-02T12:00+05:30",
@@ -1732,97 +2189,79 @@
     "scenes": [
      {
       "kind": "hook",
-      "say": "Foreign investors have sold a record thirty-one billion dollars of Indian stocks in 2026. Now India's market regulator wants to scrap one of their taxes. Why?",
-      "show": "Why drop a tax for foreign investors?"
+      "say": "Foreign investors have pulled record money out of Indian shares. SEBI, the market regulator, now says scrap their long-term gains tax. What would that change?",
+      "show": "What would scrapping this tax change?"
      },
      {
       "kind": "big_number",
-      "say": "That selling is worth about two point nine four lakh crore rupees. When foreigners sell, they swap rupees for dollars. That has put pressure on the rupee.",
+      "say": "So far in twenty twenty-six, foreign investors have sold thirty-one billion dollars of Indian shares. That is a record, and it has put pressure on the rupee.",
       "show": "Record foreign selling in 2026",
       "number": {
        "value": "$31 billion",
-       "label": "Indian stocks sold by foreign investors, 2026"
+       "label": "Foreign selling of Indian shares, 2026"
       }
      },
      {
-      "kind": "bar",
-      "say": "Right now, foreign investors pay twelve point five per cent tax on gains from holdings kept over a year. Gains on shorter holdings face twenty per cent.",
-      "show": "Tax on foreign investors' gains",
-      "chart": {
-       "title": "Tax on foreign investors' gains",
-       "unit": "%",
-       "points": [
-        {
-         "label": "Long-term (over a year)",
-         "value": 12.5
-        },
-        {
-         "label": "Short-term",
-         "value": 20
-        }
-       ]
-      }
+      "kind": "kinetic",
+      "say": "On the second of November, Reuters reported that SEBI has asked the government to scrap long-term capital gains tax for foreign investors. It is only advice.",
+      "show": "SEBI advises: scrap the long-term tax"
      },
      {
-      "kind": "timeline",
-      "say": "On the second of November, Reuters reported that SEBI, the Securities and Exchange Board of India, has recommended scrapping that long-term tax for foreign investors. It also proposed relief for mutual fund investors who switch funds.",
-      "show": "SEBI recommends scrapping the long-term tax",
-      "timeline": [
+      "kind": "kinetic",
+      "say": "First, the idea. A capital gain is your profit when you sell. Foreign investors pay twelve point five per cent on gains from shares held over a year.",
+      "show": "Tax is charged on profit only"
+     },
+     {
+      "kind": "steps",
+      "say": "Say a foreign fund buys shares for twenty crore rupees. Two years later it sells for twenty-four crore. The gain is four crore. At twelve point five per cent, the tax is fifty lakh. The fund keeps three and a half crore. Its return falls from twenty per cent to seventeen point five.",
+      "show": "Worked example: ₹20 crore in",
+      "steps": [
        {
-        "when": "July 2024",
-        "what": "Budget raises tax on listed shares from 10% to 12.5%"
+        "label": "Gain",
+        "calc": "₹24 crore − ₹20 crore = ₹4 crore"
        },
        {
-        "when": "1 April 2025",
-        "what": "12.5% applies to all foreign investors' securities"
+        "label": "Tax at 12.5%",
+        "calc": "12.5% of ₹4 crore = ₹50 lakh"
        },
        {
-        "when": "2 November 2026",
-        "what": "Reuters: SEBI backs scrapping the tax"
+        "label": "Kept",
+        "calc": "₹4 crore − ₹50 lakh = ₹3.5 crore"
        },
        {
-        "when": "February 2027",
-        "what": "Union Budget due"
+        "label": "Return after tax",
+        "calc": "₹3.5 crore ÷ ₹20 crore = 17.5%"
        }
       ]
      },
      {
       "kind": "players",
-      "say": "Opinions differ. Jefferies says a tax cut could draw foreign money back. Raamdeo Agrawal of Motilal Oswal sees it as likely positive. Bernstein's Venugopal Garre reportedly says a cut alone won't bring lasting inflows.",
-      "show": "Will a tax cut work?",
+      "say": "Scrap the tax, and that fund keeps the full twenty per cent. Jefferies says that could pull money back. Bernstein's Venugopal Garre says a tax cut alone won't bring lasting inflows.",
+      "show": "Will a tax cut bring money back?",
       "players": [
        {
         "name": "Jefferies",
-        "role": "Could support foreign inflows"
-       },
-       {
-        "name": "Raamdeo Agrawal, Motilal Oswal",
-        "role": "Likely positive"
+        "role": "Tax cut could support foreign inflows"
        },
        {
         "name": "Venugopal Garre, Bernstein",
-        "role": "Cut alone won't sustain inflows"
+        "role": "Tax cut alone won't bring lasting inflows"
        },
        {
         "name": "JM Financial",
-        "role": "Consider lost revenue"
+        "role": "Lost revenue must be considered"
        }
       ]
      },
      {
-      "kind": "kinetic",
-      "say": "But SEBI only advises. The government decides. In July 2026, it reportedly told Parliament it had no plan to scrap this tax on equities. JM Financial notes the lost revenue.",
-      "show": "SEBI advises. Government decides."
-     },
-     {
       "kind": "outro",
-      "say": "Remember: nothing has changed for anyone yet. Watch the Union Budget, due in February 2027, for the government's answer.",
+      "say": "Remember: the tax takes a share of profit, so cutting it lifts what investors keep. The government decides. Watch the Union Budget in February twenty twenty-seven.",
       "show": "Watch: Union Budget, February 2027"
      }
     ]
    },
-   "reel_hash": "b883aecc2001",
-   "read_min": 4
+   "reel_hash": "23b56178560a",
+   "read_min": 7
   }
  ],
  "sections": [
@@ -2582,36 +3021,36 @@
  ],
  "quiz": [
   {
-   "q": "Why did oil prices fall on 2 November even though no deal was signed?",
+   "q": "Why did oil prices fall on 2 November even though Hormuz had not reopened?",
    "options": [
-    "Hormuz had already fully reopened to tankers",
-    "Traders hoped the Qatar talks could reopen Hormuz soon",
-    "The US had lifted its sanctions on Iran"
+    "Ships had already returned to normal traffic through the strait",
+    "Traders saw a better chance of reopening, so they priced in less risk",
+    "The US had lifted its sanctions on Iranian oil"
    ],
    "answer": 1,
-   "why": "Prices moved on hope. Qatar's two-day plan raised the chance of tankers moving freely again, but the US has not responded and nothing is agreed.",
+   "why": "No deal or reopening had happened. The talks raised the odds of reopening, and prices move on expected outcomes.",
    "story": "s1"
   },
   {
-   "q": "Why does the BBC see Trump's final rallies in Florida, Iowa and Kansas as telling?",
+   "q": "If Democrats win the House but not the Senate, what can they do?",
    "options": [
-    "They are the closest swing states in the country",
-    "He won them easily before, so defending them suggests Republicans are worried",
-    "They hold most of the House seats on the ballot"
+    "Remove Trump from office straight away",
+    "Block Trump's bills and investigate his administration",
+    "Nothing, because the Senate decides everything"
    ],
    "answer": 1,
-   "why": "Campaigning in states you already won easily signals defence, not attack. The BBC says that shows how tight the race could be.",
+   "why": "A law must pass both chambers, so one chamber is enough to block it. A House majority also runs investigations.",
    "story": "s2"
   },
   {
-   "q": "What would it actually take to remove the Chief Election Commissioner from office?",
+   "q": "Why could the 31 October 'impeachment' not remove Gyanesh Kumar?",
    "options": [
-    "Two-thirds of members present and voting, plus a majority of total membership, in each House",
-    "A resolution passed by the INDIA bloc at a public event",
-    "Signatures from 100 Lok Sabha MPs on a notice"
+    "Removal needs a special majority vote in both Houses of Parliament, not a meeting outside it",
+    "The Supreme Court had already cancelled the event",
+    "Only the President can propose removing a Chief Election Commissioner"
    ],
    "answer": 0,
-   "why": "Signatures only start a motion. Under Article 324(5), passing needs a special majority in both Houses. The mock resolution has no legal effect.",
+   "why": "The CEC is removed like a Supreme Court judge: a motion must pass both Houses by a special majority. A mock trial has no legal effect.",
    "story": "s3"
   }
  ],
@@ -2702,7 +3141,7 @@
    "day": 1,
    "today": "update",
    "ref": "s4",
-   "line": "India's weather office expects Murasu to hit land near Ongole overnight, 11:30 pm on 2 November to 4 am on 3 November. Chennai has had torrential rain; Andhra a"
+   "line": "The IMD raised Murasu's forecast winds from 80–90 kmph to 100–110 kmph. It now expects landfall near Ongole overnight on 2–3 November. Schools are shut in three"
   },
   {
    "thread_id": "t-sebi-fpi-ltcg",
@@ -2710,7 +3149,7 @@
    "day": 1,
    "today": "update",
    "ref": "s5",
-   "line": "Foreign investors have sold a record $31 billion of Indian stocks in 2026 and have asked for tax reform. SEBI has backed scrapping one tax. The government decid"
+   "line": "First report, on 2 November 2026, that SEBI has formally recommended scrapping LTCG tax for foreign investors. It also proposed an LTCG exemption for mutual fun"
   }
  ],
  "markets": {
