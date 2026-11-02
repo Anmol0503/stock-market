@@ -1,0 +1,1997 @@
+{
+ "schema": 1,
+ "date": "2026-11-03",
+ "edition": "Morning · 4:52 AM",
+ "published_at": "2026-11-03T04:52+05:30",
+ "window": {
+  "start": "2026-11-02T03:05+05:30",
+  "end": "2026-11-03T04:05+05:30"
+ },
+ "status": "complete",
+ "notes": [
+  "SAMPLE DATA for UI tests, not real reporting."
+ ],
+ "cover": {
+  "top_line": "Spain's train crash is now a software story, Delhi's smog triggers emergency rules, and the Fed's pause ripples into Indian markets.",
+  "changes": [
+   {
+    "text": "Spain: signal showed green when it should have been red",
+    "ref": "s1"
+   },
+   {
+    "text": "Delhi moves to Stage III: old diesel trucks banned",
+    "ref": "s2"
+   },
+   {
+    "text": "Fed holds rates; Nifty slips for a fifth day",
+    "ref": "s3"
+   },
+   {
+    "text": "Israel's coalition talks stall",
+    "ref": "s4"
+   },
+   {
+    "text": "UPI fee for large merchant payments from 1 Dec",
+    "ref": "b-affects_you-1"
+   },
+   {
+    "text": "Gill named Test captain",
+    "ref": "b-cricket-1"
+   }
+  ],
+  "watch_today": [
+   {
+    "text": "Apple reports earnings after the US close",
+    "time_ist": "02:30",
+    "calendar_id": "ev-2026-11-03-apple"
+   },
+   {
+    "text": "CAQM reviews Delhi's pollution stage",
+    "time_ist": null,
+    "calendar_id": null
+   },
+   {
+    "text": "India's services PMI for October",
+    "time_ist": "10:30",
+    "calendar_id": null
+   }
+  ],
+  "read_min": 36,
+  "watch_min": 6
+ },
+ "stories": [
+  {
+   "id": "s1",
+   "slug": "spain-rail-signalling",
+   "section": "world",
+   "regions": [
+    "eu"
+   ],
+   "india_angle": "secondary",
+   "contested": true,
+   "read_min": 4,
+   "must_read": true,
+   "thread": {
+    "id": "t-spain-rail",
+    "status": "developing",
+    "day": 6,
+    "previously": "A high-speed train and a regional train collided near Toledo on 27 Oct 2026. The toll rose over four days as rescuers reached the rear carriages.",
+    "changed": "Investigators now say the signal that should have stopped the regional train was showing green, which points at the control system rather than the driver."
+   },
+   "headline": "Spain's train crash: a green light that should have been red",
+   "question": "How can a modern rail network let two trains onto the same track?",
+   "dek": "Investigators say a signal showed green when it should have shown red. That turns a tragedy into a question about the software every European railway is installing.",
+   "blocks": {
+    "so_far": {
+     "text": "On 27 October a high-speed train hit a regional train near Toledo, killing 68 people, Spain's deadliest rail accident in more than a decade. Rescue took four days. The government ordered an inquiry and suspended services on the line while the wreckage was cleared.",
+     "src": [
+      1,
+      2
+     ]
+    },
+    "what_happened": {
+     "text": "On 2 November the rail accident investigation board published its first findings. The signal protecting the junction showed green to the regional train even though the high-speed train already had the route. Data recorders show both drivers were within the speed limit. The board said the fault lay in how the signalling system's two computers disagreed about which train owned the track, and that the backup check did not catch it.",
+     "src": [
+      1,
+      3
+     ]
+    },
+    "why_chain": {
+     "steps": [
+      {
+       "text": "Modern lines divide track into blocks, and only one train may hold a block at a time.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "Computers grant blocks and turn the signal at each block's entrance red or green.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "At Toledo two control computers held different pictures of who owned the junction.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "The check meant to catch that mismatch failed silently, so the wrong train saw green.",
+       "src": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    "players": {
+     "items": [
+      {
+       "name": "CIAF",
+       "who": "Spain's independent rail accident investigation board"
+      },
+      {
+       "name": "Adif",
+       "who": "the state company that owns and runs Spain's tracks and signals"
+      },
+      {
+       "name": "Óscar Puente",
+       "who": "Spain's transport minister, under pressure to resign"
+      }
+     ]
+    },
+    "numbers": {
+     "items": [
+      {
+       "value": "68 dead",
+       "meaning": "more than double Spain's last major crash, Angrois in 2013 (80 dead) excepted",
+       "src": [
+        2
+       ]
+      },
+      {
+       "value": "2 computers",
+       "meaning": "the system runs two in parallel so one can catch the other's mistakes",
+       "src": [
+        1
+       ]
+      }
+     ]
+    },
+    "analogy": {
+     "text": "Think of two air-traffic controllers sharing one runway, each with their own screen. The rule is that both must agree before a plane lands. At Toledo the screens disagreed, and the rule that should have frozen everything didn't fire.",
+     "breaks": "Unlike air traffic, a train can't swerve: once a signal clears, the driver has no way to see the other train in time."
+    },
+    "views": {
+     "items": [
+      {
+       "holder": "Adif",
+       "view": "Says the fault was a rare software condition and that a patch is already on every similar junction."
+      },
+      {
+       "holder": "SEMAF drivers' union",
+       "view": "Says drivers warned of 'phantom greens' on this line in 2025 and were ignored."
+      }
+     ]
+    },
+    "for_you": {
+     "text": "Indian Railways is rolling out Kavach, its own automatic train protection system, on 1,500 km of track a year. Toledo shows why the hard part is not the hardware but making sure two systems never disagree in silence.",
+     "src": [
+      5
+     ]
+    },
+    "misconception": {
+     "myth": "Automatic signalling removes human error, so crashes like this can't happen any more.",
+     "fact": "It moves the risk into software: the system can still be wrong, and when it is, drivers trust it.",
+     "src": [
+      4
+     ]
+    },
+    "next": {
+     "text": "The full report is due within a year. Parliament questions the minister on 5 November, and Adif must show regulators its fix within 30 days.",
+     "dates": [
+      {
+       "date": "2026-11-05",
+       "what": "Minister questioned in parliament"
+      }
+     ],
+     "unknowns": [
+      "Whether the same fault exists on other lines",
+      "Whether criminal charges will follow"
+     ]
+    }
+   },
+   "terms": [
+    {
+     "term": "Block signalling",
+     "meaning": "track split into sections that only one train may occupy at a time"
+    },
+    {
+     "term": "Interlocking",
+     "meaning": "the safety computer that stops signals from showing conflicting greens"
+    }
+   ],
+   "check": {
+    "q": "What does the investigation say went wrong at Toledo?",
+    "options": [
+     "The driver was speeding",
+     "Two control computers disagreed and the backup check failed",
+     "A bridge collapsed"
+    ],
+    "answer": 1,
+    "why": "Both drivers were within the limit; the signalling system's two computers held different pictures of the track."
+   },
+   "confidence": {
+    "level": "high",
+    "publishers": 9,
+    "primary": 1,
+    "newest": "2026-11-02T18:40+05:30"
+   },
+   "sources": [
+    {
+     "n": 1,
+     "pub": "CIAF (investigation board)",
+     "url": "https://example.org/ciaf-preliminary-report",
+     "published": "2026-11-02T16:00+05:30",
+     "type": "primary",
+     "excerpt": "The interlocking granted the route to both trains following a disagreement between its two processing channels."
+    },
+    {
+     "n": 2,
+     "pub": "El País",
+     "url": "https://example.org/elpais-toledo-toll",
+     "published": "2026-10-31T09:10+05:30",
+     "type": "outlet",
+     "excerpt": "The death toll reached 68 on Friday after rescuers recovered the last bodies from the rear carriages."
+    },
+    {
+     "n": 3,
+     "pub": "Reuters",
+     "url": "https://example.org/reuters-spain-signal",
+     "published": "2026-11-02T18:40+05:30",
+     "type": "wire",
+     "excerpt": "Investigators said the signal showed a proceed aspect to the regional train."
+    },
+    {
+     "n": 4,
+     "pub": "Network Rail explainer",
+     "url": "https://example.org/how-signalling-works",
+     "published": null,
+     "type": "analysis",
+     "excerpt": "Block signalling ensures only one train can occupy a section of track at once."
+    },
+    {
+     "n": 5,
+     "pub": "PIB",
+     "url": "https://example.org/pib-kavach-progress",
+     "published": "2026-10-20T12:00+05:30",
+     "type": "primary",
+     "excerpt": "Kavach has been commissioned on a further 1,465 route km this year."
+    }
+   ],
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "How can a modern railway let two trains onto the same track? In Spain last week, that is exactly what happened.",
+      "show": "Two trains. One track."
+     },
+     {
+      "kind": "map",
+      "say": "Near Toledo, south of Madrid, a high-speed train hit a regional train. Sixty-eight people died.",
+      "show": "Toledo, Spain",
+      "map": {
+       "iso3": [
+        "ESP"
+       ],
+       "pin": [
+        -4.02,
+        39.86
+       ],
+       "label": "Toledo"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "Investigators now say the regional train saw a green signal. It should have been red.",
+      "show": "Green, not red"
+     },
+     {
+      "kind": "kinetic",
+      "say": "The system uses two computers that must agree on which train owns each piece of track. At Toledo they disagreed, and the backup check failed silently.",
+      "show": "Two computers disagreed"
+     },
+     {
+      "kind": "big_number",
+      "say": "India is installing its own system, called Kavach, on fifteen hundred kilometres of track a year.",
+      "show": "Kavach",
+      "number": {
+       "value": "1,500 km",
+       "label": "added each year"
+      }
+     },
+     {
+      "kind": "outro",
+      "say": "The lesson: automation moves the risk into software. The minister faces parliament on Thursday.",
+      "show": "Watch: Nov 5"
+     }
+    ]
+   },
+   "reel_hash": "a1b2c3d4"
+  },
+  {
+   "id": "s2",
+   "slug": "delhi-truck-ban",
+   "section": "india",
+   "regions": [
+    "in"
+   ],
+   "india_angle": "primary",
+   "contested": true,
+   "read_min": 4,
+   "thread": {
+    "id": "t-delhi-air",
+    "status": "escalating",
+    "day": 9,
+    "previously": "Delhi's air quality has been 'very poor' since late October, as farm fires and still winter air trap pollution over the city.",
+    "changed": "The air quality panel moved Delhi to Stage III of its emergency plan, banning older diesel trucks and pausing construction."
+   },
+   "headline": "Delhi bans old trucks as smog thickens",
+   "question": "Will banning old diesel trucks actually clear Delhi's air?",
+   "dek": "Delhi has moved to stage III of its pollution emergency plan. The rules bite hardest on trucks and building sites, but most of the smog comes from elsewhere.",
+   "blocks": {
+    "so_far": {
+     "text": "Every winter Delhi's air turns toxic. Cooler, still air traps smoke from crop burning in Punjab and Haryana, plus traffic, dust and industry. In 2025 the city recorded 24 'severe' days. This season's AQI crossed 300 on 25 October.",
+     "src": [
+      1
+     ]
+    },
+    "what_happened": {
+     "text": "On 1 November the Commission for Air Quality Management (CAQM) invoked Stage III of the Graded Response Action Plan (GRAP) across Delhi-NCR after the average AQI rose past 350. Stage III bans diesel trucks older than BS-VI from entering Delhi, halts most construction and demolition, and lets schools move primary classes online.",
+     "src": [
+      2
+     ]
+    },
+    "why_chain": {
+     "steps": [
+      {
+       "text": "Pollution builds when cold air near the ground stops rising and mixing.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "Delhi sits in a basin, so smoke and dust collect instead of blowing away.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "Farm fires add a burst of smoke in late October and November.",
+       "src": [
+        3
+       ]
+      },
+      {
+       "text": "GRAP cuts the local sources it controls: vehicles, dust and diesel generators.",
+       "src": [
+        2
+       ]
+      }
+     ]
+    },
+    "numbers": {
+     "items": [
+      {
+       "value": "AQI 350+",
+       "meaning": "seven times the level India calls 'satisfactory' (under 50 is 'good')",
+       "src": [
+        2
+       ]
+      },
+      {
+       "value": "~30%",
+       "meaning": "rough share of Delhi's winter PM2.5 that comes from vehicles",
+       "src": [
+        4
+       ]
+      }
+     ]
+    },
+    "views": {
+     "items": [
+      {
+       "holder": "CAQM",
+       "view": "Says early action on local sources prevents the worst 'severe plus' days."
+      },
+      {
+       "holder": "Transport unions",
+       "view": "Say the truck ban hurts small operators who cannot afford new vehicles, while farm fires go unpunished."
+      }
+     ]
+    },
+    "for_you": {
+     "text": "If you live in Delhi-NCR, expect costlier vegetables as truck entry is restricted, slower construction, and possible online classes for young children. An N95 mask, not a cloth one, filters the fine particles that matter.",
+     "src": [
+      2
+     ]
+    },
+    "next": {
+     "text": "CAQM reviews the stage daily. If AQI crosses 450 it moves to Stage IV, which adds odd-even style limits.",
+     "dates": [
+      {
+       "date": "2026-11-04",
+       "what": "CAQM daily review"
+      }
+     ],
+     "unknowns": [
+      "How long the still weather lasts"
+     ]
+    }
+   },
+   "terms": [
+    {
+     "term": "AQI",
+     "meaning": "Air Quality Index: one number summarising several pollutants, higher is worse"
+    },
+    {
+     "term": "GRAP",
+     "meaning": "Delhi's four-stage emergency plan that tightens rules as air worsens"
+    }
+   ],
+   "check": {
+    "q": "Why does Delhi's air get worse in winter?",
+    "options": [
+     "More cars are sold",
+     "Cold, still air traps pollution near the ground",
+     "Factories run longer hours"
+    ],
+    "answer": 1,
+    "why": "Cold air near the ground stops rising, so smoke and dust collect over the city."
+   },
+   "confidence": {
+    "level": "high",
+    "publishers": 7,
+    "primary": 2,
+    "newest": "2026-11-01T19:00+05:30"
+   },
+   "sources": [
+    {
+     "n": 1,
+     "pub": "CPCB",
+     "url": "https://example.org/cpcb-aqi-bulletin",
+     "published": "2026-11-01T16:00+05:30",
+     "type": "primary",
+     "excerpt": "The 24-hour average AQI for Delhi stood at 362."
+    },
+    {
+     "n": 2,
+     "pub": "PIB",
+     "url": "https://example.org/pib-caqm-stage3",
+     "published": "2026-11-01T19:00+05:30",
+     "type": "primary",
+     "excerpt": "CAQM invokes Stage-III of extant GRAP in the entire Delhi-NCR with immediate effect."
+    },
+    {
+     "n": 3,
+     "pub": "The Hindu",
+     "url": "https://example.org/hindu-stubble",
+     "published": "2026-10-31T08:00+05:30",
+     "type": "outlet",
+     "excerpt": "Satellite data recorded 1,840 farm fires in Punjab this week."
+    },
+    {
+     "n": 4,
+     "pub": "CSE study",
+     "url": "https://example.org/cse-source-apportionment",
+     "published": null,
+     "type": "analysis",
+     "excerpt": "Vehicles contribute roughly a third of PM2.5 in winter."
+    }
+   ],
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "Delhi just banned older diesel trucks. Will that actually clear the air?",
+      "show": "Will it work?"
+     },
+     {
+      "kind": "big_number",
+      "say": "The air quality index crossed three hundred and fifty. That is seven times the level called satisfactory.",
+      "show": "AQI 350+",
+      "number": {
+       "value": "350+",
+       "label": "Delhi AQI"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "In winter, cold still air acts like a lid. Smoke from farm fires, traffic and dust gets trapped over the city.",
+      "show": "A lid of cold air"
+     },
+     {
+      "kind": "kinetic",
+      "say": "The emergency plan cuts what Delhi controls: trucks, building dust, generators. It can't stop the weather.",
+      "show": "Cuts local sources"
+     },
+     {
+      "kind": "outro",
+      "say": "If the index crosses four fifty, stricter limits follow. Wear an N ninety five, not a cloth mask.",
+      "show": "Next: Stage IV?"
+     }
+    ]
+   },
+   "reel_hash": "e5f6a7b8"
+  },
+  {
+   "id": "s3",
+   "slug": "sample-story-3",
+   "section": "markets",
+   "regions": [
+    "eu"
+   ],
+   "india_angle": "secondary",
+   "contested": true,
+   "read_min": 4,
+   "thread": {
+    "id": "t-sample-3",
+    "status": "new",
+    "day": 3,
+    "previously": null,
+    "changed": null
+   },
+   "headline": "The Fed held rates: what it means for your EMI",
+   "question": "Why did America's central bank pause, and why should India care?",
+   "dek": "Investigators say a signal showed green when it should have shown red. That turns a tragedy into a question about the software every European railway is installing.",
+   "blocks": {
+    "so_far": {
+     "text": "On 27 October a high-speed train hit a regional train near Toledo, killing 68 people, Spain's deadliest rail accident in more than a decade. Rescue took four days. The government ordered an inquiry and suspended services on the line while the wreckage was cleared.",
+     "src": [
+      1,
+      2
+     ]
+    },
+    "what_happened": {
+     "text": "On 2 November the rail accident investigation board published its first findings. The signal protecting the junction showed green to the regional train even though the high-speed train already had the route. Data recorders show both drivers were within the speed limit. The board said the fault lay in how the signalling system's two computers disagreed about which train owned the track, and that the backup check did not catch it.",
+     "src": [
+      1,
+      3
+     ]
+    },
+    "why_chain": {
+     "steps": [
+      {
+       "text": "Modern lines divide track into blocks, and only one train may hold a block at a time.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "Computers grant blocks and turn the signal at each block's entrance red or green.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "At Toledo two control computers held different pictures of who owned the junction.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "The check meant to catch that mismatch failed silently, so the wrong train saw green.",
+       "src": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    "players": {
+     "items": [
+      {
+       "name": "CIAF",
+       "who": "Spain's independent rail accident investigation board"
+      },
+      {
+       "name": "Adif",
+       "who": "the state company that owns and runs Spain's tracks and signals"
+      },
+      {
+       "name": "Óscar Puente",
+       "who": "Spain's transport minister, under pressure to resign"
+      }
+     ]
+    },
+    "numbers": {
+     "items": [
+      {
+       "value": "68 dead",
+       "meaning": "more than double Spain's last major crash, Angrois in 2013 (80 dead) excepted",
+       "src": [
+        2
+       ]
+      },
+      {
+       "value": "2 computers",
+       "meaning": "the system runs two in parallel so one can catch the other's mistakes",
+       "src": [
+        1
+       ]
+      }
+     ]
+    },
+    "analogy": {
+     "text": "Think of two air-traffic controllers sharing one runway, each with their own screen. The rule is that both must agree before a plane lands. At Toledo the screens disagreed, and the rule that should have frozen everything didn't fire.",
+     "breaks": "Unlike air traffic, a train can't swerve: once a signal clears, the driver has no way to see the other train in time."
+    },
+    "views": {
+     "items": [
+      {
+       "holder": "Adif",
+       "view": "Says the fault was a rare software condition and that a patch is already on every similar junction."
+      },
+      {
+       "holder": "SEMAF drivers' union",
+       "view": "Says drivers warned of 'phantom greens' on this line in 2025 and were ignored."
+      }
+     ]
+    },
+    "for_you": {
+     "text": "Indian Railways is rolling out Kavach, its own automatic train protection system, on 1,500 km of track a year. Toledo shows why the hard part is not the hardware but making sure two systems never disagree in silence.",
+     "src": [
+      5
+     ]
+    },
+    "misconception": {
+     "myth": "Automatic signalling removes human error, so crashes like this can't happen any more.",
+     "fact": "It moves the risk into software: the system can still be wrong, and when it is, drivers trust it.",
+     "src": [
+      4
+     ]
+    },
+    "next": {
+     "text": "The full report is due within a year. Parliament questions the minister on 5 November, and Adif must show regulators its fix within 30 days.",
+     "dates": [
+      {
+       "date": "2026-11-05",
+       "what": "Minister questioned in parliament"
+      }
+     ],
+     "unknowns": [
+      "Whether the same fault exists on other lines",
+      "Whether criminal charges will follow"
+     ]
+    }
+   },
+   "terms": [
+    {
+     "term": "Block signalling",
+     "meaning": "track split into sections that only one train may occupy at a time"
+    },
+    {
+     "term": "Interlocking",
+     "meaning": "the safety computer that stops signals from showing conflicting greens"
+    }
+   ],
+   "check": {
+    "q": "What does the investigation say went wrong at Toledo?",
+    "options": [
+     "The driver was speeding",
+     "Two control computers disagreed and the backup check failed",
+     "A bridge collapsed"
+    ],
+    "answer": 1,
+    "why": "Both drivers were within the limit; the signalling system's two computers held different pictures of the track."
+   },
+   "confidence": {
+    "level": "high",
+    "publishers": 9,
+    "primary": 1,
+    "newest": "2026-11-02T18:40+05:30"
+   },
+   "sources": [
+    {
+     "n": 1,
+     "pub": "CIAF (investigation board)",
+     "url": "https://example.org/ciaf-preliminary-report",
+     "published": "2026-11-02T16:00+05:30",
+     "type": "primary",
+     "excerpt": "The interlocking granted the route to both trains following a disagreement between its two processing channels."
+    },
+    {
+     "n": 2,
+     "pub": "El País",
+     "url": "https://example.org/elpais-toledo-toll",
+     "published": "2026-10-31T09:10+05:30",
+     "type": "outlet",
+     "excerpt": "The death toll reached 68 on Friday after rescuers recovered the last bodies from the rear carriages."
+    },
+    {
+     "n": 3,
+     "pub": "Reuters",
+     "url": "https://example.org/reuters-spain-signal",
+     "published": "2026-11-02T18:40+05:30",
+     "type": "wire",
+     "excerpt": "Investigators said the signal showed a proceed aspect to the regional train."
+    },
+    {
+     "n": 4,
+     "pub": "Network Rail explainer",
+     "url": "https://example.org/how-signalling-works",
+     "published": null,
+     "type": "analysis",
+     "excerpt": "Block signalling ensures only one train can occupy a section of track at once."
+    },
+    {
+     "n": 5,
+     "pub": "PIB",
+     "url": "https://example.org/pib-kavach-progress",
+     "published": "2026-10-20T12:00+05:30",
+     "type": "primary",
+     "excerpt": "Kavach has been commissioned on a further 1,465 route km this year."
+    }
+   ],
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "How can a modern railway let two trains onto the same track? In Spain last week, that is exactly what happened.",
+      "show": "Two trains. One track."
+     },
+     {
+      "kind": "map",
+      "say": "Near Toledo, south of Madrid, a high-speed train hit a regional train. Sixty-eight people died.",
+      "show": "Toledo, Spain",
+      "map": {
+       "iso3": [
+        "ESP"
+       ],
+       "pin": [
+        -4.02,
+        39.86
+       ],
+       "label": "Toledo"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "Investigators now say the regional train saw a green signal. It should have been red.",
+      "show": "Green, not red"
+     },
+     {
+      "kind": "kinetic",
+      "say": "The system uses two computers that must agree on which train owns each piece of track. At Toledo they disagreed, and the backup check failed silently.",
+      "show": "Two computers disagreed"
+     },
+     {
+      "kind": "big_number",
+      "say": "India is installing its own system, called Kavach, on fifteen hundred kilometres of track a year.",
+      "show": "Kavach",
+      "number": {
+       "value": "1,500 km",
+       "label": "added each year"
+      }
+     },
+     {
+      "kind": "outro",
+      "say": "The lesson: automation moves the risk into software. The minister faces parliament on Thursday.",
+      "show": "Watch: Nov 5"
+     }
+    ]
+   },
+   "reel_hash": "hash3"
+  },
+  {
+   "id": "s4",
+   "slug": "sample-story-4",
+   "section": "world",
+   "regions": [
+    "in"
+   ],
+   "india_angle": "none",
+   "contested": true,
+   "read_min": 4,
+   "thread": {
+    "id": "t-sample-4",
+    "status": "new",
+    "day": 4,
+    "previously": null,
+    "changed": null
+   },
+   "headline": "Israel's coalition talks stall after a split vote",
+   "question": "Who can form Israel's next government, and how long could it take?",
+   "dek": "Delhi has moved to stage III of its pollution emergency plan. The rules bite hardest on trucks and building sites, but most of the smog comes from elsewhere.",
+   "blocks": {
+    "so_far": {
+     "text": "Every winter Delhi's air turns toxic. Cooler, still air traps smoke from crop burning in Punjab and Haryana, plus traffic, dust and industry. In 2025 the city recorded 24 'severe' days. This season's AQI crossed 300 on 25 October.",
+     "src": [
+      1
+     ]
+    },
+    "what_happened": {
+     "text": "On 1 November the Commission for Air Quality Management (CAQM) invoked Stage III of the Graded Response Action Plan (GRAP) across Delhi-NCR after the average AQI rose past 350. Stage III bans diesel trucks older than BS-VI from entering Delhi, halts most construction and demolition, and lets schools move primary classes online.",
+     "src": [
+      2
+     ]
+    },
+    "why_chain": {
+     "steps": [
+      {
+       "text": "Pollution builds when cold air near the ground stops rising and mixing.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "Delhi sits in a basin, so smoke and dust collect instead of blowing away.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "Farm fires add a burst of smoke in late October and November.",
+       "src": [
+        3
+       ]
+      },
+      {
+       "text": "GRAP cuts the local sources it controls: vehicles, dust and diesel generators.",
+       "src": [
+        2
+       ]
+      }
+     ]
+    },
+    "numbers": {
+     "items": [
+      {
+       "value": "AQI 350+",
+       "meaning": "seven times the level India calls 'satisfactory' (under 50 is 'good')",
+       "src": [
+        2
+       ]
+      },
+      {
+       "value": "~30%",
+       "meaning": "rough share of Delhi's winter PM2.5 that comes from vehicles",
+       "src": [
+        4
+       ]
+      }
+     ]
+    },
+    "views": {
+     "items": [
+      {
+       "holder": "CAQM",
+       "view": "Says early action on local sources prevents the worst 'severe plus' days."
+      },
+      {
+       "holder": "Transport unions",
+       "view": "Say the truck ban hurts small operators who cannot afford new vehicles, while farm fires go unpunished."
+      }
+     ]
+    },
+    "for_you": {
+     "text": "If you live in Delhi-NCR, expect costlier vegetables as truck entry is restricted, slower construction, and possible online classes for young children. An N95 mask, not a cloth one, filters the fine particles that matter.",
+     "src": [
+      2
+     ]
+    },
+    "next": {
+     "text": "CAQM reviews the stage daily. If AQI crosses 450 it moves to Stage IV, which adds odd-even style limits.",
+     "dates": [
+      {
+       "date": "2026-11-04",
+       "what": "CAQM daily review"
+      }
+     ],
+     "unknowns": [
+      "How long the still weather lasts"
+     ]
+    }
+   },
+   "terms": [
+    {
+     "term": "AQI",
+     "meaning": "Air Quality Index: one number summarising several pollutants, higher is worse"
+    },
+    {
+     "term": "GRAP",
+     "meaning": "Delhi's four-stage emergency plan that tightens rules as air worsens"
+    }
+   ],
+   "check": {
+    "q": "Why does Delhi's air get worse in winter?",
+    "options": [
+     "More cars are sold",
+     "Cold, still air traps pollution near the ground",
+     "Factories run longer hours"
+    ],
+    "answer": 1,
+    "why": "Cold air near the ground stops rising, so smoke and dust collect over the city."
+   },
+   "confidence": {
+    "level": "high",
+    "publishers": 7,
+    "primary": 2,
+    "newest": "2026-11-01T19:00+05:30"
+   },
+   "sources": [
+    {
+     "n": 1,
+     "pub": "CPCB",
+     "url": "https://example.org/cpcb-aqi-bulletin",
+     "published": "2026-11-01T16:00+05:30",
+     "type": "primary",
+     "excerpt": "The 24-hour average AQI for Delhi stood at 362."
+    },
+    {
+     "n": 2,
+     "pub": "PIB",
+     "url": "https://example.org/pib-caqm-stage3",
+     "published": "2026-11-01T19:00+05:30",
+     "type": "primary",
+     "excerpt": "CAQM invokes Stage-III of extant GRAP in the entire Delhi-NCR with immediate effect."
+    },
+    {
+     "n": 3,
+     "pub": "The Hindu",
+     "url": "https://example.org/hindu-stubble",
+     "published": "2026-10-31T08:00+05:30",
+     "type": "outlet",
+     "excerpt": "Satellite data recorded 1,840 farm fires in Punjab this week."
+    },
+    {
+     "n": 4,
+     "pub": "CSE study",
+     "url": "https://example.org/cse-source-apportionment",
+     "published": null,
+     "type": "analysis",
+     "excerpt": "Vehicles contribute roughly a third of PM2.5 in winter."
+    }
+   ],
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "Delhi just banned older diesel trucks. Will that actually clear the air?",
+      "show": "Will it work?"
+     },
+     {
+      "kind": "big_number",
+      "say": "The air quality index crossed three hundred and fifty. That is seven times the level called satisfactory.",
+      "show": "AQI 350+",
+      "number": {
+       "value": "350+",
+       "label": "Delhi AQI"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "In winter, cold still air acts like a lid. Smoke from farm fires, traffic and dust gets trapped over the city.",
+      "show": "A lid of cold air"
+     },
+     {
+      "kind": "kinetic",
+      "say": "The emergency plan cuts what Delhi controls: trucks, building dust, generators. It can't stop the weather.",
+      "show": "Cuts local sources"
+     },
+     {
+      "kind": "outro",
+      "say": "If the index crosses four fifty, stricter limits follow. Wear an N ninety five, not a cloth mask.",
+      "show": "Next: Stage IV?"
+     }
+    ]
+   },
+   "reel_hash": "hash4"
+  },
+  {
+   "id": "s5",
+   "slug": "sample-story-5",
+   "section": "tech_ai",
+   "regions": [
+    "eu"
+   ],
+   "india_angle": "secondary",
+   "contested": true,
+   "read_min": 4,
+   "thread": {
+    "id": "t-sample-5",
+    "status": "new",
+    "day": 5,
+    "previously": null,
+    "changed": null
+   },
+   "headline": "Apple's new CEO faces his first earnings test",
+   "question": "What does a CEO change mean for the iPhone maker's next decade?",
+   "dek": "Investigators say a signal showed green when it should have shown red. That turns a tragedy into a question about the software every European railway is installing.",
+   "blocks": {
+    "so_far": {
+     "text": "On 27 October a high-speed train hit a regional train near Toledo, killing 68 people, Spain's deadliest rail accident in more than a decade. Rescue took four days. The government ordered an inquiry and suspended services on the line while the wreckage was cleared.",
+     "src": [
+      1,
+      2
+     ]
+    },
+    "what_happened": {
+     "text": "On 2 November the rail accident investigation board published its first findings. The signal protecting the junction showed green to the regional train even though the high-speed train already had the route. Data recorders show both drivers were within the speed limit. The board said the fault lay in how the signalling system's two computers disagreed about which train owned the track, and that the backup check did not catch it.",
+     "src": [
+      1,
+      3
+     ]
+    },
+    "why_chain": {
+     "steps": [
+      {
+       "text": "Modern lines divide track into blocks, and only one train may hold a block at a time.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "Computers grant blocks and turn the signal at each block's entrance red or green.",
+       "src": [
+        4
+       ]
+      },
+      {
+       "text": "At Toledo two control computers held different pictures of who owned the junction.",
+       "src": [
+        1
+       ]
+      },
+      {
+       "text": "The check meant to catch that mismatch failed silently, so the wrong train saw green.",
+       "src": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    "players": {
+     "items": [
+      {
+       "name": "CIAF",
+       "who": "Spain's independent rail accident investigation board"
+      },
+      {
+       "name": "Adif",
+       "who": "the state company that owns and runs Spain's tracks and signals"
+      },
+      {
+       "name": "Óscar Puente",
+       "who": "Spain's transport minister, under pressure to resign"
+      }
+     ]
+    },
+    "numbers": {
+     "items": [
+      {
+       "value": "68 dead",
+       "meaning": "more than double Spain's last major crash, Angrois in 2013 (80 dead) excepted",
+       "src": [
+        2
+       ]
+      },
+      {
+       "value": "2 computers",
+       "meaning": "the system runs two in parallel so one can catch the other's mistakes",
+       "src": [
+        1
+       ]
+      }
+     ]
+    },
+    "analogy": {
+     "text": "Think of two air-traffic controllers sharing one runway, each with their own screen. The rule is that both must agree before a plane lands. At Toledo the screens disagreed, and the rule that should have frozen everything didn't fire.",
+     "breaks": "Unlike air traffic, a train can't swerve: once a signal clears, the driver has no way to see the other train in time."
+    },
+    "views": {
+     "items": [
+      {
+       "holder": "Adif",
+       "view": "Says the fault was a rare software condition and that a patch is already on every similar junction."
+      },
+      {
+       "holder": "SEMAF drivers' union",
+       "view": "Says drivers warned of 'phantom greens' on this line in 2025 and were ignored."
+      }
+     ]
+    },
+    "for_you": {
+     "text": "Indian Railways is rolling out Kavach, its own automatic train protection system, on 1,500 km of track a year. Toledo shows why the hard part is not the hardware but making sure two systems never disagree in silence.",
+     "src": [
+      5
+     ]
+    },
+    "misconception": {
+     "myth": "Automatic signalling removes human error, so crashes like this can't happen any more.",
+     "fact": "It moves the risk into software: the system can still be wrong, and when it is, drivers trust it.",
+     "src": [
+      4
+     ]
+    },
+    "next": {
+     "text": "The full report is due within a year. Parliament questions the minister on 5 November, and Adif must show regulators its fix within 30 days.",
+     "dates": [
+      {
+       "date": "2026-11-05",
+       "what": "Minister questioned in parliament"
+      }
+     ],
+     "unknowns": [
+      "Whether the same fault exists on other lines",
+      "Whether criminal charges will follow"
+     ]
+    }
+   },
+   "terms": [
+    {
+     "term": "Block signalling",
+     "meaning": "track split into sections that only one train may occupy at a time"
+    },
+    {
+     "term": "Interlocking",
+     "meaning": "the safety computer that stops signals from showing conflicting greens"
+    }
+   ],
+   "check": {
+    "q": "What does the investigation say went wrong at Toledo?",
+    "options": [
+     "The driver was speeding",
+     "Two control computers disagreed and the backup check failed",
+     "A bridge collapsed"
+    ],
+    "answer": 1,
+    "why": "Both drivers were within the limit; the signalling system's two computers held different pictures of the track."
+   },
+   "confidence": {
+    "level": "high",
+    "publishers": 9,
+    "primary": 1,
+    "newest": "2026-11-02T18:40+05:30"
+   },
+   "sources": [
+    {
+     "n": 1,
+     "pub": "CIAF (investigation board)",
+     "url": "https://example.org/ciaf-preliminary-report",
+     "published": "2026-11-02T16:00+05:30",
+     "type": "primary",
+     "excerpt": "The interlocking granted the route to both trains following a disagreement between its two processing channels."
+    },
+    {
+     "n": 2,
+     "pub": "El País",
+     "url": "https://example.org/elpais-toledo-toll",
+     "published": "2026-10-31T09:10+05:30",
+     "type": "outlet",
+     "excerpt": "The death toll reached 68 on Friday after rescuers recovered the last bodies from the rear carriages."
+    },
+    {
+     "n": 3,
+     "pub": "Reuters",
+     "url": "https://example.org/reuters-spain-signal",
+     "published": "2026-11-02T18:40+05:30",
+     "type": "wire",
+     "excerpt": "Investigators said the signal showed a proceed aspect to the regional train."
+    },
+    {
+     "n": 4,
+     "pub": "Network Rail explainer",
+     "url": "https://example.org/how-signalling-works",
+     "published": null,
+     "type": "analysis",
+     "excerpt": "Block signalling ensures only one train can occupy a section of track at once."
+    },
+    {
+     "n": 5,
+     "pub": "PIB",
+     "url": "https://example.org/pib-kavach-progress",
+     "published": "2026-10-20T12:00+05:30",
+     "type": "primary",
+     "excerpt": "Kavach has been commissioned on a further 1,465 route km this year."
+    }
+   ],
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "How can a modern railway let two trains onto the same track? In Spain last week, that is exactly what happened.",
+      "show": "Two trains. One track."
+     },
+     {
+      "kind": "map",
+      "say": "Near Toledo, south of Madrid, a high-speed train hit a regional train. Sixty-eight people died.",
+      "show": "Toledo, Spain",
+      "map": {
+       "iso3": [
+        "ESP"
+       ],
+       "pin": [
+        -4.02,
+        39.86
+       ],
+       "label": "Toledo"
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "Investigators now say the regional train saw a green signal. It should have been red.",
+      "show": "Green, not red"
+     },
+     {
+      "kind": "kinetic",
+      "say": "The system uses two computers that must agree on which train owns each piece of track. At Toledo they disagreed, and the backup check failed silently.",
+      "show": "Two computers disagreed"
+     },
+     {
+      "kind": "big_number",
+      "say": "India is installing its own system, called Kavach, on fifteen hundred kilometres of track a year.",
+      "show": "Kavach",
+      "number": {
+       "value": "1,500 km",
+       "label": "added each year"
+      }
+     },
+     {
+      "kind": "outro",
+      "say": "The lesson: automation moves the risk into software. The minister faces parliament on Thursday.",
+      "show": "Watch: Nov 5"
+     }
+    ]
+   },
+   "reel_hash": "hash5"
+  }
+ ],
+ "sections": [
+  {
+   "key": "world",
+   "emoji": "🌍",
+   "title": "World",
+   "gist": "Sample gist for World: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-world-1",
+     "section": "world",
+     "headline": "Ceasefire talks resume in Cairo",
+     "status": "update",
+     "thread": {
+      "id": "t-world-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-world-2",
+     "section": "world",
+     "headline": "Brazil's Lula sworn in amid annulment bid",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-world-3",
+     "section": "world",
+     "headline": "UN climate summit opens in Belem",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-world-4",
+     "section": "world",
+     "headline": "Japan's PM calls snap election",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "india",
+   "emoji": "🇮🇳",
+   "title": "India",
+   "gist": "Sample gist for India: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-india-1",
+     "section": "india",
+     "headline": "Supreme Court reserves verdict on electoral bonds review",
+     "status": "update",
+     "thread": {
+      "id": "t-india-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-india-2",
+     "section": "india",
+     "headline": "Bihar cabinet expansion adds 12 ministers",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-india-3",
+     "section": "india",
+     "headline": "ISRO schedules Gaganyaan uncrewed test",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-india-4",
+     "section": "india",
+     "headline": "Monsoon withdrawal completes, IMD says",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "affects_you",
+   "emoji": "🧾",
+   "title": "Your money & life",
+   "gist": "Sample gist for Your money & life: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-affects_you-1",
+     "section": "affects_you",
+     "headline": "UPI fee for large merchant payments from 1 December",
+     "status": "update",
+     "thread": {
+      "id": "t-affects_you-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-affects_you-2",
+     "section": "affects_you",
+     "headline": "LPG cylinder price cut by Rs 25 in metros",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-affects_you-3",
+     "section": "affects_you",
+     "headline": "New income tax portal goes live for refunds",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "markets",
+   "emoji": "📈",
+   "title": "Markets & money",
+   "gist": "Sample gist for Markets & money: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-markets-1",
+     "section": "markets",
+     "headline": "Nifty slips as foreign funds sell for fifth day",
+     "status": "update",
+     "thread": {
+      "id": "t-markets-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-markets-2",
+     "section": "markets",
+     "headline": "Rupee hits record low near 89 per dollar",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-markets-3",
+     "section": "markets",
+     "headline": "Gold crosses Rs 1 lakh per 10 g again",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tech_ai",
+   "emoji": "🤖",
+   "title": "Tech & AI",
+   "gist": "Sample gist for Tech & AI: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-tech_ai-1",
+     "section": "tech_ai",
+     "headline": "OpenAI opens Bengaluru office",
+     "status": "update",
+     "thread": {
+      "id": "t-tech_ai-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-tech_ai-2",
+     "section": "tech_ai",
+     "headline": "EU fines Meta over AI training data",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-tech_ai-3",
+     "section": "tech_ai",
+     "headline": "TSMC begins 1.6 nm trial production",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "science",
+   "emoji": "🔬",
+   "title": "Science, health & climate",
+   "gist": "Sample gist for Science, health & climate: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-science-1",
+     "section": "science",
+     "headline": "WHO declares Ebola outbreak in DR Congo a global emergency",
+     "status": "update",
+     "thread": {
+      "id": "t-science-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-science-2",
+     "section": "science",
+     "headline": "Comet passes closest to Earth on Friday",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "f1",
+   "emoji": "🏎️",
+   "title": "Formula 1",
+   "gist": "Sample gist for Formula 1: the one-sentence summary of the section's day.",
+   "quiet": true,
+   "items": [],
+   "quiet_note": "Checked: no race this week; the next Grand Prix is Las Vegas on 22 November."
+  },
+  {
+   "key": "cricket",
+   "emoji": "🏏",
+   "title": "Cricket — the masala",
+   "gist": "Sample gist for Cricket — the masala: the one-sentence summary of the section's day.",
+   "quiet": false,
+   "items": [
+    {
+     "id": "b-cricket-1",
+     "section": "cricket",
+     "headline": "Gill named Test captain for Australia tour",
+     "status": "update",
+     "thread": {
+      "id": "t-cricket-1",
+      "day": 3
+     },
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    },
+    {
+     "id": "b-cricket-2",
+     "section": "cricket",
+     "headline": "BCCI and broadcaster settle rights dispute",
+     "status": "new",
+     "thread": null,
+     "text": "This is a sample brief used for layout tests. It runs to roughly eighty words so the card sizes match real editions. It explains what happened in plain words, names who did it, gives one number with a comparison, and says what changes next, with an absolute date such as 5 November 2026 rather than a relative word. Real briefs are written from dated, checked sources, never from memory or a single unverified post.",
+     "background": "One clause of context so a newcomer can follow the story without prior reading.",
+     "why": "One sourced line on why this matters to a reader in India.",
+     "sources": [
+      {
+       "pub": "The Hindu",
+       "url": "https://example.org/brief",
+       "published": "2026-11-02T21:00+05:30"
+      },
+      {
+       "pub": "Reuters",
+       "url": "https://example.org/brief2",
+       "published": "2026-11-02T22:10+05:30"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "also": [
+  {
+   "id": "l-01",
+   "section": "science",
+   "text": "NASA confirms Artemis III crew training schedule for 2027",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-02",
+   "section": "world",
+   "text": "Typhoon makes landfall in the Philippines; thousands evacuated",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-03",
+   "section": "tech_ai",
+   "text": "Nvidia's market value tops $6 trillion",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-04",
+   "section": "india",
+   "text": "Kerala declares holiday as heavy rain continues",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-05",
+   "section": "markets",
+   "text": "Bitcoin falls below $90,000",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-06",
+   "section": "world",
+   "text": "Chile elects new central bank chief",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  },
+  {
+   "id": "l-07",
+   "section": "cricket",
+   "text": "Women's Big Bash: Mandhana hits fastest fifty",
+   "source": {
+    "pub": "BBC",
+    "url": "https://example.org/also",
+    "published": "2026-11-02T20:00+05:30"
+   }
+  }
+ ],
+ "quiz": [
+  {
+   "q": "What does the investigation say went wrong at Toledo?",
+   "options": [
+    "The driver was speeding",
+    "Two control computers disagreed and the backup check failed",
+    "A bridge collapsed"
+   ],
+   "answer": 1,
+   "why": "Both drivers were within the limit; the signalling system's two computers held different pictures of the track.",
+   "story": "s1"
+  },
+  {
+   "q": "Why does Delhi's air get worse in winter?",
+   "options": [
+    "More cars are sold",
+    "Cold, still air traps pollution near the ground",
+    "Factories run longer hours"
+   ],
+   "answer": 1,
+   "why": "Cold air near the ground stops rising, so smoke and dust collect over the city.",
+   "story": "s2"
+  },
+  {
+   "q": "What does the investigation say went wrong at Toledo?",
+   "options": [
+    "The driver was speeding",
+    "Two control computers disagreed and the backup check failed",
+    "A bridge collapsed"
+   ],
+   "answer": 1,
+   "why": "Both drivers were within the limit; the signalling system's two computers held different pictures of the track.",
+   "story": "s3"
+  }
+ ],
+ "developing": [
+  {
+   "thread_id": "t-spain-rail",
+   "title": "Spain's Toledo train crash",
+   "day": 6,
+   "today": "update",
+   "ref": "s1",
+   "line": "Investigators point at the signalling system."
+  },
+  {
+   "thread_id": "t-delhi-air",
+   "title": "Delhi's winter smog",
+   "day": 9,
+   "today": "update",
+   "ref": "s2",
+   "line": "Stage III rules now in force."
+  },
+  {
+   "thread_id": "t-hormuz",
+   "title": "Strait of Hormuz shipping",
+   "day": 41,
+   "today": "no_change",
+   "ref": null,
+   "line": "No new incidents; insurers keep war-risk premiums high."
+  },
+  {
+   "thread_id": "t-ebola",
+   "title": "Ebola outbreak in DR Congo",
+   "day": 120,
+   "today": "update",
+   "ref": "b-science-1",
+   "line": "WHO declares a global health emergency."
+  }
+ ],
+ "markets": {
+  "as_of": "2026-11-03T04:00+05:30",
+  "quotes": [
+   {
+    "sym": "^NSEI",
+    "name": "Nifty 50",
+    "last": 24321.5,
+    "chg_pct": -0.42
+   },
+   {
+    "sym": "^BSESN",
+    "name": "Sensex",
+    "last": 79880.1,
+    "chg_pct": -0.38
+   },
+   {
+    "sym": "^GSPC",
+    "name": "S&P 500",
+    "last": 6712.3,
+    "chg_pct": 0.21
+   },
+   {
+    "sym": "USDINR=X",
+    "name": "USD/INR",
+    "last": 88.92,
+    "chg_pct": 0.15
+   },
+   {
+    "sym": "BZ=F",
+    "name": "Brent crude",
+    "last": 84.1,
+    "chg_pct": -1.2
+   },
+   {
+    "sym": "GC=F",
+    "name": "Gold",
+    "last": 2781.0,
+    "chg_pct": 0.4
+   }
+  ]
+ },
+ "disclaimer": "Not financial advice. A personal, automated news briefing: explanations of public reporting with links to the original sources."
+}

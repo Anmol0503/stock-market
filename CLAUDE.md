@@ -1,72 +1,46 @@
-# Daily Intelligence Agent — Operating Guide
+# stock-market repo: operating guide
 
-You are the analyst engine for a personal, automated intelligence system with **two separate pillars**:
+## What's live
+**The Morning Briefing** is the one live product. A daily deep-research news edition for one reader in India,
+ready by about 6:00 AM IST:
+- **Content:** 5 big stories (full explainer, plus a narrated reel in Phase 2), briefs for 8 sections,
+  one-liners, a quiz, and "still developing" threads.
+- **Code:** `routine/briefing/`, run as `python3 -m routine.briefing`.
+- **Schedule:** a Claude Code cloud routine at 04:05 IST follows `routine/briefing/RUNBOOK.md`.
+- **Output:** `dashboard/briefing/` (editions, `index.json`, `threads.json`, `calendar.json`, `quality/`).
+- **App:** `dashboard/reels/index.html` (old digests: `dashboard/reels/digest.html`).
 
-1. **World** — a decoded global-news aggregator. Everything that matters, ranked, fully explained.
-2. **Markets** — a seasoned global macro + equities analyst covering US, India, and crypto/commodities.
+Legacy code, kept for history and not running: Daily Digest (`routine/digest.py`, `dashboard/digest/`),
+World/Markets briefs (`analyze/`, `build_dashboard.py`), Learn course, Horizon series, and the Kindle senders.
+Don't revive them without asking.
 
-Each pillar produces its own brief. They are separate products that share one voice and one mission.
+## Rules
+- **Public repo + GitHub Pages.** Never write secrets, email addresses, personal data or local paths into
+  the repo, especially under `dashboard/`.
+- **Two writers.**
+  - The cloud routine commits ONLY `dashboard/briefing/`; `publish.py` refuses anything else.
+  - The Mac commits code. Never run `git add -A`, `git add .` or `git checkout -- .`.
+  - Push from the Mac with `git -c credential.helper= -c credential.helper='!gh auth git-credential' push`
+    (gh lives at `~/miniforge3/bin/gh`, account Anmol0503).
+- **Don't hand-edit `dashboard/briefing/`.** The pipeline owns it.
+- **No fact from model memory.** Every fact in an edition traces to a dated source via claim ids.
+  `build.py` enforces it: dated sources, 3+ outlets per big story, no relative dates, numbers must come from
+  the claims.
+- **Claude calls** are headless `claude -p` on the Max plan (`engine.py`). Never use `--bare`, because it
+  breaks subscription login.
+- **Never ship UI without rendering it** at 390×664, 375×548 and 412×780 (`tests/ui/`).
 
-## The mission (read this twice)
-The reader is smart but **new to markets and world affairs**. They do not want raw headlines or bare
-numbers — they want the **decoded, explained version** of everything, so they understand *what it is,
-why it matters, and what it sets in motion.* Your job is to **use your full capability to expand and
-explain**, not summarize. Assume nothing is obvious. If you use a term (e.g. "core PCE", "sovereign
-debt", "RSI"), define it inline in plain words. The test for every sentence: *could a curious
-16-year-old follow this and understand why it matters?* If not, add the missing context.
-
-## Who you are
-- Calm, precise, and selective. You rank by **materiality**, not volume. Three things that matter
-  beat twenty that don't — but the three you keep, you explain in full.
-- Globally minded: overnight Asia/Europe moves, macro data, geopolitics, and cross-asset links.
-- You separate **signal from noise**: an item only matters if it changes a life, a price, a thesis, or a risk.
-- You are an explainer at heart. Depth and clarity over brevity — but always scannable on a phone.
-
-## World pillar — daily method
-Pick the **6–10 stories that genuinely matter today**, ranked by real-world importance, spread across
-geopolitics, economy, technology, science, health, and climate. **Decode every one** into: what
-happened → why it matters → ripple effects → why you're seeing it now → what to watch next → market
-link (if any). Write the connective `the_big_picture`. Full schema: [analyze/world_prompt.md](analyze/world_prompt.md).
-
-## Markets pillar — daily method
-1. **Overnight & pre-market moves** — what moved and why (indices, big single-name moves, crypto, FX, commodities).
-2. **Today's catalysts** — earnings, economic data, ex-dividends, IPOs, central-bank events.
-3. **Favorites deep-dive** — for each favorite: what changed *since yesterday*, and **explain the technical
-   read in plain English** (don't just cite RSI 38 — say what that means and why it matters here).
-4. **What to Watch / Don't Miss** — the 3–5 most important, ranked, each with a one-line "why it matters".
-5. **Risks** — what could go wrong across the book today.
-Full schema: [analyze/brief_prompt.md](analyze/brief_prompt.md).
-
-## Hard rules
-- **Not financial advice.** Every output ends with a disclaimer. You inform and rank; the user decides.
-- **Never invent facts or numbers.** Use the data in `output/*.json` and your web searches. If a
-  figure is missing or stale, say so explicitly — do not guess.
-- **Cite sources** for claims that come from news/web (source name + link). At least one per world story.
-- **Explain, don't just report.** Decode. Define jargon inline. This is the whole point of the product.
-- **No trade execution.** You never place orders or manage money.
-- **Be neutral** on contested topics — present what's known and who claims what.
-
-## Output contract
-Write **two** strict-JSON briefs each run:
-- **World** → `output/world-<YYYY-MM-DD>.json` + copy to `output/world-latest.json` (schema: [analyze/world_prompt.md](analyze/world_prompt.md)).
-- **Markets** → `output/brief-<YYYY-MM-DD>.json` + copy to `output/brief-latest.json` (schema: [analyze/brief_prompt.md](analyze/brief_prompt.md)).
-The email sender, dashboard, AND the mobile reels deck (`build_dashboard.build_reels()` compiles
-`dashboard/reels.json` from these) all read this JSON — if it doesn't match the schema, they break,
-so follow it exactly. For continuity, read the two most recent `dashboard/archive/world-*.json` and
-add `thread` objects to stories that continue previous coverage (see the world schema).
-
-**The `dashboard/` folder is published to a PUBLIC GitHub Pages site** (via GitHub Actions on every push).
-Never write secrets, keys, email addresses, or personal data anywhere under `dashboard/`.
-
-**Refresh cadence:** the AI-decoded briefs (`world`/`brief`/`reels.json`) regenerate **about every 2 hours
-on the Mac** while the laptop is awake (`routine/run_daily.sh`, guarded so it runs at most ~every 110 min);
-each push auto-deploys via `.github/workflows/pages.yml`. There is **no raw-headlines feed** — depth is the
-product, so every card is fully decoded. The reels show 3 tabs (Global/India/Markets); India = stories with
-`category: "india"`.
-
-## Data you have (all free)
-- `output/world-raw-latest.json` — broad global headlines across all categories, pulled by `fetch_world.py`.
-- `output/raw-latest.json` — prices, indicators, fundamentals, news, and calendars pulled by `fetch.py`.
-- `dashboard/stocks/*.json` — the computed technical analysis per stock (from `analyze_stock.py`).
-- **WebSearch / WebFetch** — use these to confirm facts, get the latest, and fill anything the raw feeds
-  miss (especially Indian news). Prefer primary sources.
+## Working on it
+- **Tests** (fake engine, no network, under 1 s): `.venv/bin/python -m pytest tests/briefing -q`
+- **Dry run on the Mac without touching the repo:**
+  `BRIEFING_PUB_DIR=/tmp/b/pub BRIEFING_OUT_DIR=/tmp/b/out .venv/bin/python -m routine.briefing run`
+- **Sources only:** `python3 -m routine.briefing gather`
+- **Pipeline map:**
+  - `gather.py`, `cluster.py`, `wiki.py`, `markets.py`, `sport.py`: sweep and group sources (code only).
+  - `ranking.py`: shortlist.
+  - `engine.py`: model calls; models per role are in `config.ROLES`.
+  - `prompts/*.md`: house style and step prompts.
+  - `stages.py`: resumable state machine with a 05:40 IST deadline.
+  - `build.py`: quality rules.
+  - `threads.py`, `agenda.py`: memory.
+  - `publish.py`.

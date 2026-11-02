@@ -1,0 +1,32 @@
+{
+  "_doc": "Must-check beats for the Morning Briefing. Each runs as a Google News search over the last `days` days. A must_check beat with no news in the window is sent to the scout (a targeted web search) and logged as 'checked, nothing major' if still empty. Edit freely.",
+  "beats": [
+    {"id": "parliament",    "section": "india",       "label": "Parliament",               "query": "(\"Lok Sabha\" OR \"Rajya Sabha\" OR Parliament) bill India", "india": true, "must_check": false},
+    {"id": "courts",        "section": "india",       "label": "Supreme Court & High Courts", "query": "(\"Supreme Court\" OR \"High Court\") India verdict OR order", "india": true, "must_check": true},
+    {"id": "rbi",           "section": "markets",     "label": "RBI",                      "query": "RBI (repo OR \"monetary policy\" OR circular OR governor OR rules)", "india": true, "must_check": true},
+    {"id": "sebi",          "section": "markets",     "label": "SEBI",                     "query": "SEBI (order OR rules OR circular OR IPO OR ban)", "india": true, "must_check": true},
+    {"id": "tax",           "section": "affects_you", "label": "GST & income tax",         "query": "(GST OR \"income tax\" OR CBDT OR \"GST Council\" OR ITR) India", "india": true, "must_check": true},
+    {"id": "payments",      "section": "affects_you", "label": "UPI & payments",           "query": "(UPI OR NPCI OR \"credit card\" OR \"bank charges\") India rules", "india": true, "must_check": true},
+    {"id": "telecom",       "section": "affects_you", "label": "Telecom & internet",       "query": "(TRAI OR Jio OR Airtel OR \"Vodafone Idea\") tariff OR rules OR outage", "india": true, "must_check": false},
+    {"id": "fuel_prices",   "section": "affects_you", "label": "Fuel, LPG & prices",       "query": "(\"petrol price\" OR \"diesel price\" OR \"LPG price\" OR \"CNG price\" OR \"price hike\") India", "india": true, "must_check": true},
+    {"id": "weather",       "section": "affects_you", "label": "IMD weather & air",        "query": "(IMD OR cyclone OR heatwave OR \"heavy rain\" OR AQI OR GRAP) India alert", "india": true, "must_check": true},
+    {"id": "jobs_exams",    "section": "affects_you", "label": "Exams & jobs",             "query": "(NEET OR JEE OR UPSC OR CBSE OR SSC OR UGC) exam OR result OR date", "india": true, "must_check": false},
+    {"id": "travel",        "section": "affects_you", "label": "Rail, flights & travel",   "query": "(\"Indian Railways\" OR DGCA OR IndiGo OR \"Air India\" OR visa) India", "india": true, "must_check": false},
+    {"id": "economy_data",  "section": "markets",     "label": "Economic data",            "query": "India (GDP OR inflation OR CPI OR WPI OR IIP OR PMI OR \"trade deficit\") data", "india": true, "must_check": true},
+    {"id": "elections_in",  "section": "india",       "label": "Elections",                "query": "(\"Election Commission\" OR election OR bypoll OR \"chief minister\") India", "india": true, "must_check": false},
+    {"id": "defence",       "section": "india",       "label": "Defence & security",       "query": "(\"Indian Army\" OR \"Indian Navy\" OR IAF OR DRDO OR \"defence ministry\" OR terror) India", "india": true, "must_check": false},
+    {"id": "space",         "section": "science",     "label": "ISRO & space",             "query": "ISRO OR Gaganyaan OR Chandrayaan OR NASA OR SpaceX launch", "india": true, "must_check": false},
+    {"id": "health_in",     "section": "science",     "label": "Health in India",          "query": "(\"health ministry\" OR ICMR OR dengue OR outbreak OR vaccine) India", "india": true, "must_check": false},
+    {"id": "neighbours",    "section": "world",       "label": "India's neighbours",       "query": "India (Pakistan OR China OR Bangladesh OR Nepal OR \"Sri Lanka\" OR Maldives) talks OR border OR tension", "india": true, "must_check": false},
+    {"id": "wars",          "section": "world",       "label": "Wars & ceasefires",        "query": "(ceasefire OR airstrike OR offensive OR invasion OR \"peace talks\")", "india": false, "must_check": true},
+    {"id": "elections_w",   "section": "world",       "label": "World elections",          "query": "election results (president OR \"prime minister\" OR parliament)", "india": false, "must_check": true},
+    {"id": "disasters",     "section": "world",       "label": "Disasters",                "query": "(earthquake OR flood OR hurricane OR typhoon OR cyclone OR wildfire OR crash) killed", "india": false, "must_check": true},
+    {"id": "central_banks", "section": "markets",     "label": "Central banks",            "query": "(\"Federal Reserve\" OR ECB OR \"Bank of Japan\" OR \"Bank of England\" OR \"People's Bank of China\") rates", "india": false, "must_check": true},
+    {"id": "oil",           "section": "markets",     "label": "Oil & commodities",        "query": "(OPEC OR \"oil prices\" OR Brent OR gold price)", "india": false, "must_check": false},
+    {"id": "us_india",      "section": "world",       "label": "US–India",                 "query": "(US OR Washington OR Trump) India (trade OR tariff OR visa OR H-1B)", "india": false, "must_check": false},
+    {"id": "china",         "section": "world",       "label": "China",                    "query": "China (Xi OR Beijing) (economy OR Taiwan OR trade OR military)", "india": false, "must_check": false},
+    {"id": "ai_majors",     "section": "tech_ai",     "label": "AI companies",             "query": "(OpenAI OR Anthropic OR \"Google DeepMind\" OR Nvidia OR Meta) AI", "india": false, "must_check": true},
+    {"id": "health_w",      "section": "science",     "label": "Global health",            "query": "(WHO OR outbreak OR pandemic OR Ebola OR \"bird flu\") health", "india": false, "must_check": false},
+    {"id": "climate",       "section": "science",     "label": "Climate",                  "query": "(COP OR \"climate summit\" OR emissions OR \"El Nino\") climate", "india": false, "must_check": false}
+  ]
+}
