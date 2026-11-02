@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "date": "2026-11-02",
- "edition": "Evening · 5:38 PM",
- "published_at": "2026-11-02T17:38+05:30",
+ "edition": "Evening · 5:46 PM",
+ "published_at": "2026-11-02T17:46+05:30",
  "window": {
   "start": "2026-11-01T13:01+05:30",
   "end": "2026-11-02T15:01+05:30"
@@ -59,7 +59,7 @@
    }
   ],
   "read_min": 33,
-  "watch_min": 4
+  "watch_min": 6
  },
  "stories": [
   {
@@ -1060,8 +1060,109 @@
      "excerpt": "Keep Rahul Gandhi As Your 'Mock Prime Minister' For Life: BJP's Swipe At Opposition's Impeachment Event"
     }
    ],
-   "reel": null,
-   "reel_hash": null,
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "Can the opposition remove India's election chief? On thirty-first October, it put him on trial. But only a mock one.",
+      "show": "A mock trial for India's election chief"
+     },
+     {
+      "kind": "players",
+      "say": "The INDIA bloc met at Congress president Mallikarjun Kharge's home in Delhi. Former Lok Sabha Speaker Meira Kumar led the proceedings. They passed a resolution seeking the removal of Chief Election Commissioner Gyanesh Kumar. It has no legal effect.",
+      "show": "Symbolic resolution, no legal effect",
+      "players": [
+       {
+        "name": "Gyanesh Kumar",
+        "role": "Chief Election Commissioner"
+       },
+       {
+        "name": "Mallikarjun Kharge",
+        "role": "Moved the mock motion"
+       },
+       {
+        "name": "Meira Kumar",
+        "role": "Led the proceedings"
+       }
+      ]
+     },
+     {
+      "kind": "big_number",
+      "say": "The fight is over S I R, a special revision of voter lists. The resolution claims about thirteen point two crore names were deleted. That is an opposition claim, not an established finding.",
+      "show": "Opposition claim, not a finding",
+      "number": {
+       "value": "13.2 crore",
+       "label": "voter names deleted, opposition claims"
+      }
+     },
+     {
+      "kind": "bar",
+      "say": "Removing the election chief works like removing a Supreme Court judge. In March, one hundred and ninety-three opposition MPs signed notices. That cleared the bar to start. But passing needs two-thirds in both Houses, and the opposition admits it lacks the numbers.",
+      "show": "Enough to start, not to pass",
+      "chart": {
+       "title": "MPs who signed vs needed to start",
+       "unit": "MPs",
+       "points": [
+        {
+         "label": "Lok Sabha signed",
+         "value": 130
+        },
+        {
+         "label": "Lok Sabha needed",
+         "value": 100
+        },
+        {
+         "label": "Rajya Sabha signed",
+         "value": 63
+        },
+        {
+         "label": "Rajya Sabha needed",
+         "value": 50
+        }
+       ]
+      }
+     },
+     {
+      "kind": "timeline",
+      "say": "On sixth April, the notices were rejected without a reason, according to The Wire. In late April, seventy-three Rajya Sabha members filed a fresh one. Thousands have also protested in New Delhi, demanding he resign.",
+      "show": "From notices to a mock trial",
+      "timeline": [
+       {
+        "when": "March 2026",
+        "what": "193 MPs sign removal notices"
+       },
+       {
+        "when": "6 April 2026",
+        "what": "Notices rejected"
+       },
+       {
+        "when": "Late April 2026",
+        "what": "73 Rajya Sabha MPs file fresh notice"
+       },
+       {
+        "when": "31 October 2026",
+        "what": "Mock 'public impeachment'"
+       },
+       {
+        "when": "1 November 2026",
+        "what": "Dilli Chalo march planned"
+       }
+      ]
+     },
+     {
+      "kind": "kinetic",
+      "say": "The Election Commission says S I R is lawful and its decisions were unanimous. It ordered a special drive to enrol left-out voters. The B J P mocked the event.",
+      "show": "EC: SIR is lawful"
+     },
+     {
+      "kind": "outro",
+      "say": "Remember: the mock verdict changes nothing in law. Watch for reports from the first November Dilli Chalo march, and whether a formal motion reaches Parliament.",
+      "show": "Symbolic verdict. Watch Parliament next."
+     }
+    ]
+   },
+   "reel_hash": "3037d4cea4f2",
    "read_min": 4
   },
   {
@@ -1072,7 +1173,7 @@
    "contested": false,
    "thread": {
     "id": "t-cyclone-murasu",
-    "status": "new",
+    "status": "developing",
     "day": 1,
     "previously": null,
     "changed": null
@@ -1270,8 +1371,97 @@
      "excerpt": "IMD issues red alert for very heavy to extremely heavy rainfall in Bihar tomorrow."
     }
    ],
-   "reel": null,
-   "reel_hash": null,
+   "reel": {
+    "voice": "en-IN-NeerjaNeural",
+    "scenes": [
+     {
+      "kind": "hook",
+      "say": "A second cyclone in about a week is heading for India's east coast. Where will Cyclone Murasu hit, and who needs to get ready?",
+      "show": "Cyclone Murasu: where, when, who?"
+     },
+     {
+      "kind": "map",
+      "say": "India's weather office, the I M D, expects Murasu to cross the south Andhra coast near Ongole, between Nellore and Narsapur. The window is eleven thirty at night on the second of November, to four in the morning on the third.",
+      "show": "Landfall near Ongole, 2–3 November",
+      "map": {
+       "iso3": [
+        "IND"
+       ],
+       "pin": [
+        80.05,
+        15.5
+       ],
+       "label": "Ongole, Andhra Pradesh"
+      }
+     },
+     {
+      "kind": "bar",
+      "say": "The forecast got stronger. On the first of November, winds were expected at eighty to ninety kilometres per hour. Now it is a hundred to a hundred and ten, with gusts up to a hundred and twenty. Cyclone Arnab was stronger still.",
+      "show": "Forecast winds went up",
+      "chart": {
+       "title": "Top sustained wind speed",
+       "unit": "kmph",
+       "points": [
+        {
+         "label": "Murasu forecast, 1 Nov",
+         "value": 90
+        },
+        {
+         "label": "Murasu forecast, 2 Nov",
+         "value": 110
+        },
+        {
+         "label": "Arnab, 28 Oct",
+         "value": 135
+        }
+       ]
+      }
+     },
+     {
+      "kind": "kinetic",
+      "say": "The rain reaches far beyond Ongole. Chennai has had torrential rain. Six Telangana districts are on orange alert. South Odisha may get heavy rain on the third and fourth of November. South Chhattisgarh expects very heavy rain on those days.",
+      "show": "Rain spreads far inland"
+     },
+     {
+      "kind": "big_number",
+      "say": "Odisha has started moving people out of risky areas. It has placed more than three hundred rescue teams in advance. Schools are shut in parts of Andhra, in Chennai, and in Malkangiri.",
+      "show": "Odisha rescue teams ready",
+      "number": {
+       "value": "300+",
+       "label": "rescue teams placed in Odisha"
+      }
+     },
+     {
+      "kind": "timeline",
+      "say": "This comes soon after another storm. Cyclone Arnab hit on the twenty-eighth of October. More than one point eight lakh people were moved to safety. Odisha reported six deaths.",
+      "show": "Two cyclones, about a week apart",
+      "timeline": [
+       {
+        "when": "28 Oct",
+        "what": "Cyclone Arnab crosses Andhra and Yanam coast"
+       },
+       {
+        "when": "1 Nov",
+        "what": "Murasu forecast at 80–90 kmph"
+       },
+       {
+        "when": "2 Nov",
+        "what": "Chennai rain; schools shut; forecast upgraded"
+       },
+       {
+        "when": "2–3 Nov",
+        "what": "Landfall window, 11:30 pm to 4 am"
+       }
+      ]
+     },
+     {
+      "kind": "outro",
+      "say": "Remember this: the danger does not end at the coast. Rain may keep falling inland until the fourth of November. Fishermen are warned to stay out of the Bay of Bengal until that afternoon.",
+      "show": "Rain may continue inland until 4 November"
+     }
+    ]
+   },
+   "reel_hash": "0e694e11afa5",
    "read_min": 4
   },
   {
@@ -1282,7 +1472,7 @@
    "contested": true,
    "thread": {
     "id": "t-sebi-fpi-ltcg",
-    "status": "new",
+    "status": "developing",
     "day": 1,
     "previously": null,
     "changed": null
