@@ -6,7 +6,7 @@ files by hand, don't read files under `output/` (they are large and not for you)
 publish the result.
 
 1. **Setup** (about 1–2 minutes):
-   `python3 -m pip install -q -r routine/briefing/requirements.txt`
+   `git fetch -q origin main && git checkout -q -B main origin/main && python3 -m pip install -q -r routine/briefing/requirements.txt`
 
 2. **Build the edition.** Run this command with a Bash timeout of 600000 ms:
    `python3 -m routine.briefing next`
