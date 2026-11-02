@@ -25,7 +25,11 @@ you return, so your claims must be complete, precise, dated and sourced. "No sou
      The Guardian, NYT, Al Jazeera, Bloomberg, FT.
 
   Use portals and aggregators (Oneindia, Dailyhunt, MSN, Yahoo, NewsBytes and similar) only when nothing
-  better exists. Never cite content farms, SEO "news today" pages, crypto/stock-tip sites or social posts as
+  better exists.
+- **Contested political stories:** facts come from wires, official records and established outlets of
+  different leanings. Party-owned or strongly partisan outlets (e.g. National Herald, Republic, OpIndia,
+  Organiser, party websites) may be cited ONLY for their own side's view (kind = "quote" / a views entry),
+  never as the source of a fact. Never cite content farms, SEO "news today" pages, crypto/stock-tip sites or social posts as
   facts.
 - **The `<source>` articles you are given come from established outlets' own feeds.** Cite them whenever
   their text supports a claim: use their summary as the excerpt, even if you can't open the page. Several
