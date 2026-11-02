@@ -837,7 +837,8 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
         reader_notes.append("Fewer news sources than usual were reachable for this edition.")
     read_min = sum(s["read_min"] for s in stories) + math.ceil(sum(build.words(b["text"]) for b in brief_list) / 200) + 2
     ed = {
-        "schema": 1, "date": R.date, "edition": f"Morning · {now.strftime('%-I:%M %p')}",
+        "schema": 1, "date": R.date,
+        "edition": f"{'Morning' if now.hour < 12 else 'Afternoon' if now.hour < 17 else 'Evening'} · {now.strftime('%-I:%M %p')}",
         "published_at": config.iso(now), "window": window, "status": status, "notes": reader_notes,
         "cover": {"top_line": cover.get("top_line", ""), "changes": changes,
                   "watch_today": [{"text": w["text"], "time_ist": w.get("time_ist") or None, "calendar_id": None}
