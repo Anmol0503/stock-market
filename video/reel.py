@@ -203,12 +203,14 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
                 audio_in = ["-i", str(mp3)]
             words_all += [(w, s + t0, e + t0) for w, s, e in words]
             frames = int(round(dur * FPS))
-            vf = (f"scale=1620:2880,zoompan=z='min(zoom+0.0005,1.08)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-                  f":s=1080x1920:fps={FPS},fade=t=in:st=0:d=0.25,format=yuv420p")
-            _run([ffmpeg(), "-y", "-loop", "1", "-framerate", str(FPS), "-i", str(png), *audio_in,
+            # A still designed frame with a soft fade-in; the word-by-word captions carry the motion. (A zoompan
+            # push-in looked nice but is single-threaded and timed out on GitHub's shared runners.)
+            vf = "fade=t=in:st=0:d=0.25,format=yuv420p"
+            _run([ffmpeg(), "-y", "-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(png), *audio_in,
                   "-filter_complex", f"[0:v]{vf}[v];[1:a]aresample=44100,apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a]",
                   "-map", "[v]", "-map", "[a]", "-frames:v", str(frames), "-c:v", "libx264", "-preset", "veryfast",
-                  "-crf", "18", "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "1", str(seg)], timeout=300)
+                  "-tune", "stillimage", "-crf", "18", "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "1",
+                  "-shortest", str(seg)], timeout=180)
             segs.append(seg)
             t0 += frames / FPS
         lst = work / "list.txt"
