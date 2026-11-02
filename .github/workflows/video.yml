@@ -1,0 +1,84 @@
+name: Render briefing reels
+
+# The cloud routine publishes dashboard/briefing/<date>.json around 04:30 IST. This job turns each big story's
+# reel script into a narrated vertical MP4 (video/pipeline.py), uploads them to the release briefing-<date>
+# (MP4s never go into git), commits the manifest the app reads, and redeploys Pages, which copies recent
+# reels next to the app (see pages.yml).
+on:
+  push:
+    branches: [main]
+    paths: ['dashboard/briefing/2*.json']
+  schedule:
+    - cron: '45 23 * * *'   # 05:15 IST safety net
+    - cron: '30 0 * * *'    # 06:00 IST second safety net
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Edition date (YYYY-MM-DD) or "latest"'
+        required: false
+        default: 'latest'
+      edition_ref:
+        description: 'Testing only: read the edition JSON from this branch (e.g. briefing-test)'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Render + upload only (no manifest commit, no Pages deploy)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: reels
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install ffmpeg and the voice
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q "edge-tts>=7,<8"
+
+      - name: Fetch a test edition from another branch
+        if: ${{ inputs.edition_ref != '' && inputs.edition_ref != null }}
+        run: |
+          git fetch -q origin "${{ inputs.edition_ref }}"
+          git show "origin/${{ inputs.edition_ref }}:dashboard/briefing/${{ inputs.date }}.json" > /tmp/edition.json
+
+      - name: Render reels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          args="--date ${{ inputs.date || 'latest' }} --upload"
+          if [ -f /tmp/edition.json ]; then args="$args --edition /tmp/edition.json"; fi
+          if [ "${{ inputs.dry_run }}" != "true" ]; then args="$args --manifest"; fi
+          python -m video.pipeline $args
+
+      - name: Publish the manifest and redeploy Pages
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "briefing-reels[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/briefing/videos/
+          if git diff --cached --quiet; then echo "manifest unchanged"; exit 0; fi
+          git commit -q -m "reels: manifest $(ls -t dashboard/briefing/videos | head -1)"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            sleep $((i * 10))
+          done
+          # pushes made with GITHUB_TOKEN don't trigger other workflows, so start the Pages deploy explicitly
+          gh workflow run pages.yml --ref main

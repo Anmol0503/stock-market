@@ -68,7 +68,7 @@ WORDS = {
     "brief_text": (50, 120), "brief_background": (8, 30), "brief_why": (8, 25), "also": (8, 25),
     "top_line": (15, 40), "change": (5, 22), "watch": (4, 20), "gist": (8, 25), "quiet_note": (5, 25),
     "term_meaning": (4, 20), "check_q": (6, 25), "check_why": (5, 30),
-    "story_total": (450, 850), "reel_total": (140, 230), "scene_say": (6, 50), "scene_show": (0, 8),
+    "story_total": (450, 850), "reel_total": (130, 190), "scene_say": (6, 50), "scene_show": (0, 8),
 }
 EXCERPT_MAX_CHARS = 200   # public excerpts stay short (copyright)
 

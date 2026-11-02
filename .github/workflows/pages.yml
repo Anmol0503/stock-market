@@ -25,6 +25,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Bring in recent reels (stored as release assets, never in git)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for f in $(ls -1 dashboard/briefing/videos/*.json 2>/dev/null | sort | tail -3); do
+            d=$(basename "$f" .json)
+            mkdir -p "dashboard/media/$d"
+            gh release download "briefing-$d" -R "${{ github.repository }}" -D "dashboard/media/$d" \
+              -p '*.mp4' -p '*.jpg' --clobber || echo "no reels for $d yet"
+          done
+          du -sh dashboard/media 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

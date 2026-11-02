@@ -32,7 +32,7 @@ why_chain and analogy, but never add facts about events. If something isn't in t
 Total story text: 450–850 words.
 
 ## The reel (narrated vertical video, 60–90 seconds)
-5–9 scenes. Total narration (`say`) 140–230 words. Scene 1 is a **hook**: ask the question. The last scene
+5–8 scenes. Total narration (`say`) 130–190 words (about 60–90 seconds spoken). Scene 1 is a **hook**: ask the question. The last scene
 is an **outro**: the one thing to remember plus what to watch (with its date).
 - `say`: written to be SPOKEN by an Indian English voice. Short sentences. No symbols or abbreviations
   that read badly: write "per cent", "rupees", "dollars", "crore", "Reserve Bank" (not "RBI" on first use),
