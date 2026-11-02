@@ -57,6 +57,36 @@ def _yahoo_one(sym: str) -> dict | None:
     return None
 
 
+# CNBC's public quote service (what cnbc.com itself uses): one request for many symbols. Cloud IPs that Yahoo
+# rate-limits usually get through here. No Sensex on CNBC.
+_CNBC = {"^NSEI": ".NSEI", "^NSEBANK": ".NSEBANK", "^GSPC": ".SPX", "^IXIC": ".IXIC", "USDINR=X": "INR=",
+         "BZ=F": "@LCO.1", "GC=F": "@GC.1", "BTC-USD": "BTC.CM=", "^TNX": "US10Y"}
+
+
+def _num(v) -> float | None:
+    try:
+        return float(str(v).replace(",", "").replace("%", "").replace("+", "").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def _cnbc_batch(symbols: list[str]) -> dict[str, dict]:
+    want = {_CNBC[s]: s for s in symbols if s in _CNBC}
+    if not want:
+        return {}
+    url = ("https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols="
+           + urllib.parse.quote("|".join(want)) + "&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json")
+    r = requests.get(url, timeout=15, headers=_H)
+    if r.status_code != 200:
+        return {}
+    out = {}
+    for q in ((r.json().get("FormattedQuoteResult") or {}).get("FormattedQuote") or []):
+        ours, last = want.get(q.get("symbol")), _num(q.get("last"))
+        if ours and last is not None:
+            out[ours] = {"last": round(last, 3 if ours == "^TNX" else 2), "chg_pct": _num(q.get("change_pct"))}
+    return out
+
+
 def _usd_inr() -> dict | None:
     r = requests.get("https://api.frankfurter.dev/v1/latest?base=USD&symbols=INR", timeout=12, headers=_H)
     if r.status_code != 200:
@@ -85,6 +115,12 @@ def snapshot() -> tuple[dict, dict]:
         got = _yahoo_batch([s for s, _ in QUOTES])
     except Exception as e:  # noqa: BLE001
         errors.append(f"yahoo batch: {type(e).__name__}")
+    missing = [s for s, _ in QUOTES if s not in got]
+    if missing:
+        try:
+            got.update(_cnbc_batch(missing))
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"cnbc batch: {type(e).__name__}")
     fails = 0                                   # two misses in a row = Yahoo is rate-limiting us: stop asking
     for sym, _ in QUOTES:
         if sym in got:

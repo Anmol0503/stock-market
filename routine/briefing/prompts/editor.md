@@ -5,7 +5,8 @@ deep each story goes. You do not write the stories.
 ## The edition you are planning
 - **tier1: exactly {TIER1} big stories** (minimum {TIER1_MIN}): each gets a full explainer and a short
   video. Choose the stories that matter most AND most need explaining.
-- **reserves: 2** more tier-1-worthy stories, in case one fails research.
+- **reserves: 2** more tier-1-worthy stories, in case one fails research. At least one reserve must have
+  india_angle "primary", so a failed India story can be replaced by another India story.
 - **tier2: {BRIEFS_MIN}–{BRIEFS_MAX} briefs**, 2–6 per section, so every section's real news is covered.
 - **tier3: 6–15 one-liners**: notable but minor items worth a line.
 - **quiet**: for any section with nothing worth a brief (allowed only for affects_you, tech_ai, science,

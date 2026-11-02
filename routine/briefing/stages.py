@@ -477,17 +477,27 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
     try:
         research = R._load(f"research-{sid}")
         if research is None:
+            feedback = ""
             for attempt in range(2):
                 research = await R.ask("research", prompting.system("research"),
-                                       prompting.research(slot, clusters, date=R.date, window=window, thread=thread),
-                                       schemas.RESEARCH, label=f"research-{sid}", need_s=540)
+                                       prompting.research(slot, clusters, date=R.date, window=window, thread=thread)
+                                       + feedback, schemas.RESEARCH, label=f"research-{sid}", need_s=540)
                 good = [c for c in research.get("claims") or [] if str(c.get("url", "")).startswith("http")]
-                if len(good) >= 5:
+                sites = {build.domain(c["url"]) for c in good}
+                if len(good) >= 5 and len(sites) >= 3:
                     break
+                feedback = (f"\n\nYOUR PREVIOUS ATTEMPT used {len(good)} sourced claims from only {len(sites)} site(s): "
+                            f"{', '.join(sorted(sites)) or 'none'}. Return at least 8 claims from at least 3 independent "
+                            "sites. The <source> articles above are citable as they are (use their summary as the "
+                            "excerpt), and official sites and wire copy count.")
                 research = None
             if research is None:
-                raise EngineError(f"research-{sid}: fewer than 5 sourced claims")
+                raise EngineError(f"research-{sid}: fewer than 5 sourced claims from 3+ sites")
             R.put(f"research-{sid}", research)
+        claims = research.get("claims") or []
+        rec["research_stats"] = {"claims": len(claims), "sites": len({build.domain(c.get("url")) for c in claims}),
+                                 "primary": sum(1 for c in claims if c.get("type") == "primary"),
+                                 "searches": research.get("searches"), "fetches": research.get("fetches")}
         story = R._load(f"draft-{sid}")
         if story is None:
             story = await R.ask("writer", style_writer, prompting.writer(slot, research, date=R.date, thread=thread),
@@ -526,7 +536,10 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
 async def _stories(R: Run, plan: dict, cmap: dict, thr_ctx: dict, window: dict, markets) -> list[dict]:
     recs = await asyncio.gather(*(_story_chain(R, s, cmap, thr_ctx, window, markets) for s in plan["tier1"]))
     ok = sum(1 for r in recs if r["status"] == "ok")
-    for reserve in plan.get("reserves") or []:       # replace failures while there's time
+    india_ok = any(r["status"] == "ok" and r["slot"].get("india_angle") == "primary" for r in recs)
+    reserves = sorted(plan.get("reserves") or [],      # keep the India balance: an India reserve goes first if needed
+                      key=lambda r: 0 if (not india_ok and r.get("india_angle") == "primary") else 1)
+    for reserve in reserves:                         # replace failures while there's time
         if ok >= config.TIER1_TARGET or R.left() < 900:
             break
         rec = await _story_chain(R, reserve, cmap, thr_ctx, window, markets)
@@ -615,13 +628,27 @@ async def _sections(R: Run, plan: dict, cmap: dict, thr_ctx: dict, window: dict)
         if b["item_id"] in briefs:
             briefs[b["item_id"]] = b
             verdict[b["item_id"]] = {"severity": "ok", "problems": []}
-    recs = {}
+    recs, diag = {}, {}
     for it in plan["tier2"]:
+        d = diag.setdefault(it["section"], {"planned": 0, "verified": 0, "written": 0, "passed": 0, "lost": []})
+        d["planned"] += 1
+        d["verified"] += it["id"] in facts
         b = briefs.get(it["id"])
+        d["written"] += bool(b)
         v = verdict.get(it["id"], {})
         if b and v.get("severity") != "drop" and not (v.get("severity") == "fix" and it["id"] in to_fix
                                                       and not R._load("briefs-fixed")):
             recs[it["id"]] = {"item": it, "brief": b, "facts": facts.get(it["id"]) or []}
+            d["passed"] += 1
+        else:
+            why = ("not verified" if it["id"] not in facts else "not written" if not b
+                   else f"check: {v.get('severity')} {'; '.join(v.get('problems') or [])[:120]}")
+            d["lost"].append(f"{it['id']}: {why}")
+    for sec, res in secres.items():
+        if res.get("_failed"):
+            diag.setdefault(sec, {})["research_failed"] = True
+    R.state["section_diag"] = diag
+    R._save_state()
     return recs, gists
 
 
@@ -697,12 +724,24 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
     for b in demoted:
         sec_items[b["section"]].append(b)
     quiet = {q["section"]: q["note"] for q in plan.get("quiet") or []}
+    planned_by_sec: dict[str, list] = {}
+    for it in plan["tier2"]:
+        planned_by_sec.setdefault(it["section"], []).append(it)
+    fallback_lines: list[dict] = []
     sections = []
     for k in config.SECTION_KEYS:
         emoji, title = config.SECTIONS[k]
         items = sec_items[k][: config.BRIEFS_PER_SECTION[1] + 2]
         sec = {"key": k, "emoji": emoji, "title": title, "gist": gists.get(k, ""), "quiet": not items, "items": items}
-        if not items:
+        if not items and planned_by_sec.get(k):
+            # Planned briefs all failed verification: be honest, and keep the headlines as one-liners.
+            sec["quiet_note"] = "Briefs couldn't be verified in time today; the headlines are under Also today."
+            for it in planned_by_sec[k]:
+                for cid in it["cluster_ids"][:1]:
+                    fallback_lines.append({"cluster_id": cid, "section": k, "id": f"l-{k}-{len(fallback_lines) + 1}"})
+            qnotes.append(f"{k}: all {len(planned_by_sec[k])} planned briefs failed: "
+                          + "; ".join((R.state.get('section_diag') or {}).get(k, {}).get('lost', [])[:3]))
+        elif not items:
             sec["quiet_note"] = quiet.get(k) or "Checked: nothing major in this window."
             if k in config.NEVER_QUIET:
                 reader_notes.append(f"{title} has fewer briefs than usual today.")
@@ -713,7 +752,7 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
     # one-liners (tier 3) from triage lines + the best dated member
     start = config.parse_ts(window["start"]) - dt.timedelta(hours=24)
     also = []
-    for t3 in plan.get("tier3") or []:
+    for t3 in fallback_lines + list(plan.get("tier3") or []):
         c = cmap.get(t3["cluster_id"])
         if not c:
             continue
@@ -838,6 +877,10 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
         "recall": {k: (recall or {}).get(k) for k in ("edition", "total", "matched")} |
                   {"misses": [m["event"][:160] for m in (recall or {}).get("misses") or [] if m.get("major")][:10]},
         "fallback_plan": bool(plan.get("_fallback")), "notes": qnotes + R.notes,
+        "stories": [{"slot": r["id"], "status": r["status"], "research": r.get("research_stats"),
+                     "problems": [f"{p['where']}: {p['issue']}"[:160] for p in (r.get("problems") or [])][:4],
+                     "error": r.get("error")} for r in story_recs],
+        "sections": R.state.get("section_diag"),
         "timings": R.state.get("timings"), "usage": R.engine.usage.as_dict(),
     }
     (config.PUB / "quality").mkdir(parents=True, exist_ok=True)

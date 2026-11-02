@@ -136,3 +136,28 @@ def test_failed_engine_still_writes_quality_report(monkeypatch):
     q = json.loads((config.PUB / "quality" / "2026-11-03.json").read_text())
     assert q["status"] in ("lite", "partial", "failed")
     assert state["status"] in ("done", "failed")
+
+
+def test_failed_section_falls_back_to_one_liners(monkeypatch):
+    """If every planned brief in a section fails verification, its headlines become one-liners and the
+    section says so honestly (no fake 'nothing major' note); diagnostics land in the quality file."""
+    monkeypatch.setattr(gather, "run", fake_raw)
+    monkeypatch.setattr(config, "ROOT", config.PUB.parent.parent)
+    h = handlers()
+    base_section = h["section"]
+
+    def section(p, s):
+        out = base_section(p, s)
+        if "Section: Tech & AI" in p:
+            for it in out["items"]:
+                it["ok"] = False
+        return out
+    h["section"] = section
+    state = asyncio.run(stages.run("2026-11-03", engine.FakeEngine(h), now=NOW))
+    assert state["status"] == "done", state.get("notes")
+    ed = json.loads((config.PUB / "2026-11-03.json").read_text())
+    tech = next(s for s in ed["sections"] if s["key"] == "tech_ai")
+    assert tech["quiet"] and "couldn't be verified" in tech["quiet_note"]
+    assert any(a["section"] == "tech_ai" for a in ed["also"])
+    q = json.loads((config.PUB / "quality" / "2026-11-03.json").read_text())
+    assert q["sections"]["tech_ai"]["verified"] == 0 and q["stories"][0]["research"]["sites"] >= 3
