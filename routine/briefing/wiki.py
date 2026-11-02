@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import datetime as dt
 import re
+import time
 
 import requests
 
@@ -72,8 +73,12 @@ def fetch_day(day: dt.date, *, timeout: int = 20) -> tuple[list[dict], dict]:
     params = {"action": "parse", "page": page_title(day), "prop": "wikitext", "format": "json", "formatversion": "2"}
     health = {"name": f"Wikipedia {day.isoformat()}", "kind": "wiki", "ok": False, "items": 0, "error": None}
     try:
-        r = requests.get(sources.WIKI_API, params=params, timeout=timeout,
-                         headers={"User-Agent": sources.API_AGENT})
+        for attempt in range(4):                      # Wikipedia rate-limits shared cloud IPs: back off and retry
+            r = requests.get(sources.WIKI_API, params=params, timeout=timeout,
+                             headers={"User-Agent": sources.API_AGENT})
+            if r.status_code != 429:
+                break
+            time.sleep(3 * (attempt + 1))
         if r.status_code != 200:
             health["error"] = f"HTTP {r.status_code}"
             return [], health

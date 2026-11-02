@@ -67,6 +67,7 @@ def feeds() -> list[tuple[str, str, str]]:
             continue
         if "site:reuters.com" in url or "site:apnews.com" in url:   # replaced by the 24h versions above
             continue
+        url = url.replace("http://", "https://", 1)    # the cloud proxy rejects plain http (BBC, Ars feeds)
         out.append((cat, name, url))
         seen.add(url)
     for cat, name, url, _why in EXTRA_FEEDS:
