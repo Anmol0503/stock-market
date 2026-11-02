@@ -1,0 +1,290 @@
+{
+ "date": "2026-11-03",
+ "generated_at": "2026-11-03T04:16+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-02T14:01+05:30",
+  "end": "2026-11-03T04:05+05:30"
+ },
+ "counts": {
+  "stories": 5,
+  "briefs": 15,
+  "also": 15,
+  "planned_stories": 5,
+  "planned_briefs": 32,
+  "clusters": 1076,
+  "items": 1389
+ },
+ "sources": {
+  "ok": 112,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "NPR World: HTTP 403",
+   "Wikipedia 2026-11-02: HTTP 429"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-02",
+  "total": 13,
+  "matched": 5,
+  "misses": [
+   "Israeli airstrikes in Rafah's al-Mawasi kill five police officers; three more Palestinians killed in Gaza City",
+   "Learjet 60 crash in Greenacres, Florida kills nine",
+   "Four workers killed after entering food waste tank at Ujjain hotel",
+   "Bulgaria presidential runoff: Iotova re-elected over Gyurov"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "f1: all 2 planned briefs failed: b-f1-1: not verified; b-f1-2: not verified",
+  "sources: 1389 fresh items from 112/115 sources, 13 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 8,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 8,
+    "sites": 7,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 3
+   },
+   "problems": [
+    "reel[2].show: The on-screen text puts \"I'll be 'Mr Veto'\" in quote marks as if Trump said it word for word. The claims only say he said he would become 'Mr Veto"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 11,
+    "sites": 6,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [
+    "what_happened.text: 'Some reports say 28 October' isn't in any claim. The claims only give 29 October.",
+    "dek and why_chain[3]: 'No one has been arrested' is stated as fact. The claims only say no suspects are named and that protesters demand arrests. They don't say"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 11,
+    "sites": 8,
+    "primary": 1,
+    "searches": 4,
+    "fetches": 2
+   },
+   "problems": [
+    "lesson.apply: It says the petitioner is 'describing late buyers stuck in the top buckets'. The claims only say he alleges high festival-season fares. They don't",
+    "lesson.steps[2]: 'This is the pattern the petitioner complains about' credits the petitioner with the bucket mechanism. The claims only say he alleges high fare"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 6,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 3
+   },
+   "problems": [
+    "so_far.text and players[0] (Anthropic): The claims never say Anthropic will list on the Nasdaq. They mention only an IPO and an S-1. The Nasdaq appears only as ",
+    "views[1] (Anthropic's own S-1 filing): The view mixes two claims and cites only k9. The 'defaults could make lease obligations due at once' warning comes from k"
+   ],
+   "error": null
+  }
+ ],
+ "sections": {
+  "world": {
+   "planned": 6,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-world-1: not verified",
+    "b-world-2: not verified",
+    "b-world-4: not verified",
+    "b-world-5: not verified"
+   ]
+  },
+  "india": {
+   "planned": 5,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-india-2: not verified",
+    "b-india-3: not verified",
+    "b-india-5: not verified"
+   ]
+  },
+  "affects_you": {
+   "planned": 6,
+   "verified": 1,
+   "written": 1,
+   "passed": 1,
+   "lost": [
+    "b-affects_you-1: not verified",
+    "b-affects_you-2: not verified",
+    "b-affects_you-4: not verified",
+    "b-affects_you-5: not verified",
+    "b-affects_you-6: not verified"
+   ]
+  },
+  "markets": {
+   "planned": 4,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": [
+    "b-markets-3: not verified"
+   ]
+  },
+  "tech_ai": {
+   "planned": 4,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-tech_ai-1: not verified",
+    "b-tech_ai-4: not verified"
+   ]
+  },
+  "science": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  },
+  "f1": {
+   "planned": 2,
+   "verified": 0,
+   "written": 0,
+   "passed": 0,
+   "lost": [
+    "b-f1-1: not verified",
+    "b-f1-2: not verified"
+   ]
+  },
+  "cricket": {
+   "planned": 3,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": []
+  }
+ },
+ "timings": {
+  "gather": 43.7,
+  "triage": 47.6,
+  "merge": 4.2,
+  "scout": 12.1,
+  "editor": 131.6,
+  "stories+sections": 376.0
+ },
+ "usage": {
+  "calls": 51,
+  "failures": 0,
+  "cost_usd": 7.785,
+  "seconds": 2419.3,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0268,
+    "seconds": 8.5,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6849,
+    "seconds": 192.9,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0467,
+    "seconds": 4.2,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.0963,
+    "seconds": 12.1,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4678,
+    "seconds": 131.6,
+    "failures": 0
+   },
+   "research": {
+    "calls": 5,
+    "cost_usd": 0.7638,
+    "seconds": 302.5,
+    "failures": 0
+   },
+   "section": {
+    "calls": 8,
+    "cost_usd": 1.2737,
+    "seconds": 402.6,
+    "failures": 0
+   },
+   "briefs": {
+    "calls": 4,
+    "cost_usd": 0.6547,
+    "seconds": 215.9,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 5,
+    "cost_usd": 1.8222,
+    "seconds": 698.8,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 11,
+    "cost_usd": 0.6548,
+    "seconds": 135.3,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 5,
+    "cost_usd": 1.2337,
+    "seconds": 298.7,
+    "failures": 0
+   },
+   "cover": {
+    "calls": 1,
+    "cost_usd": 0.0601,
+    "seconds": 16.3,
+    "failures": 0
+   }
+  }
+ }
+}
