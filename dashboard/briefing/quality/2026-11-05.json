@@ -1,0 +1,287 @@
+{
+ "date": "2026-11-05",
+ "generated_at": "2026-11-05T04:17+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-04T03:05+05:30",
+  "end": "2026-11-05T04:06+05:30"
+ },
+ "counts": {
+  "stories": 5,
+  "briefs": 25,
+  "also": 15,
+  "planned_stories": 5,
+  "planned_briefs": 32,
+  "clusters": 1182,
+  "items": 1482
+ },
+ "sources": {
+  "ok": 99,
+  "total": 115,
+  "failed": [
+   "Beat: China: HTTP 503",
+   "Beat: Climate: HTTP 503",
+   "Beat: Disasters: HTTP 503",
+   "Beat: SEBI: HTTP 503",
+   "Beat: Supreme Court & High Courts: HTTP 503",
+   "CNBC Economy: HTTP 403",
+   "Cricbuzz (Google News): HTTP 503",
+   "GN — Cricket lives/retire/comeback: HTTP 503",
+   "GN — Cricket money/auction/moves: HTTP 503",
+   "GN — Cricket politics/board: HTTP 503",
+   "GN — India prices & alerts: HTTP 503",
+   "Google News — F1: HTTP 503",
+   "Google News — F1 driver market: HTTP 503",
+   "Google News — Health: HTTP 503",
+   "NPR World: HTTP 403",
+   "Reuters India (Google News, 24h): HTTP 503"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-04",
+  "total": 16,
+  "matched": 5,
+  "misses": [
+   "Two helicopters collide while landing in Solukhumbu, Nepal, killing an Indian tourist",
+   "US news organizations project Democrats win both House and Senate"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s5: 1 undated non-official source(s) kept, flagged",
+  "sources: 1482 fresh items from 99/115 sources, 20 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 14,
+    "sites": 4,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 4
+   },
+   "problems": [
+    "takeaways: The second takeaway says Trump's bills and nominees \"now\" face real resistance. The claims say the new Congress is sworn in in the first week of Janu"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 5,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 6
+   },
+   "problems": [
+    "for_you.text: The line 'There is no direct effect on prices, jobs or rules in India' is a new claim. None of the claims mention India or any effect there. Cut i"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 6,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 3
+   },
+   "problems": [
+    "for_you.text: The story says an Agniveer has a 'three-in-four chance' of six years. The claims only say 75% get the extension. They don't say it is a random cha",
+    "analogy.text: The analogy says they are considered 'through a test' and that 'the test decides who stays'. The claims say only 'objective selection criteria', w"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 11,
+    "sites": 5,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 5
+   },
+   "problems": [
+    "lesson.apply: The text says Apple raised prices 'instead' of taking a lower margin. The claims show Apple did both. It raised Mac and iPad prices in June, and m"
+   ],
+   "error": null
+  }
+ ],
+ "sections": {
+  "world": {
+   "planned": 6,
+   "verified": 5,
+   "written": 5,
+   "passed": 5,
+   "lost": [
+    "b-world-6: not verified"
+   ]
+  },
+  "india": {
+   "planned": 5,
+   "verified": 4,
+   "written": 4,
+   "passed": 4,
+   "lost": [
+    "b-india-1: not verified"
+   ]
+  },
+  "affects_you": {
+   "planned": 5,
+   "verified": 1,
+   "written": 1,
+   "passed": 1,
+   "lost": [
+    "b-affects_you-2: not verified",
+    "b-affects_you-3: not verified",
+    "b-affects_you-4: not verified",
+    "b-affects_you-5: not verified"
+   ]
+  },
+  "markets": {
+   "planned": 6,
+   "verified": 6,
+   "written": 6,
+   "passed": 6,
+   "lost": []
+  },
+  "tech_ai": {
+   "planned": 3,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": []
+  },
+  "science": {
+   "planned": 3,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-science-3: not verified"
+   ]
+  },
+  "f1": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  },
+  "cricket": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  }
+ },
+ "timings": {
+  "gather": 45.9,
+  "triage": 47.3,
+  "merge": 5.5,
+  "scout": 18.4,
+  "editor": 105.5,
+  "stories+sections": 408.7
+ },
+ "usage": {
+  "calls": 51,
+  "failures": 0,
+  "cost_usd": 7.87,
+  "seconds": 2366.1,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0293,
+    "seconds": 9.1,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6996,
+    "seconds": 200.2,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0456,
+    "seconds": 5.5,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.1589,
+    "seconds": 18.4,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4325,
+    "seconds": 105.5,
+    "failures": 0
+   },
+   "research": {
+    "calls": 5,
+    "cost_usd": 0.662,
+    "seconds": 266.6,
+    "failures": 0
+   },
+   "section": {
+    "calls": 8,
+    "cost_usd": 1.3521,
+    "seconds": 400.6,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 5,
+    "cost_usd": 1.5415,
+    "seconds": 573.2,
+    "failures": 0
+   },
+   "briefs": {
+    "calls": 4,
+    "cost_usd": 1.0413,
+    "seconds": 341.6,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 11,
+    "cost_usd": 0.6571,
+    "seconds": 138.8,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 5,
+    "cost_usd": 1.2098,
+    "seconds": 299.2,
+    "failures": 0
+   },
+   "cover": {
+    "calls": 1,
+    "cost_usd": 0.0405,
+    "seconds": 7.5,
+    "failures": 0
+   }
+  }
+ }
+}
