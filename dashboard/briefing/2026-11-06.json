@@ -361,16 +361,17 @@
     }
    ],
    "reel": {
-    "voice": "en-IN-NeerjaNeural",
+    "voice": "hi-IN-SwaraNeural",
     "scenes": [
      {
       "kind": "hook",
-      "say": "When police hold someone, when does the twenty-four hour clock start? When they stop the person from leaving, or when they write down an arrest? On the fifth of November, the Supreme Court answered.",
-      "show": "When does the 24-hour clock start?"
+      "say": "Police kisi ko pakad le, toh 24 ghante ki ghadi kab se chalti hai? Jab woh use jaane se rokti hai, ya jab arrest likha jaata hai? 5 November ko Supreme Court ne iska jawab de diya.",
+      "show": "When does the 24-hour clock start?",
+      "speak": "Police किसी को पकड़ ले, तो 24 घंटे की घड़ी कब से चलती है? जब वो उसे जाने से रोकती है, या जब arrest लिखा जाता है? 5 November को Supreme Court ने इसका जवाब दे दिया।"
      },
      {
       "kind": "timeline",
-      "say": "In a drug case from Tripura, police held four people at about two in the afternoon. Their arrest was recorded only at eleven the next morning.",
+      "say": "Tripura ke ek drug case mein police ne 4 logon ko dopahar kareeb 2 baje pakda. Lekin unka arrest record hua agle din subah 11 baje.",
       "show": "Held first, arrested on paper later",
       "timeline": [
        {
@@ -385,16 +386,18 @@
         "when": "5 Nov 2026",
         "what": "Supreme Court orders release"
        }
-      ]
+      ],
+      "speak": "Tripura के एक drug case में police ने 4 लोगों को दोपहर करीब 2 बजे पकड़ा। लेकिन उनका arrest record हुआ अगले दिन सुबह 11 बजे।"
      },
      {
       "kind": "kinetic",
-      "say": "Article twenty-two of the Constitution says a person who is arrested must reach a magistrate within twenty-four hours. Only the travel time to court can be left out.",
-      "show": "24 hours. Only travel time excluded."
+      "say": "Constitution ka Article 22 kehta hai, jo arrest hua hai, use 24 ghante ke andar magistrate ke saamne pahunchna hoga. Sirf court tak ke travel ka time chhoda ja sakta hai.",
+      "show": "24 hours. Only travel time excluded.",
+      "speak": "Constitution का Article 22 कहता है, जो arrest हुआ है, उसे 24 घंटे के अंदर magistrate के सामने पहुँचना होगा। सिर्फ court तक के travel का time छोड़ा जा सकता है।"
      },
      {
       "kind": "steps",
-      "say": "Say police hold Ravi at ten on Monday morning. His arrest is recorded on Tuesday, and he reaches court at one. Counted from the arrest, that looks like five hours. Counted from detention, it is twenty-seven. Take away one hour of travel and it is twenty-six. That is over the limit.",
+      "say": "Maan lijiye police ne Ravi ko Monday subah 10 baje pakda. Arrest record hua Tuesday ko, aur woh court pahuncha 1 baje. Arrest se gino toh lagta hai 5 ghante. Detention se gino toh 27 ghante. 1 ghanta travel ka ghatao, toh 26. Yaani limit se zyada.",
       "show": "Count from detention, not paperwork",
       "steps": [
        {
@@ -413,35 +416,40 @@
         "label": "Verdict",
         "calc": "Over 24 hours: release"
        }
-      ]
+      ],
+      "speak": "मान लीजिए police ने Ravi को Monday सुबह 10 बजे पकड़ा। Arrest record हुआ Tuesday को, और वो court पहुँचा 1 बजे। Arrest से गिनो तो लगता है 5 घंटे। Detention से गिनो तो 27 घंटे। 1 घंटा travel का घटाओ, तो 26। यानी limit से ज़्यादा।"
      },
      {
       "kind": "kinetic",
-      "say": "The Court called that hidden gap before the arrest record a buffer zone. And it said a buffer zone is unconstitutional.",
-      "show": "No 'buffer zone' before arrest"
+      "say": "Arrest record se pehle ke is chhupe gap ko Court ne buffer zone kaha. Aur saaf kaha, buffer zone unconstitutional hai.",
+      "show": "No 'buffer zone' before arrest",
+      "speak": "Arrest record से पहले के इस छुपे gap को Court ने buffer zone कहा। और साफ़ कहा, buffer zone unconstitutional है।"
      },
      {
       "kind": "big_number",
-      "say": "So it ordered all four freed. Even the strict bail rules of the drug law could not override the right to liberty.",
+      "say": "Isliye Court ne chaaron ko chhodne ka order diya. Drug law ke sakht bail rules bhi liberty ke right se upar nahi ja sake.",
       "show": "Four appellants ordered released",
       "number": {
        "value": "4",
        "label": "appellants ordered freed"
-      }
+      },
+      "speak": "इसलिए Court ने चारों को छोड़ने का order दिया। Drug law के सख़्त bail rules भी liberty के right से ऊपर नहीं जा सके।"
      },
      {
       "kind": "kinetic",
-      "say": "Magistrates must now write down the real time of detention. They can even refuse further custody if a hold under twenty-four hours was unreasonably long.",
-      "show": "Magistrates must record real detention time"
+      "say": "Ab magistrate ko detention ka asli time likhna hoga. Aur agar 24 ghante se kam ki hold bhi bina wajah lambi thi, toh woh aage ki custody mana bhi kar sakte hain.",
+      "show": "Magistrates must record real detention time",
+      "speak": "अब magistrate को detention का असली time लिखना होगा। और अगर 24 घंटे से कम की hold भी बिना वजह लंबी थी, तो वो आगे की custody मना भी कर सकते हैं।"
      },
      {
       "kind": "outro",
-      "say": "Remember this. The clock starts when police hold you, not when the paperwork says so. Still unknown: whether agencies like the Enforcement Directorate will change how they work.",
-      "show": "The clock starts when you're held"
+      "say": "Bas yeh yaad rakhiye. Ghadi tab se chalti hai jab police aapko pakadti hai, tab se nahi jab paperwork kehta hai. Abhi yeh pata nahi ki Enforcement Directorate jaisi agencies apna tareeka badlengi ya nahi.",
+      "show": "The clock starts when you're held",
+      "speak": "बस यह याद रखिए। घड़ी तब से चलती है जब police आपको पकड़ती है, तब से नहीं जब paperwork कहता है। अभी यह पता नहीं कि Enforcement Directorate जैसी agencies अपना तरीका बदलेंगी या नहीं।"
      }
     ]
    },
-   "reel_hash": "2326a1efd006",
+   "reel_hash": "8ed13a61f89f",
    "read_min": 6,
    "must_read": true
   },
@@ -773,16 +781,17 @@
     }
    ],
    "reel": {
-    "voice": "en-IN-NeerjaNeural",
+    "voice": "hi-IN-SwaraNeural",
     "scenes": [
      {
       "kind": "hook",
-      "say": "Can you be barred from a village election for having a third child? In six Indian states, yes. Could the Supreme Court change that?",
-      "show": "Third child, no village seat?"
+      "say": "Kya teesra bachcha hone par aap gaon ka election nahi lad sakte? India ke 6 states mein, haan. Kya Supreme Court yeh badal sakta hai?",
+      "show": "Third child, no village seat?",
+      "speak": "क्या तीसरा बच्चा होने पर आप गाँव का election नहीं लड़ सकते? India के 6 states में, हाँ। क्या Supreme Court यह बदल सकता है?"
      },
      {
       "kind": "timeline",
-      "say": "In 2003, three Supreme Court judges upheld such a rule, in a case called Javed. On the fourth of November, 2026, two judges said these laws have lost relevance.",
+      "say": "2003 mein, Supreme Court ke 3 judges ne aise rule ko sahi maana tha, Javed naam ke case mein. Phir 4 November 2026 ko, 2 judges ne kaha ki in laws ki ab relevance khatam ho gayi hai.",
       "show": "From 2003 ruling to 2026 referral",
       "timeline": [
        {
@@ -801,25 +810,28 @@
         "when": "4 Nov 2026",
         "what": "Javed sent to larger bench"
        }
-      ]
+      ],
+      "speak": "2003 में, Supreme Court के 3 judges ने ऐसे rule को सही माना था, Javed नाम के case में। फिर 4 November 2026 को, 2 judges ने कहा कि इन laws की अब relevance ख़त्म हो गई है।"
      },
      {
       "kind": "big_number",
-      "say": "One reason they gave is that overpopulation fears have faded. India's fertility rate fell to one point nine children per woman in 2024. That is below the replacement level of two point one.",
+      "say": "Ek wajah unhone yeh di ki overpopulation ka darr ab kam ho gaya hai. 2024 mein India ka fertility rate gir kar 1 point 9 bachche per woman ho gaya. Yeh replacement level, yaani 2 point 1, se neeche hai.",
       "show": "Fertility rate, 2024",
       "number": {
        "value": "1.9",
        "label": "Children per woman, 2024"
-      }
+      },
+      "speak": "एक वजह उन्होंने यह दी कि overpopulation का डर अब कम हो गया है। 2024 में India का fertility rate गिर कर 1 point 9 बच्चे per woman हो गया। यह replacement level, यानी 2 point 1, से नीचे है।"
      },
      {
       "kind": "kinetic",
-      "say": "So why didn't the two judges just scrap the rule? Because a bench must follow rulings made by benches of the same size or larger. Two judges cannot overrule three.",
-      "show": "Two judges cannot overrule three"
+      "say": "Toh sawaal yeh hai, 2 judges ne rule seedha khatam kyun nahi kiya? Kyunki ek bench ko apne barabar ya badi bench ke faisle maanne padte hain. 2 judges, 3 ka faisla nahi palat sakte.",
+      "show": "Two judges cannot overrule three",
+      "speak": "तो सवाल यह है, 2 judges ने rule सीधा ख़त्म क्यों नहीं किया? क्योंकि एक bench को अपने बराबर या बड़ी bench के फ़ैसले मानने पड़ते हैं। 2 judges, 3 का फ़ैसला नहीं पलट सकते।"
      },
      {
       "kind": "steps",
-      "say": "Let's go step by step. Three judges decide in 2003. Two judges doubt that ruling in 2026, but there are fewer of them. So they send the case to the Chief Justice. Imagine the Chief Justice forms a bench of five. If three of the five agree, the old ruling ends.",
+      "say": "Ek ek step dekhiye. 2003 mein 3 judges faisla dete hain. 2026 mein 2 judges us faisle par shak karte hain, lekin woh sankhya mein kam hain. Isliye woh case Chief Justice ko bhejte hain. Maan lijiye Chief Justice 5 judges ki bench banate hain. Agar 5 mein se 3 sahmat hue, toh purana faisla khatam.",
       "show": "How an old ruling gets overturned",
       "steps": [
        {
@@ -838,11 +850,12 @@
         "label": "Larger bench",
         "calc": "Assume 3 of 5 say overrule"
        }
-      ]
+      ],
+      "speak": "एक एक step देखिए। 2003 में 3 judges फ़ैसला देते हैं। 2026 में 2 judges उस फ़ैसले पर शक करते हैं, लेकिन वो संख्या में कम हैं। इसलिए वो case Chief Justice को भेजते हैं। मान लीजिए Chief Justice 5 judges की bench बनाते हैं। अगर 5 में से 3 सहमत हुए, तो पुराना फ़ैसला ख़त्म।"
      },
      {
       "kind": "map",
-      "say": "For now, nothing changes. The rule still applies in Assam, Goa, Gujarat, Maharashtra, Odisha and Uttarakhand.",
+      "say": "Abhi ke liye kuch nahi badla. Yeh rule ab bhi Assam, Goa, Gujarat, Maharashtra, Odisha aur Uttarakhand mein laagu hai.",
       "show": "Six states still have the rule",
       "map": {
        "iso3": [
@@ -853,16 +866,18 @@
         20.59
        ],
        "label": "Six states keep the two-child rule"
-      }
+      },
+      "speak": "अभी के लिए कुछ नहीं बदला। यह rule अब भी Assam, Goa, Gujarat, Maharashtra, Odisha और Uttarakhand में लागू है।"
      },
      {
       "kind": "outro",
-      "say": "Remember this. Only a larger bench can overturn a Supreme Court ruling. Watch for the Chief Justice to set up that bench. No date has been given yet.",
-      "show": "Only a larger bench can overturn"
+      "say": "Yeh yaad rakhiye. Supreme Court ka faisla sirf badi bench hi palat sakti hai. Ab nazar rakhiye ki Chief Justice woh bench kab banate hain. Abhi tak koi date nahi di gayi hai.",
+      "show": "Only a larger bench can overturn",
+      "speak": "यह याद रखिए। Supreme Court का फ़ैसला सिर्फ़ बड़ी bench ही पलट सकती है। अब नज़र रखिए कि Chief Justice वो bench कब बनाते हैं। अभी तक कोई date नहीं दी गई है।"
      }
     ]
    },
-   "reel_hash": "b0ef38ccec7f",
+   "reel_hash": "bc60a2f085ca",
    "read_min": 7
   },
   {
@@ -1222,16 +1237,17 @@
     }
    ],
    "reel": {
-    "voice": "en-IN-NeerjaNeural",
+    "voice": "hi-IN-SwaraNeural",
     "scenes": [
      {
       "kind": "hook",
-      "say": "Trump's party just lost the US midterms. So why is he weighing a new attack on Iran?",
-      "show": "Lost the midterms. Now attack Iran?"
+      "say": "Trump ki party US midterms haar gayi hai. Toh phir woh Iran par naye attack ke baare mein kyun soch rahe hain?",
+      "show": "Lost the midterms. Now attack Iran?",
+      "speak": "Trump की party US midterms हार गई है। तो फिर वो Iran पर नए attack के बारे में क्यों सोच रहे हैं?"
      },
      {
       "kind": "timeline",
-      "say": "On the fifth of November, The New York Times reported Trump is weighing a renewed attack. He says he has no immediate plans, but is locked and loaded.",
+      "say": "5 November ko The New York Times ne report kiya ki Trump ek naye attack ke baare mein soch rahe hain. Woh kehte hain ki abhi koi immediate plan nahi hai, lekin woh locked and loaded hain.",
       "show": "No immediate plans, but 'locked and loaded'",
       "timeline": [
        {
@@ -1250,11 +1266,12 @@
         "when": "5 Nov",
         "what": "South Korea to seek approval for navy move"
        }
-      ]
+      ],
+      "speak": "5 November को The New York Times ने report किया कि Trump एक नए attack के बारे में सोच रहे हैं। वो कहते हैं कि अभी कोई immediate plan नहीं है, लेकिन वो locked and loaded हैं।"
      },
      {
       "kind": "map",
-      "say": "Near the Strait of Hormuz, Iran's Revolutionary Guard says tankers hit mines on two days in a row. It calls the strait closed to ships that do not coordinate with it.",
+      "say": "Strait of Hormuz ke paas, Iran ke Revolutionary Guard ka kehna hai ki lagatar do din tankers mines se takraye. Uske hisaab se yeh strait un ships ke liye band hai jo usse coordinate nahi karte.",
       "show": "Tankers hitting mines near Hormuz",
       "map": {
        "iso3": [
@@ -1268,11 +1285,12 @@
         26.6
        ],
        "label": "Strait of Hormuz"
-      }
+      },
+      "speak": "Strait of Hormuz के पास, Iran के Revolutionary Guard का कहना है कि लगातार दो दिन tankers mines से टकराए। उसके हिसाब से ये strait उन ships के लिए बंद है जो उससे coordinate नहीं करते।"
      },
      {
       "kind": "bar",
-      "say": "Oil prices swing fast. Brent fell about nine per cent after the vote. Then CBS reported a rebound to nearly ninety-seven dollars.",
+      "say": "Oil ke daam bahut tezi se badalte hain. Vote ke baad Brent kareeb 9 percent gira. Phir CBS ne report kiya ki daam wapas badhkar lagbhag sattanve dollar tak pahunch gaye.",
       "show": "Brent on 5 November: two reports",
       "chart": {
        "title": "Brent crude, 5 November",
@@ -1287,16 +1305,18 @@
          "value": 96.7
         }
        ]
-      }
+      },
+      "speak": "Oil के दाम बहुत तेज़ी से बदलते हैं। Vote के बाद Brent करीब 9 percent गिरा। फिर CBS ने report किया कि दाम वापस बढ़कर लगभग सत्तानवे dollar तक पहुँच गए।"
      },
      {
       "kind": "kinetic",
-      "say": "Here is the idea. Oil prices follow expectations. Traders price in the risk of a closed strait before any shortage arrives.",
-      "show": "Oil prices follow expectations"
+      "say": "Ab asli baat samjhiye. Oil ke daam expectations ke peeche chalte hain. Koi shortage aane se pehle hi traders band strait ka risk price mein jod dete hain.",
+      "show": "Oil prices follow expectations",
+      "speak": "अब असली बात समझिए। Oil के दाम expectations के पीछे चलते हैं। कोई shortage आने से पहले ही traders बंद strait का risk price में जोड़ देते हैं।"
      },
      {
       "kind": "steps",
-      "say": "Analysts estimated in twenty twenty-five that each ten dollar rise in the yearly average could add thirteen to fourteen billion dollars to India's import bill. Suppose the average goes from ninety to one hundred and ten dollars. That is two steps of ten. So India could pay about twenty-six to twenty-eight billion dollars more a year.",
+      "say": "Analysts ne 2025 mein andaza lagaya tha ki saal ke average price mein har 10 dollar ki badhat, India ke import bill mein 13 se 14 billion dollar jod sakti hai. Maan lijiye average 90 se 110 dollar ho jata hai. Yeh 10 10 ke do steps hain. Toh India ko saal mein lagbhag 26 se 28 billion dollar zyada dene pad sakte hain.",
       "show": "Every $10 could add $13–14bn",
       "steps": [
        {
@@ -1311,21 +1331,24 @@
         "label": "Extra yearly bill",
         "calc": "2 × $13–14bn = $26–28bn"
        }
-      ]
+      ],
+      "speak": "Analysts ने 2025 में अंदाज़ा लगाया था कि साल के average price में हर 10 dollar की बढ़त, India के import bill में 13 से 14 billion dollar जोड़ सकती है। मान लीजिए average 90 से 110 dollar हो जाता है। ये 10 10 के दो steps हैं। तो India को साल में लगभग 26 से 28 billion dollar ज़्यादा देने पड़ सकते हैं।"
      },
      {
       "kind": "kinetic",
-      "say": "So any hint of a strike, or a deal through Qatar, can move a bill India pays. The New York Times says his election losses raise the stakes.",
-      "show": "Strike or deal: India's bill can move"
+      "say": "Isliye strike ka koi bhi ishara, ya Qatar ke through koi deal, India ka ek bill upar neeche kar sakta hai. The New York Times ke mutabik election mein haar ne stakes aur badha diye hain.",
+      "show": "Strike or deal: India's bill can move",
+      "speak": "इसलिए strike का कोई भी इशारा, या Qatar के through कोई deal, India का एक bill ऊपर नीचे कर सकता है। The New York Times के मुताबिक election में हार ने stakes और बढ़ा दिए हैं।"
      },
      {
       "kind": "outro",
-      "say": "Remember: oil follows expectations. Watch the Qatar talks, new mine strikes, and a third US carrier group, delayed by at least two weeks.",
-      "show": "Watch: Qatar talks, mines, third carrier"
+      "say": "Yaad rakhiye, oil expectations ke peeche chalta hai. Nazar rakhiye Qatar talks par, naye mine strikes par, aur US ke teesre carrier group par, jo kam se kam 2 hafte late hai.",
+      "show": "Watch: Qatar talks, mines, third carrier",
+      "speak": "याद रखिए, oil expectations के पीछे चलता है। नज़र रखिए Qatar talks पर, नए mine strikes पर, और US के तीसरे carrier group पर, जो कम से कम 2 हफ्ते late है।"
      }
     ]
    },
-   "reel_hash": "6617b13efc79",
+   "reel_hash": "45cbd0ff40e4",
    "read_min": 7
   },
   {
@@ -1647,25 +1670,27 @@
     }
    ],
    "reel": {
-    "voice": "en-IN-NeerjaNeural",
+    "voice": "hi-IN-SwaraNeural",
     "scenes": [
      {
       "kind": "hook",
-      "say": "On the fifth of November, AI and chip stocks crashed on Wall Street. What set it off?",
-      "show": "What sank AI stocks on 5 November?"
+      "say": "5 November ko Wall Street par AI aur chip stocks crash ho gaye. Aakhir yeh shuru kisne kiya?",
+      "show": "What sank AI stocks on 5 November?",
+      "speak": "5 November को Wall Street पर AI और chip stocks crash हो गए। आख़िर यह शुरू किसने किया?"
      },
      {
       "kind": "big_number",
-      "say": "The S and P five hundred, an index of five hundred big US companies, fell four point three six per cent. It was the worst day since April twenty twenty-five.",
+      "say": "S and P 500, yaani America ki 500 badi companies ka index, chaar point teen chhah percent gira. April 2025 ke baad yeh sabse bura din tha.",
       "show": "Worst day since April 2025",
       "number": {
        "value": "−4.36%",
        "label": "S&P 500 on 5 November 2026"
-      }
+      },
+      "speak": "S and P 500, यानी America की 500 बड़ी companies का index, चार point तीन छह percent गिरा। April 2025 के बाद यह सबसे बुरा दिन था।"
      },
      {
       "kind": "bar",
-      "say": "Chip stocks fell hardest, about twelve per cent.",
+      "say": "Sabse zyada chip stocks gire, lagbhag 12 percent.",
       "show": "Chips fell hardest",
       "chart": {
        "title": "How far each index fell on 5 November",
@@ -1688,21 +1713,24 @@
          "value": 12
         }
        ]
-      }
+      },
+      "speak": "सबसे ज़्यादा chip stocks गिरे, लगभग 12 percent।"
      },
      {
       "kind": "kinetic",
-      "say": "Reports point to three things. Hedge funds sold to lock in their 2026 gains. Small investors sold heavily. And people feared that Democratic wins in Congress could slow data-centre building.",
-      "show": "Profit-taking, retail selling, election fears"
+      "say": "Reports teen wajah batati hain. Hedge funds ne apne 2026 ke gains lock karne ke liye becha. Chhote investors ne bhi jamkar becha. Aur dar tha ki Congress mein Democrats ki jeet se data centre banne ki speed dheemi ho sakti hai.",
+      "show": "Profit-taking, retail selling, election fears",
+      "speak": "Reports तीन वजह बताती हैं। Hedge funds ने अपने 2026 के gains lock करने के लिए बेचा। छोटे investors ने भी जमकर बेचा। और डर था कि Congress में Democrats की जीत से data centre बनने की speed धीमी हो सकती है।"
      },
      {
       "kind": "kinetic",
-      "say": "Here is the idea. A gain on a share you still hold is only on paper. When many holders sell at once, prices fall, and more holders rush to sell.",
-      "show": "Paper gains vanish fast"
+      "say": "Ab asli baat samjhiye. Jo share aapke paas abhi bhi hai, uska gain sirf kagaz par hai. Jab bahut saare log ek saath bechte hain, toh daam girte hain. Phir aur zyada log bechne bhaagte hain.",
+      "show": "Paper gains vanish fast",
+      "speak": "अब असली बात समझिए। जो share आपके पास अभी भी है, उसका gain सिर्फ़ काग़ज़ पर है। जब बहुत सारे लोग एक साथ बेचते हैं, तो दाम गिरते हैं। फिर और ज़्यादा लोग बेचने भागते हैं।"
      },
      {
       "kind": "steps",
-      "say": "Say a fund's chip shares grew from one hundred crore rupees to one hundred and fifty crore. That is a fifty crore gain, on paper. Then a twelve per cent fall wipes out eighteen crore. Only thirty-two crore of gain is left. More than a third, gone in one day.",
+      "say": "Maan lijiye ek fund ke chip shares 100 crore rupaye se badhkar 150 crore ho gaye. Matlab 50 crore ka gain, kagaz par. Phir 12 percent ki girawat 18 crore saaf kar deti hai. Ab gain bacha sirf 32 crore. Ek hi din mein ek tihai se zyada gain gaya.",
       "show": "A 12% fall, 36% of gain gone",
       "steps": [
        {
@@ -1721,11 +1749,12 @@
         "label": "Share of gain lost",
         "calc": "₹18 crore ÷ ₹50 crore = 36%"
        }
-      ]
+      ],
+      "speak": "मान लीजिए एक fund के chip shares 100 करोड़ रुपये से बढ़कर 150 करोड़ हो गए। मतलब 50 करोड़ का gain, काग़ज़ पर। फिर 12 percent की गिरावट 18 करोड़ साफ़ कर देती है। अब gain बचा सिर्फ़ 32 करोड़। एक ही दिन में एक तिहाई से ज़्यादा gain गया।"
      },
      {
       "kind": "players",
-      "say": "Nomura's Charlie McElligott called the unwind wildly acute. But AMD's chief, Lisa Su, says the market can be a little bit short-sighted. She still expects strong AI chip demand.",
+      "say": "Nomura ke Charlie McElligott ne is unwind ko wildly acute bataya. Lekin AMD ki chief, Lisa Su, kehti hain ki market thoda sa short-sighted ho sakta hai. Unhe ab bhi AI chips ki strong demand ki ummeed hai.",
       "show": "Is the selling overdone?",
       "players": [
        {
@@ -1736,16 +1765,18 @@
         "name": "Lisa Su",
         "role": "AMD: market 'a little bit short-sighted'"
        }
-      ]
+      ],
+      "speak": "Nomura के Charlie McElligott ने इस unwind को wildly acute बताया। लेकिन AMD की chief, Lisa Su, कहती हैं कि market थोड़ा सा short-sighted हो सकता है। उन्हें अब भी AI chips की strong demand की उम्मीद है।"
      },
      {
       "kind": "outro",
-      "say": "Remember: paper gains vanish fast when many holders sell at once. Next, watch whether chip stocks steady and the Nasdaq climbs back above its two-hundred-day average.",
-      "show": "Paper gains vanish fast"
+      "say": "Yaad rakhiye, jab bahut log ek saath bechte hain, toh kagaz wale gains jaldi gayab ho jaate hain. Aage dekhiye, kya chip stocks sambhalte hain aur kya Nasdaq wapas apne 200 din ke average ke upar aata hai.",
+      "show": "Paper gains vanish fast",
+      "speak": "याद रखिए, जब बहुत लोग एक साथ बेचते हैं, तो काग़ज़ वाले gains जल्दी ग़ायब हो जाते हैं। आगे देखिए, क्या chip stocks संभलते हैं और क्या Nasdaq वापस अपने 200 दिन के average के ऊपर आता है।"
      }
     ]
    },
-   "reel_hash": "22b5f8102bf9",
+   "reel_hash": "01fb28f11d1a",
    "read_min": 7
   },
   {
@@ -2100,25 +2131,27 @@
     }
    ],
    "reel": {
-    "voice": "en-IN-NeerjaNeural",
+    "voice": "hi-IN-SwaraNeural",
     "scenes": [
      {
       "kind": "hook",
-      "say": "For over three years, the Bank of England did not raise interest rates. On the fifth of November, it did. Why now?",
-      "show": "Why did the UK raise rates now?"
+      "say": "Teen saal se zyada, Bank of England ne interest rates nahi badhaye. 5 November ko usne badha diye. Toh ab hi kyun?",
+      "show": "Why did the UK raise rates now?",
+      "speak": "तीन साल से ज़्यादा, Bank of England ने interest rates नहीं बढ़ाए। 5 November को उसने बढ़ा दिए। तो अब ही क्यों?"
      },
      {
       "kind": "big_number",
-      "say": "It lifted Bank Rate, its main interest rate, from three point seven five to four per cent. The vote was eight to one.",
+      "say": "Usne Bank Rate, yaani apna main interest rate, teen point saat paanch se 4 percent kar diya. Vote tha 8 ke muqable 1.",
       "show": "Bank Rate: 3.75% to 4%",
       "number": {
        "value": "4%",
        "label": "Bank Rate, up from 3.75%"
-      }
+      },
+      "speak": "उसने Bank Rate, यानी अपना main interest rate, तीन point सात पाँच से 4 percent कर दिया। Vote था 8 के मुक़ाबले 1।"
      },
      {
       "kind": "bar",
-      "say": "The reason is prices. UK inflation hit three point five per cent in September. The target is two per cent. Rising energy prices are pushing it up.",
+      "say": "Wajah hai daam. September mein UK ki inflation saadhe teen percent pahunch gayi. Target hai 2 percent. Energy ke badhte daam ise upar dhakel rahe hain.",
       "show": "Inflation well above the 2% target",
       "chart": {
        "title": "UK inflation vs target",
@@ -2137,16 +2170,18 @@
          "value": 2
         }
        ]
-      }
+      },
+      "speak": "वजह है दाम। September में UK की inflation साढ़े तीन percent पहुँच गई। Target है 2 percent। Energy के बढ़ते दाम इसे ऊपर धकेल रहे हैं।"
      },
      {
       "kind": "kinetic",
-      "say": "Here is the idea. When loans cost more, people and firms spend less. Fewer buyers means prices rise more slowly.",
-      "show": "Dearer loans, less spending, slower prices"
+      "say": "Idea simple hai. Jab loan mehenga hota hai, log aur companies kam kharch karte hain. Kam kharidaar, matlab daam dheere badhte hain.",
+      "show": "Dearer loans, less spending, slower prices",
+      "speak": "Idea simple है। जब loan महँगा होता है, लोग और companies कम खर्च करते हैं। कम खरीदार, मतलब दाम धीरे बढ़ते हैं।"
      },
      {
       "kind": "steps",
-      "say": "Say you save one thousand pounds, and prices rise five per cent. At the old rate, you end with one thousand and thirty-seven pounds fifty. But the same goods now cost one thousand and fifty. At four per cent, you end with one thousand and forty. Still behind, but less.",
+      "say": "Maan lijiye aapne ek hazaar pound bachaaye. Daam 5 percent badhe. Purane rate par aapke paas hue ek hazaar saintees pound pachaas. Lekin wahi saamaan ab ek hazaar pachaas ka hai. 4 percent par aapke paas honge ek hazaar chaalis. Ab bhi peeche, par kam.",
       "show": "Savings vs prices: the gap shrinks",
       "steps": [
        {
@@ -2165,16 +2200,18 @@
         "label": "Gap",
         "calc": "−£12.50 shrinks to −£10"
        }
-      ]
+      ],
+      "speak": "मान लीजिए आपने एक हज़ार pound बचाए। दाम 5 percent बढ़े। पुराने rate पर आपके पास हुए एक हज़ार सैंतीस pound पचास। लेकिन वही सामान अब एक हज़ार पचास का है। 4 percent पर आपके पास होंगे एक हज़ार चालीस। अब भी पीछे, पर कम।"
      },
      {
       "kind": "kinetic",
-      "say": "Governor Andrew Bailey sees more energy pressure coming, and signalled another rise soon. Tracker mortgages in Britain already cost about fifteen pounds more a month per hundred thousand borrowed.",
-      "show": "More rises may follow"
+      "say": "Governor Andrew Bailey ko energy ka aur pressure aata dikh raha hai, aur unhone jald ek aur badhotri ka ishaara diya. Britain mein tracker mortgages ab har hundred thousand pound ke loan par mahine ke lagbhag 15 pound zyada pad rahe hain.",
+      "show": "More rises may follow",
+      "speak": "Governor Andrew Bailey को energy का और pressure आता दिख रहा है, और उन्होंने जल्द एक और बढ़ोतरी का इशारा दिया। Britain में tracker mortgages अब हर hundred thousand pound के loan पर महीने के लगभग 15 pound ज़्यादा पड़ रहे हैं।"
      },
      {
       "kind": "timeline",
-      "say": "Britain is not alone. The US Federal Reserve raised rates in September. India's Reserve Bank raised its repo rate in October.",
+      "say": "Britain akela nahi hai. US Federal Reserve ne September mein rates badhaye. India ke Reserve Bank ne October mein apna repo rate badhaya.",
       "show": "Rates rising around the world",
       "timeline": [
        {
@@ -2189,16 +2226,18 @@
         "when": "5 Nov 2026",
         "what": "Bank of England raises to 4%"
        }
-      ]
+      ],
+      "speak": "Britain अकेला नहीं है। US Federal Reserve ने September में rates बढ़ाए। India के Reserve Bank ने October में अपना repo rate बढ़ाया।"
      },
      {
       "kind": "outro",
-      "say": "Remember: higher rates cool spending, which slows prices. Markets expect another UK rise by February twenty twenty-seven.",
-      "show": "Next UK rise expected by Feb 2027"
+      "say": "Yaad rakhiye: zyada rates kharch ko thanda karte hain, aur isse daam dheere badhte hain. Market ko February 2027 tak UK mein ek aur badhotri ki ummeed hai.",
+      "show": "Next UK rise expected by Feb 2027",
+      "speak": "याद रखिए: ज़्यादा rates खर्च को ठंडा करते हैं, और इससे दाम धीरे बढ़ते हैं। Market को February 2027 तक UK में एक और बढ़ोतरी की उम्मीद है।"
      }
     ]
    },
-   "reel_hash": "2675c48ebde6",
+   "reel_hash": "29412ae5d26d",
    "read_min": 6
   }
  ],
