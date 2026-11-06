@@ -1,0 +1,274 @@
+{
+ "date": "2026-11-07",
+ "generated_at": "2026-11-07T04:17+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-06T03:05+05:30",
+  "end": "2026-11-07T04:06+05:30"
+ },
+ "counts": {
+  "stories": 5,
+  "briefs": 26,
+  "also": 13,
+  "planned_stories": 5,
+  "planned_briefs": 32,
+  "clusters": 1351,
+  "items": 1745
+ },
+ "sources": {
+  "ok": 112,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "NPR World: HTTP 403",
+   "SEBI: ReadTimeout: HTTPSConnectionPool(host='www.sebi.gov.in', port=443): Read timed out. (read timeout=15)"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-06",
+  "total": 18,
+  "matched": 3,
+  "misses": [
+   "Stabbing attack outside Sri Lankan embassy in Amman kills police officer",
+   "Bus-truck collision in Pakpattan, Punjab, Pakistan kills 11",
+   "Eight killed in shooting spree in Afyonkarahisar, Turkey",
+   "Grenada election: Dickon Mitchell's NDC wins second term",
+   "Paraguay president Peña resigns after ueno bank collapse; impeachment vote"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "sources: 1745 fresh items from 112/115 sources, 24 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 8,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 7
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 3,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 10,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 9
+   },
+   "problems": [
+    "next.text and next.unknowns: The story says the exact day the new Congress takes office is not given. The previous state records it as sworn in during the first"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 12,
+    "primary": 2,
+    "searches": 4,
+    "fetches": 3
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 3
+   },
+   "problems": [
+    "next.unknowns[3]: It mentions an 'earlier reported ₹300 cap per payment'. None of the claims mention a ₹300 cap. This introduces an unsupported figure that a ne"
+   ],
+   "error": null
+  }
+ ],
+ "sections": {
+  "world": {
+   "planned": 5,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-world-3: not verified",
+    "b-world-4: not verified",
+    "b-world-5: not verified"
+   ]
+  },
+  "india": {
+   "planned": 5,
+   "verified": 5,
+   "written": 5,
+   "passed": 5,
+   "lost": []
+  },
+  "affects_you": {
+   "planned": 5,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": [
+    "b-affects_you-3: not verified",
+    "b-affects_you-4: not verified",
+    "b-affects_you-5: not verified"
+   ]
+  },
+  "markets": {
+   "planned": 6,
+   "verified": 6,
+   "written": 6,
+   "passed": 6,
+   "lost": []
+  },
+  "tech_ai": {
+   "planned": 4,
+   "verified": 4,
+   "written": 4,
+   "passed": 4,
+   "lost": []
+  },
+  "science": {
+   "planned": 3,
+   "verified": 3,
+   "written": 3,
+   "passed": 3,
+   "lost": []
+  },
+  "f1": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  },
+  "cricket": {
+   "planned": 2,
+   "verified": 2,
+   "written": 2,
+   "passed": 2,
+   "lost": []
+  }
+ },
+ "timings": {
+  "gather": 24.9,
+  "triage": 48.9,
+  "merge": 4.7,
+  "scout": 43.0,
+  "editor": 125.1,
+  "stories+sections": 430.5
+ },
+ "usage": {
+  "calls": 54,
+  "failures": 0,
+  "cost_usd": 8.911,
+  "seconds": 2668.1,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0285,
+    "seconds": 8.4,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.7242,
+    "seconds": 196.6,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0476,
+    "seconds": 4.7,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.2745,
+    "seconds": 43.0,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4879,
+    "seconds": 125.1,
+    "failures": 0
+   },
+   "section": {
+    "calls": 8,
+    "cost_usd": 1.3171,
+    "seconds": 416.2,
+    "failures": 0
+   },
+   "research": {
+    "calls": 5,
+    "cost_usd": 0.8194,
+    "seconds": 330.3,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 5,
+    "cost_usd": 2.0311,
+    "seconds": 687.1,
+    "failures": 0
+   },
+   "briefs": {
+    "calls": 4,
+    "cost_usd": 1.0719,
+    "seconds": 339.1,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 10,
+    "cost_usd": 0.6717,
+    "seconds": 131.6,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 4,
+    "cost_usd": 1.0225,
+    "seconds": 247.4,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 5,
+    "cost_usd": 0.3502,
+    "seconds": 122.2,
+    "failures": 0
+   },
+   "cover": {
+    "calls": 1,
+    "cost_usd": 0.0646,
+    "seconds": 16.4,
+    "failures": 0
+   }
+  }
+ }
+}
