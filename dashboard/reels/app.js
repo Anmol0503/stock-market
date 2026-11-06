@@ -468,8 +468,9 @@ function storyHTML(s, i, n) {
         ${!v && s.dek ? `<p class="st-d clamp">${esc(s.dek)}</p>` : ''}
       </div>
       <div class="st-act">
-        ${v ? `<button class="vbtn" data-act="vsound" aria-pressed="${Player.sound}" aria-label="${Player.sound ? 'Turn sound off' : 'Turn sound on'}">${icon('vol', 20, 'on')}${icon('mute', 20, 'off')}</button>` : ''}
-        <button class="read press" data-act="explain" data-story="${id}">${icon('book', 18)}<span>Read the explainer · ${esc(s.read_min || 4)} min</span></button>
+        ${v ? `<button class="vbtn" data-act="vsound" aria-pressed="${Player.sound}" aria-label="${Player.sound ? 'Turn sound off' : 'Turn sound on'}">${icon('vol', 20, 'on')}${icon('mute', 20, 'off')}</button>
+        <button class="vbtn vspd${Player.speed !== 1 ? ' fast' : ''}" data-act="vspeed" aria-label="Playback speed ${Player.speed}×. Tap to change">${Player.speed}×</button>` : ''}
+        <button class="read press" data-act="explain" data-story="${id}">${icon('book', 18)}<span>Explainer<span class="rmin"> · ${esc(s.read_min || 4)} min</span></span></button>
       </div>
     </div>
     ${v ? '<div class="st-prog"><i></i></div>' : ''}

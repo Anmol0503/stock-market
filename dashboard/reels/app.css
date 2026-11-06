@@ -272,11 +272,14 @@ button.row:active,a.row:active{transform:scale(.99)}
 .st-act{display:flex;gap:10px;margin-top:5px}
 .vbtn{width:48px;height:48px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;
   background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22)}
+.vspd{font:800 14px/1 Inter,system-ui,sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.vspd.fast{background:#fff;color:#161a24}
 .vbtn .on{display:none} html.sound-on .vbtn .on{display:block} html.sound-on .vbtn .off{display:none}
 .read{flex:1;min-width:0;height:48px;border-radius:99px;padding:0 18px;display:flex;align-items:center;justify-content:center;gap:8px;
   background:#fff;color:#161a24;font-weight:700;font-size:15px;box-shadow:0 10px 24px rgba(0,0,0,.28);white-space:nowrap}
 .read svg{color:var(--b)}
 .read span{overflow:hidden;text-overflow:ellipsis}
+@media (max-width:360px){.st-act .rmin{display:none}}
 .st-play{position:absolute;z-index:3;left:50%;top:36%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;display:none;
   align-items:center;justify-content:center;color:#fff;background:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   border:1.5px solid rgba(255,255,255,.4)}

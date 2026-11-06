@@ -50,6 +50,10 @@ window.Player = (() => {
   let held = 0;               // >0 while the explainer covers the deck: never autoplay underneath it
   let pa = null;              // Play-all state: {ids, i}
   let lastPoll = 0;
+  // Playback speed: the reader's choice, remembered on this device. Pitch is kept, so faster stays natural.
+  const SPEEDS = [1, 1.25, 1.5, 1.75, 2];
+  let speed = (() => { try { const x = parseFloat(localStorage.getItem('reelSpeed')); return SPEEDS.includes(x) ? x : 1; } catch (e) { return 1; } })();
+  const speedLabel = x => `${x}×`;
 
   // ------------------------------------------------------------ manifest matching
   /** Only http(s) or plain relative paths (relative to the app, e.g. ../media/<date>/x.mp4) are allowed. */
@@ -135,7 +139,29 @@ window.Player = (() => {
     play();
   }
 
+  function applySpeed() {
+    V.defaultPlaybackRate = speed;            // a new src starts at the default rate
+    if (V.playbackRate !== speed) V.playbackRate = speed;
+  }
+  V.preservesPitch = true; V.webkitPreservesPitch = true;
+  V.addEventListener('loadedmetadata', applySpeed);
+  V.addEventListener('play', applySpeed);
+  function paintSpeed() {
+    document.querySelectorAll('.vspd').forEach(b => {
+      b.textContent = speedLabel(speed);
+      b.setAttribute('aria-label', `Playback speed ${speedLabel(speed)}. Tap to change`);
+      b.classList.toggle('fast', speed !== 1);
+    });
+  }
+  function cycleSpeed() {
+    speed = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length];
+    try { localStorage.setItem('reelSpeed', String(speed)); } catch (e) { /* private mode: this session only */ }
+    applySpeed(); paintSpeed();
+    if (cfg.toast) cfg.toast(`Reels play at ${speedLabel(speed)}`);
+  }
+
   function play() {
+    applySpeed();
     userPaused = false;
     setCls('paused', false);
     let p;
@@ -210,6 +236,7 @@ window.Player = (() => {
     if (!t) return;
     switch (t.dataset.act) {
       case 'vsound': e.preventDefault(); toggleSound(); break;
+      case 'vspeed': e.preventDefault(); cycleSpeed(); break;
       case 'vplay': e.preventDefault(); if (pa) { if (V.ended) V.currentTime = 0; play(); } else userPlay(t); break;
       case 'vtoggle': tapMedia(t); break;
       case 'playall': e.preventDefault(); playAll(t.dataset.story || null); break;
@@ -245,9 +272,11 @@ window.Player = (() => {
         <h3 class="pa-h clamp"></h3>
         <div class="pa-act">
           <button class="vbtn" data-act="vsound" aria-label="Turn sound off" aria-pressed="true">${svg('vol', 20, 'on')}${svg('mute', 20, 'off')}</button>
+          <button class="vbtn vspd" data-act="vspeed">${speedLabel(speed)}</button>
           <button class="read" data-act="pa-read">${svg('book', 18)}<span>Read explainer</span></button>
         </div></div></div>`;
     root.hidden = false;
+    paintSpeed();
     // The tap that opened Play all is the user gesture that lets this element play with sound.
     sound = true; V.muted = false; paintSound();
     if (host && host !== root) { V.pause(); clearHost(host); }
@@ -368,7 +397,7 @@ window.Player = (() => {
     if (shouldPoll() && Date.now() - lastPoll > 60000) refresh();
   });
 
-  function init(opts) { cfg = opts || {}; paintSound(); }
+  function init(opts) { cfg = opts || {}; paintSound(); paintSpeed(); }
 
   return {
     init, load, bind, refresh, playAll, hold, release, detach, stopAll, mediaUrl,
@@ -377,6 +406,8 @@ window.Player = (() => {
     list: () => stories.filter(s => avail.has(s.id)).map(s => s.id),
     seconds: () => [...avail.values()].reduce((n, v) => n + (v.duration || 0), 0),
     get sound() { return sound; },
+    get speed() { return speed; },
+    paintSpeed,
     get playingAll() { return !!pa; },
     // test hooks (used by tests/ui/flows.mjs)
     _video: V,

@@ -158,6 +158,32 @@ async function main() {
       assert(ex.open && /Spain/.test(ex.h) && await page.evaluate(() => document.getElementById('pa').hidden), 'Read explainer should close the player and open s1');
     });
 
+    // 5b -----------------------------------------------------------------------------------------------
+    await flow('Speed button: cycles 1× → 1.25× → 1.5×, applies to the reel, survives reload and Play all', h, async page => {
+      await openApp(page, base);
+      const card = '.card.story[data-story="s1"]';
+      await page.evaluate(c => { const s = document.querySelector(c).closest('.slot'); document.getElementById('deck').scrollTop = s.offsetTop; }, card);
+      await settle(page);
+      assert((await page.textContent(`${card} .vspd`)).trim() === '1×', 'starts at 1×');
+      await page.click(`${card} .vspd`);
+      await page.click(`${card} .vspd`);
+      let s = await page.evaluate(c => ({ label: document.querySelector(c + ' .vspd').textContent, rate: Player._video.playbackRate,
+                                          def: Player._video.defaultPlaybackRate, saved: localStorage.getItem('reelSpeed') }), card);
+      assert(s.label === '1.5×' && s.rate === 1.5 && s.def === 1.5 && s.saved === '1.5', JSON.stringify(s));
+      await page.reload();
+      await page.waitForFunction(() => window.Briefing && window.Briefing.ready && document.querySelector('.card.story .vspd'), null, { timeout: 20000 });
+      assert((await page.textContent(`${card} .vspd`)).trim() === '1.5×', 'remembered after reload');
+      await page.click('.cv-play');
+      await page.waitForFunction(() => Player._state().pa, null, { timeout: 5000 });
+      await page.evaluate(() => Player._video.dispatchEvent(new Event('ended')));          // advance: new src
+      await page.waitForTimeout(400);
+      s = await page.evaluate(() => ({ label: document.querySelector('#pa .vspd').textContent, rate: Player._video.playbackRate, i: Player._state().pa.i }));
+      assert(s.i === 1 && s.label === '1.5×' && s.rate === 1.5, 'Play all keeps the speed on the next reel: ' + JSON.stringify(s));
+      for (let k = 0; k < 3; k++) await page.click('#pa .vspd');                             // 1.75, 2, back to 1
+      s = await page.evaluate(() => ({ label: document.querySelector('#pa .vspd').textContent, rate: Player._video.playbackRate }));
+      assert(s.label === '1×' && s.rate === 1, 'wraps back to 1×: ' + JSON.stringify(s));
+    });
+
     // 6 ------------------------------------------------------------------------------------------------
     await flow('Stale reel (reel_hash mismatch) is ignored: s3 shows the gradient hero', h, async page => {
       const urls = [];
