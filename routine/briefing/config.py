@@ -104,11 +104,14 @@ ROLES: dict[str, dict] = {
     "section":    {"model": SONNET, "effort": "medium", "tools": "WebSearch,WebFetch", "budget": 1.2, "timeout": 600},
     "briefs":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 2.0, "timeout": 600},
     "cover":      {"model": OPUS,   "effort": "medium", "tools": "",                   "budget": 1.0, "timeout": 420},
+    "hinglish":   {"model": OPUS,   "effort": "medium", "tools": "",                   "budget": 0.8, "timeout": 420},
 }
 for _role, _cfg in ROLES.items():       # env overrides, e.g. BRIEFING_MODEL_WRITER=claude-sonnet-5-5
     _cfg["model"] = os.environ.get(f"BRIEFING_MODEL_{_role.upper()}", _cfg["model"])
 
-# reel voice (Phase 2)
+# reel voice (Phase 2). Reels are narrated in Hinglish by a Hindi voice; the English voice is the fallback
+# when the Hinglish step fails (the English script is the checked source of truth).
+REEL_VOICE_HI = "hi-IN-SwaraNeural"
 REEL_VOICE = "en-IN-NeerjaNeural"
 
 DISCLAIMER = ("Not financial advice. A personal, automated news briefing: explanations of public reporting with "

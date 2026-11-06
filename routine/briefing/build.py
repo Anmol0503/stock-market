@@ -232,15 +232,16 @@ def reel_problems(scenes: list[dict], research: dict, year: int, markets: dict |
         return [{"where": "reel", "issue": "no reel script", "severity": "fix", "soft": False}]
     if not 5 <= len(scenes) <= 9:
         add("reel", f"{len(scenes)} scenes; aim for 5–8", True)
-    total = sum(words(sc.get("say")) for sc in scenes)
+    total = sum(words(sc.get("say_en") or sc.get("say")) for sc in scenes)   # length: the checked English
     lo, hi = config.WORDS["reel_total"]
     if not _in(total, "reel_total", 0.12):
         add("reel", f"narration {total} words; aim for {lo}–{hi}", 80 <= total <= 260)
     corpus = claim_corpus(research, markets)
     for i, sc in enumerate(scenes):
         say = sc.get("say") or ""
-        if words(say) > 55:
-            add(f"reel[{i}]", "scene narration over 50 words", words(say) <= 90)
+        if words(sc.get("say_en") or say) > 55:
+            add(f"reel[{i}]", "scene narration over 50 words", words(sc.get("say_en") or say) <= 90)
+        say = f"{say} {sc.get('speak') or ''}"           # what the voice reads must be clean too
         if UNSPEAKABLE.search(say):
             add(f"reel[{i}]", "narration has symbols; spell them out (per cent, rupees)", False)
         if RELATIVE.search(say):
@@ -270,6 +271,8 @@ def _ist(published: str | None) -> str | None:
 
 def _scene(sc: dict) -> dict:
     out = {"kind": sc.get("kind"), "say": sc.get("say", "").strip(), "show": " ".join((sc.get("show") or "").split()[:8])}
+    if sc.get("speak"):                         # Hinglish: `say` = Roman captions, `speak` = what the voice reads
+        out["speak"] = sc["speak"].strip()
     k = sc.get("kind")
     if k == "big_number":
         out["number"] = {"value": sc.get("number_value", ""), "label": sc.get("number_label", "")}
@@ -377,7 +380,8 @@ def public_story(sid: str, slot: dict, s: dict, research: dict, *, thread: dict 
     reel_ok = bool(scenes) and not rp
     if not reel_ok and scenes:
         notes.append(f"{sid}: reel script failed checks, no video ({rp[0]['issue'] if rp else 'empty'})")
-    reel = {"voice": config.REEL_VOICE, "scenes": scenes} if reel_ok else None
+    voice = config.REEL_VOICE_HI if scenes and all(sc.get("speak") for sc in scenes) else config.REEL_VOICE
+    reel = {"voice": voice, "scenes": scenes} if reel_ok else None
     reel_hash = hashlib.sha1(json.dumps(reel, sort_keys=True).encode()).hexdigest()[:12] if reel else None
 
     story = {

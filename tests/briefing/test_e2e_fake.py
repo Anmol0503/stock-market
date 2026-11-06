@@ -46,6 +46,11 @@ def ids(prompt, pattern=r'<item id="([^"]+)"'):
     return re.findall(pattern, prompt)
 
 
+def hinglish(p, s):
+    rows = json.loads(re.search(r"<story>\n(.*)\n</story>", p, re.S).group(1))
+    return {"scenes": [{"say": "Dekhiye " + r["say"], "speak": "देखिए " + r["say"]} for r in rows]}
+
+
 def handlers():
     def triage(p, s):
         out = []
@@ -98,7 +103,7 @@ def handlers():
                                  if "checks" in s["properties"] else {"ok": True, "problems": []}),
         "fixer": lambda p, s: story(), "section": section, "briefs": briefs, "cover": cover,
         "recall": lambda p, s: {"total": 0, "matched": 0, "misses": []},
-        "bootstrap": lambda p, s: {"threads": []},
+        "bootstrap": lambda p, s: {"threads": []}, "hinglish": hinglish,
     }
 
 
@@ -111,7 +116,9 @@ def test_full_pipeline_on_fake_engine(monkeypatch):
     ed = json.loads((config.PUB / "2026-11-03.json").read_text())
     assert ed["status"] == "complete" and len(ed["stories"]) == 5
     assert [s["key"] for s in ed["sections"]] == SECTIONS
-    assert ed["stories"][0]["must_read"] and ed["stories"][0]["reel"]["voice"] == config.REEL_VOICE
+    assert ed["stories"][0]["must_read"] and ed["stories"][0]["reel"]["voice"] == config.REEL_VOICE_HI
+    sc = ed["stories"][0]["reel"]["scenes"][0]
+    assert sc["say"].startswith("Dekhiye ") and sc["speak"].startswith("देखिए ") and "say_en" not in sc
     assert all(s["thread"] and s["thread"]["status"] == "new" for s in ed["stories"])
     assert len(ed["quiz"]) == 3 and ed["cover"]["changes"] and ed["markets"]["quotes"]
     assert sum(len(s["items"]) for s in ed["sections"]) >= 8

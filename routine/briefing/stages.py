@@ -14,7 +14,7 @@ import re
 import time
 import traceback
 
-from . import agenda, build, cluster, config, gather, prompting, ranking, schemas, threads
+from . import agenda, build, cluster, config, gather, hinglish, prompting, ranking, schemas, threads
 from .engine import Engine, EngineError
 
 
@@ -528,6 +528,8 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
             rec.update(status="demote" if blocking else "ok", story=fixed, problems=left)
         else:
             rec.update(status="ok", story=story, problems=[])
+        if rec["status"] == "ok":
+            await _hinglish(R, sid, rec["story"], research, markets)
     except EngineError as e:
         rec["error"] = str(e)
         R.note(f"{sid} failed: {e}")
@@ -535,6 +537,28 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
     R.state["progress"]["stories_done"] = R.state["progress"].get("stories_done", 0) + 1
     R._save_state()
     return rec
+
+
+async def _hinglish(R: Run, sid: str, story: dict, research: dict, markets: dict | None) -> None:
+    """Re-voice the checked English reel as Hinglish (in place). On any failure the English reel stays."""
+    scenes = story.get("reel") or []
+    if not scenes or any(sc.get("speak") for sc in scenes):
+        return
+    hi = R._load(f"hinglish-{sid}")
+    if hi is None:
+        corpus = hinglish.story_corpus(story, build.claim_corpus(research, markets))
+
+        async def ask(system, prompt, schema):
+            return await R.ask("hinglish", system, prompt, schema, label=f"hinglish-{sid}", need_s=150)
+        try:
+            hi, left = await hinglish.adapt(ask, story, scenes, corpus, R.now.year)
+        except EngineError as e:
+            hi, left = None, [str(e)]
+        if hi is None:
+            R.note(f"{sid}: reel stays in English ({left[0] if left else 'no output'})")
+            return
+        R.put(f"hinglish-{sid}", hi)
+    story["reel"] = hinglish.apply(scenes, hi)
 
 
 def _lesson_never_drops(chk: dict) -> None:

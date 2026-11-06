@@ -5,6 +5,7 @@
   python3 -m routine.briefing publish [--branch B] [--dry-run]
   python3 -m routine.briefing status | summary
   python3 -m routine.briefing gather            # sources only (debug): writes raw.json + leads.json
+  python3 -m routine.briefing hinglish [--publish]   # re-voice a published edition's English reels as Hinglish
 
 Options: --date YYYY-MM-DD (default: today in IST), --force (overwrite a complete edition with a partial one).
 """
@@ -128,9 +129,50 @@ def cmd_gather(args) -> int:
     return 0
 
 
+def cmd_hinglish(args) -> int:
+    """Re-voice an already published edition's English reels in Hinglish (new reel_hash -> Actions re-renders)."""
+    import hashlib
+    from . import hinglish
+    from .engine import ClaudeEngine, EngineError
+    path = config.PUB / f"{args.date}.json"
+    ed = json.loads(path.read_text())
+    eng, year, changed = ClaudeEngine(), int(args.date[:4]), 0
+
+    async def one(s):
+        reel = s.get("reel") or {}
+        scenes = reel.get("scenes") or []
+        if not scenes or all(sc.get("speak") for sc in scenes):
+            return f"{s['id']}: nothing to do"
+
+        async def ask(system, prompt, schema):
+            return await eng.ask("hinglish", system, prompt, schema, label=f"hinglish-{s['id']}")
+        try:
+            hi, left = await hinglish.adapt(ask, s, scenes, hinglish.story_corpus(s), year)
+        except EngineError as e:
+            hi, left = None, [str(e)]
+        if hi is None:
+            return f"{s['id']}: stays English ({left[0] if left else 'no output'})"
+        new = [{k: v for k, v in sc.items() if k != "say_en"} for sc in hinglish.apply(scenes, hi)]
+        s["reel"] = {"voice": config.REEL_VOICE_HI, "scenes": new}
+        s["reel_hash"] = hashlib.sha1(json.dumps(s["reel"], sort_keys=True).encode()).hexdigest()[:12]
+        return f"{s['id']}: hinglish"
+
+    async def all_():
+        return await asyncio.gather(*(one(s) for s in ed.get("stories") or []))
+    for line in asyncio.run(all_()):
+        print(line)
+        changed += line.endswith(": hinglish")
+    if changed:
+        path.write_text(json.dumps(ed, ensure_ascii=False, indent=1))
+        if args.publish:
+            from . import publish
+            print(publish.publish(args.date))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="python3 -m routine.briefing")
-    ap.add_argument("command", choices=["next", "run", "status", "summary", "publish", "gather"])
+    ap.add_argument("command", choices=["next", "run", "status", "summary", "publish", "gather", "hinglish"])
     ap.add_argument("--date", default=None)
     ap.add_argument("--fresh", action="store_true", help="discard today's working files first")
     ap.add_argument("--force", action="store_true")
@@ -141,7 +183,7 @@ def main(argv=None) -> int:
     args.date = args.date or config.edition_date()
     signal.signal(signal.SIGPIPE, signal.SIG_DFL) if hasattr(signal, "SIGPIPE") else None
     return {"next": cmd_next, "run": cmd_run, "status": cmd_status, "summary": cmd_summary,
-            "publish": cmd_publish, "gather": cmd_gather}[args.command](args)
+            "publish": cmd_publish, "gather": cmd_gather, "hinglish": cmd_hinglish}[args.command](args)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
 """Build one narrated vertical reel (1080×1920 MP4) from a story's reel script.
 
 Per scene:
-1. Indian English narration (edge-tts) with word timings.
+1. Narration (edge-tts) with word timings. Hinglish reels: the Hindi voice reads `speak` (Hindi words in
+   Devanagari) while the captions show `say` (the same words in Roman script), mapped onto the voice's timings.
 2. The scene's designed frame, rendered by headless Chrome from scenes.py.
 3. A slow push-in on the frame plus its audio.
 
@@ -25,7 +26,7 @@ from . import scenes
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE / "fonts"
 VOICE = "en-IN-NeerjaNeural"
-RATE = "+10%"                     # a touch brisker than default: reels land in ~60–95 s
+RATES = {"en-IN-NeerjaNeural": "+10%", "hi-IN-SwaraNeural": "+8%", "hi-IN-MadhurNeural": "+8%"}   # a touch brisker
 FPS = 30
 PAD_S = 0.35                      # breath after each scene's narration
 CAPTION_Y = 950                   # caption centre (px from top): inside the 45–54% band the app leaves visible
@@ -79,7 +80,7 @@ def speakable(text: str) -> str:
 
 async def _tts_once(text: str, voice: str, out: pathlib.Path) -> list[tuple[str, float, float]]:
     import edge_tts
-    comm = edge_tts.Communicate(text, voice, rate=RATE, boundary="WordBoundary")
+    comm = edge_tts.Communicate(text, voice, rate=RATES.get(voice, "+0%"), boundary="WordBoundary")
     audio, words = bytearray(), []
     async for ch in comm.stream():
         if ch["type"] == "audio":
@@ -104,6 +105,21 @@ def narrate(text: str, out: pathlib.Path, voice: str = VOICE) -> tuple[list, flo
             import time
             time.sleep(2 * (attempt + 1))
     return None
+
+
+def align(caption_text: str, timed: list[tuple[str, float, float]]) -> list[tuple[str, float, float]]:
+    """Put the caption words (Roman Hinglish) on the timings of the spoken words (mixed script). The two are
+    written word for word, so counts usually match; if not, each caption word takes the proportional slot."""
+    cap = speakable(caption_text).split()
+    if not cap or not timed:
+        return timed
+    if len(cap) == len(timed):
+        return [(c, s, e) for c, (_w, s, e) in zip(cap, timed)]
+    n, m, out = len(cap), len(timed), []
+    for i, c in enumerate(cap):
+        a, b = timed[i * m // n], timed[min(m - 1, max(i * m // n, (i + 1) * m // n - 1))]
+        out.append((c, a[1], b[2]))
+    return out
 
 
 def _even_words(text: str, start: float, secs_per_word: float = 0.4) -> list[tuple[str, float, float]]:
@@ -191,7 +207,7 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
             png, mp3, seg = work / f"s{i}.png", work / f"s{i}.mp3", work / f"seg{i}.mp4"
             render_png(scenes.scene_html(sc, section=story.get("section", "world"), headline=story.get("headline", ""),
                                          idx=i, total=len(sc_list), meta=meta), png)
-            res = narrate(sc.get("say", ""), mp3, voice) if narrated else None
+            res = narrate(sc.get("speak") or sc.get("say", ""), mp3, voice) if narrated else None
             if res is None:
                 narrated = False
                 words = _even_words(sc.get("say", ""), 0.0)
@@ -199,6 +215,8 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
                 audio_in = ["-f", "lavfi", "-t", f"{dur:.3f}", "-i", "anullsrc=r=44100:cl=mono"]
             else:
                 words, adur = res
+                if sc.get("speak"):
+                    words = align(sc.get("say", ""), words)
                 dur = adur + PAD_S
                 audio_in = ["-i", str(mp3)]
             words_all += [(w, s + t0, e + t0) for w, s, e in words]

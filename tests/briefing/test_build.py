@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import copy
 
-from routine.briefing import build
+from routine.briefing import build, config
 
 from .conftest import NOW, iso, research, story
 
@@ -193,3 +193,73 @@ def test_thin_sourcing_is_caught_before_the_fix_pass():
     s["numbers"][0]["cids"] = ["k1"]
     s["lesson"]["steps"][2]["cids"], s["lesson"]["apply"]["cids"] = ["k1"], ["k1"]
     assert any(p["where"] == "sources" and "only 1 site" in p["issue"] for p in problems(s))
+
+
+# ---------------------------------------------------------------- Hinglish reels
+def _hi_case():
+    from routine.briefing import hinglish
+    en = [{"kind": "hook", "say": "Say a fund makes a profit of two crore rupees on the third of November."}]
+    good = {"scenes": [{"say": "Maan lijiye ek fund 2 crore ka profit kamata hai, 3 November ko.",
+                        "speak": "मान लीजिए एक fund 2 करोड़ का profit कमाता है, 3 November को।"}]}
+    return hinglish, en, good
+
+
+def test_hinglish_good_output_passes_and_keeps_english():
+    hinglish, en, good = _hi_case()
+    assert hinglish.problems(en, good, set(), 2026) == []
+    out = hinglish.apply(en, good["scenes"])
+    assert out[0]["say_en"] == en[0]["say"] and out[0]["speak"].startswith("मान")
+
+
+def test_hinglish_catches_what_would_mislead_or_break_the_voice():
+    hinglish, en, good = _hi_case()
+    sc = good["scenes"][0]
+    cases = {
+        "scenes": {"scenes": []},
+        "Devanagari": {"scenes": [{**sc, "speak": sc["say"]}]},                    # voice can't read Roman Hindi
+        "Roman script": {"scenes": [{**sc, "say": sc["speak"]}]},
+        "relative date": {"scenes": [{"say": sc["say"].replace("3 November", "kal"),
+                                      "speak": sc["speak"].replace("3 November", "कल")}]},
+        "numbers in `say` and `speak` differ": {"scenes": [{**sc, "speak": sc["speak"].replace("2", "4")}]},
+        "not in the English": {"scenes": [{"say": sc["say"].replace("2 crore", "250 crore"),
+                                           "speak": sc["speak"].replace("2 करोड़", "250 करोड़")}]},
+        "symbols": {"scenes": [{"say": sc["say"] + " ₹", "speak": sc["speak"]}]},
+    }
+    for want, out in cases.items():
+        P = hinglish.problems(en, out, set(), 2026)
+        assert any(want in p for p in P), (want, P)
+    # "nikal" (come out) contains कल but isn't "kal"
+    ok = {"scenes": [{"say": sc["say"] + " Nikal gaya.", "speak": sc["speak"] + " निकल गया।"}]}
+    assert hinglish.problems(en, ok, set(), 2026) == []
+
+
+def test_hinglish_falls_back_to_english_after_two_bad_tries():
+    import asyncio
+    hinglish, en, _good = _hi_case()
+    calls = []
+
+    async def ask(system, prompt, schema):
+        calls.append(prompt)
+        return {"scenes": []}
+    hi, left = asyncio.run(hinglish.adapt(ask, {"headline": "x"}, en, set(), 2026))
+    assert hi is None and left and len(calls) == 2 and "PREVIOUS ATTEMPT" in calls[1]
+
+
+def test_public_reel_uses_hindi_voice_only_when_every_scene_is_hinglish():
+    s = story()
+    s["reel"] = [{**sc, "say_en": sc["say"], "speak": "देखिए " + sc["say"]} for sc in s["reel"]]
+    st, _notes, ok = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW, markets=None)
+    assert ok and st["reel"]["voice"] == config.REEL_VOICE_HI
+    assert st["reel"]["scenes"][0]["speak"].startswith("देखिए") and "say_en" not in st["reel"]["scenes"][0]
+    s["reel"][1].pop("speak")
+    st, _notes, _ok = build.public_story("s1", SLOT, s, research(), thread=None, window=WINDOW, now=NOW, markets=None)
+    assert st["reel"]["voice"] == config.REEL_VOICE
+
+
+def test_captions_follow_the_voice_timings():
+    from video import reel
+    timed = [("मान", 0.0, 0.3), ("लीजिए", 0.3, 0.7), ("fund", 0.7, 1.0)]
+    assert reel.align("Maan lijiye fund", timed) == [("Maan", 0.0, 0.3), ("lijiye", 0.3, 0.7), ("fund", 0.7, 1.0)]
+    out = reel.align("Maan lijiye ek fund", timed)               # one word more: proportional slots, in order
+    assert [w for w, _s, _e in out] == ["Maan", "lijiye", "ek", "fund"]
+    assert all(a[1] <= b[1] for a, b in zip(out, out[1:])) and out[-1][2] == 1.0

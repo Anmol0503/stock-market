@@ -4,7 +4,8 @@
 **The Morning Briefing** is the one live product. A daily deep-research news edition for one reader in India,
 ready by about 6:00 AM IST:
 - **Content:** 5 big stories (full explainer, a "Learn the idea" lesson with a worked example, and a narrated
-  reel that teaches the same idea), briefs for 8 sections,
+  reel that teaches the same idea, narrated in spoken Hinglish: `hinglish.py` re-voices the checked English
+  script, falling back to English if it fails), briefs for 8 sections,
   one-liners, a quiz, and "still developing" threads.
 - **Code:** `routine/briefing/`, run as `python3 -m routine.briefing`.
 - **Schedule:** a Claude Code cloud routine at 04:05 IST follows `routine/briefing/RUNBOOK.md`.

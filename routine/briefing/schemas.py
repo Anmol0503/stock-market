@@ -96,6 +96,9 @@ STORY = obj(
                  steps=arr(obj(label=STR, calc=STR)))),
 )
 
+# Hinglish narration for a reel: per scene, Roman script (captions) and mixed script (the Hindi voice)
+HINGLISH = obj(scenes=arr(obj(say=STR, speak=STR)))
+
 CHECK = obj(ok=BOOL, problems=arr(obj(where=STR, issue=STR, severity=enum("fix", "drop"))))
 
 SECTION_RESEARCH = obj(items=arr(obj(
