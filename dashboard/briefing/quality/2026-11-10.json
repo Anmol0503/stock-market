@@ -1,10 +1,10 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-10T14:55+05:30",
+ "generated_at": "2026-11-10T16:34+05:30",
  "status": "complete",
  "window": {
-  "start": "2026-11-09T03:06+05:30",
-  "end": "2026-11-10T14:37+05:30"
+  "start": "2026-11-09T04:17+05:30",
+  "end": "2026-11-10T16:17+05:30"
  },
  "counts": {
   "stories": 10,
@@ -12,8 +12,8 @@
   "also": 0,
   "planned_stories": 10,
   "planned_briefs": 0,
-  "clusters": 1364,
-  "items": 1844
+  "clusters": 1396,
+  "items": 1850
  },
  "sources": {
   "ok": 115,
@@ -28,74 +28,64 @@
    "Kraków Main Square drive-by shooting suspect dies after police shootout; six killed earlier",
    "Pitt Rivers Museum returns remains of 39 Naga people to Nagaland delegation",
    "China extends suspension of rare earth, diamond, lithium battery tech export curbs to Jan 10, 2027",
-   "17 killed, 12 injured in factory explosion in Aliağa, Turkey",
+   "Explosion at factory in Aliağa, Turkey kills 17, injures 12",
    "Russell Brand sentenced to 10 years 6 months for rape and sexual assault"
   ]
  },
  "fallback_plan": false,
  "notes": [
-  "s10: 2 undated non-official source(s) kept, flagged",
-  "sources: 1844 fresh items from 115/115 sources, 12 Wikipedia events, 9 market quotes",
-  "s8: reel stays in English (scene 18: `say` has a relative date; use the absolute date)"
+  "sources: 1850 fresh items from 115/115 sources, 12 Wikipedia events, 9 market quotes",
+  "s3: reel stays in English (scene 9: `say` must be Roman script only)"
  ],
  "stories": [
   {
    "slot": "s1",
    "status": "ok",
    "research": {
-    "claims": 15,
-    "sites": 9,
+    "claims": 21,
+    "sites": 11,
     "primary": 0,
-    "searches": 5,
-    "fetches": 4
+    "searches": 4,
+    "fetches": 6
    },
-   "problems": [
-    "for_you.text: 'Nothing changes yet for prices or rules in India' is not in any claim. The same paragraph says the sources don't cover what India stands to gain ",
-    "reel: narration 763 words; aim for 380–650",
-    "reel: narration 763 words; aim for 380–650"
-   ],
+   "problems": [],
    "error": null
   },
   {
    "slot": "s2",
    "status": "ok",
    "research": {
-    "claims": 19,
-    "sites": 9,
+    "claims": 21,
+    "sites": 10,
     "primary": 0,
-    "searches": 2,
+    "searches": 7,
     "fetches": 8
    },
-   "problems": [
-    "lesson: The lesson is 573 words. The allowed range is 180–520, so it needs trimming. Step 5 and the apply text both repeat the India estimate, which is one plac",
-    "lesson: 573 words; the lesson should be 180–520"
-   ],
+   "problems": [],
    "error": null
   },
   {
    "slot": "s3",
    "status": "ok",
    "research": {
-    "claims": 16,
-    "sites": 6,
+    "claims": 17,
+    "sites": 9,
     "primary": 0,
-    "searches": 3,
-    "fetches": 5
+    "searches": 6,
+    "fetches": 8
    },
-   "problems": [
-    "reel[8]: The reel says \"Nearly all missed the same way.\" The claim only says polls understated the Democratic margin by at least 2 points in 23 of 27 races. Tha"
-   ],
+   "problems": [],
    "error": null
   },
   {
    "slot": "s4",
    "status": "ok",
    "research": {
-    "claims": 15,
-    "sites": 10,
+    "claims": 14,
+    "sites": 3,
     "primary": 0,
-    "searches": 5,
-    "fetches": 8
+    "searches": 3,
+    "fetches": 2
    },
    "problems": [],
    "error": null
@@ -104,15 +94,13 @@
    "slot": "s5",
    "status": "ok",
    "research": {
-    "claims": 13,
+    "claims": 12,
     "sites": 4,
     "primary": 0,
-    "searches": 2,
+    "searches": 0,
     "fetches": 3
    },
-   "problems": [
-    "reel[4].timeline: The timeline dates the minister's promise of a probe to 10 Nov 2026. The claims give no date for his X post. They only show the reports were p"
-   ],
+   "problems": [],
    "error": null
   },
   {
@@ -121,22 +109,25 @@
    "research": {
     "claims": 13,
     "sites": 5,
-    "primary": 8,
-    "searches": 1,
-    "fetches": 3
+    "primary": 1,
+    "searches": 4,
+    "fetches": 6
    },
-   "problems": [],
+   "problems": [
+    "reel[4]: Relative date wording: \"today's rules\" should be replaced with an absolute framing, for example \"the root of the rules taking effect on 1 January 2027 ",
+    "reel[4]: relative date in narration"
+   ],
    "error": null
   },
   {
    "slot": "s7",
    "status": "ok",
    "research": {
-    "claims": 15,
+    "claims": 11,
     "sites": 5,
     "primary": 0,
-    "searches": 7,
-    "fetches": 7
+    "searches": 2,
+    "fetches": 3
    },
    "problems": [],
    "error": null
@@ -148,12 +139,11 @@
     "claims": 14,
     "sites": 6,
     "primary": 0,
-    "searches": 6,
-    "fetches": 6
+    "searches": 2,
+    "fetches": 5
    },
    "problems": [
-    "lesson.apply: The text says India's exports to China grew 40.7% 'from just $19.26 billion'. The claims give $19.26 billion as the Jan–Sep 2026 level after the g",
-    "reel[16]: The reel repeats the same error: 'grew faster, forty point seven per cent, but from only nineteen point two six billion dollars'. $19.26 billion is th"
+    "lesson.apply: numbers not found in the claims: 301"
    ],
    "error": null
   },
@@ -161,14 +151,16 @@
    "slot": "s9",
    "status": "ok",
    "research": {
-    "claims": 16,
-    "sites": 11,
-    "primary": 0,
-    "searches": 5,
-    "fetches": 8
+    "claims": 14,
+    "sites": 9,
+    "primary": 4,
+    "searches": 3,
+    "fetches": 5
    },
    "problems": [
-    "reel[16] views (Albanese): The reel says criminal law 'must change'. The claim says only that the PM 'flagged' criminal-law changes. That is stronger than the c"
+    "lesson.apply: The claims don't say the realistic test for COP31 is whether the cover decision speeds up cuts. They also don't say the cover decision is meant to",
+    "reel[18]: 'Every year of slow cuts made the removal bill bigger' is not what the example shows. It compares two fixed totals, 700 and 600 units, and has no year",
+    "views[0] / misconception.fact: Andersen's quote and the UNEP claim support only minimising overshoot and returning to 1.5°C. 'Small and brief' and 'smaller, sho"
    ],
    "error": null
   },
@@ -177,10 +169,10 @@
    "status": "ok",
    "research": {
     "claims": 15,
-    "sites": 7,
-    "primary": 0,
-    "searches": 3,
-    "fetches": 6
+    "sites": 8,
+    "primary": 2,
+    "searches": 5,
+    "fetches": 4
    },
    "problems": [],
    "error": null
@@ -188,77 +180,77 @@
  ],
  "sections": null,
  "timings": {
-  "gather": 18.7,
-  "triage": 40.2,
-  "merge": 4.8,
-  "scout": 62.7,
-  "editor": 107.4,
-  "stories+sections": 865.6
+  "gather": 17.2,
+  "triage": 30.7,
+  "merge": 5.0,
+  "scout": 34.9,
+  "editor": 77.1,
+  "stories+sections": 910.3
  },
  "usage": {
-  "calls": 70,
+  "calls": 75,
   "failures": 0,
-  "cost_usd": 15.891,
-  "seconds": 5505.5,
+  "cost_usd": 18.339,
+  "seconds": 6108.1,
   "by_role": {
    "recall": {
     "calls": 1,
     "cost_usd": 0.0237,
-    "seconds": 15.9,
+    "seconds": 8.2,
     "failures": 0
    },
    "triage": {
     "calls": 8,
-    "cost_usd": 0.7202,
-    "seconds": 228.7,
+    "cost_usd": 0.7246,
+    "seconds": 207.9,
     "failures": 0
    },
    "same_story": {
     "calls": 1,
-    "cost_usd": 0.0437,
-    "seconds": 4.8,
+    "cost_usd": 0.0434,
+    "seconds": 5.0,
     "failures": 0
    },
    "scout": {
     "calls": 1,
-    "cost_usd": 0.3509,
-    "seconds": 62.7,
+    "cost_usd": 0.2313,
+    "seconds": 34.9,
     "failures": 0
    },
    "editor": {
     "calls": 1,
-    "cost_usd": 0.438,
-    "seconds": 107.4,
+    "cost_usd": 0.3751,
+    "seconds": 77.1,
     "failures": 0
    },
    "research": {
     "calls": 10,
-    "cost_usd": 1.7992,
-    "seconds": 870.8,
+    "cost_usd": 1.7305,
+    "seconds": 879.0,
     "failures": 0
    },
    "writer": {
     "calls": 10,
-    "cost_usd": 6.0358,
-    "seconds": 2325.8,
+    "cost_usd": 6.6361,
+    "seconds": 2543.9,
     "failures": 0
    },
    "checker": {
-    "calls": 17,
-    "cost_usd": 1.1182,
-    "seconds": 231.7,
-    "failures": 0
-   },
-   "hinglish": {
-    "calls": 14,
-    "cost_usd": 2.5573,
-    "seconds": 938.8,
+    "calls": 20,
+    "cost_usd": 1.4974,
+    "seconds": 285.7,
     "failures": 0
    },
    "fixer": {
-    "calls": 7,
-    "cost_usd": 2.8038,
-    "seconds": 718.8,
+    "calls": 10,
+    "cost_usd": 4.0723,
+    "seconds": 968.8,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 13,
+    "cost_usd": 3.0043,
+    "seconds": 1097.8,
     "failures": 0
    }
   }
