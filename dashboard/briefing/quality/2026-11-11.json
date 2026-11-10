@@ -1,0 +1,258 @@
+{
+ "date": "2026-11-11",
+ "generated_at": "2026-11-11T04:26+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-10T15:17+05:30",
+  "end": "2026-11-11T04:05+05:30"
+ },
+ "counts": {
+  "stories": 9,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1026,
+  "items": 1271
+ },
+ "sources": {
+  "ok": 113,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "NPR World: HTTP 403"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-10",
+  "total": 13,
+  "matched": 0,
+  "misses": [
+   "Kraków Main Square drive-by shooter dies in hospital after police shootout; six killed earlier",
+   "Pitt Rivers Museum returns remains of 39 Naga people to Nagaland delegation",
+   "China extends suspension of rare earth, diamond, lithium battery tech export curbs to Jan 10, 2027",
+   "17 killed, 12 injured in factory explosion in Aliağa, Turkey",
+   "Russell Brand sentenced to 10.5 years for rape and sexual assault"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s8: 1 undated non-official source(s) kept, flagged",
+  "s10: no source published inside the news window",
+  "s10: dropped (didn't pass the fact check)",
+  "sources: 1271 fresh items from 113/115 sources, 22 Wikipedia events, 2 market quotes",
+  "s1: reel stays in English (scene 16: numbers not in the English script or the story: 243)"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 21,
+    "sites": 13,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 21,
+    "sites": 10,
+    "primary": 2,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 10,
+    "primary": 0,
+    "searches": 7,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 13,
+    "primary": 3,
+    "searches": 8,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 9,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 13,
+    "primary": 2,
+    "searches": 6,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 9,
+    "primary": 4,
+    "searches": 8,
+    "fetches": 10
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 24,
+    "sites": 10,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 6,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 10,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 1
+   },
+   "problems": [
+    "reel[5]: The narration uses the relative word \"Today\" ('Today the Pitt Rivers holds...'). Replace it with an absolute date or remove it.",
+    "reel[5]: relative date in narration"
+   ],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 25.1,
+  "triage": 28.8,
+  "merge": 4.6,
+  "scout": 30.9,
+  "editor": 103.7,
+  "stories+sections": 1038.8
+ },
+ "usage": {
+  "calls": 79,
+  "failures": 0,
+  "cost_usd": 20.806,
+  "seconds": 6641.2,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0221,
+    "seconds": 7.8,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6865,
+    "seconds": 189.6,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0452,
+    "seconds": 4.6,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.2066,
+    "seconds": 30.9,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4312,
+    "seconds": 103.7,
+    "failures": 0
+   },
+   "research": {
+    "calls": 18,
+    "cost_usd": 4.0528,
+    "seconds": 1354.2,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.2782,
+    "seconds": 2661.3,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 17,
+    "cost_usd": 1.3605,
+    "seconds": 232.6,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 15,
+    "cost_usd": 3.5836,
+    "seconds": 1297.4,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 7,
+    "cost_usd": 3.1391,
+    "seconds": 759.6,
+    "failures": 0
+   }
+  }
+ }
+}
