@@ -1,60 +1,58 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-10T04:26+05:30",
+ "generated_at": "2026-11-10T14:55+05:30",
  "status": "complete",
  "window": {
   "start": "2026-11-09T03:06+05:30",
-  "end": "2026-11-10T04:06+05:30"
+  "end": "2026-11-10T14:37+05:30"
  },
  "counts": {
-  "stories": 4,
-  "briefs": 31,
-  "also": 14,
-  "planned_stories": 5,
-  "planned_briefs": 31,
-  "clusters": 1248,
-  "items": 1679
+  "stories": 10,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1364,
+  "items": 1844
  },
  "sources": {
-  "ok": 112,
+  "ok": 115,
   "total": 115,
-  "failed": [
-   "CNBC Economy: HTTP 403",
-   "NPR World: HTTP 403",
-   "ThePrint: ReadTimeout: HTTPSConnectionPool(host='theprint.in', port=443): Read timed out. (read timeout=15)"
-  ]
+  "failed": []
  },
  "recall": {
   "edition": "2026-11-09",
-  "total": 22,
-  "matched": 6,
+  "total": 11,
+  "matched": 0,
   "misses": [
-   "Houthi missile intercepted over Riyadh damages Aramco Tower",
-   "Explosions on Qeshm Island after US military fires projectiles, Iranian media say",
-   "High-rise apartment fire in Taiyuan, Shanxi kills 14"
+   "Kraków Main Square drive-by shooting suspect dies after police shootout; six killed earlier",
+   "Pitt Rivers Museum returns remains of 39 Naga people to Nagaland delegation",
+   "China extends suspension of rare earth, diamond, lithium battery tech export curbs to Jan 10, 2027",
+   "17 killed, 12 injured in factory explosion in Aliağa, Turkey",
+   "Russell Brand sentenced to 10 years 6 months for rape and sexual assault"
   ]
  },
  "fallback_plan": false,
  "notes": [
-  "s1: demoted to a brief",
-  "s3: demoted to a brief",
-  "s3: 1 undated non-official source(s) kept, flagged",
-  "r2: demoted to a brief",
-  "sources: 1679 fresh items from 112/115 sources, 30 Wikipedia events, 2 market quotes"
+  "s10: 2 undated non-official source(s) kept, flagged",
+  "sources: 1844 fresh items from 115/115 sources, 12 Wikipedia events, 9 market quotes",
+  "s8: reel stays in English (scene 18: `say` has a relative date; use the absolute date)"
  ],
  "stories": [
   {
    "slot": "s1",
-   "status": "demote",
+   "status": "ok",
    "research": {
-    "claims": 14,
-    "sites": 8,
+    "claims": 15,
+    "sites": 9,
     "primary": 0,
-    "searches": 7,
-    "fetches": 8
+    "searches": 5,
+    "fetches": 4
    },
    "problems": [
-    "why_chain[1] and lesson.apply: The claims say oil fell after Trump's remarks. They don't say traders cut a risk premium or lowered their odds of war. That mecha"
+    "for_you.text: 'Nothing changes yet for prices or rules in India' is not in any claim. The same paragraph says the sources don't cover what India stands to gain ",
+    "reel: narration 763 words; aim for 380–650",
+    "reel: narration 763 words; aim for 380–650"
    ],
    "error": null
   },
@@ -62,30 +60,30 @@
    "slot": "s2",
    "status": "ok",
    "research": {
-    "claims": 14,
-    "sites": 7,
+    "claims": 19,
+    "sites": 9,
     "primary": 0,
-    "searches": 4,
+    "searches": 2,
     "fetches": 8
    },
-   "problems": [],
+   "problems": [
+    "lesson: The lesson is 573 words. The allowed range is 180–520, so it needs trimming. Step 5 and the apply text both repeat the India estimate, which is one plac",
+    "lesson: 573 words; the lesson should be 180–520"
+   ],
    "error": null
   },
   {
    "slot": "s3",
-   "status": "demote",
+   "status": "ok",
    "research": {
-    "claims": 11,
-    "sites": 4,
-    "primary": 1,
-    "searches": 4,
-    "fetches": 4
+    "claims": 16,
+    "sites": 6,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 5
    },
    "problems": [
-    "why_chain[2]: This says Yogi's figure 'comes from' comparing the roll with panchayat rolls, welfare lists and young adults. The claims only say he also cited th",
-    "dek: The dek says the figure was 'made by comparing other lists with the voter roll'. That states a method the claims don't establish. Yogi only cited those gro",
-    "check.why: This says Yogi's figure 'comes from panchayat, welfare and age-group comparisons'. The claims don't support that as the source or method. The answer ",
-    "misconception.fact: It says 'over 2.04 crore removed and about 84 lakh added'. That doesn't fit the story's own arithmetic, where 15.44 crore falling to about 1"
+    "reel[8]: The reel says \"Nearly all missed the same way.\" The claim only says polls understated the Democratic margin by at least 2 points in 23 of 27 races. Tha"
    ],
    "error": null
   },
@@ -94,10 +92,10 @@
    "status": "ok",
    "research": {
     "claims": 15,
-    "sites": 4,
+    "sites": 10,
     "primary": 0,
-    "searches": 4,
-    "fetches": 7
+    "searches": 5,
+    "fetches": 8
    },
    "problems": [],
    "error": null
@@ -106,201 +104,161 @@
    "slot": "s5",
    "status": "ok",
    "research": {
-    "claims": 15,
-    "sites": 5,
-    "primary": 1,
-    "searches": 3,
+    "claims": 13,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
     "fetches": 3
    },
    "problems": [
-    "for_you.text: The claims don't say the shops' main computers were untouched. The line 'the damage came from the fridge panels, not from the shops' main computer",
-    "lesson.apply: The claims don't say the attackers used the Claroty-published login bypass. They also don't say how the attackers got in. So 'That is how the atta"
+    "reel[4].timeline: The timeline dates the minister's promise of a probe to 10 Nov 2026. The claims give no date for his X post. They only show the reports were p"
    ],
    "error": null
   },
   {
-   "slot": "r1",
+   "slot": "s6",
    "status": "ok",
    "research": {
     "claims": 13,
     "sites": 5,
-    "primary": 1,
-    "searches": 4,
-    "fetches": 5
+    "primary": 8,
+    "searches": 1,
+    "fetches": 3
    },
    "problems": [],
    "error": null
   },
   {
-   "slot": "r2",
-   "status": "demote",
+   "slot": "s7",
+   "status": "ok",
    "research": {
-    "claims": 12,
-    "sites": 8,
+    "claims": 15,
+    "sites": 5,
+    "primary": 0,
+    "searches": 7,
+    "fetches": 7
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 14,
+    "sites": 6,
     "primary": 0,
     "searches": 6,
-    "fetches": 2
+    "fetches": 6
    },
    "problems": [
-    "why_chain[3]: The claims don't say each short deadline brings the leaders back to talks. They only say Trump is expected to meet Xi in Shenzhen. The causal link",
-    "what_happened.text: 'It appears to match the 10 January 2027 date' is a guess. No claim gives the end date of the 9 November extension. Cut it, or say plainly t"
+    "lesson.apply: The text says India's exports to China grew 40.7% 'from just $19.26 billion'. The claims give $19.26 billion as the Jan–Sep 2026 level after the g",
+    "reel[16]: The reel repeats the same error: 'grew faster, forty point seven per cent, but from only nineteen point two six billion dollars'. $19.26 billion is th"
    ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 11,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 8
+   },
+   "problems": [
+    "reel[16] views (Albanese): The reel says criminal law 'must change'. The claim says only that the PM 'flagged' criminal-law changes. That is stronger than the c"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [],
    "error": null
   }
  ],
- "sections": {
-  "world": {
-   "planned": 5,
-   "verified": 5,
-   "written": 5,
-   "passed": 5,
-   "lost": []
-  },
-  "india": {
-   "planned": 5,
-   "verified": 3,
-   "written": 3,
-   "passed": 3,
-   "lost": [
-    "b-india-4: not verified",
-    "b-india-5: not verified"
-   ]
-  },
-  "affects_you": {
-   "planned": 4,
-   "verified": 4,
-   "written": 4,
-   "passed": 4,
-   "lost": []
-  },
-  "markets": {
-   "planned": 5,
-   "verified": 5,
-   "written": 5,
-   "passed": 5,
-   "lost": []
-  },
-  "tech_ai": {
-   "planned": 4,
-   "verified": 3,
-   "written": 3,
-   "passed": 3,
-   "lost": [
-    "b-tech_ai-2: not verified"
-   ]
-  },
-  "science": {
-   "planned": 3,
-   "verified": 3,
-   "written": 3,
-   "passed": 3,
-   "lost": []
-  },
-  "f1": {
-   "planned": 2,
-   "verified": 2,
-   "written": 2,
-   "passed": 2,
-   "lost": []
-  },
-  "cricket": {
-   "planned": 3,
-   "verified": 3,
-   "written": 3,
-   "passed": 3,
-   "lost": []
-  }
- },
+ "sections": null,
  "timings": {
-  "gather": 26.4,
-  "triage": 45.5,
-  "merge": 3.7,
-  "scout": 43.0,
-  "editor": 118.0,
-  "stories+sections": 966.3
+  "gather": 18.7,
+  "triage": 40.2,
+  "merge": 4.8,
+  "scout": 62.7,
+  "editor": 107.4,
+  "stories+sections": 865.6
  },
  "usage": {
-  "calls": 67,
+  "calls": 70,
   "failures": 0,
-  "cost_usd": 10.684,
-  "seconds": 3225.1,
+  "cost_usd": 15.891,
+  "seconds": 5505.5,
   "by_role": {
    "recall": {
     "calls": 1,
-    "cost_usd": 0.0376,
-    "seconds": 12.5,
+    "cost_usd": 0.0237,
+    "seconds": 15.9,
     "failures": 0
    },
    "triage": {
     "calls": 8,
-    "cost_usd": 0.7155,
-    "seconds": 188.1,
+    "cost_usd": 0.7202,
+    "seconds": 228.7,
     "failures": 0
    },
    "same_story": {
     "calls": 1,
-    "cost_usd": 0.0452,
-    "seconds": 3.7,
+    "cost_usd": 0.0437,
+    "seconds": 4.8,
     "failures": 0
    },
    "scout": {
     "calls": 1,
-    "cost_usd": 0.3472,
-    "seconds": 43.0,
+    "cost_usd": 0.3509,
+    "seconds": 62.7,
     "failures": 0
    },
    "editor": {
     "calls": 1,
-    "cost_usd": 0.4852,
-    "seconds": 118.0,
+    "cost_usd": 0.438,
+    "seconds": 107.4,
     "failures": 0
    },
    "research": {
-    "calls": 7,
-    "cost_usd": 1.1805,
-    "seconds": 463.1,
-    "failures": 0
-   },
-   "section": {
-    "calls": 8,
-    "cost_usd": 1.238,
-    "seconds": 413.5,
+    "calls": 10,
+    "cost_usd": 1.7992,
+    "seconds": 870.8,
     "failures": 0
    },
    "writer": {
-    "calls": 7,
-    "cost_usd": 2.5159,
-    "seconds": 895.2,
-    "failures": 0
-   },
-   "briefs": {
-    "calls": 4,
-    "cost_usd": 1.2042,
-    "seconds": 396.2,
+    "calls": 10,
+    "cost_usd": 6.0358,
+    "seconds": 2325.8,
     "failures": 0
    },
    "checker": {
-    "calls": 15,
-    "cost_usd": 0.9035,
-    "seconds": 196.2,
+    "calls": 17,
+    "cost_usd": 1.1182,
+    "seconds": 231.7,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 14,
+    "cost_usd": 2.5573,
+    "seconds": 938.8,
     "failures": 0
    },
    "fixer": {
     "calls": 7,
-    "cost_usd": 1.5583,
-    "seconds": 344.0,
-    "failures": 0
-   },
-   "hinglish": {
-    "calls": 6,
-    "cost_usd": 0.4082,
-    "seconds": 142.4,
-    "failures": 0
-   },
-   "cover": {
-    "calls": 1,
-    "cost_usd": 0.0453,
-    "seconds": 8.8,
+    "cost_usd": 2.8038,
+    "seconds": 718.8,
     "failures": 0
    }
   }
