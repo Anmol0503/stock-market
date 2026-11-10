@@ -21,6 +21,7 @@ RELATIVE = re.compile(r"(?<!India )(?<!USA )\b(today|yesterday|tonight|tomorrow|
 UNSPEAKABLE = re.compile(r"[₹$%&/()*\[\]#@<>{}|~^]")
 NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
 AGGREGATORS = {"news.google.com", "msn.com", "flipboard.com", "news.yahoo.com", "newsbreak.com"}
+YEAR = re.compile(r"\b(1[0-9]|20)\d\d\b")
 REQUIRED_BLOCKS = ("so_far", "what_happened", "why_chain", "for_you", "next")
 W = config.WORDS
 
@@ -118,6 +119,9 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
     tl = hi.get("timeline") or []
     if n and not W["history_events"][0] <= len(tl) <= W["history_events"][1]:
         bad("history", f"timeline has {len(tl)} events; give {W['history_events'][0]}–{W['history_events'][1]} turning points")
+    undated = [e.get("when") or "?" for e in tl if not YEAR.search(e.get("when") or "")]
+    if undated:
+        bad("history", f"timeline entries without a year ({', '.join(undated[:3])}): give each turning point its year")
     for c in list(hi.get("cids") or []) + [e.get("cid") for e in tl]:
         if c and c not in cids:
             bad("history", f"cites unknown claim {c}")

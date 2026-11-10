@@ -71,7 +71,8 @@ def story(*, contested: bool = False) -> dict:
         "dek": words(32, 2),
         "so_far": {"text": words(105, 3), "cids": ["k1", "k2"]},
         "history": {"text": words(140, 4), "cids": ["k3", "k4"],
-                    "timeline": [{"when": f"Year {i}", "what": words(8, i), "cid": f"k{i + 1}"} for i in range(1, 5)]},
+                    "timeline": [{"when": w, "what": words(8, i), "cid": f"k{i + 1}"}
+                                 for i, w in enumerate(["Jan 2025", "Jun 2025", "Feb 2026", "Oct 2026"], 1)]},
         "what_happened": {"text": "The panel reported 1,250 cases and 68 deaths. " + words(95, 4), "cids": ["k1", "k3"]},
         "why_chain": [{"text": words(22, i), "cids": ["k4"]} for i in range(4)],
         "players": [], "numbers": [{"value": "1,250 cases", "meaning": "double last year", "cids": ["k1"]}],

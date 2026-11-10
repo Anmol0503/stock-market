@@ -30,7 +30,10 @@ from . import images, scenes
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE / "fonts"
 VOICE = "en-IN-NeerjaNeural"
-RATES = {"en-IN-NeerjaNeural": "+10%", "hi-IN-SwaraNeural": "+8%", "hi-IN-MadhurNeural": "+8%"}   # a touch brisker
+# Voice settings per voice. Swara is slowed a little and pitched slightly lower: the viewer picked this "calmer"
+# version from samples on 2026-11-10 because the default sounded irritating. (Speed is also adjustable in the app.)
+RATES = {"en-IN-NeerjaNeural": "+10%", "hi-IN-SwaraNeural": "-6%", "hi-IN-MadhurNeural": "-4%"}
+PITCHES = {"hi-IN-SwaraNeural": "-3Hz", "hi-IN-MadhurNeural": "-2Hz"}
 FPS = 30
 PAD_S = 0.35                      # breath after each scene's narration
 # Same labels as routine/briefing/config.CHAPTERS (video/ doesn't import the pipeline package).
@@ -92,7 +95,8 @@ def speakable(text: str) -> str:
 
 async def _tts_once(text: str, voice: str, out: pathlib.Path) -> list[tuple[str, float, float]]:
     import edge_tts
-    comm = edge_tts.Communicate(text, voice, rate=RATES.get(voice, "+0%"), boundary="WordBoundary")
+    comm = edge_tts.Communicate(text, voice, rate=RATES.get(voice, "+0%"), pitch=PITCHES.get(voice, "+0Hz"),
+                                boundary="WordBoundary")
     audio, words = bytearray(), []
     async for ch in comm.stream():
         if ch["type"] == "audio":

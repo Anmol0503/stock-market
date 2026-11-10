@@ -207,6 +207,9 @@ def test_history_is_required_and_sourced():
     issues = [p["issue"] for p in problems(s) if p["where"] == "history"]
     assert any("2 events" in i for i in issues) and any("unknown claim k99" in i for i in issues)
     s = story()
+    s["history"]["timeline"][1]["when"] = "Date not given"
+    assert any("without a year" in p["issue"] for p in problems(s))
+    s = story()
     s["history"]["text"] += " It began in 1871."            # a year that isn't in the claims
     assert any("1871" in p["issue"] for p in problems(s))
 

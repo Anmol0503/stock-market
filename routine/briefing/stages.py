@@ -481,20 +481,32 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
     try:
         research = R._load(f"research-{sid}")
         if research is None:
-            feedback = ""
+            feedback, fallback = "", None
             for attempt in range(2):
                 research = await R.ask("research", prompting.system("research"),
                                        prompting.research(slot, clusters, date=R.date, window=window, thread=thread)
                                        + feedback, schemas.RESEARCH, label=f"research-{sid}", need_s=720)
                 good = [c for c in research.get("claims") or [] if str(c.get("url", "")).startswith("http")]
                 sites = {build.domain(c["url"]) for c in good}
+                # History: dated background claims (with a year) so the reel can explain how we got here.
                 if len(good) >= 5 and len(sites) >= 3:
-                    break
+                    hist = _dated_history(research)
+                    if hist >= 4 or attempt == 1:
+                        break
+                    fallback = research                  # usable; one more try for the history
+                    feedback = (f"\n\nYOUR PREVIOUS ATTEMPT found only {hist} dated background claims. A viewer with "
+                                "no background must understand how this situation came about: search for its history "
+                                "(Wikipedia, encyclopaedias, timelines and explainers by established outlets) and return "
+                                "5–8 background claims, each with the year of the turning point, plus all the facts you "
+                                "found before.")
+                    continue
                 feedback = (f"\n\nYOUR PREVIOUS ATTEMPT used {len(good)} sourced claims from only {len(sites)} site(s): "
                             f"{', '.join(sorted(sites)) or 'none'}. Return at least 8 claims from at least 3 independent "
                             "sites. The <source> articles above are citable as they are (use their summary as the "
                             "excerpt), and official sites and wire copy count.")
                 research = None
+            if fallback is not None and (research is None or _dated_history(research) < _dated_history(fallback)):
+                research = fallback                      # the retry for history did worse: keep the first attempt
             if research is None:
                 raise EngineError(f"research-{sid}: fewer than 5 sourced claims from 3+ sites")
             R.put(f"research-{sid}", research)
@@ -568,6 +580,11 @@ async def _hinglish(R: Run, sid: str, story: dict, research: dict, markets: dict
             return
         R.put(f"hinglish-{sid}", hi)
     story["reel"] = hinglish.apply(scenes, hi)
+
+
+def _dated_history(research: dict) -> int:
+    return sum(1 for c in research.get("claims") or []
+               if c.get("kind") == "background" and build.YEAR.search(c.get("text") or ""))
 
 
 def _lesson_never_drops(chk: dict) -> None:
