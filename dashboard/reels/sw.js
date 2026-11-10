@@ -1,6 +1,7 @@
 /* The Briefing — service worker. Fresh when online, readable offline.
  *
- * - Precaches the app shell (+ digest.html, the old Daily Digest archive page).
+ * - Precaches the app shell: the reel feed (index.html + feed.*), the old text app (full.html + app.*, player.js)
+ *   and digest.html, the old Daily Digest archive page.
  * - Network-first for HTML / JS / CSS / JSON: a daily product must never show yesterday's edition because a cache won.
  *   The cached copy is only the offline fallback. Cache keys drop the "_" cache-busting query the app adds.
  * - Cache-first for images and fonts (they don't change once published).
@@ -9,9 +10,9 @@
  * - Cross-origin requests other than images/fonts (e.g. source links) go straight to the network.
  * Bump CACHE whenever this file or the shell changes; activate purges every other cache (including old reels-v*).
  */
-const CACHE = "briefing-v1";
-const SHELL = ["./", "./index.html", "./app.css", "./app.js", "./player.js", "./manifest.json", "./digest.html",
-               "./icon-180.png", "./icon-192.png", "./icon-512.png"];
+const CACHE = "briefing-v2";
+const SHELL = ["./", "./index.html", "./feed.css", "./feed.js", "./full.html", "./app.css", "./app.js", "./player.js",
+               "./manifest.json", "./digest.html", "./icon-180.png", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled(SHELL.map(u => c.add(new Request(u, { cache: "reload" }))))));

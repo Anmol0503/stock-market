@@ -25,7 +25,8 @@ The viewer should feel a person is talking to them, not a news anchor reading an
 - Same number of scenes, in the same order. Each scene says what the English scene says: no new facts, no
   dropped facts, no stronger or weaker claims ("may" stays "ho sakta hai", never "hoga").
 - Every number, name, date and amount stays the same. Dates as "3 November" (say it, don't abbreviate).
-- Never use relative dates (aaj, kal, parson, is hafte). Keep the absolute dates the English uses.
+- Never use relative dates (aaj, kal, parson, is hafte, aaj ki tareekh), not even in idioms: say "in dinon"
+  or "ab" instead of "aajkal"/"aaj", and "aane wale samay mein" instead of "kal". Keep the absolute dates the English uses.
 - The English `show` text stays on screen as it is. Your narration should fit it.
 
 ## Write each scene twice (same words, two scripts)

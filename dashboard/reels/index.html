@@ -1,64 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0c0e13">
+<meta name="theme-color" content="#05070c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Briefing">
-<meta name="description" content="The Morning Briefing: five big stories explained in depth, with short reels, briefs for every section and a 3-question quiz.">
+<meta name="description" content="The Briefing: the day's news as 10 narrated reels, each story explained in full.">
 <title>The Briefing</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./app.css">
-<script>
-  /* Apply theme + text size before first paint (no flash). Prefs moved from digest_prefs to briefing_prefs. */
-  (function(){ var p={}; try{ p=JSON.parse(localStorage.getItem('briefing_prefs')||localStorage.getItem('digest_prefs'))||{}; }catch(e){}
-    var dark=window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.dataset.theme=(p.theme==='dark'||p.theme==='light')?p.theme:(dark?'dark':'light');
-    document.documentElement.style.setProperty('--tsz', p.size||1); })();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./feed.css">
 </head>
-<body>
+<body class="nochrome">
 
-<header id="hdr">
-  <div class="brand">
-    <div class="logo" aria-hidden="true"><svg class="i" width="19" height="19" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></div>
-    <button class="wm" data-act="calendar" aria-label="Pick a day"><b>The Briefing</b><span id="sub">Loading…</span></button>
-    <button class="icb" data-act="calendar" aria-label="Pick a day"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></button>
-    <button class="icb" id="refresh" data-act="refresh" aria-label="Check for a newer edition"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
-    <button class="icb aa" data-act="display" aria-label="Theme and text size"><span>Aa</span></button>
-  </div>
-  <div id="late" hidden></div>
-  <nav id="tabs" aria-label="Sections"></nav>
-  <div id="prog"></div>
+<!-- The feed: one full-screen slide per reel, then "You're caught up". Filled in by feed.js. -->
+<main id="feed" aria-label="Reels"><div class="boot"><div class="spin"></div><span>Loading today’s reels…</span></div></main>
+
+<!-- Fixed chrome. On tall phones it sits in the letterbox above and below the 9:16 video. -->
+<header id="top">
+  <button id="dateBtn" class="pill" data-act="archive" aria-label="Pick a day">
+    <svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    <span id="dateLbl">The Briefing</span>
+    <svg class="i dn" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+  <button id="newPill" class="pill new" data-act="latest" hidden></button>
+  <div id="count" aria-live="polite"></div>
 </header>
 
-<main id="deck"><div class="empty"><div class="spinner"></div>Loading today’s briefing…</div></main>
+<footer id="bot">
+  <div id="track" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+    <div class="rail"><i class="buf"></i><i class="fill"></i><span class="ticks"></span><b class="knob"></b></div>
+    <span class="time" aria-hidden="true"></span>
+  </div>
+  <div class="row">
+    <button id="snd" class="cb" data-act="sound" aria-pressed="false" aria-label="Turn sound on">
+      <svg class="i on" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 18.4a9 9 0 0 0 0-12.8"/></svg>
+      <svg class="i off" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+    </button>
+    <button id="spd" class="cb" data-act="speed" aria-label="Playback speed 1×. Tap to change">1×</button>
+    <button id="chap" class="chap" data-act="chapters" aria-label="Chapters">
+      <svg class="i" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+      <span class="cl"></span><span class="cn"></span>
+    </button>
+    <button id="src" class="cb" data-act="sources" aria-label="Sources">
+      <svg class="i" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+    </button>
+  </div>
+</footer>
 
-<!-- Explainer: full-screen reading sheet, rendered lazily when opened -->
-<div id="ex" role="dialog" aria-modal="true" aria-label="Explainer" hidden><div class="ex-scroll" id="exScroll"></div></div>
-
-<!-- Bottom sheet: calendar + display settings -->
-<div id="mask" data-act="sheet-close"></div>
-<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="stitle">
+<!-- Bottom sheet: chapters, sources, pick a day -->
+<div id="mask" data-act="close"></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="stitle" hidden>
   <div class="grab"></div>
-  <div class="bar"><h3 id="stitle"></h3>
-    <button class="x" data-act="sheet-close" aria-label="Close"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="sbar"><h3 id="stitle"></h3>
+    <button class="x" data-act="close" aria-label="Close"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
   <div id="sbody"></div>
 </div>
 
-<!-- Play all: full-screen story-style player (filled in by player.js) -->
-<div id="pa" role="dialog" aria-modal="true" aria-label="Play all reels" hidden></div>
-
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="./player.js"></script>
-<script src="./app.js"></script>
+<script src="./feed.js"></script>
 </body>
 </html>

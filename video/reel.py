@@ -29,6 +29,13 @@ VOICE = "en-IN-NeerjaNeural"
 RATES = {"en-IN-NeerjaNeural": "+10%", "hi-IN-SwaraNeural": "+8%", "hi-IN-MadhurNeural": "+8%"}   # a touch brisker
 FPS = 30
 PAD_S = 0.35                      # breath after each scene's narration
+# Same labels as routine/briefing/config.CHAPTERS (video/ doesn't import the pipeline package).
+CHAPTER_LABELS = {
+    "hook": "The question", "what_happened": "What happened", "so_far": "The story so far",
+    "why": "Why it happened", "players": "Who's involved", "numbers": "By the numbers", "idea": "The idea",
+    "example": "Worked example", "views": "Different views", "for_you": "What it means for you",
+    "next": "What's next", "remember": "Remember this",
+}
 CAPTION_Y = 950                   # caption centre (px from top): inside the 45–54% band the app leaves visible
 
 
@@ -198,15 +205,25 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
     work = pathlib.Path(tempfile.mkdtemp(prefix=f"reel-{story['id']}-"))
     words_all: list[tuple[str, float, float]] = []
     segs, t0, narrated = [], 0.0, True
-    meta = f"{date_label} · {len(sc_list)} scenes"
+    # Chapters: runs of consecutive scenes with the same chapter key. Their start times go to the manifest so
+    # the app can skip and jump by chapter; the frame shows the chapter name and chapter progress.
+    keys = [sc.get("chapter") or "" for sc in sc_list]
+    chaptered = all(keys)
+    runs = [i for i, k in enumerate(keys) if chaptered and (i == 0 or k != keys[i - 1])]
+    chap_idx = [sum(1 for r in runs if r <= i) - 1 for i in range(len(sc_list))]
+    chapters: list[dict] = []
+    meta = f"{date_label} · {len(runs) if chaptered else len(sc_list)} {'chapters' if chaptered else 'scenes'}"
     thread = story.get("thread") or {}
     if thread.get("day", 1) > 1:
         meta = f"{date_label} · Day {thread['day']} of this story"
     try:
         for i, sc in enumerate(sc_list):
             png, mp3, seg = work / f"s{i}.png", work / f"s{i}.mp3", work / f"seg{i}.mp4"
+            if chaptered and i in runs:
+                chapters.append({"t": round(t0, 2), "key": keys[i], "label": CHAPTER_LABELS.get(keys[i], keys[i])})
             render_png(scenes.scene_html(sc, section=story.get("section", "world"), headline=story.get("headline", ""),
-                                         idx=i, total=len(sc_list), meta=meta), png)
+                                         idx=chap_idx[i] if chaptered else i, total=len(runs) if chaptered else len(sc_list),
+                                         meta=meta, chapter=CHAPTER_LABELS.get(keys[i], "") if chaptered else ""), png)
             res = narrate(sc.get("speak") or sc.get("say", ""), mp3, voice) if narrated else None
             if res is None:
                 narrated = False
@@ -244,6 +261,7 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
               "-movflags", "+faststart", str(mp4)], timeout=600)
         _run([ffmpeg(), "-y", "-i", str(work / "s0.png"), "-vf", "scale=720:-2", "-q:v", "4", str(jpg)], timeout=60)
         return {"story": story["id"], "reel_hash": story.get("reel_hash"), "file": mp4.name, "poster_file": jpg.name,
-                "duration_s": round(duration(mp4), 1), "bytes": mp4.stat().st_size, "narrated": narrated}
+                "duration_s": round(duration(mp4), 1), "bytes": mp4.stat().st_size, "narrated": narrated,
+                "chapters": chapters}
     finally:
         shutil.rmtree(work, ignore_errors=True)

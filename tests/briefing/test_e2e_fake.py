@@ -114,20 +114,21 @@ def test_full_pipeline_on_fake_engine(monkeypatch):
     state = asyncio.run(stages.run("2026-11-03", eng, now=NOW))
     assert state["status"] == "done", state.get("notes")
     ed = json.loads((config.PUB / "2026-11-03.json").read_text())
-    assert ed["status"] == "complete" and len(ed["stories"]) == 5
-    assert [s["key"] for s in ed["sections"]] == SECTIONS
+    # Reels-only: the fake editor offers 5 stories and the plan is topped up to the 8 needed for "complete".
+    assert ed["mode"] == "reels" and ed["status"] == "complete" and len(ed["stories"]) == 8
+    assert all(s["reel"] and s["reel"]["scenes"][0]["chapter"] == "hook" for s in ed["stories"])
+    assert not any(c[0] in ("section", "briefs", "cover") for c in eng.calls)          # nothing but reels
     assert ed["stories"][0]["must_read"] and ed["stories"][0]["reel"]["voice"] == config.REEL_VOICE_HI
     sc = ed["stories"][0]["reel"]["scenes"][0]
     assert sc["say"].startswith("Dekhiye ") and sc["speak"].startswith("देखिए ") and "say_en" not in sc
     assert all(s["thread"] and s["thread"]["status"] == "new" for s in ed["stories"])
-    assert len(ed["quiz"]) == 3 and ed["cover"]["changes"] and ed["markets"]["quotes"]
-    assert sum(len(s["items"]) for s in ed["sections"]) >= 8
+    assert ed["markets"]["quotes"] and ed["cover"]["watch_min"] >= 8 * 3
     thr = json.loads((config.PUB / "threads.json").read_text())
     assert len([t for t in thr["threads"] if t["status"] == "active"]) >= 5
     idx = json.loads((config.PUB / "index.json").read_text())
     assert idx["latest"] == "2026-11-03"
     q = json.loads((config.PUB / "quality" / "2026-11-03.json").read_text())
-    assert q["counts"]["stories"] == 5 and q["usage"]["calls"] > 10
+    assert q["counts"]["stories"] == 8 and q["usage"]["calls"] > 10
 
     # Resume: a second run re-uses every cached step (no new model calls) and keeps the edition.
     calls_before = len(eng.calls)
@@ -146,6 +147,7 @@ def test_failed_engine_still_writes_quality_report(monkeypatch):
 
 
 def test_failed_section_falls_back_to_one_liners(monkeypatch):
+    monkeypatch.setattr(config, "REELS_ONLY", False)           # the full edition (sections) is kept for rollback
     """If every planned brief in a section fails verification, its headlines become one-liners and the
     section says so honestly (no fake 'nothing major' note); diagnostics land in the quality file."""
     monkeypatch.setattr(gather, "run", fake_raw)

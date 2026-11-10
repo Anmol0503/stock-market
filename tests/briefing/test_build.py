@@ -228,6 +228,10 @@ def test_hinglish_catches_what_would_mislead_or_break_the_voice():
     for want, out in cases.items():
         P = hinglish.problems(en, out, set(), 2026)
         assert any(want in p for p in P), (want, P)
+    anchored = {"scenes": [{"say": sc["say"] + " 10 November ke agle hafte.", "speak": sc["speak"] + " 10 November के अगले हफ़्ते।"}]}
+    assert hinglish.problems(en, anchored, set(), 2026) == []
+    loose = {"scenes": [{"say": sc["say"] + " Agle hafte.", "speak": sc["speak"] + " अगले हफ़्ते।"}]}
+    assert any("relative date" in p for p in hinglish.problems(en, loose, set(), 2026))
     # "nikal" (come out) contains कल but isn't "kal"
     ok = {"scenes": [{"say": sc["say"] + " Nikal gaya.", "speak": sc["speak"] + " निकल गया।"}]}
     assert hinglish.problems(en, ok, set(), 2026) == []

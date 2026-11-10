@@ -1,16 +1,19 @@
 name: Render briefing reels
 
-# The cloud routine publishes dashboard/briefing/<date>.json around 04:30 IST. This job turns each big story's
-# reel script into a narrated vertical MP4 (video/pipeline.py), uploads them to the release briefing-<date>
-# (MP4s never go into git), commits the manifest the app reads, and redeploys Pages, which copies recent
-# reels next to the app (see pages.yml).
+# The cloud routine publishes dashboard/briefing/<date>.json around 05:00 IST with up to 10 reel scripts.
+# 1. plan:    which reels need rendering (a reel already in the manifest with the same reel_hash is skipped).
+# 2. render:  one job per reel, all in parallel (a 4-minute reel takes ~5 minutes to render; one after
+#             another, 10 would take most of an hour). Each uploads its MP4 + poster to the release
+#             briefing-<date> (MP4s never go into git) and hands its metadata to the next job.
+# 3. publish: merges the metadata into the manifest the app reads, commits it, and redeploys Pages, which
+#             copies recent reels next to the app (see pages.yml).
 on:
   push:
     branches: [main]
     paths: ['dashboard/briefing/2*.json']
   schedule:
-    - cron: '45 23 * * *'   # 05:15 IST safety net
-    - cron: '30 0 * * *'    # 06:00 IST second safety net
+    - cron: '15 0 * * *'    # 05:45 IST safety net
+    - cron: '0 1 * * *'     # 06:30 IST second safety net
   workflow_dispatch:
     inputs:
       date:
@@ -35,49 +38,99 @@ permissions:
   actions: write
 
 jobs:
-  render:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    outputs:
+      date: ${{ steps.plan.outputs.date }}
+      ids: ${{ steps.plan.outputs.ids }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install ffmpeg and the voice
-        run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q "edge-tts>=7,<8"
-
       - name: Fetch a test edition from another branch
         if: ${{ inputs.edition_ref != '' && inputs.edition_ref != null }}
         run: |
           git fetch -q origin "${{ inputs.edition_ref }}"
           git show "origin/${{ inputs.edition_ref }}:dashboard/briefing/${{ inputs.date }}.json" > /tmp/edition.json
+      - id: plan
+        run: |
+          args="--date ${{ inputs.date || 'latest' }} --plan"
+          if [ -f /tmp/edition.json ]; then args="$args --edition /tmp/edition.json"; fi
+          out=$(python -m video.pipeline $args)
+          echo "$out"
+          echo "date=$(echo "$out" | python -c 'import json,sys; print(json.load(sys.stdin)["date"])')" >> "$GITHUB_OUTPUT"
+          echo "ids=$(echo "$out" | python -c 'import json,sys; print(json.dumps(json.load(sys.stdin)["ids"]))')" >> "$GITHUB_OUTPUT"
 
-      - name: Render reels
+  render:
+    needs: plan
+    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        id: ${{ fromJSON(needs.plan.outputs.ids) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ffmpeg and the voice
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q "edge-tts>=7,<8"
+      - name: Fetch a test edition from another branch
+        if: ${{ inputs.edition_ref != '' && inputs.edition_ref != null }}
+        run: |
+          git fetch -q origin "${{ inputs.edition_ref }}"
+          git show "origin/${{ inputs.edition_ref }}:dashboard/briefing/${{ needs.plan.outputs.date }}.json" > /tmp/edition.json
+      - name: Render ${{ matrix.id }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          args="--date ${{ needs.plan.outputs.date }} --only ${{ matrix.id }} --upload --meta-out meta"
+          if [ -f /tmp/edition.json ]; then args="$args --edition /tmp/edition.json"; fi
+          python -m video.pipeline $args
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: meta-${{ matrix.id }}
+          path: meta/
+          if-no-files-found: ignore
+          retention-days: 3
+
+  publish:
+    needs: [plan, render]
+    if: ${{ always() && needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && inputs.dry_run != true }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: meta-*
+          merge-multiple: true
+          path: meta/
+      - name: Publish the manifest and redeploy Pages
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          args="--date ${{ inputs.date || 'latest' }} --upload"
-          if [ -f /tmp/edition.json ]; then args="$args --edition /tmp/edition.json"; fi
-          if [ "${{ inputs.dry_run }}" != "true" ]; then args="$args --manifest"; fi
-          python -m video.pipeline $args
-
-      - name: Publish the manifest and redeploy Pages
-        if: ${{ inputs.dry_run != true }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
+          mkdir -p meta
           git config user.name "briefing-reels[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/briefing/videos/
-          if git diff --cached --quiet; then echo "manifest unchanged"; exit 0; fi
-          git commit -q -m "reels: manifest $(ls -t dashboard/briefing/videos | head -1)"
           for i in 1 2 3 4 5; do
-            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            git pull -q --rebase origin main
+            python -m video.pipeline --date ${{ needs.plan.outputs.date }} --merge meta --manifest
+            git add dashboard/briefing/videos/
+            if git diff --cached --quiet; then echo "manifest unchanged"; exit 0; fi
+            git commit -q -m "reels: manifest ${{ needs.plan.outputs.date }}"
+            git push -q origin HEAD:main && break
+            git reset -q --hard origin/main
             sleep $((i * 10))
           done
           # pushes made with GITHUB_TOKEN don't trigger other workflows, so start the Pages deploy explicitly

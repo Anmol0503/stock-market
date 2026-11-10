@@ -56,13 +56,15 @@ def research(n_claims: int = 10, *, fresh_hours: float = 3) -> dict:
 
 def story(*, contested: bool = False) -> dict:
     """A writer output that satisfies every word range."""
-    scenes = [{"kind": "hook", "say": words(25, 1), "show": "Why it matters"}] + \
-             [{"kind": "kinetic", "say": words(30, i), "show": "Step"} for i in range(3)] + \
-             [{"kind": "outro", "say": words(25, 5), "show": "Watch next"}]
+    # A full-coverage reel: every chapter in order, 14 scenes, ~470 words.
+    chaps = ["hook", "what_happened", "what_happened", "so_far", "why", "why", "players", "idea", "idea",
+             "example", "for_you", "next", "remember", "remember"]
+    scenes = [{"kind": "hook" if c == "hook" else "outro" if c == "remember" else "kinetic", "chapter": c,
+               "say": words(34, i % 6), "show": "Key point"} for i, c in enumerate(chaps)]
     for sc in scenes:
         sc.update({"number_value": "", "number_label": "", "number_cid": "", "map_iso3": [], "map_lon": 0, "map_lat": 0,
                    "map_label": "", "chart_title": "", "chart_unit": "", "chart_points": [], "chart_cids": [],
-                   "timeline": [], "players": [], "steps": []})
+                   "timeline": [], "players": [], "steps": [], "views": []})
     return {
         "headline": "Panel reports 1,250 cases after the outbreak spreads",
         "question": "Why is the outbreak spreading faster than officials expected this season?",

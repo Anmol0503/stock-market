@@ -2,11 +2,12 @@
   "name": "briefing-ui-tests",
   "private": true,
   "type": "module",
-  "description": "Screenshot + flow checks for The Briefing phone web app (dashboard/reels). Drives the system Chrome via playwright-core.",
+  "description": "Screenshot + flow checks for The Briefing phone web app: the reel feed (index.html) and the old text app (full.html). Drives the system Chrome via playwright-core.",
   "scripts": {
     "shoot": "node shoot.mjs",
     "flows": "node flows.mjs",
-    "test": "node shoot.mjs && node flows.mjs"
+    "full": "node full-shoot.mjs && node full-flows.mjs",
+    "test": "node shoot.mjs && node flows.mjs && node full-shoot.mjs && node full-flows.mjs"
   },
   "dependencies": {
     "playwright-core": "^1.64.1"

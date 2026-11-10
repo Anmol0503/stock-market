@@ -220,6 +220,9 @@ def lesson_problems(s: dict, research: dict, year: int, markets: dict | None = N
     return P
 
 
+REQUIRED_CHAPTERS = ("hook", "what_happened", "why", "idea", "example", "for_you", "next", "remember")
+
+
 def reel_problems(scenes: list[dict], research: dict, year: int, markets: dict | None = None) -> list[dict]:
     """Reel script checks. Only problems that would make a video WRONG or MISLEADING are hard (they drop the
     video): a big number not in the claims, a relative date, symbols the voice can't read. Length, scene count,
@@ -230,17 +233,26 @@ def reel_problems(scenes: list[dict], research: dict, year: int, markets: dict |
         P.append({"where": where, "issue": issue, "severity": "fix", "soft": soft})
     if not scenes:
         return [{"where": "reel", "issue": "no reel script", "severity": "fix", "soft": False}]
-    if not 5 <= len(scenes) <= 9:
-        add("reel", f"{len(scenes)} scenes; aim for 5–8", True)
+    lo_s, hi_s = config.WORDS["reel_scenes"]
+    if not lo_s <= len(scenes) <= hi_s:
+        add("reel", f"{len(scenes)} scenes; aim for {lo_s}–{hi_s}", True)
+    chapters = [sc.get("chapter") or "" for sc in scenes]
+    missing = [k for k in REQUIRED_CHAPTERS if k not in chapters]
+    if missing:
+        add("reel", f"the reel skips chapters: {', '.join(missing)}; it must carry the whole story", True)
+    order = [list(config.CHAPTERS).index(c) for c in chapters if c in config.CHAPTERS]
+    if order != sorted(order):
+        add("reel", "chapters out of order; follow: " + ", ".join(config.CHAPTERS), True)
     total = sum(words(sc.get("say_en") or sc.get("say")) for sc in scenes)   # length: the checked English
     lo, hi = config.WORDS["reel_total"]
     if not _in(total, "reel_total", 0.12):
-        add("reel", f"narration {total} words; aim for {lo}–{hi}", 80 <= total <= 260)
+        add("reel", f"narration {total} words; aim for {lo}–{hi}", 250 <= total <= 1150)
     corpus = claim_corpus(research, markets)
     for i, sc in enumerate(scenes):
         say = sc.get("say") or ""
-        if words(sc.get("say_en") or say) > 55:
-            add(f"reel[{i}]", "scene narration over 50 words", words(sc.get("say_en") or say) <= 90)
+        if words(sc.get("say_en") or say) > config.WORDS["scene_say"][1] + 5:
+            add(f"reel[{i}]", f"scene narration over {config.WORDS['scene_say'][1]} words",
+                words(sc.get("say_en") or say) <= 100)
         say = f"{say} {sc.get('speak') or ''}"           # what the voice reads must be clean too
         if UNSPEAKABLE.search(say):
             add(f"reel[{i}]", "narration has symbols; spell them out (per cent, rupees)", False)
@@ -270,7 +282,8 @@ def _ist(published: str | None) -> str | None:
 
 
 def _scene(sc: dict) -> dict:
-    out = {"kind": sc.get("kind"), "say": sc.get("say", "").strip(), "show": " ".join((sc.get("show") or "").split()[:8])}
+    out = {"kind": sc.get("kind"), "chapter": sc.get("chapter") or "", "say": sc.get("say", "").strip(),
+           "show": " ".join((sc.get("show") or "").split()[:8])}
     if sc.get("speak"):                         # Hinglish: `say` = Roman captions, `speak` = what the voice reads
         out["speak"] = sc["speak"].strip()
     k = sc.get("kind")
@@ -288,6 +301,8 @@ def _scene(sc: dict) -> dict:
         out["players"] = (sc.get("players") or [])[:4]
     elif k == "steps":
         out["steps"] = [x for x in sc.get("steps") or [] if x.get("calc")][:4]
+    elif k == "views":
+        out["views"] = [x for x in sc.get("views") or [] if x.get("who") and x.get("view")][:4]
     return out
 
 

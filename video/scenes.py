@@ -59,7 +59,12 @@ body{font-family:'Inter',system-ui,sans-serif;color:#fff;background:#0b1020;posi
 .low{position:absolute;left:64px;right:64px;top:1110px;bottom:80px;display:flex;flex-direction:column;justify-content:flex-end;gap:28px}
 .hl{font-family:'Fraunces',serif;font-weight:700;font-size:60px;line-height:1.12;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .meta{font-size:30px;font-weight:600;opacity:.8;letter-spacing:.02em}
-.dots{display:flex;gap:12px}.dots i{width:44px;height:8px;border-radius:8px;background:rgba(255,255,255,.28)}.dots i.on{background:#fff}
+.dots{display:flex;gap:12px}.dots i{flex:1;max-width:44px;height:8px;border-radius:8px;background:rgba(255,255,255,.28)}.dots i.on{background:#fff}
+.chap{font-weight:800;font-size:28px;letter-spacing:.12em;text-transform:uppercase;padding:14px 24px;border-radius:999px;
+  background:rgba(0,0,0,.28);border:2px solid rgba(255,255,255,.22);white-space:nowrap}
+.vw{display:flex;flex-direction:column;gap:24px}.vw .card{display:flex;flex-direction:column;gap:12px;padding:30px 36px}
+.vw .who{font-size:30px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.vw .say{font-family:'Fraunces',serif;font-weight:700;line-height:1.18}
 .show{font-family:'Fraunces',serif;font-weight:800;line-height:1.05;letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .kick{font-size:34px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:26px}
 .under{width:180px;height:12px;border-radius:12px;background:#fff;margin-top:38px;opacity:.9}
@@ -82,13 +87,14 @@ body{font-family:'Inter',system-ui,sans-serif;color:#fff;background:#0b1020;posi
 """
 
 
-def _page(section: str, body: str, *, headline: str, idx: int, total: int, meta: str) -> str:
+def _page(section: str, body: str, *, headline: str, idx: int, total: int, meta: str, chapter: str = "") -> str:
     a, b = COLORS.get(section, COLORS["world"])
     dots = "".join(f"<i class='{'on' if i <= idx else ''}'></i>" for i in range(total))
+    right = f"<div class='chap'>{esc(chapter)}</div>" if chapter else "<div class='brand'>The Briefing</div>"
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{_font_css()}{BASE_CSS}
 :root{{--a:{a};--b:{b}}}</style></head><body>
 <div class="bg"></div><div class="grain"></div>
-<div class="top"><div class="pill">{esc(LABELS.get(section, section))}</div><div class="brand">The Briefing</div></div>
+<div class="top"><div class="pill">{esc(LABELS.get(section, section))}</div>{right}</div>
 <div class="vis">{body}</div>
 <div class="capband"></div>
 <div class="low"><div class="hl">{esc(headline)}</div><div class="meta">{esc(meta)}</div><div class="dots">{dots}</div></div>
@@ -209,13 +215,15 @@ def _fmt(v: float) -> str:
     return f"{v:.1f}".rstrip("0").rstrip(".") if isinstance(v, float) else str(v)
 
 
-def scene_html(sc: dict, *, section: str, headline: str, idx: int, total: int, meta: str) -> str:
+def scene_html(sc: dict, *, section: str, headline: str, idx: int, total: int, meta: str, chapter: str = "") -> str:
+    """idx/total: position in the progress dots (chapters for a chaptered reel, else scenes)."""
     kind = sc.get("kind")
     show = sc.get("show") or ""
     a, _b = COLORS.get(section, COLORS["world"])
     if kind == "hook":
         size = _fit_size(show, 120, per_line=13, max_lines=4)
-        body = (f"<div class='kick'>The question</div><div class='show' style='font-size:{size}px'>{esc(show)}</div>"
+        kick = "" if chapter else "<div class='kick'>The question</div>"   # the chapter pill already says it
+        body = (f"{kick}<div class='show' style='font-size:{size}px'>{esc(show)}</div>"
                 "<div class='under'></div>")
     elif kind == "big_number" and (sc.get("number") or {}).get("value"):
         val = sc["number"]["value"]
@@ -245,11 +253,19 @@ def scene_html(sc: dict, *, section: str, headline: str, idx: int, total: int, m
                           f"<div class='lb'>{esc(r.get('label'))}</div><div class='cl' style='font-size:{size}px'>"
                           f"{esc(r.get('calc'))}</div></div></div>" for i, r in enumerate(rows))
                 + "</div>")
+    elif kind == "views" and sc.get("views"):
+        rows = sc["views"][:4]
+        size = 50 if len(rows) <= 2 else 42 if len(rows) == 3 else 36
+        body = (f"<div class='kick'>{esc(show) or 'Different views'}</div><div class='vw'>"
+                + "".join(f"<div class='card'><div class='who'>{esc(v.get('who'))}</div>"
+                          f"<div class='say' style='font-size:{size}px'>{esc(v.get('view'))}</div></div>" for v in rows)
+                + "</div>")
     elif kind == "outro":
         size = _fit_size(show, 104, per_line=15, max_lines=4)
-        body = (f"<div class='kick'>Remember</div><div class='show' style='font-size:{size}px'>{esc(show)}</div>"
+        kick = "" if chapter else "<div class='kick'>Remember</div>"
+        body = (f"{kick}<div class='show' style='font-size:{size}px'>{esc(show)}</div>"
                 "<div class='under'></div>")
     else:                                            # kinetic (and any data scene missing its data)
         size = _fit_size(show, 132, per_line=12, max_lines=4)
         body = f"<div class='show' style='font-size:{size}px'>{esc(show)}</div><div class='under'></div>"
-    return _page(section, body, headline=headline, idx=idx, total=total, meta=meta)
+    return _page(section, body, headline=headline, idx=idx, total=total, meta=meta, chapter=chapter)

@@ -63,7 +63,7 @@ RESEARCH = obj(
 )
 
 _CIDS = arr(STR)
-SCENE_KINDS = ["hook", "kinetic", "big_number", "map", "bar", "line", "timeline", "players", "steps", "outro"]
+SCENE_KINDS = ["hook", "kinetic", "big_number", "map", "bar", "line", "timeline", "players", "steps", "views", "outro"]
 # The lesson: one idea the reader needs, built up step by step, with a worked example they can follow line by line.
 LESSON = obj(
     concept=STR, big_idea=STR,
@@ -88,12 +88,13 @@ STORY = obj(
     terms=arr(obj(term=STR, meaning=STR)),
     check=obj(q=STR, options=arr(STR), answer=INT, why=STR),
     lesson=LESSON, takeaways=arr(STR),
-    reel=arr(obj(kind={"type": "string", "enum": SCENE_KINDS}, say=STR, show=STR,
+    reel=arr(obj(kind={"type": "string", "enum": SCENE_KINDS},
+                 chapter={"type": "string", "enum": list(config.CHAPTERS)}, say=STR, show=STR,
                  number_value=STR, number_label=STR, number_cid=STR,
                  map_iso3=arr(STR), map_lon=NUM, map_lat=NUM, map_label=STR,
                  chart_title=STR, chart_unit=STR, chart_points=arr(obj(label=STR, value=NUM)), chart_cids=_CIDS,
                  timeline=arr(obj(when=STR, what=STR)), players=arr(obj(name=STR, role=STR)),
-                 steps=arr(obj(label=STR, calc=STR)))),
+                 steps=arr(obj(label=STR, calc=STR)), views=arr(obj(who=STR, view=STR)))),
 )
 
 # Hinglish narration for a reel: per scene, Roman script (captions) and mixed script (the Hindi voice)

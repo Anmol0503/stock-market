@@ -1,16 +1,19 @@
 # stock-market repo: operating guide
 
 ## What's live
-**The Morning Briefing** is the one live product. A daily deep-research news edition for one reader in India,
-ready by about 6:00 AM IST:
-- **Content:** 5 big stories (full explainer, a "Learn the idea" lesson with a worked example, and a narrated
-  reel that teaches the same idea, narrated in spoken Hinglish: `hinglish.py` re-voices the checked English
-  script, falling back to English if it fails), briefs for 8 sections,
-  one-liners, a quiz, and "still developing" threads.
+**The Morning Briefing** is the one live product: **10 deep narrated reels a day, nothing else**, for one
+viewer in India, ready by about 6:00 AM IST (reels-only since 2026-11-10, `config.REELS_ONLY`):
+- **Content:** 10 big stories (+3 reserves). Each is researched, written as a full explainer with a "Learn the
+  idea" lesson, and fact-checked. The explainer is never shown: it is the checked source the reel is built
+  from. The reel (3.5–5 min) walks through every point in chapters (`config.CHAPTERS`), then `hinglish.py`
+  re-voices it in spoken Hinglish (falling back to English if that fails).
+- **Video:** `video/` renders one MP4 per story on GitHub Actions (`video.yml`: one parallel job per reel),
+  with chapter times in the manifest so the app can skip by chapter.
 - **Code:** `routine/briefing/`, run as `python3 -m routine.briefing`.
 - **Schedule:** a Claude Code cloud routine at 04:05 IST follows `routine/briefing/RUNBOOK.md`.
 - **Output:** `dashboard/briefing/` (editions, `index.json`, `threads.json`, `calendar.json`, `quality/`).
-- **App:** `dashboard/reels/index.html` (old digests: `dashboard/reels/digest.html`).
+- **App:** `dashboard/reels/index.html`, a full-screen reel feed (the old text app is `full.html`, old
+  digests `digest.html`).
 
 Legacy code, kept for history and not running: Daily Digest (`routine/digest.py`, `dashboard/digest/`),
 World/Markets briefs (`analyze/`, `build_dashboard.py`), Learn course, Horizon series, and the Kindle senders.

@@ -22,6 +22,14 @@ RELATIVE_HI = re.compile(
     r"\b(aaj|kal|parso|parson|is hafte|pichhle hafte|agle hafte|abhi kal)\b"
     rf"|(?<![{_DV}])(आज|कल|परसों)(?![{_DV}])|इस हफ़्ते|इस हफ्ते", re.I)
 
+# "10 November ke agle hafte" (the week after 10 November) is anchored to a date, so it isn't relative.
+ANCHORED = re.compile(r"\d{1,2} \w+(?: \d{4})? (?:ke|se|के|से) (?:agle|pichhle|अगले|पिछले) (?:hafte|हफ़्ते|हफ्ते)", re.I)
+
+
+def relative(text: str) -> bool:
+    return bool(RELATIVE_HI.search(ANCHORED.sub(" ", text)))
+
+
 Ask = Callable[[str, str, dict], Awaitable[dict]]     # (system, prompt, schema) -> dict
 
 
@@ -44,7 +52,7 @@ def problems(en_scenes: list[dict], out: dict, corpus: set[str], year: int) -> l
         for field, text in (("say", say), ("speak", speak)):
             if build.UNSPEAKABLE.search(text):
                 P.append(f"{tag}: `{field}` has symbols; write rupaye, percent, dollar, aur")
-            if build.RELATIVE.search(text) or RELATIVE_HI.search(text):
+            if build.RELATIVE.search(text) or relative(text):
                 P.append(f"{tag}: `{field}` has a relative date; use the absolute date")
         if build._nums(say) != build._nums(speak):
             P.append(f"{tag}: the numbers in `say` and `speak` differ ({sorted(build._nums(say))} vs "

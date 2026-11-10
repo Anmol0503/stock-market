@@ -45,16 +45,20 @@ CATEGORY_SECTION = {
 }
 
 # ---------------------------------------------------------------- edition shape
-TIER1_TARGET = 5          # big stories: reel + full explainer (~4.5 min each) — fits the 30–45 min budget
-TIER1_MIN_COMPLETE = 4    # fewer than this = "partial" edition
-TIER1_MAX = 6
-TIER1_RESERVES = 2
+# Reels-only edition (user request 2026-11-10): 10 deep reels a day, nothing else. The sections/briefs/cover
+# steps are skipped; each story's full explainer is still written and fact-checked, because it's what the
+# reel is built from and checked against, but the app shows only the reels.
+REELS_ONLY = True
+TIER1_TARGET = 10         # deep reels a day (~3.5–5 min each)
+TIER1_MIN_COMPLETE = 8    # fewer than this = "partial" edition
+TIER1_MAX = 10
+TIER1_RESERVES = 3
 BRIEFS_MIN, BRIEFS_MAX = 16, 32
 BRIEFS_PER_SECTION = (2, 6)
 ALSO_MIN, ALSO_MAX = 6, 15
 QUIZ_N = 3
 INDIA_SUBSTANTIAL_MIN = 3
-US_DOMESTIC_TIER1_MAX = 2
+US_DOMESTIC_TIER1_MAX = 3
 TRIAGE_CAP = 320          # clusters sent to triage (cheap pre-filter in code first)
 TRIAGE_BATCH = 40
 EDITOR_CANDIDATES = 80    # clusters shown to the editor
@@ -68,7 +72,8 @@ WORDS = {
     "brief_text": (50, 120), "brief_background": (8, 30), "brief_why": (8, 25), "also": (8, 25),
     "top_line": (15, 40), "change": (5, 22), "watch": (4, 20), "gist": (8, 25), "quiet_note": (5, 25),
     "term_meaning": (4, 20), "check_q": (6, 25), "check_why": (5, 30),
-    "story_total": (450, 850), "reel_total": (150, 220), "scene_say": (6, 50), "scene_show": (0, 8),
+    "story_total": (450, 850), "reel_total": (450, 950), "scene_say": (6, 60), "scene_show": (0, 8),
+    "reel_scenes": (12, 22),
     # the lesson ("Learn the idea"), counted on top of story_total
     "concept": (3, 10), "big_idea": (12, 40), "lesson_step": (15, 55), "example_setup": (12, 50),
     "example_result": (10, 45), "apply": (20, 70), "practice_q": (8, 40), "practice_answer": (12, 70),
@@ -81,7 +86,7 @@ WINDOW_FALLBACK_H = 26    # first run / no previous edition: look back this far
 WINDOW_OVERLAP_MIN = 60   # each window starts an hour before the previous one ended
 DEADLINE_IST = dt.time(5, 40)     # scheduled runs stop model work here and publish what passed
 MANUAL_RUN_MINUTES = 95           # a run started at another time gets this long
-CONCURRENCY = int(os.environ.get("BRIEFING_CONCURRENCY", "6"))
+CONCURRENCY = int(os.environ.get("BRIEFING_CONCURRENCY", "8"))
 NEXT_TICK_SECONDS = 510           # `next` waits at most 8.5 min (Bash tool limit is 10)
 
 # ---------------------------------------------------------------- models per role
@@ -98,16 +103,24 @@ ROLES: dict[str, dict] = {
     "scout":      {"model": SONNET, "effort": "medium", "tools": "WebSearch",          "budget": 1.5, "timeout": 600},
     "editor":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 3.0, "timeout": 600},
     "research":   {"model": SONNET, "effort": "medium", "tools": "WebSearch,WebFetch", "budget": 1.5, "timeout": 600},
-    "writer":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 2.0, "timeout": 600},
+    "writer":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 3.0, "timeout": 900},
     "checker":    {"model": SONNET, "effort": "medium", "tools": "",                   "budget": 0.8, "timeout": 420},
-    "fixer":      {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 1.5, "timeout": 600},
+    "fixer":      {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 2.5, "timeout": 900},
     "section":    {"model": SONNET, "effort": "medium", "tools": "WebSearch,WebFetch", "budget": 1.2, "timeout": 600},
     "briefs":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 2.0, "timeout": 600},
     "cover":      {"model": OPUS,   "effort": "medium", "tools": "",                   "budget": 1.0, "timeout": 420},
-    "hinglish":   {"model": OPUS,   "effort": "medium", "tools": "",                   "budget": 0.8, "timeout": 420},
+    "hinglish":   {"model": OPUS,   "effort": "medium", "tools": "",                   "budget": 1.5, "timeout": 600},
 }
 for _role, _cfg in ROLES.items():       # env overrides, e.g. BRIEFING_MODEL_WRITER=claude-sonnet-5-5
     _cfg["model"] = os.environ.get(f"BRIEFING_MODEL_{_role.upper()}", _cfg["model"])
+
+# Reel chapters, in teaching order. A long reel is navigable by chapter in the app (skip, jump back).
+CHAPTERS = {
+    "hook": "The question", "what_happened": "What happened", "so_far": "The story so far",
+    "why": "Why it happened", "players": "Who's involved", "numbers": "By the numbers", "idea": "The idea",
+    "example": "Worked example", "views": "Different views", "for_you": "What it means for you",
+    "next": "What's next", "remember": "Remember this",
+}
 
 # reel voice (Phase 2). Reels are narrated in Hinglish by a Hindi voice; the English voice is the fallback
 # when the Hinglish step fails (the English script is the checked source of truth).

@@ -205,9 +205,9 @@ async def _pipeline(R: Run) -> None:
     t0 = time.monotonic()
     R.stage("stories", stories_total=len(plan["tier1"]), stories_done=0)
     story_task = asyncio.create_task(_stories(R, plan, cmap, thr_ctx, window, leads.get("markets")))
-    section_task = asyncio.create_task(_sections(R, plan, cmap, thr_ctx, window))
+    section_task = None if config.REELS_ONLY else asyncio.create_task(_sections(R, plan, cmap, thr_ctx, window))
     story_recs = await story_task
-    brief_recs, gists = await section_task
+    brief_recs, gists = (await section_task) if section_task else ({}, {})
     R.mark_done("stories+sections", t0)
 
     # ---- 7. assemble (code), cover (model), finish (code)
@@ -428,6 +428,8 @@ def _fix_plan(plan: dict, cands: list[dict], active: list[dict]) -> dict:
                               "new_thread": False, "angle": "", "calendar_ids": []})
                 have += 1
     tier3 = take(plan.get("tier3"), key="cluster_id")[: config.ALSO_MAX]
+    if config.REELS_ONLY:                 # reels only: no briefs or one-liners to research and write
+        tier2, tier3 = [], []
     acted = {a.get("thread_id") for a in plan.get("threads") or []}
     actions = list(plan.get("threads") or []) + [{"thread_id": t["id"], "action": "no_change", "note": ""}
                                                  for t in active if t["id"] not in acted]
@@ -515,17 +517,24 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
         if any(p["severity"] == "drop" for p in chk.get("problems") or []):
             rec.update(status="demote", story=story, problems=problems)
         elif problems:
-            fixed = await R.ask("fixer", prompting.system("style", "writer"),
-                                prompting.fixer(story, research, problems, date=R.date),
-                                schemas.STORY, label=f"fix-{sid}", need_s=360)
-            code_p2 = build.story_problems(fixed, research, slot=slot, year=year, markets=markets)
-            chk2 = await R.ask("checker", prompting.system("checker"),
-                               prompting.checker(fixed, research, thread=thread, code_problems=code_p2),
-                               schemas.CHECK, label=f"recheck-{sid}", need_s=180)
-            _lesson_never_drops(chk2)
-            left = (chk2.get("problems") or []) + code_p2
-            blocking = [p for p in left if p["severity"] == "drop" or p["where"].split("[")[0] in build.REQUIRED_BLOCKS]
-            rec.update(status="demote" if blocking else "ok", story=fixed, problems=left)
+            # Fix → recheck, up to two rounds: in a reels-only edition a story that fails here is a missing reel.
+            cur, left = story, problems
+            for rnd in range(1, 3):
+                fixed = await R.ask("fixer", prompting.system("style", "writer"),
+                                    prompting.fixer(cur, research, left, date=R.date),
+                                    schemas.STORY, label=f"fix-{sid}" + (f"-{rnd}" if rnd > 1 else ""), need_s=360)
+                code_p2 = build.story_problems(fixed, research, slot=slot, year=year, markets=markets)
+                chk2 = await R.ask("checker", prompting.system("checker"),
+                                   prompting.checker(fixed, research, thread=thread, code_problems=code_p2),
+                                   schemas.CHECK, label=f"recheck-{sid}" + (f"-{rnd}" if rnd > 1 else ""),
+                                   need_s=180)
+                _lesson_never_drops(chk2)
+                cur, left = fixed, (chk2.get("problems") or []) + code_p2
+                blocking = [p for p in left
+                            if p["severity"] == "drop" or p["where"].split("[")[0] in build.REQUIRED_BLOCKS]
+                if not blocking or R.left() < 900:
+                    break
+            rec.update(status="demote" if blocking else "ok", story=cur, problems=left)
         else:
             rec.update(status="ok", story=story, problems=[])
         if rec["status"] == "ok":
@@ -574,13 +583,13 @@ async def _stories(R: Run, plan: dict, cmap: dict, thr_ctx: dict, window: dict, 
     india_ok = any(r["status"] == "ok" and r["slot"].get("india_angle") == "primary" for r in recs)
     reserves = sorted(plan.get("reserves") or [],      # keep the India balance: an India reserve goes first if needed
                       key=lambda r: 0 if (not india_ok and r.get("india_angle") == "primary") else 1)
-    for reserve in reserves:                         # replace failures while there's time
-        if ok >= config.TIER1_TARGET or R.left() < 900:
-            break
-        rec = await _story_chain(R, reserve, cmap, thr_ctx, window, markets)
-        recs.append(rec)
-        ok += rec["status"] == "ok"
-    return list(recs)
+    recs = list(recs)
+    while reserves and ok < config.TIER1_TARGET and R.left() >= 900:   # replace failures, in parallel
+        batch, reserves = reserves[: config.TIER1_TARGET - ok], reserves[config.TIER1_TARGET - ok:]
+        more = await asyncio.gather(*(_story_chain(R, r, cmap, thr_ctx, window, markets) for r in batch))
+        recs += more
+        ok += sum(1 for r in more if r["status"] == "ok")
+    return recs
 
 
 # ---------------------------------------------------------------- sections
@@ -762,8 +771,10 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
                 slot_to_item[slot["id"]] = story["id"]
                 thread_updates.append(("story", story, slot, s, research))
                 continue
-        b = build.demote(rec["id"], slot["section"], s, research, window)
-        if b:
+        b = None if config.REELS_ONLY else build.demote(rec["id"], slot["section"], s, research, window)
+        if config.REELS_ONLY:
+            qnotes.append(f"{rec['id']}: dropped (didn't pass the fact check)")
+        elif b:
             demoted.append(b)
             slot_to_item[slot["id"]] = b["id"]
             qnotes.append(f"{rec['id']}: demoted to a brief")
@@ -828,7 +839,9 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
     # cover (model) from the final items
     brief_list = [b for s in sections for b in s["items"]]
     cover = R._load("cover")
-    if cover is None:
+    if config.REELS_ONLY:                            # no cover screen in the reels-only app
+        cover = {"top_line": "", "watch_today": [], "changes": []}
+    elif cover is None:
         today_events = [e for e in cal["events"] if e["date"] == R.date]
         try:
             cover = await R.ask("cover", prompting.system("cover"),
@@ -887,8 +900,10 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
                                "ref": covered_threads.get(t["id"]), "line": line[:160]})
     developing.sort(key=lambda d: (d["today"] != "update", -d["day"]))
 
-    n1 = len(stories)
+    n1 = len([s for s in stories if s.get("reel")]) if config.REELS_ONLY else len(stories)
     status = "complete" if n1 >= config.TIER1_MIN_COMPLETE else ("partial" if n1 >= 2 else "lite")
+    if config.REELS_ONLY:
+        reader_notes = [n for n in reader_notes if "fewer briefs" not in n]
     if any("fewer briefs" in n for n in reader_notes) and status == "complete":
         status = "partial"
     failed = [n for n in qnotes if ": failed" in n or ": dropped" in n or ": demoted" in n]
@@ -899,13 +914,14 @@ async def _assemble(R: Run, *, plan, cmap, verdicts, story_recs, brief_recs, gis
         reader_notes.append("Fewer news sources than usual were reachable for this edition.")
     read_min = sum(s["read_min"] for s in stories) + math.ceil(sum(build.words(b["text"]) for b in brief_list) / 200) + 2
     ed = {
-        "schema": 1, "date": R.date,
+        "schema": 1, "date": R.date, "mode": "reels" if config.REELS_ONLY else "full",
         "edition": f"{'Morning' if now.hour < 12 else 'Afternoon' if now.hour < 17 else 'Evening'} · {now.strftime('%-I:%M %p')}",
         "published_at": config.iso(now), "window": window, "status": status, "notes": reader_notes,
         "cover": {"top_line": cover.get("top_line", ""), "changes": changes,
                   "watch_today": [{"text": w["text"], "time_ist": w.get("time_ist") or None, "calendar_id": None}
                                   for w in cover.get("watch_today") or []][:3],
-                  "read_min": read_min, "watch_min": round(sum(1.3 for s in stories if s.get("reel")))},
+                  "read_min": read_min, "watch_min": round(sum(build.words(sc.get("say")) for s in stories if s.get("reel")
+                                         for sc in s["reel"]["scenes"]) / 135)},
         "stories": stories, "sections": sections, "also": also[: config.ALSO_MAX],
         "quiz": [{**s["check"], "story": s["id"]} for s in stories if s.get("check")][: config.QUIZ_N],
         "developing": developing[:12], "markets": markets, "disclaimer": config.DISCLAIMER,
