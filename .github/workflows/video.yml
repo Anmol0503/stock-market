@@ -80,7 +80,7 @@ jobs:
       - name: Install ffmpeg and the voice
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q "edge-tts>=7,<8"
+          pip install -q "edge-tts>=7,<8" "pillow>=10"   # pillow: trims animated layers (faster overlays)
       - name: Fetch a test edition from another branch
         if: ${{ inputs.edition_ref != '' && inputs.edition_ref != null }}
         run: |

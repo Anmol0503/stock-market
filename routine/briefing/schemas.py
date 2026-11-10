@@ -75,6 +75,7 @@ LESSON = obj(
 STORY = obj(
     headline=STR, question=STR, dek=STR,
     so_far=obj(text=STR, cids=_CIDS),
+    history=obj(text=STR, cids=_CIDS, timeline=arr(obj(when=STR, what=STR, cid=STR))),
     what_happened=obj(text=STR, cids=_CIDS),
     why_chain=arr(obj(text=STR, cids=_CIDS)),
     players=arr(obj(name=STR, who=STR, cid=STR)),
@@ -89,7 +90,7 @@ STORY = obj(
     check=obj(q=STR, options=arr(STR), answer=INT, why=STR),
     lesson=LESSON, takeaways=arr(STR),
     reel=arr(obj(kind={"type": "string", "enum": SCENE_KINDS},
-                 chapter={"type": "string", "enum": list(config.CHAPTERS)}, say=STR, show=STR,
+                 chapter={"type": "string", "enum": list(config.CHAPTERS)}, say=STR, show=STR, image=STR,
                  number_value=STR, number_label=STR, number_cid=STR,
                  map_iso3=arr(STR), map_lon=NUM, map_lat=NUM, map_label=STR,
                  chart_title=STR, chart_unit=STR, chart_points=arr(obj(label=STR, value=NUM)), chart_cids=_CIDS,

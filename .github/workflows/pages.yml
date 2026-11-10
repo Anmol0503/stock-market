@@ -29,11 +29,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for f in $(ls -1 dashboard/briefing/videos/*.json 2>/dev/null | sort | tail -3); do
+          # Only the last 2 days, and only the reels each manifest lists (a re-published day leaves old files in
+          # its release). Older reels play from the release URL (fallback_src). Keeps each deploy small and fast.
+          for f in $(ls -1 dashboard/briefing/videos/*.json 2>/dev/null | sort | tail -2); do
             d=$(basename "$f" .json)
             mkdir -p "dashboard/media/$d"
-            gh release download "briefing-$d" -R "${{ github.repository }}" -D "dashboard/media/$d" \
-              -p '*.mp4' -p '*.jpg' --clobber || echo "no reels for $d yet"
+            pats=$(python3 -c "import json,sys,os; m=json.load(open(sys.argv[1])); print(' '.join(f\"-p {os.path.basename(i[k])}\" for i in m.get('items',[]) for k in ('src','poster') if i.get(k)))" "$f")
+            [ -n "$pats" ] && { gh release download "briefing-$d" -R "${{ github.repository }}" -D "dashboard/media/$d" \
+              $pats --clobber || echo "no reels for $d yet"; }
           done
           du -sh dashboard/media 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
@@ -41,3 +44,5 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000

@@ -1,13 +1,15 @@
 """Build one narrated vertical reel (1080×1920 MP4) from a story's reel script.
 
-Per scene:
-1. Narration (edge-tts) with word timings. Hinglish reels: the Hindi voice reads `speak` (Hindi words in
+1. Photos: each scene's `image` (a Wikipedia article title) and each player's name resolve to free-licence
+   photos (images.py). A scene without one reuses the story's last photo, blurred; a story with none gets a
+   designed backdrop.
+2. Frames: every scene is rendered by headless Chrome in layers (scenes.py): an oversized backdrop, the static
+   chrome, and each content piece on its own transparent frame.
+3. Narration (edge-tts) with word timings. Hinglish reels: the Hindi voice reads `speak` (Hindi words in
    Devanagari) while the captions show `say` (the same words in Roman script), mapped onto the voice's timings.
-2. The scene's designed frame, rendered by headless Chrome from scenes.py.
-3. A slow push-in on the frame plus its audio.
-
-Then the scenes are joined, word-by-word captions are burned in (ASS via libass, active word highlighted), and
-the result is encoded for phones (H.264, AAC, faststart).
+4. One ffmpeg pass per scene: a slow Ken Burns pan across the backdrop, content sliding/fading in (rows of a
+   worked example or timeline arrive as the narration reaches them), word-by-word captions burned in, encoded
+   once for phones. The scenes are then joined without re-encoding (faststart).
 
 If the voice service fails three times, the reel is still rendered silent with captions timed at a reading pace.
 """
@@ -20,8 +22,10 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
+from concurrent.futures import ThreadPoolExecutor
 
-from . import scenes
+from . import images, scenes
 
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE / "fonts"
@@ -31,12 +35,13 @@ FPS = 30
 PAD_S = 0.35                      # breath after each scene's narration
 # Same labels as routine/briefing/config.CHAPTERS (video/ doesn't import the pipeline package).
 CHAPTER_LABELS = {
-    "hook": "The question", "what_happened": "What happened", "so_far": "The story so far",
+    "hook": "The question", "what_happened": "What happened", "history": "How we got here",
+    "so_far": "The story so far",
     "why": "Why it happened", "players": "Who's involved", "numbers": "By the numbers", "idea": "The idea",
     "example": "Worked example", "views": "Different views", "for_you": "What it means for you",
     "next": "What's next", "remember": "Remember this",
 }
-CAPTION_Y = 950                   # caption centre (px from top): inside the 45–54% band the app leaves visible
+CAPTION_Y = 1390                  # caption centre (px from top): the band between the main visual and the headline
 
 
 def _bin(name: str, *extra: str) -> str:
@@ -138,14 +143,16 @@ def _even_words(text: str, start: float, secs_per_word: float = 0.4) -> list[tup
 
 
 # ---------------------------------------------------------------- frames
-def render_png(html: str, out_png: pathlib.Path) -> None:
+def render_png(html: str, out_png: pathlib.Path, *, scale: float = 1.0, transparent: bool = False) -> None:
+    """Screenshot a 1080×1920 page (× scale). transparent: keep the alpha channel (overlay layers)."""
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f:
         f.write(html)
         page = pathlib.Path(f.name)
     try:
         _run([chrome(), "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-sandbox",
-              "--force-device-scale-factor=1", f"--window-size={scenes.W},{scenes.H}",
-              "--virtual-time-budget=2000", f"--screenshot={out_png}", page.as_uri()], timeout=90)
+              f"--force-device-scale-factor={scale}", f"--window-size={scenes.W},{scenes.H}",
+              *(["--default-background-color=00000000"] if transparent else []),
+              "--virtual-time-budget=2500", f"--screenshot={out_png}", page.as_uri()], timeout=90)
     finally:
         page.unlink(missing_ok=True)
     if not out_png.exists():
@@ -193,7 +200,98 @@ def ass_captions(words: list[tuple[str, float, float]], total: float) -> str:
 
 
 # ---------------------------------------------------------------- assembly
-def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = VOICE) -> dict:
+# Ken Burns pans, as fractions of the backdrop's slack (x0, y0) -> (x1, y1). Consecutive scenes alternate.
+PANS = [(0.15, 0.2, 0.85, 0.6), (0.8, 0.7, 0.2, 0.25), (0.25, 0.85, 0.7, 0.15), (0.75, 0.15, 0.3, 0.8)]
+SLIDE_PX, SLIDE_S, FADE_S = 46, 0.6, 0.45
+# Size: ten 6-minute reels a day, three days kept on Pages (1 GB limit): aim for ~3 MB per minute.
+CRF, MAXRATE = os.environ.get("REEL_CRF", "27"), os.environ.get("REEL_MAXRATE", "2000k")
+
+
+def _photos(sc_list: list[dict], resolver) -> tuple[list, list[bool], dict]:
+    """Per scene: (photo, reused?) and the player-name photos. A scene without its own photo borrows the
+    story's last one (or the first one, before any has appeared); it is then shown blurred."""
+    titles = list(dict.fromkeys(sc.get("image") for sc in sc_list if sc.get("image")))
+    names = list(dict.fromkeys(p.get("name") for sc in sc_list if sc.get("kind") == "players"
+                               for p in sc.get("players") or [] if p.get("name")))
+    with ThreadPoolExecutor(4) as ex:
+        got = dict(zip(titles, ex.map(resolver.resolve, titles)))
+        avs = dict(zip(names, ex.map(lambda n: resolver.resolve(n, min_width=200), names)))
+    own = [got.get(sc.get("image")) if sc.get("image") else None for sc in sc_list]
+    last = next((p for p in own if p is not None), None)
+    photos, reused = [], []
+    for p in own:
+        if p is not None:
+            last = p
+        photos.append(p if p is not None else last)
+        reused.append(p is None and last is not None)
+    return photos, reused, {k: v for k, v in avs.items() if v is not None}
+
+
+def _trim(png: pathlib.Path) -> tuple[int, int, pathlib.Path]:
+    """Crop a transparent layer to its visible box (overlaying a small image is much cheaper per frame)."""
+    try:
+        from PIL import Image
+    except ImportError:                                    # still correct, just slower
+        return 0, 0, png
+    with Image.open(png) as im:
+        box = im.getchannel("A").getbbox() if im.mode == "RGBA" else None
+        if not box:
+            return 0, 0, png
+        x0, y0 = max(0, box[0] - 2), max(0, box[1] - 2)
+        out = png.with_name(png.stem + "-t.png")
+        im.crop((x0, y0, min(im.width, box[2] + 2), min(im.height, box[3] + 2))).save(out)
+        return x0, y0, out
+
+
+def _render_layers(html: str, work: pathlib.Path, i: int) -> dict:
+    """bg (oversized), ui and each content layer as PNGs for scene i."""
+    n = scenes.layer_count(html)
+    bg, ui = work / f"s{i}-bg.png", work / f"s{i}-ui.png"
+    render_png(scenes.with_pass(html, "bg"), bg, scale=scenes.BG_SCALE)
+    render_png(scenes.with_pass(html, "ui"), ui, transparent=True)
+    layers = []
+    for k in range(1, n + 1):
+        png = work / f"s{i}-l{k}.png"
+        render_png(scenes.with_pass(html, str(k)), png, transparent=True)
+        layers.append(_trim(png))
+    return {"bg": bg, "ui": _trim(ui), "layers": layers, "html": html}
+
+
+def _segment(fr: dict, sc: dict, i: int, dur: float, audio_in: list[str], ass: pathlib.Path,
+             out: pathlib.Path) -> None:
+    """One scene: panning backdrop + static chrome + content layers sliding in + captions, encoded once."""
+    bw, bh = round(scenes.W * scenes.BG_SCALE), round(scenes.H * scenes.BG_SCALE)
+    x0, y0, x1, y1 = PANS[i % len(PANS)]
+    sx, sy = bw - scenes.W, bh - scenes.H
+    X = f"{sx * x0:.1f}+{sx * (x1 - x0):.1f}*t/{dur:.3f}"
+    Y = f"{sy * y0:.1f}+{sy * (y1 - y0):.1f}*t/{dur:.3f}"
+    nf = int(round(dur * FPS))
+    # Each PNG is decoded and converted ONCE, then repeated in memory (`-loop 1` would decode it every frame).
+    hold = f"loop=loop={nf - 1}:size=1:start=0,setpts=N/{FPS}/TB"
+    ux, uy, ui = fr["ui"]
+    args = ["-i", str(fr["bg"]), "-i", str(ui)]
+    for _lx, _ly, png in fr["layers"]:
+        args += ["-i", str(png)]
+    args += audio_in
+    times = scenes.reveal_times(sc, len(fr["layers"]), dur)
+    g = [f"[0:v]format=yuv420p,{hold},crop={scenes.W}:{scenes.H}:x='{X}':y='{Y}'[b]",
+         f"[1:v]format=yuva420p,{hold}[u]", f"[b][u]overlay={ux}:{uy}:format=yuv420[c0]"]
+    prev = "c0"
+    for k, ((lx, ly, _png), s) in enumerate(zip(fr["layers"], times)):
+        g.append(f"[{k + 2}:v]format=yuva420p,{hold},fade=t=in:st={s:.2f}:d={FADE_S}:alpha=1[l{k}]")
+        g.append(f"[{prev}][l{k}]overlay=x={lx}:y='{ly}+{SLIDE_PX}*pow(1-clip((t-{s:.2f})/{SLIDE_S},0,1),3)'"
+                 f":eval=frame:format=yuv420[c{k + 1}]")
+        prev = f"c{k + 1}"
+    g.append(f"[{prev}]subtitles=filename='{ass}':fontsdir='{FONTS}',format=yuv420p[v]")
+    a = len(fr["layers"]) + 2
+    g.append(f"[{a}:a]aresample=44100,apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a]")
+    _run([ffmpeg(), "-y", *args, "-filter_complex", ";".join(g), "-map", "[v]", "-map", "[a]",
+          "-frames:v", str(int(round(dur * FPS))), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast",
+          "-crf", CRF, "-maxrate", MAXRATE, "-bufsize", "4000k", "-g", str(FPS * 2), "-pix_fmt", "yuv420p",
+          "-c:a", "aac", "-b:a", "96k", "-ar", "44100", "-ac", "1", str(out)], timeout=900)
+
+
+def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = VOICE, resolver=None) -> dict:
     """Render story['reel'] into out_dir/<id>-<slug>.mp4 (+ .jpg poster). Returns metadata for the manifest."""
     reel = story.get("reel") or {}
     sc_list = reel.get("scenes") or []
@@ -203,7 +301,6 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
     name = f"{story['id']}-{(story.get('slug') or 'story')[:40]}"
     out_dir.mkdir(parents=True, exist_ok=True)
     work = pathlib.Path(tempfile.mkdtemp(prefix=f"reel-{story['id']}-"))
-    words_all: list[tuple[str, float, float]] = []
     segs, t0, narrated = [], 0.0, True
     # Chapters: runs of consecutive scenes with the same chapter key. Their start times go to the manifest so
     # the app can skip and jump by chapter; the frame shows the chapter name and chapter progress.
@@ -216,14 +313,33 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
     thread = story.get("thread") or {}
     if thread.get("day", 1) > 1:
         meta = f"{date_label} · Day {thread['day']} of this story"
+    section, headline = story.get("section", "world"), story.get("headline", "")
+    clock, mark = {}, time.monotonic()
+
+    def lap(name):
+        nonlocal mark
+        now = time.monotonic()
+        clock[name] = round(now - mark, 1)
+        mark = now
     try:
+        resolver = resolver or images.Resolver(work / "img")
+        photos, reused, avatars = _photos(sc_list, resolver)
+        lap("photos")
+        pages = [scenes.scene_html(sc, section=section, headline=headline,
+                                   idx=chap_idx[i] if chaptered else i,
+                                   total=len(runs) if chaptered else len(sc_list), meta=meta,
+                                   chapter=CHAPTER_LABELS.get(keys[i], "") if chaptered else "",
+                                   photo=photos[i], reused=reused[i], avatars=avatars)
+                 for i, sc in enumerate(sc_list)]
+        with ThreadPoolExecutor(4) as ex:                  # Chrome screenshots, several at a time
+            frames = list(ex.map(lambda a: _render_layers(a[1], work, a[0]), enumerate(pages)))
+        lap("frames")
+        encodes = ThreadPoolExecutor(2)                    # encode scene i while narrating scene i+1
+        jobs = []
         for i, sc in enumerate(sc_list):
-            png, mp3, seg = work / f"s{i}.png", work / f"s{i}.mp3", work / f"seg{i}.mp4"
+            mp3, seg, ass = work / f"s{i}.mp3", work / f"seg{i}.mp4", work / f"s{i}.ass"
             if chaptered and i in runs:
                 chapters.append({"t": round(t0, 2), "key": keys[i], "label": CHAPTER_LABELS.get(keys[i], keys[i])})
-            render_png(scenes.scene_html(sc, section=story.get("section", "world"), headline=story.get("headline", ""),
-                                         idx=chap_idx[i] if chaptered else i, total=len(runs) if chaptered else len(sc_list),
-                                         meta=meta, chapter=CHAPTER_LABELS.get(keys[i], "") if chaptered else ""), png)
             res = narrate(sc.get("speak") or sc.get("say", ""), mp3, voice) if narrated else None
             if res is None:
                 narrated = False
@@ -236,32 +352,29 @@ def build(story: dict, out_dir: pathlib.Path, *, date_label: str, voice: str = V
                     words = align(sc.get("say", ""), words)
                 dur = adur + PAD_S
                 audio_in = ["-i", str(mp3)]
-            words_all += [(w, s + t0, e + t0) for w, s, e in words]
-            frames = int(round(dur * FPS))
-            # A still designed frame with a soft fade-in; the word-by-word captions carry the motion. (A zoompan
-            # push-in looked nice but is single-threaded and timed out on GitHub's shared runners.)
-            vf = "fade=t=in:st=0:d=0.25,format=yuv420p"
-            _run([ffmpeg(), "-y", "-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(png), *audio_in,
-                  "-filter_complex", f"[0:v]{vf}[v];[1:a]aresample=44100,apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a]",
-                  "-map", "[v]", "-map", "[a]", "-frames:v", str(frames), "-c:v", "libx264", "-preset", "veryfast",
-                  "-tune", "stillimage", "-crf", "18", "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "1",
-                  "-shortest", str(seg)], timeout=180)
+            dur = round(int(round(dur * FPS)) / FPS, 4)
+            ass.write_text(ass_captions(words, dur))
+            jobs.append(encodes.submit(_segment, frames[i], sc, i, dur, audio_in, ass, seg))
             segs.append(seg)
-            t0 += frames / FPS
+            if i == 0:
+                first_dur = dur
+            t0 += dur
+        encodes.shutdown(wait=True)
+        for j in jobs:
+            j.result()                                     # re-raise any encode failure
+        lap("voice+encode")
         lst = work / "list.txt"
         lst.write_text("".join(f"file '{s}'\n" for s in segs))
-        joined = work / "joined.mp4"
-        _run([ffmpeg(), "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(joined)], timeout=300)
-        ass = work / "captions.ass"
-        ass.write_text(ass_captions(words_all, t0))
         mp4, jpg = out_dir / f"{name}.mp4", out_dir / f"{name}.jpg"
-        sub = f"subtitles=filename='{ass}':fontsdir='{FONTS}'"   # quoted: the repo path contains a space
-        _run([ffmpeg(), "-y", "-i", str(joined), "-vf", sub, "-c:v", "libx264", "-preset", "medium", "-crf", "26",
-              "-maxrate", "2500k", "-bufsize", "5000k", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k",
-              "-movflags", "+faststart", str(mp4)], timeout=600)
-        _run([ffmpeg(), "-y", "-i", str(work / "s0.png"), "-vf", "scale=720:-2", "-q:v", "4", str(jpg)], timeout=60)
+        _run([ffmpeg(), "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", "-movflags", "+faststart",
+              str(mp4)], timeout=300)
+        n0 = len(frames[0]["layers"])
+        at = min(max(0.1, first_dur - 0.2), (scenes.reveal_times(sc_list[0], n0, first_dur) or [0])[-1] + 1.2)
+        _run([ffmpeg(), "-y", "-ss", f"{at:.2f}", "-i", str(segs[0]), "-frames:v", "1", "-vf", "scale=720:-2",
+              "-q:v", "4", str(jpg)], timeout=60)
         return {"story": story["id"], "reel_hash": story.get("reel_hash"), "file": mp4.name, "poster_file": jpg.name,
                 "duration_s": round(duration(mp4), 1), "bytes": mp4.stat().st_size, "narrated": narrated,
-                "chapters": chapters}
+                "chapters": chapters, "timing": clock,
+                "photos": sum(1 for p, r in zip(photos, reused) if p is not None and not r)}
     finally:
         shutil.rmtree(work, ignore_errors=True)

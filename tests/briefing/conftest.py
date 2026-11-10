@@ -57,7 +57,7 @@ def research(n_claims: int = 10, *, fresh_hours: float = 3) -> dict:
 def story(*, contested: bool = False) -> dict:
     """A writer output that satisfies every word range."""
     # A full-coverage reel: every chapter in order, 14 scenes, ~470 words.
-    chaps = ["hook", "what_happened", "what_happened", "so_far", "why", "why", "players", "idea", "idea",
+    chaps = ["hook", "what_happened", "what_happened", "history", "why", "why", "players", "idea", "idea",
              "example", "for_you", "next", "remember", "remember"]
     scenes = [{"kind": "hook" if c == "hook" else "outro" if c == "remember" else "kinetic", "chapter": c,
                "say": words(34, i % 6), "show": "Key point"} for i, c in enumerate(chaps)]
@@ -70,6 +70,8 @@ def story(*, contested: bool = False) -> dict:
         "question": "Why is the outbreak spreading faster than officials expected this season?",
         "dek": words(32, 2),
         "so_far": {"text": words(105, 3), "cids": ["k1", "k2"]},
+        "history": {"text": words(140, 4), "cids": ["k3", "k4"],
+                    "timeline": [{"when": f"Year {i}", "what": words(8, i), "cid": f"k{i + 1}"} for i in range(1, 5)]},
         "what_happened": {"text": "The panel reported 1,250 cases and 68 deaths. " + words(95, 4), "cids": ["k1", "k3"]},
         "why_chain": [{"text": words(22, i), "cids": ["k4"]} for i in range(4)],
         "players": [], "numbers": [{"value": "1,250 cases", "meaning": "double last year", "cids": ["k1"]}],

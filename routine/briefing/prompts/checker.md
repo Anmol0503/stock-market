@@ -17,7 +17,9 @@ List only real problems:
     well-established mechanisms are fine); a wrong rule or mechanism; arithmetic in the worked example or
     practice answer that doesn't add up; an example that isn't clearly made up ("Say…", "Imagine…") or that
     could be mistaken for a real event; a step that skips something a newcomer needs to follow the next one.
-11. in the reel (the ONLY thing the reader watches): a point the blocks or lesson make that the reel leaves
+11. in the history block: a date, event or cause the claims don't support, or a turning point that is
+    missing so the present doesn't make sense (where "history");
+12. in the reel (the ONLY thing the reader watches): a point the blocks or lesson make that the reel leaves
     out (name the point; where "reel"); a reel line the blocks don't support (where "reel[i]").
 
 Check the example's arithmetic line by line. Lesson problems are severity "fix", never "drop".

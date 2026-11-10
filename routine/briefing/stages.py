@@ -485,7 +485,7 @@ async def _story_chain(R: Run, slot: dict, cmap: dict, thr_ctx: dict, window: di
             for attempt in range(2):
                 research = await R.ask("research", prompting.system("research"),
                                        prompting.research(slot, clusters, date=R.date, window=window, thread=thread)
-                                       + feedback, schemas.RESEARCH, label=f"research-{sid}", need_s=540)
+                                       + feedback, schemas.RESEARCH, label=f"research-{sid}", need_s=720)
                 good = [c for c in research.get("claims") or [] if str(c.get("url", "")).startswith("http")]
                 sites = {build.domain(c["url"]) for c in good}
                 if len(good) >= 5 and len(sites) >= 3:
@@ -711,6 +711,8 @@ def _strip_optional(story: dict, problems: list[dict]) -> dict:
             s["views"] = []
         elif w == "players":
             s["players"] = []
+        elif w == "history" and p.get("severity") == "drop":
+            s["history"] = {"text": "", "cids": [], "timeline": []}
     _strip_lesson(s, [p["where"] for p in problems if str(p.get("where", "")).startswith(("lesson", "takeaways"))
                       and not p.get("soft")])
     return s

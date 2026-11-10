@@ -17,6 +17,12 @@ date, who holds an office) must come from the claims. If it isn't there, leave i
   a curious reader would ask. **dek** 15–35 words: the short answer and why it matters.
 - **so_far** 40–110 words: the background a newcomer needs, in order. FACT.
 - **what_happened** 50–110 words: the new development, exactly, with absolute dates. FACT.
+- **history** (the viewer said this was missing, and it matters most for understanding): text 90–300
+  words + timeline of 4–8 turning points [{when (a year, or month and year), what (at most 14 words), cid}].
+  Start at the ROOT of the story, years or decades back if that's where it began, and walk forward through
+  each turning point to the recent past, so someone with no background understands why things are the way
+  they are now. Explain what each turning point changed, not just that it happened. Only from the claims
+  (the background claims); cite them in `cids`. FACT.
 - **why_chain** 3–5 steps, each 8–25 words: the cause → effect mechanism. ANALYSIS.
 - **players** 0–5 (name + who they are, 15 words max) when they help; else [].
 - **numbers** 0–4: value + what it means / compares to (20 words max), only from claims.
@@ -91,7 +97,11 @@ Walk through the story in chapters, in this order. Set each scene's `chapter` to
 1–3 scenes per chapter, and skip a chapter only when its block is empty (no players, no views).
 1. `hook`: the `question`, sharp and curious (kind hook).
 2. `what_happened`: the new development, exactly, with absolute dates, who did what, the key numbers.
-3. `so_far`: the background a newcomer needs, in order (a timeline scene helps).
+3. `history`: HOW WE GOT HERE, 2–4 scenes. Start at the root (years or decades back) and walk through each
+   turning point to the present, explaining what each one changed. Use a timeline scene with the history
+   timeline (4–8 entries, `when` short like "1971" or "Aug 2024", `what` at most 8 words). This chapter is
+   what makes the present make sense: give it time.
+3b. `so_far`: the recent run-up (the last weeks or months) if the history doesn't already cover it.
 4. `why`: every why_chain step, cause by cause.
 5. `players`: who is involved and what each wants (kind players).
 6. `numbers`: the numbers that matter and what each compares to (big_number, bar or line).
@@ -111,12 +121,18 @@ Walk through the story in chapters, in this order. Set each scene's `chapter` to
   on first use), numbers as a person would say them ("six point three billion dollars"). Use transitions
   between chapters so it flows ("So why did this happen?", "Now, who are the players?").
 - `show`: at most 8 words of on-screen text for the scene: the key point, number or term.
+- `image`: the exact title of an English Wikipedia article whose photo makes a good backdrop for this
+  scene: the person speaking or acting ("Sheikh Hasina"), the place ("Strait of Hormuz", "Abu Dhabi"), the
+  institution or building ("Reserve Bank of India", "Supreme Court of India"), or the thing ("Container
+  ship", "Lithium-ion battery"). Use real, well-known article titles; vary them across scenes; reuse
+  the story's main image when nothing better fits. Leave "" for chart, steps and big_number scenes. Never
+  choose an image of victims, bodies or graphic scenes.
 - Data scenes, when they help the viewer SEE it:
   - big_number: number_value (from a claim; set number_cid) + number_label.
   - map: map_iso3 (ISO 3166 alpha-3 codes of the countries involved), map_lon/map_lat of the place,
     map_label.
   - bar or line: chart_title, chart_unit, 2–8 chart_points with values from the claims (chart_cids).
-  - timeline: 3–5 {when, what} from the claims. players: 2–4 {name, role}.
+  - timeline: 3–8 {when, what} from the claims. players: 2–4 {name, role}.
   - steps: 2–4 {label, calc} from the lesson example (calc at most 10 words).
   - views: 2–4 {who, view}: named holders from the claims and their view in at most 14 words.
   - Other scenes: leave data fields empty ("" / [] / 0).

@@ -107,7 +107,8 @@ def main(argv=None) -> int:
                 meta = reel.build(s, out_dir, date_label=label)
                 made.append(meta)
                 print(f"{s['id']}: {meta['file']} {meta['duration_s']} s, {meta['bytes'] // 1024} KB, "
-                      f"{len(meta.get('chapters') or [])} chapters, "
+                      f"{len(meta.get('chapters') or [])} chapters, {meta.get('photos', 0)} photos, "
+                      f"timing {meta.get('timing')}, "
                       f"{'narrated' if meta['narrated'] else 'SILENT (voice failed)'}")
             except Exception as e:  # noqa: BLE001 - one reel failing must not stop the others
                 failed.append({"story": s["id"], "reason": f"{type(e).__name__}: {e}"[:200]})

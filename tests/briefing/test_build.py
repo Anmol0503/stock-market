@@ -192,7 +192,23 @@ def test_thin_sourcing_is_caught_before_the_fix_pass():
     s["why_chain"] = [{**st, "cids": ["k1"]} for st in s["why_chain"]]
     s["numbers"][0]["cids"] = ["k1"]
     s["lesson"]["steps"][2]["cids"], s["lesson"]["apply"]["cids"] = ["k1"], ["k1"]
+    s["history"]["cids"] = ["k1"]
+    s["history"]["timeline"] = [{**e, "cid": "k1"} for e in s["history"]["timeline"]]
     assert any(p["where"] == "sources" and "only 1 site" in p["issue"] for p in problems(s))
+
+
+def test_history_is_required_and_sourced():
+    s = story()
+    s["history"] = {"text": "", "cids": [], "timeline": []}
+    assert any(p["where"] == "history" and "missing" in p["issue"] for p in problems(s))
+    s = story()
+    s["history"]["timeline"] = s["history"]["timeline"][:2]
+    s["history"]["cids"] = ["k99"]
+    issues = [p["issue"] for p in problems(s) if p["where"] == "history"]
+    assert any("2 events" in i for i in issues) and any("unknown claim k99" in i for i in issues)
+    s = story()
+    s["history"]["text"] += " It began in 1871."            # a year that isn't in the claims
+    assert any("1871" in p["issue"] for p in problems(s))
 
 
 # ---------------------------------------------------------------- Hinglish reels

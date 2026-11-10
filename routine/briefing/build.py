@@ -75,10 +75,12 @@ def unverified_numbers(text: str, corpus: set[str], year: int) -> list[str]:
 
 def story_text(s: dict) -> str:
     parts = [s.get("headline"), s.get("question"), s.get("dek"), s.get("so_far", {}).get("text"),
+             (s.get("history") or {}).get("text"),
              s.get("what_happened", {}).get("text"), s.get("for_you", {}).get("text"), s.get("next", {}).get("text"),
              (s.get("analogy") or {}).get("text"), (s.get("analogy") or {}).get("breaks"),
              (s.get("misconception") or {}).get("myth"), (s.get("misconception") or {}).get("fact"), s.get("changed")]
     parts += [x.get("text") for x in s.get("why_chain") or []]
+    parts += [f"{x.get('when')} {x.get('what')}" for x in (s.get("history") or {}).get("timeline") or []]
     parts += [f"{x.get('value')} {x.get('meaning')}" for x in s.get("numbers") or []]
     parts += [x.get("view") for x in s.get("views") or []]
     parts += [x.get("who") for x in s.get("players") or []]
@@ -106,6 +108,21 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
             bad(b, "required block is empty", "drop" if b == "what_happened" else "fix")
         elif not _in(n, b, 0.15):
             bad(b, f"{n} words; must be {W[b][0]}–{W[b][1]}")
+    # History: the roots of the story (years or decades back), so the present makes sense. Sourced like any fact.
+    hi = s.get("history") or {}
+    n = words(hi.get("text"))
+    if n == 0:
+        bad("history", "missing: explain how this began and the key turning points, from the background claims")
+    elif not _in(n, "history", 0.15):
+        bad("history", f"{n} words; must be {W['history'][0]}–{W['history'][1]}")
+    tl = hi.get("timeline") or []
+    if n and not W["history_events"][0] <= len(tl) <= W["history_events"][1]:
+        bad("history", f"timeline has {len(tl)} events; give {W['history_events'][0]}–{W['history_events'][1]} turning points")
+    for c in list(hi.get("cids") or []) + [e.get("cid") for e in tl]:
+        if c and c not in cids:
+            bad("history", f"cites unknown claim {c}")
+    if n and not hi.get("cids"):
+        bad("history", "FACT block cites no claims (cids empty)")
     steps = s.get("why_chain") or []
     if not 3 <= len(steps) <= 5:
         bad("why_chain", f"{len(steps)} steps; must be 3–5")
@@ -128,7 +145,8 @@ def story_problems(s: dict, research: dict, *, slot: dict, year: int, markets: d
             if c not in cids:
                 bad(b, f"cites unknown claim {c}")
     claims = {c.get("cid"): c for c in research.get("claims") or []}
-    cited = {x for b in ("so_far", "what_happened", "for_you", "misconception") for x in (s.get(b) or {}).get("cids") or []}
+    cited = {x for b in ("so_far", "history", "what_happened", "for_you", "misconception") for x in (s.get(b) or {}).get("cids") or []}
+    cited |= {e.get("cid") for e in (s.get("history") or {}).get("timeline") or [] if e.get("cid")}
     cited |= {x for st in s.get("why_chain") or [] for x in st.get("cids") or []}
     cited |= {x for n in s.get("numbers") or [] for x in n.get("cids") or []}
     cited |= {v.get("cid") for v in s.get("views") or []}
@@ -220,7 +238,7 @@ def lesson_problems(s: dict, research: dict, year: int, markets: dict | None = N
     return P
 
 
-REQUIRED_CHAPTERS = ("hook", "what_happened", "why", "idea", "example", "for_you", "next", "remember")
+REQUIRED_CHAPTERS = ("hook", "what_happened", "history", "why", "idea", "example", "for_you", "next", "remember")
 
 
 def reel_problems(scenes: list[dict], research: dict, year: int, markets: dict | None = None) -> list[dict]:
@@ -284,6 +302,8 @@ def _ist(published: str | None) -> str | None:
 def _scene(sc: dict) -> dict:
     out = {"kind": sc.get("kind"), "chapter": sc.get("chapter") or "", "say": sc.get("say", "").strip(),
            "show": " ".join((sc.get("show") or "").split()[:8])}
+    if (sc.get("image") or "").strip():          # Wikipedia article whose free photo is the scene's backdrop
+        out["image"] = sc["image"].strip()[:120]
     if sc.get("speak"):                         # Hinglish: `say` = Roman captions, `speak` = what the voice reads
         out["speak"] = sc["speak"].strip()
     k = sc.get("kind")
@@ -296,7 +316,7 @@ def _scene(sc: dict) -> dict:
         out["chart"] = {"title": sc.get("chart_title", ""), "unit": sc.get("chart_unit", ""),
                         "points": (sc.get("chart_points") or [])[:8]}
     elif k == "timeline":
-        out["timeline"] = (sc.get("timeline") or [])[:5]
+        out["timeline"] = (sc.get("timeline") or [])[:8]
     elif k == "players":
         out["players"] = (sc.get("players") or [])[:4]
     elif k == "steps":
@@ -335,6 +355,11 @@ def public_story(sid: str, slot: dict, s: dict, research: dict, *, thread: dict 
         "what_happened": {"text": s["what_happened"]["text"], "src": refs(s["what_happened"].get("cids"))},
         "why_chain": {"steps": [{"text": st["text"], "src": refs(st.get("cids"))} for st in s.get("why_chain") or []]},
     }
+    hi = s.get("history") or {}
+    if hi.get("text"):
+        blocks["history"] = {"text": hi["text"], "src": refs(hi.get("cids")),
+                             "timeline": [{"when": e.get("when", ""), "what": e.get("what", ""), "src": refs([e.get("cid")])}
+                                          for e in hi.get("timeline") or [] if e.get("what")][:8]}
     if s.get("players"):
         blocks["players"] = {"items": [{"name": p["name"], "who": p["who"]} for p in s["players"][:5] if p.get("name")]}
     if s.get("numbers"):

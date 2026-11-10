@@ -72,7 +72,7 @@ WORDS = {
     "brief_text": (50, 120), "brief_background": (8, 30), "brief_why": (8, 25), "also": (8, 25),
     "top_line": (15, 40), "change": (5, 22), "watch": (4, 20), "gist": (8, 25), "quiet_note": (5, 25),
     "term_meaning": (4, 20), "check_q": (6, 25), "check_why": (5, 30),
-    "story_total": (450, 850), "reel_total": (450, 950), "scene_say": (6, 60), "scene_show": (0, 8),
+    "story_total": (550, 1150), "history": (90, 300), "history_events": (4, 8), "reel_total": (450, 950), "scene_say": (6, 60), "scene_show": (0, 8),
     "reel_scenes": (12, 22),
     # the lesson ("Learn the idea"), counted on top of story_total
     "concept": (3, 10), "big_idea": (12, 40), "lesson_step": (15, 55), "example_setup": (12, 50),
@@ -102,7 +102,7 @@ ROLES: dict[str, dict] = {
     "bootstrap":  {"model": SONNET, "effort": "medium", "tools": "",                   "budget": 1.0, "timeout": 420},
     "scout":      {"model": SONNET, "effort": "medium", "tools": "WebSearch",          "budget": 1.5, "timeout": 600},
     "editor":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 3.0, "timeout": 600},
-    "research":   {"model": SONNET, "effort": "medium", "tools": "WebSearch,WebFetch", "budget": 1.5, "timeout": 600},
+    "research":   {"model": SONNET, "effort": "medium", "tools": "WebSearch,WebFetch", "budget": 2.0, "timeout": 780},
     "writer":     {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 3.0, "timeout": 900},
     "checker":    {"model": SONNET, "effort": "medium", "tools": "",                   "budget": 0.8, "timeout": 420},
     "fixer":      {"model": OPUS,   "effort": "high",   "tools": "",                   "budget": 2.5, "timeout": 900},
@@ -116,7 +116,8 @@ for _role, _cfg in ROLES.items():       # env overrides, e.g. BRIEFING_MODEL_WRI
 
 # Reel chapters, in teaching order. A long reel is navigable by chapter in the app (skip, jump back).
 CHAPTERS = {
-    "hook": "The question", "what_happened": "What happened", "so_far": "The story so far",
+    "hook": "The question", "what_happened": "What happened", "history": "How we got here",
+    "so_far": "The story so far",
     "why": "Why it happened", "players": "Who's involved", "numbers": "By the numbers", "idea": "The idea",
     "example": "Worked example", "views": "Different views", "for_you": "What it means for you",
     "next": "What's next", "remember": "Remember this",
