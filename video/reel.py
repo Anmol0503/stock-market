@@ -208,7 +208,7 @@ def ass_captions(words: list[tuple[str, float, float]], total: float) -> str:
 PANS = [(0.15, 0.2, 0.85, 0.6), (0.8, 0.7, 0.2, 0.25), (0.25, 0.85, 0.7, 0.15), (0.75, 0.15, 0.3, 0.8)]
 SLIDE_PX, SLIDE_S, FADE_S = 46, 0.6, 0.45
 # Size: ten 6-minute reels a day, three days kept on Pages (1 GB limit): aim for ~3 MB per minute.
-CRF, MAXRATE = os.environ.get("REEL_CRF", "27"), os.environ.get("REEL_MAXRATE", "2000k")
+CRF, MAXRATE = os.environ.get("REEL_CRF", "30"), os.environ.get("REEL_MAXRATE", "1200k")   # ~9-min reels: keep 2 days of 10 under the 1 GB Pages limit
 
 
 def _photos(sc_list: list[dict], resolver) -> tuple[list, list[bool], dict]:
