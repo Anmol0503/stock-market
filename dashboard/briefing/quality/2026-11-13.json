@@ -1,0 +1,267 @@
+{
+ "date": "2026-11-13",
+ "generated_at": "2026-11-13T04:27+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-12T03:06+05:30",
+  "end": "2026-11-13T04:05+05:30"
+ },
+ "counts": {
+  "stories": 10,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1294,
+  "items": 1704
+ },
+ "sources": {
+  "ok": 113,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "NPR World: HTTP 403"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-12",
+  "total": 28,
+  "matched": 1,
+  "misses": [
+   "Israeli airstrike on Nasser Medical Complex in Khan Younis kills six, Gaza",
+   "ADF rebels kill at least 22 in Mambasa, Ituri, DR Congo",
+   "Three CRPF personnel injured in militant firing at Kulgam checkpoint, J&K",
+   "Pakistani Taliban ambush kills ten police in Kohat, Khyber Pakhtunkhwa",
+   "Brooklyn apartment building collapse kills eight",
+   "Scott Colom projected to defeat Hyde-Smith in Mississippi Senate race",
+   "Millions join general strike in Spain over housing crisis",
+   "Indonesian VP Gibran submits resignation amid education questions"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "sources: 1704 fresh items from 113/115 sources, 36 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 27,
+    "sites": 10,
+    "primary": 3,
+    "searches": 8,
+    "fetches": 12
+   },
+   "problems": [
+    "views[1] (Michael Landsberg, Landsberg Bennett) and reel[18]: No claim supports this view. The cited k15 doesn't mention Michael Landsberg or the line 'worst-ca"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 9,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
+   "problems": [
+    "reel: The reel has 23 scenes, and the target is 12–22. Merge or cut a scene, for example by combining two of the 'why' scenes or the two 'example' scenes.",
+    "reel: 23 scenes; aim for 12–22"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 8,
+    "primary": 5,
+    "searches": 4,
+    "fetches": 6
+   },
+   "problems": [
+    "lesson.apply: It says both sides 'quote true numbers'. The claims only report what Shah and Ramesh said. They don't confirm that Shah's 20-to-30 figure is accur",
+    "reel[19]: 'Only a bigger House allows Shah's 20 to 30' is the explainer's inference. No claim says Shah's figure assumes a larger House. Present it as likely, o"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 7,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 12,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 24,
+    "sites": 14,
+    "primary": 3,
+    "searches": 10,
+    "fetches": 7
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 8,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 12,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 9
+   },
+   "problems": [
+    "lesson.apply: The text says 'An extension would keep the 47% rate'. No claim says what an extension would do to the tariff rate. This is an unsupported predicti",
+    "reel[19]: The reel says 'If Shenzhen extends the truce, the forty-seven per cent rate can hold.' No claim supports this. It repeats the unsupported extension cl"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 25,
+    "sites": 8,
+    "primary": 1,
+    "searches": 4,
+    "fetches": 13
+   },
+   "problems": [
+    "so_far / reel[6]: The text says India pushed for the standalone finance agenda item ('India had pushed for it', 'as India wanted'). The claims only say India wa"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 5,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 23.5,
+  "triage": 34.0,
+  "merge": 7.4,
+  "scout": 38.5,
+  "editor": 82.4,
+  "stories+sections": 1078.7
+ },
+ "usage": {
+  "calls": 86,
+  "failures": 0,
+  "cost_usd": 23.596,
+  "seconds": 7505.5,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0352,
+    "seconds": 11.6,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.7125,
+    "seconds": 192.7,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0548,
+    "seconds": 7.3,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.3632,
+    "seconds": 38.5,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4036,
+    "seconds": 82.4,
+    "failures": 0
+   },
+   "research": {
+    "calls": 15,
+    "cost_usd": 3.25,
+    "seconds": 1224.9,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 8.2528,
+    "seconds": 3152.6,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 22,
+    "cost_usd": 1.8489,
+    "seconds": 331.6,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 12,
+    "cost_usd": 5.0146,
+    "seconds": 1122.1,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 15,
+    "cost_usd": 3.6598,
+    "seconds": 1342.0,
+    "failures": 0
+   }
+  }
+ }
+}
