@@ -1,0 +1,263 @@
+{
+ "date": "2026-11-17",
+ "generated_at": "2026-11-17T04:25+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-16T03:05+05:30",
+  "end": "2026-11-17T04:06+05:30"
+ },
+ "counts": {
+  "stories": 10,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1066,
+  "items": 1458
+ },
+ "sources": {
+  "ok": 98,
+  "total": 115,
+  "failed": [
+   "Beat: Central banks: HTTP 429",
+   "Beat: GST & income tax: HTTP 429",
+   "Beat: Health in India: HTTP 429",
+   "Beat: ISRO & space: HTTP 429",
+   "Beat: India's neighbours: HTTP 429",
+   "Beat: Telecom & internet: HTTP 429",
+   "CNBC Economy: HTTP 403",
+   "Cricbuzz (Google News): HTTP 429",
+   "GN — India prices & alerts: HTTP 429",
+   "Google News — India business: HTTP 429",
+   "Google News — Science: HTTP 429",
+   "Google News — Technology: HTTP 429",
+   "Google News — World topic: HTTP 429",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403",
+   "Wikipedia 2026-11-15: HTTP 429",
+   "Wikipedia 2026-11-16: HTTP 429"
+  ]
+ },
+ "recall": {
+  "edition": null,
+  "total": null,
+  "matched": null,
+  "misses": []
+ },
+ "fallback_plan": false,
+ "notes": [
+  "sources: 1458 fresh items from 98/115 sources, 0 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 6,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 2
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 13,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 11,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 9
+   },
+   "problems": [
+    "lesson.apply: The lesson says non-proliferation (Iran) is a different problem from arms-control caps. Apply then says the China warhead gap explains why the non",
+    "misconception.fact: It states flatly that Ukraine is not on the agenda. The claims say only that a US official said Trump will not raise Ukraine. China says Ukr"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 10,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 16,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 11,
+    "primary": 3,
+    "searches": 7,
+    "fetches": 8
+   },
+   "problems": [
+    "history; players[LASST]; reel[8]; reel[11]: LASST is called a 'New York' nonprofit. No claim says where LASST is based, so the location is unsupported. Cut 'New"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 7,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 8,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [
+    "numbers[0], takeaways[1], lesson.steps[1]: These say the third carrier 'arrived on 16 November'. The claims only say CENTCOM announced on 16 November that it 'h"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 11,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 4,
+    "primary": 0,
+    "searches": 2,
+    "fetches": 2
+   },
+   "problems": [
+    "history: The West Bengal figure and the Supreme Court's 'concern but declined to intervene' sit inside the Phase II paragraph. The claims don't say West Bengal "
+   ],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 39.8,
+  "triage": 26.4,
+  "merge": 4.4,
+  "scout": 27.0,
+  "editor": 92.7,
+  "stories+sections": 967.6
+ },
+ "usage": {
+  "calls": 86,
+  "failures": 0,
+  "cost_usd": 22.648,
+  "seconds": 6916.5,
+  "by_role": {
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.7041,
+    "seconds": 191.8,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0461,
+    "seconds": 4.4,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.2989,
+    "seconds": 26.9,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4363,
+    "seconds": 92.7,
+    "failures": 0
+   },
+   "research": {
+    "calls": 17,
+    "cost_usd": 3.2982,
+    "seconds": 1160.6,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.623,
+    "seconds": 2792.7,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 23,
+    "cost_usd": 1.8437,
+    "seconds": 327.6,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 13,
+    "cost_usd": 5.3621,
+    "seconds": 1233.9,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 12,
+    "cost_usd": 3.0353,
+    "seconds": 1085.9,
+    "failures": 0
+   }
+  }
+ }
+}
