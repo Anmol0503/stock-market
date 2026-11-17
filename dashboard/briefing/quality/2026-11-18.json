@@ -1,0 +1,258 @@
+{
+ "date": "2026-11-18",
+ "generated_at": "2026-11-18T04:26+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-17T03:06+05:30",
+  "end": "2026-11-18T04:05+05:30"
+ },
+ "counts": {
+  "stories": 10,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1275,
+  "items": 1695
+ },
+ "sources": {
+  "ok": 109,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "Google News — India top: HTTP 503",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403",
+   "Wikipedia 2026-11-16: HTTP 429",
+   "Wikipedia 2026-11-17: HTTP 429"
+  ]
+ },
+ "recall": {
+  "edition": null,
+  "total": null,
+  "matched": null,
+  "misses": []
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s1: 1 undated non-official source(s) kept, flagged",
+  "s8: 2 undated non-official source(s) kept, flagged",
+  "sources: 1695 fresh items from 109/115 sources, 0 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 24,
+    "sites": 10,
+    "primary": 0,
+    "searches": 9,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 3,
+    "searches": 2,
+    "fetches": 4
+   },
+   "problems": [
+    "so_far.text; players[2]; reel[10] (players): Megaspeed is called \"Singapore-based\". None of the claims, including k15, say where Megaspeed is based. Cut the des"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 9,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 3
+   },
+   "problems": [
+    "reel: The reel has 23 scenes. The target is 12–22, so merge or cut at least one. For example, fold the two Canada-tariff scenes together, or merge the two 'why'",
+    "reel: 23 scenes; aim for 12–22"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 21,
+    "sites": 11,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 11
+   },
+   "problems": [
+    "lesson.steps[3]: The step says a bridge is closed 'for safety'. The claims only say the Kerch Bridge was closed to traffic after the attacks. They don't give a "
+   ],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 5,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 14,
+    "sites": 6,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 11,
+    "sites": 5,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 4
+   },
+   "problems": [
+    "dek: The claims don't say retail traders would 'feel it first'. They only say limits are under discussion and the impact is unknown. Cut or soften this.",
+    "reel[19]: The scene narration is over 60 words (automatic check). Split it or shorten it.",
+    "reel[19]: scene narration over 60 words"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 13,
+    "primary": 1,
+    "searches": 8,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 5,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 5,
+    "primary": 7,
+    "searches": 5,
+    "fetches": 5
+   },
+   "problems": [
+    "for_you.text and reel (India coverage slide): The line 'No direct effect on life in India' is stated as fact. None of the claims support it. The claims only say"
+   ],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 42.6,
+  "triage": 26.3,
+  "merge": 4.4,
+  "scout": 22.2,
+  "editor": 109.0,
+  "stories+sections": 1065.2
+ },
+ "usage": {
+  "calls": 83,
+  "failures": 0,
+  "cost_usd": 22.363,
+  "seconds": 7018.5,
+  "by_role": {
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.7092,
+    "seconds": 194.6,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.046,
+    "seconds": 4.4,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.2683,
+    "seconds": 22.2,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4664,
+    "seconds": 109.0,
+    "failures": 0
+   },
+   "research": {
+    "calls": 14,
+    "cost_usd": 2.897,
+    "seconds": 954.4,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.7961,
+    "seconds": 2966.9,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 21,
+    "cost_usd": 1.7254,
+    "seconds": 305.8,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 11,
+    "cost_usd": 4.5066,
+    "seconds": 1026.1,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 16,
+    "cost_usd": 3.9476,
+    "seconds": 1435.9,
+    "failures": 0
+   }
+  }
+ }
+}
