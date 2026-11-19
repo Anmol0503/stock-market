@@ -1,0 +1,259 @@
+{
+ "date": "2026-11-20",
+ "generated_at": "2026-11-20T04:23+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-19T03:05+05:30",
+  "end": "2026-11-20T04:05+05:30"
+ },
+ "counts": {
+  "stories": 9,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1315,
+  "items": 1706
+ },
+ "sources": {
+  "ok": 112,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-19",
+  "total": 18,
+  "matched": 7,
+  "misses": [
+   "Ukrainian forces strike the Crimean Bridge for the third time in four days; Russia closes it to all traffic",
+   "Israeli army launches first operation in central Gaza since the October 2025 ceasefire"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s5: source dated in the future (https://www.india.com/news/india/cyclone-akvan-landfall-today-november-20-over-1-2-lakh-evacuated-amid-high-alert-in-odisha-andhra-pradesh-imd-alert-weather-rainfall-8546397/)",
+  "s5: 2 undated non-official source(s) kept, flagged",
+  "s5: dropped (didn't pass the fact check)",
+  "sources: 1706 fresh items from 112/115 sources, 31 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 8,
+    "primary": 4,
+    "searches": 8,
+    "fetches": 14
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 25,
+    "sites": 12,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 15
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 12,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 9
+   },
+   "problems": [
+    "headline / reel[0] / takeaways: These say Iran struck or fired at US 'bases' in Kuwait and Bahrain. The claims only name Ali Al Salem air base in Kuwait as a ta"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 5,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 8,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 8,
+    "primary": 1,
+    "searches": 4,
+    "fetches": 3
+   },
+   "problems": [
+    "history: The text says India's High Commission 'said the facility is for tourism and social visits only'. No claim says this. k6 only reports the warning about ",
+    "reel[6]: The reel line says the High Commission 'reminded people the facility is for tourism and social visits only'. The claims don't support this."
+   ],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 11,
+    "primary": 1,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [
+    "reel[0]: The hook says Anthropic had \"the biggest stock market debut in history\". The claims only say it raised the most money of any IPO ($81.3B). They don't s"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 10,
+    "primary": 2,
+    "searches": 6,
+    "fetches": 11
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 8,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 23.7,
+  "triage": 29.4,
+  "merge": 4.1,
+  "scout": 23.0,
+  "editor": 97.7,
+  "stories+sections": 912.7
+ },
+ "usage": {
+  "calls": 79,
+  "failures": 0,
+  "cost_usd": 20.496,
+  "seconds": 6562.5,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0265,
+    "seconds": 9.1,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6993,
+    "seconds": 188.4,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0461,
+    "seconds": 4.1,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.1327,
+    "seconds": 23.0,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.43,
+    "seconds": 97.7,
+    "failures": 0
+   },
+   "research": {
+    "calls": 14,
+    "cost_usd": 2.839,
+    "seconds": 1079.9,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.5194,
+    "seconds": 2825.2,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 20,
+    "cost_usd": 1.6359,
+    "seconds": 283.6,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 10,
+    "cost_usd": 4.0656,
+    "seconds": 920.1,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 13,
+    "cost_usd": 3.1007,
+    "seconds": 1131.2,
+    "failures": 0
+   }
+  }
+ }
+}
