@@ -1,0 +1,266 @@
+{
+ "date": "2026-11-24",
+ "generated_at": "2026-11-24T04:24+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-23T03:05+05:30",
+  "end": "2026-11-24T04:06+05:30"
+ },
+ "counts": {
+  "stories": 8,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1197,
+  "items": 1565
+ },
+ "sources": {
+  "ok": 105,
+  "total": 115,
+  "failed": [
+   "Beat: Disasters: HTTP 429",
+   "CNBC Economy: HTTP 403",
+   "GN — AI: HTTP 429",
+   "Guardian Business: HTTP 403",
+   "Guardian Environment: HTTP 403",
+   "Guardian Technology: HTTP 403",
+   "Guardian World: HTTP 403",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403",
+   "Wikipedia 2026-11-22: HTTP 429"
+  ]
+ },
+ "recall": {
+  "edition": null,
+  "total": null,
+  "matched": null,
+  "misses": []
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s1: source dated in the future (https://m.thewire.in/article/diplomacy/balen-shah-first-india-visit-red-carpet-1-6-billion-aid-nepal)",
+  "s1: dropped (didn't pass the fact check)",
+  "s2: source dated in the future (https://www.nbcnews.com/business/markets/stocks-rebound-ai-tech-selloff-nvidia-rcna610833)",
+  "s3: dropped (didn't pass the fact check)",
+  "s5: 1 undated non-official source(s) kept, flagged",
+  "sources: 1565 fresh items from 105/115 sources, 11 Wikipedia events, 2 market quotes",
+  "s3: reel stays in English (scene 2: numbers not in the English script or the story: 436, 350, 75, 77, 82)"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 9,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 7,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 3
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 24,
+    "sites": 12,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 8
+   },
+   "problems": [
+    "views[2] and reel (views chapter): The views block names 'Rich Ross, Evercore ISI' as the holder. Claim k11 gives no name or firm. It only says Huang's return '",
+    "players[2]: The block calls John Williams 'New York Fed president'. The claims only say 'the Fed's Williams'. They give no title.",
+    "next.dates[1] and reel (next chapter): The Fed meeting 'expected 9–10 December' has no support in the claims. None of them gives a December meeting date. The te"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 10,
+    "primary": 2,
+    "searches": 8,
+    "fetches": 10
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 12,
+    "sites": 8,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 2
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 9,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 9
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 21,
+    "sites": 9,
+    "primary": 4,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [
+    "history: The claims only say Nvidia made the A800 after the October 2022 curbs. They don't say each new rule made Nvidia redesign its China products. Cut or sof",
+    "history: No claim says GPUs 'later became the engines of artificial intelligence', or that this 'turned them into a security matter'. The causal link is the wri"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 7,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
+   "problems": [
+    "views[0], next.text, reel[views]: The Russian Foreign Ministry is quoted as saying the border closure will 'inevitably backfire'. None of the claims (k8 or any ",
+    "reel: 23 scenes; aim for 12–22 (automatic check).",
+    "reel: 23 scenes; aim for 12–22"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 21,
+    "sites": 8,
+    "primary": 6,
+    "searches": 8,
+    "fetches": 8
+   },
+   "problems": [
+    "misconception.fact: It says Ervebo and two new candidates 'are only being tested'. The claims say only Ervebo is being tested in the Tumaini trial. The Oxford a"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 7,
+    "primary": 1,
+    "searches": 6,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 40.2,
+  "triage": 26.8,
+  "merge": 3.9,
+  "scout": 12.7,
+  "editor": 76.1,
+  "stories+sections": 919.7
+ },
+ "usage": {
+  "calls": 83,
+  "failures": 0,
+  "cost_usd": 21.863,
+  "seconds": 6833.0,
+  "by_role": {
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6881,
+    "seconds": 189.4,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0462,
+    "seconds": 3.9,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.1067,
+    "seconds": 12.7,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.3727,
+    "seconds": 76.1,
+    "failures": 0
+   },
+   "research": {
+    "calls": 16,
+    "cost_usd": 3.4402,
+    "seconds": 1242.7,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.5712,
+    "seconds": 2811.9,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 20,
+    "cost_usd": 1.6587,
+    "seconds": 288.7,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 10,
+    "cost_usd": 4.0829,
+    "seconds": 908.1,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 16,
+    "cost_usd": 3.8961,
+    "seconds": 1300.0,
+    "failures": 0
+   }
+  }
+ }
+}
