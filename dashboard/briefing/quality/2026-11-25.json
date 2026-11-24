@@ -1,0 +1,290 @@
+{
+ "date": "2026-11-25",
+ "generated_at": "2026-11-25T04:37+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-24T03:06+05:30",
+  "end": "2026-11-25T04:05+05:30"
+ },
+ "counts": {
+  "stories": 9,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1160,
+  "items": 1499
+ },
+ "sources": {
+  "ok": 105,
+  "total": 115,
+  "failed": [
+   "Beat: Exams & jobs: HTTP 429",
+   "CNBC Economy: HTTP 403",
+   "GN — Markets India: HTTP 429",
+   "Google News — India nation: HTTP 429",
+   "Guardian Business: HTTP 403",
+   "Guardian Environment: HTTP 403",
+   "Guardian Technology: HTTP 403",
+   "Guardian World: HTTP 403",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-24",
+  "total": 20,
+  "matched": 1,
+  "misses": [
+   "Ukraine large-scale drone attack on western Russia hits Perm and Novoshakhtinsk refineries",
+   "Seven killed as truck overturns onto minitruck in Bahawalpur, Pakistan",
+   "Five killed, 25 injured in bus crash near Ciudad Juárez, Mexico",
+   "UK announces sanctions on five Myanmar military leaders and recognises Rohingya genocide",
+   "Spain's Supreme Court grants amnesty to Puigdemont"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "s1: source dated in the future (https://www.bnnbloomberg.ca/investing/market-outlook/2026/11/24/tech-stocks-wane-a-day-after-a-huang-rally-as-anthropic-tumbles-below-its-initial-offering-price/)",
+  "s1: 1 undated non-official source(s) kept, flagged",
+  "s1: dropped (didn't pass the fact check)",
+  "s5: dropped (didn't pass the fact check)",
+  "s4: 1 undated non-official source(s) kept, flagged",
+  "sources: 1499 fresh items from 105/115 sources, 26 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 11,
+    "primary": 0,
+    "searches": 9,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 5,
+    "primary": 4,
+    "searches": 2,
+    "fetches": 6
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 15,
+    "primary": 2,
+    "searches": 9,
+    "fetches": 10
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 10,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 9
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "demote",
+   "research": {
+    "claims": 19,
+    "sites": 7,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [
+    "numbers[2]: The claims don't give a cost of NPR 92.67 billion for Lower Arun. k3 only reports the 669 MW foundation stone. Remove the cost.",
+    "reel[14]: The reel says Lower Arun is 'reported to cost ninety-two point six seven billion Nepali rupees'. No claim supports this cost.",
+    "for_you: The two-way air route taking 'about six months' is stronger than k10, which says it 'could take about six months if fast-tracked'. The text drops the '"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 8,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 6
+   },
+   "problems": [
+    "history: The sentence 'That first return made her a national leader' isn't in the claims. k15 says only that she was elected Awami League president in exile and"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 11,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
+   "problems": [
+    "so_far / history / reel[5]: The date '22 November' for the two vessels being targeted near Benghazi isn't in any claim. k6 and k7 give no attack date, and the c"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 9,
+    "primary": 0,
+    "searches": 7,
+    "fetches": 4
+   },
+   "problems": [
+    "lesson.steps[2]: The text says the US is 'setting rates country by country'. The claims only say reports expect different possible rates for Japan, the EU, Sout"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 18,
+    "sites": 12,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 9
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 16,
+    "sites": 7,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 5
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "r1",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 8,
+    "primary": 0,
+    "searches": 8,
+    "fetches": 3
+   },
+   "problems": [
+    "reel: 23 scenes; aim for 12–22",
+    "reel: 23 scenes; aim for 12–22"
+   ],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 22.8,
+  "triage": 31.6,
+  "merge": 3.7,
+  "scout": 20.0,
+  "editor": 83.3,
+  "stories+sections": 1745.0
+ },
+ "usage": {
+  "calls": 91,
+  "failures": 0,
+  "cost_usd": 24.856,
+  "seconds": 7708.4,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0291,
+    "seconds": 9.8,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.6852,
+    "seconds": 187.4,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0452,
+    "seconds": 3.7,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.1677,
+    "seconds": 20.0,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4058,
+    "seconds": 83.3,
+    "failures": 0
+   },
+   "research": {
+    "calls": 19,
+    "cost_usd": 4.0044,
+    "seconds": 1304.7,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 11,
+    "cost_usd": 8.9628,
+    "seconds": 3351.7,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 22,
+    "cost_usd": 1.8134,
+    "seconds": 312.8,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 11,
+    "cost_usd": 4.8163,
+    "seconds": 1118.7,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 16,
+    "cost_usd": 3.9267,
+    "seconds": 1316.5,
+    "failures": 0
+   }
+  }
+ }
+}
