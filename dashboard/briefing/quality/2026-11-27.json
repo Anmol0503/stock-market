@@ -1,0 +1,272 @@
+{
+ "date": "2026-11-27",
+ "generated_at": "2026-11-27T04:25+05:30",
+ "status": "complete",
+ "window": {
+  "start": "2026-11-26T03:05+05:30",
+  "end": "2026-11-27T04:05+05:30"
+ },
+ "counts": {
+  "stories": 10,
+  "briefs": 0,
+  "also": 0,
+  "planned_stories": 10,
+  "planned_briefs": 0,
+  "clusters": 1256,
+  "items": 1649
+ },
+ "sources": {
+  "ok": 108,
+  "total": 115,
+  "failed": [
+   "CNBC Economy: HTTP 403",
+   "Guardian Business: HTTP 403",
+   "Guardian Environment: HTTP 403",
+   "Guardian Technology: HTTP 403",
+   "Guardian World: HTTP 403",
+   "NPR World: HTTP 403",
+   "ThePrint: HTTP 403"
+  ]
+ },
+ "recall": {
+  "edition": "2026-11-26",
+  "total": 20,
+  "matched": 2,
+  "misses": [
+   "Hamas security official and family killed in Israeli airstrike on Al-Shati camp; seven more killed",
+   "Bangladesh raises garment workers' minimum wage to ৳17,000; unions reject",
+   "EU and UK fine Firmenich, Givaudan, IFF over €570m for fragrance cartel",
+   "Fuel tanker overturns and explodes on Cairo Ring Road, 31 killed",
+   "Six-story building collapses in Karachi, at least four killed, 17 trapped",
+   "Federal jury in Brooklyn convicts Huawei on 10 of 12 counts"
+  ]
+ },
+ "fallback_plan": false,
+ "notes": [
+  "sources: 1649 fresh items from 108/115 sources, 34 Wikipedia events, 2 market quotes"
+ ],
+ "stories": [
+  {
+   "slot": "s1",
+   "status": "ok",
+   "research": {
+    "claims": 17,
+    "sites": 8,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 5
+   },
+   "problems": [
+    "reel[12]: Uses relative time words ('before February', 'current', 'today's ten', 'Next comes') instead of absolute dates. Say 'before February 2026' and 'as of ",
+    "analogy.text, why_chain[3], lesson.steps[3], lesson.apply, reel[9]: Says Japan, the EU and Korea pay a 'flat' 15%. The claims describe 15% caps that include MFN",
+    "for_you.text, reel[19], dek: Says India at 25% would not undercut Vietnam. The claims give Vietnam 35% without a deal and 20% with one. At 25%, India is cheaper",
+    "what_happened.text: Gives India's 25% without the claims' qualifier that it is net of forced-labor 301 tariffs. Also does not mention that the 15% for Japan, th"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s2",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 7,
+    "primary": 0,
+    "searches": 5,
+    "fetches": 6
+   },
+   "problems": [
+    "thread_summary: It says October inflation was 6.09% and breached the RBI's 2–6% band. No claim gives that figure, and the previous state doesn't either. The new"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s3",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 12,
+    "primary": 0,
+    "searches": 11,
+    "fetches": 11
+   },
+   "problems": [
+    "lesson.example: The last line is inconsistent with the setup. AI spending was ₹50 crore in year one and ₹60 crore in year two. Staying flat at ₹50 crore is the ",
+    "reel[16]: The reel repeats the same error: 'if AI spending falls back to fifty crore? Its slice turns negative. Growth drops to twenty crore.' Falling back to ₹"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s4",
+   "status": "ok",
+   "research": {
+    "claims": 14,
+    "sites": 6,
+    "primary": 0,
+    "searches": 3,
+    "fetches": 3
+   },
+   "problems": [
+    "next.dates[1] / next.unknowns[2] / reel next: The story says reports differ on whether the four months covers only draft rules or also implementation. None of t"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s5",
+   "status": "ok",
+   "research": {
+    "claims": 14,
+    "sites": 8,
+    "primary": 4,
+    "searches": 4,
+    "fetches": 4
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s6",
+   "status": "ok",
+   "research": {
+    "claims": 22,
+    "sites": 10,
+    "primary": 0,
+    "searches": 9,
+    "fetches": 9
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s7",
+   "status": "ok",
+   "research": {
+    "claims": 19,
+    "sites": 10,
+    "primary": 0,
+    "searches": 7,
+    "fetches": 8
+   },
+   "problems": [
+    "reel[11] chart_points (bar chart): The '20 Nov close' value of 92.57 isn't in any claim. The claims give only the 25 Nov settle of $94.61, up $3.21 (so about $9",
+    "history.text: 'Iran hit back across the Gulf the same day' goes beyond the claims. They only support drone strikes on Kuwait's airport and Ali Al Salem on 28 Fe"
+   ],
+   "error": null
+  },
+  {
+   "slot": "s8",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 6,
+    "primary": 0,
+    "searches": 4,
+    "fetches": 8
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s9",
+   "status": "ok",
+   "research": {
+    "claims": 15,
+    "sites": 4,
+    "primary": 0,
+    "searches": 1,
+    "fetches": 3
+   },
+   "problems": [],
+   "error": null
+  },
+  {
+   "slot": "s10",
+   "status": "ok",
+   "research": {
+    "claims": 20,
+    "sites": 7,
+    "primary": 0,
+    "searches": 6,
+    "fetches": 11
+   },
+   "problems": [],
+   "error": null
+  }
+ ],
+ "sections": null,
+ "timings": {
+  "gather": 27.9,
+  "triage": 34.3,
+  "merge": 4.3,
+  "scout": 24.4,
+  "editor": 116.4,
+  "stories+sections": 981.3
+ },
+ "usage": {
+  "calls": 81,
+  "failures": 0,
+  "cost_usd": 21.571,
+  "seconds": 6642.6,
+  "by_role": {
+   "recall": {
+    "calls": 1,
+    "cost_usd": 0.0341,
+    "seconds": 13.3,
+    "failures": 0
+   },
+   "triage": {
+    "calls": 8,
+    "cost_usd": 0.7102,
+    "seconds": 191.0,
+    "failures": 0
+   },
+   "same_story": {
+    "calls": 1,
+    "cost_usd": 0.0466,
+    "seconds": 4.3,
+    "failures": 0
+   },
+   "scout": {
+    "calls": 1,
+    "cost_usd": 0.2854,
+    "seconds": 24.4,
+    "failures": 0
+   },
+   "editor": {
+    "calls": 1,
+    "cost_usd": 0.4754,
+    "seconds": 116.4,
+    "failures": 0
+   },
+   "research": {
+    "calls": 17,
+    "cost_usd": 3.4254,
+    "seconds": 1261.5,
+    "failures": 0
+   },
+   "writer": {
+    "calls": 10,
+    "cost_usd": 7.7514,
+    "seconds": 2771.4,
+    "failures": 0
+   },
+   "checker": {
+    "calls": 20,
+    "cost_usd": 1.6823,
+    "seconds": 294.3,
+    "failures": 0
+   },
+   "fixer": {
+    "calls": 10,
+    "cost_usd": 4.337,
+    "seconds": 1011.5,
+    "failures": 0
+   },
+   "hinglish": {
+    "calls": 12,
+    "cost_usd": 2.8228,
+    "seconds": 954.5,
+    "failures": 0
+   }
+  }
+ }
+}
